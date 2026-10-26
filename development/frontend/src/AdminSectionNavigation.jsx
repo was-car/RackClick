@@ -1,0 +1,29 @@
+export const adminNavigationWords = {
+ en:{title:'Administration sections',users:'Users',groups:'Groups and access',create:'Create account',accounts:'Account list',state:'Account activation',password:'Reset password',sessions:'Sessions',effective:'Effective permissions',groupCreate:'Create group',userMembers:'User memberships',customerMembers:'Customer memberships',grants:'Group permissions',userGroups:'User group list',customerGroups:'Customer group list',help:'Go to an existing panel. Account panels share the selected user; user memberships share that selection. Navigation keeps drafts and does not save or assign access.'},
+ de:{title:'Administrationsbereiche',users:'Benutzer',groups:'Gruppen und Zugriff',create:'Konto anlegen',accounts:'Kontenliste',state:'Konten aktivieren',password:'Passwort zurücksetzen',sessions:'Sitzungen',effective:'Effektive Berechtigungen',groupCreate:'Gruppe anlegen',userMembers:'Benutzer zuordnen',customerMembers:'Kunden zuordnen',grants:'Gruppenberechtigungen',userGroups:'Benutzergruppenliste',customerGroups:'Kundengruppenliste',help:'Zum vorhandenen Bereich wechseln. Kontobereiche teilen den gewählten Benutzer; Benutzerzuordnungen teilen diese Auswahl. Navigation behält Entwürfe, speichert nichts und weist keinen Zugriff zu.'},
+ es:{title:'Secciones de administración',users:'Usuarios',groups:'Grupos y acceso',create:'Crear cuenta',accounts:'Lista de cuentas',state:'Activación de cuentas',password:'Restablecer contraseña',sessions:'Sesiones',effective:'Permisos efectivos',groupCreate:'Crear grupo',userMembers:'Membresías de usuarios',customerMembers:'Membresías de clientes',grants:'Permisos de grupos',userGroups:'Lista de grupos de usuarios',customerGroups:'Lista de grupos de clientes',help:'Ir a un panel existente. Los paneles de cuenta comparten el usuario seleccionado; las membresías de usuarios comparten esa selección. Navegar conserva borradores, no guarda ni asigna acceso.'}
+};
+export const adminSelectionWords={
+ en:{title:'Selected user',choose:'Choose a user…',help:'This selection controls account activation, password reset, sessions, effective permissions and user memberships. Account creation, customer memberships and grants remain separate.',locked:'Selection is locked while a panel is loading, working, recovering a request or holding a draft. Resolve pending requests in their original panels; clear password fields, discard the state draft or clear the selected session or discard the membership draft before switching users.',target:'Panel target',missing:'Unavailable in the current list',discard:'Discard state draft'},
+ de:{title:'Gewählter Benutzer',choose:'Benutzer auswählen…',help:'Diese Auswahl gilt für Kontostatus, Passwort-Reset, Sitzungen, effektive Berechtigungen und Benutzerzuordnungen. Kontoanlage, Kundenzuordnungen und Gruppenrechte sind unabhängig.',locked:'Die Auswahl ist gesperrt, solange ein Bereich lädt, arbeitet, einen Auftrag wiederherstellt oder einen Entwurf enthält. Offene Aufträge im ursprünglichen Bereich klären; Passwortfelder leeren, Statusentwurf verwerfen oder Sitzungsauswahl leeren oder Zuordnungsentwurf verwerfen, bevor der Benutzer gewechselt wird.',target:'Ziel dieses Bereichs',missing:'In der aktuellen Liste nicht verfügbar',discard:'Statusentwurf verwerfen'},
+ es:{title:'Usuario seleccionado',choose:'Selecciona un usuario…',help:'Esta selección dirige activación, restablecimiento, sesiones, permisos efectivos y membresías de usuarios. El alta de cuenta, membresías de clientes y concesiones son independientes.',locked:'La selección está bloqueada mientras un panel carga, trabaja, recupera una solicitud o conserva un borrador. Resuelve las solicitudes en sus paneles originales; vacía contraseñas, descarta el borrador de estado o limpia la sesión seleccionada antes de cambiar usuario.',target:'Destino de este panel',missing:'No disponible en la lista actual',discard:'Descartar borrador de estado'}
+};
+// Register the latest render guard before paint; request locks are checked again
+// synchronously by the parent handler. No passwords or drafts leave the panel.
+export function useAdminSelectionGuard(name,onGuard,blocked,requestLock){
+ const value=React.useRef(blocked);value.current=blocked;
+ React.useLayoutEffect(()=>{onGuard?.(name,()=>value.current||!!requestLock?.current,blocked)});
+ React.useEffect(()=>()=>onGuard?.(name,null,false),[name,onGuard]);
+}
+export function AdminSelectionTarget({lang,id,users}){
+ const w=adminSelectionWords[lang],user=users?.find(u=>u.id===id);
+ return <p data-admin-selection-target={id||''}>{w.target}: <strong>{user?.userName||(!id?w.choose:w.missing)}</strong>{id&&<> · {id}</>}</p>;
+}
+export const adminNavigationSections = [
+ ['users',[['create','account-create'],['accounts','account-list'],['state','user-state'],['password','user-password'],['sessions','user-sessions'],['effective','effective-permissions']]],
+ ['groups',[['groupCreate','group-create'],['userMembers','user-memberships'],['customerMembers','customer-memberships'],['grants','group-grants'],['userGroups','user-group-list'],['customerGroups','customer-group-list']]]
+];
+export function AdminSectionNavigation({lang,current,onNavigate}) {
+ const w=adminNavigationWords[lang];
+ return <nav className="rc-admin-section-navigation" aria-label={w.title} data-admin-section-navigation><h2>{w.title}</h2>{adminNavigationSections.map(([category,sections])=><details key={category} open><summary>{w[category]}</summary><div>{sections.map(([label,id])=><button type="button" key={id} data-admin-section-link={id} aria-controls={'rc-admin-'+id} aria-current={current===id?'location':undefined} onClick={()=>onNavigate(id)}>{w[label]}</button>)}</div></details>)}<p>{w.help}</p></nav>;
+}

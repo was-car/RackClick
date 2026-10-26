@@ -1,0 +1,9 @@
+import {ApiError} from './api.ts';
+import {categoryColorsUuid,validCategoryColorsDraft,sameCategoryColors,type CategoryColorsDraft} from './user-category-colors.ts';
+// A separate family and one durable original intention per authenticated actor.
+export async function categoryColorsJournal(action:'read'|'write'|'remove',actorId:string,draft?:CategoryColorsDraft):Promise<CategoryColorsDraft|null>{
+ if(!categoryColorsUuid(actorId)||!['read','write','remove'].includes(action)||(action!=='read'&&(!validCategoryColorsDraft(draft)||draft.actorId!==actorId)))throw new ApiError(0,'category_colors_storage_unavailable');
+ const same=(a:CategoryColorsDraft,b:CategoryColorsDraft)=>a.actorId===b.actorId&&sameCategoryColors(a.colors,b.colors)&&a.revision===b.revision&&a.requestId===b.requestId;
+ const db:IDBDatabase=await new Promise((resolve,reject)=>{let blocked=false;const r=indexedDB.open('RackClick.UserCategoryColors.v1',1);r.onupgradeneeded=()=>r.result.createObjectStore('pending',{keyPath:'actorId'});r.onsuccess=()=>{if(blocked)r.result.close();else resolve(r.result)};r.onerror=r.onblocked=()=>{blocked=true;reject(new ApiError(0,'category_colors_storage_unavailable'))}});
+ try{return await new Promise((resolve,reject)=>{const tx=db.transaction('pending',action==='read'?'readonly':'readwrite',{durability:'strict'}),store=tx.objectStore('pending');let value:CategoryColorsDraft|null=null;tx.oncomplete=()=>resolve(value);tx.onerror=tx.onabort=()=>reject(new ApiError(0,'category_colors_storage_unavailable'));const r=store.get(actorId);r.onsuccess=()=>{const old=r.result;if(old&&(!validCategoryColorsDraft(old)||old.actorId!==actorId)){tx.abort();return}if(action==='read'){value=old||null;return}if(old&&!same(old,draft!)){tx.abort();return}if(action==='write'){store.put(draft);value=draft!}else store.delete(actorId)}})}finally{db.close()}
+}

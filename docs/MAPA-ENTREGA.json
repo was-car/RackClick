@@ -1,0 +1,2233 @@
+{
+  "schema_version": 2,
+  "revision": "RC-CIERRE-20261025-v1",
+  "measurement_kind": "remaining_work_closure_not_product_progress",
+  "progress": null,
+  "global_product_percentage": null,
+  "snapshot": "Inventario fechado del pendiente; no reinicia el trabajo ya construido.",
+  "basis": "Cierre de 100 puntos del trabajo restante desde 25.10.2026; no porcentaje global del producto.",
+  "closure_points": 7.630952380952381,
+  "total_closure_points": 100,
+  "historical_map": "evidence/s1-20261025/plan-cierre-medible/MAPA-ENTREGA-ANTERIOR.json",
+  "historical_78_retired": true,
+  "sources": [
+    "docs/PLAN-CIERRE-RACKCLICK.json",
+    "docs/PLAN-CIERRE-RACKCLICK.md",
+    "docs/CIERRE-METRICA.json"
+  ],
+  "streams": [
+    {
+      "id": "F",
+      "name": "Fundamento, seguridad y MFA",
+      "weight": 25,
+      "closure_points": 1.0,
+      "children": [
+        {
+          "id": "F-01",
+          "name": "Clasificar hallazgos de secretos y tratar sólo credenciales reales",
+          "pending_kind": "implementación",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "F-01.01",
+              "name": "Clasificar candidatos e indeterminados privados con trazabilidad por ruta/commit y sin publicar valores.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-01.02",
+              "name": "Si una credencial es real, coordinar revocación/rotación con la instancia afectada; corregir exposición y volver a verificar cambios/artefactos relevantes.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-01.03",
+              "name": "Registrar falsos positivos y criterio específico sin supresiones amplias; reescritura de historial no está autorizada por defecto.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-01.04",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/8"
+            }
+          ]
+        },
+        {
+          "id": "F-02",
+          "name": "Cifrar configuración SQL y recuperar sus secretos en otra instancia",
+          "pending_kind": "implementación",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "F-02.01",
+              "name": "Diseñar e integrar protección compatible con cuenta/instancia reales y canal mínimo de lectura para el servicio; conservar separación owner/migración/runtime.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-02.02",
+              "name": "Actualizar operadores/fichas de acceso, diagnóstico y backup para no filtrar la clave ni depender de copiar un secreto ligado al host antiguo.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-02.03",
+              "name": "Ensayar reanudación y Restore en destino nuevo con identidad/roles/claves nuevos; error explícito ante clave ausente/incorrecta.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-02.04",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/8"
+            }
+          ]
+        },
+        {
+          "id": "F-03",
+          "name": "Registrar decisión de custodia y ubicación definitiva D2",
+          "pending_kind": "decisión de custodia/recuperación confirmada; concreción técnica pendiente",
+          "weight_points": "0",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "F-03.01",
+              "name": "Wascar confirma responsable/medio del sobre y de su contraseña por canales privados, y ubicación definitiva del almacén mfa-keys.",
+              "status": "done",
+              "weight_points": "0"
+            },
+            {
+              "id": "F-03.02",
+              "name": "Desarrollo concreta las condiciones técnicas de la revisión: recuperación restringida sin clave, límites/cabecera autenticada del KDF y publicación recuperable entre disco/DB.",
+              "status": "pending",
+              "weight_points": "0"
+            },
+            {
+              "id": "F-03.03",
+              "name": "Registrar límites de amenaza: DPAPI LocalMachine no aísla del administrador local ni del proceso de servicio comprometido.",
+              "status": "pending",
+              "weight_points": "0"
+            }
+          ]
+        },
+        {
+          "id": "F-04",
+          "name": "Implementar proveedor TOTP Windows bajo la identidad real del servicio",
+          "pending_kind": "implementación",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "F-04.01",
+              "name": "Crear almacén separado de management con ACL seguras desde el primer instante y escrituras atómicas por instalador/operador.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-04.02",
+              "name": "Dar sólo lectura al SID efectivo del servicio y mantener management cerrado; comprobar padres, herencia y reparse.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-04.03",
+              "name": "Conectar proveedor real al producto sólo tras D2; rechazar claves/versiones ausentes sin regeneración silenciosa ni password-only.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-04.04",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/8"
+            }
+          ]
+        },
+        {
+          "id": "F-05",
+          "name": "Implementar sobre portable autenticado y restauración de claves",
+          "pending_kind": "implementación",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "F-05.01",
+              "name": "Validar magia/versión/algoritmo, tamaños, codificación canónica y límites min/max de iteraciones antes de KDF; autenticar cabecera completa como AAD.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-05.02",
+              "name": "Medir coste del parámetro propuesto600000 en Windows antes de fijarlo; no adoptarlo por silencio.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-05.03",
+              "name": "Probar contraseña errónea, alteración, truncado, datos extra, versión/algoritmo desconocidos y coste/tamaño fuera de rango.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-05.04",
+              "name": "Recuperar anillo en otra instancia Windows preservando AAD Systemhaus/usuario/versión o mediante reenvoltura explícita; sobre y contraseña separados del dump.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-05.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "F-06",
+          "name": "Cerrar rotación y recuperación coherente entre anillo y PostgreSQL",
+          "pending_kind": "implementación",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "F-06.01",
+              "name": "Especificar fases: persistir/verificar clave nueva antes de usarla, conservar versiones requeridas, reenvolver factores y publicar anillo coherente.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-06.02",
+              "name": "Retirar una versión sólo si ningún factor ni backup retenido la necesita; incluir inventario de versiones en backup/sobre.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-06.03",
+              "name": "Inyectar caída antes/después de cada publicación y commit; reinicio/Restore deben identificar estado y recuperar sin perder factores.",
+              "status": "pending",
+              "weight_points": "5/8"
+            },
+            {
+              "id": "F-06.04",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/8"
+            }
+          ]
+        },
+        {
+          "id": "F-07",
+          "name": "Completar enrolamiento restringido en el primer login",
+          "pending_kind": "backend MFA-L1 revisado técnicamente; proveedor real/UI/recuperación y cierre completo pendientes",
+          "weight_points": "5/2",
+          "closed_points": 1.0,
+          "checkpoints": [
+            {
+              "id": "F-07.01",
+              "name": "Después de password válido emitir desafío enroll de finalidad fija, hash/CSRF propio, cinco minutos y consumo único; sin app_session/autoridad API.",
+              "status": "done",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-07.02",
+              "name": "Presentar secreto/QR sólo al usuario durante proceso, sin URL/log/auditoría/historial; confirmar primer TOTP antes de activar factor.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-07.03",
+              "name": "Emitir sesión/CSRF nuevos y confirmar factor/consumir desafío en una sola transacción; revalidar cuenta/política/caducidad después de locks.",
+              "status": "done",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-07.04",
+              "name": "Alta nueva marca configure-first-login como indicó D3; probar código erróneo/caducado/repetido, reintento/respuesta perdida y dos confirmaciones concurrentes.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-07.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "F-08",
+          "name": "Implementar códigos de recuperación y reenrolamiento restringido",
+          "pending_kind": "implementación",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "F-08.01",
+              "name": "Generar y mostrar una sola vez códigos por usuario; almacenar sólo hashes con sal conforme D2, sin dependencia de clave TOTP.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-08.02",
+              "name": "Concretar e implementar si password+código concede sólo recuperación restringida hasta reenrolar; no dejar frase ambigua que emita sesión normal antes de nuevo factor.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-08.03",
+              "name": "Consumir transaccionalmente, invalidar sesiones/desafíos/códigos anteriores según contrato y probar consumo concurrente/replay/rollback/secretos.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-08.04",
+              "name": "Garantizar vía administrativa de recuperación con códigos válidos sin bloquear último administrador.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-08.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "F-09",
+          "name": "Implementar recuperación local cuando no quedan clave, sobre ni códigos",
+          "pending_kind": "implementación",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "F-09.01",
+              "name": "Autorizar sólo operador local SYSTEM/Administradores; sin web anónima ni bypass password-only.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-09.02",
+              "name": "Permitir preparar anillo nuevo explícitamente, conservar material anterior recuperable, retirar factores ilegibles del uso y marcar enrolamiento pendiente sin borrar DB.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-09.03",
+              "name": "Revocar sesiones/desafíos y registrar auditoría sin secretos, preservando recuperación de último administrador.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-09.04",
+              "name": "Ensayar pérdida simulada total, arranque fallido explícito, recuperación local y vuelta mediante enrolamiento restringido.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-09.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "F-10",
+          "name": "Completar panel/política MFA por usuario y obligatoriedad antes de producción",
+          "pending_kind": "implementación",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "F-10.01",
+              "name": "Implementar API/panel de activar/desactivar y reset MFA con capacidad global vigente, revisión/idempotencia, auditoría y protección del último administrador.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-10.02",
+              "name": "Cambios revocan sesiones/desafíos y no permiten elevar una sesión password-only tras nueva concesión; probar cambios concurrentes y rollback.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-10.03",
+              "name": "Concretar transición de cuentas existentes y altas nuevas; registrar cómo se elimina excepción D7.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-10.04",
+              "name": "Antes de producción aplicar MFA a todos, incluidos lector/admin, revocar password-only y comprobar que no hay alternativa de login inseguro.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-10.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "F-11",
+          "name": "Integrar segundo paso y todos los formularios de reautenticación",
+          "pending_kind": "integración",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "F-11.01",
+              "name": "Coordinador de autenticación termina login/enrolamiento/verificación/recuperación antes de entregar Session al resto de la GUI.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-11.02",
+              "name": "Integrar reauth de operaciones inciertas, usuarios/password/estado/sesiones, favoritos, plantillas, preferencias y paletas; continuar sólo mismo actor.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-11.03",
+              "name": "Conservar borradores/journal/intención y no reenviar escritura bajo otra identidad; tratar pérdida de respuesta, caducidad/recarga y segunda sesión.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-11.04",
+              "name": "Mantener aspecto RC9 y EN/DE/ES; catálogo con pasos exactos y estado no disponible hasta integración real, regenerar guía cuando corresponda sin alterar observaciones.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "F-11.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "F-12",
+          "name": "Acreditar MFA y fundamento sobre la candidata completa por HTTP/HTTPS",
+          "pending_kind": "integración HTTP de L1 revisada; matriz final de seguridad pendiente",
+          "weight_points": "0",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "F-12.01",
+              "name": "Fijar conjunto aplicación/SQL/frontend/dependencias/operadores y un proveedor de laboratorio controlado explícitamente separado de custodia productiva D2; no bloquear pruebas sintéticas por decisión de custodia aún abierta.",
+              "status": "in_progress",
+              "weight_points": "0"
+            },
+            {
+              "id": "F-12.02",
+              "name": "Comprobar por HTTP desafío202 sin sesión, finalidad/rutas exactas, CSRF/Origin/rate/cookies, intentos/replay/concurrencia/caducidad tras última espera y reset/política/restore.",
+              "status": "in_progress",
+              "weight_points": "0"
+            },
+            {
+              "id": "F-12.03",
+              "name": "Con proveedor real final comprobar HTTPS/Secure en navegador y regresión afectada después de MFA, sin trasladar pruebas por similitud de DLL.",
+              "status": "pending",
+              "weight_points": "0"
+            },
+            {
+              "id": "F-12.04",
+              "name": "Revisión final acotada por rutas: SQL externo parametrizado/identificadores cerrados, datos hostiles literales DOM/SVG/reportes, autorización lectura/escritura, secretos y roles runtime DML sin DDL. SAST complementa, no sustituye pruebas negativas.",
+              "status": "pending",
+              "weight_points": "0"
+            },
+            {
+              "id": "F-12.05",
+              "name": "Actualizar guiones/evidencias de candidata y obtener revisión independiente antes de habilitar MFA en QA.",
+              "status": "pending",
+              "weight_points": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I",
+      "name": "Jerarquía, inventario y colaboración",
+      "weight": 15,
+      "closure_points": 3.630952380952381,
+      "children": [
+        {
+          "id": "I-01",
+          "name": "Ofrecer e integrar Deshacer de crecimiento/reducción pura de grupos",
+          "pending_kind": "parcial; candidato y confirmación GUI revisados en laboratorio",
+          "weight_points": "5/2",
+          "closed_points": 1.4285714285714286,
+          "checkpoints": [
+            {
+              "id": "I-01.01",
+              "name": "Crear candidato desde operación confirmada propia, actor/cliente/revisión; ningún before del navegador.",
+              "status": "done",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-01.02",
+              "name": "Mostrar alcance/confirmación de retirar/restaurar grupos/puertos/cables y límites de evidencia completa1..256puertos/32grupos/256IDs combinados.",
+              "status": "done",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-01.03",
+              "name": "Integrar consulta/reintento/cancelación originales ante incertidumbre e invalidación tras otra revisión/permiso/cuenta/cliente.",
+              "status": "done",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-01.04",
+              "name": "Decidir presentación de contexto estructural: hoy notAvailable explícito; no rotular puertos eliminados como changedIds.",
+              "status": "done",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-01.05",
+              "name": "Congelar candidata coordinada con MFA/instalación y probar API+GUI sobre sus bytes; revisión distinta.",
+              "status": "pending",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-01.06",
+              "name": "Añadir guiones por botón/campo, habilitados sólo en candidata seleccionada real; conservar resultados.",
+              "status": "pending",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-01.07",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/14"
+            }
+          ]
+        },
+        {
+          "id": "I-02",
+          "name": "Cerrar alcance restante de compensación colaborativa y Rehacer",
+          "pending_kind": "definición finita e implementación",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "I-02.01",
+              "name": "Fijar catálogo finito y semántica de Rehacer; no copiar historial offline30niveles ni suponer cualquier inversa de cualquier comando.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-02.02",
+              "name": "Definir evidencia/consentimiento nuevo para grupos mixtos/reordenados y extremos reservados hoy rechazados.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-02.03",
+              "name": "Por cada inversa incluida: comparar after completo/estado actual, identidad, revisión, autorización y locks; no UPSERT ni desplazar cables actuales.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-02.04",
+              "name": "Implementar alcance contractual pendiente. Un recorte requiere decisión expresa de Wascar.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-02.05",
+              "name": "Probar cambios ajenos, reutilización UUID, evidencia corrupta, concurrencia/replay/rollback; integrar GUI/manual y revisión distinta.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-02.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/12"
+            }
+          ]
+        },
+        {
+          "id": "I-03",
+          "name": "Cerrar matriz RC9 de conector, cara, rol eléctrico y presupuesto PoE",
+          "pending_kind": "cobertura y corrección sólo de defectos reproducidos",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "I-03.01",
+              "name": "Enumerar combinaciones realmente soportadas por RC9adoptada: tipo/grupo, auto/front/rear, inlet/outlet/unspecified y presets.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-03.02",
+              "name": "Marcar soporte/rechazo/límite; no imponer compatibilidad física nueva por intuición.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-03.03",
+              "name": "Cubrir grupos gn repetidos, conservación al editar y revalidación de enlaces al cambiar rol.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-03.04",
+              "name": "Presupuesto nulo/cero/límite/excedido y watts heterogéneos/desconocidos, OFF/AC excluidos. No nueva restricción de suministro sin contrato.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-03.05",
+              "name": "Recorrido frontal/trasera persistente sobre candidata final, errores atómicos y revisión distinta.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-03.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/12"
+            }
+          ]
+        },
+        {
+          "id": "I-04",
+          "name": "Cerrar variantes de jerarquía, racks, equipos y orden ya implementados",
+          "pending_kind": "parcial; catálogo, variantes de rack y duplicado revisados en laboratorio",
+          "weight_points": "5/2",
+          "closed_points": 1.7857142857142858,
+          "checkpoints": [
+            {
+              "id": "I-04.01",
+              "name": "Cerrar lista de controles/comandos existentes y reutilizar prueba; no rehacer lotes ni CRUD por tabla51.",
+              "status": "done",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-04.02",
+              "name": "Focos de editar/reasignar rack, reducciónU con ocupación, equipo/metadatos/presets y tooltips por UUID/homónimos.",
+              "status": "done",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-04.03",
+              "name": "Duplicado sin/con cables y reserved confirmado válido; conservar negativos existentes.",
+              "status": "done",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-04.04",
+              "name": "Flechas/drag/táctil según controles ofrecidos; orden documental y local/cross sin inventar posiciónU.",
+              "status": "done",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-04.05",
+              "name": "Borrado individual/conjunto con objetos de sala y cables incidentes: commit único, impacto/cancelación exactos.",
+              "status": "done",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-04.06",
+              "name": "Repetir sólo focos afectados en candidata final con segunda cuenta/reinicio; revisión y guiones faltantes.",
+              "status": "pending",
+              "weight_points": "5/14"
+            },
+            {
+              "id": "I-04.07",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/14"
+            }
+          ]
+        },
+        {
+          "id": "I-05",
+          "name": "Cerrar variantes de Click-Click, lotes, reconexión y cables",
+          "pending_kind": "cobertura y aceptación",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "I-05.01",
+              "name": "Matriz local/cross/sala y reserved positivo/negativo con origen revalidado.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-05.02",
+              "name": "Reconexión cancelada y a ocupado/disabled/faulty/reserved/ajeno conserva UUID/atributos/extremo previo.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-05.03",
+              "name": "Dos técnicos en GUI: un éxito y conflicto explicado sin borrador perdido; aprovechar prueba API existente.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-05.04",
+              "name": "Precedencia color manual y literalidad de notas/labels en UI e informes EN/DE/ES.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-05.05",
+              "name": "Corregir sólo fallos reproducidos y registrar build/pruebas/revisión/QA.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-05.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/12"
+            }
+          ]
+        },
+        {
+          "id": "I-06",
+          "name": "Completar verificación de Dosen y finales ya soportados en sala",
+          "pending_kind": "edición, puertos, roles y borrado GUI verificados técnicamente; matriz restante pendiente",
+          "weight_points": "5/2",
+          "closed_points": 0.4166666666666667,
+          "checkpoints": [
+            {
+              "id": "I-06.01",
+              "name": "Relacionar soporte real por operación/plantilla/AP y conservarlo.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-06.02",
+              "name": "Cerrar edición/renombrado/puertos/roles/borrado con impacto de objetos de sala ofrecidos por GUI.",
+              "status": "done",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-06.03",
+              "name": "Verificar extremos/rutas en consultas, informes y avisos tras mover y revocar permisos.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-06.04",
+              "name": "Documentar una ocupación por puerto lógico y separar I-07.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-06.05",
+              "name": "Si se propone aplazar, decisión expresa de Wascar; no inferirla del PLAN contradictorio.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "I-06.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/12"
+            }
+          ]
+        },
+        {
+          "id": "I-07",
+          "name": "Decidir modelo de terminales y pasos internos de Dose/panel",
+          "pending_kind": "decisión física y diseño condicional",
+          "weight_points": "0",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "I-07.01",
+              "name": "Acordar ejemplos físicos requeridos, separando datos/PoE/AC.",
+              "status": "pending",
+              "weight_points": "0"
+            },
+            {
+              "id": "I-07.02",
+              "name": "Definir identidades de terminal/paso, ocupación y Click-Click antes de código.",
+              "status": "pending",
+              "weight_points": "0"
+            },
+            {
+              "id": "I-07.03",
+              "name": "Decidir si la primera entrega promete ruta pasante o límite expreso; separado de Dose/final ya requerido.",
+              "status": "pending",
+              "weight_points": "0"
+            },
+            {
+              "id": "I-07.04",
+              "name": "Sólo si incluido: diseño/migración y pruebas dos enlaces externos+paso interno sin doble ocupación ambigua; revisión network/arquitectura.",
+              "status": "pending",
+              "weight_points": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A",
+      "name": "Usuarios, grupos y administración",
+      "weight": 5,
+      "closure_points": 0.0,
+      "children": [
+        {
+          "id": "A-01",
+          "name": "Cerrar atribución técnica C1 S-38 a S-42 en la candidata vigente",
+          "pending_kind": "probado_acotado",
+          "weight_points": "5/4",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "A-01.01",
+              "name": "Registrar candidata/DDL/GUI/instancia y relación de fuentes con pruebas C1 existentes.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-01.02",
+              "name": "Después de cambios MFA ejecutar sólo focos afectados: misma sesión tras retirar última vía, unión de concesiones, último admin y suplente activo/global, password/reset/desactivación/reactivación, revocación de tokens/desafíos y replay que conserva sesión nueva.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-01.03",
+              "name": "Mantener commit conjunto/revisión/operation/audit y negativos de fallo; comprobar logs capturados con marcadores sintéticos tras añadir factor/recuperación.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-01.04",
+              "name": "Revisión distinta y matriz criterio→ejecución/build/resultado/límite; no forzar fallos de último admin en cuentas reales.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-01.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/4"
+            }
+          ]
+        },
+        {
+          "id": "A-02",
+          "name": "Completar aceptación visual del recorrido administrativo existente",
+          "pending_kind": "aceptación",
+          "weight_points": "5/4",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "A-02.01",
+              "name": "Wascar recorre usuario→pertenencias→efectivos y grupo→miembros/concesiones; ambas clases de grupo, homónimos y varios padres explícitos sin herencia AD.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-02.02",
+              "name": "Comprobar retiro con sesión abierta y actualización de lectura/escritura sin logout; S-38 no exige push universal que borre todo dato ya renderizado.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-02.03",
+              "name": "Recorrer reset/estado/sesiones/auditoría y altas/navegación; registrar lugar exacto donde haya pérdida de contexto, legibilidad o accesibilidad, versión y navegador.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-02.04",
+              "name": "Conservar resultados previos y marcar cambios de versión; corregir sólo observaciones concretas y repetir focos. Probar teclado/voz habitual en su ámbito sin rediseñar RC9.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-02.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/4"
+            }
+          ]
+        },
+        {
+          "id": "A-03",
+          "name": "Conciliar y cerrar atribución de auditoría fuera de las21formas administrativas",
+          "pending_kind": "integración",
+          "weight_points": "5/4",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "A-03.01",
+              "name": "Enumerar acciones actuales fuera21 y contrastar actorUUID, cliente/ámbito cuando aplica, objetos directos, horaUTC, revisiones, outcome y request contra lo realmente capturado/publicado.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-03.02",
+              "name": "Registrar diferencia concreta por acción; implementar sólo atribución mínima faltante con fallo que revierta mutation/operation/audit, sin JSON arbitrario/secretos.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-03.03",
+              "name": "Verificar lectura honesta y aislamiento/rollback/replay de familias afectadas; contexto antiguo ausente permanece notRecorded.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-03.04",
+              "name": "Coordinar con C2/C3/C5 para que cada familia conserve su evidencia y sólo se contabilice una vez.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-03.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/4"
+            }
+          ]
+        },
+        {
+          "id": "A-04",
+          "name": "Cerrar retención operativa, correlación y recuperación de operaciones antiguas",
+          "pending_kind": "implementación",
+          "weight_points": "5/4",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "A-04.01",
+              "name": "Concretar retención30d de resultados y tratamiento de peticiones/replays después de caducidad; proteger cancelaciones/tombstones y compensaciones que dependan de evidencia.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-04.02",
+              "name": "Definir retención/correlación de auditoría/logs y procedimiento operativo de consulta/exportación saneada; no suponer que debe añadirse Serilog o un endpoint nuevo si lo existente cubre el uso.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-04.03",
+              "name": "Ensayar frontera temporal, petición antigua/cancelada y evidencia ausente: no reejecutar silenciosamente ni reconstruir desde el navegador.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-04.04",
+              "name": "Documentar qué se conserva/borra y qué recuperación/compensación deja de estar disponible; vincular request/event/trace sin secretos.",
+              "status": "pending",
+              "weight_points": "1/4"
+            },
+            {
+              "id": "A-04.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P",
+      "name": "Paridad funcional y visual RC9",
+      "weight": 15,
+      "closure_points": 0.0,
+      "children": [
+        {
+          "id": "P-01",
+          "name": "Convertir restauración RC9 de laboratorio en importación normal",
+          "pending_kind": "implementación API/GUI",
+          "weight_points": "15/11",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "P-01.01",
+              "name": "Clasificar backup multicliente frente JSON cliente/rack por formato/versión, sin aplanar ni fusionar nombres.",
+              "status": "pending",
+              "weight_points": "15/77"
+            },
+            {
+              "id": "P-01.02",
+              "name": "Plan explícito destino/creación/mapeo por identidad y permisos; original exacto antes de confirmar.",
+              "status": "pending",
+              "weight_points": "15/77"
+            },
+            {
+              "id": "P-01.03",
+              "name": "API staging/preview/commit con revisión/actor/CSRF/idempotencia/auditoría y capacidad de transferencia vigente.",
+              "status": "pending",
+              "weight_points": "15/77"
+            },
+            {
+              "id": "P-01.04",
+              "name": "Reutilizar análisis validado; no convertir SQL generado por herramienta lab en entrada externa. Contrastar grupos/campos no soportados.",
+              "status": "pending",
+              "weight_points": "15/77"
+            },
+            {
+              "id": "P-01.05",
+              "name": "GUI archivo→compatibilidad/plan→confirmación→commit→recarga y recuperación de incertidumbre.",
+              "status": "pending",
+              "weight_points": "15/77"
+            },
+            {
+              "id": "P-01.06",
+              "name": "E2E10clientes, revocación/fallo mitad y revisión distinta.",
+              "status": "pending",
+              "weight_points": "15/77"
+            },
+            {
+              "id": "P-01.07",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "15/77"
+            }
+          ]
+        },
+        {
+          "id": "P-02",
+          "name": "Previsualizar inválidos y doble ocupación sin perder enlaces",
+          "pending_kind": "staging y pruebas",
+          "weight_points": "15/11",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "P-02.01",
+              "name": "Preservar original/hash íntegros también si no se normaliza; límites de tamaño/tipo.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-02.02",
+              "name": "Mostrar todos los objetos/enlaces/ocupaciones e IDs/extremos; nunca elegir cable arbitrario.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-02.03",
+              "name": "Resolver explícitamente o dejar pendiente; nunca falso committed de import incompatible/parcial.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-02.04",
+              "name": "Revisión/actor/permiso cambiados invalidan plan; revalidar al commit.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-02.05",
+              "name": "JSON inválido, duplicados/dangling/grupos ambiguos/doble ocupación y fallo mitad/auditoría: cero efectos y original intacto.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-02.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/22"
+            }
+          ]
+        },
+        {
+          "id": "P-03",
+          "name": "Exportar JSON actual y original exacto como funciones distintas",
+          "pending_kind": "implementación API/GUI",
+          "weight_points": "15/11",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "P-03.01",
+              "name": "Contrato export cliente/rack/backup acordado con revisión fuente y mapeo serverUUID↔IDexportable estable.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-03.02",
+              "name": "Exportar estado actual desde snapshot autorizado, no archivo importado/localStorage.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-03.03",
+              "name": "Descargar original byteidéntico desde procedencia persistida segura, rotulado distinto.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-03.04",
+              "name": "Permiso transferencia/ámbito/actor/CSRF/revisión/recibo/auditoría y recuperación sin filtrar ajenos.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-03.05",
+              "name": "Validación/tamaño/hash/descarga segura; escritura→actual cambiado→originalSHAigual; revocación/replay/reinicio/revisión/QA.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-03.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/22"
+            }
+          ]
+        },
+        {
+          "id": "P-04",
+          "name": "Demostrar round-trip JSON y preservar extensiones",
+          "pending_kind": "integración y compatibilidad",
+          "weight_points": "15/11",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "P-04.01",
+              "name": "Matriz formato/versión JSON soportado; CSV/XLS de informes no son backups.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-04.02",
+              "name": "Fixtures homónimos, grupos gn repetido, legacyIDs, extensiones anidadas y metadata global.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-04.03",
+              "name": "Export sin cambios→lab nuevo→import→export y comparación de conocidos/IDs/extensiones/semántica; no exigir igualdad byte si no contractual.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-04.04",
+              "name": "Precisar metadatos hoy sólo archivados y conservarlos en ida/vuelta; ninguna pérdida silenciosa.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-04.05",
+              "name": "Editar conocidos sin borrar desconocidos; límites/atomicidad y revisión independiente del comparador/resultados.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-04.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/22"
+            }
+          ]
+        },
+        {
+          "id": "P-05",
+          "name": "Cerrar lista de herramientas RC9 restantes y sus equivalentes",
+          "pending_kind": "definición finita e implementación condicional",
+          "weight_points": "15/11",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "P-05.01",
+              "name": "Contrastar artefacto RC9 transformado y definir exactamente cada operación y pertenencia S1–S4.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-05.02",
+              "name": "Separar import cliente/rack/append/merge/CSV de P-01; por cada una equivalente/reutilización/límite explícito.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-05.03",
+              "name": "Separar snapshot/rescate por ámbito de backup/restorePG. Restaurar inventario requiere plan/revisión/permiso, nunca snapshot ciego sobre otro técnico.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-05.04",
+              "name": "Implementar faltantes contractuales con identidad/atomicidad/recuperación; pruebas/guiones por operación y revisión.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-05.05",
+              "name": "Decisión expresa para aplazamientos; S-50return permanece S5.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-05.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/22"
+            }
+          ]
+        },
+        {
+          "id": "P-06",
+          "name": "Persistir identidad documental del cliente y branding RC9",
+          "pending_kind": "modelo/API/GUI",
+          "weight_points": "15/11",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "P-06.01",
+              "name": "Contrastar campos RC9 cliente/Systemhaus/logo/técnico/metadata y permisos.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-06.02",
+              "name": "MigraciónSQL/Npgsql/API/GUI y su import/export; técnico documental independiente del actor.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-06.03",
+              "name": "Validar formato/tamaño del logo y render pasivo sin HTML/URL activa.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-06.04",
+              "name": "Añadir identidad real a reportesrack/cliente/etiquetas/XLS según referencia, conservando estilos/familias existentes.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-06.05",
+              "name": "Hostiles/Unicode, ámbitos, persistencia, impresión/comparación visual y revisión distinta/QA.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-06.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/22"
+            }
+          ]
+        },
+        {
+          "id": "P-07",
+          "name": "Cerrar formatos existentes y resolver obligación PDF",
+          "pending_kind": "cobertura y decisión",
+          "weight_points": "15/11",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "P-07.01",
+              "name": "Lista exacta RC9/equivalentes: CSV≠XLSX≠XLSHTML, PDF/impresión, etiquetasrack sin inventar otras.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-07.02",
+              "name": "Resolver D4 contradictorio sin suprimir obligación por propuesta; si nativo requerido especificar/desarrollar, si impresión equivalente registrar decisión explícita.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-07.03",
+              "name": "Comparar candidata final con referencia/brandingP-06, extremos cross/sala, Unicode/hostiles y permisos en generación/replay/status/genéricas.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-07.04",
+              "name": "Probar impresión/guardarPDF y etiquetas en entorno objetivo; no prometer tres hojas XLSHTML. Foco real lectorXLSX acordado si ofrecido.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-07.05",
+              "name": "Registrar bytes/hash/capturas/pruebas/revisión/QA sin rehacer exportadores ya cubiertos.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-07.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/22"
+            }
+          ]
+        },
+        {
+          "id": "P-08",
+          "name": "Concluir aceptación de plantillas/favoritos/preferencias existentes",
+          "pending_kind": "integración final y aceptación",
+          "weight_points": "15/11",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "P-08.01",
+              "name": "Conservar código y conciliar notas obsoletas; no nueva función presupuesta.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-08.02",
+              "name": "Relacionar S-26 con BASE/privada/compartida/favorito y lector/editor/publicador/ajeno; identificar sólo huecos reales.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-08.03",
+              "name": "Preferencias por dueño y precedencia manual→pareja→null al crear, sin recolor histórico.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-08.04",
+              "name": "Foco pérdida respuesta/cambioactor/recarga/reauthMFA sobre combinación final.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-08.05",
+              "name": "QA con cuentas distintas y resultados por versión; preferencias no sustituyen aceptaciónS-26.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-08.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/22"
+            }
+          ]
+        },
+        {
+          "id": "P-09",
+          "name": "Cerrar compatibilidad y aceptación de avisos multiusuario",
+          "pending_kind": "cobertura/integración/aceptación",
+          "weight_points": "15/11",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "P-09.01",
+              "name": "Conciliar31acciones y contexto finito por acción frente documentos30/26; no reconstruir historia.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-09.02",
+              "name": "Foco final dos actores mismo cliente/rack, lector y ajeno, MFA caducada/revocación/cambio cliente/respuesta tardía.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-09.03",
+              "name": "Nombres históricos vs actorCurrent/etiquetasvista rotulados, no completar con tablas actuales.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-09.04",
+              "name": "Un aviso por commit, ninguno por replay/rollback; gap explícito, reconexión y borrador intacto.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-09.05",
+              "name": "Coordinar escala10sesiones conC6 sin doble tarea/métrica; QA y guion después de cambios reales.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-09.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/22"
+            }
+          ]
+        },
+        {
+          "id": "P-10",
+          "name": "Auditar EN/DE/ES, temas y literalidad de datos",
+          "pending_kind": "cobertura/correcciones",
+          "weight_points": "15/11",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "P-10.01",
+              "name": "Enumerar login/MFA/reauth, inventario, plantillas/preferencias, avisos/errores/conflictos, admin/reportes.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-10.02",
+              "name": "Contrastar todas claves/rótulos/ayudas/errores en3idiomas; cabeceras inglesas XLSHTML como adaptación declarada.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-10.03",
+              "name": "Corregir faltas reales incluido ? visible si se toma ese cambio; sin traducir nombres/etiquetas del usuario.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-10.04",
+              "name": "Dark/light,390px/desktop, texto largo/Unicode y ordenación explícita; no migrar collation por intuición.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-10.05",
+              "name": "Reportes/conflictos/recuperaciónMFA y QA por versión con revisión distinta.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-10.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/22"
+            }
+          ]
+        },
+        {
+          "id": "P-11",
+          "name": "Completar teclado, lector, contraste y paridad visual funcional",
+          "pending_kind": "auditoría/correcciones",
+          "weight_points": "15/11",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "P-11.01",
+              "name": "Matriz Tab/ShiftTab/Enter/Escape/foco para rack/puerto, alternativa Click-Click, diálogos/recovery, plantillas/avisos/admin/MFA.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-11.02",
+              "name": "Lector real con status/alert/nombres/relaciones/cambios dinámicos; foco/borrador tras412/reauth.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-11.03",
+              "name": "Contraste dark/light, zoom/390px; tooltips/inspector accesibles y datos actuales tras rename/move.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-11.04",
+              "name": "Capturas contra RC9adoptada front/rear/presets/estados/PoE/reportes, literales hostiles y sin clienteanterior.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-11.05",
+              "name": "Corregir reproducibles y repetir foco; revisión independiente y QA con límites voz/DOM explícitos.",
+              "status": "pending",
+              "weight_points": "5/22"
+            },
+            {
+              "id": "P-11.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W",
+      "name": "Instalación y operación Windows",
+      "weight": 15,
+      "closure_points": 3.0,
+      "children": [
+        {
+          "id": "W-01",
+          "name": "Corregir parada D14-07 y validación de edición del generador",
+          "pending_kind": "cerrado con revisión independiente",
+          "weight_points": "5/2",
+          "closed_points": 2.5,
+          "checkpoints": [
+            {
+              "id": "W-01.01",
+              "name": "Integrar publicación atómica de stop-request en el runtime de producto, conservando identidad/ACL y el caso de dos Stop concurrentes.",
+              "status": "done",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-01.02",
+              "name": "Validar edición y nombres finales antes de escribir payload/envoltorio; rechazar traversal y combinaciones de pins incoherentes sin salidas.",
+              "status": "done",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-01.03",
+              "name": "Ejecutar focos de carrera original/corregida, negativos de edición y Start/Backup/Stop/reinicio del runtime corregido.",
+              "status": "done",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-01.04",
+              "name": "Revisar los cambios y registrar hashes; no reabrir D14-05/D14-06 ya corregidos ni modificar paquetes congelados.",
+              "status": "done",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-01.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "done",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "W-02",
+          "name": "Instalar desde cero en Windows limpio y declarar la matriz soportada",
+          "pending_kind": "Ensayo Restore C cerrado con observaciones; matriz general pendiente",
+          "weight_points": "5/2",
+          "closed_points": 0.5,
+          "checkpoints": [
+            {
+              "id": "W-02.01",
+              "name": "Preparar otra VM limpia Windows Server2025 sin AD DS y registrar imagen/versión, cuentas, discos y red; conservar la VM QA.",
+              "status": "done",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-02.02",
+              "name": "Ejecutar la entrega completa sin SDK/Node/Python previos; comprobar detección/instalación de runtime, PostgreSQL17 y CRT, incluido reinicio requerido.",
+              "status": "in_progress",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-02.03",
+              "name": "Repetir con dependencias compatibles presentes; comprobar rechazo concreto de versión incompatible, puertos ocupados y DC antes de mutaciones.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-02.04",
+              "name": "Conciliar S-01 con Windows11 como posible host: ensayar todo sistema que se declare soportado. Windows11 usado sólo como cliente requiere navegador, sin servidor instalado.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-02.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "W-03",
+          "name": "Cuenta mínima, servicio Windows y arranque automático reales",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "W-03.01",
+              "name": "Instalar/verificar cuenta estándar y derecho de servicio, ACL de código/datos/claves y separación de identidades SQL runtime/migración.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-03.02",
+              "name": "Arrancar y detener por SCM; comprobar señalización, tiempos, diagnósticos, cierre limpio y fallo del hijo sin estado falso Running.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-03.03",
+              "name": "Reiniciar Windows y verificar arranque automático, readiness14, inventario persistido y tareas operativas.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-03.04",
+              "name": "Comprobar credenciales iniciales privadas y acceso administrativo recuperable, sin introducir contraseña universal.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-03.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "W-04",
+          "name": "HTTPS, certificados, red y acceso casa/trabajo en la edición final",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "W-04.01",
+              "name": "Fijar nombre/IP de aplicación, SAN, puerto y subred autorizada; no cambiar IP/DNS Windows por inferencia.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "W-04.02",
+              "name": "Instalar y verificar cadena HTTPS; distribuir sólo CA pública a navegadores clientes y comprobar otra sesión desde otro equipo.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "W-04.03",
+              "name": "Comprobar firewall limitado a la red elegida y PostgreSQL sólo local; CSRF/Origin/cookies bajo HTTPS real.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "W-04.04",
+              "name": "Ensayar cambio casa/trabajo de la edición nueva, detección y recuperación de fallo, conservando datos/cuentas.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "W-04.05",
+              "name": "Documentar y probar renovación/caducidad del certificado y recuperación de su clave; no considerar certificado de laboratorio una PKI productiva aceptada.",
+              "status": "pending",
+              "weight_points": "5/12"
+            },
+            {
+              "id": "W-04.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/12"
+            }
+          ]
+        },
+        {
+          "id": "W-05",
+          "name": "Repetición, cancelación, mantenimiento y diagnóstico del instalador",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "W-05.01",
+              "name": "Repetir instalación contra una existente: no reinicializar base, crear admin duplicado ni tomar una carpeta ajena.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-05.02",
+              "name": "Cancelar antes de aplicar y durante fases recuperables; comprobar estado final y posibilidad de continuar sin borrar evidencias.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-05.03",
+              "name": "Ensayar retirada/archivo sólo de instancias/cuentas atribuidas, conservar SID y bases; tratar elementos sin atribución con informe concreto.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-05.04",
+              "name": "Comprobar informe automático, errores y códigos de salida, y que Acceso privado abre bajo la identidad esperada sin filtrar secretos.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-05.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "W-06",
+          "name": "Recorrido completo de persistencia y concurrencia del servidor instalado",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "W-06.01",
+              "name": "Desde Systemhaus y cliente crear/editar jerarquía, rack, equipo y nota de puerto con cuenta autorizada.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-06.02",
+              "name": "Guardar, cerrar navegador, reiniciar servicio y verificar desde segunda cuenta; comparar IDs y relaciones. Verificar admin/técnico/lector y ámbitos en el mismo conjunto instalado.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-06.03",
+              "name": "Provocar conflicto simultáneo, pérdida de respuesta y reintento; confirmar una sola operación/auditoría sin éxito fantasma.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-06.04",
+              "name": "Usar los mismos resultados para cubrir los criterios compartidos de otros bloques; no repetir esta corrida por cada documento.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "W-06.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R",
+      "name": "Backup, recuperación y actualización",
+      "weight": 15,
+      "closure_points": 0.0,
+      "children": [
+        {
+          "id": "R-01",
+          "name": "Backup programado local y retención comprobada",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "R-01.01",
+              "name": "Comprobar tarea bajo cuenta mínima después del reinicio y registrar ejecución/errores sin contraseñas.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-01.02",
+              "name": "Implementar o completar retención configurable con valores documentados; nunca borrar la última copia válida por un fallo.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-01.03",
+              "name": "Ensayar backups concurrentes, falta de espacio, corte de escritura y copia incompleta; verificar que no se publican como válidos.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-01.04",
+              "name": "Medir duración y tamaño con demo; documentar RPO24h/RTO2h como objetivos propuestos, no garantías ya medidas.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-01.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "R-02",
+          "name": "Destinos USB y UNC con copia local previa y tolerancia a fallos",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "R-02.01",
+              "name": "Completar copia local consistente y después copia verificada a destino USB/UNC autorizado, con identidad y permisos mínimos.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-02.02",
+              "name": "Ensayar NAS ausente, permisos denegados, unidad retirada, disco lleno y archivo alterado: alerta y última copia válida conservada.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-02.03",
+              "name": "Restaurar desde cada destino mediante staging local privado y referencia de hash confiable.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-02.04",
+              "name": "Mantener USB en el alcance final mientras no haya decisión expresa de aplazamiento; documentar D6 sin recortar silenciosamente.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-02.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "R-03",
+          "name": "Backup cifrado de instalación y recuperación de material privado",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "R-03.01",
+              "name": "Definir manifiesto de recuperación de datos/roles/configuración/assets/certificados y referencias de claves; separar material de recuperación y paquete público.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-03.02",
+              "name": "Cifrar y autenticar backup con clave recuperable y parámetros versionados; fallo explícito por clave errónea o integridad alterada.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-03.03",
+              "name": "Integrar la protecciónSQL de F-02 y sobreTOTP de F-05; reutilizar sus resultados sin desarrollar otro cifrado para lo mismo.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-03.04",
+              "name": "Ensayar acceso mínimo, diagnóstico saneado y recuperación en otro Windows/SID, sin copiar secretos ligados al host antiguo como solución.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-03.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "R-04",
+          "name": "Recuperación completa en otro Windows y activación controlada",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "R-04.01",
+              "name": "Restaurar en VM limpia con base/roles/claves/identidad nuevos, usando backup de confianza; conservar origen sin sobrescribirlo.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-04.02",
+              "name": "Verificar conteos, referencias, grupos/permisos, assets, configuración y acceso; demostrar cookies/desafíos anteriores revocados y MFA recuperable.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-04.03",
+              "name": "Resolver frescura del backup y cambio de servicio/URL con origen quieto; declarar qué ocurre con escrituras posteriores al snapshot.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-04.04",
+              "name": "Comprobar HTTPS, login, escritura, segunda sesión, backup nuevo y reinicio real del recuperado; medir tiempo de recuperación.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-04.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "R-05",
+          "name": "Actualización y rollback compatibles con datos posteriores",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "R-05.01",
+              "name": "Definir recorrido de actualización identificado con backup previo y versiones/esquemas compatibles.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-05.02",
+              "name": "Ensayar fallo antes/durante/después de migración y publicación; mantener estado inequívoco y último conjunto recuperable.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-05.03",
+              "name": "Restaurar a base nueva cuando el esquema no permita binario antiguo; no sustituir sólo DLL sobre DB nueva.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-05.04",
+              "name": "Probar que actividad/escrituras posteriores impiden rollback silencioso; conmutación y necesidad de recuperación quedan explícitas.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-05.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        },
+        {
+          "id": "R-06",
+          "name": "Reset y recuperación administrativa delimitados",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "5/2",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "R-06.01",
+              "name": "Ensayar reinicio de laboratorio sólo sobre GUID elegido con base/roles/secretos/admin nuevos, sin tocar Windows ni otras bases.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-06.02",
+              "name": "Cancelar y repetir exigen confirmar otra vez el destino; conservar datos/cuentas/SID atribuidos y un informe recuperable.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-06.03",
+              "name": "Integrar el procedimiento de emergencia de F-09 con último administrador, revocación de sesiones/desafíos y auditoría.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-06.04",
+              "name": "Comprobar manual y canales privados para volver a acceder sin credencial universal ni extracción de secretos a logs.",
+              "status": "pending",
+              "weight_points": "1/2"
+            },
+            {
+              "id": "R-06.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "1/2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Paquete, manual, rendimiento y aceptación",
+      "weight": 10,
+      "closure_points": 0.0,
+      "children": [
+        {
+          "id": "E-01",
+          "name": "Candidata final única con fuentes y componentes compatibles",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "10/7",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "E-01.01",
+              "name": "Seleccionar fuentes revisadas de MFA/C2/GUI/operadores, con manifiesto de procedencia; conservar candidatas históricas sin mezclarlas.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-01.02",
+              "name": "Integrar componentes estables y construir una vez el conjunto coordinado; evitar otro build o ZIP por una corrección sólo documental.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-01.03",
+              "name": "Comprobar rutas/DTO/esquema/recursoslocales, app/bundle/payload/wrapper/CMD y sus pins; sin fuentes/secretos/diagnósticos privados en entrega.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-01.04",
+              "name": "Congelar versión/hashes/inventario y repetir sólo regresión pertinente tras cambios; asociar QA y manual a esos mismos bytes.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-01.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "2/7"
+            }
+          ]
+        },
+        {
+          "id": "E-02",
+          "name": "Aprovisionamiento y construcción repetibles desde fuentes oficiales",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "10/7",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "E-02.01",
+              "name": "Documentar y automatizar obtención oficial y verificación de SDK fijado, PostgreSQL17, frontend, runtime yCRT; sin cambiar pins silenciosamente.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-02.02",
+              "name": "Construir desde checkout/entorno nuevo con locks, sin rutas privadas preexistentes ni fuentes contaminadas por trabajo paralelo.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-02.03",
+              "name": "Comprobar hashes de contenidos/manifiestos y reproducibilidad declarada; explicar PDB/rutas y diferencias no deterministas.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-02.04",
+              "name": "Producir distribución, bundle e instalador con comandos públicos completos; un cliente navegador no instala SDK/Node/DB.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-02.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "2/7"
+            }
+          ]
+        },
+        {
+          "id": "E-03",
+          "name": "Inventario de dependencias, avisos y redistribución",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "10/7",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "E-03.01",
+              "name": "Inventariar componentes exactos de app/runtime/PG/CRT/frontend/fuentes y origen/hash/versión/licencia de cada uno.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-03.02",
+              "name": "Contrastar avisos y condiciones de redistribución con sus fuentes/licencias oficiales; distinguir tener un aviso de tener todo el permiso resuelto.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-03.03",
+              "name": "Resolver ausencias/condiciones y conservar decisiones; no publicar o redistribuir como entrega final antes de cerrar los puntos reales.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-03.04",
+              "name": "Verificar contenido final e informe de vulnerabilidades conocido para las versiones seleccionadas, sin cambios de versión silenciosos.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-03.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "2/7"
+            }
+          ]
+        },
+        {
+          "id": "E-04",
+          "name": "Manual autónomo de instalación, uso y operación",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "10/7",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "E-04.01",
+              "name": "Escribir pasos00→último: requisitos/cuentas/instalación/certificados/navegador/primerloginMFA, con ubicaciones y botones exactos para Wascar.",
+              "status": "pending",
+              "weight_points": "5/21"
+            },
+            {
+              "id": "E-04.02",
+              "name": "Documentar usuarios/grupos/permisos, Click-Click, guardado/conflictos, import/export, informes y límites de Dosen/Undo.",
+              "status": "pending",
+              "weight_points": "5/21"
+            },
+            {
+              "id": "E-04.03",
+              "name": "Incluir credenciales mediante acceso privado local por instancia, nunca contraseñas en manual/ZIP público; explicar conexiónSQL autorizada y mínimo privilegio.",
+              "status": "pending",
+              "weight_points": "5/21"
+            },
+            {
+              "id": "E-04.04",
+              "name": "Incluir red casa/trabajo, backup/retención/USB/UNC, restore, upgrade/rollback, emergenciaMFA, diagnóstico y recuperación.",
+              "status": "pending",
+              "weight_points": "5/21"
+            },
+            {
+              "id": "E-04.05",
+              "name": "Seguir el manual desde un host nuevo y corregir cada paso implícito; capturas reales y vocabulario de GUI EN/DE/ES sin traducir nombres del usuario.",
+              "status": "pending",
+              "weight_points": "5/21"
+            },
+            {
+              "id": "E-04.06",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "5/21"
+            }
+          ]
+        },
+        {
+          "id": "E-05",
+          "name": "QA manual por módulos sobre candidata identificada",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "10/7",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "E-05.01",
+              "name": "Vincular casos disponibles a build/hash, rol y ámbito reales; actualizar pasos exactos y resultado esperado, sin habilitar por código de desarrollo.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-05.02",
+              "name": "Conciliar resultados antiguos por fecha/versión y pedir sólo repetición afectada; conservar Pass/NotPass/observaciones originales y su exportJSON.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-05.03",
+              "name": "Preparar cuentas ficticias administrador/técnico/lector con ámbitos distintos y acceso privado, y sesiones de navegador separadas.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-05.04",
+              "name": "Ofrecer guiones pequeños por módulo para una sola persona; registrar fallos/bloqueos porID y confirmar correcciones con prueba concreta.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-05.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "2/7"
+            }
+          ]
+        },
+        {
+          "id": "E-06",
+          "name": "Medir carga real de diez usuarios y demo completa",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "10/7",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "E-06.01",
+              "name": "Preparar demo sintética prevista y diez sesiones autorizadas, combinando lectura/escritura/conflictos con ámbitos y roles.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-06.02",
+              "name": "Medir latencias por operación, errores/conflictos, memoria/CPU y consultas durante carga y recuperación; registrar entorno/duración.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-06.03",
+              "name": "Definir antes del ensayo los umbrales de aceptación prácticos y documentar límites; no inventar garantías de producción.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-06.04",
+              "name": "Corregir sólo problemas medidos y repetir el foco; no introducir Redis/índices/caché de permisos por suposición.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-06.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "2/7"
+            }
+          ]
+        },
+        {
+          "id": "E-07",
+          "name": "Revisión final y adopción explícita de Wascar",
+          "pending_kind": "pendiente de cierre",
+          "weight_points": "10/7",
+          "closed_points": 0.0,
+          "checkpoints": [
+            {
+              "id": "E-07.01",
+              "name": "Conciliar los55 criteriosS1–S4 y requisitos producto de revisión4 con evidencia, límites y casos pendientes; S-50 queda enS5.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-07.02",
+              "name": "Cerrar defectos bloqueantes y revisar seguridad/contenido/recuperación del mismo conjunto final, reutilizando pruebas válidas no afectadas.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-07.03",
+              "name": "Entregar paquete/manual/evidencias/hashes y recuperación; registrar aceptación o excepciones explícitas de Wascar.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-07.04",
+              "name": "Dejar lista separada de roadmap, soporte y decisiones futuras, sin convertir propuestas no aprobadas en cierre alcanzado.",
+              "status": "pending",
+              "weight_points": "2/7"
+            },
+            {
+              "id": "E-07.05",
+              "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
+              "status": "pending",
+              "weight_points": "2/7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

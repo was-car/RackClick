@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "edition": "08",
+  "status": "restore_C_operational_trial_closed_with_observations",
+  "allowedForQaOrProduction": false,
+  "trialBlockers": [],
+  "applicationManifestSha256": "e9c58c0c67500afc09c1ac979a7433830c96f94c2a2e4501d81286796d65d74d",
+  "payloadJsonSha256": "0d9df32b11a1c39df66cbb444739628eb8f867b06f55d2b3b3e45681ee29baa6",
+  "packageJsonSha256": "1f362949398b3da539a171b1150270599fa1761a0c7e1a7649aff31bc68972ac",
+  "artifacts": [
+    {
+      "name": "RackClick-Bundle-M3-14-08.zip",
+      "sha256": "a26856cb2bf3b9ed76384ebfe40fcc1587075708d3383e6b515246bfebb6da6f",
+      "bytes": 117388714,
+      "independentRootSha256": "a26856cb2bf3b9ed76384ebfe40fcc1587075708d3383e6b515246bfebb6da6f",
+      "identical": true
+    },
+    {
+      "name": "RackClick-Servidor-08-payload.zip",
+      "sha256": "f1988ba75ef8f278b5d64b81d7a8fb02d99a3be451e8ce70e2f97a4452538da4",
+      "bytes": 117647819,
+      "independentRootSha256": "f1988ba75ef8f278b5d64b81d7a8fb02d99a3be451e8ce70e2f97a4452538da4",
+      "identical": true
+    },
+    {
+      "name": "RackClick-Servidor-08.zip",
+      "sha256": "2855898161ed94ff36fba73b11ac2bb02e9b4d9702e4af6976e946a7307561ae",
+      "bytes": 117671370,
+      "independentRootSha256": "2855898161ed94ff36fba73b11ac2bb02e9b4d9702e4af6976e946a7307561ae",
+      "identical": true
+    },
+    {
+      "name": "RackClick-Cambiar-IP-08.zip",
+      "sha256": "c070fa06cf40808e0d43197da743bed52c00361ce05f45549ff6498b3a36c6c8",
+      "bytes": 267550,
+      "independentRootSha256": "c070fa06cf40808e0d43197da743bed52c00361ce05f45549ff6498b3a36c6c8",
+      "identical": true
+    }
+  ],
+  "nativeBundleResult": "bundle_verified",
+  "nativeVerifiedFiles": 1986,
+  "runtimeAndDatabaseVersions": {
+    "dotnetRuntime": "10.0.12",
+    "postgresql": "17.11",
+    "schema": 14,
+    "vcRedist": "14.51.36247.0",
+    "vcRuntimeMinimum": "14.44.35211.0"
+  },
+  "frozenApplicationAndService": true,
+  "windowsVmwareManualTasksOwner": "Wascar",
+  "installed": true,
+  "productAdopted": false,
+  "technicalTrialReady": true,
+  "reviewedTrialHelper": {
+    "sha256": "f63ad4b40f9c36db4b6cf010bfbe0f0035df3436b68b9db1328fa5e4ddab29a6",
+    "contractsReviewed": true,
+    "currentArtifactReference": "08",
+    "executeExercisedWithRealLauncher": false,
+    "review": "docs/REVISION-W02-PINS08-CODEX.md",
+    "independentReview": "evidence/s1-20261025/w02-pins08-codex/REVISION-INDEPENDIENTE.md"
+  },
+  "remainingValidation": [
+    "Clean install/Restore and real postboot verification on the designated Windows Server",
+    "Formal QA and production/adoption requirements remain separate"
+  ],
+  "previousReviewedTrialHelper": {
+    "sha256": "6e7fc20e2aad67a6ebefd642497d298e2d041a0b5a92ac5678af3aa108c4e5b8",
+    "contractsReviewed": true,
+    "currentArtifactReference": "07",
+    "executeExercisedWithRealLauncher": false,
+    "review": "evidence/s1-20261025/w02-r3b-ronda2-codex/REVISION.md"
+  },
+  "trialContinuation": {
+    "designatedDestination": "VM C only",
+    "proceedAfterSuccessfulDestinationChecks": true,
+    "developmentAuthorizationAlreadyGranted": true,
+    "review": "docs/REVISION-W02-PINS08-CODEX.md",
+    "procedureReviewedSha256": "22c106ffa6a09b8bc91108aa70b17704056ec9d13798dfbc2a5bbaf0dd1071f8",
+    "procedureClarificationsInReview": [
+      "Backup manifest format version is not SQL schema",
+      "Names absent from manifest do not prove account availability"
+    ]
+  },
+  "destinationPreflight": {
+    "computerName": "WIN-O8PBF3UU7T7",
+    "bindAddress": "192.168.206.131",
+    "guestPlanPath": "C:\\W02\\hojas\\restore-c.json",
+    "planSha256": "939cd061d68c820be5d7a9b8db0f3aefb78fcdd6a598234ee57097ba5a0aedfb",
+    "planId": "be68c7be-6130-4f54-9f45-3250a63decbc",
+    "checkStatus": "pass",
+    "planStatus": "pass",
+    "checkGeneratedUtc": "2026-10-25T19:37:35.1583570Z",
+    "planGeneratedUtc": "2026-10-25T19:37:40.0859899Z",
+    "observedFromCopiedReports": true,
+    "executedByCodex": false,
+    "standaloneCheckPorts": "not_checked",
+    "requiresFreshExecuteChecksIncludingPorts": true,
+    "snapshotRevertRequiredNow": false,
+    "installed": false,
+    "qaOrProductionAllowed": false,
+    "coordination": "docs/MENSAJE-PARA-CLAUDE-C-CONTINUAR-25-10-2026.md",
+    "historicalSnapshot": true
+  },
+  "technicalTrial": {
+    "scope": "VM C de laboratorio; Restore 08, no adopción",
+    "computerName": "WIN-O8PBF3UU7T7",
+    "installationId": "54ce3eec-940e-4b22-a004-ed118f052c19",
+    "bootUtc": "2026-10-25T20:07:16.5000000Z",
+    "measuredUtc": "2026-10-25T20:18:07.8226016Z",
+    "installedBy": "Claude/Wascar; comprobación posterior Codex",
+    "service": "Running",
+    "health": "ready",
+    "schemaVersion": 14,
+    "postboot": "postboot_verified",
+    "apiCustomerVerified": true,
+    "visualBrowserVerified": false,
+    "testSessionLoggedOut": true,
+    "operatorExitObserved": false,
+    "reconcile": "unknown",
+    "systemhausPlanLiteralMatches": false,
+    "fullDependencyMatrixClosed": false,
+    "productAdopted": false,
+    "evidence": [
+      "docs/REVISION-W02-RESTORE-C-CODEX.md",
+      "evidence/s1-20261025/w02-restore-c-codex/CIERRE.md"
+    ],
+    "operationalTrialClosed": true,
+    "closedWithObservations": true,
+    "userFunctionalAcceptanceReported": true,
+    "acceptedBy": "Wascar",
+    "acceptanceDate": "2026-10-25",
+    "additionalVisualRepeatRequiredForThisTrial": false,
+    "collectorWorkRequestedNow": false,
+    "closureDecision": "docs/MENSAJE-PARA-CLAUDE-C-CERRADO-25-10-2026.md",
+    "vmPowerStateReported": {
+      "state": "poweredOff",
+      "reportedBy": "Wascar",
+      "date": "2026-10-25",
+      "verifiedByCodex": false
+    }
+  }
+}

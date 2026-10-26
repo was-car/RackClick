@@ -1,0 +1,14 @@
+#!/bin/sh
+# Explicit opt-in: python tools/security/secret_scan.py install-hook
+# Reads staged regular files only; missing tools and scanner failures block commit.
+set -eu
+root=$(git rev-parse --show-toplevel)
+if [ -x /c/Python312/python.exe ]; then
+  exec /c/Python312/python.exe -B "$root/tools/security/secret_scan.py" scan --repo "$root" --mode staged
+elif command -v python3 >/dev/null 2>&1; then
+  exec python3 -B "$root/tools/security/secret_scan.py" scan --repo "$root" --mode staged
+elif command -v python >/dev/null 2>&1; then
+  exec python -B "$root/tools/security/secret_scan.py" scan --repo "$root" --mode staged
+fi
+echo 'RackClick: Python 3 requerido; commit bloqueado.' >&2
+exit 2

@@ -1,0 +1,53 @@
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {runScenario,infrastructure,snapshot,saved,submit,normalize,fixture as f,poll} from './browser-quince-support.mjs';
+
+const journal=t=>t.evaluate(`new Promise((resolve,reject)=>{const r=indexedDB.open('RackClick.PendingOperations.v1',1);r.onerror=()=>reject(Error('journal'));r.onsuccess=()=>{const db=r.result,q=db.transaction('pending').objectStore('pending').getAll();q.onsuccess=()=>{db.close();resolve(q.result)}}})`);
+await runScenario(async({first:admin,session,checks,shot,out,origin,responses})=>{
+ const original=await snapshot(admin),deleteGrant=await admin.evaluate('crypto.randomUUID()'),editGrant=await admin.evaluate('crypto.randomUUID()');
+ async function grant(capability,assigned){
+  const grantId=capability==='inventory.delete'?deleteGrant:editGrant;
+  await admin.evaluate(`(async()=>{const m=await fetch('/api/v1/me').then(r=>r.json()),g=await fetch('/api/v1/admin/user-groups').then(r=>r.json());const r=await fetch('/api/v1/admin/user-groups/${f.techGroup}/grants',{method:'POST',headers:{'Content-Type':'application/json','X-RackClick-CSRF':m.csrf,'X-RackClick-Actor':m.user.id,'If-Match':'"'+g.revision+'"','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify(${JSON.stringify({grantId,capability,scope:'customer',targetId:f.customer,assigned})})});if(!r.ok)throw Error('grant '+r.status)})()`);
+ }
+ async function command(type,payload){return admin.evaluate(`(async()=>{const m=await fetch('/api/v1/me').then(r=>r.json()),p=await fetch('/api/v1/customers/${f.customer}/project').then(r=>r.json());const r=await fetch('/api/v1/customers/${f.customer}/commands',{method:'POST',headers:{'Content-Type':'application/json','X-RackClick-CSRF':m.csrf,'X-RackClick-Actor':m.user.id,'If-Match':'"'+p.revision+'"','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify(${JSON.stringify({type,payload})})});if(!r.ok)throw Error('fixture command '+r.status);return (await r.json()).result.resourceId})()`)}
+ const site=await command('site.create',{name:'Delete permission site'});
+ const building=await command('building.create',{name:'Delete permission building',siteId:site});
+ const room=await command('room.create',{name:'Delete permission room',buildingId:building});
+ const rack=await command('rack.create',{name:'Delete permission rack',roomId:room,sizeU:12});
+ const objects=[];
+ for(const kind of ['dose','endDevice','dose'])objects.push(await command('device.create',{kind,roomId:room,name:'Delete permission '+kind+' '+objects.length,portGroups:[{type:'rj45',count:1,name:'Synthetic',prefix:'S'}]}));
+ await grant('inventory.delete',true);
+ const tech=await session('move-technician');await infrastructure(tech);
+ async function permission(edit,del){const caps=await tech.evaluate(`fetch('/api/v1/me').then(r=>r.json()).then(m=>m.permissions.customers.find(c=>c.customerId==='${f.customer}').capabilities)`);assert.ok(caps.includes('inventory.read'));assert.equal(caps.includes('inventory.edit'),edit);assert.equal(caps.includes('inventory.delete'),del)}
+ await permission(false,true);
+ assert.equal(await tech.evaluate(`[...document.querySelector('[data-site-id="${site}"]').querySelectorAll('button')].some(b=>b.textContent.trim()==='Eliminar')`),true,'delete-only user must have individual delete controls');
+ assert.equal(await tech.evaluate(`[...document.querySelector('[data-site-id="${site}"]').querySelectorAll('button')].some(b=>b.textContent.trim()==='Editar')`),false,'delete does not grant edit controls');
+ const prepared=await snapshot(tech);
+ const editDenied=await tech.evaluate(`(async()=>{const m=await fetch('/api/v1/me').then(r=>r.json());return (await fetch('/api/v1/customers/${f.customer}/commands',{method:'POST',headers:{'Content-Type':'application/json','X-RackClick-CSRF':m.csrf,'X-RackClick-Actor':m.user.id,'If-Match':'"${prepared.revision}"','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify({type:'rack.update',payload:{id:'${rack}',name:'Must not change'}})})).status})()`);
+ assert.equal(editDenied,403);assert.deepEqual(normalize(await snapshot(tech)),normalize(prepared));
+ async function remove(selector){await tech.evaluate(`(()=>{const el=document.querySelector(${JSON.stringify(selector)}),b=[...el.querySelectorAll('button')].find(b=>b.textContent.trim()==='Eliminar');if(!b)throw Error('delete control missing');b.click()})()`);await tech.wait(`!!document.querySelector('dialog[open]')`,'delete dialog')}
+ async function refreshPermission(allowed){await tech.evaluate(`[...document.querySelectorAll('.rc-customer-header button')].find(b=>b.textContent==='Actualizar').click()`);await tech.wait(`document.querySelector('dialog button[type=submit]')?.disabled===${!allowed}`,'current delete permission reflected')}
+ async function preview(){await submit(tech);await tech.wait(`!!document.querySelector('[data-impact-kind="deviceIds"]')||!!document.querySelector('[data-impact-kind="rackIds"]')`,'delete impact')}
+ async function lose(stage){await tech.send('Fetch.enable',{patterns:[{urlPattern:origin+'/api/v1/customers/'+f.customer+'/commands',requestStage:stage}]});await submit(tech);const paused=await poll(()=>tech.paused?.shift(),'held delete '+stage);if(stage==='Response')assert.equal(paused.responseStatusCode,200);await tech.send('Fetch.failRequest',{requestId:paused.requestId,errorReason:'Failed'});await tech.send('Fetch.disable');await tech.wait(`!!document.querySelector('dialog [role=alert]')&&!document.querySelector('[data-query-pending]').disabled`,'uncertain original delete');return (await journal(tech))[0]}
+ async function recover(){await tech.send('Page.reload',{ignoreCache:true});await tech.wait(`!!document.querySelector('.ir-nav')`,'reloaded session');await tech.click(`[data-customer-id="${f.customer}"]`);await tech.wait(`[...document.querySelectorAll('.rc-inventory .ir-warning button')].some(b=>b.textContent==='Recuperar operación pendiente'&&!b.disabled)`,'pending inventory ready');await tech.button('Recuperar operación pendiente');await tech.wait(`!!document.querySelector('[data-query-pending]')`,'original delete recovered')}
+ await remove(`[data-room-device-id="${objects[2]}"]`);await preview();await grant('inventory.delete',false);await refreshPermission(false);
+ const count=responses.filter(x=>x.path.endsWith('/commands')).length;await submit(tech);await tech.evaluate('new Promise(r=>setTimeout(r,100))');assert.equal(responses.filter(x=>x.path.endsWith('/commands')).length,count);assert.equal((await journal(tech)).length,0);assert.ok((await snapshot(tech)).devices.some(d=>d.id===objects[2]));
+ await grant('inventory.delete',true);await refreshPermission(true);await submit(tech);await saved(tech);assert.equal((await snapshot(tech)).devices.some(d=>d.id===objects[2]),false);
+ checks.push('READ+DELETE without EDIT exposes individual delete controls but not edit. Server rejects direct rack.update403. Revoking DELETE while preview is open blocks dispatch and preserves data; restoring DELETE permits the confirmed individual removal.');
+
+ for(const id of objects.slice(0,2))await tech.click(`[data-select-device="${id}"]`);
+ await tech.click('[data-delete-selected]');await preview();const pending=await lose('Request');assert.equal(JSON.parse(pending.operation.body).type,'devices.delete');await recover();assert.deepEqual((await journal(tech))[0],pending);
+ await grant('inventory.delete',false);await grant('inventory.edit',true);await refreshPermission(false);await permission(true,false);
+ const replayDenied=await tech.evaluate(`(async()=>{const m=await fetch('/api/v1/me').then(r=>r.json());return (await fetch('/api/v1/customers/${f.customer}/commands',{method:'POST',headers:{'Content-Type':'application/json','X-RackClick-CSRF':m.csrf,'X-RackClick-Actor':m.user.id,'If-Match':${JSON.stringify(pending.operation.etag)},'Idempotency-Key':${JSON.stringify(pending.requestId)}},body:${JSON.stringify(pending.operation.body)}})).status})()`);
+ assert.equal(replayDenied,403);assert.deepEqual((await journal(tech))[0],pending);await tech.click('[data-query-pending]');await tech.wait(`document.querySelector('[data-operation-query-status]')?.dataset.operationQueryStatus==='notRecorded'`,'original lookup still readable');assert.deepEqual((await journal(tech))[0],pending);await shot(tech,'edit-without-delete-recovery.png');
+ await grant('inventory.edit',false);await grant('inventory.delete',true);await refreshPermission(true);await permission(false,true);
+ await tech.send('Fetch.enable',{patterns:[{urlPattern:origin+'/api/v1/customers/'+f.customer+'/commands',requestStage:'Request'}]});await submit(tech);const replay=await poll(()=>tech.paused?.shift(),'original delete retry');const header=name=>Object.entries(replay.request.headers).find(([k])=>k.toLowerCase()===name)?.[1];assert.equal(replay.request.postData,pending.operation.body);assert.equal(header('idempotency-key'),pending.requestId);assert.equal(header('if-match'),pending.operation.etag);assert.equal(header('x-rackclick-actor'),pending.actorId);await tech.send('Fetch.continueRequest',{requestId:replay.requestId});await tech.send('Fetch.disable');await saved(tech);assert.equal((await journal(tech)).length,0);
+ checks.push('Mixed room-object batch recovers after a full reload. EDIT without DELETE cannot retry its original delete and direct POST returns403; READ still queries notRecorded. Restoring DELETE alone sends the original body/actor/key/ETag once and clears only its journal.');
+
+ await remove(`[data-rack-id="${rack}"]`);await preview();const committed=await lose('Response');assert.equal((await snapshot(tech)).racks.some(r=>r.id===rack),false);await recover();assert.deepEqual((await journal(tech))[0],committed);await tech.click('[data-query-pending]');await saved(tech);assert.equal((await journal(tech)).length,0);
+ for(const [kind,id]of[['room',room],['building',building],['site',site]]){await remove(`[data-${kind}-id="${id}"]`);await submit(tech);await saved(tech)}
+ const final=await snapshot(tech),state=p=>{const v=normalize(p);v.revision=0;return v};assert.deepEqual(state(final),state(original));await permission(false,true);await shot(tech,'delete-only-complete.png');await grant('inventory.delete',false);
+ checks.push('DELETE-only rack removal with a lost committed response survives reload and resolves by GET without resending. Empty room/building/site deletes succeed with DELETE alone. All original inventory, endpoints and attributes remain exact. Temporary customer-specific grants are removed.');
+ await writeFile(path.join(out,'expected-project.json'),JSON.stringify(final,null,2)+'\n');
+});

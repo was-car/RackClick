@@ -1,0 +1,4 @@
+title = "RackClick: reglas oficiales, sin baseline ni exclusiones globales"
+
+[extend]
+useDefault = true

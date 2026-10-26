@@ -1,0 +1,42 @@
+# Local tools, generated secrets, lab clusters and temporary outputs
+/.local/
+/.artifacts/
+**/bin/
+**/obj/
+**/node_modules/
+**/__pycache__/
+**/.venv/
+*.pyc
+*.pfx
+*.p12
+*.key
+.env
+.env.*
+appsettings.Local.json
+*.user
+*.suo
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+# Audit working copies; original references and reports remain tracked
+/evidence/recepcion-*/qa-fixtures/
+/evidence/recepcion-*/rc9-inspeccion/
+/development/frontend/rc9-reference/
+/development/frontend/dist/
+*.download
+/RackClick-backup-all.json
+# User-owned manual QA exports remain private and must not enter development packages.
+/Resultados-QA-Wascar-*.json
+# Build diagnostics and memory snapshots may contain environment values/secrets.
+*.binlog
+*.dmp
+
+# Private publication: do not add local reports or installer/data archives.
+/evidence/
+/docs/PROYECTOS-REFERENCIA/
+/.codex/
+*.log
+*.trx
+/RackClick-*.zip
+/Administrator Windows PowerShell.txt

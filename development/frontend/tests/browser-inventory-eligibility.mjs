@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {runScenario,infrastructure,snapshot,saved,submit,normalize,fixture as ids} from './browser-quince-support.mjs';
+const journal=tab=>tab.evaluate(`new Promise((resolve,reject)=>{const r=indexedDB.open('RackClick.PendingOperations.v1',1);r.onerror=()=>reject(Error('journal'));r.onsuccess=()=>{const db=r.result,q=db.transaction('pending').objectStore('pending').getAll();q.onsuccess=()=>{db.close();resolve(q.result)}}})`);
+const state=p=>{const value=normalize(p);value.revision=0;return value};
+await runScenario(async({first,session,checks,shot,out,responses})=>{
+ await infrastructure(first);const original=await snapshot(first),second=await session('move-second');
+ await first.click(`[data-rack-id="${ids.rackA}"] .rc-rack-open`);await first.wait(`!!document.querySelector('[data-edit-groups="${ids.a}"]')`,'rack editor');
+ await first.click(`[data-edit-groups="${ids.a}"]`);await first.wait(`!!document.querySelector('dialog .rc-port-groups')`,'groups');await first.field('dialog .rc-port-groups > div:first-of-type input[type=number]','1');await submit(first);await saved(first);
+ const grown=await snapshot(first);await first.click('[data-undo-groups]');await first.wait(`!!document.querySelector('[data-confirm-group-undo]')`,'undo scope');await first.click('[data-confirm-group-undo]');
+ // A real second actor commits a no-op value, advancing revision/audit without altering the nine inventory tables.
+ await second.evaluate(`(async()=>{const me=await fetch('/api/v1/me').then(r=>r.json()),p=await fetch('/api/v1/customers/${ids.customer}/project').then(r=>r.json());const r=await fetch('/api/v1/customers/${ids.customer}/commands',{method:'POST',headers:{'Content-Type':'application/json','X-RackClick-CSRF':me.csrf,'X-RackClick-Actor':me.user.id,'If-Match':'"'+p.revision+'"','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify({type:'rack.update',payload:{id:'${ids.rackB}',location:p.racks.find(x=>x.id==='${ids.rackB}').location}})});if(!r.ok)throw Error('remote '+r.status);return r.json()})()`);
+ await first.wait(`!!document.querySelector('[data-undo-stale]')&&document.querySelector('dialog button[type=submit]').disabled`,'published revision disables old draft');
+ assert.equal((await journal(first)).length,0);const before=responses.filter(x=>x.path.endsWith('/commands')).length;await submit(first);await first.evaluate(`new Promise(r=>setTimeout(r,100))`);assert.equal(responses.filter(x=>x.path.endsWith('/commands')).length,before);assert.equal((await journal(first)).length,0);
+ await shot(first,'revision-blocked.png');await first.button('Cancelar');await first.button('Actualizar');await first.wait(`!document.querySelector('.rc-inventory-toolbar button:disabled')`,'explicit refresh');
+ checks.push('A real remote commit is observed while group undo is open; the old draft is disabled and a controlled form submit creates no journal or command.');
+ await first.click(`[data-edit-groups="${ids.a}"]`);await first.wait(`!!document.querySelector('dialog .rc-port-groups')`,'authority draft');
+ const actor=await first.evaluate(`fetch('/api/v1/me').then(r=>r.json()).then(x=>x.user.id)`);
+ const group=await second.evaluate(`fetch('/api/v1/admin/user-groups').then(r=>r.json()).then(x=>x.groups.find(g=>g.members.some(u=>u.id==='${actor}')).id)`);
+ async function membership(assigned){return second.evaluate(`(async()=>{const me=await fetch('/api/v1/me').then(r=>r.json()),g=await fetch('/api/v1/admin/user-groups').then(r=>r.json());const r=await fetch('/api/v1/admin/user-groups/${group}/members',{method:'POST',headers:{'Content-Type':'application/json','X-RackClick-CSRF':me.csrf,'X-RackClick-Actor':me.user.id,'If-Match':'"'+g.revision+'"','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify({userId:'${actor}',assigned:${assigned}})});if(!r.ok)throw Error('membership '+r.status);return r.json()})()`)}
+ await membership(false);
+ await first.wait(`!!document.querySelector('[data-change-authority]')&&document.querySelector('dialog button[type=submit]').disabled`,'server revocation observed');
+ await submit(first);assert.equal((await journal(first)).length,0);
+ const denied=await first.evaluate(`(async()=>{const me=await fetch('/api/v1/me').then(r=>r.json());const r=await fetch('/api/v1/customers/${ids.customer}/commands',{method:'POST',headers:{'Content-Type':'application/json','X-RackClick-CSRF':me.csrf,'X-RackClick-Actor':me.user.id,'If-Match':'"${grown.revision+1}"','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify({type:'rack.update',payload:{id:'${ids.rackB}',location:'must not be stored'}})});return r.status})()`);assert.ok([403,404].includes(denied));
+ await shot(first,'authority-blocked.png');await membership(true);await first.button('Cancelar');await first.button('Todos los clientes');await first.wait(`!!document.querySelector('[data-customer-id="${ids.customer}"]')`,'return home');await infrastructure(first);
+ checks.push('A second real administrator revokes the first actor membership; change notices receive a denial and disable the open draft. A direct HTTP bypass is also denied by the server. Membership restored only in the isolated lab.');
+ const current=await snapshot(first);assert.deepEqual(state(current),state(grown));
+ await first.click(`[data-rack-id="${ids.rackA}"] .rc-rack-open`);await first.wait(`!!document.querySelector('[data-edit-groups="${ids.a}"]')`,'cleanup rack');await first.click(`[data-edit-groups="${ids.a}"]`);await first.wait(`!!document.querySelector('dialog .rc-port-groups')`,'cleanup groups');
+ const added=current.ports.find(p=>!original.ports.some(o=>o.id===p.id));assert.ok(added);const position=current.ports.filter(p=>p.groupId===ids.ga).findIndex(p=>p.id===added.id);await first.evaluate(`document.querySelectorAll('dialog .rc-port-groups > div:first-of-type .rc-port-selection input')[${position}].click()`);await submit(first);await first.wait(`[...document.querySelectorAll('dialog button')].some(b=>b.textContent==='Confirmar eliminación')`,'cleanup preview');await submit(first);await saved(first);
+ const final=await snapshot(first);assert.deepEqual(state(final),state(original));assert.equal((await journal(first)).length,0);checks.push('Normal explicitly refreshed editing remains available; cleanup restores the original synthetic inventory exactly.');await writeFile(path.join(out,'expected-project.json'),JSON.stringify(final,null,2)+'\n');
+});

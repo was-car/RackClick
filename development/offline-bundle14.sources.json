@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "lockProfile": "14",
+  "dotnetRuntime": "10.0.12",
+  "postgresql": "17.11",
+  "vcRedist": "14.51.36247.0",
+  "vcRuntimeMinimum": "14.44.35211.0",
+  "vcRedistSha256": "843068991daaa1f73ad9f6239bce4d0f6a07a51f18c37ea2a867e9beca71295c",
+  "npgsqlLicenseSha256": "2e1d9cc6ed4eb7fe6fa82091846c06b4f58571a2c3b54777db6baeca10dd2d74",
+  "npgsqlSourceCommit": "d3768398c17877b3a916c3c4d87e8e11698991fc",
+  "otpNetVersion": "1.4.1",
+  "otpNetLicenseSha256": "0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472",
+  "otpNetSourceCommit": "83b39e1f2a5bfc87b6d1af15b91bffc6f1638429",
+  "otpNetPackageSha256": "3380499e3d07dadf549465ccebddd678f66e34c3127eb677922afde650cb7cc4",
+  "sources": [
+    {
+      "name": "vc_redist.x64.exe",
+      "url": "https://aka.ms/vc14/vc_redist.x64.exe",
+      "resolvedUrl": "https://download.visualstudio.microsoft.com/download/pr/ebdab8e5-1d7b-4d9f-a11b-cbb1720c3b12/843068991DAAA1F73AD9F6239BCE4D0F6A07A51F18C37EA2A867E9BECA71295C/VC_redist.x64.exe",
+      "path": ".local/downloads/offline338-a5868b98276445ff8e9b0d9571ca001a/vc_redist.x64.exe",
+      "bytes": 18731856,
+      "sha256": "843068991daaa1f73ad9f6239bce4d0f6a07a51f18c37ea2a867e9beca71295c"
+    },
+    {
+      "name": "Npgsql-LICENSE",
+      "url": "https://raw.githubusercontent.com/npgsql/npgsql/d3768398c17877b3a916c3c4d87e8e11698991fc/LICENSE",
+      "resolvedUrl": "https://raw.githubusercontent.com/npgsql/npgsql/d3768398c17877b3a916c3c4d87e8e11698991fc/LICENSE",
+      "path": ".local/downloads/offline338-a5868b98276445ff8e9b0d9571ca001a/Npgsql-LICENSE",
+      "bytes": 903,
+      "sha256": "2e1d9cc6ed4eb7fe6fa82091846c06b4f58571a2c3b54777db6baeca10dd2d74"
+    },
+    {
+      "name": "Otp.NET-LICENSE",
+      "url": "https://raw.githubusercontent.com/kspearrin/Otp.NET/83b39e1f2a5bfc87b6d1af15b91bffc6f1638429/LICENSE.txt",
+      "resolvedUrl": "https://raw.githubusercontent.com/kspearrin/Otp.NET/83b39e1f2a5bfc87b6d1af15b91bffc6f1638429/LICENSE.txt",
+      "path": ".local/downloads/offline14-otpnet/Otp.NET-LICENSE.txt",
+      "bytes": 1070,
+      "sha256": "0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472"
+    }
+  ],
+  "sourceToolchainLock": "development/toolchain.lock.json",
+  "internalOnly": true
+}

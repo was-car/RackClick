@@ -1,0 +1,57 @@
+{
+  "baseline_id": "RC-CIERRE-20261025-v1",
+  "measurement_kind": "remaining_work_closure_not_product_progress",
+  "global_product_percentage": null,
+  "historical_78_retired": true,
+  "closure_points": 7.630952380952381,
+  "total_closure_points": 100,
+  "tasks": 53,
+  "scored_tasks": 50,
+  "completed_tasks": 1,
+  "checkpoints": 280,
+  "criteria_covered": 55,
+  "areas": [
+    {
+      "id": "F",
+      "name": "Fundamento, seguridad y MFA",
+      "assigned": 25,
+      "closed": 1.0
+    },
+    {
+      "id": "I",
+      "name": "Jerarquía, inventario y colaboración",
+      "assigned": 15,
+      "closed": 3.630952380952381
+    },
+    {
+      "id": "A",
+      "name": "Usuarios, grupos y administración",
+      "assigned": 5,
+      "closed": 0.0
+    },
+    {
+      "id": "P",
+      "name": "Paridad funcional y visual RC9",
+      "assigned": 15,
+      "closed": 0.0
+    },
+    {
+      "id": "W",
+      "name": "Instalación y operación Windows",
+      "assigned": 15,
+      "closed": 3.0
+    },
+    {
+      "id": "R",
+      "name": "Backup, recuperación y actualización",
+      "assigned": 15,
+      "closed": 0.0
+    },
+    {
+      "id": "E",
+      "name": "Paquete, manual, rendimiento y aceptación",
+      "assigned": 10,
+      "closed": 0.0
+    }
+  ]
+}

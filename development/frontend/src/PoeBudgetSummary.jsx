@@ -1,0 +1,14 @@
+import { poeBudget } from './poe-budget.ts';
+const words = {
+ en: { title:'PoE budget', known:'Known documented watts', budget:'Budget', unknown:'Unknown watts', eligible:'PoE ON ports', missing:'Not documented', incomplete:'Incomplete data: known watts are not a complete consumption total.', exceeded:'Known watts exceed budget.', note:'RJ45 PoE ON only, including disabled/faulty ports. OFF and AC excluded; documented watts retained. No electrical measurement or circuit certification.', empty:'No devices in this view.' },
+ de: { title:'PoE-Budget', known:'Bekannte dokumentierte Watt', budget:'Budget', unknown:'Unbekannte Wattwerte', eligible:'PoE-ON-Ports', missing:'Nicht dokumentiert', incomplete:'Unvollständige Daten: bekannte Wattwerte sind kein vollständiger Gesamtverbrauch.', exceeded:'Bekannte Wattwerte überschreiten das Budget.', note:'Nur RJ45 PoE ON, einschließlich deaktivierter/defekter Ports. OFF und AC ausgeschlossen; dokumentierte Wattwerte bleiben erhalten. Keine elektrische Messung oder Stromkreiszertifizierung.', empty:'Keine Geräte in dieser Ansicht.' },
+ es: { title:'Presupuesto PoE', known:'Watts documentados conocidos', budget:'Presupuesto', unknown:'Watts desconocidos', eligible:'Puertos PoE ON', missing:'No documentado', incomplete:'Datos incompletos: los watts conocidos no son el consumo total completo.', exceeded:'Los watts conocidos superan el presupuesto.', note:'Sólo RJ45 PoE ON, incluidos puertos deshabilitados/defectuosos. OFF y AC excluidos; se conservan los watts documentados. Sin medición eléctrica ni certificación de circuitos.', empty:'Sin equipos en esta vista.' }
+};
+export function PoeBudgetSummary({ snapshot, rackId, lang }) {
+ const w = words[lang] || words.en, devices = snapshot.devices.filter(d => !rackId || d.rackId === rackId);
+ const counts = new Map(); for (const d of snapshot.devices) counts.set(d.name, (counts.get(d.name) || 0) + 1);
+ return <section className="ir-inspector" data-poe-budget-summary aria-label={w.title} style={{overflowWrap:'anywhere'}}><h2>{w.title}</h2><p>{w.note}</p>{!devices.length && <p>{w.empty}</p>}{devices.map(d => {
+  const stats = poeBudget(d, snapshot.ports.filter(p => p.deviceId === d.id));
+  return <article key={d.id} data-poe-device={d.id} style={{borderBottom:'1px solid var(--border)',paddingBlock:8}}><h3>{d.name}{counts.get(d.name) > 1 && <small> · {d.id}</small>}</h3><dl><dt>{w.known}</dt><dd data-poe-known>{stats.sum} W</dd><dt>{w.budget}</dt><dd data-poe-limit>{stats.budget === null ? w.missing : stats.budget + ' W'}</dd><dt>{w.eligible}</dt><dd data-poe-eligible>{stats.eligible}</dd><dt>{w.unknown}</dt><dd data-poe-unknown>{stats.unknown}</dd></dl>{stats.exceeded && <p className="ir-warning" data-poe-exceeded role="status">{w.exceeded}</p>}{stats.incomplete && <p data-poe-incomplete>{w.incomplete}</p>}</article>;
+ })}</section>;
+}

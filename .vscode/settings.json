@@ -1,0 +1,15 @@
+{
+  "dotnet.defaultSolution": "development/server/RackClick.sln",
+  "files.exclude": {
+    "**/.local": true,
+    "**/.artifacts": true
+  },
+  "files.watcherExclude": {
+    "**/.local/**": true,
+    "**/.artifacts/**": true
+  },
+  "search.exclude": {
+    "**/.local/**": true,
+    "**/.artifacts/**": true
+  }
+}

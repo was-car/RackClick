@@ -1,0 +1,12 @@
+{
+  "name": "rackclick-v090-offline",
+  "version": "0.9.0-rc9",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "test:build": "node tests/test_build_negative.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
+}
