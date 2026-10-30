@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "kind": "RackClickTwoHostPlan",
+  "state": "host_versions_and_subnet_reported_inventory_and_conflict_check_pending",
+  "usageModel": {"allUsersUseWebBrowser": true, "rackClickClientInstallationRequired": false, "browserHostInventoryRequired": false, "serverHostOptions": ["Windows Server 2025", "Windows 11 Pro"], "selectedServerHost": null, "inventoryOnlyForProspectiveServerHosts": true},
+  "server": {"reportedByUser": "Microsoft Windows Server 2025 Standard", "reportedVersion": "24H2", "reportedBuild": "26100.33438", "actualProduct": null, "build": null, "hostname": null, "ip": null, "serviceIdentity": null, "installPath": null, "dataPath": null, "backupDestination": null},
+  "alternateServerHost": {"reportedByUser": "Windows 11 Pro", "reportedVersion": "26H2", "reportedBuild": "26300.9711", "actualBuild": null, "ip": null, "purpose": "Optional RackClick server host; browser-only use needs no local application installation or host inventory."},
+  "network": {"sameNetworkConfirmedByUser": true, "userReportedPingSuccessful": true, "allowedSubnet": "192.168.178.0/24", "httpsOrigin": null, "certificateSource": null, "trustMethod": null},
+  "proposalNotApplied": {"appliesToOneSelectedServerHostOnly": true, "simultaneousServerHostsRequireDistinctNamesAndIPs": true, "serverHostname": "rackclick-svr", "serverIPv4": "192.168.178.50", "prefixLength": 24, "httpsPort": 5443, "postgresqlPort": 55441, "postgresqlListen": "127.0.0.1", "requiresActualInventory": true, "requiresAddressConflictAndDhcpReservationCheck": true, "requiresHostnameAndPortAvailabilityCheck": true, "gatewayAndDnsMustBePreservedFromActualNetwork": true},
+  "currentApplicationBundle": {"frontendRevision": 1449, "serverRevision": 1089, "schema": 13, "sha256": "a0df90ed3a2864492d8d9bdc2cc2e552113a6b9c81a3e603c1c2920486c26869", "mode": "loopback_only", "includedInPreparationKit": false},
+  "remainingC4": ["controlled_LAN_listen_origin", "real_hostname_TLS_and_client_trust", "minimum_privilege_service_identity", "SCM_and_automatic_start", "restricted_firewall", "clean_host_install_restart_and_recovery_test"],
+  "installationOrCompatibilityApproved": false,
+  "overallProgressApproximatePercent": 78
+}
