@@ -1,0 +1,65 @@
+RackClick - COMPROBACION DE LECTURA con el token del servicio (L2l02)
+=====================================================================
+
+Lo que es: una comprobacion aislada que pregunta si el proceso real del servicio RackClick puede leer la clave
+activa del ensayo que ya se ejecuto (la raiz RackClick-MFA-Ensayo-03-<UUID>), usando su propio token, sin contraseñas.
+
+Lo que NO es: no es instalador ni actualizacion. No activa MFA ni MfaKeyStore:Enabled. No cambia el servicio, su cuenta,
+su configuracion, la base de datos ni el firewall. No crea, repara ni rota claves. No escribe en el almacen.
+MFA no queda disponible para ningun usuario.
+
+
+1. Requisitos
+-------------
+- La VM de ensayo, con RackClick instalado y el servicio existente en marcha.
+- PowerShell de administrador en la carpeta extraida de este paquete.
+- El SHA256 de SHA256SUMS que entrega el equipo de desarrollo por un canal separado del ZIP.
+- Haber verificado el ZIP con Get-FileHash antes de extraerlo.
+
+
+2. Pasos
+--------
+a) Compruebe el paquete (solo lectura):
+       .\Invoke-MfaServiceReadTrial.ps1 -Mode Check -ServiceName '<NOMBRE-EXACTO-DEL-SERVICIO>' -ExpectedSumsSha256 '<SHA256 de SHA256SUMS>'
+   Debe mostrar: elevacion observada si, paquete verificado, el servicio y su estado, y el codigo {"status":"ready"}.
+b) Ejecute la comprobacion una sola vez:
+       .\Invoke-MfaServiceReadTrial.ps1 -Mode Run -ServiceName '<NOMBRE-EXACTO-DEL-SERVICIO>' -ExpectedSumsSha256 '<SHA256 de SHA256SUMS>'
+c) Escriba exactamente la frase que aparece: CONFIRMO LECTURA L2L <UUID mostrado>.
+d) Resultado correcto: "Resultado: passed", codigo vacio, identidad restaurada si, huella sin cambios, y la linea
+   {"status":"passed","code":""}. Si algo no coincide, no lo repita: guarde la pantalla y avise.
+
+
+3. Que comprueba
+----------------
+- El servicio por su nombre exacto, en estado Running, y el proceso que tiene ese PID.
+- Que el binario de ese proceso coincide con el binario registrado del servicio.
+- Que el token del proceso pertenece a la cuenta de inicio del servicio.
+- Que, dentro de esa identidad, el proveedor aprobado lee la clave activa (32 bytes) sin mostrarla.
+- Que esa identidad no puede escribir en la raiz, la carpeta de instalacion, la carpeta de claves ni sus archivos,
+  y no puede cambiar sus permisos. La comprobacion se hace abriendo sin escribir y cerrando al instante.
+- Que al terminar, la identidad del operador queda restaurada.
+
+Si el servicio no existe, esta parado, tiene varios nombres parecidos o su cuenta no coincide, la comprobacion se detiene
+sin escribir nada.
+
+
+4. Archivos
+-----------
+- Se crean dos archivos nuevos en %ProgramData%, con permisos solo para SYSTEM y Administradores:
+    RackClick-MFA-Lectura-L2l02-<UUID>.recibo-privado.json   (NO se envia a nadie)
+    RackClick-MFA-Lectura-L2l02-<UUID>.resumen-sanitizado.txt (este se entrega al equipo de desarrollo)
+- No se borra nada. No se sobrescribe ningun archivo anterior.
+
+
+5. Que enviar
+-------------
+- El texto del resumen sanitizado y el codigo final. No envie el recibo privado, ni claves, ni blobs, ni sobres.
+
+
+6. Limites
+----------
+- Demuestra que el token de la cuenta del servicio puede leer la clave activa en esta VM. No demuestra que el proveedor
+  este activo dentro del host en marcha, ni que MFA funcione para usuarios.
+- Requiere sesion elevada. Si el operador no tiene el privilegio de depuracion, la comprobacion puede rechazar con
+  process_access_denied y no cambia nada.
+- No consulta contraseñas ni archivos de credenciales.

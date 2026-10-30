@@ -1,10 +1,10 @@
 # RackClick · inventario completo y plan de cierre medible
 
-Base **RC-CIERRE-20261025-v1**, 2026-10-25. El inventario inicial se creó mediante conciliación documental. Los avances posteriores y sus pruebas se acreditan en los subpasos, con evidencias propias; no se convierten en aceptación de QA.
+Base **RC-CIERRE-20261029-v2**, 2026-10-29. El inventario inicial se creó mediante conciliación documental. Los avances posteriores y sus pruebas se acreditan en los subpasos, con evidencias propias; no se convierten en aceptación de QA.
 
 **El 78 % anterior queda retirado como indicador vigente.** Sus 7 puntos pendientes funcionales eran 2 de fundamento, 3 de inventario, 1 de administración y 1 de paridad: no eran 7 tareas. El inventario actual distingue 7 bloques, con trabajo concreto y evidencia.
 
-**Cierre de este trabajo restante: 7,63/100 puntos.** No significa que el producto esté al 0 %. Lo ya construido se reconoce abajo. No se conoce aquí un nuevo porcentaje global del producto y no se utiliza 78+22×cierre.
+**Cierre de este trabajo restante: 9,76/100 puntos.** No significa que el producto esté al 0 %. Lo ya construido se reconoce abajo. No se conoce aquí un nuevo porcentaje global del producto y no se utiliza 78+22×cierre.
 
 El inventario tiene **53 entradas: 50 resultados ponderados y 3 decisiones/controles sin doble puntuación; 280 subpasos**. No son jornadas, pruebas nuevas ni nuevas funciones. Los 55 criterios S1–S4 están trazados; S-50/retorno de campo pertenece a S5.
 
@@ -20,11 +20,11 @@ El denominador inicial es 100. No aumenta por bugs, ZIPs, pruebas repetidas o su
 
 | Bloque | Peso del cierre | Cerrado | Resultados con peso |
 |---|---:|---:|---:|
-| F · Fundamento, seguridad y MFA | 25 | 1,00 | 10 |
+| F · Fundamento, seguridad y MFA | 25 | 2,62 | 10 |
 | I · Jerarquía, inventario y colaboración | 15 | 3,63 | 6 |
 | A · Usuarios, grupos y administración | 5 | 0,00 | 4 |
 | P · Paridad funcional y visual RC9 | 15 | 0,00 | 11 |
-| W · Instalación y operación Windows | 15 | 3,00 | 6 |
+| W · Instalación y operación Windows | 15 | 3,50 | 6 |
 | R · Backup, recuperación y actualización | 15 | 0,00 | 6 |
 | E · Paquete, manual, rendimiento y aceptación | 10 | 0,00 | 7 |
 
@@ -37,10 +37,10 @@ El denominador inicial es 100. No aumenta por bugs, ZIPs, pruebas repetidas o su
 | F-01 | Clasificar hallazgos de secretos y tratar sólo credenciales reales | implementación | 2,50 |
 | F-02 | Cifrar configuración SQL y recuperar sus secretos en otra instancia | implementación | 2,50 |
 | F-03 | Registrar decisión de custodia y ubicación definitiva D2 | decisión de custodia/recuperación confirmada; concreción técnica pendiente | 0,00 |
-| F-04 | Implementar proveedor TOTP Windows bajo la identidad real del servicio | implementación | 2,50 |
+| F-04 | Implementar proveedor TOTP Windows bajo la identidad real del servicio | Proveedor real integrado en candidata10; F-04.03 cerrado, ACL/otros tokens y cierre total pendientes | 2,50 |
 | F-05 | Implementar sobre portable autenticado y restauración de claves | implementación | 2,50 |
 | F-06 | Cerrar rotación y recuperación coherente entre anillo y PostgreSQL | implementación | 2,50 |
-| F-07 | Completar enrolamiento restringido en el primer login | backend MFA-L1 revisado técnicamente; proveedor real/UI/recuperación y cierre completo pendientes | 2,50 |
+| F-07 | Completar enrolamiento restringido cuando MFA sea exigible | F-07.01 a .04 cerrados técnicamente en laboratorio; candidata, custodia real integrada y cierre .05 pendientes | 2,50 |
 | F-08 | Implementar códigos de recuperación y reenrolamiento restringido | implementación | 2,50 |
 | F-09 | Implementar recuperación local cuando no quedan clave, sobre ni códigos | implementación | 2,50 |
 | F-10 | Completar panel/política MFA por usuario y obligatoriedad antes de producción | implementación | 2,50 |
@@ -69,7 +69,7 @@ El denominador inicial es 100. No aumenta por bugs, ZIPs, pruebas repetidas o su
 | P-10 | Auditar EN/DE/ES, temas y literalidad de datos | cobertura/correcciones | 1,36 |
 | P-11 | Completar teclado, lector, contraste y paridad visual funcional | auditoría/correcciones | 1,36 |
 | W-01 | Corregir parada D14-07 y validación de edición del generador | cerrado con revisión independiente | 2,50 |
-| W-02 | Instalar desde cero en Windows limpio y declarar la matriz soportada | Ensayo Restore C cerrado con observaciones; matriz general pendiente | 2,50 |
+| W-02 | Instalar desde cero en Windows limpio y declarar la matriz soportada | New10 en C verificado tras reinicio; W-02.01/.02 cerrados, matriz restante pendiente | 2,50 |
 | W-03 | Cuenta mínima, servicio Windows y arranque automático reales | pendiente de cierre | 2,50 |
 | W-04 | HTTPS, certificados, red y acceso casa/trabajo en la edición final | pendiente de cierre | 2,50 |
 | W-05 | Repetición, cancelación, mantenimiento y diagnóstico del instalador | pendiente de cierre | 2,50 |
@@ -178,20 +178,20 @@ Las referencias acreditan sus builds/entornos originales y límites; no se convi
 
 ### F-04 · Implementar proveedor TOTP Windows bajo la identidad real del servicio
 
-**Situación:** Hay interfaz IMfaKeyProvider y cifrado autenticado de factores; Program.cs fija proveedor null. No existe proveedor productivo demostrado.
+**Situación:** En C Windows Server2025 limpia, candidata10 instala almacén dedicado e inicia proveedor Windows DPAPI bajo cuenta estándar SCM. Enrolamiento y nuevo login TOTP por HTTPS verificados antes y después del reinicio. Negativos de pérdida de clave/versión y arranque cerrado conciliados con las fuentes actuales. No se cierra la recuperación portable ni todos los negativos de ACL/otros tokens.
 
 **Qué falta:**
 
 - [ ] F-04.01 · Crear almacén separado de management con ACL seguras desde el primer instante y escrituras atómicas por instalador/operador.
 - [ ] F-04.02 · Dar sólo lectura al SID efectivo del servicio y mantener management cerrado; comprobar padres, herencia y reparse.
-- [ ] F-04.03 · Conectar proveedor real al producto sólo tras D2; rechazar claves/versiones ausentes sin regeneración silenciosa ni password-only.
+- [x] F-04.03 · Conectar proveedor real al producto sólo tras D2; rechazar claves/versiones ausentes sin regeneración silenciosa ni password-only.
 - [ ] F-04.04 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
 
 **Se cierra cuando:** Servicio real lee/descifra y verifica factores; otra cuenta no lee, servicio no escribe ni modifica ACL, management no se amplía; negativos y revisión independiente registrados.
 
 **Responsable:** Desarrollo: Proveedor, instalador, validadores y pruebas; Wascar: Aceptación de la custodia acordada; Entorno: Cuenta/SID estándar reales Windows; no basta roundtrip en proceso de desarrollador. **Dependencias:** F-03; C4: identidad estándar del servicio disponible
 
-**Tipo de pendiente:** implementación. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
+**Tipo de pendiente:** Proveedor real integrado en candidata10; F-04.03 cerrado, ACL/otros tokens y cierre total pendientes. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
 
 **Criterios:** rev4 C.5; rev4 C.6; S-43; S-45.
 
@@ -240,23 +240,23 @@ Las referencias acreditan sus builds/entornos originales y límites; no se convi
 
 **Evidencia existente:** [docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md](DECISION-D2-CUSTODIA-CLAVE-TOTP.md), [docs/REVISION-D2-CODEX.md](REVISION-D2-CODEX.md). Todas las referencias e hitos separados están en elJSON.
 
-### F-07 · Completar enrolamiento restringido en el primer login
+### F-07 · Completar enrolamiento restringido cuando MFA sea exigible
 
-**Situación:** Ronda2 aceptada:4P2 corregidos,88tests originales PASS con1Docker omitida; probe independiente de HTTP con runtimeDMLsinDDL PASS yCLI bootstrap/migrate real14 válido. Sesión/CSRF nuevos sólo tras factor y commit; auditoría transaccional/rollback. F-07.01/.03 acreditados, no QR/UI, alta configure-first-login, respuesta perdida, recuperación ni F-07 completo. Clave versión1 y proveedor normal ausente siguen límites explícitos.
+**Situación:** Dashboard45 y enrolamiento integrados en candidata10 instalada de laboratorio C. Proveedor Windows real, enrolamiento/confirmación y siguiente login verificados por HTTPS antes y después del reinicio. QA visual de Wascar, recuperación portable y cierre total F-07.05 pendientes; QA anterior y producción sin adoptar.
 
 **Qué falta:**
 
 - [x] F-07.01 · Después de password válido emitir desafío enroll de finalidad fija, hash/CSRF propio, cinco minutos y consumo único; sin app_session/autoridad API.
-- [ ] F-07.02 · Presentar secreto/QR sólo al usuario durante proceso, sin URL/log/auditoría/historial; confirmar primer TOTP antes de activar factor.
+- [x] F-07.02 · Presentar secreto/QR sólo al usuario durante proceso, sin URL/log/auditoría/historial; confirmar primer TOTP antes de activar factor.
 - [x] F-07.03 · Emitir sesión/CSRF nuevos y confirmar factor/consumir desafío en una sola transacción; revalidar cuenta/política/caducidad después de locks.
-- [ ] F-07.04 · Alta nueva marca configure-first-login como indicó D3; probar código erróneo/caducado/repetido, reintento/respuesta perdida y dos confirmaciones concurrentes.
+- [x] F-07.04 · Alta nueva conserva45días desdecreación y cuenta existente desdeactivación persistida; administrador globalSystemhaus exento; el servidor exige enrolamiento al vencer o al activar/exigirMFA; probar código erróneo/caducado/repetido, reintento/respuesta perdida y dos confirmaciones concurrentes.
 - [ ] F-07.05 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
 
 **Se cierra cuando:** Usuario nuevo completa primer factor y obtiene única sesión nueva sólo al confirmar; desafío/enrolamiento incompleto no acceden a /me, clientes ni mutaciones; negativos concurrentes y revisión independiente.
 
 **Responsable:** Desarrollo: API, estado de alta, transacciones y pruebas; Wascar: QA posterior del primer inicio; Entorno: PostgreSQL real y navegador para integración. **Dependencias:** F-04 para producto; proveedor sintético aislado puede permitir desarrollo/pruebas previas
 
-**Tipo de pendiente:** backend MFA-L1 revisado técnicamente; proveedor real/UI/recuperación y cierre completo pendientes. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
+**Tipo de pendiente:** F-07.01 a .04 cerrados técnicamente en laboratorio; candidata, custodia real integrada y cierre .05 pendientes. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
 
 **Criterios:** rev4 C.5; D3; M3; S-04; S-05; S-43.
 
@@ -352,7 +352,7 @@ Las referencias acreditan sus builds/entornos originales y límites; no se convi
 
 ### F-12 · Acreditar MFA y fundamento sobre la candidata completa por HTTP/HTTPS
 
-**Situación:** L1:9HTTP de entrega y18tienda repetidos dentro de88PASS; probe independiente HTTP runtime restringido/cabeceras PASS.4P2 cerrados por revisión distinta. Es TestServer, no TCP/TLS/navegador/proveedor real. No cierra reset/restore/recuperación, revisión final de todas las rutas ni candidata integrada/QA.
+**Situación:** HTTP y GUI MFA/gracia45 revisados en laboratorio15; Browser8etapasPASS y Quality378PASS/1Dockeromitida. Proveedor sintético de DI separado, no custodia productiva final/HTTPS de la candidata. F-12.03/.04/.05 pendientes.
 
 **Qué falta:**
 
@@ -911,12 +911,12 @@ Las referencias acreditan sus builds/entornos originales y límites; no se convi
 
 ### W-02 · Instalar desde cero en Windows limpio y declarar la matriz soportada
 
-**Situación:** Restore C08 operativo y aceptado funcionalmente por Wascar. Servicio, postboot, HTTPS, login y cliente A07 contrastados; sin repetición visual ni reinstalación requerida para este ensayo. Fase04 y diferencia Systemhaus quedan como observaciones. Retirado el trabajo adicional sobre el colector. La matriz general de hosts/dependencias se ensaya después en su lote previsto, sin atribuir pruebas no ejecutadas.
+**Situación:** 29oct: instalaciónNew10 en snapshot limpio confirmado sin cuentas/servicios RackClick previos. Wrapper verificado y operador oficial con plan de la función GUI en ensayo headless; CRT14.40→14.51, runtime/PG incluidos, sin SDK/Node/Python real instalado. Reinicio de Wascar, SCM automático, HTTPS15 y MFA persistente verificados. Primer postboot adelantado falló y se conserva; verificación oficial posterior manual pasó. No acredita clics del asistente, Namespacecleanup ni toda la matriz de hosts.
 
 **Qué falta:**
 
 - [x] W-02.01 · Preparar otra VM limpia Windows Server2025 sin AD DS y registrar imagen/versión, cuentas, discos y red; conservar la VM QA.
-- [ ] W-02.02 · Ejecutar la entrega completa sin SDK/Node/Python previos; comprobar detección/instalación de runtime, PostgreSQL17 y CRT, incluido reinicio requerido.
+- [x] W-02.02 · Ejecutar la entrega completa sin SDK/Node/Python previos; comprobar detección/instalación de runtime, PostgreSQL17 y CRT, incluido reinicio requerido.
 - [ ] W-02.03 · Repetir con dependencias compatibles presentes; comprobar rechazo concreto de versión incompatible, puertos ocupados y DC antes de mutaciones.
 - [ ] W-02.04 · Conciliar S-01 con Windows11 como posible host: ensayar todo sistema que se declare soportado. Windows11 usado sólo como cliente requiere navegador, sin servidor instalado.
 - [ ] W-02.05 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
@@ -925,7 +925,7 @@ Las referencias acreditan sus builds/entornos originales y límites; no se convi
 
 **Responsable:** Responsables: Desarrollo; revisión independiente; Wascar sólo para aceptación o dato operativo propio. **Dependencias:** W-01; E-01
 
-**Tipo de pendiente:** Ensayo Restore C cerrado con observaciones; matriz general pendiente. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
+**Tipo de pendiente:** New10 en C verificado tras reinicio; W-02.01/.02 cerrados, matriz restante pendiente. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
 
 **Criterios:** S-01; S-51; S-52.
 
@@ -1333,6 +1333,7 @@ No son nuevas autorizaciones de arranque. Desarrollo prepara diseños/ensayos; W
 - ID: D5; Tema: Dosen/dispositivos finales; Estado: unknown; Referencia: docs/PLAN-MFA-Y-FRENTES-C1-C5.md; docs/METODOLOGIA-PARA-CLAUDE.md; docs/CONTRATO-INVENTARIO-S1.md; Conflicto: PLAN-MFA tabla D5 dice fuera del primer cierre; METODOLOGIA §10 D5 dice que aplazarlos es una propuesta pendiente y que el modelo Dose/final es requisito explícito.; Tratamiento: No retirar Dose/final del alcance ni rehacer su soporte existente. I-06 cubre lo externo ya soportado; I-07 separa el modelo físico interno aún no acordado.
 - ID: D6; Responsable: Wascar sólo si se aplaza USB; Por concretar: Local/USB/UNC permanecen en alcance; aplazamientoUSB del plan23 es propuesta no confirmada.; Trabajo que puede continuar: Implementar y probar destinos actuales enR-02.
 - ID: operacion; Responsable: Desarrollo propone; Wascar valida necesidades de su entorno; Por concretar: Concretar host/nombre/CA/subred, retención y objetivosRPO/RTO/latencias; no pedir al usuario diseñar criptografía.; Trabajo que puede continuar: Preparar valores editables/documentados y ensayos acotados.
+- date: 2026-10-29; Estado: Confirmado por Wascar:45días, existentes desde activación y exención del administrador global. Sustituye configure-first-login inmediato; resto de negativos y pesos intactos. No implica MFA disponible en QA.; Referencia: docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md
 
 ## Investigación o prueba técnica todavía necesaria
 

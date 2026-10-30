@@ -1,4 +1,5 @@
 using System.Runtime.Versioning;
+using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Text;
 using RackClick.Server;
@@ -141,6 +142,102 @@ public sealed class WindowsMfaKeyStoreWriterTests
         Assert.Empty(fixture.StagingEntries());
     }
 
+    // Negativo de propiedad (MFA-L2C-01, reproducido por Codex y adaptado): tras validar, el staging se sustituye por otro
+    // directorio y la publicación falla. La limpieza no debe borrar el directorio sustituto.
+    [Fact]
+    public void FailedPublishDoesNotDeleteAReplacementDirectory()
+    {
+        using var fixture = new CreationRoot();
+        string? sentinel = null;
+
+        var error = Assert.Throws<MfaKeyStoreCreationException>(() => Create(fixture, beforePublish: () =>
+        {
+            var original = Assert.Single(fixture.StagingEntries());
+            Directory.Move(original, Path.Combine(fixture.Root, "original-stage-reserved"));
+            Directory.CreateDirectory(original);
+            sentinel = Path.Combine(original, "external-sentinel.txt");
+            File.WriteAllText(sentinel, "preserve replacement directory", Encoding.UTF8);
+            throw new IOException("simulated publish failure after directory replacement");
+        }));
+
+        Assert.Equal(MfaKeyStoreCreationErrorKind.PublishFailed, error.Kind);
+        Assert.NotNull(sentinel);
+        Assert.True(File.Exists(sentinel), "la limpieza borró contenido de un directorio distinto en la ruta del staging");
+        Assert.Equal("preserve replacement directory", File.ReadAllText(sentinel, Encoding.UTF8));
+    }
+
+    // Negativo de publicación (MFA-L2C-01): un directorio distinto del staging validado no se publica ni se devuelve éxito.
+    [Fact]
+    public void PublishDoesNotAcceptADirectoryDifferentFromTheValidatedStage()
+    {
+        using var fixture = new CreationRoot();
+
+        var error = Assert.Throws<MfaKeyStoreCreationException>(() => Create(fixture, beforePublish: () =>
+        {
+            var original = Assert.Single(fixture.StagingEntries());
+            Directory.Move(original, Path.Combine(fixture.Root, "original-stage-reserved"));
+            Directory.CreateDirectory(original);
+            File.WriteAllText(Path.Combine(original, "external-sentinel.txt"), "not the validated store", Encoding.UTF8);
+        }));
+
+        Assert.Equal(MfaKeyStoreCreationErrorKind.PublishFailed, error.Kind);
+        Assert.False(Directory.Exists(fixture.KeysFolder));
+        Assert.False(File.Exists(fixture.RingFile));
+        Assert.False(File.Exists(fixture.KeyFile(1)));
+    }
+
+    // Carrera de creación (MFA-L2C-01, misma regla de propiedad): la carpeta de la instalación aparece entre la comprobación
+    // y su creación. No se adopta, no se cambia su ACL, no se publica dentro de ella y no se borra. Se hace insegura a
+    // propósito (escritura para Usuarios) para que, si se adoptara, el lector la rechazaría.
+    [Fact]
+    public void ForeignFolderCreatedInTheWindowIsNeitherAdoptedNorChanged()
+    {
+        using var fixture = new CreationRoot();
+        string? sentinel = null;
+        byte[]? descriptor = null;
+
+        var error = Assert.Throws<MfaKeyStoreCreationException>(() => Create(fixture, beforeOwnFolderCreation: () =>
+        {
+            Directory.CreateDirectory(fixture.InstallationFolder);
+            var foreign = new DirectoryInfo(fixture.InstallationFolder);
+            var security = foreign.GetAccessControl(AccessControlSections.Access);
+            security.AddAccessRule(new FileSystemAccessRule(UsersSid, FileSystemRights.Modify,
+                InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit, PropagationFlags.None, AccessControlType.Allow));
+            foreign.SetAccessControl(security);
+            sentinel = Path.Combine(fixture.InstallationFolder, "ajeno.txt");
+            File.WriteAllText(sentinel, "carpeta ajena", Encoding.UTF8);
+            descriptor = fixture.DescriptorBytes(fixture.InstallationFolder);
+        }));
+
+        Assert.Equal(MfaKeyStoreCreationErrorKind.ValidationFailed, error.Kind);
+        Assert.NotNull(sentinel);
+        Assert.Equal("carpeta ajena", File.ReadAllText(sentinel, Encoding.UTF8));
+        Assert.Equal(descriptor, fixture.DescriptorBytes(fixture.InstallationFolder));
+        Assert.False(Directory.Exists(fixture.KeysFolder));
+        Assert.Empty(fixture.StagingEntries());
+    }
+
+    // Reemplazo que contiene los mismos archivos propios: la comprobación de hijos pasa, así que sólo la identidad del staging
+    // puede rechazarlo. Sin esa comprobación, el directorio sustituto se publicaría.
+    [Fact]
+    public void ReplacementHoldingTheValidatedFilesIsStillRefused()
+    {
+        using var fixture = new CreationRoot();
+
+        var error = Assert.Throws<MfaKeyStoreCreationException>(() => Create(fixture, beforePublish: () =>
+        {
+            var original = Assert.Single(fixture.StagingEntries());
+            var reserved = Path.Combine(fixture.Root, "original-stage-reserved");
+            Directory.Move(original, reserved);
+            Directory.CreateDirectory(original);
+            File.Move(Path.Combine(reserved, MfaKeyRing.RingFileName), Path.Combine(original, MfaKeyRing.RingFileName));
+            File.Move(Path.Combine(reserved, MfaKeyRing.KeyFileName(1)), Path.Combine(original, MfaKeyRing.KeyFileName(1)));
+        }));
+
+        Assert.Equal(MfaKeyStoreCreationErrorKind.PublishFailed, error.Kind);
+        Assert.False(Directory.Exists(fixture.KeysFolder));
+    }
+
     [Fact]
     public void InvalidRequestsAreRefusedBeforeAnyWrite()
     {
@@ -161,8 +258,9 @@ public sealed class WindowsMfaKeyStoreWriterTests
         Assert.Equal(before, fixture.Listing());
     }
 
-    private static void Create(CreationRoot fixture, Action? beforePublish = null) =>
-        WindowsMfaKeyStoreWriter.CreateInitialStore(fixture.Instances, fixture.Installation, UsersSid, fixture.Trusted, beforePublish);
+    private static void Create(CreationRoot fixture, Action? beforePublish = null, Action? beforeOwnFolderCreation = null) =>
+        WindowsMfaKeyStoreWriter.CreateInitialStore(fixture.Instances, fixture.Installation, UsersSid, fixture.Trusted,
+            beforePublish, beforeOwnFolderCreation);
 
     private static bool ContainsSequence(byte[] haystack, byte[] needle)
     {
@@ -195,6 +293,10 @@ public sealed class WindowsMfaKeyStoreWriterTests
         public string RingFile => Path.Combine(KeysFolder, MfaKeyRing.RingFileName);
         public string KeyFile(int version) => Path.Combine(KeysFolder, MfaKeyRing.KeyFileName(version));
 
+        // Descriptor DACL en binario: comprueba que una carpeta ajena no ha cambiado de ACL.
+        public byte[] DescriptorBytes(string path) =>
+            new DirectoryInfo(path).GetAccessControl(AccessControlSections.Access).GetSecurityDescriptorBinaryForm();
+
         public string[] StagingEntries() =>
             Directory.Exists(InstallationFolder)
                 ? Directory.EnumerateFileSystemEntries(InstallationFolder)
@@ -216,6 +318,12 @@ public sealed class WindowsMfaKeyStoreWriterTests
             return entries.ToArray();
         }
 
-        public void Dispose() => Directory.Delete(Root, true);
+        public void Dispose()
+        {
+            Directory.Delete(Root, true);
+            // El padre común de las raíces de prueba se retira sólo si quedó vacío.
+            var parent = Path.GetDirectoryName(Root)!;
+            if (Directory.Exists(parent) && Directory.GetFileSystemEntries(parent).Length == 0) Directory.Delete(parent);
+        }
     }
 }

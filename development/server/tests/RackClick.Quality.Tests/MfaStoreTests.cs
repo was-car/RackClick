@@ -8,7 +8,7 @@ namespace RackClick.Quality.Tests;
 
 // Pruebas de integración del segundo paso MFA contra PostgreSQL 17 real.
 // Se ejecutan solo si RACKCLICK_TEST_PG_ADMIN apunta a un servidor de laboratorio con rol que pueda crear bases.
-// Crean una base temporal, aplican 001–014 desde el árbol de fuentes y la eliminan al terminar. No usan el servidor QA.
+// Crean una base temporal, aplican 001–015 desde el árbol de fuentes y la eliminan al terminar. No usan el servidor QA.
 public sealed class MfaStoreTests
 {
     private const string AdminVariable = "RACKCLICK_TEST_PG_ADMIN";
@@ -389,7 +389,10 @@ public sealed class MfaStoreTests
 
     private sealed class StaticKeys(byte[] key) : IMfaKeyProvider
     {
-        public byte[] GetKey(int version) => version == 1 ? key : throw new InvalidOperationException("mfa_key_version_unknown");
+        public byte[] GetKey(int version) => version == 1 ? (byte[])key.Clone() : throw new InvalidOperationException("mfa_key_version_unknown");
+
+        // Versión activa explícita del stub (1) y copia nueva del material.
+        public (int Version, byte[] Key) GetActiveKey() => (1, (byte[])key.Clone());
     }
 
     private sealed class MfaTestDatabase : IAsyncDisposable
@@ -545,6 +548,7 @@ public sealed class MfaStoreTests
             var database = FindDatabaseFolder();
             var files = Enumerable.Range(1, 13).Select(n => Path.Combine(database, n.ToString("D3") + "-" + MigrationName(n))).ToList();
             files.Add(Path.Combine(database, "014-mfa.sql"));
+            files.Add(Path.Combine(database, "015-mfa-account-policy.sql"));
             await using var connection = await Source().OpenConnectionAsync(TestContext.Current.CancellationToken);
             foreach (var file in files)
             {

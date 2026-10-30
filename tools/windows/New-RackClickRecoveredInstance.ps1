@@ -20,6 +20,22 @@ function Stop-RecoveryCheck {
     throw $failure
 }
 
+function Get-RecoverySchemaTransition {
+    param([int]$TargetSchema,[string]$AppliedVersions)
+    if($TargetSchema -eq 14 -and $AppliedVersions -ceq ((1..13)-join ',')){return 'migrate'}
+    if($TargetSchema -eq 15 -and $AppliedVersions -cin @(((1..13)-join ','),((1..14)-join ','))){return 'migrate'}
+    if($TargetSchema -in @(9,10,11,12,13,14,15) -and $AppliedVersions -ceq ((1..$TargetSchema)-join ',')){return 'current'}
+    Stop-RecoveryCheck ('restored_schema_required_'+[string]$TargetSchema) 1
+}
+
+function Assert-RecoveryMfaMaterial {
+    param([int]$TargetSchema,[string]$FactorCount)
+    if($TargetSchema -lt 15){return}
+    # No importer is wired into this installer. Even disabled factor material may
+    # still depend on the source key, so only a truly empty table permits a new key.
+    if($FactorCount -cne '0'){Stop-RecoveryCheck 'recovery_mfa_envelope_required' 1}
+}
+
 function Clear-RecoveryInheritedConfiguration {
     param([hashtable]$Original)
     # Process only. Also remove colon aliases, which cannot be passed to the Gate map.
@@ -232,11 +248,9 @@ try {
     $restoreArguments=(Get-BackupConnectionArguments $ownerProfile $database)+@('--single-transaction','--exit-on-error','--no-owner','--no-acl','data.dump')
     $null=Invoke-RecoveryOwnedChild (Join-Path $pg 'pg_restore.exe') $restoreArguments $backupRoot $restoreEnvironment $logs 'pg-restore'
     $schema=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile 'SELECT string_agg(version::text,'','' ORDER BY version) FROM public.schema_migration;'
-    # Restore 13→14: sólo el esquema inmediatamente anterior y sólo hacia un paquete 14. Se migra en la base nueva,
-    # antes de la CLI de recuperación, que exige el esquema 14. Cualquier otro esquema sigue rechazado.
-    $migrateFrom13=($stageSchema -eq 14 -and $schema -ceq ((1..13)-join ','))
-    if (-not $migrateFrom13 -and $schema -cne ((1..$stageSchema)-join ',')) {Stop-RecoveryCheck ('restored_schema_required_'+[string]$stageSchema) 1}
-    if ($migrateFrom13) {
+    # Upgrade only the explicit supported source schemas, in this new database.
+    $schemaTransition=Get-RecoverySchemaTransition -TargetSchema $stageSchema -AppliedVersions $schema
+    if ($schemaTransition -ceq 'migrate') {
         $phase='migration'
         $migrationEnvironment=New-InstanceEnvironment @{DOTNET_ROOT=[IO.Path]::GetDirectoryName($dotnet);DOTNET_CLI_TELEMETRY_OPTOUT='1';DOTNET_NOLOGO='1';DOTNET_GENERATE_ASPNET_CERTIFICATE='false';ConnectionStrings__RackClick=(Get-InstanceConnection $recoveredInputs.port $database $owner $ownerPassword);ASPNETCORE_ENVIRONMENT='Development'}
         $null=Invoke-RecoveryOwnedChild $dotnet @((Join-Path $stage 'server/RackClick.Server.dll'),'--migrate') $root $migrationEnvironment $logs 'migrate'
@@ -244,6 +258,10 @@ try {
         $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile "GRANT USAGE ON SCHEMA public TO $runtime; GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA public TO $runtime;"
         $schema=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile 'SELECT string_agg(version::text,'','' ORDER BY version) FROM public.schema_migration;'
         if ($schema -cne ((1..$stageSchema)-join ',')) {Stop-RecoveryCheck 'restored_migration_schema_invalid' 1}
+    }
+    if($stageSchema -eq 15){
+        $restoredFactorCount=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile 'SELECT count(*) FROM public.app_mfa_factor;'
+        Assert-RecoveryMfaMaterial -TargetSchema $stageSchema -FactorCount $restoredFactorCount
     }
     $houseBefore=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile "SELECT id::text||'|'||encode(convert_to(name,'UTF8'),'hex') FROM public.systemhaus ORDER BY id;"
     $usersBefore=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile "SELECT md5(COALESCE(string_agg(row_to_json(u)::text,E'\n' ORDER BY id),'')) FROM public.app_user u;"

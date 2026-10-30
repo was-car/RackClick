@@ -20,10 +20,10 @@ export function AdminSelectionTarget({lang,id,users}){
  return <p data-admin-selection-target={id||''}>{w.target}: <strong>{user?.userName||(!id?w.choose:w.missing)}</strong>{id&&<> · {id}</>}</p>;
 }
 export const adminNavigationSections = [
- ['users',[['create','account-create'],['accounts','account-list'],['state','user-state'],['password','user-password'],['sessions','user-sessions'],['effective','effective-permissions']]],
+ ['users',[['create','account-create'],['accounts','account-list'],['state','user-state'],['mfa','user-mfa'],['password','user-password'],['sessions','user-sessions'],['effective','effective-permissions']]],
  ['groups',[['groupCreate','group-create'],['userMembers','user-memberships'],['customerMembers','customer-memberships'],['grants','group-grants'],['userGroups','user-group-list'],['customerGroups','customer-group-list']]]
 ];
 export function AdminSectionNavigation({lang,current,onNavigate}) {
- const w=adminNavigationWords[lang];
+ const w={...adminNavigationWords[lang],mfa:({en:'Authentication methods',de:'Authentifizierungsmethoden',es:'Métodos de autenticación'})[lang]};
  return <nav className="rc-admin-section-navigation" aria-label={w.title} data-admin-section-navigation><h2>{w.title}</h2>{adminNavigationSections.map(([category,sections])=><details key={category} open><summary>{w[category]}</summary><div>{sections.map(([label,id])=><button type="button" key={id} data-admin-section-link={id} aria-controls={'rc-admin-'+id} aria-current={current===id?'location':undefined} onClick={()=>onNavigate(id)}>{w[label]}</button>)}</div></details>)}<p>{w.help}</p></nav>;
 }

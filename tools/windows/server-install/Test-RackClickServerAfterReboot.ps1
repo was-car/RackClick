@@ -38,6 +38,7 @@ try {
     # Normal Windows TLS validation; never bypass certificate or hostname checks.
     try{$postbootHealth=Invoke-RestMethod -Uri ($postbootReceipt.publicOrigin+'/health/ready') -TimeoutSec 10 -UseBasicParsing}catch{throw 'postboot_https_health_failed'}
     $postbootSnapshot=@{bootCurrent=(Get-CimInstance Win32_OperatingSystem).LastBootUpTime.ToUniversalTime().ToString('o');bootAtInstall=$postbootReceipt.bootAtInstall;serviceState=$postbootService.State;serviceStartMode=$postbootService.StartMode;serviceSid=(Resolve-SetupAccountSid $postbootService.StartName);expectedSid=$postbootReceipt.serviceSid;healthStatus=$postbootHealth.status;schemaVersion=$postbootHealth.schemaVersion;backupTaskState=[string]$postbootTask.State;backupTaskSid=(Resolve-SetupAccountSid $postbootTask.Principal.UserId);backupLastResult=$postbootTaskInfo.LastTaskResult;backupScheduleVerified=$postbootSchedule}
+    if($null-ne$postbootReceipt.PSObject.Properties['applicationSchemaVersion']){$postbootSnapshot.expectedSchemaVersion=$postbootReceipt.applicationSchemaVersion}
     $postbootVerdict=Test-SetupPostbootSnapshot $postbootSnapshot
     if(-not$postbootVerdict.valid){throw $postbootVerdict.code}
     $postbootResult.valid=$true;$postbootResult.success=$true;$postbootResult.exitCode=0;$postbootResult.code='postboot_verified';$postbootResult.rebootVerified=$true

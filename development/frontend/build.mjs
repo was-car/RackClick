@@ -32,10 +32,12 @@ for (const font of JSON.parse((await adopted('assets/fonts/manifest.json')).toSt
  const name = path.basename(font.file); await writeFile('dist/assets/fonts/' + name, bytes);
  css += `@font-face{font-family:'${font.family}';font-style:normal;font-weight:${font.weight};font-display:swap;src:url(assets/fonts/${name}) format('woff2');unicode-range:${font.range}}\n`;
 }
-css += (await adopted('src/integrated.css')).toString() + '\n' + await readFile('src/server.css', 'utf8');
+css += (await adopted('src/integrated.css')).toString() + '\n' + await readFile('src/server.css', 'utf8') + '\n' + await readFile('src/mfa-login.css', 'utf8');
 if (/@import|url\(\s*['"]?https?:/i.test(css)) throw Error('Runtime remote CSS forbidden');
 await writeFile('dist/app.css', css);
 for (const name of ['react.production.min.js', 'react-dom.production.min.js']) await writeFile('dist/vendor/' + name, await adopted('vendor/' + name));
+const qrPin = JSON.parse(await readFile('src/vendor/qrcodegen.sources.json', 'utf8'));
+if (hash(await readFile('src/vendor/qrcodegen.source.ts')) !== qrPin.upstreamSourceSha256 || hash(await readFile('src/vendor/qrcodegen.mjs')) !== qrPin.moduleSha256) throw Error('QR vendor integrity mismatch');
 await build({ entryPoints: ['src/ServerApp.jsx'], bundle: true, outfile: 'dist/app.js', target: 'es2020', minify: false, legalComments: 'inline' });
 await writeFile('dist/index.html', '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light"><title>RackClick Server</title><link rel="stylesheet" href="/app.css"><script defer src="/vendor/react.production.min.js"></script><script defer src="/vendor/react-dom.production.min.js"></script><script defer src="/app.js"></script></head><body><div id="root"></div></body></html>');
 await mkdir('dist/licenses', { recursive: true });

@@ -39,8 +39,15 @@ APPLICATION_SCHEMA14_SUMS_SHA256 = "47089172d9b7a13adb409b38289fc0ecee98866f0345
 # Candidata 14 limpia de D14-05: DLL 19c94d4e…, invalidación de desafíos en la recuperación; sin cambios de C2. Metadatos propios.
 APPLICATION_SCHEMA14D05_SHA256 = "e9c58c0c67500afc09c1ac979a7433830c96f94c2a2e4501d81286796d65d74d"
 APPLICATION_SCHEMA14D05_SUMS_SHA256 = "932588056beb49fb1a7d1627b41a85829833f029f2429a0d695a5cb77c1bf31b"
+# Candidata15 congelada por el coordinador, dashboard MFA y gracia45. No es adopción.
+APPLICATION_SCHEMA15_SHA256 = "294b61577ed7aa8fe68ddb1ecd6c4f11a20b4f03935c11a22404009aec6a00fb"
+APPLICATION_SCHEMA15_INVENTORY_SHA256 = "4afec995adf7c403632c59c68cf694756af626e57b4d386423d1b3d7b3f1d56b"
+APPLICATION_SCHEMA15_SUMS_SHA256 = "783eb1960103426b00f33e43fa2a9183d1efa4875da27b15636b35585eae662a"
 # These are reviewed application manifests, not caller-provided version/hash overrides.
 APPLICATION_PROFILES = {
+    APPLICATION_SCHEMA15_SHA256: {"name": "15", "files": {"server": 25, "frontend": 18}, "bytes": 8007063,
+                                  "metadata": {"inventory.json": APPLICATION_SCHEMA15_INVENTORY_SHA256,
+                                               "SHA256SUMS.txt": APPLICATION_SCHEMA15_SUMS_SHA256}},
     APPLICATION_SCHEMA14_SHA256: {"name": "14", "files": {"server": 24, "frontend": 18}, "bytes": 7263552,
                                   "metadata": {"inventory.json": APPLICATION_SCHEMA14_INVENTORY_SHA256,
                                                "SHA256SUMS.txt": APPLICATION_SCHEMA14_SUMS_SHA256}},
@@ -122,6 +129,8 @@ def require(ok: bool, code: str) -> None:
 
 def application_schema(manifest_sha256: str) -> int:
     require(manifest_sha256 in APPLICATION_PROFILES, "application_pin_mismatch")
+    if APPLICATION_PROFILES[manifest_sha256]["name"] == "15":
+        return 15
     if manifest_sha256 in (APPLICATION_SCHEMA14_SHA256, APPLICATION_SCHEMA14D05_SHA256):
         return 14
     if manifest_sha256 in (APPLICATION_CATEGORY_COLORS_SHA256, APPLICATION_ONBOARDING_SHA256, APPLICATION_GROUP_LINKS_SHA256, APPLICATION_GROUP_RECEIPT_SHA256):
@@ -314,8 +323,8 @@ def collect_application(manifest_path: Path, expected_sha: str) -> tuple[list[Pa
     distributions = manifest.get("distributions")
     require(isinstance(distributions, dict) and set(distributions) == {"server", "frontend"}, "application_inventory_invalid")
     if schema >= 14:
-        # El manifiesto 14 no declara carpeta: la candidata revisada es la que lo contiene, dentro de su área propia.
-        require(manifest_path.name == "manifest.json" and manifest_path.parent.parent == ROOT / ".local/distribution14",
+        # Cada esquema moderno tiene su área propia; nunca se recorre todo .local.
+        require(manifest_path.name == "manifest.json" and manifest_path.parent.parent == ROOT / f".local/distribution{schema}",
                 "application_root_invalid")
         candidate = clean_path(manifest_path.parent, directory=True)
     else:
@@ -466,7 +475,7 @@ def build(manifest: Path, expected_manifest_sha: str, sdk_archive: Path, postgre
     sources_lock, manifest = clean_path(sources_lock), clean_path(manifest)
     sdk_archive, postgres_archive = clean_path(sdk_archive), clean_path(postgres_archive)
     application, candidate = collect_application(manifest, expected_manifest_sha)
-    # El perfil de la aplicación elige su lock: 14 usa el suyo, 9–13 conservan el histórico.
+    # 14 y15 usan las mismas dependencias pinadas en el lock14; 9–13 conservan el histórico.
     pins, lock_profile = (SOURCE_PINS_14, "14") if application_schema(expected_manifest_sha) >= 14 else (SOURCE_PINS, "legacy")
     _, components, external, source_report, extra_paths = collect_locks(sources_lock, pins, lock_profile)
     operators = [workspace_path("tools/windows/" + n) for n in OPERATORS]

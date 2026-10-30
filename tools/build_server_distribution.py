@@ -1,6 +1,6 @@
-"""Genera una distribución de servidor y frontend de esquema 14 desde un perfil cerrado.
+"""Genera una distribución de servidor y frontend de esquema 14 o 15 desde un perfil cerrado.
 
-Entradas explícitas: perfil (docs/DISTRIBUCION14-PERFIL.json), publicación del servidor sin apphost y frontend
+Entradas explícitas: perfil cerrado14 o15 en docs/, publicación del servidor sin apphost y frontend
 construido. Salida: carpeta nueva con server/, frontend/, manifest.json, inventory.json y SHA256SUMS.txt.
 No sobrescribe nada, no usa pruebas ni generadores históricos y no adopta ni instala el producto.
 """
@@ -16,6 +16,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PROFILE_PATH = ROOT / 'docs' / 'DISTRIBUCION14-PERFIL.json'
+PROFILE15_PATH = ROOT / 'docs' / 'DISTRIBUCION15-PERFIL.json'
+PROFILE_SCHEMAS = {PROFILE_PATH: 14, PROFILE15_PATH: 15}
 FILE_ATTRIBUTE_REPARSE_POINT = 0x400
 SHA_LINE = re.compile(r'^[a-f0-9]{64}$')
 
@@ -63,16 +65,19 @@ def inventory(root: Path) -> dict:
     return result
 
 
-def load_profile() -> dict:
-    profile = json.loads(PROFILE_PATH.read_text(encoding='utf-8'))
+def load_profile(profile_path: Path = PROFILE_PATH) -> dict:
+    if profile_path not in PROFILE_SCHEMAS:
+        raise DistributionError('profile_path_unexpected')
+    schema = PROFILE_SCHEMAS[profile_path]
+    profile = json.loads(profile_path.read_text(encoding='utf-8'))
     if profile.get('formatVersion') != 1 or profile.get('kind') != 'RackClickDistributionProfileDefinition':
         raise DistributionError('profile_invalid')
-    if profile.get('applicationSchema') != 14 or profile.get('state') != 'definition_only_not_a_release':
+    if profile.get('applicationSchema') != schema or profile.get('state') != 'definition_only_not_a_release':
         raise DistributionError('profile_invalid')
     app = profile['serverApplicationFiles']
     sql = profile['serverSqlFiles']
     front = profile['frontendFiles']
-    if len(app) != 10 or len(sql) != 14 or profile['serverFileCount'] != len(app) + len(sql):
+    if len(app) != 10 or len(sql) != schema or profile['serverFileCount'] != len(app) + len(sql):
         raise DistributionError('profile_counts_invalid')
     if len(front) != 18 or profile['frontendFileCount'] != 18:
         raise DistributionError('profile_counts_invalid')
@@ -98,11 +103,11 @@ def build(profile_path: Path, publish: Path, frontend: Path, output: Path, base_
     # Se comprueba la ruta tal como llega: resolverla antes ocultaría una junction en la entrada o en el destino.
     profile_path, publish, frontend, output = (reject_chain(profile_path), reject_chain(publish),
                                                reject_chain(frontend), reject_chain(output))
-    if profile_path != PROFILE_PATH:
+    if profile_path not in PROFILE_SCHEMAS:
         raise DistributionError('profile_path_unexpected')
     if not re.fullmatch(r'[a-f0-9]{40}', base_commit):
         raise DistributionError('base_commit_invalid')
-    profile = load_profile()
+    profile = load_profile(profile_path)
     if output.exists():
         raise DistributionError('output_exists')
     if not publish.is_dir() or not frontend.is_dir():
@@ -135,7 +140,7 @@ def build(profile_path: Path, publish: Path, frontend: Path, output: Path, base_
 
     file_count = len(server_entries) + len(front_entries)
     manifest = {
-        'schema': 14,
+        'schema': profile['applicationSchema'],
         'profileId': profile['profileId'],
         'kind': 'RackClickDistributionManifest',
         'baseCommit': base_commit,

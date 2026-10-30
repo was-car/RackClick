@@ -115,6 +115,7 @@ function Get-OfflineBundleApplicationProfile {
         '55bdd496ec654494fd8e3400140e3e84241488986e24481939bad67cde7a91c6' {return @{name='1449';server=22;frontend=18;bytes=7159235L}}
         '2ec9105661db0f5c9a97d58e2a7f44e69bfd7e1903493b72f0fc57cc94c4b71a' {return @{name='14';server=24;frontend=18;bytes=7263552L;metadata=@{'inventory.json'='9303ebd4d1e2075cbf144ae868ec10568b02f754eb4f3d95f33faffa91094086';'SHA256SUMS.txt'='47089172d9b7a13adb409b38289fc0ecee98866f0345810762de008e16b19b50'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
         'e9c58c0c67500afc09c1ac979a7433830c96f94c2a2e4501d81286796d65d74d' {return @{name='14';server=24;frontend=18;bytes=7489372L;metadata=@{'inventory.json'='9303ebd4d1e2075cbf144ae868ec10568b02f754eb4f3d95f33faffa91094086';'SHA256SUMS.txt'='932588056beb49fb1a7d1627b41a85829833f029f2429a0d695a5cb77c1bf31b'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
+        '294b61577ed7aa8fe68ddb1ecd6c4f11a20b4f03935c11a22404009aec6a00fb' {return @{name='15';server=25;frontend=18;bytes=8007063L;metadata=@{'inventory.json'='4afec995adf7c403632c59c68cf694756af626e57b4d386423d1b3d7b3f1d56b';'SHA256SUMS.txt'='783eb1960103426b00f33e43fa2a9183d1efa4875da27b15636b35585eae662a'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
         default {Stop-OfflineBundleCheck 'application_pin_mismatch'}
     }
 }
@@ -122,6 +123,7 @@ function Get-OfflineBundleApplicationProfile {
 function Get-OfflineBundleExpectedSchema {
     param([hashtable]$Profile)
     # Un único lugar para el esquema esperado de cada perfil; lo usan la validación de diseño y la lectura del ZIP.
+    if ($Profile.name -ceq '15') {return 15}
     if ($Profile.name -ceq '14') {return 14}
     if ($Profile.name -ceq '592') {return 10}
     if ($Profile.name -cin @('712','832','849')) {return 11}
@@ -142,7 +144,7 @@ function Assert-OfflineBundleLayout {
     }
     if ($Manifest.schemaVersion -isnot [int] -or $Manifest.schemaVersion -ne 1 -or $Manifest.kind -cne 'RackClickOfflineBundle' -or
         $Manifest.platform -cne 'win-x64' -or $Manifest.id -isnot [string] -or $Manifest.id -cnotmatch '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$' -or
-        $Manifest.versions.schema -isnot [int] -or $Manifest.versions.schema -notin @(9,10,11,12,13,14) -or
+        $Manifest.versions.schema -isnot [int] -or $Manifest.versions.schema -notin @(9,10,11,12,13,14,15) -or
         $Manifest.versions.dotnetRuntime -cne '10.0.12' -or $Manifest.versions.postgresql -cne '17.11' -or
         $Manifest.versions.vcRedist -cne '14.51.36247.0' -or $Manifest.versions.vcRuntimeMinimum -cne '14.44.35211.0' -or
         $Manifest.files -isnot [pscustomobject]) {Stop-OfflineBundleCheck 'manifest_schema_invalid'}

@@ -1,0 +1,26 @@
+{
+  "started": "2026-10-29",
+  "completed": "2026-10-30",
+  "communityDeviceDefinitions": 12008,
+  "communityRackDefinitions": 144,
+  "moduleDefinitionsSeparate": 1860,
+  "manufacturersDeclared": 346,
+  "officialNameRecords": 195,
+  "partialPhysicalProfiles": 19,
+  "templatesIntegrated": 0,
+  "newTemplatesApproved": 0,
+  "snapshotCommit": "19470a551058fc9207f036371beefc41b197202e",
+  "isLatestSnapshot": false,
+  "window": "2018-10-29 to2026-10-29 target; per-model release dates not established",
+  "requestedVendors": {
+    "Sophos": 21,
+    "Fortinet": 173,
+    "Palo Alto Networks": 80,
+    "Cisco": 1023,
+    "HPE": 441,
+    "Synology": 58,
+    "QNAP": 28
+  },
+  "explicitArubaAliases": 212,
+  "closureIndex": 9.755952380952381
+}

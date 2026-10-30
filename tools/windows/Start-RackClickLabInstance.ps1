@@ -67,7 +67,7 @@ function Test-LauncherReadyBody {
     param($Body,[int]$ExpectedSchema)
     # The expected version comes from the externally authenticated, locked Stage.
     # A version supported by some other Stage is not readiness for this instance.
-    return $ExpectedSchema -in @(9,10,11,12,13,14) -and $Body -is [pscustomobject] -and
+    return $ExpectedSchema -in @(9,10,11,12,13,14,15) -and $Body -is [pscustomobject] -and
         $null -ne $Body.PSObject.Properties['status'] -and $Body.status -ceq 'ready' -and
         $null -ne $Body.PSObject.Properties['schemaVersion'] -and $Body.schemaVersion -is [int] -and $Body.schemaVersion -eq $ExpectedSchema
 }
@@ -173,6 +173,9 @@ try {
     if ($null -ne $tls) { $appEnvironment.Kestrel__Certificates__Default__Path=$tls.pfxPath; $appEnvironment.Kestrel__Certificates__Default__Password=$tls.password }
     if ($null -ne $control) { $appEnvironment.RackClick__ShutdownPipe=$control.pipe; $appEnvironment.RackClick__ShutdownToken=$control.token }
     $appEnvironment.RackClick__FrontendPath=Join-Path $instance.stageRoot 'frontend'
+    # This legacy laboratory launcher has no MFA profile contract; never inherit an activation.
+    foreach ($key in @([Environment]::GetEnvironmentVariables().Keys)) {if ([string]$key -like 'MfaKeyStore__*') {$appEnvironment[[string]$key]=$null}}
+    $appEnvironment.MfaKeyStore__Enabled='false'
     $appEnvironment.DOTNET_CLI_TELEMETRY_OPTOUT='1'; $appEnvironment.DOTNET_NOLOGO='1'
     $app=Start-RackClickOwnedProcess -Executable $instance.dotnet -Arguments @((Join-Path $instance.stageRoot 'server\RackClick.Server.dll')) -WorkingDirectory $instance.root -Environment $appEnvironment -LogDirectory $runRoot -Label 'application'
     $deadline=[DateTime]::UtcNow.AddSeconds(40)

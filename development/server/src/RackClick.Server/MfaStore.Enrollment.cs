@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using Npgsql;
 using OtpNet;
 using RackClick.Domain;
@@ -22,8 +23,6 @@ public sealed partial class MfaStore
         // Enrolamiento necesario: pendiente explícito, o exigencia sin factor activo.
         public bool NeedsEnrollment => EnrollmentPending || (MfaRequired && FactorState != "active");
     }
-
-    private const int EnrollmentKeyVersion = 1;
 
     // Paso 1: el titular recibe el secreto y su URI de configuración. Reemplaza cualquier factor anterior pendiente.
     public async Task<EnrollmentStart> StartEnrollment(string challengeToken, string csrfHeader, CancellationToken ct)
@@ -50,13 +49,24 @@ public sealed partial class MfaStore
         }
 
         byte[] secret = MfaTotp.NewSecret();
-        byte[] cipher = MfaSecretCipher.Seal(keys.GetKey(EnrollmentKeyVersion), EnrollmentKeyVersion, secret, state.Systemhaus, state.User);
+        // Versión activa del anillo: el nuevo factor se cifra y se guarda con esa misma versión. Si el proveedor falla, la
+        // excepción sale antes de cualquier escritura y la transacción se revierte. La copia recibida es nuestra: se pone a cero.
+        var (version, key) = keys.GetActiveKey();
+        byte[] cipher;
+        try
+        {
+            cipher = MfaSecretCipher.Seal(key, version, secret, state.Systemhaus, state.User);
+        }
+        finally
+        {
+            CryptographicOperations.ZeroMemory(key);
+        }
         await using (var upsert = Command(db, tx, """
             INSERT INTO app_mfa_factor(systemhaus_id,user_id,state,secret_ciphertext,key_version,last_time_step,failed_attempts,locked_until,created_at,confirmed_at)
             VALUES(@systemhaus,@user,'pending',@cipher,@version,-1,0,NULL,now(),NULL)
             ON CONFLICT (systemhaus_id,user_id) DO UPDATE SET state='pending',secret_ciphertext=EXCLUDED.secret_ciphertext,
               key_version=EXCLUDED.key_version,last_time_step=-1,created_at=now(),confirmed_at=NULL
-            """, ("systemhaus", state.Systemhaus), ("user", state.User), ("cipher", cipher), ("version", EnrollmentKeyVersion)))
+            """, ("systemhaus", state.Systemhaus), ("user", state.User), ("cipher", cipher), ("version", version)))
             await upsert.ExecuteNonQueryAsync(ct);
         await WriteAudit(db, tx, state.Systemhaus, state.User, "auth.mfa.enrollment_started", ct);
         await tx.CommitAsync(ct);

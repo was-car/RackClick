@@ -1,41 +1,37 @@
-# RackClick · desarrollo privado
+# RackClick · servidor y documentación de red
 
-Documentación visual de infraestructura y cableado de red, con GUI RC9/Click-Click y servidor ASP.NET Core/.NET 10, Npgsql directo y PostgreSQL 17. Todos los usuarios trabajan desde el navegador.
+**Repositorio privado de desarrollo · actualización 30.10.2026.** RackClick documenta clientes, sitios, edificios, salas, racks, equipos, puertos y conexiones. Conserva el diseño RC9 y el flujo Click-Click para recorrer y conectar infraestructura.
 
-## Estado de esta copia
+## Empezar
 
-Foto de fuentes de desarrollo para `was-car/RackClick` privado, 26.10.2026. No es una release, un instalador verificado o una adopción de producción. MFA está en desarrollo y no se habilita todavía. El escritor inicial L2c tiene pendiente MFA-L2C-01 (identidad del staging), descrito en docs/REVISION-MFA-L2C-CODEX-26-10-2026.md.
+**[Instalación desde GitHub, paso a paso](docs/INSTALACION-DESDE-GITHUB.md)**: requisitos, herramientas oficiales, compilación, arranque, acceso privado, datos sintéticos y parada. No requiere una base existente. El laboratorio sólo escucha en este Windows y conserva las bases que crea.
 
-La cifra acreditada es 7,63/100 del plan de cierre pendiente; no un porcentaje global nuevo del producto. Los bloques parciales se distinguen de la candidata/QA final.
+La instalación como **servicio Windows con HTTPS** tiene un [manual propio de edición 10](docs/PASOS-COMPLETOS-INSTALADOR10-WASCAR.md). Su instalador binario permanece en la entrega privada local, pendiente de cerrar las condiciones de redistribución; no se incluye ni se publica como Release en este repositorio. La demo de fuentes no sustituye ese servicio ni habilita MFA.
 
-## Estructura
+## Qué contiene esta actualización
 
-- `development/server`: servidor, dominio, SQL y pruebas.
-- `development/frontend`: GUI y pruebas; usa la referencia RC9 de `reference/`.
-- `development/windows-service`: host del servicio Windows.
-- `tools`: herramientas propias de desarrollo, verificación y empaquetado.
-- `docs`: selección de contratos, decisiones y guías.
+| Parte | Estado |
+|---|---|
+| ASP.NET Core/.NET 10, Npgsql directo y PostgreSQL 17 | Fuentes congeladas de la candidata 10, esquema 15. Migración e identidad de ejecución separadas. |
+| Frontend React/JavaScript/TypeScript | GUI RC9, jerarquía, inventario, grupos/permisos y panel MFA. Sin CDN en ejecución. |
+| MFA | Enrolamiento, login/verificación, gestión propia y administrativa, claves Windows/DPAPI y política de 45 días. Cuenta administrativa probada por Wascar en la candidata nativa. Recuperación portable y aceptación completa pendientes. |
+| Ejemplo sintético | 10 clientes, 68 racks, 311 equipos, 5408 puertos y 623 conexiones. Inventario canónico, sin usuarios, contraseñas, sesiones ni secretos MFA. |
+| Arranque de demostración | `tools/start_demo.py`: base nueva, importación confirmada, credenciales locales aleatorias y parada de sus propios procesos. HTTP en loopback; proveedor MFA desactivado explícitamente. |
+| Plan y requisitos | [Hoja de ruta maestra](docs/HOJA-DE-RUTA-MAESTRA.md), trazabilidad RC10 y registro de peticiones pendientes. |
+| Investigación | [Fuentes oficiales y repositorios originales](docs/FUENTES-OFICIALES-DESARROLLO.md), con criterios de licencia, compatibilidad y reutilización. |
 
-## Preparar desarrollo
+Versiones fijadas: SDK 10.0.401, runtime 10.0.12, PostgreSQL 17.11, Node 24.21.0, esbuild 0.25.10, Npgsql 10.0.3 y Otp.NET 1.4.1. No actualizar silenciosamente `global.json` ni los locks para sortear una restauración fallida.
 
-Leer AGENTS.md y docs/CONTINUIDAD-CODEX.md. Mantener SDK10.0.401 exacto de global.json; no actualizar pins silenciosamente. Herramientas oficiales: development/toolchain.lock.json y tools/windows/Initialize-Toolchain.ps1. El frontend usa Build-Frontend.ps1; el servidor usa su solución/csproj y locks. Consultar los README de cada componente.
+## Qué sigue pendiente
 
-Los laboratorios requieren identidades y secretos nuevos locales. No se incluyen conexiones, usuarios o datos de ninguna instalación existente. Las pruebas PostgreSQL/Windows necesitan su entorno real; no se declaran ejecutadas por publicar esta copia.
+Esta publicación no es adopción del servidor final. Faltan recuperación integral de secretos/MFA, rotación/códigos/emergencia, variantes y aceptación de inventario, paridad RC10, mejora visual de administración, backups desde el dashboard, instalación/red/actualización completas, rendimiento medido, licencias y QA final. El [índice de cierre](docs/HOJA-DE-RUTA-MAESTRA.md) mide el pendiente: 9,76/100; no es un porcentaje global nuevo del producto.
 
-## Alcance de la publicación
+Los documentos históricos conservan resultados anteriores y pueden enlazar evidencias privadas no publicadas. La guía anterior y la hoja de ruta tienen precedencia para continuar. Algunos empaquetadores históricos dependen de artefactos `.local` excluidos y no reconstruyen por sí solos los ZIP congelados.
 
-Se conserva el historial original en la PC. Esta copia inicia un historial seleccionado: excluye laboratorios, backups/dumps, claves/certificados, diagnósticos, transcripciones, evidencias históricas masivas, instaladores/candidatas y archivos de terceros descargados para investigación. El ZIP RC9 es una entrada de fuentes necesaria para compilar el frontend, no un instalador del servidor.
+## Datos, seguridad y procedencia
 
-Parte de las pruebas y empaquetadores históricos necesita artefactos/evidencias locales excluidos: no se garantiza reproducir esos ensayos o los instaladores congelados desde este clon. `npm run test:build` tiene una referencia a un archivo ausente y no se presenta como chequeo funcional. Las guías/documentos históricos pueden contener enlaces a material local no publicado.
+El código propio no recibe una licencia abierta por alojarse aquí. Se conservan los avisos de terceros y la [revisión de publicación](docs/REVISION-PUBLICACION-30-10-2026.md). No copiar imágenes ni módulos de terceros sin revisar sus términos.
 
-No se incorpora una licencia abierta al código propio con esta publicación privada. Se mantienen los avisos de terceros; revisar sus obligaciones antes de redistribuir paquetes o abrir el repositorio.
+No se publican laboratorios, bases, credenciales, claves, sobres MFA, certificados privados, binlogs, transcripciones ni resultados personales de QA. El ejemplo es sólo inventario sintético; cada instalación necesita sus propias identidades y secretos. [PUBLICATION-TRANSFORMS.json](PUBLICATION-TRANSFORMS.json) registra las seis contraseñas de fixtures sustituidas por generación aleatoria en esta selección, sin cambiar el código de producto congelado.
 
-## Actualizaciones
-
-Investigar antes de implementar, pruebas pertinentes, revisión independiente, selección de archivos, escaneo de secretos y commit. No añadir `.local`, exports QA, backups o todos los archivos con `git add -A`. La publicación del código no modifica el servidor QA.
-
-No hay CI/deploy automático activado en esta copia. Antes de configurarlo, adaptar los tests Windows/DPAPI y sus dependencias; no prometer verde de Linux para esas pruebas.
-
-La copia exportada sustituye cuatro contraseñas constantes de fixtures por generación CSPRNG al ejecutar las pruebas. PUBLICATION-TRANSFORMS.json registra rutas y hashes sin valores; las fuentes originales no se editaron. Auxiliares de cierre histórico quedan excluidos.
-
-El escritor L2c y sus tests se fijan a la última fuente revisada indicada en PUBLICATION-TRANSFORMS.json. Cambios concurrentes posteriores permanecen en el workspace original y se incorporarán tras su revisión.
+No hay despliegue automático ni CI que se anuncie como verde. Las pruebas Windows/DPAPI/PostgreSQL necesitan su entorno real. Los pasos efectivamente repetidos sobre esta selección se registran en [PUBLICACION-GITHUB-30-10-2026.md](docs/PUBLICACION-GITHUB-30-10-2026.md).

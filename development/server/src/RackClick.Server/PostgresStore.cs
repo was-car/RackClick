@@ -59,18 +59,20 @@ public sealed partial class PostgresStore(NpgsqlDataSource source)
     internal static async Task RequireCurrentSession(NpgsqlConnection db, NpgsqlTransaction tx, Actor actor, CancellationToken ct)
     {
         if (actor.SessionTokenHash is null) throw new DomainError(401, "authentication_required");
-        await using var cmd = Command(db, tx, """
+        await using var cmd = Command(db, tx, $"""
             SELECT s.token_hash FROM app_session s JOIN app_user u ON u.id=s.user_id
               WHERE s.token_hash=@token AND s.user_id=@actor AND u.systemhaus_id=@house AND u.active AND s.expires_at>clock_timestamp()
+              AND {MfaSessionAllowedSql}
               FOR SHARE OF s,u
             """, ("token", actor.SessionTokenHash), ("actor", actor.Id), ("house", actor.HouseId));
         if (await cmd.ExecuteScalarAsync(ct) is not string) throw new DomainError(401, "authentication_required");
         // The predicate above may run before FOR SHARE waits for an actor/session lock.
         // Keep those locks and evaluate PostgreSQL's wall clock again after acquisition,
         // including in RepeatableRead transactions (whose snapshot time stays unchanged).
-        await using var current = Command(db, tx, """
+        await using var current = Command(db, tx, $"""
             SELECT s.token_hash FROM app_session s JOIN app_user u ON u.id=s.user_id
               WHERE s.token_hash=@token AND s.user_id=@actor AND u.systemhaus_id=@house AND u.active AND s.expires_at>clock_timestamp()
+              AND {MfaSessionAllowedSql}
             """, ("token", actor.SessionTokenHash), ("actor", actor.Id), ("house", actor.HouseId));
         if (await current.ExecuteScalarAsync(ct) is not string) throw new DomainError(401, "authentication_required");
     }
@@ -79,10 +81,11 @@ public sealed partial class PostgresStore(NpgsqlDataSource source)
     {
         if (token.Length != 64) return null;
         await using var db = await source.OpenConnectionAsync(ct);
-        await using var cmd = Command(db, null, """
+        await using var cmd = Command(db, null, $"""
             SELECT u.id,u.systemhaus_id,u.username,s.csrf_hash FROM app_session s
             JOIN app_user u ON u.id=s.user_id
             WHERE s.token_hash=@token AND s.expires_at>now() AND u.active
+              AND {MfaSessionAllowedSql}
             """, ("token", Secrets.Digest(token)));
         await using var row = await cmd.ExecuteReaderAsync(ct);
         return await row.ReadAsync(ct) ? new(new Actor(row.GetGuid(0), row.GetGuid(1), row.GetString(2))

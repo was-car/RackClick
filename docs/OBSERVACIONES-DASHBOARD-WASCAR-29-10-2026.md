@@ -1,0 +1,12 @@
+# Observaciones de Wascar · dashboard
+
+29.10.2026. Prioridad pedida: integrar MFA antes de ampliar los ajustes visuales.
+
+**Adenda posterior:** Wascar confirma MFA administrativo satisfactorio y aporta una grabación comparando la pantalla del servidor con la demo. [Revisión con tiempos, causa y aceptación](REVISION-VIDEO-INTERFAZ-29-10-2026.md). Se confirma el problema de posición: PoE y exportaciones preceden a la vista de racks. El próximo ajuste de presentación debe resolverlo; no requiere otra instalación ni reimportar los clientes para diagnosticarlo.
+
+1. **MFA y seguridad personal.** Acceso reconocible desde el dashboard a estado, días de gracia, activación y gestión del autenticador propio. En administración, estado y acciones del usuario seleccionado. No confundir administración global del Systemhaus con administración de clientes. Política confirmada en [gracia45](DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md).
+2. **Racks como primera impresión.** Al abrir un cliente y navegar a la ubicación/sala, los racks deben verse antes que los bloques extensos de información. Compactar esa información secundaria y permitir desplegarla con un clic. Conservar contexto y navegación, edición accesible, frontal/trasera y Click-Click. Verificar tamaños de pantalla y que el plegado no oculte errores o cambios pendientes.
+3. **Usuarios y grupos más claros.** Organizar navegación, lista/búsqueda, usuario seleccionado y sus detalles siguiendo la claridad de Active Directory/Entra. Hacer visibles pertenencias, ámbitos y capacidades reales. No cambiar el modelo de permisos por una jerarquía visual ni otorgar autoridad por nombres de rol.
+4. **Informes y exportaciones integrados.** La grabación muestra la expectativa de barra compacta e informe claro, con PDF/imagen/hoja de cálculo accesibles. Aprovechar el rack seleccionado y agrupar controles; revisiones, UUID y SHA extensos bajo demanda. Mantener la confirmación real del servidor, los permisos y la identificación correcta de cada formato. No declarar formatos probados sólo porque la demo muestra sus botones.
+
+Los puntos2 y3 quedan registrados para una tanda posterior al foco MFA, salvo un ajuste pequeño y verificable dentro de su integración. No se consideran implementados por este documento. Cada cambio visible deberá llevar instrucciones QA de ubicación, botón, acción y resultado, con disponibilidad real y conservación de resultados de Wascar.

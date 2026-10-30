@@ -118,6 +118,7 @@ public static partial class OpenApiDocument
         AddInventoryRackSvgReports(paths, schemas);
         AddChanges(paths, schemas);
         AddAdmin(paths, schemas);
+        AddMfaAccounts(paths, schemas);
         AddUserCatalogFavorites(paths, schemas);
         AddUserPreferences(paths, schemas);
         AddUserPortColors(paths, schemas);

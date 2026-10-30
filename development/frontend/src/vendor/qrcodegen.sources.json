@@ -1,0 +1,11 @@
+{
+  "name": "Nayuki QR Code generator",
+  "version": "1.8.0",
+  "upstream": "https://github.com/nayuki/QR-Code-generator",
+  "commit": "720f62bddb7226106071d4728c292cb1df519ceb",
+  "sourceUrl": "https://raw.githubusercontent.com/nayuki/QR-Code-generator/720f62bddb7226106071d4728c292cb1df519ceb/typescript-javascript/qrcodegen.ts",
+  "license": "MIT",
+  "upstreamSourceSha256": "c4749095a91bf9696e3a303998b9905e467094f53041e64393e65e6d887737fd",
+  "moduleSha256": "fa1559ee2732c801b5412d08cee4fe77fc1f1e9be033b6385004aee286baea21",
+  "adaptation": "ES module generated with existing esbuild0.25.10, adding only export qrcodegen. Original TS source unchanged; license retained. No runtime network or transitive dependencies."
+}

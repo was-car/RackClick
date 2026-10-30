@@ -67,6 +67,7 @@ public sealed partial class PostgresStore
         bool enrollmentPending = false;
         bool factorActive = false;
         long policyRevision = 0;
+        await EnforceMfaGrace(db, tx, systemhaus!.Value, id!.Value, ct);
         await using (var policy = Command(db, tx, """
             SELECT m.mfa_required,m.enrollment_pending,m.revision,
                    EXISTS(SELECT 1 FROM app_mfa_factor f

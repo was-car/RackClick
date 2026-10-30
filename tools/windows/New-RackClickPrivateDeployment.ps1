@@ -109,8 +109,8 @@ try {
     $distributionPath=Join-Path $root 'distribution';$instancePath=Join-Path $root 'instance';$httpsPath=Join-Path $root 'https'
     $phase='stage'
     $stage=Invoke-CreationChild 'Stage-ServerDistribution.ps1' @('-ManifestPath',$paths.manifest,'-ExpectedManifestSha256',$creationInputs.manifestHash,'-ServerPath',$paths.server,'-FrontendPath',$paths.frontend,'-DotNetPath',$paths.dotnet,'-PostgresBinPath',$paths.pg,'-DestinationPath',$distributionPath) $root $logs
-    # 14 tiene 24 archivos de servidor (lista explícita); 9–13 siguen con 9+esquema. Total = servidor + 18 de frontend.
-    $expectedVerified=if ($sourceManifest.schema -eq 14) {42} else {27+$sourceManifest.schema}
+    # Profiles14/15 have one additional application DLL; historical9..13 unchanged.
+    $expectedVerified=if ($sourceManifest.schema -in @(14,15)) {28+$sourceManifest.schema} else {27+$sourceManifest.schema}
     if ($stage.code -cne 'artifacts_staged' -or $stage.destinationPath -cne $distributionPath -or $stage.verifiedFiles -ne $expectedVerified -or $stage.receiptSha256 -cnotmatch '^[a-f0-9]{64}$') {Stop-CreationCheck 'receipt_invalid'}
     $phase='instance'
     $created=Invoke-CreationChild 'New-RackClickLabInstance.ps1' @('-StagePath',$distributionPath,'-ExpectedManifestSha256',$creationInputs.manifestHash,'-ExpectedReceiptSha256',$stage.receiptSha256,'-DotNetPath',$paths.dotnet,'-PostgresBinPath',$paths.pg,'-InstancePath',$instancePath,'-PostgresPort',[string]$creationInputs.pgPort,'-PublicOrigin',('http://127.0.0.1:'+[string]$creationInputs.httpPort),'-BootstrapUser',$user,'-SystemhausName',$house,'-DevelopmentLoopbackHttp') $root $logs

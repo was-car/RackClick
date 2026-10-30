@@ -43,6 +43,22 @@ public sealed class WindowsMfaKeyProvider : IMfaKeyProvider
     {
         var ring = LoadRing();
         ring.RequireEntry(version);
+        return ReadKey(version);
+    }
+
+    // Versión activa y copia nueva de su clave, desde una sola lectura validada del anillo. El parser garantiza una única activa;
+    // aquí se comprueba de nuevo para que el contrato no dependa sólo de esa garantía.
+    public (int Version, byte[] Key) GetActiveKey()
+    {
+        var ring = LoadRing();
+        var active = ring.Entries.Where(entry => entry.State == MfaKeyState.Active).ToArray();
+        if (active.Length != 1)
+            throw new MfaKeyRingException(MfaKeyRingErrorKind.InvalidFormat, "mfa_key_active_invalid: el anillo no tiene exactamente una versión activa");
+        return (active[0].Version, ReadKey(active[0].Version));
+    }
+
+    private byte[] ReadKey(int version)
+    {
         var keyPath = Path.Combine(_keysFolder, MfaKeyRing.KeyFileName(version));
         var keyFile = MfaKeyRing.ParseKeyFile(_reader.ReadValidated(keyPath, MfaKeyRing.MaxKeyFileBytes), _installationId, version);
         return Unprotect(keyFile.ProtectedKey, MfaKeyRing.EntropyFor(_installationId, version));

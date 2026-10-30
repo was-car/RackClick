@@ -1,3 +1,9 @@
+# Estado de la publicación · 30.10.2026
+
+Candidata10, esquema15 y MFA de panel/login integrados. Para compilar y abrir una base sintética nueva, seguir [Instalación desde GitHub](../../docs/INSTALACION-DESDE-GITHUB.md). El laboratorio HTTP local no activa MFA ni instala un servicio. Los registros siguientes son históricos; no representan una nueva métrica global.
+
+---
+
 # RackClick Server — desarrollo interno S1
 
 **Consola VS Code21.10.2026:** [solución predeterminada, SDK local y pasos de recarga](../../docs/SOLUCION-CONSOLA-VSCODE.md). `.local` queda excluido del trabajo del editor; se conserva SDK401 exacto con rutas relativas. Restore/build de la solución real comprobados; no cambio de aplicación, GUI, DB ni QA.

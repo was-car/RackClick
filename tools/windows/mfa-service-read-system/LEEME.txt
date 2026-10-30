@@ -1,0 +1,35 @@
+RackClick - ensayo de lectura mediante tarea SYSTEM temporal
+=========================================================
+
+Investigacion previa, 27.10.2026:
+- Wascar midio TOKEN_QUERY permitido pero TOKEN_DUPLICATE denegado5 con ambos privilegios activados.
+- https://learn.microsoft.com/en-us/windows/win32/secauthz/access-rights-for-access-token-objects
+  documenta el control independiente de la DACL del token; no se cambian esos permisos para forzar la prueba.
+- https://learn.microsoft.com/en-us/windows/win32/taskschd/taskfolder-registertaskdefinition
+  permite TASK_CREATE2 y SYSTEM/ServiceAccount5 sin contrasena.
+- https://learn.microsoft.com/en-us/windows/win32/taskschd/task-security-hardening
+  exige declarar SeImpersonatePrivilege, pues puede retirarse si falta RequiredPrivileges.
+
+Decision: nueva ruta explicita, no repeticion de Run02. Una tarea UUID, sin triggers, bajo demanda,
+ejecuta la sonda02 original y pinada. SYSTEM obtiene el token, pero la lectura y las aperturas de
+comprobacion ocurren bajo suplantacion del token real del servicio dentro de la sonda02.
+No cambia cuenta, servicio, claves, ACL del almacen/token, configuracion, base de datos ni MFA.
+La tarea propia se retira al terminar si su definicion coincide; staging privado se conserva.
+No hay SDK, dependencias o binarios nuevos. El ZIP02 ya existente es el unico payload.
+
+Uso: consola Windows PowerShell5.1 elevada en la VM existente. Primero Check. Run pide confirmacion
+explicita antes de escribir o registrar. El equipo LEAO esta excluido de Check, Run y Worker.
+SelfTest y las pruebas simuladas no registran tareas ni prueban SYSTEM real.
+Check y Run requieren ExpectedScriptSha256 con el hash externo que entregue Codex; se retiene el archivo propio
+para impedir que una copia modificada se ejecute como SYSTEM. Archivo/ZIP y todos los miembros quedan retenidos
+solo para lectura durante el ensayo. Un marcador CreateNew impide repetir la lectura al relanzar la misma tarea.
+
+Resultado passed requiere sonda coherente, identidad real del servicio, restauracion, denegaciones
+completas de escritura/DAC y huella igual antes/despues. LastTaskResult0 no acredita MFA por si solo.
+SYSTEM tampoco garantiza que una DACL de token particular permita duplicar: el positivo real queda
+pendiente del ensayo en la VM. Nunca enviar el recibo privado; compartir solo resumen sanitizado.
+
+Precision medida: el setter nativo XmlText rechazo los nodos RequiredPrivileges en este entorno. Se usa la API
+IPrincipal2.AddRequiredPrivilege de Windows y se comprueba el XML que emite el objeto antes de registrar.
+https://learn.microsoft.com/en-us/windows/win32/api/taskschd/nn-taskschd-iprincipal2
+La validacion en memoria no registra una tarea ni equivale a probar su ejecucion real.

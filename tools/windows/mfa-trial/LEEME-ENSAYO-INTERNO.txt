@@ -1,0 +1,84 @@
+RackClick - ENSAYO INTERNO de MFA-INIT (L2k, edicion 03)
+========================================================
+
+Lo que es: un ensayo interno del modo --mfa-keys-init del servidor, para comprobar al operador elevado
+y la creacion del almacen de claves con la confianza productiva (SYSTEM y Administradores).
+
+Lo que NO es: no es instalador, no es actualizacion, no instala servicios, no crea cuentas, no toca bases
+de datos, no activa MfaKeyStore:Enabled, no abre puertos ni cambia el firewall. MFA no queda disponible
+para ningun usuario.
+
+
+1. Requisitos
+-------------
+- Windows 10/11 o Windows Server, en la maquina de ensayo acordada (no en el equipo de desarrollo).
+- Una consola de PowerShell o cmd abierta como ADMINISTRADOR (elevada). Sin elevacion el ensayo se detiene
+  antes de escribir nada.
+- Un servicio RackClick existente con su cuenta de inicio. El ensayo solo lee su nombre y su SID.
+- Dos valores que entrega el equipo de desarrollo por un canal distinto del ZIP:
+    a) el SHA256 del ZIP RackClick-MFA-Ensayo-03.zip;
+    b) el SHA256 del archivo SHA256SUMS que va dentro del ZIP.
+- No hace falta .NET, SDK, Node, Git ni PostgreSQL: el runtime va incluido en runtime\.
+
+
+2. Pasos
+--------
+a) VERIFICACION EXTERNA, antes de extraer el ZIP y antes de ejecutar ningun .cmd. En PowerShell:
+       Get-FileHash -Algorithm SHA256 -LiteralPath .\RackClick-MFA-Ensayo-03.zip
+   Compare el resultado con el valor (a) recibido por el canal separado. Si no coincide, no extraiga ni ejecute nada
+   y avise al equipo de desarrollo. Este paso lo hace Windows; el ensayo no puede verificar su propio paquete.
+b) Extraiga el ZIP en una carpeta NUEVA y vacia (no dentro de una instalacion de RackClick).
+c) Abra una consola como administrador en esa carpeta.
+d) Compruebe primero (solo lectura, no escribe nada):
+       INICIAR-ENSAYO-MFA.cmd <SHA256 de SHA256SUMS recibido (valor b)>
+   Revise que aparezcan: elevacion observada "si", paquete verificado, servicio seleccionado y su SID.
+   Si hay varios servicios RackClick, el ensayo se detiene y lista sus nombres. Vuelva a lanzar
+   indicando el nombre como segundo argumento (ver e).
+e) Solo si el paso d) es correcto, lance el ensayo. El nombre de servicio es opcional salvo que haya varios:
+       INICIAR-ENSAYO-MFA.cmd run <SHA256 de SHA256SUMS recibido (valor b)> [NombreServicio]
+f) El ensayo muestra el plan y pide escribir exactamente:
+       CONFIRMO ENSAYO MFA-INIT <UUID mostrado>
+   Sin esa confirmacion no se escribe nada.
+
+
+3. Que hace el ensayo (y en que orden)
+--------------------------------------
+- Rechaza el equipo LEAO antes de leer nada.
+- Comprueba elevacion, integridad del paquete (cada archivo contra SHA256SUMS) y la cuenta de inicio del servicio.
+- Una confirmacion incorrecta termina antes de crear nada: no se escribe ni carpeta, ni recibo, ni resumen.
+- La carpeta se crea de forma exclusiva. Si ya existe, el ensayo se detiene sin tocarla (trial_folder_exists).
+- Crea UNA carpeta nueva: %ProgramData%\RackClick-MFA-Ensayo-03-<UUID>, con DACL protegida desde su creacion:
+  SYSTEM y Administradores con control total; la cuenta del servicio solo con lectura; propietario Administradores.
+- Ejecuta dos veces el servidor con --mfa-keys-init sobre esa carpeta:
+    1) debe responder created y salida 0;
+    2) debe responder rejected / mfa_keystore_init_exists y salida 1, sin cambiar bytes ni ACL.
+- La huella del estado incluye la ACL de la propia carpeta raiz, no solo sus archivos.
+- Si algo no coincide, se detiene y deja el estado tal cual. No reintenta, no borra por nombre.
+- Al parar, o al terminar, muestra un resumen sanitizado con el codigo de parada, el paso observado y los pasos
+  no ejecutados. Si no puede guardarlo, lo muestra en pantalla y lo indica.
+- Escribe dos archivos hermanos de la carpeta. Nacen con ACL solo para SYSTEM y Administradores:
+    %ProgramData%\RackClick-MFA-Ensayo-03-<UUID>.recibo-privado.json   (NO se envia a nadie)
+    %ProgramData%\RackClick-MFA-Ensayo-03-<UUID>.resumen-sanitizado.txt (este si se entrega)
+
+
+4. Que enviar
+-------------
+- Envie el resumen sanitizado y el codigo de salida. Contiene hashes, UUID, nombre del servicio, cuenta y SID.
+- No envie el recibo privado, ni la carpeta de ensayo, ni contenidos de claves, blobs, sobres ni configuraciones.
+
+
+5. Contenido del paquete
+------------------------
+- runtime\: componentes .NET 10.0.12 incluidos, con sus avisos (LICENSE.txt y ThirdPartyNotices.txt).
+- servidor\: publicacion del servidor de esta edicion.
+- licenses\: avisos de Npgsql y Otp.NET, con README.txt que indica sus fuentes.
+- BUILD-MANIFEST.json y SHA256SUMS: identidad interna del paquete.
+
+
+6. Limites
+----------
+- El ensayo no demuestra que el servicio lea la clave: solo que el operador elevado y la provision
+  con confianza productiva funcionan. El positivo con el token del servicio queda para un ensayo posterior.
+- La consulta del SID mediante SCM no es ejecucion bajo ese SID.
+- SHA256SUMS no autentica su propio origen: la verificacion externa del paso 2.a es la que cierra eso.
+- El script usa -ExecutionPolicy Bypass solo para este proceso de PowerShell.

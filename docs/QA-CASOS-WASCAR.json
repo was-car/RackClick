@@ -1,5 +1,5 @@
 {
-  "revision": "2026-10-25-order-cancel-123",
+  "revision": "2026-10-29-mfa-dashboard-grace45-planned-131",
   "groupsBundle": "c457e5860274dcf87ec68dbdb1f7fef60b2589adaba20a00f2410157dc05487c",
   "cases": [
     {
@@ -2168,6 +2168,138 @@
         "Recarga con Ctrl+R. Revisa ambos racks; si tienes una segunda sesión autorizada, abre el mismo cliente desde otro perfil del navegador y comprueba orden, nombres, puertos y cable. Registra Pass/Not Pass y el paso exacto, distinguiendo el subcaso táctil si no se probó."
       ],
       "expected": "Las flechas, el arrastre y el movimiento cambian únicamente el orden documental o el rack elegido tras confirmación del servidor. Cancelar un gesto táctil no deja un movimiento pendiente para el siguiente toque. UUID, atributos, puertos y extremos del cable se conservan; la recarga y otra sesión muestran el mismo resultado. No se inventan posiciones U ni se confunde arrastre de equipo con Click-Click de puertos."
+    },
+    {
+      "id": "QA-124",
+      "module": "Acceso · MFA",
+      "title": "Configurar el autenticador y confirmar el primer código",
+      "feature": "planned",
+      "steps": [
+        "NO DISPONIBLE en tu QA instalada actualmente. Espera una candidata y una cuenta ficticia con MFA exigido, entregadas por el técnico. Hasta entonces marca Bloqueado; no cambies tu servidor ni repitas el ensayo de inicialización de claves03.",
+        "Abre la dirección HTTPS de esa candidata. En el formulario central escribe el usuario y la contraseña privados de prueba y pulsa el botón de inicio de sesión. Debe aparecer el cuadro Configura tu autenticador. Aún no debe abrirse Clientes ni Infraestructura.",
+        "En el cuadro central pulsa Configurar autenticador una sola vez. Espera el QR. En tu aplicación de autenticación del teléfono añade una cuenta y escanea el QR. Si no puedes escanearlo, debajo pulsa Clave de configuración manual y añádela como cuenta basada en tiempo, de seis dígitos. No envíes capturas del QR ni copies la clave en observaciones.",
+        "En Código de autenticación de seis dígitos escribe un código incorrecto de prueba. Pulsa Confirmar autenticador e iniciar sesión: debe indicar que no fue aceptado, sin abrir la aplicación. No hagas intentos repetidos innecesarios.",
+        "Espera un código actual en tu autenticador. Escríbelo en el mismo campo y pulsa Confirmar autenticador e iniciar sesión. Tras la confirmación del servidor debe abrirse la aplicación. El QR, la clave y el código deben desaparecer de la pantalla.",
+        "Recarga con Ctrl+R: la sesión confirmada debe poder leer los clientes permitidos. Anota Pass/Not Pass, versión y paso exacto. No incluyas contraseña, semilla, código TOTP ni imágenes del autenticador en el informe. El escaneo con teléfono es una comprobación manual pendiente; indica si usaste QR o clave manual."
+      ],
+      "expected": "La contraseña sólo inicia un desafío. El factor y la sesión se confirman con un TOTP válido; el incorrecto no permite acceso. QR/clave se muestran sólo durante la configuración, sin servicios externos. Los datos permanecen privados."
+    },
+    {
+      "id": "QA-125",
+      "module": "Acceso · MFA",
+      "title": "Volver a entrar con segundo factor y recargar un desafío",
+      "feature": "planned",
+      "steps": [
+        "NO DISPONIBLE hasta recibir la candidata con MFA. Usa la cuenta ficticia que completó QA-124 y conserva su autenticador. No uses la cuenta administradora única del servidor.",
+        "En la barra superior de RackClick pulsa Cerrar sesión. Vuelve al formulario central e introduce el mismo usuario y contraseña. Debe aparecer Verifica tu inicio de sesión, con el campo de seis dígitos y sin QR ni clave manual.",
+        "Antes de introducir un código, pulsa Ctrl+R. Debe volver al formulario de contraseña sin abrir la API como usuario autenticado. Escribe de nuevo usuario/contraseña y comprueba que vuelve a pedir el segundo factor.",
+        "Introduce el código actual y pulsa Verificar e iniciar sesión. Espera la confirmación; deben aparecer únicamente los clientes autorizados. Cierra sesión otra vez y vuelve a introducir la contraseña.",
+        "Si aún sigue visible en el teléfono el mismo código que acabas de usar con éxito, intenta enviarlo una vez: no debe reutilizarse. Si el teléfono ya cambió de código, indica No probado para este subcaso. Espera el código siguiente y confirma que puedes entrar.",
+        "Registra Pass/Not Pass y el paso exacto. Nunca escribas el código usado en observaciones. Si te bloquea por demasiados intentos, espera el tiempo indicado y anota el resultado sin insistir."
+      ],
+      "expected": "El segundo login exige verificación sin volver a exponer la semilla. Un desafío pendiente o su recarga no conceden acceso. Sólo un código vigente y no consumido permite una sesión nueva."
+    },
+    {
+      "id": "QA-126",
+      "module": "Acceso · MFA",
+      "title": "Cancelar, cambiar idioma y manejar una confirmación incierta",
+      "feature": "planned",
+      "steps": [
+        "NO DISPONIBLE en la QA actual. Hazlo sólo en la candidata de laboratorio indicada, con una cuenta ficticia y sin cambiar la red del servidor. El subcaso de respuesta perdida requiere apoyo del técnico; si no está preparado, déjalo No probado.",
+        "Introduce usuario y contraseña. En el cuadro MFA, arriba, usa el selector de idioma para revisar Español, English y Deutsch. Deben cambiar las instrucciones y botones del cuadro sin permitir usar el fondo de la aplicación. Vuelve a Español.",
+        "Pulsa Volver al inicio de sesión, debajo del campo o del botón de configuración. Debe cerrarse el cuadro y reaparecer el formulario de contraseña. Si habías mostrado una clave de configuración con una cuenta ficticia nueva, no debe seguir visible al volver ni al recargar.",
+        "Inicia de nuevo. Envía un código incorrecto una vez: debe mostrar un error comprensible y permitir corregirlo; no debe afirmar que se inició sesión ni abrir Clientes.",
+        "Sólo con el técnico: provocar la pérdida de la respuesta de inicio de configuración o confirmación, sin repetir la solicitud automáticamente. Debe aparecer una indicación de que no se recibió confirmación, retirar el material de configuración y ofrecer volver al login. No debe mostrar éxito supuesto ni generar otro factor automáticamente.",
+        "Vuelve al inicio de sesión y autentícate según el estado confirmado del servidor. Registra por separado idiomas, cancelación y respuesta perdida. No marques Pass al subcaso que no se haya preparado; no adjuntes claves, códigos ni cuerpos de solicitudes."
+      ],
+      "expected": "El cuadro es modal, sus textos siguen el idioma elegido y cancelar limpia el estado temporal. Un error o respuesta incierta no se convierte en éxito ni provoca enrolamientos repetidos. El servidor mantiene la decisión de acceso."
+    },
+    {
+      "id": "QA-127",
+      "module": "Seguridad · MFA y plazo",
+      "title": "Aviso de 45 días y acceso a Mi seguridad",
+      "feature": "planned",
+      "steps": [
+        "NO DISPONIBLE en la instalación actual. Espera la candidata con esquema15 y una cuenta ficticia ordinaria entregada para este caso; hasta entonces marca Bloqueado. No cambies la fecha de Windows ni de PostgreSQL.",
+        "Abre la dirección HTTPS indicada e inicia sesión con esa cuenta. En el aviso situado bajo la ruta de navegación de la parte superior debe aparecer cuántos días quedan para configurar MFA. Una cuenta recién creada dispone de 45 días; una existente usa la fecha de activación de la política.",
+        "En el menú lateral izquierdo, cerca del usuario y de Cerrar sesión, pulsa Mi seguridad. También puedes pulsar Gestionar mi MFA en el aviso superior. En el centro debe abrirse Autenticación multifactor con tu propio nombre de usuario.",
+        "Comprueba el estado, el aviso y la Fecha límite de configuración. Usa Actualizar estado dentro de ese panel y después Ctrl+R. La fecha límite debe mantenerse; una recarga no concede otros 45 días.",
+        "En la cabecera cambia el selector a English, Deutsch y Español. Deben traducirse los textos de seguridad y mantenerse tu nombre. Anota Pass/Not Pass, fecha límite observada y paso exacto, sin credenciales."
+      ],
+      "expected": "El aviso y Mi seguridad muestran el estado real y la fecha límite persistida. El plazo no se reinicia al recargar ni se calcula como autorización en el navegador."
+    },
+    {
+      "id": "QA-128",
+      "module": "Seguridad · MFA y plazo",
+      "title": "Activar y desactivar el propio factor durante la gracia",
+      "feature": "planned",
+      "steps": [
+        "NO DISPONIBLE hasta recibir candidata y cuenta ficticia con plazo vigente. Conserva su autenticador durante toda la prueba; no utilices el único administrador de tu servidor.",
+        "En la barra lateral izquierda pulsa Mi seguridad. En el panel central pulsa Activar MFA. Escribe Tu contraseña actual y marca Entiendo el efecto sobre esta cuenta y sus sesiones. Pulsa Confirmar cambio una sola vez.",
+        "Tras la confirmación debe volver al inicio de sesión. Entra con la misma cuenta y sigue QA-124 para configurar el autenticador y confirmar un código. La contraseña sola no debe abrir Clientes mientras falta el primer código.",
+        "Ya dentro, abre otra vez Mi seguridad. Debe aparecer el autenticador configurado. Si el plazo sigue vigente, pulsa Desactivar MFA, introduce la contraseña actual, marca la confirmación y pulsa Confirmar cambio. La sesión termina.",
+        "Vuelve a entrar durante la gracia: debe permitir contraseña sin pedir el factor desactivado. En Mi seguridad comprueba que la fecha límite es la misma de antes. Después de esa fecha el acceso ordinario volverá a exigir enrolamiento.",
+        "Si una respuesta se pierde, no supongas éxito ni pulses repetidamente. Sigue Consultar resultado original y, si se solicita, vuelve a iniciar sesión. Recuperar un recibo de una acción ya completada no debe expulsarte indefinidamente."
+      ],
+      "expected": "Los cambios se confirman por servidor y terminan las sesiones de la cuenta. Activación exige confirmar un factor; desactivación durante la gracia conserva la fecha límite y no crea una excepción permanente."
+    },
+    {
+      "id": "QA-129",
+      "module": "Administración · MFA",
+      "title": "Gestionar MFA de un usuario seleccionado",
+      "feature": "planned",
+      "steps": [
+        "NO DISPONIBLE hasta recibir candidata, administrador ficticio con MFA completado y usuario de destino. Usa dos perfiles de navegador o una ventana privada para distinguir sus sesiones.",
+        "Con el administrador abre Usuarios en el menú lateral izquierdo. En Usuario seleccionado, arriba en el área central, elige la cuenta ficticia de destino. En la navegación de administración pulsa Métodos de autenticación.",
+        "Comprueba el nombre del destino en el panel central. No debe aparecer su QR ni su clave. Si el panel exige verificar el MFA del administrador, configura primero el tuyo mediante Mi seguridad; no intentes eludir la comprobación.",
+        "Pulsa Activar MFA, marca la confirmación y pulsa Confirmar cambio. Espera la confirmación. En la otra ventana, la sesión anterior del destino debe dejar de servir para acceder a la API; al volver a entrar debe pedir configurar el autenticador.",
+        "Una vez configurado el factor del destino, vuelve a su panel administrativo y pulsa Actualizar estado. Pulsa Exigir una nueva configuración del autenticador y confirma. La otra cuenta debe volver a configurar un factor antes del acceso completo.",
+        "Con un técnico sin administración de seguridad, comprueba que no puede ejecutar estas acciones. Un administrador de clientes no debe obtener automáticamente la exención global. Registra actor, destino y paso, sin secretos."
+      ],
+      "expected": "La selección fija el destino, la autoridad se comprueba en el servidor, el administrador no ve secretos ajenos y cada cambio revoca sesiones/desafíos y queda auditado."
+    },
+    {
+      "id": "QA-130",
+      "module": "Seguridad · Roles globales",
+      "title": "Exención sólo para el administrador global del Systemhaus",
+      "feature": "planned",
+      "steps": [
+        "NO DISPONIBLE hasta recibir candidata y cuentas ficticias con permisos diferenciados. No deduzcas el rol por el nombre de la cuenta o del grupo: usa las cuentas que indique el técnico.",
+        "Entra como administrador global del Systemhaus y abre Mi seguridad en el menú lateral izquierdo. Debe indicar que está exento del plazo obligatorio. No debe presentarlo como una cuenta ordinaria a la que se le agotó la gracia.",
+        "Si tiene un autenticador activo y has completado MFA en esta sesión, prueba Desactivar MFA con la contraseña actual y la confirmación. Debe terminar la sesión y permitir volver a entrar sin factor, también en el escenario de plazo vencido preparado por el técnico.",
+        "Inicia sesión con el administrador de un cliente y luego con un técnico. Sus avisos deben mostrar el plazo aplicable; no deben heredar la exención del administrador global.",
+        "Si el administrador global necesita modificar factores ajenos después de quitar su MFA, comprueba que el panel explica la necesidad de completar MFA para esas acciones sensibles. La exención personal no debe convertirse en un bypass administrativo."
+      ],
+      "expected": "Sólo las capacidades globales del servidor conceden la exención propia. Administradores de clientes y técnicos mantienen los 45 días; gestionar factores ajenos conserva su protección."
+    },
+    {
+      "id": "QA-131",
+      "module": "Seguridad · Vencimiento MFA",
+      "title": "Vencimiento con sesión abierta y alta nueva posterior a la política",
+      "feature": "planned",
+      "steps": [
+        "NO DISPONIBLE sin un escenario temporal ficticio preparado por el técnico. No adelantes el reloj del equipo ni edites la base del servidor para hacer esta prueba.",
+        "Antes del vencimiento entra con la cuenta ordinaria indicada y mantén esa ventana abierta. Cuando el técnico confirme el vencimiento de su plazo ficticio, pulsa Actualizar o intenta una lectura/escritura nueva.",
+        "La sesión sin MFA debe ser rechazada. Vuelve al inicio de sesión: una contraseña válida debe abrir el enrolamiento, sin acceso normal hasta confirmar el primer código.",
+        "En otro perfil entra con una cuenta nueva creada después de activarse la política. Aunque el escenario de la cuenta antigua haya vencido, la nueva conserva sus propios 45 días desde su creación.",
+        "Comprueba que una sesión que sí completó MFA sigue funcionando según sus permisos. Registra cada subcaso como Pass/Not Pass/No probado; no atribuyas a tu QA manual los escenarios que sólo haya ejecutado el técnico."
+      ],
+      "expected": "El servidor aplica el vencimiento también a sesiones abiertas, distingue cuentas nuevas de antiguas y no depende del reloj o de los controles visuales del navegador."
+    },
+    {
+      "id": "QA-132",
+      "module": "Instalación · Candidata10",
+      "title": "Instalación limpia, reinicio y disponibilidad real de MFA",
+      "feature": "planned",
+      "steps": [
+        "New10 y postboot verificados en C; Wascar comunica MFA administrativo satisfactorio, otros casos pendientes. Para probar C sin reinstalar sigue docs/QA-MFA10-WASCAR.md; los datos originales ya cargados se comprueban con docs/QA-DATOS-ORIGINALES-MFA10-WASCAR.md. Para una instalación futura desde Windows limpio sigue docs/PASOS-COMPLETOS-INSTALADOR10-WASCAR.md (pasos 00 a 14), incluido como HTML y TXT en la entrega servidor10.",
+        "Sigue docs/INSTALADOR10-ENSAYO-MFA.md: extrae el ZIP y abre 00-LIMPIAR-Y-REINSTALAR.cmd. En el centro del asistente verifica IP, puertos y red reales; elige New. Abajo a la izquierda pulsa Revisar e instalar y revisa la confirmación.",
+        "Espera a awaiting_reboot, después de custodia MFA, HTTPS y primer backup. Si falla, conserva el informe y su código; no repitas a ciegas.",
+        "Reinicia Windows tú mismo. En el Escritorio abre RackClick-VERIFICAR-10-<8 caracteres>.cmd. En la parte inferior pulsa Verificar instalacion: debe registrar postboot_verified.",
+        "En ese panel pulsa Acceso privado para leer localmente las credenciales, y Abrir RackClick. En la web entra y abre Mi seguridad: MFA debe figurar disponible; completa QA-127 a QA-130 cuando el técnico confirme su disponibilidad en esta candidata.",
+        "Anota Pass/Not Pass/No probado y la observación. No pegues contraseñas, códigos, secretos TOTP ni contenido del acceso privado en la observación o en el chat."
+      ],
+      "expected": "La candidata instala esquema15 y su almacén privado MFA bajo la cuenta estándar, inicia automáticamente tras reinicio y ofrece MFA real en el dashboard. La integridad del ZIP o los tests locales por sí solos no cuentan como esta prueba."
     }
   ],
   "membersBundle": "efc8bda2405174feced0792048f7c65a2bfdba6665d7220b440589dcdea8ecd7",

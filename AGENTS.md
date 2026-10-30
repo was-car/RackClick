@@ -6,6 +6,12 @@ Comunícate con Wascar en español claro. Este proyecto continúa trabajo existe
 
 Wascar confirmó el 28.09.2026 el contraste del ZIP recepcion-20260928-091834 por el chat de continuidad. Continúa S1 bajo la autorización de desarrollo ya concedida: herramientas oficiales, laboratorio PostgreSQL nuevo, correcciones/pruebas e integración progresiva RC9. No solicitar otra aprobación de arranque. Adopción del servidor pendiente de QA final de Wascar. Lee docs/BRIEFING-MAESTRO.md, docs/CONTINUIDAD-CODEX.md y docs/S1-FUNDAMENTO.md. Los informes R0 y su protocolo son históricos; el límite de solo lectura ya no rige S1.
 
+## Planificación vigente · 30.10.2026
+
+Antes de escoger la siguiente tanda, leer [docs/HOJA-DE-RUTA-MAESTRA.md](docs/HOJA-DE-RUTA-MAESTRA.md) y su registro generado. Ahí se enlazan los 53 resultados del cierre, las 302 acciones RC10, las peticiones de Wascar, el catálogo de fabricantes y la evolución posterior. Mantener un resultado responsable por acción; no sumar botones, variantes, repositorios o pruebas como puntos nuevos. El ledger docs/PLAN-CIERRE-RACKCLICK.json conserva la contabilidad congelada; las decisiones confirmadas posteriores rigen el trabajo y se concilian mediante versión explicada antes de acreditar criterios incompatibles. No volver a preguntar la custodia MFA ni sustituir gracia45/exención global por textos históricos. El catálogo investigado no es una plantilla instalada.
+
+Parte manual: docs/REGISTRO-MAESTRO-CONFIG.json. Regenerar hoja/registro/CSV con C:/Python312/python.exe -B tools/build_master_roadmap.py --write; verificar con --check. Este auxiliar no modifica pesos, DB, VM, código de aplicación ni resultados QA. Las ideas SNMP/LLDP, trabajo de campo S5 y federación real mantienen su alcance posterior.
+
 ## Lectura inicial obligatoria
 1. `docs/CONTINUIDAD-CODEX.md` — decisiones y próximo trabajo.
 2. `docs/INICIO-IMPLEMENTACION-S1.md` — resultados y límites reales.
@@ -23,7 +29,7 @@ No se presupone acceso al chat anterior. Este archivo orienta; los documentos, c
 - Crear un token nuevo en cada login. MFA deberá consumir un desafío separado y emitir sesión/CSRF nuevos sólo después del segundo factor; un desafío no concede acceso a la API.
 - La cuenta PostgreSQL de ejecución no es superusuario ni propietaria y carece de DDL; migración/inicialización usan identidad separada. Mantener revocación y ámbitos en el servidor.
 - Nunca versionar secretos, dumps de memoria ni binlogs de compilación. Diagnósticos privados bajo `.local/`; escanear historial y cambios antes de incorporar archivos. No reemplazar controles existentes sólo para añadir una biblioteca.
-- MFA aún no está disponible. Wascar confirma el21.10.2026 que será obligatorio para todos antes de producción. Completar diseño, integración, recuperación y pruebas antes de anunciarlo o habilitarlo en QA. Estado: `docs/IMPLEMENTACION-REV4.md`.
+- MFA aún no está disponible en QA. Decisión vigente de Wascar del29.10.2026: obligatorio tras45días para usuarios, técnicos y administradores de clientes; nuevas cuentas desde creación, existentes desde activación de política. Sólo administradores globales del Systemhaus (capacidades globales systemhaus.manage y security.manage) están exentos y pueden activar/desactivar su propio factor. No reiniciar el plazo al desactivar. Completar integración, recuperación y pruebas antes de anunciarlo o habilitarlo en QA. Ver `docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md`; sustituye la exigencia inmediata anterior para todos.
 
 - RC9 offline adoptada es la referencia funcional y visual. No modificar el archivo adoptado. Extraer su ZIP de referencia a un directorio de trabajo separado cuando proceda.
 - Conservar Click-Click, aspecto aprobado, frontal/trasera, estados/PoE, tooltips, informes e idiomas EN/DE/ES. Conservar nombres escritos por el usuario sin traducirlos.
@@ -58,3 +64,12 @@ Wascar pide agentes especializados. Descubre y usa los perfiles pertinentes de .
 **Agrupación solicitada por Wascar (17.10.2026):** avanzar en grupos de tres tandas pequeñas cuando sus tareas sean independientes. Asignar archivos y resultados separados, coordinar las dependencias y entregar un cierre conjunto con el resultado real de cada tanda. La preferencia de gasto moderado y la revisión independiente se mantienen; agrupar tres tareas no obliga a ejecutar tres suites completas ni a abrir tres cambios sobre el mismo archivo.
 
 **Seguimiento solicitado por Wascar (28.09.2026):** incluir siempre en cada cierre el porcentaje aproximado de la entrega completa, qué avanzó y qué falta. Usar docs/PROGRESO-GLOBAL.md como criterio vigente; distinguir estimación de alcance de pruebas/aceptación. No incrementar el porcentaje por inercia ni confundirlo con créditos consumidos.
+
+
+## Actualizacion de publicacion y MFA - 30.10.2026
+
+Wascar autoriza actualizar el repositorio privado existente `was-car/RackClick` con una seleccion revisada de fuentes, datos sinteticos sin seguridad y manuales. No autoriza hacerlo publico ni desplegar automaticamente. Excluir instaladores binarios mientras se cierran sus condiciones de redistribucion; conservar las entregas locales. La publicacion se hace desde clon separado, sin incorporar el arbol concurrente ni secretos. Ver `docs/PUBLICACION-GITHUB-30-10-2026.md`.
+
+El estado historico que decia MFA no disponible queda superado para la candidata10: panel y login MFA nativos ya se ensayaron y Wascar probo su cuenta administrativa. Rige la decision de gracia45/exencion global confirmada el29.10, no la exigencia anterior inmediata a todas las cuentas. Recuperacion portable, codigos/emergencia, rotacion y aceptacion final siguen pendientes. El laboratorio de fuentes desactiva explicitamente el proveedor MFA; no confundirlo con la instalacion nativa.
+
+Consultar tambien `docs/FUENTES-OFICIALES-DESARROLLO.md` al investigar y `docs/INSTALACION-DESDE-GITHUB.md` para el ejemplo reproducible. La base de ejemplo es solo inventario, no un dump con usuarios o factores. Mantener el indice de cierre restante9,76/100 hasta nueva evidencia acreditable; publicar codigo no aumenta la metrica ni crea un porcentaje global nuevo.

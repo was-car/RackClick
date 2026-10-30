@@ -20,7 +20,7 @@ public sealed class MfaHttpCollection
 
 // Pruebas HTTP del enrolamiento MFA (MFA-L1) con el pipeline real: WebApplicationFactory ejecuta Program, el middleware
 // y los endpoints. Es integración en memoria: no acredita TCP, TLS ni cookies de un navegador real.
-// Usa PostgreSQL 17 de laboratorio (RACKCLICK_TEST_PG_ADMIN): base temporal propia, migraciones 001–014.
+// Usa PostgreSQL 17 de laboratorio (RACKCLICK_TEST_PG_ADMIN): base temporal propia, migraciones 001–015.
 // La conexión del servidor usa el rol administrador del laboratorio (no el rol de ejecución restringido): limitación declarada.
 [Collection("MfaHttp")]
 public sealed class MfaHttpTests
@@ -440,7 +440,7 @@ public sealed class MfaHttpTests
                 "001-foundation.sql", "002-inventory.sql", "003-operation-cancellation.sql", "004-session-identity.sql",
                 "005-audit-context.sql", "006-audit-state-intent.sql", "007-audit-context-families.sql",
                 "008-user-catalog-favorites.sql", "009-private-device-templates.sql", "010-customer-shared-device-templates.sql",
-                "011-user-preferences.sql", "012-user-port-colors.sql", "013-user-category-colors.sql", "014-mfa.sql",
+                "011-user-preferences.sql", "012-user-port-colors.sql", "013-user-category-colors.sql", "014-mfa.sql", "015-mfa-account-policy.sql",
             };
             await using var connection = await Source().OpenConnectionAsync(TestContext.Current.CancellationToken);
             foreach (var name in files)
@@ -501,6 +501,9 @@ public sealed class MfaHttpTests
 
     private sealed class SyntheticKeys(byte[] key) : IMfaKeyProvider
     {
-        public byte[] GetKey(int version) => version == 1 ? key : throw new InvalidOperationException("mfa_key_version_unknown");
+        public byte[] GetKey(int version) => version == 1 ? (byte[])key.Clone() : throw new InvalidOperationException("mfa_key_version_unknown");
+
+        // Versión activa explícita del stub (1) y copia nueva del material.
+        public (int Version, byte[] Key) GetActiveKey() => (1, (byte[])key.Clone());
     }
 }

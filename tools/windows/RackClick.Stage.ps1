@@ -66,7 +66,8 @@ function Invoke-StageChild {
 
 function Get-StageServerFileCount {
     param([int]$Schema)
-    # Conteo cerrado por esquema: 9–13 son 9 de aplicación más el esquema SQL; 14 tiene su lista explícita de 24.
+    # Conteo cerrado por esquema: 14 y 15 incluyen Otp.NET y sus migraciones explícitas.
+    if ($Schema -eq 15) {return 25}
     if ($Schema -eq 14) {return 24}
     if ($Schema -in @(9,10,11,12,13)) {return 9+$Schema}
     Stop-StageCheck 'manifest_distribution_unsupported'
@@ -92,7 +93,7 @@ function Get-StageSchema {
     param([string]$Stage)
     # Call only while holding the externally authenticated manifest read lock.
     $manifest=[IO.File]::ReadAllText((Join-Path $Stage 'manifest.json'),[Text.Encoding]::UTF8)|ConvertFrom-Json
-    if ($manifest.schema -isnot [int] -or $manifest.schema -notin @(9,10,11,12,13,14)) {Stop-StageCheck 'manifest_distribution_unsupported'}
+    if ($manifest.schema -isnot [int] -or $manifest.schema -notin @(9,10,11,12,13,14,15)) {Stop-StageCheck 'manifest_distribution_unsupported'}
     return [int]$manifest.schema
 }
 

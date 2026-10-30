@@ -48,7 +48,12 @@ function Test-SetupPostbootSnapshot {
     if(-not[DateTimeOffset]::TryParse([string]$Snapshot.bootAtInstall,[Globalization.CultureInfo]::InvariantCulture,[Globalization.DateTimeStyles]::None,[ref]$old)-or-not[DateTimeOffset]::TryParse([string]$Snapshot.bootCurrent,[Globalization.CultureInfo]::InvariantCulture,[Globalization.DateTimeStyles]::None,[ref]$current)-or$current-le$old){return @{valid=$false;code='postboot_restart_not_observed'}}
     if($Snapshot.expectedSid-cnotmatch'^S-1-5-21-(\d+-){3}\d+$'-or$Snapshot.serviceSid-cne$Snapshot.expectedSid){return @{valid=$false;code='postboot_service_identity_changed'}}
     if($Snapshot.serviceState-cne'Running'-or$Snapshot.serviceStartMode-cne'Auto'){return @{valid=$false;code='postboot_service_not_automatic_running'}}
-    if($Snapshot.healthStatus-cne'ready'-or$Snapshot.schemaVersion-ne14){return @{valid=$false;code='postboot_application_not_ready'}}
+    $expectedSchema=14
+    if($Snapshot.ContainsKey('expectedSchemaVersion')){
+        if($Snapshot.expectedSchemaVersion-isnot[int]-or$Snapshot.expectedSchemaVersion-notin@(14,15)){return @{valid=$false;code='postboot_expected_schema_invalid'}}
+        $expectedSchema=$Snapshot.expectedSchemaVersion
+    }
+    if($Snapshot.healthStatus-cne'ready'-or$Snapshot.schemaVersion-isnot[int]-or$Snapshot.schemaVersion-ne$expectedSchema){return @{valid=$false;code='postboot_application_not_ready'}}
     if($Snapshot.backupTaskState-cnotin@('Ready','Running')-or$Snapshot.backupTaskSid-cne$Snapshot.expectedSid-or$Snapshot.backupLastResult-ne0-or$Snapshot.backupScheduleVerified-ne$true){return @{valid=$false;code='postboot_backup_task_not_verified'}}
     return @{valid=$true;code='postboot_verified'}
 }

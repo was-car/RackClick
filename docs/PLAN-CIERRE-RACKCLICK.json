@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "baseline_id": "RC-CIERRE-20261025-v1",
-  "date": "2026-10-25",
+  "baseline_id": "RC-CIERRE-20261029-v2",
+  "date": "2026-10-29",
   "title": "Plan medible del trabajo restante de RackClick",
-  "scope": "CierreS1–S4 y requisitos producto autorizados de revisión4; no se inventa aceptación ni se retira alcance por propuestas ambiguas.",
+  "scope": "CierreS1–S4 y requisitos producto autorizados de revisión4; no se inventa aceptación ni se retira alcance por propuestas ambiguas. Enmienda autorizada29.10: graciaMFA45 desdecreación/rollout yexenciónpropia deladministradorglobalSystemhaus; pesos e IDs conservados.",
   "metric": {
-    "name": "Cierre del trabajo restante inventariado el25.10.2026",
+    "name": "Cierre del trabajo restante inventariado25.10, política MFA revisada29.10.2026",
     "unit": "puntos de cierre",
     "total_points": 100,
     "global_product_percentage": null,
@@ -22,7 +22,8 @@
       "Si se reabre un resultado, se retira su crédito hasta verificarlo de nuevo.",
       "Requisitos omitidos/nuevos exigen nueva versión explicada; no ampliar silenciosamente el denominador.",
       "Unknown en hitos históricos es falta de conciliación, no afirmación de que no existe implementación.",
-      "Los55 criteriosS1–S4 son cobertura; no son55pruebas nuevas ni otro denominador."
+      "Los55 criteriosS1–S4 son cobertura; no son55pruebas nuevas ni otro denominador.",
+      "La revisiónv2 conserva53tareas/280subpasos/100puntos; documenta el cambio de Wascar a45días y exención global. F-07.04 mantiene todos sus negativos y pesa0,50; no acredita instalación/recuperación/QA."
     ]
   },
   "areas": [
@@ -443,9 +444,11 @@
       "area": "F",
       "title": "Implementar proveedor TOTP Windows bajo la identidad real del servicio",
       "kind": "producto",
-      "status": "implementación",
-      "current": "Hay interfaz IMfaKeyProvider y cifrado autenticado de factores; Program.cs fija proveedor null. No existe proveedor productivo demostrado.",
-      "available": [],
+      "status": "Proveedor real integrado en candidata10; F-04.03 cerrado, ACL/otros tokens y cierre total pendientes",
+      "current": "En C Windows Server2025 limpia, candidata10 instala almacén dedicado e inicia proveedor Windows DPAPI bajo cuenta estándar SCM. Enrolamiento y nuevo login TOTP por HTTPS verificados antes y después del reinicio. Negativos de pérdida de clave/versión y arranque cerrado conciliados con las fuentes actuales. No se cierra la recuperación portable ni todos los negativos de ACL/otros tokens.",
+      "available": [
+        "Candidata10 en VM C: proveedor Windows real, init elevado, cuenta estándar y HTTPS; MFA persiste tras reinicio. No es adopción productiva."
+      ],
       "evidence": [
         "development/server/src/RackClick.Server/Program.cs",
         "development/server/src/RackClick.Server/MfaStore.cs",
@@ -564,9 +567,15 @@
         {
           "id": "F-04.03",
           "text": "Conectar proveedor real al producto sólo tras D2; rechazar claves/versiones ausentes sin regeneración silenciosa ni password-only.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md",
+            "evidence/s1-20261029/installer15-review/DICTAMEN-F04-03.md"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261029/installer15-review/DICTAMEN-F04-03.md"
+          ]
         },
         {
           "id": "F-04.04",
@@ -869,12 +878,14 @@
     {
       "id": "F-07",
       "area": "F",
-      "title": "Completar enrolamiento restringido en el primer login",
+      "title": "Completar enrolamiento restringido cuando MFA sea exigible",
       "kind": "producto",
-      "status": "backend MFA-L1 revisado técnicamente; proveedor real/UI/recuperación y cierre completo pendientes",
-      "current": "Ronda2 aceptada:4P2 corregidos,88tests originales PASS con1Docker omitida; probe independiente de HTTP con runtimeDMLsinDDL PASS yCLI bootstrap/migrate real14 válido. Sesión/CSRF nuevos sólo tras factor y commit; auditoría transaccional/rollback. F-07.01/.03 acreditados, no QR/UI, alta configure-first-login, respuesta perdida, recuperación ni F-07 completo. Clave versión1 y proveedor normal ausente siguen límites explícitos.",
+      "status": "F-07.01 a .04 cerrados técnicamente en laboratorio; candidata, custodia real integrada y cierre .05 pendientes",
+      "current": "Dashboard45 y enrolamiento integrados en candidata10 instalada de laboratorio C. Proveedor Windows real, enrolamiento/confirmación y siguiente login verificados por HTTPS antes y después del reinicio. QA visual de Wascar, recuperación portable y cierre total F-07.05 pendientes; QA anterior y producción sin adoptar.",
       "available": [
-        "Backend de enrolamiento/desafío/confirmación probado en TestServer+PG17.11; cuenta runtime no propietaria y DDL rechazado; revisión independiente favorable. No habilitado en QA."
+        "Backend de enrolamiento/desafío/confirmación probado en TestServer+PG17.11; cuenta runtime no propietaria y DDL rechazado; revisión independiente favorable. No habilitado en QA.",
+        "GUI de enrolamiento/verificación EN/DE/ES y QR local, comprobada con Kestrel/Edge y proveedor sintético en laboratorio independiente; pendiente de entrega en candidata.",
+        "Dashboard Mi seguridad y Métodos de autenticación del usuario seleccionado; 45días y exención global comprobados en laboratorio15, no candidata instalada."
       ],
       "evidence": [
         "docs/MFA-M3-RESULTADOS.md",
@@ -890,7 +901,14 @@
         "evidence/s1-20261025/mfa-l1-ronda2-codex/CIERRE.md",
         "evidence/s1-20261025/mfa-l1-ronda2-codex/REVISION-SEGURIDAD.md",
         "evidence/s1-20261025/mfa-l1-ronda2-codex/RESULTADO-REGRESION-ORIGINAL.json",
-        "evidence/s1-20261025/mfa-l1-ronda2-codex/RESULTADO-RUNTIME-Y-CLI.json"
+        "evidence/s1-20261025/mfa-l1-ronda2-codex/RESULTADO-RUNTIME-Y-CLI.json",
+        "docs/MFA-GUI-PRIMER-FLUJO-27-10-2026.md",
+        "evidence/s1-20261027/mfa-gui-codex/CIERRE.md",
+        "evidence/s1-20261027/mfa-gui-codex/RESULTADO-NAVEGADOR.json",
+        "evidence/s1-20261027/mfa-gui-codex/REVISION-INDEPENDIENTE.md",
+        "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md",
+        "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
+        "evidence/s1-20261029/mfa-dashboard-codex/RESULTADOS.md"
       ],
       "criteria": [
         "rev4 C.5",
@@ -1006,9 +1024,16 @@
         {
           "id": "F-07.02",
           "text": "Presentar secreto/QR sólo al usuario durante proceso, sin URL/log/auditoría/historial; confirmar primer TOTP antes de activar factor.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/MFA-GUI-PRIMER-FLUJO-27-10-2026.md",
+            "evidence/s1-20261027/mfa-gui-codex/CIERRE.md",
+            "evidence/s1-20261027/mfa-gui-codex/RESULTADO-NAVEGADOR.json"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261027/mfa-gui-codex/REVISION-INDEPENDIENTE.md"
+          ]
         },
         {
           "id": "F-07.03",
@@ -1028,10 +1053,16 @@
         },
         {
           "id": "F-07.04",
-          "text": "Alta nueva marca configure-first-login como indicó D3; probar código erróneo/caducado/repetido, reintento/respuesta perdida y dos confirmaciones concurrentes.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "text": "Alta nueva conserva45días desdecreación y cuenta existente desdeactivación persistida; administrador globalSystemhaus exento; el servidor exige enrolamiento al vencer o al activar/exigirMFA; probar código erróneo/caducado/repetido, reintento/respuesta perdida y dos confirmaciones concurrentes.",
+          "status": "done",
+          "evidence": [
+            "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
+            "evidence/s1-20261029/mfa-dashboard-codex/RESULTADOS.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261029/mfa-dashboard-codex/review/REVISION.md"
+          ]
         },
         {
           "id": "F-07.05",
@@ -1677,7 +1708,7 @@
       "title": "Acreditar MFA y fundamento sobre la candidata completa por HTTP/HTTPS",
       "kind": "verificación/integración",
       "status": "integración HTTP de L1 revisada; matriz final de seguridad pendiente",
-      "current": "L1:9HTTP de entrega y18tienda repetidos dentro de88PASS; probe independiente HTTP runtime restringido/cabeceras PASS.4P2 cerrados por revisión distinta. Es TestServer, no TCP/TLS/navegador/proveedor real. No cierra reset/restore/recuperación, revisión final de todas las rutas ni candidata integrada/QA.",
+      "current": "HTTP y GUI MFA/gracia45 revisados en laboratorio15; Browser8etapasPASS y Quality378PASS/1Dockeromitida. Proveedor sintético de DI separado, no custodia productiva final/HTTPS de la candidata. F-12.03/.04/.05 pendientes.",
       "available": [],
       "evidence": [
         "evidence/s1-20261023/distribucion14-decision/CIERRE.md",
@@ -1693,7 +1724,9 @@
         "evidence/s1-20261025/mfa-l1-ronda2-codex/CIERRE.md",
         "evidence/s1-20261025/mfa-l1-ronda2-codex/REVISION-SEGURIDAD.md",
         "evidence/s1-20261025/mfa-l1-ronda2-codex/RESULTADO-REGRESION-ORIGINAL.json",
-        "evidence/s1-20261025/mfa-l1-ronda2-codex/RESULTADO-RUNTIME-Y-CLI.json"
+        "evidence/s1-20261025/mfa-l1-ronda2-codex/RESULTADO-RUNTIME-Y-CLI.json",
+        "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
+        "evidence/s1-20261029/mfa-dashboard-codex/RESULTADOS.md"
       ],
       "criteria": [
         "rev4 C.0",
@@ -4591,8 +4624,8 @@
       "area": "W",
       "title": "Instalar desde cero en Windows limpio y declarar la matriz soportada",
       "kind": "producto/operación",
-      "status": "Ensayo Restore C cerrado con observaciones; matriz general pendiente",
-      "current": "Restore C08 operativo y aceptado funcionalmente por Wascar. Servicio, postboot, HTTPS, login y cliente A07 contrastados; sin repetición visual ni reinstalación requerida para este ensayo. Fase04 y diferencia Systemhaus quedan como observaciones. Retirado el trabajo adicional sobre el colector. La matriz general de hosts/dependencias se ensaya después en su lote previsto, sin atribuir pruebas no ejecutadas.",
+      "status": "New10 en C verificado tras reinicio; W-02.01/.02 cerrados, matriz restante pendiente",
+      "current": "29oct: instalaciónNew10 en snapshot limpio confirmado sin cuentas/servicios RackClick previos. Wrapper verificado y operador oficial con plan de la función GUI en ensayo headless; CRT14.40→14.51, runtime/PG incluidos, sin SDK/Node/Python real instalado. Reinicio de Wascar, SCM automático, HTTPS15 y MFA persistente verificados. Primer postboot adelantado falló y se conserva; verificación oficial posterior manual pasó. No acredita clics del asistente, Namespacecleanup ni toda la matriz de hosts.",
       "available": [
         "Dos VM Windows Server2025 noDC registradas; imagen declarada, sin hash ISO autenticado; cuentas relevantes identificadas sin enumeración exhaustiva de A.",
         "New y Restore postboot verificados según recibos; exportación A y manifiesto de entrada B coinciden. Cliente visible en B según Claude.",
@@ -4665,7 +4698,7 @@
           "evidence": "evidence/s1-20261025/w02-c-cierre-operativo-codex/CIERRE.md"
         }
       },
-      "note": "W-02.01 acreditado0,50; ensayo C cerrado con observaciones/aceptación de Wascar sin fabricar fase04. W-02.02 mantiene en curso su matriz completa no demostrada; no bloquea el cierre del ensayo C. 03–05 pendientes. No más auxiliares ni repeticiones de C por cuestiones de registro.",
+      "note": "W-02.01 conserva0,50 y W-02.02 añade0,50 tras revisión independiente del ensayo10. .03-.05 pendientes. El fallo inicial postboot y la verificación oficial posterior se registran por separado; no se reconstruyen recibos ni se repite instalación.",
       "scored": true,
       "counting_note": "Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.",
       "checkpoints": [
@@ -4687,16 +4720,21 @@
         {
           "id": "W-02.02",
           "text": "Ejecutar la entrega completa sin SDK/Node/Python previos; comprobar detección/instalación de runtime, PostgreSQL17 y CRT, incluido reinicio requerido.",
-          "status": "in_progress",
+          "status": "done",
           "evidence": [
             "evidence/s1-20261025/w02-ejecucion-codex/CONTRASTE.json",
             "evidence/s1-20261025/w02-ejecucion-codex/REPRO-COLISION.json",
             "docs/REVISION-W02-EJECUCION-CODEX.md",
             "docs/REVISION-W02-RESTORE-C-CODEX.md",
             "evidence/s1-20261025/w02-restore-c-codex/CIERRE.md",
-            "evidence/s1-20261025/w02-restore-c-codex/REVISION-INDEPENDIENTE.md"
+            "evidence/s1-20261025/w02-restore-c-codex/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md",
+            "evidence/s1-20261029/installer15-review/DICTAMEN-W02-02-POSTBOOT.md"
           ],
-          "weight_points": "1/2"
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261029/installer15-review/DICTAMEN-W02-02-POSTBOOT.md"
+          ]
         },
         {
           "id": "W-02.03",
@@ -6328,6 +6366,11 @@
       "owner": "Desarrollo propone; Wascar valida necesidades de su entorno",
       "question": "Concretar host/nombre/CA/subred, retención y objetivosRPO/RTO/latencias; no pedir al usuario diseñar criptografía.",
       "developer_work_can_continue": "Preparar valores editables/documentados y ensayos acotados."
+    },
+    {
+      "date": "2026-10-29",
+      "state": "Confirmado por Wascar:45días, existentes desde activación y exención del administrador global. Sustituye configure-first-login inmediato; resto de negativos y pesos intactos. No implica MFA disponible en QA.",
+      "evidence": "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md"
     }
   ],
   "tooling": [
@@ -6504,5 +6547,10 @@
     "builds": 0,
     "commits": 0
   },
-  "frozen_structure_sha256": "45a27e8b7ae71f83cf1acf516b17bf6ef8fb841afc53a82855968a5419715fbe"
+  "frozen_structure_sha256": "ae686f21994f3af247456f0dcc56108c16c0a229f7500d86bd20ddb41f78cdf3",
+  "baseline_revision": {
+    "previous": "RC-CIERRE-20261025-v1",
+    "evidence": "evidence/s1-20261029/mfa-dashboard-codex/REBASE.md",
+    "reason": "Decisión explícita de Wascar29oct; sustitución limitada de exigencia inmediata por45días/exención global, sin cambiar puntuación ni denominador."
+  }
 }

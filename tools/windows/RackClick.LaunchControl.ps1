@@ -44,7 +44,7 @@ function Clear-LauncherInheritedConfiguration {
     # launcher process before descendants inherit them; no user/machine edits.
     $original=@{}
     foreach ($key in [Environment]::GetEnvironmentVariables().Keys) {
-        if ([string]$key -match '^(?i:Kestrel|ConnectionStrings|Bootstrap|RackClick):' -or
+        if ([string]$key -match '^(?i:Kestrel|ConnectionStrings|Bootstrap|RackClick|MfaKeyStore):' -or
             ([string]$key -like 'PG*' -and [string]$key -notmatch '^[a-zA-Z_][a-zA-Z0-9_]*$')) {
             $original[[string]$key]=[Environment]::GetEnvironmentVariable([string]$key,[EnvironmentVariableTarget]::Process)
             [Environment]::SetEnvironmentVariable([string]$key,$null,[EnvironmentVariableTarget]::Process)

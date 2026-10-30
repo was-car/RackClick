@@ -8,7 +8,7 @@ namespace RackClick.Server;
 public static class RecoveryAdministrator
 {
     private const string Action = "deployment.recover";
-    private static readonly int RequiredSchemaVersion = 14;
+    private static readonly int RequiredSchemaVersion = SchemaMigrations.LatestVersion;
     private static readonly JsonSerializerOptions Json = new(JsonSerializerDefaults.Web);
 
     public static async Task<int> Run(IConfiguration configuration, TextReader passwordInput,

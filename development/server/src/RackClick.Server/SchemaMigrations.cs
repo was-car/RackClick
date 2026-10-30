@@ -5,8 +5,8 @@ namespace RackClick.Server;
 
 public static class SchemaMigrations
 {
-    public const int LatestVersion = 14;
-    private static readonly string[] Files = ["001-foundation.sql", "002-inventory.sql", "003-operation-cancellation.sql", "004-session-identity.sql", "005-audit-context.sql", "006-audit-state-intent.sql", "007-audit-context-families.sql", "008-user-catalog-favorites.sql", "009-private-device-templates.sql", "010-customer-shared-device-templates.sql", "011-user-preferences.sql", "012-user-port-colors.sql", "013-user-category-colors.sql", "014-mfa.sql"];
+    public const int LatestVersion = 15;
+    private static readonly string[] Files = ["001-foundation.sql", "002-inventory.sql", "003-operation-cancellation.sql", "004-session-identity.sql", "005-audit-context.sql", "006-audit-state-intent.sql", "007-audit-context-families.sql", "008-user-catalog-favorites.sql", "009-private-device-templates.sql", "010-customer-shared-device-templates.sql", "011-user-preferences.sql", "012-user-port-colors.sql", "013-user-category-colors.sql", "014-mfa.sql", "015-mfa-account-policy.sql"];
 
     public static async Task Apply(NpgsqlConnection db, NpgsqlTransaction tx, CancellationToken ct)
     {

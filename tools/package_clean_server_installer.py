@@ -18,6 +18,10 @@ def clean_build(archive, service_publish, output, payload_output, *, bundle_sha2
     if launcher.count('@@PAYLOAD_SHA256@@') != 1:
         raise ValueError('launcher_pin_token_invalid')
     launcher = launcher.replace('@@PAYLOAD_SHA256@@', receipt['sha256'])
+    # The historical template keeps its original labels; each new envelope names
+    # its own edition without rewriting any previously delivered archive.
+    launcher = launcher.replace('RackClick 05', 'RackClick ' + edition)
+    launcher = launcher.replace('RackClick-VERIFICAR-05-', 'RackClick-VERIFICAR-' + edition + '-')
     entries = {
         'Servidor.zip': payload,
         'INICIAR.ps1': launcher.replace('\r\n', '\n').replace('\n', '\r\n').encode('utf-8-sig'),

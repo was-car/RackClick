@@ -87,7 +87,7 @@ try {
     $phase='stage'
     $stage=Invoke-RestoreDeploymentChild 'Stage-ServerDistribution.ps1' @('-ManifestPath',$paths.manifest,'-ExpectedManifestSha256',$restoreDeploymentInputs.manifestHash,'-ServerPath',$paths.server,'-FrontendPath',$paths.frontend,'-DotNetPath',$paths.dotnet,'-PostgresBinPath',$paths.pg,'-DestinationPath',$distributionPath) $root $logs
     # 14 tiene 24 archivos de servidor (lista explícita); 9–13 siguen con 9+esquema. Total = servidor + 18 de frontend.
-    $expectedVerified=if ($sourceManifest.schema -eq 14) {42} else {27+$sourceManifest.schema}
+    $expectedVerified=if ($sourceManifest.schema -in @(14,15)) {28+$sourceManifest.schema} else {27+$sourceManifest.schema}
     if ($stage.code -cne 'artifacts_staged' -or $stage.destinationPath -cne $distributionPath -or $stage.verifiedFiles -ne $expectedVerified -or $stage.receiptSha256 -cnotmatch '^[a-f0-9]{64}$') {Stop-RecoveryCheck 'receipt_invalid'}
     $phase='instance'
     $created=Invoke-RestoreDeploymentChild 'New-RackClickRecoveredInstance.ps1' @('-StagePath',$distributionPath,'-ExpectedManifestSha256',$restoreDeploymentInputs.manifestHash,'-ExpectedReceiptSha256',$stage.receiptSha256,'-DotNetPath',$paths.dotnet,'-PostgresBinPath',$paths.pg,'-InstancePath',$instancePath,'-PostgresPort',[string]$restoreDeploymentInputs.pgPort,'-PublicOrigin',('http://127.0.0.1:'+[string]$restoreDeploymentInputs.httpPort),'-RecoveryUser',$user,'-BackupPath',$paths.backup,'-ExpectedBackupManifestSha256',$restoreDeploymentInputs.backupHash,'-DevelopmentLoopbackHttp') $root $logs

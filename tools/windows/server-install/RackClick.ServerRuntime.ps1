@@ -4,6 +4,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop'
 $script:ServerOperatorsRoot=Split-Path $PSScriptRoot -Parent
 . (Join-Path $script:ServerOperatorsRoot 'RackClick.Deployment.ps1')
+. (Join-Path $PSScriptRoot 'RackClick.MfaRuntime.ps1')
 
 function Stop-ServerCheck {
     param([string]$Code,[int]$ExitCode=2)
@@ -62,8 +63,10 @@ function Read-ServerProfile {
         $locks += [IO.File]::Open($path,'Open','Read','Read')
         if ((Get-RuntimeConfigDigest $path) -cne $ExpectedManifestSha256.ToLowerInvariant()) {Stop-ServerCheck 'server_manifest_hash_mismatch'}
         $m=Read-DeploymentJson $locks[0] 'server_manifest_invalid'
-        if ((($m.PSObject.Properties.Name|Sort-Object)-join ',') -cne 'bindAddress,certificate,createdUtc,deploymentPath,deploymentSha256,expectedWindowsSid,installationPath,installationSha256,profileId,profileKind,publicOrigin,runtimeRoot,schemaVersion' -or
-            $m.schemaVersion -ne 1 -or $m.profileKind -cne 'RackClickProductionServer' -or
+        $profileFields='bindAddress,certificate,createdUtc,deploymentPath,deploymentSha256,expectedWindowsSid,installationPath,installationSha256,profileId,profileKind,publicOrigin,runtimeRoot,schemaVersion'
+        if ($m.schemaVersion -eq 2) {$profileFields='bindAddress,certificate,createdUtc,deploymentPath,deploymentSha256,expectedWindowsSid,installationPath,installationSha256,mfa,profileId,profileKind,publicOrigin,runtimeRoot,schemaVersion'}
+        if ((($m.PSObject.Properties.Name|Sort-Object)-join ',') -cne $profileFields -or
+            $m.schemaVersion -notin @(1,2) -or $m.profileKind -cne 'RackClickProductionServer' -or
             $m.profileId -cnotmatch '^[a-f0-9-]{36}$' -or $m.expectedWindowsSid -cne [Security.Principal.WindowsIdentity]::GetCurrent().User.Value) {Stop-ServerCheck 'server_manifest_invalid'}
         $root=[IO.Path]::GetDirectoryName($path)
         if ($m.runtimeRoot -cne $root -or $path -cne (Join-Path $root 'server-profile.json') -or
@@ -78,6 +81,9 @@ function Read-ServerProfile {
         $locks += [IO.File]::Open($statePath,'Open','Read','Read');$state=Read-DeploymentJson $locks[2] 'server_installation_state_invalid'
         if ($receipt.kind -cne 'RackClickPrivateInstallation' -or $receipt.state -cne 'prepared' -or $receipt.rootPath -cne $m.installationPath -or
             $receipt.deploymentSha256 -cne $m.deploymentSha256 -or $state.status -cne 'prepared' -or $state.code -cne 'installation_prepared' -or $state.installationId -cne $receipt.id) {Stop-ServerCheck 'server_installation_not_prepared'}
+        # Windows installation UUID is the parent of instance, NOT the separate offline receipt/DB UUID.
+        $windowsInstallationId=[IO.Path]::GetFileName([IO.Path]::GetDirectoryName($m.installationPath))
+        $mfaProfile=Get-ServerMfaProfile -Manifest $m -InstallationId $windowsInstallationId
         $deployment=Read-RackClickPrivateDeployment $m.deploymentPath $m.deploymentSha256 -Maintenance
         if ($origin.port -ne $deployment.instance.httpPort -or $receipt.deploymentId -cne $deployment.id) {Stop-ServerCheck 'server_deployment_binding_invalid'}
         if ((($m.certificate.PSObject.Properties.Name|Sort-Object)-join ',') -cne 'certificateSha256,expiresUtc,files,thumbprint') {Stop-ServerCheck 'server_certificate_manifest_invalid'}
@@ -108,7 +114,7 @@ function Read-ServerProfile {
         foreach ($name in @('sha256','thumbprint','expiresUtc')) {$key=if ($name -eq 'sha256') {'certificateSha256'} else {$name};if ($metadata[$name] -cne $m.certificate.$key) {Stop-ServerCheck 'server_certificate_binding_invalid'}}
         foreach ($name in @('control','logs','temp','backups')) {Assert-BackupPrivateAcl (Join-Path $root $name)}
         $deployment.instance.logRoot=Join-Path $root 'control'
-        return @{manifest=$m;root=$root;origin=$origin;deployment=$deployment;instance=$deployment.instance;locks=$locks;password=$password;pfx=(Join-Path $root 'server.pfx');certificateSha256=$metadata.sha256;hash=$ExpectedManifestSha256.ToLowerInvariant()}
+        return @{manifest=$m;root=$root;origin=$origin;deployment=$deployment;instance=$deployment.instance;locks=$locks;password=$password;pfx=(Join-Path $root 'server.pfx');certificateSha256=$metadata.sha256;hash=$ExpectedManifestSha256.ToLowerInvariant();mfa=$mfaProfile}
     } catch {Close-RackClickPrivateDeployment $deployment;foreach ($stream in $locks) {$stream.Dispose()};throw}
 }
 function Close-ServerProfile {

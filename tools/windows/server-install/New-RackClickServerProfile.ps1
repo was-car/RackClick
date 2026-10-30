@@ -1,8 +1,8 @@
 ﻿#requires -Version 5.1
 [CmdletBinding()]
 param([string]$InstallationPath='',[string]$ExpectedInstallationSha256='',[string]$DestinationPath='',
-      [string]$PublicOrigin='',[string]$BindAddress='',[string]$PfxPath='',[string]$RootCertificatePath='')
-$serverProfileInputs=@{installation=$InstallationPath;sha=$ExpectedInstallationSha256;destination=$DestinationPath;origin=$PublicOrigin;bind=$BindAddress;pfx=$PfxPath;ca=$RootCertificatePath}
+      [string]$PublicOrigin='',[string]$BindAddress='',[string]$PfxPath='',[string]$RootCertificatePath='',[switch]$EnableMfa)
+$serverProfileInputs=@{installation=$InstallationPath;sha=$ExpectedInstallationSha256;destination=$DestinationPath;origin=$PublicOrigin;bind=$BindAddress;pfx=$PfxPath;ca=$RootCertificatePath;mfa=[bool]$EnableMfa}
 . (Join-Path $PSScriptRoot 'RackClick.ServerRuntime.ps1')
 $report=[ordered]@{valid=$false;exitCode=2;code='server_profile_failed';manifestPath='';manifestSha256='';publicOrigin='';rootCertificatePath='';certificateExpiresUtc='';mutableDirectoryPaths=@();mutableFilePaths=@()}
 $profile=$null;$certificate=$null;$ca=$null;$rsa=$null;$caRsa=$null;$unsigned=$null;$lock=$null
@@ -16,6 +16,13 @@ try {
     if ((Get-RuntimeConfigDigest $receiptPath) -cne $input.sha.ToLowerInvariant()) {Stop-ServerCheck 'server_installation_hash_mismatch'}
     $receipt=Read-DeploymentJson $lock 'server_installation_invalid'
     if ($receipt.kind -cne 'RackClickPrivateInstallation' -or $receipt.state -cne 'prepared' -or $receipt.rootPath -cne $installation) {Stop-ServerCheck 'server_installation_not_prepared'}
+    $mfaDefinition=$null
+    if ($input.mfa) {
+        $windowsInstallationId=[IO.Path]::GetFileName([IO.Path]::GetDirectoryName($installation))
+        $mfaDefinition=@{enabled=$true;instancesRoot=('C:\ProgramData\RackClick\Instances\'+$windowsInstallationId+'\security');installationId=$windowsInstallationId}
+        $mfaCandidate=[pscustomobject]@{schemaVersion=2;installationPath=$installation;mfa=[pscustomobject]$mfaDefinition}
+        $null=Get-ServerMfaProfile -Manifest $mfaCandidate -InstallationId $windowsInstallationId
+    }
     $origin=Get-ServerOrigin $input.origin $input.bind
     $deployment=Read-RackClickPrivateDeployment (Join-Path $installation 'deployment') $receipt.deploymentSha256 -Maintenance
     try {
@@ -61,6 +68,7 @@ try {
     Write-HttpsNewBytes (Join-Path $root 'tls-password.txt') ([Text.Encoding]::UTF8.GetBytes($password))
     $files=[ordered]@{};foreach ($name in @('RootCA.cer','server.cer','server.pfx','tls-password.txt')) {$files[$name]=Get-RuntimeConfigDigest (Join-Path $root $name)}
     $manifest=[ordered]@{schemaVersion=1;profileKind='RackClickProductionServer';profileId=[guid]::NewGuid().ToString('D');installationPath=$installation;installationSha256=$input.sha.ToLowerInvariant();deploymentPath=(Join-Path $installation 'deployment');deploymentSha256=$receipt.deploymentSha256;expectedWindowsSid=[Security.Principal.WindowsIdentity]::GetCurrent().User.Value;publicOrigin=$origin.origin;bindAddress=$origin.bind;runtimeRoot=$root;createdUtc=[DateTime]::UtcNow.ToString('o');certificate=@{certificateSha256=$metadata.sha256;thumbprint=$metadata.thumbprint;expiresUtc=$metadata.expiresUtc;files=$files}}
+    if ($null -ne $mfaDefinition) {$manifest.schemaVersion=2;$manifest.mfa=$mfaDefinition}
     $manifestPath=Join-Path $root 'server-profile.json';Write-HttpsNewBytes $manifestPath ([Text.Encoding]::UTF8.GetBytes(($manifest|ConvertTo-Json -Depth 6 -Compress)))
     $hash=Get-RuntimeConfigDigest $manifestPath;$profile=Read-ServerProfile $manifestPath $hash
     $report.valid=$true;$report.exitCode=0;$report.code='server_profile_prepared';$report.manifestPath=$manifestPath;$report.manifestSha256=$hash;$report.publicOrigin=$origin.origin;$report.rootCertificatePath=Join-Path $root 'RootCA.cer';$report.certificateExpiresUtc=$metadata.expiresUtc

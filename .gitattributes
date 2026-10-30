@@ -1,2 +1,7 @@
 *.sh text eol=lf
 .githooks/* text eol=lf
+
+# Preserve pinned product, fixtures and operator bytes across Windows checkouts.
+/development/** -text
+/tools/** -text
+/reference/** -text

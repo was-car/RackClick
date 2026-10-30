@@ -8,13 +8,15 @@ using RackClick.Server;
 bool bootstrap = args.Contains("--bootstrap", StringComparer.Ordinal);
 bool migrate = args.Contains("--migrate", StringComparer.Ordinal);
 bool recoverAdmin = args.Contains("--recover-admin", StringComparer.Ordinal);
-if ((bootstrap ? 1 : 0) + (migrate ? 1 : 0) + (recoverAdmin ? 1 : 0) > 1)
+bool mfaKeysInit = args.Contains("--mfa-keys-init", StringComparer.Ordinal);
+bool mfaRequireAll = args.Contains("--mfa-require-all", StringComparer.Ordinal);
+if ((bootstrap ? 1 : 0) + (migrate ? 1 : 0) + (recoverAdmin ? 1 : 0) + (mfaKeysInit ? 1 : 0) + (mfaRequireAll ? 1 : 0) > 1)
 {
     Console.WriteLine(JsonSerializer.Serialize(new { status = "rejected", error = "cli_mode_conflict" }));
     Environment.ExitCode = 1;
     return;
 }
-var builder = WebApplication.CreateBuilder(args.Where(a => a is not ("--bootstrap" or "--migrate" or "--recover-admin")).ToArray());
+var builder = WebApplication.CreateBuilder(args.Where(a => a is not ("--bootstrap" or "--migrate" or "--recover-admin" or "--mfa-keys-init" or "--mfa-require-all")).ToArray());
 if (recoverAdmin)
 {
     if (!Console.IsInputRedirected)
@@ -24,6 +26,29 @@ if (recoverAdmin)
         return;
     }
     Environment.ExitCode = await RecoveryAdministrator.Run(builder.Configuration, Console.In, Console.Out, CancellationToken.None);
+    return;
+}
+// Inicialización local del almacén MFA (MFA-L2j): sin base de datos, sin origen HTTPS y sin composición MFA del host.
+if (mfaKeysInit)
+{
+    if (!Console.IsInputRedirected)
+    {
+        Console.WriteLine(JsonSerializer.Serialize(new { status = "rejected", code = "mfa_keystore_init_stdin_required", residue = "none" }));
+        Environment.ExitCode = 1;
+        return;
+    }
+    Environment.ExitCode = MfaKeyStoreInitCommand.Run(Console.In, Console.Out);
+    return;
+}
+if (mfaRequireAll)
+{
+    if (!Console.IsInputRedirected)
+    {
+        Console.WriteLine(JsonSerializer.Serialize(new { status = "rejected", code = "mfa_policy_stdin_required" }));
+        Environment.ExitCode = 1;
+        return;
+    }
+    Environment.ExitCode = await MfaPolicyRequireAllCommand.Run(builder.Configuration, Console.In, Console.Out, CancellationToken.None);
     return;
 }
 builder.WebHost.ConfigureKestrel(o => o.Limits.MaxRequestBodySize = 16_384);
@@ -64,6 +89,15 @@ if (bootstrap)
 }
 
 builder.Services.AddNativeShutdown(builder.Configuration);
+// Composición del proveedor Windows (MFA-L2i). Sin MfaKeyStore:Enabled, o con false, no se registra nada. Con true se compone una sola vez.
+IMfaHostIdentity mfaHostIdentity = OperatingSystem.IsWindows() ? new ProcessMfaHostIdentity() : new UnavailableMfaHostIdentity();
+builder.Services.AddSingleton(mfaHostIdentity);
+var mfaMode = MfaWindowsHostComposition.ModeOf(builder.Configuration);
+if (mfaMode != MfaHostMode.Disabled)
+{
+    builder.Services.AddSingleton(sp => MfaWindowsHostComposition.Compose(mfaMode, builder.Configuration, sp.GetRequiredService<IMfaHostIdentity>()));
+    builder.Services.AddSingleton<IMfaKeyProvider>(sp => sp.GetRequiredService<MfaHostComposition>().Provider);
+}
 
 if (!Uri.TryCreate(builder.Configuration["PublicOrigin"], UriKind.Absolute, out var origin) ||
     origin.AbsolutePath != "/" || origin.Query.Length != 0 || origin.Fragment.Length != 0 || origin.UserInfo.Length != 0)
@@ -84,10 +118,33 @@ builder.Services.AddRateLimiter(options =>
         { PermitLimit = 10, Window = TimeSpan.FromMinutes(1), QueueLimit = 0 }));
 });
 var app = builder.Build();
-// Proveedor de la clave TOTP desde la composición de DI del host. El producto normal no registra ninguno (D2 pendiente):
-// sin proveedor no hay desafíos MFA y el servidor los rechaza explícitamente. Las pruebas lo registran solo en su host.
-IMfaKeyProvider? mfaKeys = app.Services.GetService<IMfaKeyProvider>();
+// Proveedor de la clave TOTP desde la composición de DI del host (MFA-L2i). Sin MfaKeyStore:Enabled no hay proveedor: sin desafíos
+// MFA y el servidor los rechaza explícitamente. Con true, la composición valida el almacén; si falla, el arranque termina sin listener.
+IMfaKeyProvider? mfaKeys;
+MfaHostComposition? mfaComposition;
+try
+{
+    mfaComposition = app.Services.GetService<MfaHostComposition>();
+    mfaKeys = app.Services.GetService<IMfaKeyProvider>();
+}
+catch (MfaHostCompositionException e)
+{
+    Console.Error.WriteLine(e.Code);
+    Environment.ExitCode = 1;
+    return;
+}
+if (mfaComposition is not null) app.Logger.LogInformation("{Diagnostic}", mfaComposition.Diagnostic);
 var store = new PostgresStore(source) { MfaAvailable = mfaKeys is not null };
+if (mfaComposition is not null)
+{
+    try { await store.EnsureMfaGracePolicy(CancellationToken.None); }
+    catch (NpgsqlException)
+    {
+        Console.Error.WriteLine("mfa_grace_policy_unavailable");
+        Environment.ExitCode = 1;
+        return;
+    }
+}
 var mfa = mfaKeys is null ? null : new MfaStore(source, mfaKeys);
 app.Use(async (context, next) =>
 {
@@ -222,6 +279,7 @@ app.MapGet("/api/v1/me", async Task<IResult> (HttpContext c) => Results.Ok(new
     permissions = await store.ReadPermissions(Identity(c).Actor, c.RequestAborted)
 }));
 app.MapGet("/api/v1/openapi.json", () => Results.Json(OpenApiDocument.Create()));
+app.MapMfaAccounts(store, mfa is not null);
 app.MapGet("/api/v1/me/preferences", async Task<IResult> (HttpContext c) =>
 {
     UserPreferences.RequireEmptyRead(c.Request);

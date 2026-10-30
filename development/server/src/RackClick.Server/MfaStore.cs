@@ -7,7 +7,12 @@ namespace RackClick.Server;
 // la decisión D2 (docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md); no hay proveedor por defecto en el producto.
 public interface IMfaKeyProvider
 {
+    // Clave de una versión concreta del anillo (factores existentes, incluidas versiones retiradas). Devuelve una copia nueva.
     byte[] GetKey(int version);
+
+    // Versión activa del anillo y copia nueva de su clave, obtenidas en una sola operación. Lo usan los nuevos enrolamientos.
+    // No hay valor por defecto ni respaldo con la versión 1: si la activa no está disponible, lanza una excepción explícita.
+    (int Version, byte[] Key) GetActiveKey();
 }
 
 // Segundo paso de MFA: verificación de desafíos de corta vida.

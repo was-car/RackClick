@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-30",
+  "purpose": "Integrar pendientes y conversaciones sin duplicar resultados, alterar el ledger o declarar nuevas funciones implementadas.",
+  "sources": [
+    "docs/PLAN-CIERRE-RACKCLICK.json",
+    "evidence/s1-20261029/comparacion-rc10-servidor/PLAN-ACCIONES.json",
+    "evidence/s1-20261029/comparacion-rc10-servidor/MATRIZ-CONSOLIDADA.json",
+    "docs/OBSERVACIONES-DASHBOARD-WASCAR-29-10-2026.md",
+    "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md",
+    "docs/DECISIONES-MFA-CONFIRMADAS-25-10-2026.md",
+    "docs/ALCANCE-CATALOGO-FABRICANTES.md",
+    "docs/CATALOGO-HARDWARE-REFERENCIA/RESUMEN.json",
+    "docs/PROTOCOLO-REUNION-EVOLUCION-FUTURA-25-10-2026.md",
+    "docs/PUBLICACION-GITHUB-PRIVADA-26-10-2026.md",
+    "docs/FUENTES-OFICIALES-DESARROLLO.md",
+    "docs/INSTALACION-DESDE-GITHUB.md"
+  ],
+  "latestContext": {
+    "F-03": {
+      "text": "La custodia y recuperación fueron confirmadas por Wascar el25.10. No pedirlas de nuevo; falta completar su concreción y comprobación técnica.",
+      "evidence": [
+        "docs/DECISIONES-MFA-CONFIRMADAS-25-10-2026.md"
+      ]
+    },
+    "F-05": {
+      "title": "Integrar y cerrar la recuperación portable de claves MFA",
+      "text": "Existen codec, payload, lector/escritor y exportación/recuperación por componentes L2d–L2g revisados. Falta el recorrido completo de recuperación de la instalación y coherencia con sus backups; no reimplementar el codec desde cero.",
+      "evidence": [
+        "docs/REVISION-MFA-L2D-CODEX-26-10-2026.md",
+        "docs/REVISION-MFA-L2F-CODEX-26-10-2026.md",
+        "docs/REVISION-MFA-L2G-CORRECCION-CODEX-26-10-2026.md"
+      ]
+    },
+    "F-07": {
+      "text": "Enrolamiento, login MFA, GUI y gracia45 tienen trabajo acreditado; Wascar probó MFA administrativo en candidata10. Falta el cierre integral del resultado y sus escenarios pendientes, no crear otra pantalla de login.",
+      "closureText": "Cuando se exige MFA o se inicia enrolamiento, el desafío no concede acceso API; confirmar un factor válido emite una única sesión nueva, con negativos de concurrencia y revisión. Respetar la gracia45 y exención global confirmadas, sin bloquear de golpe todas las cuentas nuevas.",
+      "evidence": [
+        "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
+        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md"
+      ]
+    },
+    "F-10": {
+      "title": "Cerrar política y administración MFA conforme a gracia45",
+      "text": "El panel propio/por usuario y la política45 ya se implementaron. La regla vigente es45días, cuentas existentes desde activación y exención del administrador global Systemhaus; administradores de cliente no están exentos. El resumen y dos criterios congelados del ledger contienen redacción anterior: conciliarlos formalmente antes de acreditar F-10, sin reabrir una decisión de Wascar.",
+      "closureText": "Panel y servidor aplican gracia45 a usuarios/técnicos/administradores de cliente, fecha de activación para existentes y exención del administrador global; protegen sesiones, reautenticación, métodos ajenos y recuperación/último administrador, con negativos y revisión independiente.",
+      "evidence": [
+        "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md",
+        "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md"
+      ],
+      "ledgerAlignmentRequired": [
+        "F-10.03",
+        "F-10.04"
+      ]
+    },
+    "P-01": {
+      "text": "El Full Backup original ya se cargó en C conservando seguridad/MFA. El auxiliar fijado al original no equivale a importación JSON normal desde dashboard, que sigue pendiente.",
+      "evidence": [
+        "evidence/s1-20261029/rc9-demo-original-codex/RESULTADOS.md",
+        "docs/QA-DATOS-ORIGINALES-MFA10-WASCAR.md"
+      ]
+    },
+    "P-07": {
+      "text": "CSV, XLSX, SVG, HTML imprimible y XLS HTML existen y se probaron por HTTP en el laboratorio de comparación. Falta su cierre GUI/formato/aceptación; PNG y la obligación de PDF nativo se tratan explícitamente, sin confundirlos con impresión HTML.",
+      "evidence": [
+        "docs/COMPARACION-OFFLINE-RC10-SERVIDOR.md"
+      ]
+    },
+    "W-02": {
+      "text": "New10 en C y postboot ya están acreditados parcialmente. No repetir esa instalación para producir otro recibo; falta la matriz y escenarios restantes, incluida recuperación final y Windows11 como host cuando se ofrezca.",
+      "evidence": [
+        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md"
+      ]
+    },
+    "W-03": {
+      "text": "Servicio estándar y arranque automático funcionaron en C. El resultado completo necesita sus negativos y comprobaciones finales de permisos/operación, sin tratarlo como servicio aún inexistente.",
+      "evidence": [
+        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md"
+      ]
+    },
+    "R-01": {
+      "text": "Ya hay copias nativas, programación y exportación operativa. Falta cerrar retención/fallos/restaurabilidad y facilitar su administración desde dashboard; no atribuir al botón web una existencia sólo operativa.",
+      "evidence": [
+        "docs/COMPARACION-OFFLINE-RC10-SERVIDOR.md",
+        "evidence/s1-20261029/rc9-demo-original-codex/RESULTADOS.md"
+      ]
+    },
+    "E-04": {
+      "text": "Existe manual autónomo10 con carpetas/comandos/formulario/credenciales/reinicio. Debe mantenerse y comprobarse con el paquete final y sus nuevas funciones, no volver a redactar toda la instalación desde cero.",
+      "evidence": [
+        "docs/PASOS-COMPLETOS-INSTALADOR10-WASCAR.md",
+        "evidence/s1-20261029/manual-autonomo10-codex/RESULTADOS.md"
+      ]
+    },
+    "E-05": {
+      "text": "Los resultados de Wascar y la QA MFA comunicada se conservan. Dar casos pequeños por módulo/candidata; resultados antiguos de otra versión no se convierten en PASS nuevo ni se obliga a repetir lo no afectado.",
+      "evidence": [
+        "docs/QA-DATOS-ORIGINALES-MFA10-WASCAR.md",
+        "docs/QA-CASOS-WASCAR.json"
+      ]
+    }
+  },
+  "observations": [
+    {
+      "id": "REQ-UX-01",
+      "title": "Racks primero, información secundaria plegable",
+      "owner": "P-11",
+      "related": [
+        "I-04"
+      ],
+      "source": "docs/OBSERVACIONES-DASHBOARD-WASCAR-29-10-2026.md",
+      "state": "pendiente_de_implementacion",
+      "outcome": "Rack/frontal/trasera visibles al llegar; PoE y datos extensos desplegables sin ocultar errores o cambios pendientes."
+    },
+    {
+      "id": "REQ-UX-02",
+      "title": "Administración de usuarios y grupos más visual",
+      "owner": "A-02",
+      "related": [
+        "P-11",
+        "F-10"
+      ],
+      "source": "docs/OBSERVACIONES-DASHBOARD-WASCAR-29-10-2026.md",
+      "state": "pendiente_de_mejora_y_aceptacion",
+      "outcome": "Lista/búsqueda, usuario seleccionado, pertenencias, ámbitos y métodos claros; distinguir global/cliente/técnico/lector sin otorgar derechos por nombre de rol."
+    },
+    {
+      "id": "REQ-UX-03",
+      "title": "Barra compacta de informes y exportaciones",
+      "owner": "P-07",
+      "related": [
+        "P-11"
+      ],
+      "source": "docs/REVISION-VIDEO-INTERFAZ-29-10-2026.md",
+      "state": "pendiente_de_presentacion",
+      "outcome": "Acciones agrupadas por rack/cliente; controles técnicos extensos bajo demanda; formato de cada descarga identificado correctamente."
+    },
+    {
+      "id": "REQ-UX-04",
+      "title": "Datos sintéticos completos y repetibles para QA",
+      "owner": "E-05",
+      "related": [
+        "P-01",
+        "E-06"
+      ],
+      "source": "docs/QA-DATOS-ORIGINALES-MFA10-WASCAR.md",
+      "state": "carga_actual_hecha_facilidad_repetible_pendiente",
+      "outcome": "Mantener los10clientes originales en C y preparar carga opcional verificable para futuros laboratorios sin reemplazar cuentas ni MFA."
+    },
+    {
+      "id": "REQ-UX-05",
+      "title": "Exportar/importar inventario y backup desde dashboard",
+      "owner": "R-04",
+      "related": [
+        "R-01",
+        "R-03",
+        "P-01",
+        "P-03",
+        "F-05"
+      ],
+      "source": "docs/PLAN-PARIDAD-RC10-SERVIDOR.md",
+      "state": "pendiente_de_integracion",
+      "outcome": "Separar intercambio JSON de copia PostgreSQL/secretos. Acceso administrativo, progreso, integridad, destino nuevo y recuperación MFA comprobada; no sobrescribir una base silenciosamente."
+    },
+    {
+      "id": "REQ-UX-06",
+      "title": "Operación sencilla entre casa y trabajo",
+      "owner": "W-04",
+      "related": [
+        "W-05",
+        "E-04"
+      ],
+      "source": "docs/PLAN-CIERRE-RACKCLICK.json",
+      "state": "herramientas_existentes_cierre_facilidad_pendiente",
+      "outcome": "Nombre/origen/red/certificado coherentes y mantenimiento guiado, sin otra secuencia manual de editar varios archivos; no modificar la IP de Windows sin instrucción."
+    },
+    {
+      "id": "REQ-UX-07",
+      "title": "Acceso privado del operador y datos de conexión DB",
+      "owner": "E-04",
+      "related": [
+        "F-02",
+        "W-03"
+      ],
+      "source": "docs/PASOS-COMPLETOS-INSTALADOR10-WASCAR.md",
+      "state": "conciliar_documentacion_y_acceso_privado",
+      "outcome": "Indicar cómo obtener credenciales locales autorizadas de cada instancia y usar HeidiSQL cuando proceda; nunca incluir contraseñas en manuales públicos o ZIP documental."
+    },
+    {
+      "id": "REQ-UX-08",
+      "title": "MFA propio y administrativo con política confirmada",
+      "owner": "F-10",
+      "related": [
+        "F-07",
+        "F-08",
+        "F-09",
+        "F-11"
+      ],
+      "source": "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md",
+      "state": "implementado_parcial_cierre_y_recuperacion_pendientes",
+      "outcome": "Conservar gracia45/exención global/avisos, control servidor y ausencia de secretos ajenos; cerrar recuperación, últimos administradores y reautenticación."
+    },
+    {
+      "id": "REQ-UX-09",
+      "title": "Avisos multiusuario comprensibles",
+      "owner": "P-09",
+      "related": [
+        "I-05",
+        "A-03"
+      ],
+      "source": "docs/QA-COLABORACION-Y-RESTAURACION.md",
+      "state": "implementacion_existente_matriz_final_pendiente",
+      "outcome": "Otro usuario ve qué cambió y dónde, sin perder su borrador ni inventar contexto histórico; ámbitos y revocación vigentes."
+    },
+    {
+      "id": "REQ-UX-10",
+      "title": "QA y manual paso a paso para una sola persona",
+      "owner": "E-05",
+      "related": [
+        "E-04",
+        "E-07"
+      ],
+      "source": "docs/QA-CASOS-WASCAR.json",
+      "state": "proceso_existente_mantener_por_candidata",
+      "outcome": "Ubicación/botón/campo, resultado esperado, rol, disponibilidad y candidata; conservar Pass/NotPass/observaciones y exportación de Wascar."
+    }
+  ],
+  "catalogStream": [
+    {
+      "id": "C-HW-01",
+      "title": "Inventario de fabricantes, modelos y fuentes",
+      "state": "investigacion_entregada_no_plantillas_integradas",
+      "outcome": "Conservar12.008definiciones/144racks/195registros primarios con su procedencia y límites."
+    },
+    {
+      "id": "C-HW-02",
+      "title": "Contrato y normalización de catálogo de fabricantes",
+      "state": "pendiente",
+      "outcome": "Identidad/SKU/revisión, conectores, cara/geometría, montaje, módulos, puertos combo y mapeos rechazados explícitamente."
+    },
+    {
+      "id": "C-HW-03",
+      "title": "Selección y validación del primer catálogo curado",
+      "state": "propuesto_100_perfiles_no_implementado",
+      "outcome": "Propuesta100perfiles:12Sophos,16Fortinet,12PaloAlto,20Cisco,12Aruba,8Synology,8QNAP,6racks,6UPS/PDU; no es el total del mercado ni cantidad aprobada lista."
+    },
+    {
+      "id": "C-HW-04",
+      "title": "Selector por marca/familia/modelo y vistas físicas",
+      "state": "pendiente",
+      "outcome": "Reutilizar catálogo/favoritos/plantillas; frontal/trasera y puertos clicables con recursos propios o licencia comprobada."
+    },
+    {
+      "id": "C-HW-05",
+      "title": "Prueba por modelo y revisión independiente",
+      "state": "pendiente",
+      "outcome": "Comparar con manuales, crear instancias UUID distintas, conservar cables, recargar/otra sesión y probar negativos de ámbito/combo/modular."
+    },
+    {
+      "id": "C-HW-06",
+      "title": "Publicación y actualización del catálogo",
+      "state": "pendiente",
+      "outcome": "Versión/manifiesto/digest, compatibilidad y rollback sin alterar instancias existentes; incluir en candidata y guía QA."
+    },
+    {
+      "id": "C-HW-07",
+      "title": "Ampliación y mantenimiento de cobertura",
+      "state": "planificado_sin_censo_total_acreditado",
+      "outcome": "Ventana objetivo2018–2026 y equipos históricos instalados; fechas desconocidas nulas, nuevos modelos por el mismo proceso, búsqueda/rendimiento medidos."
+    }
+  ],
+  "future": [
+    {
+      "id": "FUT-01",
+      "title": "Descubrimiento de red e integración de recolectores",
+      "state": "evolucion_posterior",
+      "source": "docs/PROTOCOLO-REUNION-EVOLUCION-FUTURA-25-10-2026.md",
+      "outcome": "Evaluar SNMPv3, LLDP/CDP y API/LibreNMS/Netdisco/GLPI/Lansweeper; observaciones separadas de documentación y aprobación de cambios. Sin escanear redes ni deducir cableado pasivo."
+    },
+    {
+      "id": "FUT-02",
+      "title": "Trabajo de campo offline y retorno con conflictos",
+      "state": "S5_posterior",
+      "source": "docs/PLAN-CIERRE-RACKCLICK.json",
+      "outcome": "Paquetes por cliente/revisión/capacidad, sin secretos de sesión; merge de cambios, conflictos, transacción e idempotencia. No confundir con importar JSON normal."
+    },
+    {
+      "id": "FUT-03",
+      "title": "Federación real AD/OIDC y grupos externos",
+      "state": "fuera_de_primera_entrega",
+      "source": "docs/PLAN-CIERRE-RACKCLICK.json",
+      "outcome": "Sólo si se incorpora esa ampliación: vinculación de identidad, grupos, revocación y fallback. La presentación tipoEntra no implica implementar un forest/GPO."
+    }
+  ],
+  "references": [
+    {
+      "id": "REF-01",
+      "title": "REA y Codebase Memory",
+      "classification": "herramientas_de_desarrollo",
+      "outcome": "Mapa/búsqueda de código para el equipo; no funcionalidad de documentación de red para el usuario."
+    },
+    {
+      "id": "REF-02",
+      "title": "Patchdocs y Pathfinder",
+      "classification": "referencia_comparativa",
+      "outcome": "Ideas funcionales/de presentación y condiciones de acceso; no dependencia ni instalador integrado."
+    },
+    {
+      "id": "REF-03",
+      "title": "LibreNMS, Netdisco, GLPI Agent, NetXMS y Lansweeper",
+      "classification": "alternativas_para_FUT-01",
+      "outcome": "Evaluar API, compatibilidad y licencia antes de elegir una integración; no instalar todos los productos."
+    },
+    {
+      "id": "REF-04",
+      "title": "NetBox, DeviceType Library, RackScope y demás biblioteca local",
+      "classification": "fuentes_y_alternativas",
+      "outcome": "Reutilizar definiciones/conceptos compatibles con fuentes/licencias; catálogo concreto enC-HW y sin sustituir el servidor RackClick."
+    },
+    {
+      "id": "REF-05",
+      "title": "ESEngine y otros proyectos descargados",
+      "classification": "material_de_consulta_sin_requisito_automatico",
+      "outcome": "Conservar procedencia/decisión; no convertir cada repositorio en una función que hay que implementar."
+    },
+    {
+      "id": "REF-06",
+      "title": "Skills, plugins y herramientas de pruebas",
+      "classification": "capacidad_del_equipo",
+      "outcome": "Usar herramientas detectadas y pertinentes; no falta instalar más por defecto ni se puntúa su número."
+    }
+  ],
+  "operations": [
+    {
+      "id": "OPS-01",
+      "title": "Continuidad del repositorio privado y publicaciones revisadas",
+      "state": "actualizacion30_fuentes_demo_y_manual_verificados",
+      "source": "docs/PUBLICACION-GITHUB-30-10-2026.md",
+      "outcome": "Repositorio was-car/RackClick privado. Actualizacion seleccionada de fuentes congeladas de candidata10, inventario sintetico original sin seguridad, guia de fuentes oficiales y arranque de laboratorio reproducible. Sin binarios del instalador por condiciones de redistribucion abiertas; sin despliegue en QA. No puntua el cierre de producto por publicar codigo."
+    }
+  ],
+  "nextBatch": [
+    {
+      "id": "SIG-01",
+      "title": "Racks primero e informes compactos",
+      "references": [
+        "REQ-UX-01",
+        "REQ-UX-03",
+        "P-11",
+        "P-07"
+      ],
+      "output": "Cambio GUI acotado, prueba de navegador con datos originales, revisión distinta y guion QA."
+    },
+    {
+      "id": "SIG-02",
+      "title": "Contrato del catálogo por fabricante",
+      "references": [
+        "C-HW-02"
+      ],
+      "output": "Esquema/mapeos/variantes y selección inicial trazada; sin importar miles de YAML automáticamente."
+    },
+    {
+      "id": "SIG-03",
+      "title": "Cerrar recuperación portable MFA de la instalación",
+      "references": [
+        "F-05",
+        "F-06",
+        "R-03",
+        "R-04"
+      ],
+      "output": "Recorrido técnico end-to-end reutilizando componentes existentes; revisar primero el corte seguro y las pruebas necesarias."
+    }
+  ]
+}

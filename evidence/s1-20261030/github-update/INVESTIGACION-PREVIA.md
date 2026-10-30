@@ -1,0 +1,9 @@
+# Investigación previa · actualización privada · 30.10.2026
+
+Se reutilizan las fuentes congeladas del servidor y frontend de la edición 10, el laboratorio PostgreSQL de `pg_support.py` y el cargador revisado `tools/rc9-demo-load`. No se introduce otro motor ni una dependencia de ejecución nueva. La copia GitHub será una selección en un clon separado; no se incorpora el árbol concurrente completo.
+
+La demostración desde fuentes usará un clúster nuevo por ejecución, cuentas y secretos aleatorios locales y el inventario original convertido al plan canónico ya fijado por SHA256. El plan no transporta cuentas, sesiones ni factores MFA. La política MFA del producto no se cambia; el modo de demostración local declara su proveedor desactivado y no acredita una instalación de servicio Windows.
+
+Fuentes reutilizadas: [guía de fuentes oficiales](../../../docs/FUENTES-OFICIALES-DESARROLLO.md), [SDK fijado mediante global.json](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json), [dotnet publish](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish), [npm ci](https://docs.npmjs.com/cli/v11/commands/npm-ci), [initdb PostgreSQL 17](https://www.postgresql.org/docs/17/app-initdb.html) y [pg_ctl PostgreSQL 17](https://www.postgresql.org/docs/17/app-pg-ctl.html). Se mantienen SDK 10.0.401, runtime 10.0.12, PostgreSQL 17.11, Node 24.21.0 y los locks existentes.
+
+La revisión independiente de redistribución está en `docs/REVISION-PUBLICACION-30-10-2026.md`. No se alojará el instalador binario 10 en GitHub mientras sus condiciones de VC++ y avisos sigan abiertas. Las herramientas se adquieren de sus proveedores oficiales por el script existente y con sus hashes fijados. El manual distinguirá demostración de desarrollo, instalación nativa ensayada y entrega final pendiente.

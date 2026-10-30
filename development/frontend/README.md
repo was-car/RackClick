@@ -1,3 +1,9 @@
+# Estado de la publicación · 30.10.2026
+
+Este frontend incluye el panel/login MFA y usa las fuentes congeladas de candidata10. Seguir [Instalación desde GitHub](../../docs/INSTALACION-DESDE-GITHUB.md) para construirlo con las versiones fijadas. Los registros anteriores que siguen se conservan como historia.
+
+---
+
 # GUI de desarrollo S1
 
 **Bloque1450–1509 vigente.** Alta de grupos1449 integrada Windows/QA13, servidor1089 exacto; QA91–93disponibles,93restaurado/8original,90guiones/resultados previos intactos. DosZIP01 reproducibles, New/Restore y cadena1329→1449 con revisión independiente. Misma base/recuperación12/cuentas/puntero, sólo2camposconfig;0builds, global78 % estimado, adopción pendiente. [Contrato](../../docs/INTEGRACION-ALTA-GRUPOS-WINDOWS-QA-S1.md), [pruebas/límites](../../evidence/s1-20261018/sesenta-tandas-1450-1509/CIERRE.md). Registros siguientes históricos.

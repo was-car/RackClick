@@ -9,7 +9,7 @@ namespace RackClick.Quality.Tests;
 
 // Enrolamiento TOTP restringido (MFA-L1) contra PostgreSQL 17 real.
 // Se ejecutan solo si RACKCLICK_TEST_PG_ADMIN apunta a un servidor de laboratorio con rol que pueda crear bases.
-// Crean una base temporal propia, aplican 001–014 desde la copia de database/ del proyecto y la eliminan al terminar.
+// Crean una base temporal propia, aplican 001–015 desde la copia de database/ del proyecto y la eliminan al terminar.
 // No modifican ni reutilizan las pruebas históricas de MfaStoreTests.
 public sealed class MfaEnrollmentTests
 {
@@ -546,7 +546,7 @@ public sealed class MfaEnrollmentTests
                 "001-foundation.sql", "002-inventory.sql", "003-operation-cancellation.sql", "004-session-identity.sql",
                 "005-audit-context.sql", "006-audit-state-intent.sql", "007-audit-context-families.sql",
                 "008-user-catalog-favorites.sql", "009-private-device-templates.sql", "010-customer-shared-device-templates.sql",
-                "011-user-preferences.sql", "012-user-port-colors.sql", "013-user-category-colors.sql", "014-mfa.sql",
+                "011-user-preferences.sql", "012-user-port-colors.sql", "013-user-category-colors.sql", "014-mfa.sql", "015-mfa-account-policy.sql",
             })
                 files.Add(Path.Combine(folder, name));
             await using var connection = await Source().OpenConnectionAsync(TestContext.Current.CancellationToken);
@@ -560,6 +560,9 @@ public sealed class MfaEnrollmentTests
 
     private sealed class StaticKeys(byte[] key) : IMfaKeyProvider
     {
-        public byte[] GetKey(int version) => version == 1 ? key : throw new InvalidOperationException("mfa_key_version_unknown");
+        public byte[] GetKey(int version) => version == 1 ? (byte[])key.Clone() : throw new InvalidOperationException("mfa_key_version_unknown");
+
+        // Versión activa explícita del stub (1) y copia nueva del material.
+        public (int Version, byte[] Key) GetActiveKey() => (1, (byte[])key.Clone());
     }
 }

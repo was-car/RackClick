@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "platform": "Windows x64",
+  "sdk": "10.0.401",
+  "postgresql": "17.11",
+  "serverQuality": {
+    "passed": 378,
+    "failed": 0,
+    "skipped": 3
+  },
+  "domain": {
+    "passed": 76,
+    "exitCode": 0
+  },
+  "frontend": {
+    "passed": 801,
+    "failed": 0,
+    "skipped": 0
+  },
+  "loaderPostgresql": {
+    "passed": 11,
+    "exitCode": 0
+  },
+  "demoGuards": {
+    "passed": 6
+  },
+  "smoke": {
+    "success": true,
+    "customers": 10,
+    "ports": 5408,
+    "frontend": "served",
+    "committed": true,
+    "mfaEnabled": false
+  },
+  "productSourceFilesExact": 221,
+  "indexByteChecks": 228,
+  "fixturePasswordTransforms": 6,
+  "mfaPortableRecoveryAccepted": false,
+  "installerBinaryIncluded": false,
+  "sourceOnly": true,
+  "qaOrVmChanged": false,
+  "closurePoints": 9.755952380952381,
+  "newGlobalProductPercentage": null
+}

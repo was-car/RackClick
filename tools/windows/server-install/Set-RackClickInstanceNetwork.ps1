@@ -76,7 +76,18 @@ function Assert-RcNetworkInstanceBinding($Receipt,$Profile,$Installation,$Deploy
     if(($Instance.httpPort-isnot[int]-and$Instance.httpPort-isnot[long])-or($Instance.postgresPort-isnot[int]-and$Instance.postgresPort-isnot[long])-or
        $Instance.httpPort-ne$Plan.httpsPort-or$Instance.postgresPort-ne$Plan.postgresPort-or([uri]$Profile.publicOrigin).Port-ne$Plan.httpsPort){Stop-RcNetwork 'network_ports_not_supported'}
 }
+function Get-RcNetworkExpectedSchema($Receipt){
+    if($null-eq$Receipt.PSObject.Properties['applicationSchemaVersion']){return 14}
+    if($Receipt.applicationSchemaVersion-isnot[int]-or$Receipt.applicationSchemaVersion-notin@(14,15)){Stop-RcNetwork 'network_configuration_binding_invalid'}
+    return $Receipt.applicationSchemaVersion
+}
+function Assert-RcNetworkMfaProfile($Profile,$Receipt){
+    . (Join-Path $PSScriptRoot 'RackClick.MfaRuntime.ps1')
+    try{$mfa=Get-ServerMfaProfile -Manifest $Profile -InstallationId $Receipt.installationId}catch{Stop-RcNetwork 'network_configuration_binding_invalid'}
+    if((Get-RcNetworkExpectedSchema $Receipt)-eq15-and-not$mfa.enabled){Stop-RcNetwork 'network_configuration_binding_invalid'}
+}
 function ConvertTo-RcNetworkConfiguration($Profile,$Config,$Receipt,$Tls,$Plan){
+    Assert-RcNetworkMfaProfile $Profile $Receipt
     $p=($Profile|ConvertTo-Json -Depth 30 -Compress)|ConvertFrom-Json;$c=($Config|ConvertTo-Json -Depth 30 -Compress)|ConvertFrom-Json;$r=($Receipt|ConvertTo-Json -Depth 30 -Compress)|ConvertFrom-Json
     Assert-RcNetworkReceipt $r $Plan
     if(([uri]$p.publicOrigin).Port-ne$Plan.httpsPort-or$r.installationId-cne$Plan.installationId-or$c.serverManifestSha256-cne$r.manifestSha256-or$c.serviceName-cne$r.serviceName-or$p.installationPath-cne$r.instancePath-or$p.runtimeRoot-cne(Join-Path $r.instancePath 'runtime')-or$p.expectedWindowsSid-cne$r.serviceSid-or$c.serverManifestPath-cne(Join-Path $p.runtimeRoot 'server-profile.json')){Stop-RcNetwork 'network_transform_binding_invalid'}
@@ -100,7 +111,7 @@ function Import-RcNetworkHelpers($Context){
     $root=$Context.receipt.codeRoot;Assert-RcNetworkCodeAcl $root;$payload=Join-Path $root 'payload.json';Assert-RcNetworkCodeAcl $payload
     $stream=[IO.File]::Open($payload,'Open','Read','Read');$Context.codeLocks.Add($stream)|Out-Null
     $bytes=[IO.File]::ReadAllBytes($payload)
-    if((Get-RcNetworkHash $bytes)-cne'25a764a9fa40f0e8feb39cfbc9b2b3f1f21bb1137738edd53614b257f6277ec7'){Stop-RcNetwork 'network_frozen_payload_mismatch'}
+    if((Get-RcNetworkHash $bytes)-cne'14e3092a863663bbf1f71f9e23918e7b419a057d7505bca7d42bc6b1a40b42ad'){Stop-RcNetwork 'network_frozen_payload_mismatch'}
     $manifest=[Text.Encoding]::UTF8.GetString($bytes)|ConvertFrom-Json;$seen=@{}
     foreach($file in $manifest.files){if($file.path-cmatch'^operators/[A-Za-z0-9_./-]+\.ps1$'-or$file.path-cmatch'^service/[A-Za-z0-9_.-]+\.dll$'){
         if($file.path-match'(^|/)\.\.?(/|$)'-or$seen.ContainsKey($file.path)){Stop-RcNetwork 'network_payload_path_invalid'};$seen[$file.path]=$true
@@ -290,7 +301,7 @@ function Test-RcNetworkScheduledBackup($Context){
 function Test-RcNetworkApplied($Context){
     Release-RcNetworkLocks $Context;$verify=Invoke-RcNetworkChild $Context 'Verify' $Context.updated.profileSha256;if($verify.code-cne'server_profile_verified'){Stop-RcNetwork 'network_profile_verify_failed'}
     Start-Service -Name $Context.receipt.serviceName;$Context.startedNew=$true;$watch=[Diagnostics.Stopwatch]::StartNew();$ready=$false
-    while($watch.Elapsed.TotalSeconds-lt90){try{$body=Invoke-RestMethod -Uri ($Context.plan.publicOrigin+'/health/ready') -TimeoutSec 3 -UseBasicParsing;if($body.status-ceq'ready'-and$body.schemaVersion-eq14){$ready=$true;break}}catch{};if((Get-Service -Name $Context.receipt.serviceName).Status-ne'Running'){Stop-RcNetwork 'network_service_start_failed'};Start-Sleep -Milliseconds 500}
+    while($watch.Elapsed.TotalSeconds-lt90){try{$body=Invoke-RestMethod -Uri ($Context.plan.publicOrigin+'/health/ready') -TimeoutSec 3 -UseBasicParsing;if($body.status-ceq'ready'-and$body.schemaVersion-eq(Get-RcNetworkExpectedSchema $Context.receipt)){$ready=$true;break}}catch{};if((Get-Service -Name $Context.receipt.serviceName).Status-ne'Running'){Stop-RcNetwork 'network_service_start_failed'};Start-Sleep -Milliseconds 500}
     if(-not$ready){Stop-RcNetwork 'network_health_failed'}
     Test-RcNetworkScheduledBackup $Context
 }
@@ -336,7 +347,8 @@ function Get-RcNetworkContext($Plan){
     foreach($pair in @(@('profile',$ctx.manifest),@('config',(Join-Path $receipt.instancePath 'service-config.json')),@('root',(Join-Path $ctx.runtime 'RootCA.cer')),@('public',(Join-Path $ctx.runtime 'server.cer')),@('pfx',(Join-Path $ctx.runtime 'server.pfx')),@('tls-password',(Join-Path $ctx.runtime 'tls-password.txt')),@('managementCa',(Join-Path $management 'RootCA.cer')),@('receipt',$receiptPath))){$snap=Get-RcNetworkSnapshot $ctx $pair[1];$allowed=if($pair[0]-cin@('managementCa','receipt')){@('S-1-5-18','S-1-5-32-544')}else{@('S-1-5-18',$receipt.serviceSid)};Assert-RcNetworkSnapshotAcl $snap $allowed;$ctx.entries+=@(@{key=$pair[0];path=$pair[1];snapshot=$snap})}
     $profileBytes=($ctx.entries|Where-Object{$_.key-ceq'profile'}).snapshot.Bytes;if((Get-RcNetworkHash $profileBytes)-cne$receipt.manifestSha256){Stop-RcNetwork 'network_profile_hash_mismatch'};$ctx.profile=[Text.Encoding]::UTF8.GetString($profileBytes)|ConvertFrom-Json
     $ctx.config=[Text.Encoding]::UTF8.GetString(($ctx.entries|Where-Object{$_.key-ceq'config'}).snapshot.Bytes)|ConvertFrom-Json
-    if($ctx.profile.schemaVersion-ne1-or$ctx.profile.profileKind-cne'RackClickProductionServer'-or$ctx.profile.publicOrigin-cne$receipt.publicOrigin-or$ctx.profile.expectedWindowsSid-cne$receipt.serviceSid-or$ctx.profile.runtimeRoot-cne$ctx.runtime-or$ctx.profile.installationPath-cne$receipt.instancePath-or$ctx.profile.deploymentPath-cne(Join-Path $receipt.instancePath 'deployment')-or$ctx.config.schemaVersion-ne1-or$ctx.config.serviceName-cne$receipt.serviceName-or$ctx.config.serverManifestPath-cne$ctx.manifest-or$ctx.config.serverManifestSha256-cne$receipt.manifestSha256-or$ctx.config.runtimeScriptPath-cne(Join-Path $receipt.codeRoot 'operators\server-install\Invoke-RackClickServerRuntime.ps1')-or$ctx.config.logDirectory-cne(Join-Path $ctx.runtime 'logs')){Stop-RcNetwork 'network_configuration_binding_invalid'}
+    Assert-RcNetworkMfaProfile $ctx.profile $receipt
+    if($ctx.profile.schemaVersion-notin@(1,2)-or$ctx.profile.profileKind-cne'RackClickProductionServer'-or$ctx.profile.publicOrigin-cne$receipt.publicOrigin-or$ctx.profile.expectedWindowsSid-cne$receipt.serviceSid-or$ctx.profile.runtimeRoot-cne$ctx.runtime-or$ctx.profile.installationPath-cne$receipt.instancePath-or$ctx.profile.deploymentPath-cne(Join-Path $receipt.instancePath 'deployment')-or$ctx.config.schemaVersion-ne1-or$ctx.config.serviceName-cne$receipt.serviceName-or$ctx.config.serverManifestPath-cne$ctx.manifest-or$ctx.config.serverManifestSha256-cne$receipt.manifestSha256-or$ctx.config.runtimeScriptPath-cne(Join-Path $receipt.codeRoot 'operators\server-install\Invoke-RackClickServerRuntime.ps1')-or$ctx.config.logDirectory-cne(Join-Path $ctx.runtime 'logs')){Stop-RcNetwork 'network_configuration_binding_invalid'}
     $installation=Get-RcNetworkSnapshot $ctx (Join-Path $receipt.instancePath 'installation.json');$deployment=Get-RcNetworkSnapshot $ctx (Join-Path $receipt.instancePath 'deployment\deployment.json');$instance=Get-RcNetworkSnapshot $ctx (Join-Path $ctx.instanceRoot 'instance.json');$dm=[Text.Encoding]::UTF8.GetString($deployment.Bytes)|ConvertFrom-Json
     if((Get-RcNetworkHash $installation.Bytes)-cne$ctx.profile.installationSha256-or(Get-RcNetworkHash $deployment.Bytes)-cne$ctx.profile.deploymentSha256-or(Get-RcNetworkHash $instance.Bytes)-cne$dm.instanceManifestSha256){Stop-RcNetwork 'network_installation_hash_mismatch'}
     $im=[Text.Encoding]::UTF8.GetString($instance.Bytes)|ConvertFrom-Json;$installationRecord=[Text.Encoding]::UTF8.GetString($installation.Bytes)|ConvertFrom-Json
@@ -378,7 +390,7 @@ function Start-RcNetworkExisting($Context){
         if(-not$Context.serviceWasRunning){Start-Service -Name $Context.receipt.serviceName -ErrorAction Stop;$started=$true}
         $watch=[Diagnostics.Stopwatch]::StartNew()
         while($watch.Elapsed.TotalSeconds-lt90){
-            try{$body=Invoke-RestMethod -Uri ($Context.plan.publicOrigin+'/health/ready') -TimeoutSec 3 -UseBasicParsing -ErrorAction Stop;if($body.status-ceq'ready'-and$body.schemaVersion-eq14-and(Get-Service -Name $Context.receipt.serviceName).Status-eq'Running'){return}}catch{}
+            try{$body=Invoke-RestMethod -Uri ($Context.plan.publicOrigin+'/health/ready') -TimeoutSec 3 -UseBasicParsing -ErrorAction Stop;if($body.status-ceq'ready'-and$body.schemaVersion-eq(Get-RcNetworkExpectedSchema $Context.receipt)-and(Get-Service -Name $Context.receipt.serviceName).Status-eq'Running'){return}}catch{}
             if((Get-Service -Name $Context.receipt.serviceName).Status-ne'Running'){Stop-RcNetwork 'network_service_start_failed'}
             Start-Sleep -Milliseconds 500
         }

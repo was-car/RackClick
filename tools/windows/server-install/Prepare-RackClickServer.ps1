@@ -230,8 +230,8 @@ try {
  $report.stage='payload'
  $archive=Join-Path $plan.codeRoot 'RackClick.zip';$installer=Join-Path $plan.codeRoot 'operators\Install-RackClickOfflineBundle.ps1';$profileScript=Join-Path $plan.codeRoot 'operators\server-install\New-RackClickServerProfile.ps1';$runtimeScript=Join-Path $plan.codeRoot 'operators\server-install\Invoke-RackClickServerRuntime.ps1'
  foreach ($file in @($archive,$installer,$profileScript,$runtimeScript)) {Assert-PreparationProtectedInput $file $identity.User.Value}
- if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -cne '6d5a3896422c308e6b086822aaaa76a5fb6cc2584cf0664666f96504709e14f8') {throw 'preparation_bundle_hash_mismatch'}
- $args=@('-ArchivePath',$archive,'-ExpectedArchiveSha256','6d5a3896422c308e6b086822aaaa76a5fb6cc2584cf0664666f96504709e14f8','-DestinationPath',$plan.instancePath,'-PostgresPort',[string]$plan.postgresPort,'-HttpPort',[string]$plan.httpsPort,'-Mode',$plan.mode)
+ if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -cne '29927a6581fb1229163b75af66dd8d0924be0199b239052a164da096f0aef9ce') {throw 'preparation_bundle_hash_mismatch'}
+ $args=@('-ArchivePath',$archive,'-ExpectedArchiveSha256','29927a6581fb1229163b75af66dd8d0924be0199b239052a164da096f0aef9ce','-DestinationPath',$plan.instancePath,'-PostgresPort',[string]$plan.postgresPort,'-HttpPort',[string]$plan.httpsPort,'-Mode',$plan.mode)
  if ($plan.mode -ceq 'New') {$args+=@('-BootstrapUser',$plan.bootstrapUser,'-SystemhausName',$plan.systemhaus)} else {
   $report.stage='recovery_input'
   Assert-PreparationRecoverySourceBinding $plan $identity.User.Value
@@ -246,7 +246,7 @@ try {
  $state=Get-Content -LiteralPath (Join-Path $plan.instancePath 'installation-state.json') -Raw|ConvertFrom-Json
  if ($installed.installationSha256 -cne $installationHash -or $installed.installationPath -cne $plan.instancePath -or $state.status -cne 'prepared' -or $state.code -cne 'installation_prepared') {throw 'preparation_installation_receipt_invalid'}
  $report.stage='profile'
- $profile=Invoke-PreparationChild $profileScript @('-InstallationPath',$plan.instancePath,'-ExpectedInstallationSha256',$installationHash,'-DestinationPath',(Join-Path $plan.instancePath 'runtime'),'-PublicOrigin',$plan.publicOrigin,'-BindAddress',$plan.bindAddress) 'profile' 'server_profile_prepared'
+ $profile=Invoke-PreparationChild $profileScript @('-InstallationPath',$plan.instancePath,'-ExpectedInstallationSha256',$installationHash,'-DestinationPath',(Join-Path $plan.instancePath 'runtime'),'-PublicOrigin',$plan.publicOrigin,'-BindAddress',$plan.bindAddress,'-EnableMfa') 'profile' 'server_profile_prepared'
  $profileCreated=$true
  if ($profile.manifestPath -cne (Join-Path $plan.instancePath 'runtime\server-profile.json') -or $profile.manifestSha256 -cnotmatch '^[a-f0-9]{64}$' -or $profile.publicOrigin -cne $plan.publicOrigin) {throw 'preparation_profile_receipt_invalid'}
  $report.stage='configuration'

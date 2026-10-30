@@ -131,6 +131,9 @@ def build(archive, service_publish, output, *, bundle_sha256, edition, stamp=STA
     if digest(payload.get('service/RackClick.WindowsService.dll', b'')) != SERVICE_DLL_SHA256:
         raise ValueError('service_dll_hash_mismatch')
     payload['docs/INSTALACION-SERVIDOR-DESDE-CERO.html'] = checked_path(ROOT / 'docs/INSTALACION-SERVIDOR-DESDE-CERO.html').read_bytes()
+    if edition in {'09', '10'}:
+        guide = 'docs/INSTALADOR' + edition + '-ENSAYO-MFA.md'
+        payload[guide] = checked_path(ROOT / guide).read_bytes()
     payload['LICENSES/service-host-dependencies.json'] = checked_path(ROOT / 'development/windows-service/packages.lock.json').read_bytes()
     payload['LICENSES/service-host-NOTICE.txt'] = b'RackClick Windows service host dependencies: Microsoft.Extensions.Hosting.WindowsServices 10.0.12 and locked Microsoft/System transitive dependencies. MIT; see dotnet-LICENSE.txt and service-host-dependencies.json. Official source: https://www.nuget.org/packages/Microsoft.Extensions.Hosting.WindowsServices/10.0.12\n'
     payload['00-EMPEZAR-AQUI.html'] = checked_path(ROOT / 'docs/INSTALACION-SERVIDOR-DESDE-CERO.html').read_bytes()
