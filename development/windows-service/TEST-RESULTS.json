@@ -1,0 +1,63 @@
+{
+  "platform": "Windows",
+  "scmInstalled": false,
+  "postgresExecuted": false,
+  "fixturePath": "C:\\RackClick_SVR\\.local\\rackclick-service-bad9hzwq",
+  "cases": [
+    {
+      "case": "early_runtime_exit_is_failure",
+      "exitCode": 1,
+      "expected": "failure",
+      "passed": true
+    },
+    {
+      "case": "SCM_required_without_console",
+      "exitCode": 1,
+      "expected": "failure",
+      "passed": true
+    },
+    {
+      "case": "unknown_config_field",
+      "exitCode": 1,
+      "expected": "failure",
+      "passed": true
+    },
+    {
+      "case": "unsupported_schema",
+      "exitCode": 1,
+      "expected": "failure",
+      "passed": true
+    },
+    {
+      "case": "manifest_hash_mismatch",
+      "exitCode": 1,
+      "expected": "failure",
+      "passed": true
+    },
+    {
+      "case": "public_runtime_acl_rejected",
+      "exitCode": 1,
+      "expected": "failure",
+      "passed": true
+    },
+    {
+      "case": "graceful_stop_same_runId",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "failed_stop_is_failure",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "junction_log_path_rejected",
+      "exitCode": 1,
+      "expected": "failure",
+      "passed": true
+    }
+  ],
+  "limits": [
+    "SCM start/stop under real standard service account not executed"
+  ]
+}

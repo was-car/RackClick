@@ -303,7 +303,9 @@ public sealed partial class InventoryStore
             var selectedDeviceIds = selectedDevices.Select(d => Id(d)).ToHashSet();
             Table("devices", L("Devices", "Geräte", "Equipos"), nameId, L("Kind", "Art", "Clase"), context, "U", L("Order", "Reihenfolge", "Orden"), L("PoE budget (W)", "PoE-Budget (W)", "Presupuesto PoE (W)"));
             foreach (var device in selectedDevices)
-            { html.Row("device", Id(device)); Identity(device); html.Cell(S(device, "kind")); html.Cell(Path("device", Id(device))); html.Cell(Number(device, "sizeU")); html.Cell(Number(device, "sortOrder")); html.Cell(Number(device, "poeBudget")); html.Raw("</tr>"); }
+            { html.Row("device", Id(device)); Identity(device); html.Cell(S(device, "kind")); html.Cell(Path("device", Id(device))); html.Cell(device.TryGetProperty("mountParentId", out var mountedOn) && mountedOn.ValueKind != JsonValueKind.Null
+                    ? "0 " + L("additional U; mounted on", "zusätzliche HE; montiert auf", "U adicionales; montado sobre") + " " + S(devices[mountedOn.GetGuid()], "name") + " [" + mountedOn.GetString() + "] / " + S(device, "mountSlotKey")
+                    : Number(device, "sizeU")); html.Cell(Number(device, "sortOrder")); html.Cell(Number(device, "poeBudget")); html.Raw("</tr>"); }
             EndTable();
             Table("groups", L("Port groups", "Portgruppen", "Grupos de puertos"), nameId, L("Device UUID", "Geräte-UUID", "UUID de equipo"), L("Type", "Typ", "Tipo"), L("Prefix", "Präfix", "Prefijo"), L("Order", "Reihenfolge", "Orden"));
             foreach (var group in groups.Values.Where(g => selectedDeviceIds.Contains(Id(g, "deviceId"))))

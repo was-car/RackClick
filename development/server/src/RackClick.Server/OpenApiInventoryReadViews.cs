@@ -19,7 +19,8 @@ public static partial class OpenApiDocument
             ("customerId", uuid), ("id", uuid), ("deviceId", uuid), ("deviceName", text), ("deviceKind", text), ("rackId", nullableId), ("roomId", nullableId),
             ("path", path), ("groupId", uuid), ("groupName", text), ("type", text), ("family", text), ("gn", integer), ("label", text), ("status", text),
             ("face", text), ("poe", boolean), ("watts", Obj(("type", "number"), ("nullable", true))), ("color", nullableText), ("powerRole", text),
-            ("connected", boolean), ("connectionIds", ArrayOf(uuid)), ("peerPortIds", ArrayOf(uuid)));
+            ("connected", boolean), ("connectionIds", ArrayOf(uuid)), ("peerPortIds", ArrayOf(uuid)),
+            ("physicalConnector", Obj(("type", "string"), ("nullable", true), ("description", "Optional authenticated physical form classification; power cord ends, voltage, current and pinout are unspecified. Omitted when unknown."))));
         schemas["InventoryConnectionView"] = Shape(["customerId", "id", "from", "to", "note", "color", "patch", "crossRack"],
             ("customerId", uuid), ("id", uuid), ("from", Ref("InventoryPortView")), ("to", Ref("InventoryPortView")), ("note", text),
             ("color", nullableText), ("patch", text), ("crossRack", Obj(("type", "boolean"), ("nullable", true))));
@@ -43,7 +44,7 @@ public static partial class OpenApiDocument
             if (view == "ports")
             {
                 parameters.Add(Parameter("status", "query", false, Obj(("type", "string"), ("enum", new[] { "all", "free", "reserved", "disabled", "faulty" }), ("default", "all"))));
-                parameters.Add(Parameter("family", "query", false, Obj(("type", "string"), ("enum", new[] { "all", "rj45", "sfp", "sfp28", "qsfp", "mgmt", "console", "power", "usb_a", "usb_c" }), ("default", "all"))));
+                parameters.Add(Parameter("family", "query", false, Obj(("type", "string"), ("enum", new[] { "all", "rj45", "sfp", "sfp28", "sfp56", "qsfp", "qsfpdd", "mgmt", "console", "idc", "power", "usb_a", "usb_c", "ipc", "fiber", "sfpdd", "cfp2", "sas", "dsl", "telephony", "isdn", "expansion", "power_dc" }), ("default", "all"))));
             }
             ((Dictionary<string, object?>)operation["responses"]!)["422"] = Response("Invalid closed query, bounds or revision.", Ref("Error"));
             paths["/api/v1/customers/{id}/inventory/" + view] = Obj(("get", operation));

@@ -1,0 +1,2520 @@
+[
+  {
+    "version": "german-repeaters-20261103-v1",
+    "synthetic": false,
+    "profiles": [
+      {
+        "key": "devolo-wifi6-repeater3000-eu",
+        "kind": "wall",
+        "sizeU": 0,
+        "widthMm": null,
+        "heightMm": null,
+        "depthMm": null,
+        "color": "#f5f4f1",
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "ac-plug",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "inlet",
+            "physicalConnector": "eu-2pin-plug"
+          }
+        ],
+        "identity": {
+          "manufacturer": "devolo",
+          "family": "WiFi repeater EU",
+          "model": "WiFi 6 Repeater 3000",
+          "sku": "WiFi 6 Repeater 3000 (EU)"
+        },
+        "source": "https://www.devolo.de/media/c7/b7/f0/1753865610/Datasheet_devolo_WiFi_6_Repeater_3000_EN_DE_FR_NL.pdf?ts=1753865610",
+        "mounting": {
+          "kind": "wall",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "WiFi 6 Repeater 3000 (EU)",
+            "quantity": 1,
+            "description": "Unidad y alimentaci\u00f3n nominal del modelo; sin montaje de rack ni adaptadores impl\u00edcitos."
+          }
+        ],
+        "continuities": [],
+        "visual": {
+          "faces": {
+            "front": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 76.0,
+                "y": 20,
+                "w": 168,
+                "h": 286,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 76,
+                  "text": "devolo",
+                  "size": 19,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 103,
+                  "text": "3000",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 140.12,
+                  "r": 5,
+                  "fill": "#2b9c68"
+                },
+                {
+                  "kind": "rect",
+                  "x": 143,
+                  "y": 228.78,
+                  "w": 34,
+                  "h": 21,
+                  "fill": "#e3e1dc",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 244.78,
+                  "text": "+",
+                  "size": 14,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": []
+            },
+            "rear": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 76.0,
+                "y": 20,
+                "w": 168,
+                "h": 286,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 52,
+                  "text": "LAN / POWER",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 72,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 81,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 90,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 99,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 155.0,
+                  "text": "LAN \u00b7 1 GbE",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 221.0,
+                  "text": "EU plug \u00b7 2 pins",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": [
+                {
+                  "groupKey": "lan",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 138.5,
+                  "y": 163,
+                  "dx": 55,
+                  "dy": 0,
+                  "w": 43,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                },
+                {
+                  "groupKey": "ac-plug",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 136.0,
+                  "y": 229,
+                  "dx": 60,
+                  "dy": 0,
+                  "w": 48,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "reviewLimits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mec\u00e1nico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces autom\u00e1ticos.",
+          "Detalle trasero operativo agrupado: no afirma posici\u00f3n mec\u00e1nica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja impl\u00edcitos. Cotas nominales no certifican ventilaci\u00f3n, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificaci\u00f3n el\u00e9ctrica. DC no certifica di\u00e1metro ni polaridad.",
+          "Dimensiones reservadas: las fichas presentan tres n\u00fameros sin orden inequ\u00edvoco de ejes; no se presume encaje. SKU descriptivo sin revisi\u00f3n num\u00e9rica acreditada."
+        ],
+        "referenceScope": "web_specification_schematic_visual",
+        "passthrough": null
+      },
+      {
+        "key": "devolo-wifi6-repeater5400-eu",
+        "kind": "tabletop",
+        "sizeU": 0,
+        "widthMm": null,
+        "heightMm": null,
+        "depthMm": null,
+        "color": "#f5f4f1",
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "dc",
+            "type": "power_dc",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "inlet",
+            "physicalConnector": "dc-barrel",
+            "powerSystem": "dc"
+          }
+        ],
+        "identity": {
+          "manufacturer": "devolo",
+          "family": "WiFi repeater EU",
+          "model": "WiFi 6 Repeater 5400",
+          "sku": "WiFi 6 Repeater 5400 (EU)"
+        },
+        "source": "https://www.devolo.de/media/c7/e2/16/1753865618/Datasheet_devolo_WiFi_6_Repeater_5400_EN_DE_FR_NL.pdf?ts=1753865618",
+        "mounting": {
+          "kind": "tabletop",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "WiFi 6 Repeater 5400 (EU)",
+            "quantity": 1,
+            "description": "Unidad y alimentaci\u00f3n nominal del modelo; sin montaje de rack ni adaptadores impl\u00edcitos."
+          }
+        ],
+        "continuities": [],
+        "visual": {
+          "faces": {
+            "front": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 95.0,
+                "y": 20,
+                "w": 130,
+                "h": 286,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "rect",
+                  "x": 83.0,
+                  "y": 299,
+                  "w": 154,
+                  "h": 17,
+                  "fill": "#dededa",
+                  "radius": 6
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 76,
+                  "text": "devolo",
+                  "size": 19,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 103,
+                  "text": "5400",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 140.12,
+                  "r": 5,
+                  "fill": "#2b9c68"
+                },
+                {
+                  "kind": "rect",
+                  "x": 143,
+                  "y": 228.78,
+                  "w": 34,
+                  "h": 21,
+                  "fill": "#e3e1dc",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 244.78,
+                  "text": "+",
+                  "size": 14,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": []
+            },
+            "rear": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 95.0,
+                "y": 20,
+                "w": 130,
+                "h": 286,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "rect",
+                  "x": 83.0,
+                  "y": 299,
+                  "w": 154,
+                  "h": 17,
+                  "fill": "#dededa",
+                  "radius": 6
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 52,
+                  "text": "LAN / POWER",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "rect",
+                  "x": 115.0,
+                  "y": 72,
+                  "w": 90,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 115.0,
+                  "y": 81,
+                  "w": 90,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 115.0,
+                  "y": 90,
+                  "w": 90,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 115.0,
+                  "y": 99,
+                  "w": 90,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 155.0,
+                  "text": "LAN \u00b7 1 GbE",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 221.0,
+                  "text": "DC input \u00b7 external PSU",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": [
+                {
+                  "groupKey": "lan",
+                  "rows": [
+                    [
+                      1,
+                      2
+                    ]
+                  ],
+                  "x": 111.0,
+                  "y": 163,
+                  "dx": 55,
+                  "dy": 0,
+                  "w": 43,
+                  "h": 34,
+                  "labels": {
+                    "1": "1",
+                    "2": "2"
+                  }
+                },
+                {
+                  "groupKey": "dc",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 136.0,
+                  "y": 229,
+                  "dx": 60,
+                  "dy": 0,
+                  "w": 48,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "reviewLimits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mec\u00e1nico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces autom\u00e1ticos.",
+          "Detalle trasero operativo agrupado: no afirma posici\u00f3n mec\u00e1nica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja impl\u00edcitos. Cotas nominales no certifican ventilaci\u00f3n, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificaci\u00f3n el\u00e9ctrica. DC no certifica di\u00e1metro ni polaridad.",
+          "Dimensiones reservadas: las fichas presentan tres n\u00fameros sin orden inequ\u00edvoco de ejes; no se presume encaje. SKU descriptivo sin revisi\u00f3n num\u00e9rica acreditada."
+        ],
+        "referenceScope": "web_specification_schematic_visual",
+        "passthrough": null
+      },
+      {
+        "key": "fritz-repeater1200ax-de",
+        "kind": "wall",
+        "sizeU": 0,
+        "widthMm": 80,
+        "heightMm": 80,
+        "depthMm": 37,
+        "color": "#f5f4f1",
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "ac-plug",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "inlet",
+            "physicalConnector": "eu-2pin-plug"
+          }
+        ],
+        "identity": {
+          "manufacturer": "FRITZ!",
+          "family": "FRITZ!Repeater",
+          "model": "FRITZ!Repeater 1200 AX",
+          "sku": "20002974"
+        },
+        "source": "https://fritz.com/products/fritz-repeater-1200-ax-20002974/",
+        "mounting": {
+          "kind": "wall",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "20002974",
+            "quantity": 1,
+            "description": "Unidad y alimentaci\u00f3n nominal del modelo; sin montaje de rack ni adaptadores impl\u00edcitos."
+          }
+        ],
+        "continuities": [],
+        "visual": {
+          "faces": {
+            "front": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 50.0,
+                "y": 20,
+                "w": 220,
+                "h": 220,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "rect",
+                  "x": 59.0,
+                  "y": 147.6,
+                  "w": 202,
+                  "h": 36,
+                  "fill": "#bd162d",
+                  "radius": 9
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 76,
+                  "text": "FRITZ!",
+                  "size": 19,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 103,
+                  "text": "1200 AX",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 112.39999999999999,
+                  "r": 5,
+                  "fill": "#2b9c68"
+                },
+                {
+                  "kind": "rect",
+                  "x": 143,
+                  "y": 180.6,
+                  "w": 34,
+                  "h": 21,
+                  "fill": "#e3e1dc",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 196.6,
+                  "text": "+",
+                  "size": 14,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": []
+            },
+            "rear": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 50.0,
+                "y": 20,
+                "w": 220,
+                "h": 220,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 52,
+                  "text": "LAN / POWER",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 72,
+                  "w": 180,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 81,
+                  "w": 180,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 90,
+                  "w": 180,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 99,
+                  "w": 180,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 122.0,
+                  "text": "LAN \u00b7 1 GbE",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 188.0,
+                  "text": "EU plug \u00b7 2 pins",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": [
+                {
+                  "groupKey": "lan",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 138.5,
+                  "y": 130,
+                  "dx": 55,
+                  "dy": 0,
+                  "w": 43,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                },
+                {
+                  "groupKey": "ac-plug",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 136.0,
+                  "y": 196,
+                  "dx": 60,
+                  "dy": 0,
+                  "w": 48,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "reviewLimits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mec\u00e1nico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces autom\u00e1ticos.",
+          "Detalle trasero operativo agrupado: no afirma posici\u00f3n mec\u00e1nica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja impl\u00edcitos. Cotas nominales no certifican ventilaci\u00f3n, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificaci\u00f3n el\u00e9ctrica. DC no certifica di\u00e1metro ni polaridad."
+        ],
+        "referenceScope": "web_specification_schematic_visual",
+        "passthrough": null
+      },
+      {
+        "key": "fritz-repeater2400-de",
+        "kind": "wall",
+        "sizeU": 0,
+        "widthMm": 76.5,
+        "heightMm": 155,
+        "depthMm": 62.6,
+        "color": "#f5f4f1",
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "ac-plug",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "inlet",
+            "physicalConnector": "eu-2pin-plug"
+          }
+        ],
+        "identity": {
+          "manufacturer": "FRITZ!",
+          "family": "FRITZ!Repeater",
+          "model": "FRITZ!Repeater 2400",
+          "sku": "20002855"
+        },
+        "source": "https://fritz.com/products/fritz-repeater-2400-20002855/",
+        "mounting": {
+          "kind": "wall",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "20002855",
+            "quantity": 1,
+            "description": "Unidad y alimentaci\u00f3n nominal del modelo; sin montaje de rack ni adaptadores impl\u00edcitos."
+          }
+        ],
+        "continuities": [],
+        "visual": {
+          "faces": {
+            "front": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 76.0,
+                "y": 20,
+                "w": 168,
+                "h": 286,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "rect",
+                  "x": 85.0,
+                  "y": 185.88,
+                  "w": 150,
+                  "h": 58,
+                  "fill": "#bd162d",
+                  "radius": 9
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 76,
+                  "text": "FRITZ!",
+                  "size": 19,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 103,
+                  "text": "2400",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 140.12,
+                  "r": 5,
+                  "fill": "#2b9c68"
+                },
+                {
+                  "kind": "rect",
+                  "x": 143,
+                  "y": 228.78,
+                  "w": 34,
+                  "h": 21,
+                  "fill": "#e3e1dc",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 244.78,
+                  "text": "+",
+                  "size": 14,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": []
+            },
+            "rear": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 76.0,
+                "y": 20,
+                "w": 168,
+                "h": 286,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 52,
+                  "text": "LAN / POWER",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 72,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 81,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 90,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 99,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 155.0,
+                  "text": "LAN \u00b7 1 GbE",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 221.0,
+                  "text": "EU plug \u00b7 2 pins",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": [
+                {
+                  "groupKey": "lan",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 138.5,
+                  "y": 163,
+                  "dx": 55,
+                  "dy": 0,
+                  "w": 43,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                },
+                {
+                  "groupKey": "ac-plug",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 136.0,
+                  "y": 229,
+                  "dx": 60,
+                  "dy": 0,
+                  "w": 48,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "reviewLimits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mec\u00e1nico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces autom\u00e1ticos.",
+          "Detalle trasero operativo agrupado: no afirma posici\u00f3n mec\u00e1nica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja impl\u00edcitos. Cotas nominales no certifican ventilaci\u00f3n, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificaci\u00f3n el\u00e9ctrica. DC no certifica di\u00e1metro ni polaridad."
+        ],
+        "referenceScope": "web_specification_schematic_visual",
+        "passthrough": null
+      },
+      {
+        "key": "fritz-repeater3000ax-de",
+        "kind": "tabletop",
+        "sizeU": 0,
+        "widthMm": 90,
+        "heightMm": 190,
+        "depthMm": 145,
+        "color": "#f5f4f1",
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "dc",
+            "type": "power_dc",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "inlet",
+            "physicalConnector": "dc-barrel",
+            "powerSystem": "dc"
+          }
+        ],
+        "identity": {
+          "manufacturer": "FRITZ!",
+          "family": "FRITZ!Repeater",
+          "model": "FRITZ!Repeater 3000 AX",
+          "sku": "20002988"
+        },
+        "source": "https://fritz.com/products/fritz-repeater-3000-ax-20002988/",
+        "mounting": {
+          "kind": "tabletop",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "20002988",
+            "quantity": 1,
+            "description": "Unidad y alimentaci\u00f3n nominal del modelo; sin montaje de rack ni adaptadores impl\u00edcitos."
+          }
+        ],
+        "continuities": [],
+        "visual": {
+          "faces": {
+            "front": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 82.0,
+                "y": 20,
+                "w": 156,
+                "h": 306,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 12
+              },
+              "decorations": [
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 319,
+                  "w": 180,
+                  "h": 17,
+                  "fill": "#dededa",
+                  "radius": 6
+                },
+                {
+                  "kind": "rect",
+                  "x": 91.0,
+                  "y": 197.48,
+                  "w": 138,
+                  "h": 58,
+                  "fill": "#bd162d",
+                  "radius": 9
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 76,
+                  "text": "FRITZ!",
+                  "size": 19,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 103,
+                  "text": "3000 AX",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 148.51999999999998,
+                  "r": 5,
+                  "fill": "#2b9c68"
+                },
+                {
+                  "kind": "rect",
+                  "x": 143,
+                  "y": 243.38,
+                  "w": 34,
+                  "h": 21,
+                  "fill": "#e3e1dc",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 259.38,
+                  "text": "+",
+                  "size": 14,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": []
+            },
+            "rear": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 82.0,
+                "y": 20,
+                "w": 156,
+                "h": 306,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 12
+              },
+              "decorations": [
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 319,
+                  "w": 180,
+                  "h": 17,
+                  "fill": "#dededa",
+                  "radius": 6
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 52,
+                  "text": "LAN / POWER",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "rect",
+                  "x": 102.0,
+                  "y": 72,
+                  "w": 116,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 102.0,
+                  "y": 81,
+                  "w": 116,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 102.0,
+                  "y": 90,
+                  "w": 116,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 102.0,
+                  "y": 99,
+                  "w": 116,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 165.0,
+                  "text": "LAN \u00b7 1 GbE",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 231.0,
+                  "text": "DC input \u00b7 external PSU",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": [
+                {
+                  "groupKey": "lan",
+                  "rows": [
+                    [
+                      1,
+                      2
+                    ]
+                  ],
+                  "x": 111.0,
+                  "y": 173,
+                  "dx": 55,
+                  "dy": 0,
+                  "w": 43,
+                  "h": 34,
+                  "labels": {
+                    "1": "1",
+                    "2": "2"
+                  }
+                },
+                {
+                  "groupKey": "dc",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 136.0,
+                  "y": 239,
+                  "dx": 60,
+                  "dy": 0,
+                  "w": 48,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "reviewLimits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mec\u00e1nico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces autom\u00e1ticos.",
+          "Detalle trasero operativo agrupado: no afirma posici\u00f3n mec\u00e1nica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja impl\u00edcitos. Cotas nominales no certifican ventilaci\u00f3n, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificaci\u00f3n el\u00e9ctrica. DC no certifica di\u00e1metro ni polaridad."
+        ],
+        "referenceScope": "web_specification_schematic_visual",
+        "passthrough": null
+      },
+      {
+        "key": "fritz-repeater600-de",
+        "kind": "wall",
+        "sizeU": 0,
+        "widthMm": 63,
+        "heightMm": 63,
+        "depthMm": 30,
+        "color": "#f5f4f1",
+        "groups": [
+          {
+            "key": "ac-plug",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "inlet",
+            "physicalConnector": "eu-2pin-plug"
+          }
+        ],
+        "identity": {
+          "manufacturer": "FRITZ!",
+          "family": "FRITZ!Repeater",
+          "model": "FRITZ!Repeater 600",
+          "sku": "20002853"
+        },
+        "source": "https://fritz.com/products/fritz-repeater-600-20002853/",
+        "mounting": {
+          "kind": "wall",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "20002853",
+            "quantity": 1,
+            "description": "Unidad y alimentaci\u00f3n nominal del modelo; sin montaje de rack ni adaptadores impl\u00edcitos."
+          }
+        ],
+        "continuities": [],
+        "visual": {
+          "faces": {
+            "front": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 50.0,
+                "y": 20,
+                "w": 220,
+                "h": 220,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "rect",
+                  "x": 59.0,
+                  "y": 147.6,
+                  "w": 202,
+                  "h": 36,
+                  "fill": "#bd162d",
+                  "radius": 9
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 76,
+                  "text": "FRITZ!",
+                  "size": 19,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 103,
+                  "text": "600",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 112.39999999999999,
+                  "r": 5,
+                  "fill": "#2b9c68"
+                },
+                {
+                  "kind": "rect",
+                  "x": 143,
+                  "y": 180.6,
+                  "w": 34,
+                  "h": 21,
+                  "fill": "#e3e1dc",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 196.6,
+                  "text": "+",
+                  "size": 14,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": []
+            },
+            "rear": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 50.0,
+                "y": 20,
+                "w": 220,
+                "h": 220,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 52,
+                  "text": "LAN / POWER",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 72,
+                  "w": 180,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 81,
+                  "w": 180,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 90,
+                  "w": 180,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 99,
+                  "w": 180,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 122.0,
+                  "text": "EU plug \u00b7 2 pins",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": [
+                {
+                  "groupKey": "ac-plug",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 136.0,
+                  "y": 130,
+                  "dx": 60,
+                  "dy": 0,
+                  "w": 48,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "reviewLimits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mec\u00e1nico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces autom\u00e1ticos.",
+          "Detalle trasero operativo agrupado: no afirma posici\u00f3n mec\u00e1nica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja impl\u00edcitos. Cotas nominales no certifican ventilaci\u00f3n, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificaci\u00f3n el\u00e9ctrica. DC no certifica di\u00e1metro ni polaridad."
+        ],
+        "referenceScope": "web_specification_schematic_visual",
+        "passthrough": null
+      },
+      {
+        "key": "fritz-repeater6000-de",
+        "kind": "tabletop",
+        "sizeU": 0,
+        "widthMm": 87,
+        "heightMm": 185,
+        "depthMm": 135,
+        "color": "#f5f4f1",
+        "groups": [
+          {
+            "key": "lan25",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "lan1",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "dc",
+            "type": "power_dc",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "inlet",
+            "physicalConnector": "dc-barrel",
+            "powerSystem": "dc"
+          }
+        ],
+        "identity": {
+          "manufacturer": "FRITZ!",
+          "family": "FRITZ!Repeater",
+          "model": "FRITZ!Repeater 6000",
+          "sku": "20002908"
+        },
+        "source": "https://fritz.com/products/fritz-repeater-6000-20002908/",
+        "mounting": {
+          "kind": "tabletop",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "20002908",
+            "quantity": 1,
+            "description": "Unidad y alimentaci\u00f3n nominal del modelo; sin montaje de rack ni adaptadores impl\u00edcitos."
+          }
+        ],
+        "continuities": [],
+        "visual": {
+          "faces": {
+            "front": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 82.0,
+                "y": 20,
+                "w": 156,
+                "h": 306,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 12
+              },
+              "decorations": [
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 319,
+                  "w": 180,
+                  "h": 17,
+                  "fill": "#dededa",
+                  "radius": 6
+                },
+                {
+                  "kind": "rect",
+                  "x": 91.0,
+                  "y": 197.48,
+                  "w": 138,
+                  "h": 58,
+                  "fill": "#bd162d",
+                  "radius": 9
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 76,
+                  "text": "FRITZ!",
+                  "size": 19,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 103,
+                  "text": "6000",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 148.51999999999998,
+                  "r": 5,
+                  "fill": "#2b9c68"
+                },
+                {
+                  "kind": "rect",
+                  "x": 143,
+                  "y": 243.38,
+                  "w": 34,
+                  "h": 21,
+                  "fill": "#e3e1dc",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 259.38,
+                  "text": "+",
+                  "size": 14,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": []
+            },
+            "rear": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 82.0,
+                "y": 20,
+                "w": 156,
+                "h": 306,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 12
+              },
+              "decorations": [
+                {
+                  "kind": "rect",
+                  "x": 70.0,
+                  "y": 319,
+                  "w": 180,
+                  "h": 17,
+                  "fill": "#dededa",
+                  "radius": 6
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 52,
+                  "text": "LAN / POWER",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "rect",
+                  "x": 102.0,
+                  "y": 72,
+                  "w": 116,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 102.0,
+                  "y": 81,
+                  "w": 116,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 102.0,
+                  "y": 90,
+                  "w": 116,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 102.0,
+                  "y": 99,
+                  "w": 116,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 137,
+                  "text": "LAN 1 \u00b7 2.5 GbE",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 195,
+                  "text": "LAN 2 \u00b7 1 GbE",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 253,
+                  "text": "DC input \u00b7 external PSU",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": [
+                {
+                  "groupKey": "lan25",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 138.5,
+                  "y": 145,
+                  "dx": 55,
+                  "dy": 0,
+                  "w": 43,
+                  "h": 34,
+                  "labels": {
+                    "1": "2.5G"
+                  }
+                },
+                {
+                  "groupKey": "lan1",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 138.5,
+                  "y": 203,
+                  "dx": 55,
+                  "dy": 0,
+                  "w": 43,
+                  "h": 34,
+                  "labels": {
+                    "1": "1G"
+                  }
+                },
+                {
+                  "groupKey": "dc",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 136.0,
+                  "y": 261,
+                  "dx": 60,
+                  "dy": 0,
+                  "w": 48,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "reviewLimits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mec\u00e1nico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces autom\u00e1ticos.",
+          "Detalle trasero operativo agrupado: no afirma posici\u00f3n mec\u00e1nica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja impl\u00edcitos. Cotas nominales no certifican ventilaci\u00f3n, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificaci\u00f3n el\u00e9ctrica. DC no certifica di\u00e1metro ni polaridad."
+        ],
+        "referenceScope": "web_specification_schematic_visual",
+        "passthrough": null
+      },
+      {
+        "key": "telekom-speedhome-wlan-2021",
+        "kind": "tabletop",
+        "sizeU": 0,
+        "widthMm": 157,
+        "heightMm": 157,
+        "depthMm": 69,
+        "color": "#25282b",
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "dc",
+            "type": "power_dc",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "inlet",
+            "physicalConnector": "dc-barrel",
+            "powerSystem": "dc"
+          }
+        ],
+        "identity": {
+          "manufacturer": "Telekom",
+          "family": "Speed Home WLAN original",
+          "model": "Speed Home WLAN (2021)",
+          "sku": "40823475"
+        },
+        "source": "https://www.telekom.com/resource/blob/627822/c83408f468252af4369eea285310d15a/dl-produktsteckbrief-speed-home-data.pdf",
+        "mounting": {
+          "kind": "tabletop",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "40823475",
+            "quantity": 1,
+            "description": "Unidad y alimentaci\u00f3n nominal del modelo; sin montaje de rack ni adaptadores impl\u00edcitos."
+          }
+        ],
+        "continuities": [],
+        "visual": {
+          "faces": {
+            "front": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 17.0,
+                "y": 20,
+                "w": 286,
+                "h": 286,
+                "fill": "#25282b",
+                "stroke": "#92999e",
+                "radius": 143
+              },
+              "decorations": [
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 163,
+                  "r": 143,
+                  "fill": "#25282b"
+                },
+                {
+                  "kind": "rect",
+                  "x": 106,
+                  "y": 307,
+                  "w": 108,
+                  "h": 14,
+                  "fill": "#202326",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 76,
+                  "text": "Telekom",
+                  "size": 19,
+                  "fill": "#f2f2f2",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 103,
+                  "text": "Speed Home WLAN",
+                  "size": 12,
+                  "fill": "#f2f2f2",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 140.12,
+                  "r": 5,
+                  "fill": "#2b9c68"
+                },
+                {
+                  "kind": "rect",
+                  "x": 143,
+                  "y": 228.78,
+                  "w": 34,
+                  "h": 21,
+                  "fill": "#65686b",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 244.78,
+                  "text": "+",
+                  "size": 14,
+                  "fill": "#f2f2f2",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": []
+            },
+            "rear": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 17.0,
+                "y": 20,
+                "w": 286,
+                "h": 286,
+                "fill": "#25282b",
+                "stroke": "#92999e",
+                "radius": 143
+              },
+              "decorations": [
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 163,
+                  "r": 143,
+                  "fill": "#25282b"
+                },
+                {
+                  "kind": "rect",
+                  "x": 106,
+                  "y": 307,
+                  "w": 108,
+                  "h": 14,
+                  "fill": "#202326",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 52,
+                  "text": "LAN / POWER",
+                  "size": 12,
+                  "fill": "#f2f2f2",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "rect",
+                  "x": 62,
+                  "y": 72,
+                  "w": 196,
+                  "h": 2,
+                  "fill": "#6d7377",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 62,
+                  "y": 81,
+                  "w": 196,
+                  "h": 2,
+                  "fill": "#6d7377",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 62,
+                  "y": 90,
+                  "w": 196,
+                  "h": 2,
+                  "fill": "#6d7377",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 62,
+                  "y": 99,
+                  "w": 196,
+                  "h": 2,
+                  "fill": "#6d7377",
+                  "radius": 0
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 155.0,
+                  "text": "LAN \u00b7 1 GbE",
+                  "size": 11,
+                  "fill": "#f2f2f2",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 221.0,
+                  "text": "DC input \u00b7 external PSU",
+                  "size": 11,
+                  "fill": "#f2f2f2",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": [
+                {
+                  "groupKey": "lan",
+                  "rows": [
+                    [
+                      1,
+                      2
+                    ]
+                  ],
+                  "x": 111.0,
+                  "y": 163,
+                  "dx": 55,
+                  "dy": 0,
+                  "w": 43,
+                  "h": 34,
+                  "labels": {
+                    "1": "1",
+                    "2": "2"
+                  }
+                },
+                {
+                  "groupKey": "dc",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 136.0,
+                  "y": 229,
+                  "dx": 60,
+                  "dy": 0,
+                  "w": 48,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "reviewLimits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mec\u00e1nico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces autom\u00e1ticos.",
+          "Detalle trasero operativo agrupado: no afirma posici\u00f3n mec\u00e1nica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja impl\u00edcitos. Cotas nominales no certifican ventilaci\u00f3n, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificaci\u00f3n el\u00e9ctrica. DC no certifica di\u00e1metro ni polaridad.",
+          "Original junio 2021, art\u00edculo 40823475. Ficha indexada; descarga directa 404. Manual actual 2.Gen excluido."
+        ],
+        "referenceScope": "web_specification_schematic_visual",
+        "passthrough": null
+      },
+      {
+        "key": "tplink-re605x-eu",
+        "kind": "wall",
+        "sizeU": 0,
+        "widthMm": 74,
+        "heightMm": 124.8,
+        "depthMm": 46,
+        "color": "#f5f4f1",
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "ac-plug",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "inlet",
+            "physicalConnector": "eu-2pin-plug"
+          }
+        ],
+        "identity": {
+          "manufacturer": "TP-Link",
+          "family": "WiFi repeater EU",
+          "model": "RE605X EU",
+          "sku": "RE605X(EU)"
+        },
+        "source": "https://www.tp-link.com/de/home-networking/range-extender/re605x/#specifications",
+        "mounting": {
+          "kind": "wall",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "RE605X(EU)",
+            "quantity": 1,
+            "description": "Unidad y alimentaci\u00f3n nominal del modelo; sin montaje de rack ni adaptadores impl\u00edcitos."
+          }
+        ],
+        "continuities": [],
+        "visual": {
+          "faces": {
+            "front": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 74.0,
+                "y": 20,
+                "w": 172,
+                "h": 264,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "rect",
+                  "x": 19,
+                  "y": 20,
+                  "w": 22,
+                  "h": 228,
+                  "fill": "#e7e5df",
+                  "radius": 10
+                },
+                {
+                  "kind": "rect",
+                  "x": 279,
+                  "y": 20,
+                  "w": 22,
+                  "h": 228,
+                  "fill": "#e7e5df",
+                  "radius": 10
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 76,
+                  "text": "TP-Link",
+                  "size": 19,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 103,
+                  "text": "RE605X EU",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 130.88,
+                  "r": 5,
+                  "fill": "#2b9c68"
+                },
+                {
+                  "kind": "rect",
+                  "x": 143,
+                  "y": 212.72,
+                  "w": 34,
+                  "h": 21,
+                  "fill": "#e3e1dc",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 228.72,
+                  "text": "+",
+                  "size": 14,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": []
+            },
+            "rear": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 74.0,
+                "y": 20,
+                "w": 172,
+                "h": 264,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "rect",
+                  "x": 19,
+                  "y": 20,
+                  "w": 22,
+                  "h": 228,
+                  "fill": "#e7e5df",
+                  "radius": 10
+                },
+                {
+                  "kind": "rect",
+                  "x": 279,
+                  "y": 20,
+                  "w": 22,
+                  "h": 228,
+                  "fill": "#e7e5df",
+                  "radius": 10
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 52,
+                  "text": "LAN / POWER",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "rect",
+                  "x": 94.0,
+                  "y": 72,
+                  "w": 132,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 94.0,
+                  "y": 81,
+                  "w": 132,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 94.0,
+                  "y": 90,
+                  "w": 132,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 94.0,
+                  "y": 99,
+                  "w": 132,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 144.0,
+                  "text": "LAN \u00b7 1 GbE",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 210.0,
+                  "text": "EU plug \u00b7 2 pins",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": [
+                {
+                  "groupKey": "lan",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 138.5,
+                  "y": 152,
+                  "dx": 55,
+                  "dy": 0,
+                  "w": 43,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                },
+                {
+                  "groupKey": "ac-plug",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 136.0,
+                  "y": 218,
+                  "dx": 60,
+                  "dy": 0,
+                  "w": 48,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "reviewLimits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mec\u00e1nico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces autom\u00e1ticos.",
+          "Detalle trasero operativo agrupado: no afirma posici\u00f3n mec\u00e1nica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja impl\u00edcitos. Cotas nominales no certifican ventilaci\u00f3n, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificaci\u00f3n el\u00e9ctrica. DC no certifica di\u00e1metro ni polaridad.",
+          "Ficha general EU alemana: revisi\u00f3n de hardware no acreditada, no se fuerza V1/V2/V3. Cotas RE605X no certifican volumen de antenas abiertas."
+        ],
+        "referenceScope": "web_specification_schematic_visual",
+        "passthrough": null
+      },
+      {
+        "key": "tplink-re700x-eu",
+        "kind": "wall",
+        "sizeU": 0,
+        "widthMm": 78,
+        "heightMm": 149,
+        "depthMm": 36,
+        "color": "#f5f4f1",
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "ac-plug",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "powerRole": "inlet",
+            "physicalConnector": "eu-2pin-plug"
+          }
+        ],
+        "identity": {
+          "manufacturer": "TP-Link",
+          "family": "WiFi repeater EU",
+          "model": "RE700X EU",
+          "sku": "RE700X(EU)"
+        },
+        "source": "https://www.tp-link.com/de/home-networking/range-extender/re700x/#specifications",
+        "mounting": {
+          "kind": "wall",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "RE700X(EU)",
+            "quantity": 1,
+            "description": "Unidad y alimentaci\u00f3n nominal del modelo; sin montaje de rack ni adaptadores impl\u00edcitos."
+          }
+        ],
+        "continuities": [],
+        "visual": {
+          "faces": {
+            "front": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 76.0,
+                "y": 20,
+                "w": 168,
+                "h": 286,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 76,
+                  "text": "TP-Link",
+                  "size": 19,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 103,
+                  "text": "RE700X EU",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "circle",
+                  "cx": 160,
+                  "cy": 140.12,
+                  "r": 5,
+                  "fill": "#2b9c68"
+                },
+                {
+                  "kind": "rect",
+                  "x": 143,
+                  "y": 228.78,
+                  "w": 34,
+                  "h": 21,
+                  "fill": "#e3e1dc",
+                  "radius": 5
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 244.78,
+                  "text": "+",
+                  "size": 14,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": []
+            },
+            "rear": {
+              "width": 320,
+              "height": 350,
+              "plate": {
+                "x": 76.0,
+                "y": 20,
+                "w": 168,
+                "h": 286,
+                "fill": "#f5f4f1",
+                "stroke": "#92999e",
+                "radius": 24
+              },
+              "decorations": [
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 52,
+                  "text": "LAN / POWER",
+                  "size": 12,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 72,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 81,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 90,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "rect",
+                  "x": 96.0,
+                  "y": 99,
+                  "w": 128,
+                  "h": 2,
+                  "fill": "#c1c3bf",
+                  "radius": 0
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 155.0,
+                  "text": "LAN \u00b7 1 GbE",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                },
+                {
+                  "kind": "text",
+                  "x": 160,
+                  "y": 221.0,
+                  "text": "EU plug \u00b7 2 pins",
+                  "size": 11,
+                  "fill": "#40484d",
+                  "anchor": "middle"
+                }
+              ],
+              "banks": [
+                {
+                  "groupKey": "lan",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 138.5,
+                  "y": 163,
+                  "dx": 55,
+                  "dy": 0,
+                  "w": 43,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                },
+                {
+                  "groupKey": "ac-plug",
+                  "rows": [
+                    [
+                      1
+                    ]
+                  ],
+                  "x": 136.0,
+                  "y": 229,
+                  "dx": 60,
+                  "dy": 0,
+                  "w": 48,
+                  "h": 34,
+                  "labels": {
+                    "1": "1"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "reviewLimits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mec\u00e1nico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces autom\u00e1ticos.",
+          "Detalle trasero operativo agrupado: no afirma posici\u00f3n mec\u00e1nica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja impl\u00edcitos. Cotas nominales no certifican ventilaci\u00f3n, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificaci\u00f3n el\u00e9ctrica. DC no certifica di\u00e1metro ni polaridad.",
+          "Ficha general EU alemana: revisi\u00f3n de hardware no acreditada, no se fuerza V1/V2/V3. Cotas RE605X no certifican volumen de antenas abiertas."
+        ],
+        "referenceScope": "web_specification_schematic_visual",
+        "passthrough": null
+      }
+    ]
+  }
+]

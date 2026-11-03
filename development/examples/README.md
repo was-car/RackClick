@@ -1,3 +1,5 @@
+> **02.11.2026 · Demo50 adicional preparada.** [Datos, alcance y reproducción](../../docs/LABORATORIO-50-CLIENTES.md):50clientes nuevos y868parejas perfil/revisión en laboratorio43. Es opcional, sin seguridad, y su integraciónWindows queda enpunto5. Los diez originales y el cargador15 descritos debajo se conservan; no usar ese cargador paraDemo50 ni copiar datos a una instalación existente.
+
 # Inventario sintetico original
 
 `demo-original.inventory.json` contiene solo inventario de los diez clientes ficticios aportados por Wascar, convertido desde RC9 al formato canonico del cargador. SHA256: `cbfe4b43a0148299f6f4c24a21dfcb5e21a8efd5ca2d08d552119ac0cd292bd7`.

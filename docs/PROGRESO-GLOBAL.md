@@ -1,5 +1,290 @@
 # Progreso de la entrega completa
 
+## 03.11.2026 · Archivo F01 autorizado:14,76/100 del cierre
+
+Wascar aceptó el archivo administrativo del antecedente perdido con incertidumbre y reapertura. Se revisó y aplicó la enmienda limitadav3 **antes** de acreditar F-01.02/.04: +5/4=1,25,2269/168→2479/168=**14,755952…**,redondeado **14,76/100**. [Decisión](DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md) · [Evidencia y revisión](../evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md).
+
+Es cierre administrativo de esos dos criterios, **no prueba de revocación o ausencia de exposición**. Métodos, incertidumbre y reapertura con retirada del crédito quedan visibles; los hitos técnicos previos de F01 se conservan. Baselinev2 preservada; IDs/pesos/denominador y demás criterios intactos.31checkpoints cerrados/249sin cierre. Primeros pasos1–7 y revisión8 cerrados; no se acredita por arrastre postboot14, otros cierres Windows/MFA/backup ni adopción de Wascar. **No es un porcentaje global nuevo del producto.**
+
+## 03.11.2026 · F-02 cerrado técnicamente:13,51/100 del cierre
+
+Postboot13 real y Restore14-r2 con identidad/material nuevos en E completan el recorrido SQL; operadores/ficha/diagnóstico/backup y reanudación están revisados. [Evidencia y límites](../evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md). Se acreditan F-02.02/.03/.04, **15/8=1,875** adicionales:977/84→2269/168=**13,505952…**, redondeado13,51/100. No se repite el crédito de F-02.01.
+
+29checkpoints cerrados y251sin cierre;53resultados/280checkpoints/268números/pesos/criterios intactos. **No es porcentaje global nuevo ni adopción del producto.** Los pasos1/3/5/6/7 están cerrados y el checkpoint8 de revisión de F-02 también;2/4 siguen pendientes de la decisión sobre F01. El postboot14 permanece en los criterios Windows/R-04 correspondientes. D conserva sus50clientes y MFA.
+
+## 03.11.2026 · Paso5 acreditado:11,63/100 del cierre
+
+F-02.01 cumple con prueba nativa en E13 bajo SID real noadministrador,canal SQL protegido,roles separados y revisión independiente. Se añade **sólo5/8=0,625**:1849/168→977/84,redondeado **11,01→11,63/100**. El criterio de este checkpoint no exige reboot/Restore; esos pendientes conservan sus pasos.26checkpoints acreditados y254sin cierre;pesos,denominador y268números intactos.
+
+[Evidencia y dictamen](../evidence/s1-20261102/vm12-e/RESULTADOS.md). New13 tiene HTTPS/backups correctos; Wascar debe reiniciar E. La candidata14-r2 corrige pins y visor; aún falta Restore/operación restante. F01 permanece sin decisión expresa. D y sus datos se conservan. **No es un porcentaje global nuevo del producto ni una aceptación de la entrega completa.**
+
+## 02.11.2026 · Bloqueantes1–7: integración SQL12 preparada, índice11,01/100
+
+Se cerraron bloqueantes de código/compatibilidad/empaquetado: publicación SQL actual,New/Restore mínimos,rol de backup de sólo lectura,visor1/2/3,26operadores y candidata12 con manual. PG17.11 y preparación nativa desde el bundle exacto pasan. [Resultado y límites](../evidence/s1-20261102/cierre-bloqueantes-01-07/RESULTADOS.md) · [Estado de los siete pasos](CIERRE-BLOQUEANTES-PASOS-01-A-07.md).
+
+Quedan la disposición expresa del antecedenteF01 y el ensayo de servicio/SID/backup/Restore en una VM independiente. D se conserva. Los componentes corregidos no sustituyen esos criterios: **0puntos nuevos**,1849/168=**11,01/100**delíndice de cierre,pesos/denominador/estados intactos. No hay un porcentaje global nuevo del producto. No se repiten búsquedas o pruebas históricas por inercia.
+
+## 02.11.2026 · F-02.03 parcial:11,01/100 sin cambio
+
+Avanzó el provisionamiento protegido de laboratorio: New/Restore con credenciales/roles nuevos, reanudación del destino y negativos probados en PG17.11/esquema43. Se corrigieron retenciones de SQL en request/pgpass; lectura runtime separada del mantenimiento. Revisión independiente favorable para el parcial. [Resultados](../evidence/s1-20261102/f02-03-restauracion/RESULTADOS.md).
+
+Sólo F-02.03 pasa a en progreso,**0puntos**. Índice1849/168=**11,01/100**;25acreditados/255sincierre,268números/pesos intactos. Falta candidata completa compatible con C# SQL actual,instalador/recibos/ACL y actores efectivos de servicio/backup con privilegios mínimos en otro Windows/SID. D y sus paquetes/datos/MFA/QA se conservan. No se asigna porcentaje global nuevo ni se cierran F-02.01/.02/.04 por las pruebas de este lote.
+
+## 02.11.2026 · F-02.02 parcial: 11,01/100 sin cambio
+
+Adaptadores runtime/backupSQL/ficha sin contraseñas/diagnóstico implementados y revisados. Interoperabilidad PS5.1/.NET, pruebas de entorno y visor, backup PG17.11 y restore de 20 filas con rol/perfil nuevos pasan. Falta conectar New/Restore/recibos/distribución, proteger los secretos restantes y comprobar los actores efectivos. El laboratorio usa el mismo SID Windows; no acredita esa condición. [Resultado y límites](../evidence/s1-20261102/f02-02-operadores/RESULTADOS.md).
+
+Sólo F-02.02 en progreso: **0 puntos**, índice 1849/168 = **11,01/100**. 25 acreditados/255 sin cierre, 268 números/pesos/criterios intactos. D/catálogo/Demo50/MFA y paquetes11 conservados. QA-168 está planificado, no habilitado en D; no es porcentaje global nuevo ni declaración de cifrado completo.
+
+## 02.11.2026 · F-02.01 desarrollado parcialmente: 11,01/100 sin cambio
+
+Lectura SQL cifrada y vínculo DPAPI integrados en fuentes, con rechazo de texto plano y separación runtime/mantenimiento. 39 focos nuevos y una regresión afectada de 132 PASS (incluye los 39), sin omitidas, PG17.11 nuevo y revisión independiente parcial. Falta el positivo bajo SID efectivo del servicio/instancia real y el provisionamiento; no se acredita ese extremo con una identidad de laboratorio. [Resultado y límites](../evidence/s1-20261102/f02-01-sql/RESULTADOS.md).
+
+Sólo F-02.01 pasa a en progreso. **0 puntos nuevos**, índice exacto 1849/168 = **11,01/100**. 25 acreditados y 255 sin cierre, con los 268 números y pesos intactos. D/catálogo/Demo50/MFA, candidata 11 y QA conservados; no hay un porcentaje global nuevo ni afirmación de cifrado de los archivos instalados. Avanzó código probado; faltan integración operativa y verificación en destino nuevo.
+
+## 02.11.2026 · F-01.04 revisado, cierre pendiente: 11,01/100 sin cambio
+
+La revisión final contrastó el criterio de F-01 y reutilizó clasificación, disposición, registro y verificaciones de fuentes/paquetes. **No se aprueba el cierre:** falta resolver la observación del paso 2. F-01.04 pasa únicamente a en progreso, sin transformar desconocidos en falsos positivos. [Resultado y revisión independiente](../evidence/s1-20261102/f01-04-cierre/RESULTADOS.md).
+
+**0 puntos nuevos**: 1849/168 = **11,01/100**. Alcance, pesos, denominador y 268 números intactos; 25 acreditados, 255 sin cierre. F-01.01/.03 cerrados y F-01.02/.04 en progreso. D, catálogo 506 y Demo50 se conservan. Esto no es higiene global ni un nuevo porcentaje del producto; otros pasos independientes pueden avanzar.
+
+## 02.11.2026 · F-01.03 acreditado: índice 11,01/100
+
+Registro contextual de falsos positivos terminado y revisado, reutilizando F-01.01. Criterios específicos y vínculos a versiones exactas; sin supresiones o cambios de escáner/hook. Una prueba sintética confirma que sigue bloqueando un secreto staged aunque lleve comentario allow. [Resultado y límites](../evidence/s1-20261102/f01-03-registro/RESULTADOS.md).
+
+Se añade sólo el peso fijado **5/8 = 0,625**: 218/21 → 1849/168, redondeado **10,38 → 11,01/100**. Alcance, pesos, denominador y 268 números sin cambios; 25 acreditados y 255 sin cierre. F-01.02 sigue en curso y F-01.04 pendiente. D, catálogo/Demo50 y QA conservados. No equivale a higiene global o porcentaje global nuevo del producto.
+
+## 02.11.2026 · F-01.02 en curso: índice 10,38/100 sin cambio
+
+Registrada la decisión de no rotar los hallazgos clasificados, reutilizando F-01.01. El antecedente de exposición `.local` no está delimitado; Wascar no sabe si se mostraron claves y la búsqueda acotada no recuperó un registro correlacionado. No es prueba de una credencial activa expuesta ni de ausencia de exposición. [Evidencia y revisión](../evidence/s1-20261102/f01-02-tratamiento/RESULTADOS.md).
+
+Sólo F-01.02 pasa a en progreso: **0 puntos nuevos**. Índice del cierre **10,38/100**, con pesos, denominador y números estables. 24 checkpoints acreditados y 256 sin cierre. D, sus datos/servicios/MFA y el catálogo se conservaron; sin rotaciones, escaneos repetidos, cambios de producto o aceptación nueva. No es un nuevo porcentaje global.
+
+## 02.11.2026 · F-01.01 acreditado: índice 10,38/100
+
+Paso 1 terminado con revisión independiente: 92 candidatos/indeterminados históricos clasificados (80 digest verificados, 3 identificadores sin uso de autenticación y 9 narraciones); 90 metadatos working relacionados corroborados en Git. No se identificaron credenciales reales en ese conjunto ni se declara higiene global. [Evidencia](../evidence/s1-20261102/f01-01-clasificacion/RESULTADOS.md).
+
+Se suma exclusivamente el peso ya fijado de **F-01.01, 5/8 = 0,625 puntos**: 1639/168 → 218/21, redondeado **9,76 → 10,38/100**. Alcance, pesos y denominador sin cambios; F-01.02/.03/.04 pendientes. Los 268 números se conservan, con el paso 1 cerrado y 256 subpasos del ledger aún sin cierre/24 acreditados. No es un nuevo porcentaje global del producto. D, catálogo, Demo50, servicios, datos y MFA se conservaron exactamente como estaban.
+
+## 02.11.2026 · Pendientes enumerados para elegir el siguiente paso
+
+[Visor con búsqueda](../VER-PENDIENTES-RACKCLICK.html) · [268 pasos detallados](PLAN-PENDIENTES-NUMERADO.md). Son 257 subpasos del cierre sin acreditación final, más 7 cierres/mantenimiento del catálogo, 3 iniciativas posteriores y 1 proceso de repositorio sin peso nuevo. Los 302 detalles RC10 y 13 peticiones quedan trazados a sus responsables; no se suman como funciones pendientes independientes.
+
+Instalación D, catálogo 506/506 y Demo50 se conservan como están. El plan distingue implementación existente, integración, revisión y aceptación; no declara 268 funciones ausentes. La revisión documental y las comprobaciones del visor no generan crédito. **Índice del cierre pendiente: 9,76/100, sin cambio. No hay un porcentaje global del producto nuevo.** [Evidencia](../evidence/s1-20261102/plan-pendientes/RESULTADOS.md).
+
+## 02.11.2026 · Demo50 verificada en la instalación Windows D
+
+Cargador02 corregido para cookie MFA en PS5.1,31focos, revisión y HTTP propio; prueba MFA nativa separada con cuenta sintética/DPAPI/TLS real. Wascar autorizó limpiar su cliente de prueba: operación local revisada/rollback/commit con seguridad conservada. Después50/50clientes,2553comandos,180racks,1563equipos/objetos,20665puertos y2207conexiones verificados en D; backup programado posterior completo/0. [Resultado](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md).
+
+Datos listos para QA visual: no volver a cargar. Instalación técnica100%, catálogo506/506 y datos50/50 no equivalen a aceptación final. Índice acreditado9,76/100 sin cambio; la corrección/regresión y entrega de datos no crean puntos nuevos. Pendientes QA/manual de roles y cierres de MFA/backup/importación/redistribución ya registrados; sin porcentaje global nuevo.
+
+## 02.11.2026 · Instalación11 en D:100% técnico; QA pendiente
+
+New11 en Windows Server2025 limpio/noDC, ZIP f090b56e…67b0. Servicio automático con cuenta estándar, HTTPS ready43, CA/firewall y backups inicial/programado comprobados. Wascar reinició y el verificador original registró postboot_verified/exit0, arranque nuevo. Esto cierra el ensayo técnico de New11 en D, con revisión independiente de recibos; no es100% del proyecto ni aceptación manual.
+
+Wascar confirmó su activación de MFA, que se conserva. El smoke se detuvo ante202/verify sin crear una cuenta QA; no se declara la recuperación por códigos ni la carga50 probadas en D. Accesos y hoja14casos preparados en el Escritorio, QA-166 actualizado; próximos pasos en [VM11-D-PASOS-QA.md](VM11-D-PASOS-QA.md). [Resultado y límites](../evidence/s1-20261102/vm11-d/RESULTADOS.md). Catálogo506/506. Índice acreditado del cierre pendiente9,76/100 intacto: W-02.01/.02 ya tenían crédito por el ensayo10, así que no se suman por repetirlos en11. Pendientes matriz de hosts/rechazos, QA y demás cierres; sin porcentaje global nuevo.
+
+## 02.11.2026 · Punto6: QA de la candidata11 preparada; cierre pendiente
+
+[Hoja específica11](../QA-CIERRE-CANDIDATA11.html):14casos derivados de los167existentes, conpasos/esperado/Pass-NotPass/Bloqueado/observaciones yexportación/importaciónJSON. [Protocolo](QA-CIERRE-CANDIDATA11.md). Identidad fija edición11/esquema43/ZIPf090b56e…67b0; almacenamiento separado de guías previas. No se cambiaron casos ni respuestas deWascar. Otrascandidatas/formatos/tiposincorrectos se rechazan; notasantiguas conservadas no conviertenPassenactual. QA11-R01 reproducido/corregido/revisado.
+
+7focosPython y10comprobacionesEdge enperfilnuevo pasan;32focospropios delrevisor separados. Export/import/recarga/XSStextual/stale ypreservación deotra clave probados confixtures, no resultadosmanuales. HashZIP/sellos28/53/79 y3índiceshijoshistóricospinadoscontrastados; no se repitieronlas68pruebas/40focos/carga50 delpunto5. DosfallosdelarnésEdge(extensionbackground) ydoshipótesisdeíndices se conservan. [Evidencia](../evidence/s1-20261102/qa-cierre11/RESULTADOS.md).
+
+VMrun=0observado, sólolectura; consulta aWascar para iniciarsuVMlimpia sin asumirrespuesta. No huboVM/SCM/reinicioWindows/cuentaefectiva/QAmanual11. Punto3continúaparcial; asistenteRestoreconfactoresMFA,rotación/emergencia/backupdashboard yredistribuciónsiguenpendientes. La ficha devuelveadoption=false/productionReady=false auncon14Pass; no es aceptacióncompleta ni un nuevo porcentaje. Catálogo506/506(100%deselección); índiceacreditado9,76/100intacto. Paquete11sinmodificar,sincommits,push,despliegue/limpieza,DB oservicios.
+
+## 02.11.2026 · Punto5: paquete Windows11/esquema43 preparado
+
+Entrega local **RackClick-Windows-Completo-11.zip**,123.473.555bytes/140entradas,SHAf090b56e…67b0. Incluye runtime.NET10.0.12, PostgreSQL17.11, VC++, servicioWindows, catálogo506 completo, MFA/códigos/JSON del punto3, datos50 opcionales por API, mantenimientoIP ymanual detallado. Fuente/publicación punto3 exacta sin recompilar/restaurar; versiones ybinarioshistóricos conservados. No actualiza la instalación10/QA.
+
+Propagación43 explícita y7tablas catálogoSELECT-only trasNew/Restore. 68pruebas focales y40focos propios del revisor separados. PreparaciónNew nativa, HTTPSconcertificadoverificado,login/escritura,backup,reinicio deproceso/UUIDpersistentes,Restore43→43 y15→43 en bases/roles nuevas PASS. DemoPS5.1:50clientes/2553comandos,contraste completo ydosrechazosHTTPsincomandos; sinPython/SQL/seguridadimportada. DosZIPidénticos desdeentradascongeladas. OUTER-R01 corregido conpinliteral delárbol; fallos deguion/charset/rutaslargas conservados. Escaneo118fuentes sinhallazgos, no historial/binarios.
+
+[Manual con pasos00–07](INSTALADOR11-WINDOWS43.md) · [Resultados/revisión](../evidence/s1-20261102/windows43/RESULTADOS.md). **Falta el ensayo elevado/SCM/SID/CA-firewall/MFA-TLSdelcargador/backup programado/reinicioWindows enVMlimpia**. Restorecon factoresMFA siguebloqueadoporsobreexternonointegrado; otros pendientespunto3 yredistribución/adopción abiertos. QA-166/167 planificadas,165casos/metadata anteriores yrespuestas deWascar intactos. Procesospropios detenidos; sinVM/servicios/cuentas/bases instaladas,commits,push/publicación o limpieza. Catálogo506/506=100% de selección; índice acreditado9,76/100 intacto,sinporcentajeglobalnuevo.
+
+## 02.11.2026 · Punto 4 preparado: Demo50 verificada
+
+50 clientes ficticios de siete escenarios, 66 sitios y 88 edificios poblados, 226 salas, 180 racks, 1.563 equipos/objetos de sala, 20.665 puertos y 2.207 cables. Cobertura de las 868 parejas perfil/revisión: 844 operativas y 24 sin extremos propios, con motivo de no aplicabilidad. Áreas de negocio y muestras de catálogo separadas; 88 switches de negocio y 38 enlaces explícitos entre edificios. El revisor contrastó todos los cables y los 2.202 extremos eléctricos, incluidos auxiliares.
+
+Carga mediante comandos del servidor en PostgreSQL 17.11 nuevo, usando los binarios revisados del punto3 sin recompilar. Diez usuarios de siete escenarios leen/escriben con inicio simultáneo; la auditoría confirma diez actores y diez clientes escritos. p95 local: lectura52,066ms y escritura30,118ms, sin garantía de producción. Pasan permisos/ámbitos, siete negativos, rollback/replay, Edge14caras/ES-DE-EN/3Click-Click/recarga/segunda sesión y reinicio del proceso. Backup custom privado restaurado a base/roles nuevos; recuperación nativa conserva inventario y revoca18sesiones. Otro Systemhaus se prueba en otra DB/host, manteniendo uno por instalación.
+
+21 pruebas unitarias y13casos propios del revisor; contraste independiente de los50JSON, perfiles/puertos/cables/sedes yZIP. Se conservan los intentos fallidos01/02. Corregidos selector del guion, fixture del segundo Systemhaus, direcciónTX/RX, sedes vacías y metadatos ajenos al contrato del paquete. Se separan fallos de guion/fixture de fallos de producto; los rojos y límites quedan registrados.
+
+[Datos y manual](LABORATORIO-50-CLIENTES.md) · [Resultados](../evidence/s1-20261102/demo50/RESULTADOS.md). Entrega local opcional: RackClick-Demo-50-Clientes-01.zip,57entradas,SHAf89d8c7a…3447, e índice DEMO-50-CLIENTES-01/VER-50-CLIENTES.html. JSON/matriz sin seguridad; backup/accesos/logs privados en.local. .local/demo50-current.txt identifica03PASS. Todos los procesos propios están detenidos. QA-165 planificada; 164casos anteriores, metadata y observaciones de Wascar conservados. Guías y hoja maestra regeneradas.
+
+El punto4 está preparado en laboratorio; integrar los datos de forma opcional y ensayar instalación43/New/Restore/servicio/HTTPS/backup/reinicioWindows/QA corresponde al punto5. Los pendientes del punto3 se conservan. Sin cambios en VM, instalación, servicios/cuentas/bases existentes; sin commits, push, publicación o limpieza. Catálogo506/506 (100% de esa selección), índice acreditado del cierre pendiente9,76/100 intacto, sin porcentaje global nuevo.
+
+
+## 02.11.2026 · Punto 3: códigos MFA y exportación JSON
+
+Dos recorridos integrados y revisados en desarrollo con esquema 43. Los códigos MFA propios se muestran una sola vez, exigen contraseña y sesión MFA, y no aparecen en los recibos. Su canje revoca sesiones y el conjunto anterior; exige confirmar un autenticador nuevo antes de acceder a la API. El JSON del cliente conserva ocho colecciones, UUID y montajes, con permisos vigentes, recibo y SHA256. No es el Full Backup original ni una copia PostgreSQL.
+
+Resultado final: 28 pruebas nuevas y 76 de regresión (104 PASS, sin fallos u omisiones), 26 Node y 9 negativos independientes. PostgreSQL 17.11, HTTP y Edge reales de laboratorio; claves sintéticas por DI y HTTP loopback, sin ensayo del SID del servicio o reinicio Windows. Compilación sin errores ni advertencias.
+
+Se conservan el fallo inicial xUnit1051 y los intentos de regresión con 75 PASS/1 FAIL y 0 PASS/1 FAIL. La hipótesis inicial de permisos del fixture no resolvió el 503 y se retiró ese ajuste. El revisor encontró P3-R01: OpenAPI indexaba una lista de parámetros ausente. El negativo directo falló antes y pasó al crearla; el binario corregido repitió los 104 casos y el JSON/Edge. No se relajaron controles.
+
+[Manual y pendientes](PUNTO3-FUNCIONES-PENDIENTES.md) · [Evidencias](../evidence/s1-20261102/punto3/RESULTADOS.md). Faltan recuperación local/portable/rotación MFA, custodia operativa, aceptación administrativa, importación/merge, backup desde el dashboard y Windows43/QA. El punto 3 no se declara entero cerrado. La intención incierta de JSON vive sólo en la vista montada; las notas arbitrarias requieren revisión antes de compartirlas.
+
+QA-163/164 planificadas; 162 casos anteriores, metadata y observaciones conservados. Guías y hoja maestra regeneradas. Selección del catálogo: 506/506 (100% de ese conjunto). Índice acreditado del cierre pendiente: 9,76/100, intacto; no es un nuevo porcentaje global. ZIP del punto 2 conservado. Sin cambios en VM/QA/instalación o servicios, cuentas y bases existentes; sin dependencias/migraciones nuevas, commits, push, publicación o limpieza.
+
+
+## 02.11.2026 · Punto2 completado: candidata de aplicación43 consolidada
+
+Servidor/frontend/43SQL en distribución cerrada:71archivos (53+18), manifiestoeb274f1f… yZIP local de revisión82entradasaf1c54b2….37fuentesbackend/38frontendMFA-administración coinciden con candidata10 yL43: sin mezcla/reimplementación o dependencias nuevas. Publicación sin build/restore yDLL/app exactos del punto1.
+
+33pruebas de distribución43+regresión15,18de composiciónMFA/administración conPG17.11/Edge ysmoke del paquete publicado pasan; revisión independiente de aplicación yZIP favorable, con focos propios separados. AvisosNpgsql/Otp.NET incluidos. MFAusaDI sintético/HTTPloopback en esta prueba; noSIDservicio/HTTPS/reinicioWindows. [Manual yZIP](CANDIDATA-CONSOLIDADA43.md) · [Evidencia](../evidence/s1-20261102/candidata43/RESULTADOS.md).
+
+ElZIP es revisión de aplicación, no instaladorWindows43. Los operadores antiguos no se amplían aquí; punto5 debe propagar43 ydarSELECT-only a7tablas catálogo trasGRANTDMLNew/Restore, antes de instalar/actualizar. VM/QA/instalación, históricos, resultados deWascar yledger intactos;QA162planificada. Sincommits/push/publicación. Catálogo506/506endesarrollo; índice de cierre restante9,76/100 sin incremento ni porcentaje global nuevo. Próximo:punto3/50clientes/Windowssegúnhojaderuta, conservando lo ya resuelto.
+
+
+## 02.11.2026 · Punto1 completado: integración y persistencia de los62 modelos L
+
+PostgreSQL17.11/Windows y Edge: upgrade41→43 conserva805 definiciones/799 instancias e historial; base nueva62 modelos/1673 extremos,124caras,17 cables API+17 Click-Click, cuatro armarios y sus cuatro duplicados,45 rechazos de comandos, permisos/rollback/recarga/otra cuenta/reinicio del proceso. La etapa upgrade válida del intento03 se reutiliza de forma explícita con sus hashes; el intento06 ejecuta fresh/API/Edge. No se presentan como una ejecución única ni se ocultan los FAIL intermedios.
+
+SQL042 corregido: conservar guardia PoE y ampliar sólo la de power_role a DC, con rojo/verde PG; fixture corrige slot vertical sin padre y404 fuera de ámbito conforme al contrato.35C#/995Node y12 focos Node anteriores conservados, sin regresiones rutinarias repetidas. Revisión independiente por adenda; fuente congelada y auxiliares runtime fijados aparte. [Manual](INTEGRACION-506-GRUPO-L.md) · [Evidencia](../evidence/s1-20261102/integracion506l/RESULTADOS.md).
+
+Selección506/506 integrada en desarrollo; catálogo868 revisiones/861 modelos comerciales distintos. QA-162 sigue planificada, VM/QA/instalación sin cambios, sin commits/push. Falta candidata integral Windows/Restore/backup, QA y50 clientes tras fijarla. Índice de cierre restante9,76/100 intacto; no es porcentaje global ni aceptación de506 modelos.
+
+
+## 02.11.2026 · Comprobación focal del grupo L, sin repetir suites
+
+Autoría62/124caras/1673extremos más una revisión USP separada. Selección506/506 en desarrollo;868 revisiones/861 modelos comerciales distintos. Se conserva revisión independiente de fuentes/visores y resultados anteriores995Node/35C#. Corregidos CASE en SQL042 y despacho nativo de revisiones L; foco PostgreSQL17 de042+043 PASS con rollback deliberado y12 focosNode PASS (negativo previo del despacho). Regeneración y build correctos; prueba completa de upgrade/API/Edge todavía pendiente, sin presentarla como completada.
+
+Visores locales L y selector868 disponibles; QA-162 planificada. [Estado y siguiente punto](SEGUIMIENTO-506-L-02-11-2026.md). VM, QA, instalación, históricos y ledger intactos; sin commits/push. Índice restante9,76/100 sin crédito nuevo.
+
+
+## 01.11.2026 · Grupo K: 52 perfiles de cinco familias
+
+28 UPS/ATS/PDU, seis paneles IDC, diez accesorios vacíos, dos NAS y seis consolas: **52 configuraciones/104 caras/920 extremos**. Desarrollo41 con805 definiciones/799 comerciales; selección **444/506(87,75%),62 pendientes**,355 adicionales separados. Descriptor físico opcional y sidecar sellado; IDC y serie son tipos reales, sin inferencia eléctrica ni módulos ficticios. Un soporte7U propio preserva F2-424 vertical. BOM/configuración/límites se muestran bajo demanda en el formulario, corrigiendo J-UX-01.
+
+Build y pruebas aislados, 984 Node, focos C#, PostgreSQL39→41 con752 definiciones/747 instancias conservadas;52 pares/API/Edge104caras/cuatro Click-Click/reportsCSV-XLSX, recarga/otra sesión/reinicio de proceso. Cuatro reservas documentales/de montaje. [Manual y visores](INTEGRACION-506-GRUPO-K.md) · [Método](METODO-CATALOGO-POR-FAMILIAS.md) · [Evidencia y revisión independiente](../evidence/s1-20261101/integracion506k/RESULTADOS.md).
+
+QA-161 planificada;160 casos y sus metadatos previos conservados. Sin VM/QA/servicios/base instalada/commits/push; ZIP y SQL históricos intactos. Faltan62 modelos, paquete integral Windows/Restore y QA final, luego50 clientes. **Índice restante9,76/100 sin incremento automático; no se recalcula porcentaje global.**
+
+
+## 01.11.2026 · Grupo J: ampliación por familias
+
+Dos familias, trece configuraciones/26 caras/538 extremos: seis paneles Panduit con población explícita CC688BL y siete AP PoE compactos sobre bandeja de laboratorio. Desarrollo 39 con 752 definiciones/747 comerciales; selección **392/506 (77,47 %), 114 pendientes**, con 355 adicionales separados. Continuidad RJ45↔RJ45 declarada, sin IDC falso ni trazado; radios/AP sin AC inventada.
+
+Un build/regresión de grupo: 20 C# focales, 967 Node, cero errores/advertencias. PostgreSQL 17.11/Edge conserva 739 definiciones y 734 instancias 38→39; fresh trece pares, 18 API+dos GUI, metadata pasiva, bandejas/permisos/rollback/recarga/otra sesión/reinicio del proceso. Revisión independiente separada. [Manual y visores](INTEGRACION-506-GRUPO-J.md) · [Método para próximas familias](METODO-CATALOGO-POR-FAMILIAS.md) · [Cola por familias](FAMILIAS-CATALOGO-PENDIENTES.md) · [Evidencia](../evidence/s1-20261101/integracion506j/RESULTADOS.md).
+
+Reserva UX media del formulario: BOM y base/envolvente visibles en manual/galería, pendientes allí antes de adopción. QA-160 planificada; 159 casos/metadatos anteriores conservados, instalación MFA/VM/bases/ZIP anteriores intactos. Sin commits/publicación. Faltan 114 modelos, contratos y paquete integral Windows/Restore/QA; después 50 clientes. **Índice restante 9,76/100 sin incremento automático.**
+
+
+## 01.11.2026 · Grupo I: cinco perfiles de red
+
+Palo Alto PA-5580, FortiGate 3701F, Huawei NE8000 F1A-8H20Q, Ciena 5171 Gen2 y Juniper ACX7332: cinco perfiles, diez caras y 211 extremos. Desarrollo 38 con 739 definiciones/734 comerciales; selección **379/506 (74,90 %), 127 pendientes**, con 355 comerciales adicionales separados. Nokia SR-1se queda reservado por alimentación sin resolver; las reservas visuales/de configuración siguen visibles.
+
+Migración PostgreSQL 17.11 37→38 conserva 734 definiciones y 729 instancias; nueva base con cinco pares, 28 cables API y dos GUI, permisos, rollback, recarga, otra sesión y reinicio del proceso. Build sin errores/advertencias, 20 C# focales, 961 Node y revisión independiente registrada. [Manual y visores](INTEGRACION-506-GRUPO-I.md) · [Evidencia](../evidence/s1-20261101/integracion506i/RESULTADOS.md).
+
+QA-159 planificada; VM, instalación MFA, bases y ZIP históricos intactos. Sin commits ni publicación. Faltan 127 modelos y paquete integral Windows/Restore/QA final; después laboratorio 50 clientes. **Índice restante 9,76/100 sin cambio; no es porcentaje global.**
+
+
+## 01.11.2026 · Grupo H: seis perfiles Aruba6300/Nokia7220
+
+Seis perfiles/12caras/257extremos sobre SFP56/QSFP-DD; desarrollo37 con734definiciones/729comerciales. Selección original **374/506(73,91%),132pendientes**;355adicionales separados. PostgreSQL17.11/Edge conserva728definiciones y723instancias36→37; fresh6pares/24cablesAPI+2GUI, revisión porUUID/caras,permisos,rollback,recarga/otra sesión/reinicio del proceso.20C#focales/955Node/8Python y revisión independiente separada. Las seiscarasNokia mantienen reserva geometry_unverified; conteos/cotas/PSU y P/N comunitario se distinguen. H4corrige32→64en fuente nueva, conservandoIRhistórico.
+
+[Manual y visores](INTEGRACION-506-GRUPO-H.md) · [Evidencia](../evidence/s1-20261101/integracion506h/RESULTADOS.md). QA158planificada; VM/instalaciónMFA/bases/ZIPanteriores intactos. Sin commits/publicación. Faltan132perfiles, contratos especializados y paqueteWindows/Restore completo; después laboratorio50clientes. **Índice restante9,76/100 sin cambio; no es porcentaje global.**
+
+
+## 01.11.2026 · Contrato SFP56 y QSFP-DD para los perfiles pendientes
+
+Desarrollo36 amplía validación/DB, símbolos, colores y consumidores a siete familias. Sin altas comerciales: **368/506(72,73%),138pendientes;728definiciones/723comerciales**. SQL001–035, helperv2, catálogos y ZIPG intactos.20C#focales/949Node/8Python aprobados; PostgreSQL17.11 y Edge prueban actualización35→36, paleta/historial, siete cablesAPI+dosGUI,24rechazos cruzados, scopeporIDs, rollback, permisos y persistencia. Primer fallo de fixture conservado; revisión independiente separada.
+
+[Manual y visor](CONECTORES-SFP56-QSFPDD.md) · [Evidencia](../evidence/s1-20261101/conectores7/RESULTADOS.md). QA157planificada; instalaciónMFA/VM/DB/QA intactas, sin commits/publicación. Próximo: perfilesH reales sobre el contrato, después especializados y paquete Windows/Restore completo. **Índice restante9,76/100 sin cambio; no es porcentaje global.**
+
+
+## 01.11.2026 · Grupo G de la selección fija
+
+50 perfiles, 100 caras y 893 extremos; catálogo de desarrollo 35 con 728 definiciones y 723 comerciales. Selección original **368/506 (72,73%), 138 pendientes**. Actualización 34→35: se conservan 678 definiciones y 673 instancias anteriores. Fresh: 50 pares independientes, 178 cables API y otros 2 por GUI; permisos, rollback, persistencia e inspección de 100 caras comprobados con PostgreSQL 17.11/Edge. Revisión independiente separada. [Manual](INTEGRACION-506-GRUPO-G.md) · [Evidencia](../evidence/s1-20261101/integracion506g/RESULTADOS.md).
+
+QA-156 planificada; instalación MFA, VM y bases existentes intactas. Visores y ZIP locales, sin commits ni publicación. Quedan 138 perfiles y la integración/entrega completa Windows, Restore y QA; después, laboratorio de 50 clientes. **Índice del cierre restante 9,76/100 sin cambios; cobertura del catálogo no es porcentaje global.**
+
+
+## 01.11.2026 · Grupo F de la selección fija
+
+50 perfiles, 100 caras y 819 extremos; catálogo de desarrollo 34 con 678 definiciones y 673 comerciales. Selección original **318/506 (62,85%), 188 pendientes**. Actualización 33→34: se conservan 628 definiciones y 623 instancias anteriores. Fresh: 50 pares independientes, 151 cables API y otros 2 por GUI; permisos, rollback, persistencia e inspección de 100 caras comprobados con PostgreSQL 17.11/Edge. Revisión independiente separada. [Manual](INTEGRACION-506-GRUPO-F.md) · [Evidencia](../evidence/s1-20261101/integracion506f/RESULTADOS.md).
+
+QA-155 planificada; instalación MFA, VM y bases existentes intactas. Visores y ZIP locales, sin commits ni publicación. Quedan 188 perfiles y la integración/entrega completa Windows, Restore y QA; después, laboratorio de 50 clientes. **Índice del cierre restante 9,76/100 sin cambios; cobertura del catálogo no es porcentaje global.**
+
+
+## 01.11.2026 · Grupo E de la selección fija
+
+50 perfiles, 100 caras y 1906 extremos; catálogo de desarrollo 33 con 628 definiciones y 623 comerciales. Selección original **268/506 (52,96%), 238 pendientes**. Actualización 32→33: se conservan 578 definiciones y 573 instancias anteriores. Fresh: 50 pares independientes, 163 cables API y otros 2 por GUI; permisos, rollback, persistencia e inspección de 100 caras comprobados con PostgreSQL 17.11/Edge. Revisión independiente separada. [Manual](INTEGRACION-506-GRUPO-E.md) · [Evidencia](../evidence/s1-20261101/integracion506e/RESULTADOS.md).
+
+QA-154 planificada; instalación MFA, VM y bases existentes intactas. Visores y ZIP locales, sin commits ni publicación. Quedan 238 perfiles y la integración/entrega completa Windows, Restore y QA; después, laboratorio de 50 clientes. **Índice del cierre restante 9,76/100 sin cambios; cobertura del catálogo no es porcentaje global.**
+
+
+## 01.11.2026 · Grupo D de la selección fija y conectores SFP28/QSFP
+
+50 perfiles, 100 caras y 2.062 extremos; catálogo de desarrollo 32 con 578 definiciones y 573 comerciales. Selección original **218/506 (43,08%), 288 pendientes**. Se conservan los tipos reales, UUID, Click-Click, sockets anteriores y buscador compacto. PostgreSQL 17.11/Edge comprueban la actualización 31→32, 50 pares independientes, 237 cables API y otros 2 por GUI, rechazos cruzados, persistencia, permisos, rollback y replay. Revisión independiente separada. [Manual](INTEGRACION-506-GRUPO-D.md) · [Evidencia](../evidence/s1-20261101/integracion506d/RESULTADOS.md).
+
+QA-153 planificada; VM, instalación MFA y bases existentes intactas. Galería y ZIP locales, sin commits ni publicación. Quedan 288 perfiles, contratos especializados, consumidores, distribución/Restore 32, paquete Windows completo y QA final; después, laboratorio de 50 clientes. **Índice del cierre restante 9,76/100 sin cambios; cobertura del catálogo no es porcentaje global.**
+
+**01.11.2026 · Grupo C.** Selección original **168/506 (33,20%), 338 pendientes**; cartera de desarrollo **523 comerciales**. Se añaden 50 perfiles / 100 caras / 673 extremos y se prueban 132 conexiones; se conserva el estado anterior 30→31. [Manual y pruebas](INTEGRACION-506-GRUPO-C.md). Buscador compacto y revisión independiente sin actualizar la instalación de QA. **Índice del cierre restante 9,76/100 sin cambio; la cobertura del catálogo no es un nuevo porcentaje global.**
+
+**01.11.2026 · Grupo B y búsqueda compacta.** Cobertura de catálogo **118/506 (23,32%), 388 pendientes**, con 50 perfiles nuevos / 100 caras / 1.248 extremos y 132 conexiones PostgreSQL. [Integración y pruebas](INTEGRACION-506-GRUPO-B.md). Se conservan 428 definiciones y 423 instancias anteriores. Selector compacto y revisión independiente, sin actualizar la instalación de QA. **Índice del cierre restante 9,76/100 sin cambio; la cobertura del catálogo no es un nuevo porcentaje global.**
+
+**01.11.2026 · Perfiles utilizables, grupo A.** Diecisiete altas reales y siete correspondencias de SKU revisadas: **68/506 (13,44% de la selección), 438 pendientes**. [Integración y pruebas](INTEGRACION-506-GRUPO-A.md). SQL 29/PostgreSQL 17/Edge: 655 extremos y 51 cables, conservando 411 definiciones y 406 instancias. Los 506 y el paquete final siguen pendientes. Índice del cierre restante **9,76/100**, sin cambios; cobertura de modelos no es porcentaje global.
+
+**01.11.2026 · Preparación de la selección pendiente.** [Registro de los462](PREPARACION-SELECCION-462.md):462expedientes/451YAML+11oficiales,0geometrías nuevas completas/0promociones. La petición de terminar todos los perfiles sigue abierta; cobertura funcional44/506 y406comerciales no cambian. Cotas/caras/configuraciones, contratos, dibujo, pruebas e integración pendientes porID. **Índice del cierre restante9,76/100 sin cambio; no nuevo porcentaje global por expedientes.**
+
+**01.11.2026 · Cierre del lote 05 de cien modelos.** Cien adicionales/200 caras, catálogo 28 de desarrollo con 406 comerciales. [HTML, manual, lista y fuentes](HARDWARE-LOTE100-05.md). PostgreSQL 17, Edge y revisión independiente según evidencia; QA-148 planificada. Aceptación visual, consumidores, distribución/Restore 28 y candidata completa pendientes. **Índice del cierre restante: 9,76/100, sin cambios; no se calcula un nuevo porcentaje global por modelos o pruebas.**
+
+**31.10.2026 · Lote 04 de 100 modelos.** 100 adicionales / 200 caras, catálogo 27 de desarrollo / 306 comerciales totales. [HTML, manual, lista y fuentes](HARDWARE-LOTE100-04.md). PostgreSQL 17, Edge y revisión independiente según evidencia; QA-147 planificada. Consumidores, distribución, Restore 27, candidata completa y aceptación visual pendientes. **Índice del cierre restante: 9,76/100, sin cambios; no se calcula un nuevo porcentaje global por modelos o pruebas.**
+
+**31.10.2026 · Lote03 de100modelos.**100adicionales/200caras, catálogo26 de desarrollo/206comerciales totales. [HTML/manual/lista/fuentes](HARDWARE-LOTE100-03.md). PG17/Edge yrevisión distinta según evidencia; QA146planned, consumidores/distribución/Restore26/candidata completa yaceptaciónvisual pendientes. **Índice restante9,76/100 intacto; no nuevo porcentaje global por modelos o pruebas.**
+
+**31.10.2026 · Segundo lote50 y HTML02.**50modelos nuevos/100caras, catálogo25 de desarrollo,106comerciales totales. [HTML/manual/lista](HARDWARE-LOTE50-02.md). PG17/Edge/revisión distinta según evidencia; aprobación visual y candidata instalada pendientes. QA145planned. **Índice del cierre restante9,76/100 intacto; no nuevo porcentaje global por modelos o pruebas.**
+
+**30.10.2026 · Lote50 adicional y visor.**50nuevos/100caras,639extremos,90cablesPG/100carasEdge, revisión distinta. [HTML/manual/lista ycerteza33modelo/13familia/4sinconfirmar](HARDWARE-LOTE50.md).56comerciales en desarrollo, no56adoptados;QA144planned/distribución/Restore24/candidata completa pendientes. **Índice del cierre restante9,76/100 intacto; no nuevo porcentaje global por modelos o pruebas.**
+
+**30.10.2026 · Sexto modelo comercial: QNAP TS-464-8G.** Cubierta negra/dorada y trasera propia con dos LAN verticales; soporte5U reutilizado. PG17.11/Edge, guardado/persistencia y revisión distinta favorables. [Resultado](QNAP-TS464-LOTE06.md). QA143planned, distribución/Restore23/candidata completa pendientes. **Índice del cierre restante9,76/100 intacto; no porcentaje global nuevo.**
+
+**30.10.2026 · Quinto modelo comercial: DiskStation DS423+.** Cuatro bahías de sobremesa, dos LAN y soporte propio5U con190mm de altura; bandeja2U60mm rechazada. PG17.11/Edge nuevos con dos cables y persistencia; revisión distinta favorable. [Resultado](DS423PLUS-LOTE05.md). QA142planned; distribución/Restore22/candidata completa pendientes. **Índice del cierre restante9,76/100 intacto; no porcentaje global nuevo.**
+
+**30.10.2026 · Cuarto modelo comercial: SynologyRS1221+.** Dos caras propias,2U,8bandejasdibujadas y4LAN+1AC, sin adoptarRP+ ni simular discos. Edge/PGnuevo comprueba2Ethernet+AC y cable entre carasNAS→Aruba; revisión distinta del foco. [Resultado](SYNOLOGY-RS1221PLUS-LOTE04.md). QA141planned, distribución/Restore21/candidata completa pendientes. **Índice del cierre restante9,76/100 intacto; no porcentaje global nuevo.**
+
+
+**30.10.2026 · Tercer modelo comercial: FortiGate60F.** Aruba aceptado visualmente por Wascar como criterio de ampliación. FG60F tiene dos caras propias y diez Ethernet traseras sobre bandeja; tres cables guardados en PG/Edge, revisión distinta y corrección de frontal recortado. [Resultado](FORTIGATE60F-LOTE03.md). QA140 planned, distribución/Restore20/candidata completa pendientes. **Índice del cierre restante 9,76/100 intacto; no porcentaje global nuevo.**
+
+
+**30.10.2026 · Segundo modelo comercial: Aruba JL682A.** 29 conectores propios, dos caras planas y tres cables cobre/SFP/AC en PG/Edge. Nueva19 conserva los cinco perfiles anteriores; revisión distinta y corrección de scroll entre caras. [Resultado](ARUBA1930-JL682A-LOTE02.md). QA139 planned; candidata completa19/Restore/adopción pendientes. **Índice de cierre restante9,76/100 intacto; no porcentaje global nuevo.**
+
+
+**30.10.2026 · Trasera StarTech diferenciada.** Cuerpos/retenciones de acopladores y24bocas UUID con anotaciones lógicas fuera de carcasa; frontal conservado, Node830yEdge/PG17nuevos correctos. Fuentevisualproveedor declarada y revisión distinta. [Resultado y límites](TRASERA-INTERACTIVA-STARTECH-LOTE01.md). QA138planned/aceptaciónvisual/candidata completa pendientes. **Índice restante9,76/100 intacto.**
+
+
+**30.10.2026 · Frontal plano interactivo corregido.** Wascar confirma fotos como referencias, conservando operación RackClick. Ensayo oblicuo descartado para presentación; StarTech plano/24bocas visibles/UUID/Click-Click probados en Edge/PG17 y revisión distinta. [Capturas y límites](FRONTAL-INTERACTIVO-REFERENCIA-ORIGINAL-LOTE01.md). Aceptación visual y candidata completa pendientes. **Índice cierre restante9,76/100 intacto; sin nuevo porcentaje global.**
+
+
+**30.10.2026 · Fotografía original integrada privadamente.** Corrección estética pedida por Wascar: JPEG StarTech sin editar y24zonas UUID transparentes; Node829/829 y Edge/PG17 nuevos correctos, revisión distinta favorable. [Resultado y límites](INTEGRACION-FOTOS-ORIGINALES-LOTE01.md). Derechos de redistribución y candidata completa/QA pendientes. **Índice de cierre restante9,76/100 intacto; no nuevo porcentaje global.**
+
+**30.10.2026 · Primera carcasa específica integrada.** Frontal StarTech C6PANELUTP241UFT, revisión exacta, cuatro bloques de seis y trasera genérica; Node822/822 y Edge/PG17 nuevos correctos. Revisión distinta reproduce/cierra desfase de cable al desplazar. [Capturas y límites](INTEGRACION-CARCASAS-LOTE01.md). Falta ampliar carcasas/modelos y empaquetar/Restore18/QA. **Índice de cierre restante9,76/100 intacto, sin nuevo porcentaje global por un frontal.**
+
+**30.10.2026 · Cartera visual de 506 modelos.** Mínimo 500 cubierto; 871 imágenes distintas, 12 documentos y 13 genéricos. [Lista, visor y límites](CARCASAS-PRINCIPALES/README.md). ZIP 04 y visor comprobados en Edge, con revisión independiente favorable para consulta privada. Falta integrar las carcasas en la aplicación y validar variantes, derechos y QA. **Índice de cierre restante 9,76/100 intacto; no nuevo porcentaje global por descargar recursos.**
+
+**30.10.2026 · Cartera visual de220modelos.** Minimo200solicitado cubierto con220identidades/conjuntosdistintos,396imágenesy13genéricos. [Lista y límites](CARCASAS-PRINCIPALES/README.md). Visor/ZIP03y revisiónindependiente correctos; sonreferenciasprivadas, falta integracióncarcasas/variantes/licencias/QA. **Índice de cierre restante9,76/100intacto; no nuevo porcentaje global por descargar recursos.**
+
+
+**30.10.2026 · Referencias visuales de carcasas.** Biblioteca privada35modelos/92imágenes/8documentos y10genéricos;visor/ZIP02probados y revisión distinta acotada favorable. [Resultado y límites](CARCASAS-PRINCIPALES/README.md). Falta integrar/dibujar carcasas específicas y validar variantes/licencias/QA. **Índice de cierre restante9,76/100 intacto; las descargas no generan crédito ni nuevo porcentaje global.**
+
+
+**30.10.2026 · Primer modelo comercial contrastado y probado.** StarTech C6PANELUTP241UFT, fuente/pins propios y nueva018 conservan44,3mm;17→18/Edge/PG y revisión distinta correctos. [Resultado](PRIMER-MODELO-COMERCIAL-STARTECH.md). Un modelo, no catálogo completo; distribución/QA18 pendientes. **Índice de cierre restante9,76/100 sin crédito automático ni porcentaje global nuevo.**
+
+
+**30.10.2026 · Catálogo SQL17 de hardware.** Cuatro referencias normalizadas/selladas, FK de revisión y runtimeSELECT;16→17 conserva81puertos/3cables, rollback atómico y montajePG17 con revisión distinta correctos. [Resultado](TANDA-CATALOGO-SQL17-30-10-2026.md). Modelos comerciales, distribución/Restore17 y candidataQA siguen pendientes. **Índice de cierre restante9,76/100 sin crédito automático ni nuevo porcentaje global.**
+
+
+**30.10.2026 · Fuente única de hardware validada.** Las cuatro referencias sintéticas derivan C#/GUI de una autoría normalizada, con lock16 y rechazo de derivados obsoletos. Build/Node/PG17 y revisión distinta correctos. [Resultado](TANDA-CATALOGO-FUENTE-UNICA-30-10-2026.md). Catálogo SQL general/modelos comerciales e instalación siguen pendientes. **Índice de cierre restante9,76/100 sin crédito automático ni nuevo porcentaje global.**
+
+
+
+**30.10.2026 · Vínculo clave/revisión de hardware.** Búsqueda exacta, registros protegidos y versión fijada al crear; vista genérica explícita si falta la revisión, sin perder puertos/montaje. C#4/Node814 y PG17/Edge correctos, revisión distinta con pruebas propias. [Resultado](TANDA-REVISIONES-HARDWARE-30-10-2026.md). Esquema16/SQL016 y cuatro referencias v1 conservados. Catálogo SQL general y publicación de modelos/instalador pendientes; QA137planned. **Índice de cierre restante9,76/100 sin incremento automático; sin nuevo porcentaje global.**
+
+
+
+**30.10.2026 · Contrato y ensayo de hardware/montaje v1.** Bandeja/firewall/switch/panel genéricos integrados con esquema16 de desarrollo; PG17/Edge y revisión distinta correctos. Reserva4U,81puertos del conjunto y3cables; rackmixtoRC9, permisos, persistencia y15→16 probados. [Resultado y límites](TANDA-HARDWARE-MONTAJE-30-10-2026.md). C-HW-02/04/05 avanzan parcialmente; catálogo por fabricante, exportaciones montadas y distribución/instalación16 pendientes. QA136planned, instalación10 intacta. **Índice de cierre restante9,76/100, sin crédito automático ni porcentaje global recalculado**; pesos y denominador conservados.
+
+
 **29.10.2026 · Paridad RC10 inventariada, sin crédito de implementación.**302acciones comparadas con servidor10;47equivalentes/122adaptadas/62parciales/71ausentes en recorrido. No son porcentajes ni nuevas tareas ponderadas por defecto. Matriz, catálogo técnico, pruebas y orden en [comparación](COMPARACION-OFFLINE-RC10-SERVIDOR.md) y [plan de paridad](PLAN-PARIDAD-RC10-SERVIDOR.md). **Índice de cierre restante9,76/100 sin incremento; mismos pesos y denominador.** No porcentaje global recalculado, nueva adopción ni modificación de QA/VM.
 
 **29.10.2026 · QA MFA comunicada y clientes originales cargados.** Wascar informa MFA administrativo satisfactorio. Por su elección se carga el Full Backup original como clientes/inventario en C actual:10clientes,68racks,311equipos,5408puertos,623conexiones; seguridad, claves, servicio y HTTPS conservados, backups frescos antes/después. No es restauración completa ni upload web. [Resultado](../evidence/s1-20261029/rc9-demo-original-codex/RESULTADOS.md), [QA de datos](QA-DATOS-ORIGINALES-MFA10-WASCAR.md).

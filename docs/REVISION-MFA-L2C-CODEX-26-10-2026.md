@@ -1,5 +1,7 @@
 # Revisión independiente MFA-L2c
 
+**Adenda · 26.10.2026:** MFA-L2C-01 corregido tras revisión de la nueva entrega. **48 focos + 2 negativos originales + 4 controles nuevos PASS**, sin fallos/omisiones. [Dictamen de corrección](REVISION-MFA-L2C-CORRECCION-CODEX-26-10-2026.md). El texto siguiente conserva la reproducción original; su bloqueo queda superado en el componente aislado, sin cerrar custodia completa o habilitar MFA.
+
 **Dictamen: no cerrar todavía L2c. Un P2 de propiedad del staging reproducido en publicación y limpieza.** El recorrido normal funciona, pero un nombre de carpeta no acredita que siga siendo el objeto creado/validado por esta llamada. L2b y los controles anteriores siguen aprobados.
 
 ## Qué ejecutó Codex

@@ -7,7 +7,7 @@
 param([string]$StagePath='', [string]$ExpectedManifestSha256='', [string]$ExpectedReceiptSha256='',
       [string]$DotNetPath='', [string]$PostgresBinPath='', [string]$InstancePath='', [int]$PostgresPort=0,
       [string]$PublicOrigin='', [string]$RecoveryUser='', [string]$BackupPath='',
-      [string]$ExpectedBackupManifestSha256='', [switch]$DevelopmentLoopbackHttp)
+      [string]$ExpectedBackupManifestSha256='', [switch]$DevelopmentLoopbackHttp, [switch]$ProtectSqlCredentials,[switch]$MinimizeSqlSecrets)
 $recoveredInputs=@{stage=$StagePath;manifest=$ExpectedManifestSha256;receipt=$ExpectedReceiptSha256;dotnet=$DotNetPath;
     pg=$PostgresBinPath;root=$InstancePath;port=$PostgresPort;origin=$PublicOrigin;user=$RecoveryUser;backup=$BackupPath;
     backupHash=$ExpectedBackupManifestSha256;http=[bool]$DevelopmentLoopbackHttp}
@@ -22,9 +22,10 @@ function Stop-RecoveryCheck {
 
 function Get-RecoverySchemaTransition {
     param([int]$TargetSchema,[string]$AppliedVersions)
+    if($TargetSchema -eq 43 -and $AppliedVersions -cin @(((1..13)-join ','),((1..14)-join ','),((1..15)-join ','))){return 'migrate'}
     if($TargetSchema -eq 14 -and $AppliedVersions -ceq ((1..13)-join ',')){return 'migrate'}
     if($TargetSchema -eq 15 -and $AppliedVersions -cin @(((1..13)-join ','),((1..14)-join ','))){return 'migrate'}
-    if($TargetSchema -in @(9,10,11,12,13,14,15) -and $AppliedVersions -ceq ((1..$TargetSchema)-join ',')){return 'current'}
+    if($TargetSchema -in @(9,10,11,12,13,14,15,43) -and $AppliedVersions -ceq ((1..$TargetSchema)-join ',')){return 'current'}
     Stop-RecoveryCheck ('restored_schema_required_'+[string]$TargetSchema) 1
 }
 
@@ -124,10 +125,10 @@ function Assert-RecoveryArchiveList {
 }
 
 function Invoke-RecoveryOwnedChild {
-    param([string]$Executable,[string[]]$Arguments,[string]$Root,[hashtable]$Environment,[string]$Logs,[string]$Label,[string]$InputText='',[int]$TimeoutSeconds=300)
+    param([string]$Executable,[string[]]$Arguments,[string]$Root,[hashtable]$Environment,[string]$Logs,[string]$Label,[string]$InputText='',[int]$TimeoutSeconds=300,[switch]$ProtectRequest,[switch]$EphemeralRequest)
     $handle=$null
     try {
-        $handle=Start-RackClickOwnedProcess -Executable $Executable -Arguments $Arguments -WorkingDirectory $Root -Environment $Environment -InputText $InputText -LogDirectory $Logs -Label $Label
+        $handle=Start-RackClickOwnedProcess -Executable $Executable -Arguments $Arguments -WorkingDirectory $Root -Environment $Environment -InputText $InputText -LogDirectory $Logs -Label $Label -ProtectRequest:$ProtectRequest -EphemeralRequest:$EphemeralRequest
         $result=Wait-RackClickOwnedProcess -Handle $handle -TimeoutSeconds $TimeoutSeconds
         if ($result.exitCode -ne 0) {
             # Only promote this canonical, bounded CLI rejection. Never reflect
@@ -185,7 +186,10 @@ $report=[ordered]@{schemaVersion=1;valid=$false;exitCode=2;code='instance_recove
     sourceBackupManifestSha256='';recoveryAuditEventId='';url='';scope='NEW private loopback recovered instance; not Windows service or final installation acceptance'}
 $phase='preflight';$pgHandle=$null;$stateStream=$null;$state=$null;$owned=$false;$success=$false;$stageLocks=@();$backup=$null;$checkedInstance=$null
 $recoveryOriginalEnvironment=@{}
+$protectSql=[bool]$ProtectSqlCredentials;$minimizeSql=[bool]$MinimizeSqlSecrets
+$instanceVersion=if($minimizeSql){3}elseif($protectSql){2}else{1}
 try {
+    if($minimizeSql-and-not$protectSql){Stop-RecoveryCheck 'sql_minimum_requires_protection'}
     if (-not $recoveredInputs.http) {Stop-RecoveryCheck 'development_loopback_optin_required'}
     $root=Get-StageLocalPath $recoveredInputs.root;$stage=Get-StageLocalPath $recoveredInputs.stage
     $dotnet=Get-StageLocalPath $recoveredInputs.dotnet;$pg=Get-StageLocalPath $recoveredInputs.pg;$backupRoot=Get-StageLocalPath $recoveredInputs.backup
@@ -214,11 +218,17 @@ try {
     $private=New-BackupPrivateDirectory (Join-Path $root 'private');$logs=New-BackupPrivateDirectory (Join-Path $root 'logs')
     $cluster='rc_cluster_'+$suffix;$owner='rc_owner_'+$suffix;$runtime='rc_runtime_'+$suffix;$database='rc_db_'+$suffix
     $clusterPassword=New-InstancePassword;$ownerPassword=New-InstancePassword;$runtimePassword=New-InstancePassword;$appPassword=New-InstancePassword
-    Write-BackupNewText (Join-Path $private 'cluster-password.txt') $clusterPassword
-    Write-BackupNewText (Join-Path $private 'owner-password.txt') $ownerPassword
+    $backupRole='rc_backup_'+$suffix;$backupPassword=if($minimizeSql){New-InstancePassword}else{''}
+    if($protectSql-and-not$minimizeSql){Write-InstanceSqlProfiles $private $id $recoveredInputs.port $database $owner $ownerPassword $cluster $clusterPassword}
+    elseif(-not$protectSql){Write-BackupNewText (Join-Path $private 'owner-password.txt') $ownerPassword}
     $environment=New-InstanceEnvironment @{PGCLIENTENCODING='UTF8';PGCONNECT_TIMEOUT='5'}
     $phase='cluster'
-    $null=Invoke-RecoveryOwnedChild (Join-Path $pg 'initdb.exe') @('-D','pgdata','-U',$cluster,'--pwfile=private/cluster-password.txt','--auth-host=scram-sha-256','--auth-local=scram-sha-256','--encoding=UTF8','--locale=C','--data-checksums') $root $environment $logs 'initdb'
+    $initialPassword=if($protectSql){'private/initdb-password.txt'}else{'private/cluster-password.txt'}
+    $initializeCluster={
+        $null=Invoke-RecoveryOwnedChild (Join-Path $pg 'initdb.exe') @('-D','pgdata','-U',$cluster,('--pwfile='+$initialPassword),'--auth-host=scram-sha-256','--auth-local=scram-sha-256','--encoding=UTF8','--locale=C','--data-checksums') $root $environment $logs 'initdb'
+    }
+    if($protectSql){$null=Invoke-InstanceWithTemporarySecret (Join-Path $root $initialPassword) $clusterPassword $initializeCluster}
+    else{Write-BackupNewText (Join-Path $root $initialPassword) $clusterPassword;& $initializeCluster}
     [IO.File]::AppendAllText((Join-Path $root 'pgdata/postgresql.conf'),("`nlisten_addresses='127.0.0.1'`nport="+[string]$recoveredInputs.port+"`npassword_encryption='scram-sha-256'`n"),(New-Object Text.UTF8Encoding($false)))
     $pgHandle=Start-RackClickOwnedProcess -Executable (Join-Path $pg 'postgres.exe') -Arguments @('-D','pgdata') -WorkingDirectory $root -Environment $environment -LogDirectory $logs -Label 'postgres'
     $clusterProfile=@{host='127.0.0.1';port=$recoveredInputs.port;database='postgres';user=$cluster;password=$clusterPassword};$ready=$false
@@ -230,8 +240,10 @@ try {
     Assert-InstanceOwnedPostgres $pgHandle (Join-Path $root 'pgdata')
     $arguments=@('-X','-A','-t','-v','ON_ERROR_STOP=1')+(Get-BackupConnectionArguments $clusterProfile 'postgres')
     $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $arguments $clusterProfile "CREATE ROLE $owner LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS PASSWORD '$ownerPassword'; CREATE ROLE $runtime LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS PASSWORD '$runtimePassword';"
+    if($minimizeSql){$null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $arguments $clusterProfile "CREATE ROLE $backupRole LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS PASSWORD '$backupPassword';"}
     $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $arguments $clusterProfile "CREATE DATABASE $database OWNER $owner TEMPLATE template0 ENCODING 'UTF8';"
     $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $arguments $clusterProfile "REVOKE ALL ON DATABASE $database FROM PUBLIC; GRANT CONNECT ON DATABASE $database TO $runtime;"
+    if($minimizeSql){$null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $arguments $clusterProfile "GRANT CONNECT ON DATABASE $database TO $backupRole;"}
     $ownerProfile=@{host='127.0.0.1';port=$recoveredInputs.port;database=$database;user=$owner;password=$ownerPassword}
     $ownerArguments=@('-X','-A','-t','-v','ON_ERROR_STOP=1')+(Get-BackupConnectionArguments $ownerProfile $database)
     $identity=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile "SELECT count(*) FROM pg_catalog.pg_database d JOIN pg_catalog.pg_roles r ON r.rolname=current_user WHERE d.datname=current_database() AND d.datname='$database' AND current_user='$owner' AND d.datdba=r.oid AND NOT r.rolsuper AND NOT r.rolcreatedb AND NOT r.rolcreaterole AND NOT r.rolreplication AND NOT r.rolbypassrls;"
@@ -243,23 +255,28 @@ try {
     $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile "COMMENT ON DATABASE $database IS '$marker';"
     $phase='restore'
     $passfile=Join-Path $logs 'restore-password.pgpass'
-    Write-BackupNewText $passfile ("127.0.0.1:"+[string]$recoveredInputs.port+":*:${owner}:$ownerPassword`n");Assert-BackupPrivateAcl $passfile
     $restoreEnvironment=New-InstanceEnvironment @{PGPASSFILE=$passfile;PGCLIENTENCODING='UTF8';PGCONNECT_TIMEOUT='5';PGAPPNAME='RackClick-native-recovery'}
     $restoreArguments=(Get-BackupConnectionArguments $ownerProfile $database)+@('--single-transaction','--exit-on-error','--no-owner','--no-acl','data.dump')
-    $null=Invoke-RecoveryOwnedChild (Join-Path $pg 'pg_restore.exe') $restoreArguments $backupRoot $restoreEnvironment $logs 'pg-restore'
+    $restoreArchive={
+        Assert-BackupPrivateAcl $passfile
+        $null=Invoke-RecoveryOwnedChild (Join-Path $pg 'pg_restore.exe') $restoreArguments $backupRoot $restoreEnvironment $logs 'pg-restore'
+    }
+    $passText="127.0.0.1:"+[string]$recoveredInputs.port+":*:${owner}:$ownerPassword`n"
+    if($protectSql){$null=Invoke-InstanceWithTemporarySecret $passfile $passText $restoreArchive}
+    else{Write-BackupNewText $passfile $passText;& $restoreArchive}
     $schema=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile 'SELECT string_agg(version::text,'','' ORDER BY version) FROM public.schema_migration;'
     # Upgrade only the explicit supported source schemas, in this new database.
     $schemaTransition=Get-RecoverySchemaTransition -TargetSchema $stageSchema -AppliedVersions $schema
     if ($schemaTransition -ceq 'migrate') {
         $phase='migration'
         $migrationEnvironment=New-InstanceEnvironment @{DOTNET_ROOT=[IO.Path]::GetDirectoryName($dotnet);DOTNET_CLI_TELEMETRY_OPTOUT='1';DOTNET_NOLOGO='1';DOTNET_GENERATE_ASPNET_CERTIFICATE='false';ConnectionStrings__RackClick=(Get-InstanceConnection $recoveredInputs.port $database $owner $ownerPassword);ASPNETCORE_ENVIRONMENT='Development'}
-        $null=Invoke-RecoveryOwnedChild $dotnet @((Join-Path $stage 'server/RackClick.Server.dll'),'--migrate') $root $migrationEnvironment $logs 'migrate'
+        $null=Invoke-RecoveryOwnedChild $dotnet @((Join-Path $stage 'server/RackClick.Server.dll'),'--migrate') $root $migrationEnvironment $logs 'migrate' -ProtectRequest:$protectSql -EphemeralRequest:$minimizeSql
         # Permisos como paso separado de la migración: el rol de ejecución es dinámico y el SQL de migración no puede nombrarlo.
-        $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile "GRANT USAGE ON SCHEMA public TO $runtime; GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA public TO $runtime;"
+        $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile (Get-InstanceRuntimeGrantsSql $runtime $stageSchema)
         $schema=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile 'SELECT string_agg(version::text,'','' ORDER BY version) FROM public.schema_migration;'
         if ($schema -cne ((1..$stageSchema)-join ',')) {Stop-RecoveryCheck 'restored_migration_schema_invalid' 1}
     }
-    if($stageSchema -eq 15){
+    if($stageSchema -ge 15){
         $restoredFactorCount=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile 'SELECT count(*) FROM public.app_mfa_factor;'
         Assert-RecoveryMfaMaterial -TargetSchema $stageSchema -FactorCount $restoredFactorCount
     }
@@ -269,7 +286,7 @@ try {
     $ownerConnection=Get-InstanceConnection $recoveredInputs.port $database $owner $ownerPassword
     $runtimeConnection=Get-InstanceConnection $recoveredInputs.port $database $runtime $runtimePassword
     $recoveryEnvironment=New-InstanceEnvironment @{DOTNET_ROOT=[IO.Path]::GetDirectoryName($dotnet);DOTNET_CLI_TELEMETRY_OPTOUT='1';DOTNET_NOLOGO='1';DOTNET_GENERATE_ASPNET_CERTIFICATE='false';ConnectionStrings__RackClick=$ownerConnection;Recovery__User=$user;Recovery__ExpectedDatabase=$database;Recovery__BackupSha256=$backupHash;ASPNETCORE_ENVIRONMENT='Development'}
-    $result=Invoke-RecoveryOwnedChild $dotnet @((Join-Path $stage 'server/RackClick.Server.dll'),'--recover-admin') $root $recoveryEnvironment $logs 'recover-admin' -InputText ($appPassword+"`n")
+    $result=Invoke-RecoveryOwnedChild $dotnet @((Join-Path $stage 'server/RackClick.Server.dll'),'--recover-admin') $root $recoveryEnvironment $logs 'recover-admin' -InputText ($appPassword+"`n") -ProtectRequest:$protectSql -EphemeralRequest:$minimizeSql
     $commit=Read-RecoveryCommitResult $result $id
     $uid=$commit.createdUserId;$gid=$commit.createdGroupId;$aid=$commit.auditEventId;$rid=$commit.requestId;$house=$commit.systemhausId
     $phase='verify'
@@ -290,9 +307,9 @@ try {
     $expectedGrants='customer.create,customer.manage,inventory.delete,inventory.edit,inventory.read,reports.export,security.manage,systemhaus.manage,systemhaus.read'
     if ($stageSchema -ge 10) {$expectedGrants+=',templates.publish'}
     if ($grants -cne $expectedGrants) {Stop-RecoveryCheck 'recovery_admin_grants_invalid' 1}
-    $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile "REVOKE ALL ON SCHEMA public FROM PUBLIC; GRANT USAGE ON SCHEMA public TO $runtime; GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA public TO $runtime;"
+    $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile (Get-InstanceRuntimeGrantsSql $runtime $stageSchema)
     $runtimeRights=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile "SELECT count(*) FROM pg_catalog.pg_roles WHERE rolname='$runtime' AND NOT rolsuper AND NOT rolcreatedb AND NOT rolcreaterole AND NOT rolreplication AND NOT rolbypassrls AND has_database_privilege(oid,'$database','CONNECT') AND NOT has_database_privilege(oid,'$database','CREATE') AND NOT has_database_privilege(oid,'$database','TEMP') AND has_schema_privilege(oid,'public','USAGE') AND NOT has_schema_privilege(oid,'public','CREATE');"
-    $missingRights=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile "SELECT count(*) FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='public' AND c.relkind IN ('r','p') AND (pg_catalog.pg_get_userbyid(c.relowner)<>'$owner' OR NOT (has_table_privilege('$runtime',c.oid,'SELECT') AND has_table_privilege('$runtime',c.oid,'INSERT') AND has_table_privilege('$runtime',c.oid,'UPDATE') AND has_table_privilege('$runtime',c.oid,'DELETE')));"
+    $missingRights=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile (Get-InstanceMissingTableRightsSql $runtime $owner $stageSchema)
     if ($runtimeRights -cne '1' -or $missingRights -cne '0') {Stop-RecoveryCheck 'runtime_permissions_invalid' 1}
     # .NET is authoritative for normalization; transfer the exact persisted username
     # as ASCII hex rather than reimplementing ToLowerInvariant in Windows PowerShell.
@@ -301,9 +318,19 @@ try {
     $userBytes=New-Object byte[] ($userHex.Length/2)
     for ($i=0;$i -lt $userBytes.Length;$i++) {$userBytes[$i]=[Convert]::ToByte($userHex.Substring($i*2,2),16)}
     $actualUser=(New-Object Text.UTF8Encoding($false,$true)).GetString($userBytes);$null=Assert-InstanceDisplayName $actualUser
-    Write-BackupNewText (Join-Path $private 'runtime.json') (@{connectionString=$runtimeConnection}|ConvertTo-Json -Compress)
+    $runtimeValue=if($protectSql){New-SqlProtectedRuntimeStore $root $id ([Security.Principal.WindowsIdentity]::GetCurrent().User.Value) $database $runtime $runtimeConnection}else{@{connectionString=$runtimeConnection}}
+    if($minimizeSql){
+        $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile (Get-InstanceBackupGrantsSql $backupRole)
+        Write-InstanceBackupProfile $private $id $recoveredInputs.port $database $backupRole $backupPassword
+        # A successful native preparation must not leave an unconsumed privileged request.
+        foreach($pending in @(Get-ChildItem -LiteralPath $logs -Filter 'request.json' -Recurse -File)){
+            $record=[IO.File]::ReadAllText($pending.FullName)|ConvertFrom-Json
+            if($record.schemaVersion-eq2){Stop-InstanceCheck 'instance_maintenance_request_retained'}
+        }
+    }
+    Write-BackupNewText (Join-Path $private 'runtime.json') ($runtimeValue|ConvertTo-Json -Depth 5 -Compress)
     Write-BackupNewText (Join-Path $private 'admin-login.json') (@{username=$actualUser;password=$appPassword}|ConvertTo-Json -Compress)
-    Write-BackupNewText (Join-Path $private 'backup-profile.json') (@{schemaVersion=1;host='127.0.0.1';port=$recoveredInputs.port;database=$database;user=$owner;passwordFile=(Join-Path $private 'owner-password.txt')}|ConvertTo-Json -Compress)
+    if(-not$protectSql){Write-BackupNewText (Join-Path $private 'backup-profile.json') (@{schemaVersion=1;host='127.0.0.1';port=$recoveredInputs.port;database=$database;user=$owner;passwordFile=(Join-Path $private 'owner-password.txt')}|ConvertTo-Json -Compress)}
     $phase='stop'
     Assert-InstanceOwnedPostgres $pgHandle (Join-Path $root 'pgdata')
     $null=Invoke-RecoveryOwnedChild (Join-Path $pg 'pg_ctl.exe') @('stop','-D','pgdata','-m','fast','-w','-t','30') $root $environment $logs 'postgres-stop'
@@ -311,8 +338,9 @@ try {
     if ([IO.File]::Exists((Join-Path $root 'pgdata/postmaster.pid'))) {Stop-RecoveryCheck 'postgres_stop_unconfirmed' 1}
     $phase='finalize'
     $secrets=[ordered]@{}
-    foreach ($name in @('admin-login.json','backup-profile.json','cluster-password.txt','owner-password.txt','runtime.json')) {Assert-BackupPrivateAcl (Join-Path $private $name);$secrets[$name]=Get-RuntimeConfigDigest (Join-Path $private $name)}
-    $manifest=[ordered]@{schemaVersion=1;kind='RackClickLabInstance';id=$id;rootPath=$root;stagePath=$stage;stageManifestSha256=$recoveredInputs.manifest.ToLowerInvariant();stageReceiptSha256=$recoveredInputs.receipt.ToLowerInvariant();dotnetPath=$dotnet;postgresBinPath=$pg;postgresPort=$recoveredInputs.port;httpPort=$origin.port;publicOrigin=$origin.value;database=$database;owner=$owner;runtime=$runtime;clusterAdmin=$cluster;state='initialized';developmentLoopbackHttp=$true;secretFiles=$secrets}
+    foreach ($name in @(Get-InstanceSecretNames $instanceVersion)) {Assert-BackupPrivateAcl (Join-Path $private $name);$secrets[$name]=Get-RuntimeConfigDigest (Join-Path $private $name)}
+    $manifest=[ordered]@{schemaVersion=$instanceVersion;kind='RackClickLabInstance';id=$id;rootPath=$root;stagePath=$stage;stageManifestSha256=$recoveredInputs.manifest.ToLowerInvariant();stageReceiptSha256=$recoveredInputs.receipt.ToLowerInvariant();dotnetPath=$dotnet;postgresBinPath=$pg;postgresPort=$recoveredInputs.port;httpPort=$origin.port;publicOrigin=$origin.value;database=$database;owner=$owner;runtime=$runtime;clusterAdmin=$cluster;state='initialized';developmentLoopbackHttp=$true;secretFiles=$secrets}
+    if($minimizeSql){$manifest.backupRole=$backupRole}
     Write-BackupNewText (Join-Path $root 'instance.json') ($manifest|ConvertTo-Json -Depth 5 -Compress)
     $digest=Get-RuntimeConfigDigest (Join-Path $root 'instance.json')
     $state.status='initialized';$state.code='instance_initialized';Set-StageState $stateStream $state

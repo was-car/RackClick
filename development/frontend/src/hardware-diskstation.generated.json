@@ -1,0 +1,53 @@
+[
+  {
+    "version": "synology-ds423plus-20261030-v1",
+    "synthetic": false,
+    "profiles": [
+      {
+        "key": "synology-ds423plus",
+        "kind": "desktop",
+        "sizeU": 0,
+        "widthMm": 199,
+        "heightMm": 166,
+        "depthMm": 223,
+        "groups": [
+          {
+            "key": "rear-lan",
+            "face": "rear",
+            "type": "rj45",
+            "count": 2,
+            "powerRole": "unspecified"
+          }
+        ],
+        "identity": {
+          "manufacturer": "Synology",
+          "family": "DiskStation",
+          "model": "DS423+",
+          "sku": "DS423+"
+        },
+        "source": "https://global.download.synology.com/download/Document/Hardware/HIG/DiskStation/23-year/DS423%2B/enu/DS423p_HIG_enu.pdf"
+      }
+    ]
+  },
+  {
+    "version": "mount-support-20261030-v1",
+    "synthetic": true,
+    "profiles": [
+      {
+        "key": "shelf-5u",
+        "kind": "shelf",
+        "sizeU": 5,
+        "widthMm": 482.6,
+        "heightMm": 222,
+        "depthMm": 300,
+        "slot": {
+          "key": "main",
+          "widthMm": 440,
+          "heightMm": 190,
+          "depthMm": 300
+        },
+        "groups": []
+      }
+    ]
+  }
+]

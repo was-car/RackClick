@@ -209,6 +209,10 @@ public sealed partial class InventoryStore
             var racks = Map("racks"); var rooms = Map("rooms"); var devices = Map("devices"); var ports = Map("ports"); var groups = Map("portGroups");
             if (!racks.TryGetValue(rackId, out var rack)) throw new DomainError(404, "not_found");
             var selected = devices.Values.Where(d => Parent(d, "rackId") == rackId).ToArray(); // snapshot sort_order,id preserved
+            // The historical RC9 spreadsheet has no mounting relationship field.
+            // Reject this scope instead of exporting a child as a fictitious 0U chassis.
+            if (selected.Any(d => d.TryGetProperty("mountParentId", out var parent) && parent.ValueKind != JsonValueKind.Null))
+                throw new DomainError(422, "report_mounting_unsupported");
             var selectedIds = selected.Select(d => Id(d)).ToHashSet();
             var cables = root.GetProperty("connections").EnumerateArray().Where(c =>
             {

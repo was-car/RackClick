@@ -1,0 +1,504 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506d-20261101-v1",
+  "targetSchema": 32,
+  "baselineDefinitions": 528,
+  "baselineCommercial": 523,
+  "baseCovered": 168,
+  "authoring": {
+    "core": [
+      {
+        "id": "nb-1e541b78ab2e12a9",
+        "manufacturer": "Arista",
+        "model": "DCS-7160-48YC6-F",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7160-48YC6-F.yaml",
+          "https://www.arista.com/assets/data/pdf/Datasheets/7160-Datasheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-22b5637a0a90560a",
+        "manufacturer": "Arista",
+        "model": "DCS-7050CX3-32C-F",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7050CX3-32C-F.yaml",
+          "https://www.arista.com/assets/data/pdf/Datasheets/7050X3-Datasheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-40628e190c9e9ada",
+        "manufacturer": "Arista",
+        "model": "DCS-7050SX3-48YC8-F",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7050SX3-48YC8-F.yaml",
+          "https://www.arista.com/assets/data/pdf/Datasheets/7050X3-Datasheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-8a9952b05c0840d1",
+        "manufacturer": "Arista",
+        "model": "DCS-7280SR3-48YC8-F",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7280SR3-48YC8-F.yaml",
+          "https://www.arista.com/assets/data/pdf/Datasheets/7280R3-Data-Sheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-99fbabbfd63a81ae",
+        "manufacturer": "Arista",
+        "model": "DCS-7050CX3-32S-R",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7050CX3-32S-R.yaml",
+          "https://www.arista.com/assets/data/pdf/Datasheets/7050X3-Datasheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-a4126d6cef91ca26",
+        "manufacturer": "Arista",
+        "model": "DCS-7020SR-24C2-F",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7020SR-24C2-F.yaml",
+          "https://www.arista.com/assets/data/pdf/Datasheets/7020R-48_Datasheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-f0851cec3521e33f",
+        "manufacturer": "Arista",
+        "model": "DCS-7060CX2-32S-F",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7060CX2-32S-F.yaml",
+          "https://www.arista.com/assets/data/pdf/Datasheets/7060X_7260X_DS.pdf"
+        ]
+      },
+      {
+        "id": "nb-0981324ffcccabc6",
+        "manufacturer": "Arista",
+        "model": "CCS-720DF-48Y-2F",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-720DF-48Y-2F.yaml",
+          "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720D-Datasheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-a02305d3072dc01b",
+        "manufacturer": "Arista",
+        "model": "CCS-720XP-24Y6-2F",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-720XP-24Y6-2F.yaml",
+          "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720XP-Datasheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-4c713694453b3ee3",
+        "manufacturer": "Cisco",
+        "model": "Nexus 93108TC-FX3",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/N9K-C93108TC-FX3.yaml"
+        ]
+      },
+      {
+        "id": "nb-5cfeedda20abb6ba",
+        "manufacturer": "Cisco",
+        "model": "Nexus 9336C-FX2",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/N9K-C9336C-FX2.yaml",
+          "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-742282.html"
+        ]
+      },
+      {
+        "id": "nb-77e3ae7a8fab715b",
+        "manufacturer": "Cisco",
+        "model": "Catalyst 9500-24Y4C",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9500-24Y4C.yaml",
+          "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9500-series-switches/nb-06-cat9500-ser-data-sheet-cte-en.html"
+        ]
+      },
+      {
+        "id": "nb-b93fdf2565924f3e",
+        "manufacturer": "Cisco",
+        "model": "Catalyst 9500-48Y4C",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9500-48Y4C.yaml",
+          "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9500-series-switches/nb-06-cat9500-ser-data-sheet-cte-en.html"
+        ]
+      },
+      {
+        "id": "nb-c3a2a8dfb0d28694",
+        "manufacturer": "Cisco",
+        "model": "Nexus 93180YC-FX",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/N9K-C93180YC-FX.yaml"
+        ]
+      },
+      {
+        "id": "nb-6ba786cfed3ab9a5",
+        "manufacturer": "Cisco",
+        "model": "Meraki MS350-24P",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/Meraki-MS350-24P.yaml"
+        ]
+      },
+      {
+        "id": "nb-e83c62d66ebe38fa",
+        "manufacturer": "Cisco",
+        "model": "Meraki MS225-48FP",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/Meraki-MS225-48FP.yaml",
+          "https://meraki.cisco.com/lib/pdf/meraki_datasheet_ms225.pdf"
+        ]
+      },
+      {
+        "id": "nb-8f68dd201f3c0c5e",
+        "manufacturer": "Cisco",
+        "model": "Catalyst 9300X-24Y",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9300X-24Y.yaml",
+          "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/nb-06-cat9300-ser-data-sheet-cte-en.html"
+        ]
+      },
+      {
+        "id": "nb-56979e7752a9d231",
+        "manufacturer": "Juniper",
+        "model": "QFX5120-48Y-AFI2",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/QFX5120-48Y-AFI2.yaml",
+          "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/qfx5120-ethernet-switch-datasheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-68e3c1e22fd81ed1",
+        "manufacturer": "Juniper",
+        "model": "EX4400-48F",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX4400-48F.yaml",
+          "https://www.juniper.net/documentation/us/en/hardware/ex4400/topics/topic-map/ex4400-system-overview.html"
+        ]
+      },
+      {
+        "id": "nb-f0537901a8b1edc9",
+        "manufacturer": "Juniper",
+        "model": "QFX5100-48S-6Q",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/QFX5100-48S-6Q.yaml"
+        ]
+      },
+      {
+        "id": "nb-f6e0bb626755510b",
+        "manufacturer": "Juniper",
+        "model": "EX4100-48P",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX4100-48P.yaml",
+          "https://www.juniper.net/us/en/products/switches/ex-series/ex4100-line-of-ethernet-switches-datasheet.html"
+        ]
+      },
+      {
+        "id": "nb-01d2c09685f7b01f",
+        "manufacturer": "Juniper",
+        "model": "EX3400-48T",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX3400-48T.yaml",
+          "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex3400-ethernet-switch-datasheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-9960b794c01f49b4",
+        "manufacturer": "Juniper",
+        "model": "EX3400-48P",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX3400-48P.yaml",
+          "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex3400-ethernet-switch-datasheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-9af4f14b030fd0a3",
+        "manufacturer": "Juniper",
+        "model": "ACX7024-AC",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/ACX7024-AC.yaml",
+          "https://www.juniper.net/us/en/products/routers/acx-series/acx7000-family-cloud-metro-routers/acx7000-line/acx7024-acx7024x-cloud-metro-routers-datasheet.html"
+        ]
+      },
+      {
+        "id": "nb-56ae91b8f6b2852d",
+        "manufacturer": "Juniper",
+        "model": "MX204",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/MX204.yaml",
+          "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/routers/mx-204-240-480-960-series-universal-routing-platforms-datasheet.pdf"
+        ]
+      }
+    ],
+    "edge": [
+      {
+        "id": "palo-alto-pa-3260",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-3260",
+        "category": "firewall",
+        "sourcePages": [
+          "https://www.paloaltonetworks.com/company/press-kit"
+        ]
+      },
+      {
+        "id": "palo-alto-pa-3410",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-3410",
+        "category": "firewall",
+        "sourcePages": [
+          "https://www.paloaltonetworks.com/company/press-kit"
+        ]
+      },
+      {
+        "id": "palo-alto-pa-3420",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-3420",
+        "category": "firewall",
+        "sourcePages": [
+          "https://www.paloaltonetworks.com/company/press-kit"
+        ]
+      },
+      {
+        "id": "palo-alto-pa-3430",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-3430",
+        "category": "firewall",
+        "sourcePages": [
+          "https://www.paloaltonetworks.com/company/press-kit"
+        ]
+      },
+      {
+        "id": "palo-alto-pa-3440",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-3440",
+        "category": "firewall",
+        "sourcePages": [
+          "https://www.paloaltonetworks.com/company/press-kit"
+        ]
+      },
+      {
+        "id": "palo-alto-pa-5260",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-5260",
+        "category": "firewall",
+        "sourcePages": [
+          "https://www.paloaltonetworks.com/company/press-kit"
+        ]
+      },
+      {
+        "id": "palo-alto-pa-5410",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-5410",
+        "category": "firewall",
+        "sourcePages": [
+          "https://www.paloaltonetworks.com/company/press-kit"
+        ]
+      },
+      {
+        "id": "palo-alto-pa-5420",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-5420",
+        "category": "firewall",
+        "sourcePages": [
+          "https://www.paloaltonetworks.com/company/press-kit"
+        ]
+      },
+      {
+        "id": "palo-alto-pa-5430",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-5430",
+        "category": "firewall",
+        "sourcePages": [
+          "https://www.paloaltonetworks.com/company/press-kit"
+        ]
+      },
+      {
+        "id": "palo-alto-pa-5440",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-5440",
+        "category": "firewall",
+        "sourcePages": [
+          "https://www.paloaltonetworks.com/company/press-kit"
+        ]
+      },
+      {
+        "id": "nb-e5b040471a978eae",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 1000F",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-1000F.yaml",
+          "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortigate-1000f-series.pdf#page=7/"
+        ]
+      },
+      {
+        "id": "nb-f48a3b395614b14f",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 2600F",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-2600F.yaml"
+        ]
+      },
+      {
+        "id": "nb-78642bb08e8fc74c",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 3001F",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-3001F.yaml",
+          "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortigate-3000f-series.pdf"
+        ]
+      },
+      {
+        "id": "nb-d827296bb530c875",
+        "manufacturer": "MikroTik",
+        "model": "CCR2216-1G-12XS-2XQ",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/CCR2216-1G-12XS-2XQ.yaml",
+          "https://mikrotik.com/product/ccr2216_1g_12xs_2xq"
+        ]
+      },
+      {
+        "id": "nb-2b0409c6beac1731",
+        "manufacturer": "Ubiquiti",
+        "model": "Enterprise Campus Aggregation",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/ECS-Aggregation.yaml",
+          "https://store.ui.com/products/ecs-aggregation"
+        ]
+      },
+      {
+        "id": "nb-e043a5a21e4bc6c2",
+        "manufacturer": "Ubiquiti",
+        "model": "Enterprise Fortress Gateway",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/EFG.yaml",
+          "https://store.ui.com/products/enterprise-fortress-gateway"
+        ]
+      },
+      {
+        "id": "nb-4d5610318b7474da",
+        "manufacturer": "Extreme Networks",
+        "model": "X590-24x-1q-2c",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/X590-24x-1q-2c.yaml",
+          "https://documentation.extremenetworks.com/summit/GUID-DB674A0E-FD84-4609-BC1B-5D32AFB95295.shtml"
+        ]
+      },
+      {
+        "id": "nb-6d4a191cda45f6d1",
+        "manufacturer": "Extreme Networks",
+        "model": "X695-48Y-8C",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/X695-48Y-8C.yaml"
+        ]
+      },
+      {
+        "id": "nb-fe00cb2fcd751efc",
+        "manufacturer": "Extreme Networks",
+        "model": "4120-24MW-4Y",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4120-24MW-4Y.yaml",
+          "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+        ]
+      },
+      {
+        "id": "nb-a864e7299035e225",
+        "manufacturer": "Huawei",
+        "model": "S6730-H24X4Y4C",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/S6730-H24X4Y4C.yaml",
+          "https://support.huawei.com/enterprise/en/doc/EDOC1000013621/baf15fb9/s6730-h24x4y4c-02353nrd"
+        ]
+      },
+      {
+        "id": "nb-58601e584ebb26d1",
+        "manufacturer": "Huawei",
+        "model": "Huawei S6730-S24X6Q",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/S6730-S24X6Q.yaml",
+          "https://support.huawei.com/enterprise/en/doc/EDOC1000013621/25b47d53/s6730-s24x6q-02353ajw-02353ajw-001-02353ajw-003-02353ajw-004"
+        ]
+      },
+      {
+        "id": "nb-61497bf34bd5fcfd",
+        "manufacturer": "Dell",
+        "model": "PowerSwitch S4128F-ON",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerSwitch-S4128F-ON.yaml",
+          "https://www.delltechnologies.com/asset/en-us/products/networking/technical-support/dell-networking-s4100-series-spec-sheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-9d2017e0aa6f2f3c",
+        "manufacturer": "Dell",
+        "model": "PowerSwitch N3248P-ON",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerSwitch-N3248P-ON.yaml",
+          "https://www.delltechnologies.com/asset/en-au/products/networking/technical-support/dell-networking-n3200-powerswitch-specsheet.pdf"
+        ]
+      },
+      {
+        "id": "nb-41262e318167a929",
+        "manufacturer": "FS",
+        "model": "N5860-48SC",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/FS/N5860-48SC.yaml"
+        ]
+      },
+      {
+        "id": "nb-e98baee54dcf5404",
+        "manufacturer": "FS",
+        "model": "N8560-48BC",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/FS/N8560-48BC.yaml"
+        ]
+      }
+    ]
+  },
+  "connectorContract": [
+    "rj45",
+    "sfp",
+    "sfp28",
+    "qsfp",
+    "power"
+  ],
+  "scope": "Explicit physical SFP28 and QSFP+/QSFP28, no QSFP-DD, no breakout/virtual/module population, no firmware configuration"
+}

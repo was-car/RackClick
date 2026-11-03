@@ -1,0 +1,4886 @@
+{
+  "schemaVersion": 1,
+  "scope": "Frozen named selection, not all market products or physical revisions",
+  "originalEdition": "visual-reference-04",
+  "originalDate": "2026-10-30",
+  "sourceManifestSha256": "05e9617b34c49da95bc0e47c6717c8860453ec30d753b0eb14f3da093710c899",
+  "models": [
+    {
+      "id": "sophos-xg-135",
+      "manufacturer": "Sophos",
+      "model": "XG 135",
+      "category": "firewall",
+      "sourcePages": [
+        "https://docs.sophos.com/nsg/hardware/quickstart/xg/sophos-quick-start-guide-xg-1xx%28w%29-rev3-xg-106%28w%29-rev1.pdf"
+      ]
+    },
+    {
+      "id": "sophos-xgs-116",
+      "manufacturer": "Sophos",
+      "model": "XGS 116",
+      "category": "firewall",
+      "sourcePages": [
+        "https://docs.sophos.com/nsg/hardware/operatinginstructions/xgs/sophos-operating-instructions-xgs-116-116w-126-126w-136-136w.pdf"
+      ]
+    },
+    {
+      "id": "sophos-xgs-138",
+      "manufacturer": "Sophos",
+      "model": "XGS 138",
+      "category": "firewall",
+      "sourcePages": [
+        "https://assets.sophos.com/X24WTUEQ/at/7wf85vbnnqf939bbhtxgfk/sophos-firewall-br.pdf"
+      ]
+    },
+    {
+      "id": "sophos-xgs-2100",
+      "manufacturer": "Sophos",
+      "model": "XGS 2100",
+      "category": "firewall",
+      "sourcePages": [
+        "https://assets.sophos.com/X24WTUEQ/at/7wf85vbnnqf939bbhtxgfk/sophos-firewall-br.pdf"
+      ]
+    },
+    {
+      "id": "fortinet-fortigate-60f",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 60F",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortigate-fortiwifi-60f-series.pdf"
+      ]
+    },
+    {
+      "id": "fortinet-fortigate-80f",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 80F",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortigate-fortiwifi-80f-series.pdf"
+      ]
+    },
+    {
+      "id": "fortinet-fortigate-100f",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 100F",
+      "category": "firewall",
+      "sourcePages": [
+        "https://fortinetweb.s3.amazonaws.com/docs.fortinet.com/v2/attachments/42d64717-83f1-11e9-81a4-00505692583a/FG-100F-QSG.pdf"
+      ]
+    },
+    {
+      "id": "fortinet-fortigate-200f",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 200F",
+      "category": "firewall",
+      "sourcePages": [
+        "https://fortinetweb.s3.amazonaws.com/docs.fortinet.com/v2/attachments/89694abf-1ef2-11eb-96b9-00505692583a/FG-200F-Series-QSG.pdf"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-440",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-440",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit",
+        "https://docs.paloaltonetworks.com/hardware/pa-400-hardware-reference/pa-400-firewall-overview/pa-400-front-panel",
+        "https://docs.paloaltonetworks.com/hardware/pa-400-hardware-reference/pa-400-firewall-overview/pa-400-back-panel"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-850",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-850",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit",
+        "https://docs.paloaltonetworks.com/hardware/pa-800-hardware-reference/pa-800-firewall-overview/pa-800-front-panel",
+        "https://docs.paloaltonetworks.com/hardware/pa-800-hardware-reference/pa-800-firewall-overview/pa-800-back-panel"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-1410",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-1410",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit",
+        "https://docs.paloaltonetworks.com/hardware/pa-1400-hardware-reference/pa-1400-series-overview/front-panel-1400-series",
+        "https://docs.paloaltonetworks.com/hardware/pa-1400-hardware-reference/pa-1400-series-overview/back-panel-1400-series"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-3220",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-3220",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit",
+        "https://docs.paloaltonetworks.com/hardware/pa-3200-hardware-reference/pa-3220-series-overview/front-panel-3200-series",
+        "https://docs.paloaltonetworks.com/hardware/pa-3200-hardware-reference/pa-3220-series-overview/back-panel-3200-series"
+      ]
+    },
+    {
+      "id": "cisco-c9200l-24t-4g",
+      "manufacturer": "Cisco",
+      "model": "C9200L-24T-4G",
+      "category": "switch",
+      "sourcePages": [
+        "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig/product_overview.html",
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9200L-24T-4G.yaml"
+      ]
+    },
+    {
+      "id": "cisco-c9200l-48p-4g",
+      "manufacturer": "Cisco",
+      "model": "C9200L-48P-4G",
+      "category": "switch",
+      "sourcePages": [
+        "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig/product_overview.html",
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9200L-48P-4G.yaml"
+      ]
+    },
+    {
+      "id": "cisco-isr4331",
+      "manufacturer": "Cisco",
+      "model": "ISR4331",
+      "category": "router",
+      "sourcePages": [
+        "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/hardware/installation/guide4400-4300/C4400_isr/Overview.html",
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ISR4331.yaml"
+      ]
+    },
+    {
+      "id": "aruba-jl675a",
+      "manufacturer": "HPE Aruba Networking",
+      "model": "JL675A",
+      "category": "switch",
+      "sourcePages": [
+        "https://www.hpe.com/int/en/collaterals/collateral.a00021859enw.html",
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6100-48G-POE4-4SFPP.yaml"
+      ]
+    },
+    {
+      "id": "aruba-jl682a",
+      "manufacturer": "HPE Aruba Networking",
+      "model": "JL682A",
+      "category": "switch",
+      "sourcePages": [
+        "https://support.hpe.com/hpesc/public/docDisplay?docId=a00101694en_us&docLocale=en_US&page=GUID-705FC4BE-DF4A-4563-BD9C-86FE62D6A455.html",
+        "https://www.hpe.com/us/en/collaterals/collateral.a50000620enw.html"
+      ]
+    },
+    {
+      "id": "aruba-r9y04a",
+      "manufacturer": "HPE Aruba Networking",
+      "model": "R9Y04A",
+      "category": "switch",
+      "sourcePages": [
+        "https://www.hpe.com/int/en/collaterals/collateral.a00021859enw.html",
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6100-48G-POE4-4SFPP-740W.yaml"
+      ]
+    },
+    {
+      "id": "synology-ds923plus",
+      "manufacturer": "Synology",
+      "model": "DS923+",
+      "category": "nas",
+      "sourcePages": [
+        "https://design.synology.com/resources/product",
+        "https://www.synology.com/en-global/support/download/DS923+"
+      ]
+    },
+    {
+      "id": "synology-ds925plus",
+      "manufacturer": "Synology",
+      "model": "DS925+",
+      "category": "nas",
+      "sourcePages": [
+        "https://www.synology.com/en-global/products/DS925+"
+      ]
+    },
+    {
+      "id": "synology-rs1221plus",
+      "manufacturer": "Synology",
+      "model": "RS1221+",
+      "category": "nas",
+      "sourcePages": [
+        "https://www.synology.com/en-global/products/RS1221+"
+      ]
+    },
+    {
+      "id": "qnap-ts464",
+      "manufacturer": "QNAP",
+      "model": "TS-464",
+      "category": "nas",
+      "sourcePages": [
+        "https://www.qnap.com/en-us/product/ts-464"
+      ]
+    },
+    {
+      "id": "qnap-ts873a-8g",
+      "manufacturer": "QNAP",
+      "model": "TS-873A-8G",
+      "category": "nas",
+      "sourcePages": [
+        "https://www.qnap.com/en-us/product/ts-873a",
+        "https://www.qnap.com/en-us/product/ts-873a/specs/hardware"
+      ]
+    },
+    {
+      "id": "qnap-ts464eu-8g",
+      "manufacturer": "QNAP",
+      "model": "TS-464eU-8G",
+      "category": "nas",
+      "sourcePages": [
+        "https://www.qnap.com/en/product/ts-464eu",
+        "https://www.qnap.com/en/product/ts-464eu/specs/hardware",
+        "https://marketing.qnap.com/resource/ts-x64eu-series-2/"
+      ]
+    },
+    {
+      "id": "startech-c6panelutp241uft",
+      "manufacturer": "StarTech.com",
+      "model": "C6PANELUTP241UFT",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://www.startech.com/en-us/cables/c6panelutp241uft"
+      ]
+    },
+    {
+      "id": "startech-cabshelf1u",
+      "manufacturer": "StarTech.com",
+      "model": "CABSHELF1U",
+      "category": "shelf",
+      "sourcePages": [
+        "https://www.startech.com/en-us/server-management/cabshelf1u"
+      ]
+    },
+    {
+      "id": "apc-ar3100",
+      "manufacturer": "APC by Schneider Electric",
+      "model": "AR3100",
+      "category": "rack",
+      "sourcePages": [
+        "https://www.se.com/us/en/product/AR3100/"
+      ]
+    },
+    {
+      "id": "apc-smt1500rmi2u",
+      "manufacturer": "APC by Schneider Electric",
+      "model": "SMT1500RMI2U",
+      "category": "ups",
+      "sourcePages": [
+        "https://www.se.com/nz/en/product/SMT1500RMI2U/"
+      ]
+    },
+    {
+      "id": "eaton-5px1500irt2ug2",
+      "manufacturer": "Eaton",
+      "model": "5PX1500IRT2UG2",
+      "category": "ups",
+      "sourcePages": [
+        "https://www.eaton.com/es/es-es/skuPage.5PX1500IRT2UG2.html"
+      ]
+    },
+    {
+      "id": "mikrotik-rb5009",
+      "manufacturer": "MikroTik",
+      "model": "RB5009UG+S+IN",
+      "category": "router",
+      "sourcePages": [
+        "https://mikrotik.com/product/rb5009ug_s_in"
+      ]
+    },
+    {
+      "id": "mikrotik-ccr2004",
+      "manufacturer": "MikroTik",
+      "model": "CCR2004-16G-2S+",
+      "category": "router",
+      "sourcePages": [
+        "https://mikrotik.com/product/ccr2004_16g_2splus"
+      ]
+    },
+    {
+      "id": "ubiquiti-udm-pro",
+      "manufacturer": "Ubiquiti",
+      "model": "UDM-Pro",
+      "category": "router",
+      "sourcePages": [
+        "https://techspecs.ui.com/unifi/cloud-gateways/udm-pro"
+      ]
+    },
+    {
+      "id": "ubiquiti-usw-24-poe",
+      "manufacturer": "Ubiquiti",
+      "model": "USW-24-POE",
+      "category": "switch",
+      "sourcePages": [
+        "https://techspecs.ui.com/unifi/switching/usw-24-poe"
+      ]
+    },
+    {
+      "id": "dell-r350",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R350",
+      "category": "server",
+      "sourcePages": [
+        "https://i.dell.com/sites/csdocuments/Product_Docs/en/Dell-EMC-PowerEdge-R350-Spec-sheet.pdf"
+      ]
+    },
+    {
+      "id": "hpe-dl360-gen10",
+      "manufacturer": "HPE",
+      "model": "ProLiant DL360 Gen10",
+      "category": "server",
+      "sourcePages": [
+        "https://community.hpe.com/t5/alliances/introducing-new-hpe-proliant-gen10-rack-servers/ba-p/6971440"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-410",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-410",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-415",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-415",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-445",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-445",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-450",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-450",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-460",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-460",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-3410",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-3410",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-3420",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-3420",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-3430",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-3430",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-3440",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-3440",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-5260",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-5260",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-5410",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-5410",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-5420",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-5420",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-5430",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-5430",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-5440",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-5440",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-5445",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-5445",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-5450",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-5450",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-7050",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-7050",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-1420",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-1420",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-3260",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-3260",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "palo-alto-pa-5580",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-5580",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.paloaltonetworks.com/company/press-kit"
+      ]
+    },
+    {
+      "id": "nb-56d658406c3821e4",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 1300-24P-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C1300-24P-4X.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1300-series-switches/nb-06-cat1300-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-be67a5901b5f1fb8",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 1300-48P-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C1300-48P-4X.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1300-series-switches/nb-06-cat1300-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-c6ac814fdd7b9934",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 9200L-24P-4G",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9200L-24P-4G.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-59ffa19030bec2db",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 9200L-48T-4G",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9200L-48T-4G.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-8ab74e30b670198e",
+      "manufacturer": "Cisco",
+      "model": "Catalyst C9200CX-12P-2X2G",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9200CX-12P-2X2G.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-5e6bc5b25105aac2",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 9300-24P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9300-24P.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/nb-06-cat9300-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-9d22e570931da32f",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 9300-48T",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9300-48T.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/nb-06-cat9300-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-703a133fe021a249",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 9300L-48P-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9300L-48P-4X.yaml"
+      ]
+    },
+    {
+      "id": "nb-8f68dd201f3c0c5e",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 9300X-24Y",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9300X-24Y.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/nb-06-cat9300-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-77e3ae7a8fab715b",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 9500-24Y4C",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9500-24Y4C.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9500-series-switches/nb-06-cat9500-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-b93fdf2565924f3e",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 9500-48Y4C",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C9500-48Y4C.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9500-series-switches/nb-06-cat9500-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-553b794d5e1846af",
+      "manufacturer": "Cisco",
+      "model": "Meraki MS120-24P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/Meraki-MS120-24P.yaml",
+        "https://meraki.cisco.com/lib/pdf/meraki_datasheet_ms120.pdf"
+      ]
+    },
+    {
+      "id": "nb-3a0dec7f06699680",
+      "manufacturer": "Cisco",
+      "model": "Meraki MS125-48FP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/Meraki-MS125-48FP.yaml",
+        "https://meraki.cisco.com/lib/pdf/meraki_datasheet_ms125.pdf"
+      ]
+    },
+    {
+      "id": "nb-e83c62d66ebe38fa",
+      "manufacturer": "Cisco",
+      "model": "Meraki MS225-48FP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/Meraki-MS225-48FP.yaml",
+        "https://meraki.cisco.com/lib/pdf/meraki_datasheet_ms225.pdf"
+      ]
+    },
+    {
+      "id": "nb-6ba786cfed3ab9a5",
+      "manufacturer": "Cisco",
+      "model": "Meraki MS350-24P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/Meraki-MS350-24P.yaml"
+      ]
+    },
+    {
+      "id": "nb-c3a2a8dfb0d28694",
+      "manufacturer": "Cisco",
+      "model": "Nexus 93180YC-FX",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/N9K-C93180YC-FX.yaml"
+      ]
+    },
+    {
+      "id": "nb-4c713694453b3ee3",
+      "manufacturer": "Cisco",
+      "model": "Nexus 93108TC-FX3",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/N9K-C93108TC-FX3.yaml"
+      ]
+    },
+    {
+      "id": "nb-5cfeedda20abb6ba",
+      "manufacturer": "Cisco",
+      "model": "Nexus 9336C-FX2",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/N9K-C9336C-FX2.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-742282.html"
+      ]
+    },
+    {
+      "id": "nb-028e1d1cc36b14e6",
+      "manufacturer": "Cisco",
+      "model": "Nexus 9504",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/N9K-C9504.yaml"
+      ]
+    },
+    {
+      "id": "nb-74505fc219eccc33",
+      "manufacturer": "Cisco",
+      "model": "ISR4321",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ISR4321.yaml"
+      ]
+    },
+    {
+      "id": "nb-c0a3827bad315c40",
+      "manufacturer": "Cisco",
+      "model": "ISR4351",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ISR4351.yaml"
+      ]
+    },
+    {
+      "id": "nb-16082636813a2c65",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 8300-1N1S-4T2X",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C8300-1N1S-4T2X.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8300-series-edge-platforms/datasheet-c78-744088.html"
+      ]
+    },
+    {
+      "id": "nb-ed10b6f53c36d127",
+      "manufacturer": "Cisco",
+      "model": "ASR1001-X",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1001-X.yaml"
+      ]
+    },
+    {
+      "id": "nb-f05a32f1a3f1d292",
+      "manufacturer": "Cisco",
+      "model": "Firepower 2110",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/Firepower-2110.yaml"
+      ]
+    },
+    {
+      "id": "nb-823b267b5cd72e2c",
+      "manufacturer": "Cisco",
+      "model": "FPR3110-NGFW-K9",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/FPR3110-NGFW-K9.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/security/firewalls/secure-firewall-3100-series-ds.html"
+      ]
+    },
+    {
+      "id": "nb-44d618c14f1ee6e3",
+      "manufacturer": "Cisco",
+      "model": "FPR4112-NGFW-K9",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/FPR4112-NGFW-K9.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/security/firepower-4100-series/datasheet-c78-742474.html"
+      ]
+    },
+    {
+      "id": "nb-90ee2ca04fd0e2d5",
+      "manufacturer": "HPE",
+      "model": "Aruba 6000-24G-POE4-4SFP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6000-24G-POE4-4SFP.yaml"
+      ]
+    },
+    {
+      "id": "nb-f505dfd941515251",
+      "manufacturer": "HPE",
+      "model": "Aruba 6000-48G-4SFP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6000-48G-4SFP.yaml"
+      ]
+    },
+    {
+      "id": "nb-f6915d5d3881b84d",
+      "manufacturer": "HPE",
+      "model": "Aruba 6100-24G-4SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6100-24G-4SFPP.yaml"
+      ]
+    },
+    {
+      "id": "nb-adf2142c84f07df9",
+      "manufacturer": "HPE",
+      "model": "Aruba 6100-48G-4SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6100-48G-4SFPP.yaml"
+      ]
+    },
+    {
+      "id": "nb-b332648f50e7f0ed",
+      "manufacturer": "HPE",
+      "model": "Aruba 6200F-24G-4SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6200F-24G-4SFPP.yaml"
+      ]
+    },
+    {
+      "id": "nb-fedc94752959d1f9",
+      "manufacturer": "HPE",
+      "model": "Aruba 6200F-48G-4SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6200F-48G-4SFPP.yaml"
+      ]
+    },
+    {
+      "id": "nb-086e891acea2817b",
+      "manufacturer": "HPE",
+      "model": "Aruba 6300F-24G-4SFP56",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6300F-24G-4SFP56.yaml",
+        "https://www.arubanetworks.com/assets/ds/DS_6300Series.pdf"
+      ]
+    },
+    {
+      "id": "nb-51dcd09a4e5de9b0",
+      "manufacturer": "HPE",
+      "model": "Aruba 6300F-48G-POE4-4SFP56",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6300F-48G-POE4-4SFP56.yaml",
+        "https://www.arubanetworks.com/assets/ds/DS_6300Series.pdf"
+      ]
+    },
+    {
+      "id": "nb-460527db3780ce3d",
+      "manufacturer": "HPE",
+      "model": "Aruba 6300M-24G-4SFP56",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6300M-24G-4SFP56.yaml",
+        "https://www.arubanetworks.com/assets/ds/DS_6300Series.pdf"
+      ]
+    },
+    {
+      "id": "nb-75df9fe3366f5eba",
+      "manufacturer": "HPE",
+      "model": "Aruba 6300M-48SR10-POE8-4QSFP28",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6300M-48SR10-POE8-4QSFP28.yaml",
+        "https://www.arubanetworks.com/assets/ds/DS_6300Series.pdf"
+      ]
+    },
+    {
+      "id": "nb-6de5e10b8660c81a",
+      "manufacturer": "HPE",
+      "model": "Aruba 8325-32C Front-to-Back",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-8325-32C-Front-to-Back.yaml"
+      ]
+    },
+    {
+      "id": "nb-75adec80da5ff093",
+      "manufacturer": "HPE",
+      "model": "Aruba 8360-48Y6C Front-to-Back",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-8360-48Y6C-Front-to-Back.yaml"
+      ]
+    },
+    {
+      "id": "nb-5a8fa3b1908ef3b0",
+      "manufacturer": "HPE",
+      "model": "Aruba 2930F-24G-4SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2930F-24G-4SFPP.yaml"
+      ]
+    },
+    {
+      "id": "nb-4b362a024923dd51",
+      "manufacturer": "HPE",
+      "model": "Aruba 2930F-48G-PoE+-4SFP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2930F-48G-PoEP-4SFP.yaml"
+      ]
+    },
+    {
+      "id": "nb-1f54926bad83fb98",
+      "manufacturer": "HPE",
+      "model": "Aruba 2530-24G",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2530-24G.yaml",
+        "https://support.hpe.com/hpesc/public/docDisplay?docId=emr_na-c03624915#N11007"
+      ]
+    },
+    {
+      "id": "nb-0228f0e0bca0aab5",
+      "manufacturer": "HPE",
+      "model": "Aruba 2540-48G-4SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2540-48G-4SFPP.yaml",
+        "https://www.arubanetworks.com/assets/ds/DS_2540SwitchSeries.pdf"
+      ]
+    },
+    {
+      "id": "nb-9e1720811fc797a6",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 50G",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-50G.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortigate-fortiwifi-50g-series.pdf"
+      ]
+    },
+    {
+      "id": "nb-6686146b0b725562",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 60E",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-60E.yaml"
+      ]
+    },
+    {
+      "id": "nb-8db15759990d4860",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 100E",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-100E.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiGate_100E_Series.pdf"
+      ]
+    },
+    {
+      "id": "nb-1e82877e2cea9014",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 120G",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-120G.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortigate-120g-series.pdf"
+      ]
+    },
+    {
+      "id": "nb-908ff89d52fbb695",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 200D",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-200D.yaml"
+      ]
+    },
+    {
+      "id": "nb-84fd5cab1c90f21e",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 400E",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-400E.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiGate_400E.pdf"
+      ]
+    },
+    {
+      "id": "nb-083677535cff6791",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 400F",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-400F.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortigate-400f-series.pdf"
+      ]
+    },
+    {
+      "id": "nb-56498b6a7c56d483",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 600F",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-600F.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortigate-600f-series.pdf"
+      ]
+    },
+    {
+      "id": "nb-e5b040471a978eae",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 1000F",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-1000F.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortigate-1000f-series.pdf#page=7/"
+      ]
+    },
+    {
+      "id": "nb-f48a3b395614b14f",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 2600F",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-2600F.yaml"
+      ]
+    },
+    {
+      "id": "nb-78642bb08e8fc74c",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 3001F",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-3001F.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortigate-3000f-series.pdf"
+      ]
+    },
+    {
+      "id": "nb-015e42f0df73715b",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 3701F",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-3701F.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortigate-3700f-series.pdf"
+      ]
+    },
+    {
+      "id": "nb-920e5812c8fd4f87",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 80D",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-80D.yaml"
+      ]
+    },
+    {
+      "id": "nb-dfed66cafdc81794",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 140E-POE",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-140E-POE.yaml"
+      ]
+    },
+    {
+      "id": "nb-02ff57a586c2aafd",
+      "manufacturer": "Sophos",
+      "model": "XGS 107",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Sophos/XGS-107.yaml",
+        "https://assets.sophos.com/X24WTUEQ/at/7wf85vbnnqf939bbhtxgfk/sophos-firewall-br.pdf"
+      ]
+    },
+    {
+      "id": "nb-9b7461820cabfd63",
+      "manufacturer": "Sophos",
+      "model": "XGS 126",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Sophos/XGS-126.yaml",
+        "https://assets.sophos.com/X24WTUEQ/at/7wf85vbnnqf939bbhtxgfk/sophos-firewall-br.pdf"
+      ]
+    },
+    {
+      "id": "nb-60535d6487d8c516",
+      "manufacturer": "Sophos",
+      "model": "XGS 136",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Sophos/XGS-136.yaml",
+        "https://assets.sophos.com/X24WTUEQ/at/7wf85vbnnqf939bbhtxgfk/sophos-firewall-br.pdf"
+      ]
+    },
+    {
+      "id": "nb-0cd3ea127c2ba95f",
+      "manufacturer": "Sophos",
+      "model": "XGS 4300",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Sophos/XGS-4300.yaml",
+        "https://assets.sophos.com/X24WTUEQ/at/7wf85vbnnqf939bbhtxgfk/sophos-firewall-br.pdf"
+      ]
+    },
+    {
+      "id": "nb-72873d5b8a0b96c9",
+      "manufacturer": "Juniper",
+      "model": "EX2300-24T",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX2300-24T.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex2300-ethernet-switch-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-d4d0d201f9d0e748",
+      "manufacturer": "Juniper",
+      "model": "EX2300-48P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX2300-48P.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex2300-ethernet-switch-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-9960b794c01f49b4",
+      "manufacturer": "Juniper",
+      "model": "EX3400-48P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX3400-48P.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex3400-ethernet-switch-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-f6e0bb626755510b",
+      "manufacturer": "Juniper",
+      "model": "EX4100-48P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX4100-48P.yaml",
+        "https://www.juniper.net/us/en/products/switches/ex-series/ex4100-line-of-ethernet-switches-datasheet.html"
+      ]
+    },
+    {
+      "id": "nb-68e3c1e22fd81ed1",
+      "manufacturer": "Juniper",
+      "model": "EX4400-48F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX4400-48F.yaml",
+        "https://www.juniper.net/documentation/us/en/hardware/ex4400/topics/topic-map/ex4400-system-overview.html"
+      ]
+    },
+    {
+      "id": "nb-56979e7752a9d231",
+      "manufacturer": "Juniper",
+      "model": "QFX5120-48Y-AFI2",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/QFX5120-48Y-AFI2.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/qfx5120-ethernet-switch-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-f0537901a8b1edc9",
+      "manufacturer": "Juniper",
+      "model": "QFX5100-48S-6Q",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/QFX5100-48S-6Q.yaml"
+      ]
+    },
+    {
+      "id": "nb-56ae91b8f6b2852d",
+      "manufacturer": "Juniper",
+      "model": "MX204",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/MX204.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/routers/mx-204-240-480-960-series-universal-routing-platforms-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-f80e0cda0a334724",
+      "manufacturer": "Juniper",
+      "model": "SRX345",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/SRX345.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/security/srx300-line-services-gateways-branch-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-ec11fe6fea97c18d",
+      "manufacturer": "Juniper",
+      "model": "SRX380",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/SRX380.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/security/srx300-line-services-gateways-branch-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-c97c123a9fc99169",
+      "manufacturer": "MikroTik",
+      "model": "CCR2004-1G-12S+2XS",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/CCR2004-1G-12S-Plus-2XS.yaml",
+        "https://mikrotik.com/product/ccr2004_1g_12s_2xs"
+      ]
+    },
+    {
+      "id": "nb-4eb82851961f61b1",
+      "manufacturer": "MikroTik",
+      "model": "CCR2116-12G-4S+",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/CCR2116-12G-4S-Plus.yaml",
+        "https://mikrotik.com/product/ccr2116_12g_4splus"
+      ]
+    },
+    {
+      "id": "nb-d827296bb530c875",
+      "manufacturer": "MikroTik",
+      "model": "CCR2216-1G-12XS-2XQ",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/CCR2216-1G-12XS-2XQ.yaml",
+        "https://mikrotik.com/product/ccr2216_1g_12xs_2xq"
+      ]
+    },
+    {
+      "id": "nb-8daa73dfc2be1ec5",
+      "manufacturer": "MikroTik",
+      "model": "CRS309-1G-8S+IN",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/CRS309-1G-8S-Plus-IN.yaml"
+      ]
+    },
+    {
+      "id": "nb-f390c56e840a7483",
+      "manufacturer": "MikroTik",
+      "model": "CRS317-1G-16S+RM",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/CRS317-1G-16S-Plus-RM.yaml"
+      ]
+    },
+    {
+      "id": "nb-b789b2ec357d683f",
+      "manufacturer": "MikroTik",
+      "model": "CRS326-24G-2S+RM",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/CRS326-24G-2S-Plus-RM.yaml",
+        "https://mikrotik.com/product/CRS326-24G-2SplusRM#fndtn-specifications"
+      ]
+    },
+    {
+      "id": "nb-00de5627d2ff4666",
+      "manufacturer": "MikroTik",
+      "model": "CRS328-24P-4S+RM",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/CRS328-24P-4S-Plus-RM.yaml"
+      ]
+    },
+    {
+      "id": "nb-026eafe7e1684a8c",
+      "manufacturer": "MikroTik",
+      "model": "RB4011iGS+RM",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/RB4011iGS-Plus-RM.yaml",
+        "https://mikrotik.com/product/rb4011igs_rm"
+      ]
+    },
+    {
+      "id": "nb-5f2f318828e8a714",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Cloud Gateway Ultra",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/UCG-Ultra.yaml",
+        "https://techspecs.ui.com/unifi/cloud-gateways/ucg-ultra?subcategory=all-cloud-gateways"
+      ]
+    },
+    {
+      "id": "nb-67a1252a6921143c",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Dream Machine Pro Special Edition",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/UniFi-Dream-Machine-Pro-Special-Edition.yaml",
+        "https://techspecs.ui.com/unifi/unifi-cloud-gateways/udm-se"
+      ]
+    },
+    {
+      "id": "nb-1dda3b7e93aeec53",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Dream Machine Pro Max",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/UniFi-Dream-Machine-Pro-Max.yaml",
+        "https://techspecs.ui.com/unifi/unifi-cloud-gateways/udm-pro-max"
+      ]
+    },
+    {
+      "id": "nb-eaa7b5f1797fad5b",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Switch Pro Max 24 PoE",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-Max-24-PoE.yaml",
+        "https://techspecs.ui.com/unifi/switching/usw-pro-max-24-poe"
+      ]
+    },
+    {
+      "id": "nb-f83ce1b7723518c4",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Switch Pro Max 48 PoE",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-Max-48-PoE.yaml",
+        "https://techspecs.ui.com/unifi/switching/usw-pro-max-48-poe"
+      ]
+    },
+    {
+      "id": "nb-17bc3210897c1128",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Switch Aggregation",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Aggregation.yaml",
+        "https://techspecs.ui.com/unifi/switching/usw-aggregation"
+      ]
+    },
+    {
+      "id": "nb-0c303ce9bca6c601",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Switch Enterprise 24 PoE",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Enterprise-24-PoE.yaml",
+        "https://techspecs.ui.com/unifi/switching/usw-enterprise-24-poe"
+      ]
+    },
+    {
+      "id": "nb-91b2bc4ecae870e8",
+      "manufacturer": "Ubiquiti",
+      "model": "UNAS Pro",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/UNAS-Pro.yaml",
+        "https://techspecs.ui.com/unifi/integrations/unas-pro"
+      ]
+    },
+    {
+      "id": "nb-f2e21430ea7914ec",
+      "manufacturer": "Ubiquiti",
+      "model": "U7 Pro Max",
+      "category": "ap",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/U7-Pro-Max.yaml",
+        "https://store.ui.com/us/en/category/wifi-flagship/products/u7-pro-max"
+      ]
+    },
+    {
+      "id": "nb-bd9d2291941ee640",
+      "manufacturer": "Ubiquiti",
+      "model": "U7 Outdoor",
+      "category": "ap",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/U7-Outdoor.yaml"
+      ]
+    },
+    {
+      "id": "nb-835098cd70ea8623",
+      "manufacturer": "Synology",
+      "model": "DS920+",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/DS920+.yaml",
+        "https://www.synology.com/de-de/products/DS920+#specs"
+      ]
+    },
+    {
+      "id": "nb-5a7762f3d43d50a1",
+      "manufacturer": "Synology",
+      "model": "FS6400",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/FS6400.yaml",
+        "https://global.synologydownload.com/download/Document/Hardware/DataSheet/FlashStation/20-year/FS6400/enu/Synology_FS6400_Data_Sheet_enu.pdf"
+      ]
+    },
+    {
+      "id": "nb-0f1a40512477bddd",
+      "manufacturer": "Synology",
+      "model": "RS1221RP+",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/RS1221RP-plus.yaml",
+        "https://global.synologydownload.com/download/Document/Hardware/DataSheet/RackStation/21-year/RS1221%2B/ger/Synology_RS1221%2B_Data_Sheet_ger.pdf"
+      ]
+    },
+    {
+      "id": "nb-c1018c274ea7cca7",
+      "manufacturer": "Synology",
+      "model": "RS3621xs+",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/RS3621xs+.yaml",
+        "https://global.synologydownload.com/download/Document/Hardware/DataSheet/RackStation/21-year/RS3621xs%2B/enu/Synology_RS3621xs%2B_Data_Sheet_enu.pdf"
+      ]
+    },
+    {
+      "id": "nb-8fc891fcbbe1c157",
+      "manufacturer": "Synology",
+      "model": "RS819",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/RS819.yaml",
+        "https://global.download.synology.com/download/Document/Hardware/DataSheet/RackStation/19-year/RS819/enu/Synology_RS819_Data_Sheet_enu.pdf"
+      ]
+    },
+    {
+      "id": "nb-3c48ca91bd3e9e90",
+      "manufacturer": "Synology",
+      "model": "DS918+",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/DS918+.yaml",
+        "https://www.synology.com/en-us/support/download/DS918+"
+      ]
+    },
+    {
+      "id": "nb-41ebe669d5a4de72",
+      "manufacturer": "QNAP",
+      "model": "TS-1232PXU-RP",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/QNAP/TS-1232PXU-RP.yaml",
+        "https://www.qnap.com/en/product/ts-1232pxu-rp/specs/hardware"
+      ]
+    },
+    {
+      "id": "nb-15e2a5226a792094",
+      "manufacturer": "QNAP",
+      "model": "TS-432PXU",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/QNAP/TS-432PXU.yaml",
+        "https://www.qnap.com/en/product/ts-432pxu/specs/hardware"
+      ]
+    },
+    {
+      "id": "nb-bf41539b419069e8",
+      "manufacturer": "QNAP",
+      "model": "TS-432PXU-RP",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/QNAP/TS-432PXU-RP.yaml",
+        "https://www.qnap.com/en/product/ts-432pxu-rp/specs/hardware"
+      ]
+    },
+    {
+      "id": "nb-912e151ce17b6f2c",
+      "manufacturer": "QNAP",
+      "model": "TS-832PXU-RP",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/QNAP/TS-832PXU-RP.yaml",
+        "https://www.qnap.com/en/product/ts-832pxu-rp/specs/hardware"
+      ]
+    },
+    {
+      "id": "nb-7a9733566074ec15",
+      "manufacturer": "QNAP",
+      "model": "TS-883XU-RP",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/QNAP/TS-883XU-RP.yaml",
+        "https://www.qnap.com/en/product/ts-883xu-rp/specs/hardware"
+      ]
+    },
+    {
+      "id": "nb-ce11d1eae1be7887",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R640",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R640.yaml"
+      ]
+    },
+    {
+      "id": "nb-1949dff7c63dc370",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R6515",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R6515.yaml"
+      ]
+    },
+    {
+      "id": "nb-672799eaa4f759d6",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R7715",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R7715.yaml",
+        "https://www.delltechnologies.com/asset/en-us/products/servers/technical-support/poweredge-r7715-technical-guide.pdf"
+      ]
+    },
+    {
+      "id": "nb-fb93dfe85c1f7a8b",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R7515",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R7515.yaml"
+      ]
+    },
+    {
+      "id": "nb-33c7e52f1cb00564",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R7525",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R7525.yaml",
+        "https://i.dell.com/sites/csdocuments/Product_Docs/en/poweredge-r7525-spec-sheet.pdf",
+        "https://i.dell.com/sites/csdocuments/Product_Docs/en/dell-emc-poweredge-r7525-technical-guide.pdf"
+      ]
+    },
+    {
+      "id": "nb-c263db2c3b4a2925",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R760xd2",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R760xd2.yaml",
+        "https://www.delltechnologies.com/asset/en-gb/products/servers/technical-support/poweredge-r760xd2-spec-sheet.pdf",
+        "https://www.delltechnologies.com/asset/en-gb/products/servers/technical-support/poweredge-r760xd2-technical-guide.pdf"
+      ]
+    },
+    {
+      "id": "nb-ecabe45d7f7fcc48",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R7615",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R7615.yaml",
+        "https://www.delltechnologies.com/asset/en-gb/solutions/oem-solutions/technical-support/poweredge-r7615-oem-spec-sheet.pdf",
+        "https://www.delltechnologies.com/asset/en-us/products/servers/technical-support/poweredge-r7615-technical-guide.pdf"
+      ]
+    },
+    {
+      "id": "nb-948fad2f13709dc9",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R7725",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R7725.yaml",
+        "https://www.delltechnologies.com/asset/en-us/products/servers/technical-support/poweredge-r7725-technical-guide.pdf"
+      ]
+    },
+    {
+      "id": "nb-c1f158f64ea1ee8a",
+      "manufacturer": "HPE",
+      "model": "ProLiant DL360 Gen11",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-DL360-Gen11.yaml",
+        "https://www.hpe.com/psnow/doc/a50004306enw"
+      ]
+    },
+    {
+      "id": "nb-149a66cfbe4b740e",
+      "manufacturer": "HPE",
+      "model": "ProLiant DL380 Gen10",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-DL380-Gen10.yaml",
+        "https://www.hpe.com/psnow/doc/a00008180enw.pdf"
+      ]
+    },
+    {
+      "id": "nb-14bfeedc875ce4de",
+      "manufacturer": "HPE",
+      "model": "ProLiant DL380 Gen11",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-DL380-Gen11.yaml",
+        "https://www.hpe.com/psnow/doc/a50004307enw.pdf"
+      ]
+    },
+    {
+      "id": "nb-ff98cf8f1bf55eb7",
+      "manufacturer": "HPE",
+      "model": "ProLiant DL385 Gen10 Plus v2",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-DL385-Gen10-Plus-v2.yaml",
+        "https://www.hpe.com/psnow/doc/a50002560enw"
+      ]
+    },
+    {
+      "id": "nb-9127f2021330b9a8",
+      "manufacturer": "HPE",
+      "model": "ProLiant ML350 Gen10",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-ML350-Gen10.yaml",
+        "https://www.hpe.com/psnow/doc/a00021852"
+      ]
+    },
+    {
+      "id": "nb-eda39086bd9e9cda",
+      "manufacturer": "HPE",
+      "model": "ProLiant DL345 Gen11",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-DL345-Gen11.yaml",
+        "https://www.hpe.com/psnow/doc/a50004298enw"
+      ]
+    },
+    {
+      "id": "nb-87abdfb9366e4dcc",
+      "manufacturer": "Lenovo",
+      "model": "ThinkSystem SR250 V2",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Lenovo/ThinkSystem-SR250-v2.yaml",
+        "https://lenovopress.lenovo.com/lp1549-thinksystem-sr250-v2"
+      ]
+    },
+    {
+      "id": "nb-5ceaeace0476cada",
+      "manufacturer": "Lenovo",
+      "model": "ThinkSystem SR630 V2",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Lenovo/ThinkSystem-SR630-v2.yaml",
+        "https://lenovopress.com/lp1391"
+      ]
+    },
+    {
+      "id": "nb-e9b61460b1aac8e0",
+      "manufacturer": "Lenovo",
+      "model": "ThinkSystem SR630 V3",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Lenovo/ThinkSystem-SR630-v3.yaml",
+        "https://lenovopress.com/lp1600"
+      ]
+    },
+    {
+      "id": "nb-d6c7e4ca54f24095",
+      "manufacturer": "Lenovo",
+      "model": "ThinkSystem SR645",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Lenovo/ThinkSystem-SR645.yaml",
+        "https://lenovopress.lenovo.com/lp1280.pdf"
+      ]
+    },
+    {
+      "id": "nb-7b7fd92e11204896",
+      "manufacturer": "Supermicro",
+      "model": "AS-1124US-TNRP",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Supermicro/AS-1124US-TNRP.yaml"
+      ]
+    },
+    {
+      "id": "nb-15047e48f0df3f18",
+      "manufacturer": "Supermicro",
+      "model": "AS-2115HS-TNR",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Supermicro/AS-2115HS-TNR.yaml"
+      ]
+    },
+    {
+      "id": "nb-58396084a7d0cb50",
+      "manufacturer": "Supermicro",
+      "model": "SuperServer 5019D-FN8TP",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Supermicro/SYS-5019D-FN8TP.yaml",
+        "https://www.supermicro.com/products/system/1u/5019/SYS-5019D-FN8TP.cfm"
+      ]
+    },
+    {
+      "id": "nb-35d87f3fc5c78828",
+      "manufacturer": "Supermicro",
+      "model": "Storage SuperServer SSG-610P-ACR12N4H",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Supermicro/SSG-610P-ACR12N4H.yaml",
+        "https://www.supermicro.com/en/products/system/megadc/1u/ssg-610p-acr12n4h"
+      ]
+    },
+    {
+      "id": "nb-e195af6788f9b56c",
+      "manufacturer": "APC",
+      "model": "SMT3000RMI2UC",
+      "category": "ups",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/SMT3000RMI2UC.yaml"
+      ]
+    },
+    {
+      "id": "nb-1157b9a10bc8e5f4",
+      "manufacturer": "APC",
+      "model": "SMX3000RMLV2U",
+      "category": "ups",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/SMX3000RMLV2U.yaml"
+      ]
+    },
+    {
+      "id": "nb-f9fc50287eafd86c",
+      "manufacturer": "APC",
+      "model": "Smart-UPS SRT5KRMXLT",
+      "category": "ups",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/SRT5KRMXLT.yaml"
+      ]
+    },
+    {
+      "id": "nb-c91a00ac9965db90",
+      "manufacturer": "APC",
+      "model": "SMT2200RM2U",
+      "category": "ups",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/SMT2200RM2U.yaml"
+      ]
+    },
+    {
+      "id": "nb-8311f81875534b26",
+      "manufacturer": "APC",
+      "model": "AP7950B",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP7950B.yaml",
+        "https://www.apc.com/us/en/download/document/990-5833_EN/"
+      ]
+    },
+    {
+      "id": "nb-15a85a8a3b05a92f",
+      "manufacturer": "APC",
+      "model": "AP6031A",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP6031A.yaml"
+      ]
+    },
+    {
+      "id": "nb-19ed1459663d3e17",
+      "manufacturer": "Eaton",
+      "model": "5PX1500iRT",
+      "category": "ups",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Eaton/5PX1500IRT.yaml",
+        "https://www.eaton.com/us/en-us/skuPage.5PX1500IRT.pdf"
+      ]
+    },
+    {
+      "id": "nb-f5d26f8fec76743c",
+      "manufacturer": "Eaton",
+      "model": "9PX3000iRT2U",
+      "category": "ups",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Eaton/9PX3000iRT2U.yaml",
+        "https://www.eaton.com/content/dam/eaton/products/backup-power-ups-surge-it-power-distribution/backup-power-ups/eaton-9px-ups/eaton-9px-1-3kva-ups-manual.pdf"
+      ]
+    },
+    {
+      "id": "nb-d3866e263332a4fc",
+      "manufacturer": "Eaton",
+      "model": "9PX3000iRT3U",
+      "category": "ups",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Eaton/9PX3000iRT3U.yaml",
+        "https://www.eaton.com/content/dam/eaton/products/backup-power-ups-surge-it-power-distribution/backup-power-ups/eaton-9px-ups/eaton-9px-1-3kva-ups-manual.pdf"
+      ]
+    },
+    {
+      "id": "nb-d9eff11e7e0c11f7",
+      "manufacturer": "Panduit",
+      "model": "Cat 6 Punchdown Patch Panel, 24 Ports, 1 RU, Black",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/DP24688TGY.yaml"
+      ]
+    },
+    {
+      "id": "nb-4b2e4c72b9d36b73",
+      "manufacturer": "Panduit",
+      "model": "Cat 6A Punchdown Patch Panel, 48 Ports, 2 RU, Black",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/DP486X88TGY.yaml"
+      ]
+    },
+    {
+      "id": "nb-c391d0a9345caadb",
+      "manufacturer": "Panduit",
+      "model": "Mini-Com Flush Mount Angled Patch Panel (24 Port, 1RU)",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/CPPA24FMWBLY.yaml"
+      ]
+    },
+    {
+      "id": "nb-47531f3ce888df83",
+      "manufacturer": "Panduit",
+      "model": "Mini-Com High Density Patch Panel (48 Port, 1RU)",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/CPP48HDEWBL.yaml"
+      ]
+    },
+    {
+      "id": "nb-bdf6ab2dce05aee0",
+      "manufacturer": "Panduit",
+      "model": "Opticom Rack Mount Enclosure, Black, 1 RU, 3 FAP/Cassette Slots",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/FRME1U.yaml"
+      ]
+    },
+    {
+      "id": "nb-29ce493b266db9c3",
+      "manufacturer": "Panduit",
+      "model": "Opticom Rack Mount Enclosure, Black, 2 RU, 6 FAP/Cassette Slots",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/FRME2U.yaml"
+      ]
+    },
+    {
+      "id": "nb-229917b69a037991",
+      "manufacturer": "WatchGuard",
+      "model": "Firebox T25",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/WatchGuard/Firebox-T25.yaml",
+        "https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Hardware-Guides/firebox-t25-hardware-guide.html"
+      ]
+    },
+    {
+      "id": "nb-6c1be13449ccaccb",
+      "manufacturer": "WatchGuard",
+      "model": "Firebox T45",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/WatchGuard/Firebox-T45.yaml",
+        "https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Hardware-Guides/firebox-t45-hardware-guide.html"
+      ]
+    },
+    {
+      "id": "nb-afb6728ab77880b7",
+      "manufacturer": "WatchGuard",
+      "model": "M270",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/WatchGuard/M270.yaml"
+      ]
+    },
+    {
+      "id": "nb-c5937f7093956ec3",
+      "manufacturer": "Check Point",
+      "model": "SG7000",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Check Point/SG7000.yaml",
+        "https://www.checkpoint.com/downloads/products/7000-security-gateway-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-79c9c5a3726513c9",
+      "manufacturer": "Check Point",
+      "model": "SG16000",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Check Point/SG16000.yaml",
+        "https://www.checkpoint.com/downloads/products/16000-security-gateway-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-7e1c09817aeccd5f",
+      "manufacturer": "Netgear",
+      "model": "GS308EP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Netgear/GS308EP.yaml",
+        "https://www.netgear.com/business/wired/switches/easy-smart/gs308ep/"
+      ]
+    },
+    {
+      "id": "nb-858c4b2d8df65bb9",
+      "manufacturer": "Netgear",
+      "model": "S3300-28X-PoE+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Netgear/GS728TXP.yaml",
+        "https://www.netgear.com/support/product/s3300-28x-poeplus%20gs728txp/"
+      ]
+    },
+    {
+      "id": "nb-7d81ebcda392315d",
+      "manufacturer": "Netgear",
+      "model": "S3300-52X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Netgear/GS752TX.yaml",
+        "https://www.netgear.com/support/product/s3300-52x%20gs752tx/"
+      ]
+    },
+    {
+      "id": "nb-0e0d436b707c6222",
+      "manufacturer": "D-Link",
+      "model": "DGS-3130-54PS",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/D-Link/DGS-3130-54PS.yaml",
+        "https://eu.dlink.com/de/de/products/dgs-3130-gigabit-layer-3-stackable-managed-switches"
+      ]
+    },
+    {
+      "id": "nb-cbcbd6a95a949d7a",
+      "manufacturer": "D-Link",
+      "model": "DXS-3400-24TC",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/D-Link/DXS-3400-24TC.yaml",
+        "https://eu.dlink.com/it/it/products/dxs-3400-series-top-of-rack-10-gigabit-stackable-managed-switches"
+      ]
+    },
+    {
+      "id": "nb-2f1c864cfa97acee",
+      "manufacturer": "TP-Link",
+      "model": "SG3218XP-M2 V1",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/TP-Link/SG3218XP-M2-V1.yaml",
+        "https://www.omadanetworks.com/us/business-networking/omada-switch-access-pro/sg3218xp-m2/"
+      ]
+    },
+    {
+      "id": "nb-9e6429de560eb723",
+      "manufacturer": "TP-Link",
+      "model": "TL-SG105E",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/TP-Link/TL-SG105E.yaml",
+        "https://www.tp-link.com/us/home-networking/5-port-switch/tl-sg105e/#specifications"
+      ]
+    },
+    {
+      "id": "nb-a02305d3072dc01b",
+      "manufacturer": "Arista",
+      "model": "CCS-720XP-24Y6-2F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-720XP-24Y6-2F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720XP-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-1629a1d59aad162f",
+      "manufacturer": "Arista",
+      "model": "CCS-720DP-48ZS-2F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-720DP-48ZS-2F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720D-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-40628e190c9e9ada",
+      "manufacturer": "Arista",
+      "model": "DCS-7050SX3-48YC8-F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7050SX3-48YC8-F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/7050X3-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-f0851cec3521e33f",
+      "manufacturer": "Arista",
+      "model": "DCS-7060CX2-32S-F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7060CX2-32S-F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/7060X_7260X_DS.pdf"
+      ]
+    },
+    {
+      "id": "nb-8a9952b05c0840d1",
+      "manufacturer": "Arista",
+      "model": "DCS-7280SR3-48YC8-F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7280SR3-48YC8-F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/7280R3-Data-Sheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-1e541b78ab2e12a9",
+      "manufacturer": "Arista",
+      "model": "DCS-7160-48YC6-F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7160-48YC6-F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/7160-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-be59e710a51d5844",
+      "manufacturer": "NetApp",
+      "model": "AFF A150",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/NetApp/aff-a150.yaml"
+      ]
+    },
+    {
+      "id": "nb-fbfb065dfbbbb4ca",
+      "manufacturer": "NetApp",
+      "model": "FAS2720",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/NetApp/FAS2720.yaml"
+      ]
+    },
+    {
+      "id": "nb-7e5c43b083d87aa3",
+      "manufacturer": "NetApp",
+      "model": "StorageGRID SG5812",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/NetApp/storagegrid-sg5812.yaml"
+      ]
+    },
+    {
+      "id": "nb-949bb6f1695a8037",
+      "manufacturer": "Huawei",
+      "model": "AR6140-S",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/AR6140-S.yaml",
+        "https://support.huawei.com/enterprise/br/doc/EDOC1100041787/fa2e2216"
+      ]
+    },
+    {
+      "id": "nb-d45ace2059d491dd",
+      "manufacturer": "Huawei",
+      "model": "CloudEngine S5732-H48UM4Y2CZ-V2",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/CloudEngine-S5732-H48UM4Y2CZ-V2.yaml",
+        "https://support.huawei.com/enterprise/en/doc/EDOC1100277349/1561a76b/s5732-h48um4y2cz-v2-02354vbu"
+      ]
+    },
+    {
+      "id": "nb-a864e7299035e225",
+      "manufacturer": "Huawei",
+      "model": "S6730-H24X4Y4C",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/S6730-H24X4Y4C.yaml",
+        "https://support.huawei.com/enterprise/en/doc/EDOC1000013621/baf15fb9/s6730-h24x4y4c-02353nrd"
+      ]
+    },
+    {
+      "id": "nb-b3dc322f7f5ffa4d",
+      "manufacturer": "Extreme Networks",
+      "model": "4220-24P-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4220-24P-4X.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+      ]
+    },
+    {
+      "id": "nb-dc6cdf07e279b4a0",
+      "manufacturer": "Extreme Networks",
+      "model": "5320-48P-8XE",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/5320-48P-8XE.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/d474173d28554fb5925dc4e26312c8fe?v=c6d9813f"
+      ]
+    },
+    {
+      "id": "nb-b00080f2380582f6",
+      "manufacturer": "Extreme Networks",
+      "model": "X440-G2-24p-10GE4",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/X440-G2-24p-10GE4.yaml",
+        "https://www.extremenetworks.com/product/x440-g2/"
+      ]
+    },
+    {
+      "id": "nb-4d5610318b7474da",
+      "manufacturer": "Extreme Networks",
+      "model": "X590-24x-1q-2c",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/X590-24x-1q-2c.yaml",
+        "https://documentation.extremenetworks.com/summit/GUID-DB674A0E-FD84-4609-BC1B-5D32AFB95295.shtml"
+      ]
+    },
+    {
+      "id": "nb-6d4a191cda45f6d1",
+      "manufacturer": "Extreme Networks",
+      "model": "X695-48Y-8C",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/X695-48Y-8C.yaml"
+      ]
+    },
+    {
+      "id": "sonicwall-tz370w",
+      "manufacturer": "SonicWall",
+      "model": "TZ370W",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.sonicwall.com/products/firewalls/entry-level"
+      ]
+    },
+    {
+      "id": "sonicwall-nsa2700",
+      "manufacturer": "SonicWall",
+      "model": "NSa 2700",
+      "category": "firewall",
+      "sourcePages": [
+        "https://www.sonicwall.com/products/firewalls/mid-range"
+      ]
+    },
+    {
+      "id": "raritan-px3-5190r",
+      "manufacturer": "Raritan",
+      "model": "PX3-5190R",
+      "category": "pdu",
+      "sourcePages": [
+        "https://cdn.raritan.com/product-selector/pdus/PX3-5190R/PX3-5190R-spec.pdf"
+      ]
+    },
+    {
+      "id": "digitus-dn19-16-u-sw",
+      "manufacturer": "DIGITUS",
+      "model": "DN-19 16-U-SW",
+      "category": "rack",
+      "sourcePages": [
+        "https://www.assmann.com/product-pdf/4016032257905?PL=en"
+      ]
+    },
+    {
+      "id": "rittal-vxit-5306122",
+      "manufacturer": "Rittal",
+      "model": "VX IT 5306.122",
+      "category": "rack",
+      "sourcePages": [
+        "https://www.rittal.com/pdf-creator/variant/ua-en/5306122"
+      ]
+    },
+    {
+      "id": "startech-rk1236bkf",
+      "manufacturer": "StarTech.com",
+      "model": "RK1236BKF",
+      "category": "rack",
+      "sourcePages": [
+        "https://media.startech.com/cms/pdfs/rk1236bkf_datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-fc3db9baa232b775",
+      "manufacturer": "Adtran",
+      "model": "424",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Adtran/424.yaml"
+      ]
+    },
+    {
+      "id": "nb-84908ff0a7aae399",
+      "manufacturer": "Adtran",
+      "model": "NetVanta 4660",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Adtran/NetVanta-4660.yaml"
+      ]
+    },
+    {
+      "id": "nb-c7a6bbe78d369445",
+      "manufacturer": "Alcatel-Lucent",
+      "model": "OS6400-24",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Alcatel-Lucent/OS6400-24.yaml"
+      ]
+    },
+    {
+      "id": "nb-a177f34a640c5260",
+      "manufacturer": "Alcatel-Lucent",
+      "model": "OS6860-24",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Alcatel-Lucent/OS6860-24.yaml"
+      ]
+    },
+    {
+      "id": "nb-22f6dc2225b95f69",
+      "manufacturer": "Alcatel-Lucent",
+      "model": "OS6860-48",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Alcatel-Lucent/OS6860-48.yaml"
+      ]
+    },
+    {
+      "id": "nb-32bb124abaaa021b",
+      "manufacturer": "ASUS",
+      "model": "RS300-E11-RS4",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/ASUS/RS300-E11-RS4.yaml",
+        "https://servers.asus.com/products/Servers/Rack-Servers/RS300-E11-RS4/"
+      ]
+    },
+    {
+      "id": "nb-775999426472421b",
+      "manufacturer": "Avaya",
+      "model": "ERS 3526T-PWR+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Avaya/ERS-3526T-PWR-Plus.yaml"
+      ]
+    },
+    {
+      "id": "nb-712e46e426c32606",
+      "manufacturer": "Avaya",
+      "model": "IP Office 500 V2",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Avaya/IP-Office-500-V2.yaml"
+      ]
+    },
+    {
+      "id": "nb-765b000f7862b2a5",
+      "manufacturer": "Barracuda",
+      "model": "F400C-F20",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Barracuda/F400C-F20.yaml",
+        "https://campus.barracuda.com/product/cloudgenfirewall/doc/169432624/f400-revision-c/"
+      ]
+    },
+    {
+      "id": "nb-7a6f331eb573b567",
+      "manufacturer": "Barracuda",
+      "model": "F380",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Barracuda/f380.yaml",
+        "https://campus.barracuda.com/product/cloudgenfirewall/doc/71862281/f380-revision-a/"
+      ]
+    },
+    {
+      "id": "nb-068b536b05b168d6",
+      "manufacturer": "Barracuda",
+      "model": "F80B",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Barracuda/f80b.yaml",
+        "https://campus.barracuda.com/product/cloudgenfirewall/doc/86213130/f80-revision-b/"
+      ]
+    },
+    {
+      "id": "nb-1dd7604442a1239d",
+      "manufacturer": "Belden",
+      "model": "RV6PPF1U24BK",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Belden/RV6PPF1U24BK.yaml"
+      ]
+    },
+    {
+      "id": "nb-f31245615c072a97",
+      "manufacturer": "Belden",
+      "model": "RV6PPF2U48BK",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Belden/RV6PPF2U48BK.yaml"
+      ]
+    },
+    {
+      "id": "nb-03c8ee9bbb014c7c",
+      "manufacturer": "Cabeus",
+      "model": "PDU-8P",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cabeus/PDU-8P.yaml",
+        "https://cabeus.ru/product/7961/"
+      ]
+    },
+    {
+      "id": "nb-1a5e040822eebdd7",
+      "manufacturer": "Cabeus",
+      "model": "PL-24-Cat-5e-Dual-IDC",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cabeus/PL-24-Cat-5e-Dual-IDC.yaml",
+        "https://cabeus.ru/product/7802/"
+      ]
+    },
+    {
+      "id": "nb-3ad914fbc8c9cb70",
+      "manufacturer": "Cable Matters",
+      "model": "24 Port Keystone Patch Panel",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cable Matters/180013.yaml",
+        "https://www.cablematters.com/pc-386-162-rack-or-wall-mount-24-port-blank-patch-panel.aspx"
+      ]
+    },
+    {
+      "id": "nb-d1adbd24989d63bf",
+      "manufacturer": "Calient",
+      "model": "s320",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Calient/s320.yaml"
+      ]
+    },
+    {
+      "id": "nb-125f92d869fe9f59",
+      "manufacturer": "Ciena",
+      "model": "Waveserver Ai",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/waveserver-ai.yaml"
+      ]
+    },
+    {
+      "id": "nb-2b88f84c9db567bf",
+      "manufacturer": "Ciena",
+      "model": "3926",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/3926.yaml"
+      ]
+    },
+    {
+      "id": "nb-5eb1039c16a0df6a",
+      "manufacturer": "Ciena",
+      "model": "3930",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/3930.yaml"
+      ]
+    },
+    {
+      "id": "nb-feb9fd36baf516b8",
+      "manufacturer": "Ciena",
+      "model": "3942 AC",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/3942-ac.yaml"
+      ]
+    },
+    {
+      "id": "nb-d7b89b29215a9708",
+      "manufacturer": "Ciena",
+      "model": "5160",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/5160.yaml"
+      ]
+    },
+    {
+      "id": "nb-4a0b0e3bbe63b84a",
+      "manufacturer": "Ciena",
+      "model": "5162",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/5162.yaml"
+      ]
+    },
+    {
+      "id": "nb-268313b973eee49c",
+      "manufacturer": "Ciena",
+      "model": "5171 Router",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/5171-router.yaml"
+      ]
+    },
+    {
+      "id": "nb-af1698f9a4a852f5",
+      "manufacturer": "Ciena",
+      "model": "6500 R2",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/6500-R2.yaml"
+      ]
+    },
+    {
+      "id": "nb-22691841537ee307",
+      "manufacturer": "Ciena",
+      "model": "6500 R4",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/6500-R4.yaml"
+      ]
+    },
+    {
+      "id": "nb-6b344ae9fceb207f",
+      "manufacturer": "Ciena",
+      "model": "8110",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/8110.yaml"
+      ]
+    },
+    {
+      "id": "nb-36567f277193e94e",
+      "manufacturer": "Ciena",
+      "model": "8114",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/8114.yaml"
+      ]
+    },
+    {
+      "id": "nb-d669b5e97362251a",
+      "manufacturer": "Ciena",
+      "model": "8140",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ciena/8140.yaml"
+      ]
+    },
+    {
+      "id": "nb-a6a79509854ba38b",
+      "manufacturer": "Commscope",
+      "model": "360G2-1U-MOD-SD",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Commscope/360G2-1U-MOD-SD.yaml",
+        "https://www.commscope.com/product-type/frames-panels-cassettes-modules/fiber-panels-modules-cassettes/fiber-panels/item760193771/"
+      ]
+    },
+    {
+      "id": "nb-9b748f4aeb7c8a2d",
+      "manufacturer": "Commscope",
+      "model": "CPP-UDDM-M-1U-24",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Commscope/CPP-UDDM-M-1U-24.yaml",
+        "https://www.commscope.com/product-type/cabinets-panels-enclosures/copper-panels-modules-cassettes/copper-panels/item760207274/"
+      ]
+    },
+    {
+      "id": "nb-75ff355641be29f1",
+      "manufacturer": "Commscope",
+      "model": "CPPA-UDDM-M-2U-48",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Commscope/CPPA-UDDM-M-2U-48.yaml",
+        "https://www.commscope.com/product-type/cabinets-panels-enclosures/copper-panels-modules-cassettes/copper-panels/item760207308/"
+      ]
+    },
+    {
+      "id": "nb-682f01a7e3775f50",
+      "manufacturer": "Commscope",
+      "model": "CPP-SDDM-SL-1U-24",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Commscope/CPP-SDDM-SL-1U-24.yaml",
+        "https://www.commscope.com/product-type/cabinets-panels-enclosures/copper-panels-modules-cassettes/copper-panels/item760237046/"
+      ]
+    },
+    {
+      "id": "nb-78fb5e27dc863dbc",
+      "manufacturer": "Commscope",
+      "model": "SD-4U",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Commscope/SD-4U.yaml",
+        "https://www.commscope.com/product-type/cabinets-panels-enclosures/fiber-panels-cassettes/fiber-panels/item760231464/"
+      ]
+    },
+    {
+      "id": "nb-d711e2c300ede120",
+      "manufacturer": "Datwyler",
+      "model": "Patch Panel KS 24x Black",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Datwyler/patch-panel-ks-24x-black.yaml",
+        "https://itinfra.datwyler.com/en/copper-networks/patch-panels/patch-panel-ks-24x/"
+      ]
+    },
+    {
+      "id": "nb-2174af86248be3c0",
+      "manufacturer": "Datwyler",
+      "model": "Patch Panel KU 24x Light Grey",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Datwyler/patch-panel-ku-24x-light-grey.yaml",
+        "https://itinfra.datwyler.com/en/copper-networks/patch-panels/patch-panel-ku-24x/"
+      ]
+    },
+    {
+      "id": "nb-19c462f073983955",
+      "manufacturer": "Datwyler",
+      "model": "Patch Panel MGK 24x Silver",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Datwyler/patch-panel-mgk-24x-silver.yaml",
+        "https://itinfra.datwyler.com/en/copper-networks/patch-panels/patch-panels-mgk-24x/"
+      ]
+    },
+    {
+      "id": "nb-908a100c3ca29495",
+      "manufacturer": "Digi",
+      "model": "PortServer TS 16",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Digi/portserver-ts-16.yaml",
+        "https://hub.digi.com/support/products/infrastructure-management/portserver-ts-816mei/"
+      ]
+    },
+    {
+      "id": "nb-b4a7fc7373f9706c",
+      "manufacturer": "DITEK",
+      "model": "DTK-RM12EXTS",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/DITEK/DTK-RM12EXTS.yaml"
+      ]
+    },
+    {
+      "id": "nb-346372afd400f875",
+      "manufacturer": "DITEK",
+      "model": "DTK-RM24NETS",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/DITEK/DTK-RM24NETS.yaml",
+        "https://www.diteksurgeprotection.com/wp-content/uploads/DTK-RM24NETS-DS.pdf"
+      ]
+    },
+    {
+      "id": "nb-800f8ec3e0535314",
+      "manufacturer": "DITEK",
+      "model": "DTK-WM8NETS",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/DITEK/DTK-WM8NETS.yaml",
+        "https://www.diteksurgeprotection.com/wp-content/uploads/DTK-WM8NETS-DS.pdf"
+      ]
+    },
+    {
+      "id": "nb-f7f404654aad4d5a",
+      "manufacturer": "Edgecore",
+      "model": "AS4625-54T-O-AC-F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Edgecore/AS4625-54T-O-AC-F.yaml",
+        "https://www.edge-core.com/wp-content/uploads/2025/10/2025-055-EPS121_AS4625-54T-DS-R05-20251020.pdf"
+      ]
+    },
+    {
+      "id": "nb-6a0159c3c324ded0",
+      "manufacturer": "Edgecore",
+      "model": "AS7326-56X-O-AC-F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Edgecore/AS7326-56X-O-AC-F.yaml",
+        "https://www.edge-core.com/_upload/images/DCS203_AS7326-56X_DS_R09_20230717.pdf"
+      ]
+    },
+    {
+      "id": "nb-edde85c1a3ba283d",
+      "manufacturer": "EFB Elektronik",
+      "model": "691651ATS8",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/EFB Elektronik/691651ATS8.yaml"
+      ]
+    },
+    {
+      "id": "nb-80c45eaf78955607",
+      "manufacturer": "Eltex",
+      "model": "MES2308P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Eltex/MES2308P.yaml",
+        "https://api.prod.eltex-co.ru/storage/upload_center/files/27/MES23xxP_datasheet_4.0.24.1.pdf"
+      ]
+    },
+    {
+      "id": "nb-cd689cba786b2529",
+      "manufacturer": "Eltex",
+      "model": "MES2324P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Eltex/MES2324P.yaml",
+        "https://api.prod.eltex-co.ru/storage/upload_center/files/27/MES23xxP_datasheet_4.0.24.1.pdf"
+      ]
+    },
+    {
+      "id": "nb-ee49def444e1ec30",
+      "manufacturer": "Eltex",
+      "model": "MES3510P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Eltex/MES3510P.yaml",
+        "https://api.prod.eltex-co.ru/storage/upload_center/files/27/MES3508(P"
+      ]
+    },
+    {
+      "id": "nb-021661043dd2d49f",
+      "manufacturer": "F5",
+      "model": "BIG-IP 2000",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/F5/BIG-IP-2000.yaml"
+      ]
+    },
+    {
+      "id": "nb-fe8d278736262b7c",
+      "manufacturer": "F5",
+      "model": "BIG-IP i2600",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/F5/BIG-IP-i2600.yaml",
+        "https://www.f5.com/pdf/data-sheet/big-ip-platforms-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-d9ade587e7147b9a",
+      "manufacturer": "F5",
+      "model": "BIG-IP i5600",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/F5/BIG-IP-i5600.yaml",
+        "https://www.f5.com/pdf/products/big-ip-platforms-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-9c4abe55a270318f",
+      "manufacturer": "F5",
+      "model": "BIG-IP r2600",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/F5/BIG-IP-r2600.yaml"
+      ]
+    },
+    {
+      "id": "nb-ec99b9ef925f518f",
+      "manufacturer": "F5",
+      "model": "BIG-IP r10600",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/F5/BIG-IP-r10600.yaml",
+        "https://www.f5.com/pdf/products/big-ip-platforms-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-f5940bcac5635cc5",
+      "manufacturer": "F5",
+      "model": "BIG-IP r5600",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/F5/BIG-IP-r5600.yaml",
+        "https://www.f5.com/pdf/products/big-ip-platforms-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-41262e318167a929",
+      "manufacturer": "FS",
+      "model": "N5860-48SC",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/FS/N5860-48SC.yaml"
+      ]
+    },
+    {
+      "id": "nb-e98baee54dcf5404",
+      "manufacturer": "FS",
+      "model": "N8560-48BC",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/FS/N8560-48BC.yaml"
+      ]
+    },
+    {
+      "id": "nb-93773a73e59631e4",
+      "manufacturer": "FS",
+      "model": "FHD-1UFMT-N",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/FS/FHD-1UFMT-N.yaml",
+        "https://www.fs.com/uk/products/96427.html"
+      ]
+    },
+    {
+      "id": "nb-3a03ac04764438c3",
+      "manufacturer": "GL-iNet",
+      "model": "GL-AXT1800",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/GL-iNet/GL-AXT1800.yaml",
+        "https://www.gl-inet.com/products/gl-axt1800/"
+      ]
+    },
+    {
+      "id": "nb-bf62e427e934e0d4",
+      "manufacturer": "Grandstream",
+      "model": "GWN7660E",
+      "category": "ap",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Grandstream/gwn7660e.yaml"
+      ]
+    },
+    {
+      "id": "nb-98efee7ae64ea280",
+      "manufacturer": "Grandstream",
+      "model": "GWN7803P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Grandstream/GWN7803P.yaml"
+      ]
+    },
+    {
+      "id": "nb-c2987ad4b24bf989",
+      "manufacturer": "Grandstream",
+      "model": "GWN7831",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Grandstream/GWN7831.yaml"
+      ]
+    },
+    {
+      "id": "nb-18abeefcccac198a",
+      "manufacturer": "Kemp Technologies",
+      "model": "LoadMaster X1",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Kemp Technologies/LM-X1.yaml",
+        "https://kemptechnologies.com/server-load-balancing/loadmaster-x1"
+      ]
+    },
+    {
+      "id": "nb-cb0da37cc251724e",
+      "manufacturer": "LANCOM",
+      "model": "1790VAW",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/LANCOM/1790VAW.yaml",
+        "https://www.lancom-systems.de/download/LC-1790VAW/DS_1790VAW_DE.pdf"
+      ]
+    },
+    {
+      "id": "nb-592d7bf6fa2dc5f9",
+      "manufacturer": "LANCOM",
+      "model": "1781VA",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/LANCOM/1781VA.yaml",
+        "https://www.lancom-systems.de/download/LC-1781VA/DS_1781VA_DE.pdf"
+      ]
+    },
+    {
+      "id": "nb-a283ed5b907280be",
+      "manufacturer": "LANCOM",
+      "model": "1783VA-4G",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/LANCOM/1783VA-4G.yaml",
+        "https://www.lancom-systems.de/download/LC-1783VA-4G/DS_1783VA-4G_DE.pdf"
+      ]
+    },
+    {
+      "id": "nb-21beeace01ead0ab",
+      "manufacturer": "LANCOM",
+      "model": "1793VAW",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/LANCOM/1793VAW.yaml",
+        "https://www.lancom-systems.de/download/LC-1793VAW/DS_1793VAW_DE.pdf"
+      ]
+    },
+    {
+      "id": "nb-21d28e7d5a06429b",
+      "manufacturer": "Lantronix",
+      "model": "ETS16PR",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Lantronix/ets16pr.yaml"
+      ]
+    },
+    {
+      "id": "nb-b924dbf6777c2eb2",
+      "manufacturer": "Lantronix",
+      "model": "ETS32PR",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Lantronix/ets32pr.yaml"
+      ]
+    },
+    {
+      "id": "nb-2565622a0959d865",
+      "manufacturer": "Mellanox",
+      "model": "SN2100",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Mellanox/SN2100.yaml",
+        "https://network.nvidia.com/sites/default/files/doc-2020/pb-sn2100.pdf"
+      ]
+    },
+    {
+      "id": "nb-a90ded005fd46d23",
+      "manufacturer": "Moxa",
+      "model": "EDS-408A-SS-SC-T",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Moxa/EDS-408A-SS-SC-T.yaml",
+        "https://www.moxa.com/getmedia/2bf237cd-dc6f-448f-9007-407a2dfe1533/moxa-eds-408a-series-datasheet-v1.5.pdf"
+      ]
+    },
+    {
+      "id": "nb-7b2b8f9a08ca79dc",
+      "manufacturer": "Moxa",
+      "model": "EDS-P510",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Moxa/EDS-P510.yaml",
+        "https://cdn-cms.azureedge.net/getmedia/ecca16dc-4fee-49af-9c60-5547c513c206/moxa-eds-p510-series-datasheet-v1.6.pdf"
+      ]
+    },
+    {
+      "id": "nb-9363a14b01cfb299",
+      "manufacturer": "Netgate",
+      "model": "8300 Security Gateway",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Netgate/8300-Security-Gateway.yaml"
+      ]
+    },
+    {
+      "id": "nb-e4457af07a020f38",
+      "manufacturer": "Nokia",
+      "model": "7220 IXR-D2 25/100GE",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Nokia/7220-IXR-D2-25-100GE.yaml",
+        "https://pf.content.nokia.com/too54x-webscale-dc-fabric-product/7220-dc-routers-data-sheet"
+      ]
+    },
+    {
+      "id": "nb-63eb4152092cd08f",
+      "manufacturer": "Nokia",
+      "model": "7220 IXR-D2L 25/100GE",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Nokia/7220-IXR-D2L-25-100GE.yaml",
+        "https://pf.content.nokia.com/too54x-webscale-dc-fabric-product/7220-dc-routers-data-sheet"
+      ]
+    },
+    {
+      "id": "nb-89d64c27c959137e",
+      "manufacturer": "Nokia",
+      "model": "7220 IXR-D3 32*100GE",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Nokia/7220-IXR-D3-32-100GE.yaml",
+        "https://pf.content.nokia.com/too54x-webscale-dc-fabric-product/7220-dc-routers-data-sheet"
+      ]
+    },
+    {
+      "id": "nb-dbb1fdc53d9b42a1",
+      "manufacturer": "Nokia",
+      "model": "7220 IXR-D5 32*400GE",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Nokia/7220-IXR-D5-32-400GE.yaml",
+        "https://pf.content.nokia.com/too54x-webscale-dc-fabric-product/7220-dc-routers-data-sheet"
+      ]
+    },
+    {
+      "id": "nb-14eb45daaa9298fa",
+      "manufacturer": "Nokia",
+      "model": "7220 IXR-H3 32QSFPDD 2SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Nokia/7220-IXR-H3-32QSFPDD-2SFPP.yaml",
+        "https://onestore.nokia.com/asset/210990"
+      ]
+    },
+    {
+      "id": "nb-f9014eaa7cd819dc",
+      "manufacturer": "Nokia",
+      "model": "7220 IXR-H4 64QSFPDD 2SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Nokia/7220-IXR-H4-64QSFPDD-2SFPP.yaml",
+        "https://onestore.nokia.com/asset/210990"
+      ]
+    },
+    {
+      "id": "nb-95ffc21479b7db70",
+      "manufacturer": "Nokia",
+      "model": "7750 SR-1",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Nokia/7750-SR-1.yaml"
+      ]
+    },
+    {
+      "id": "nb-fd5b5a585af75ae9",
+      "manufacturer": "Nokia",
+      "model": "7750 SR-1se 36QSFPDD-800ge",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Nokia/7750-SR-1se-36QSFPDD-800GE.yaml",
+        "https://onestore.nokia.com/asset/i/205421"
+      ]
+    },
+    {
+      "id": "nb-d0eebb2cb671d40b",
+      "manufacturer": "Nvidia",
+      "model": "SN2201",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Nvidia/SN2201.yaml",
+        "https://nvdam.widen.net/s/llbvwv5rfx/br-sn2000-series"
+      ]
+    },
+    {
+      "id": "nb-a966d159c428b1d4",
+      "manufacturer": "Opengear",
+      "model": "CM8116",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Opengear/CM8116.yaml"
+      ]
+    },
+    {
+      "id": "nb-08b0ee66b1eb36c8",
+      "manufacturer": "Opengear",
+      "model": "CM8148",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Opengear/CM8148.yaml"
+      ]
+    },
+    {
+      "id": "nb-dbdce8efed0e65d8",
+      "manufacturer": "Opengear",
+      "model": "CM7132-2-DAC",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Opengear/CM7132-2-DAC.yaml"
+      ]
+    },
+    {
+      "id": "nb-4f6f5a063ccdaf07",
+      "manufacturer": "OPNsense",
+      "model": "DEC2770",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/OPNsense/DEC2770.yaml",
+        "https://shop.opnsense.com/product/dec2770-opnsense-rack-security-appliance/"
+      ]
+    },
+    {
+      "id": "nb-fe8f97a3849d4e66",
+      "manufacturer": "Ruckus",
+      "model": "ZoneDirector 3000",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ruckus/ZoneDirector-3000.yaml",
+        "https://webresources.ruckuswireless.com/pdf/datasheets/ds-zonedirector-3000.pdf"
+      ]
+    },
+    {
+      "id": "nb-a82a300904414f52",
+      "manufacturer": "Ruijie",
+      "model": "RG-NBS3100-24GT4SFP-P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ruijie/RG-NBS3100-24GT4SFP-P.yaml",
+        "https://ru.ruijienetworks.com/search_1_/?v=RG-NBS3100-24GT4SFP-P"
+      ]
+    },
+    {
+      "id": "nb-9dd49be51e6860a8",
+      "manufacturer": "Smartoptics",
+      "model": "DCP-M40-PAM4-ER",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Smartoptics/DCP-M40-PAM4-ER.yaml",
+        "https://smartoptics.com/wp-content/uploads/2023/02/so-ds-dcp-m40-pam4-er.pdf"
+      ]
+    },
+    {
+      "id": "nb-665e9fb0c5bbe24e",
+      "manufacturer": "SMC Networks",
+      "model": "SMCGS8P-SMART",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/SMC Networks/SMCGS8P-SMART.yaml",
+        "https://www.use-ip.co.uk/datasheets/442/smc_gs8p_8port_gigabit_poe_switch.pdf"
+      ]
+    },
+    {
+      "id": "nb-bf7b6e396d81b183",
+      "manufacturer": "SNR",
+      "model": "S5210G-24TX",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/SNR/S5210G-24TX.yaml",
+        "https://shop.nag.ru/catalog/00001.kommutatory/40213.fiksirovannye-kommutatory/34613.snr-s5210g-24tx#description"
+      ]
+    },
+    {
+      "id": "nb-c2814dde21fa98df",
+      "manufacturer": "SNR",
+      "model": "SNR-UPS-ONRT-1000-S24 ELEMENT II",
+      "category": "ups",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/SNR/snr-ups-onrt-1000-s24-element-ii.yaml"
+      ]
+    },
+    {
+      "id": "nb-0948d9cade199a0b",
+      "manufacturer": "Telco Systems",
+      "model": "T-Metro 8104",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Telco Systems/T-Metro-8104.yaml"
+      ]
+    },
+    {
+      "id": "nb-7dd2b21e61ad99a0",
+      "manufacturer": "Terramaster",
+      "model": "F2-424",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Terramaster/F2-424.yaml",
+        "https://www.terra-master.com/global/products/homesoho-nas/f2-808.html?page=menu&mid=1510"
+      ]
+    },
+    {
+      "id": "nb-4de91d17b80dbbff",
+      "manufacturer": "Terramaster",
+      "model": "F6-424 Max",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Terramaster/F6-424 Max.yaml",
+        "https://www.terra-master.com/global/products/homesoho-nas/f6-424-max.html?page=menu&mid=1599"
+      ]
+    },
+    {
+      "id": "nb-31017da140e60303",
+      "manufacturer": "UfiSpace",
+      "model": "S9600-32X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/UfiSpace/S9600-32X.yaml"
+      ]
+    },
+    {
+      "id": "nb-5bb0012c11525238",
+      "manufacturer": "Vertiv",
+      "model": "SA1-01002",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Vertiv/SA1-01002.yaml"
+      ]
+    },
+    {
+      "id": "nb-00976b7274a49cd1",
+      "manufacturer": "WTI",
+      "model": "CPM-1600-1-c",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/WTI/CPM-1600-1-C.yaml",
+        "https://ftp.wti.com/download/datasheets/specs_cpm_gige_console_server-switched_pdu.pdf"
+      ]
+    },
+    {
+      "id": "nb-1b78d3ee187d5923",
+      "manufacturer": "WTI",
+      "model": "VMR-16HD20-2",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/WTI/VMR-16HD20-2.yaml"
+      ]
+    },
+    {
+      "id": "nb-fce19920137ab0c4",
+      "manufacturer": "ZTE",
+      "model": "ZXR10-5950-28PD-L",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/ZTE/ZXR10-5950-28PD-L.yaml",
+        "https://usermanual.wiki/m/5b37c0e8f9c877c32e1058b58760e41ae1581d78d17ac8d43ddc6561ef7953b5.pdf",
+        "https://www.etd.fi/downloads/products/0/00000109/DS_ZXR10_5950-L_Series_Switch.pdf"
+      ]
+    },
+    {
+      "id": "nb-4b73963d18934c09",
+      "manufacturer": "ZTE",
+      "model": "ZXR10-5950-28TD-L",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/ZTE/ZXR10-5950-28TD-L.yaml",
+        "https://usermanual.wiki/m/5b37c0e8f9c877c32e1058b58760e41ae1581d78d17ac8d43ddc6561ef7953b5.pdf",
+        "https://www.etd.fi/downloads/products/0/00000109/DS_ZXR10_5950-L_Series_Switch.pdf"
+      ]
+    },
+    {
+      "id": "nb-4bed5077703a33ad",
+      "manufacturer": "Zyxel",
+      "model": "ES1100-8P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Zyxel/ES1100-8P.yaml",
+        "https://www.zyxelguard.com/ES1100-8P.asp"
+      ]
+    },
+    {
+      "id": "nb-9445f595338fc17a",
+      "manufacturer": "Zyxel",
+      "model": "GS-108B-v3",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Zyxel/GS-108B-v3.yaml",
+        "https://www.zyxel.com/de/de/products/switch/8-port-desktop-gigabit-ethernet-switch-gs-108b-v3"
+      ]
+    },
+    {
+      "id": "nb-417dcd51ce56234d",
+      "manufacturer": "Zyxel",
+      "model": "GS1100-16",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Zyxel/GS1100-16.yaml",
+        "https://www.zyxelguard.com/datasheets/GS1100-8HP_1.pdf"
+      ]
+    },
+    {
+      "id": "nb-2c5c7ea175f64187",
+      "manufacturer": "Zyxel",
+      "model": "P-660HNU-T1",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Zyxel/P-660HNU-T1.yaml",
+        "https://prodotti.zyxel.it/DATASHEET/ZYXPRE660HNU.pdf"
+      ]
+    },
+    {
+      "id": "nb-f545d3718ff68f34",
+      "manufacturer": "Cisco",
+      "model": "ASR1001",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1001.yaml"
+      ]
+    },
+    {
+      "id": "nb-22ec22b8ee2c893a",
+      "manufacturer": "HPE",
+      "model": "Aruba 2530-8G",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2530-8G.yaml",
+        "https://support.hpe.com/hpesc/public/docDisplay?docId=emr_na-c03624915"
+      ]
+    },
+    {
+      "id": "nb-0981324ffcccabc6",
+      "manufacturer": "Arista",
+      "model": "CCS-720DF-48Y-2F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-720DF-48Y-2F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720D-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-9af4f14b030fd0a3",
+      "manufacturer": "Juniper",
+      "model": "ACX7024-AC",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/ACX7024-AC.yaml",
+        "https://www.juniper.net/us/en/products/routers/acx-series/acx7000-family-cloud-metro-routers/acx7000-line/acx7024-acx7024x-cloud-metro-routers-datasheet.html"
+      ]
+    },
+    {
+      "id": "nb-640a1e0ad66b9b51",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 1000D",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-1000D.yaml"
+      ]
+    },
+    {
+      "id": "nb-f0cd8b333b81d486",
+      "manufacturer": "MikroTik",
+      "model": "cAP ac",
+      "category": "ap",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/RBcAPGi-5acD2nD.yaml",
+        "https://mikrotik.com/product/cap_ac#fndtn-specifications"
+      ]
+    },
+    {
+      "id": "nb-2b0409c6beac1731",
+      "manufacturer": "Ubiquiti",
+      "model": "Enterprise Campus Aggregation",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/ECS-Aggregation.yaml",
+        "https://store.ui.com/products/ecs-aggregation"
+      ]
+    },
+    {
+      "id": "nb-8551913e785b8dcd",
+      "manufacturer": "Huawei",
+      "model": "Dorado 3000 V6",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/Dorado-3000-v6.yaml"
+      ]
+    },
+    {
+      "id": "nb-fe00cb2fcd751efc",
+      "manufacturer": "Extreme Networks",
+      "model": "4120-24MW-4Y",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4120-24MW-4Y.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+      ]
+    },
+    {
+      "id": "nb-7a4f104d07cdb0f2",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R540",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R540.yaml"
+      ]
+    },
+    {
+      "id": "nb-7e63582b264848f9",
+      "manufacturer": "HPE",
+      "model": "MSA 2050 Enclosure",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/MSA-2050-Enclosure.yaml"
+      ]
+    },
+    {
+      "id": "nb-177693053e26efa4",
+      "manufacturer": "Lenovo",
+      "model": "System x3650 M5",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Lenovo/system-x3650-M5.yaml",
+        "https://lenovopress.lenovo.com/lp0068.pdf"
+      ]
+    },
+    {
+      "id": "nb-34f23e64e816971f",
+      "manufacturer": "Supermicro",
+      "model": "ASG-2015S-E1CR24L",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Supermicro/ASG-2015S-E1CR24L.yaml",
+        "https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf",
+        "https://www.supermicro.com/en/products/system/datasheet/asg-2015s-e1cr24l"
+      ]
+    },
+    {
+      "id": "nb-6d7036dbdb0153dd",
+      "manufacturer": "Synology",
+      "model": "DS218+",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/DS218+.yaml",
+        "https://www.synology.com/en-us/support/download/DS218+"
+      ]
+    },
+    {
+      "id": "nb-a121938648f6b54a",
+      "manufacturer": "QNAP",
+      "model": "TVS-EC1580MU-SAS-RP",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/QNAP/TVS-EC1580MU-SAS-RP.yaml",
+        "https://www.qnap.com/en/product/tvs-ec1580mu-sas-rp"
+      ]
+    },
+    {
+      "id": "nb-476a5e2e14826616",
+      "manufacturer": "APC",
+      "model": "AP4421A",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP4421A.yaml"
+      ]
+    },
+    {
+      "id": "nb-d14bed6bc445f3b0",
+      "manufacturer": "Eaton",
+      "model": "Tripp Lite PDUMH15AT",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Eaton/Tripp-Lite-PDUMH15AT.yaml"
+      ]
+    },
+    {
+      "id": "nb-04f3c36861d3b6f5",
+      "manufacturer": "Panduit",
+      "model": "Cat 6 Punchdown Patch Panel, 48 Ports, 2 RU, Black",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/DP48688TGY.yaml"
+      ]
+    },
+    {
+      "id": "nb-9f4e39d04b4eef89",
+      "manufacturer": "Netgear",
+      "model": "GS105",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Netgear/GS105.yaml",
+        "https://www.netgear.com/business/wired/switches/unmanaged/gs105/"
+      ]
+    },
+    {
+      "id": "nb-b96a0faf83d55061",
+      "manufacturer": "D-Link",
+      "model": "DES-1005P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/D-Link/DES-1005P.yaml",
+        "https://www.dlink.com/de/de/-/media/business_products/des/des-1005p/manual/des-1005p_manual_deu.pdf"
+      ]
+    },
+    {
+      "id": "nb-6177840266a34e21",
+      "manufacturer": "TP-Link",
+      "model": "Archer AX1800",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/TP-Link/Archer-AX1800.yaml",
+        "https://www.tp-link.com/ru/home-networking/wifi-router/archer-ax1800/#specifications"
+      ]
+    },
+    {
+      "id": "nb-459e071f45ef28d0",
+      "manufacturer": "NetApp",
+      "model": "AFF C30 Chassis",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/NetApp/AFF-C30-Chassis.yaml"
+      ]
+    },
+    {
+      "id": "nb-5d4d2d2ec5a6b81b",
+      "manufacturer": "Check Point",
+      "model": "SG19200",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Check Point/SG19200.yaml",
+        "https://www.checkpoint.com/downloads/products/quantum-force-19200-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-f01b85bd214e6930",
+      "manufacturer": "Sophos",
+      "model": "SD-RED 60",
+      "category": "other",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Sophos/SD-RED-60.yaml",
+        "https://assets.sophos.com/X24WTUEQ/at/7wf85vbnnqf939bbhtxgfk/sophos-firewall-br.pdf"
+      ]
+    },
+    {
+      "id": "nb-7e1f01ffe3e19e8a",
+      "manufacturer": "Cisco",
+      "model": "ASR1001-HX",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1001-HX.yaml"
+      ]
+    },
+    {
+      "id": "nb-938151a02eb5e5d0",
+      "manufacturer": "HPE",
+      "model": "Aruba 2530-8G-PoE+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2530-8G-PoEP.yaml",
+        "https://support.hpe.com/hpesc/public/docDisplay?docId=emr_na-c03624915#N123F6"
+      ]
+    },
+    {
+      "id": "nb-6061e8a5e3e5a74c",
+      "manufacturer": "Arista",
+      "model": "CCS-720DP-24S-2F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-720DP-24S-2F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720D-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-e54b976f708867aa",
+      "manufacturer": "Juniper",
+      "model": "ACX7024X",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/ACX7024X.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/routers/acx7024-acx7024x-cloud-metro-routers-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-d18ad51e4dbe98fd",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 101E",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-101E.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiGate_100E_Series.pdf"
+      ]
+    },
+    {
+      "id": "nb-c06c7dc6eccf5e90",
+      "manufacturer": "MikroTik",
+      "model": "cAP ax",
+      "category": "ap",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/cAPGi-5HaxD2HaxD.yaml",
+        "https://mikrotik.com/product/cap_ax#fndtn-specifications"
+      ]
+    },
+    {
+      "id": "nb-e94a1bc6fc227b74",
+      "manufacturer": "Ubiquiti",
+      "model": "Enterprise Campus Switch 24-Port PoE",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/ECS-24-PoE.yaml",
+        "https://store.ui.com/products/ecs-24-poe"
+      ]
+    },
+    {
+      "id": "nb-58601e584ebb26d1",
+      "manufacturer": "Huawei",
+      "model": "Huawei S6730-S24X6Q",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/S6730-S24X6Q.yaml",
+        "https://support.huawei.com/enterprise/en/doc/EDOC1000013621/25b47d53/s6730-s24x6q-02353ajw-02353ajw-001-02353ajw-003-02353ajw-004"
+      ]
+    },
+    {
+      "id": "nb-dd10d7331f22b8bf",
+      "manufacturer": "Extreme Networks",
+      "model": "4120-48MW-4Y",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4120-48MW-4Y.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+      ]
+    },
+    {
+      "id": "nb-fbdb4552eed0ee61",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R620",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R620.yaml"
+      ]
+    },
+    {
+      "id": "nb-1397e3169b861f26",
+      "manufacturer": "HPE",
+      "model": "ProLiant DL20 Gen11",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-DL20-Gen11.yaml",
+        "https://www.hpe.com/psnow/doc/a50007009enw"
+      ]
+    },
+    {
+      "id": "nb-efc4c57b1d5c811d",
+      "manufacturer": "Lenovo",
+      "model": "ThinkSystem SR650",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Lenovo/ThinkSystem-SR650.yaml",
+        "https://lenovopress.lenovo.com/lp1050"
+      ]
+    },
+    {
+      "id": "nb-2da2003e6dc8a96f",
+      "manufacturer": "Supermicro",
+      "model": "MicroCloud A+ Server AS 3015MR-H8TNR",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Supermicro/AS-3015MR-H8TNR.yaml",
+        "https://www.supermicro.com/en/products/system/microcloud/3u/as%20-3015mr-h8tnr"
+      ]
+    },
+    {
+      "id": "nb-bb280d4ca41dc95b",
+      "manufacturer": "Synology",
+      "model": "RS2416RP+",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/RS2416RP+.yaml",
+        "https://global.synologydownload.com/download/Document/Hardware/DataSheet/RackStation/16-year/RS2416RP+/enu/Synology_RS2416_Plus_RS2416RP_Plus_Data_Sheet_enu.pdf"
+      ]
+    },
+    {
+      "id": "nb-23088fe782f499ac",
+      "manufacturer": "APC",
+      "model": "AP4422A",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP4422A.yaml"
+      ]
+    },
+    {
+      "id": "nb-a30f5454503d7402",
+      "manufacturer": "Eaton",
+      "model": "Tripp Lite PDUMH20HVAT",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Eaton/Tripp-Lite-PDUMH20HVAT.yaml"
+      ]
+    },
+    {
+      "id": "nb-70f105515d0bf559",
+      "manufacturer": "Panduit",
+      "model": "Cat 6A Punchdown Patch Panel, 24 Ports, 1 RU, Black",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/DP246X88TGY.yaml"
+      ]
+    },
+    {
+      "id": "nb-0ae02d5176e83b35",
+      "manufacturer": "Netgear",
+      "model": "GS108PEv3",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Netgear/GS108PEv3.yaml",
+        "https://www.netgear.com/support/product/gs108pev3#docs"
+      ]
+    },
+    {
+      "id": "nb-e6c2c9e3f06a3b7e",
+      "manufacturer": "D-Link",
+      "model": "DGS-1100-08",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/D-Link/DGS-1100-08.yaml",
+        "https://www.dlink.ru/ru/products/1/1939.html"
+      ]
+    },
+    {
+      "id": "nb-f4684dfd15513291",
+      "manufacturer": "TP-Link",
+      "model": "TL-SG105",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/TP-Link/TL-SG105.yaml",
+        "https://www.tp-link.com/us/business-networking/soho-switch-unmanaged/tl-sg105/#specifications"
+      ]
+    },
+    {
+      "id": "nb-d201c4c7e7756c85",
+      "manufacturer": "NetApp",
+      "model": "AFF-C60 Chassis",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/NetApp/AFF-C60-Chassis.yaml"
+      ]
+    },
+    {
+      "id": "nb-24e436f8efc76877",
+      "manufacturer": "Cisco",
+      "model": "ASR1002",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1002.yaml"
+      ]
+    },
+    {
+      "id": "nb-2ffc5d29f711ec36",
+      "manufacturer": "HPE",
+      "model": "Aruba 2930F-12G-PoE+-2SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2930F-12G-PoEP-2SFPP.yaml",
+        "https://buy.hpe.com/us/en/networking/switches/fixed-port-l3-managed-ethernet-switches/hpe-aruba-networking-2930f-12g-poe-2g-2sfp-switch/p/jl693a",
+        "https://www.hpe.com/psnow/doc/c05052929.html?jumpid=in_pdp-psnow-qs",
+        "https://www.arubanetworks.com/assets/ds/DS_2930FSwitchSeries.pdf"
+      ]
+    },
+    {
+      "id": "nb-fcc0548ac0e54478",
+      "manufacturer": "Arista",
+      "model": "CCS-720DP-24ZS-2F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-720DP-24ZS-2F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720D-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-595b36736b9f95f2",
+      "manufacturer": "Juniper",
+      "model": "ACX7332",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/ACX7332.yaml",
+        "https://www.juniper.net/documentation/us/en/hardware/acx7332/acx7332.pdf"
+      ]
+    },
+    {
+      "id": "nb-d71c560a21e0db1e",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 201F",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-201F.yaml"
+      ]
+    },
+    {
+      "id": "nb-3ee579cb14778d23",
+      "manufacturer": "MikroTik",
+      "model": "cAP XL ac",
+      "category": "ap",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/RBcAPGi-5acD2nD-XL.yaml",
+        "https://mikrotik.com/product/cap_xl_ac#fndtn-specifications"
+      ]
+    },
+    {
+      "id": "nb-e043a5a21e4bc6c2",
+      "manufacturer": "Ubiquiti",
+      "model": "Enterprise Fortress Gateway",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/EFG.yaml",
+        "https://store.ui.com/products/enterprise-fortress-gateway"
+      ]
+    },
+    {
+      "id": "nb-5bbf29fdc1f2fb3c",
+      "manufacturer": "Huawei",
+      "model": "NE8000 F1A-8H20Q",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/NE8000-F1A-8H20Q.yaml",
+        "https://e.huawei.com/en/material/networking/service-router/b332209e877b43ccbf162820cd96c756"
+      ]
+    },
+    {
+      "id": "nb-73489c7e191a0d9b",
+      "manufacturer": "Extreme Networks",
+      "model": "4220-12P-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4220-12P-4X.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+      ]
+    },
+    {
+      "id": "nb-302f3fd979788f2e",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R630",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R630.yaml"
+      ]
+    },
+    {
+      "id": "nb-c7c438542f1254b3",
+      "manufacturer": "HPE",
+      "model": "ProLiant DL360 Gen10 Plus",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-DL360-Gen10-Plus.yaml"
+      ]
+    },
+    {
+      "id": "nb-f802ebc80b7bb96e",
+      "manufacturer": "Lenovo",
+      "model": "ThinkSystem SR650 V4",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Lenovo/ThinkSystem-SR650-v4.yaml",
+        "https://lenovopress.lenovo.com/lp2127"
+      ]
+    },
+    {
+      "id": "nb-cb719f76ccc4e4c8",
+      "manufacturer": "Supermicro",
+      "model": "SuperServer 1027R-WRF",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Supermicro/SYS-1027R-WRF.yaml"
+      ]
+    },
+    {
+      "id": "nb-86babf3249d2b78a",
+      "manufacturer": "Synology",
+      "model": "RS3614xs+",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/RS3614xs+.yaml",
+        "https://global.download.synology.com/download/Document/Hardware/DataSheet/RackStation/14-year/RS3614xs+/enu/Synology_RS3614xs_Plus_Data_Sheet_enu.pdf"
+      ]
+    },
+    {
+      "id": "nb-2d5dd2ca4dacb1c5",
+      "manufacturer": "APC",
+      "model": "AP4423A",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP4423A.yaml"
+      ]
+    },
+    {
+      "id": "nb-81391abd9812b183",
+      "manufacturer": "Eaton",
+      "model": "Tripp Lite SMART1500LCD",
+      "category": "ups",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Eaton/Tripp-Lite-SMART1500LCD.yaml"
+      ]
+    },
+    {
+      "id": "nb-f060040e382de573",
+      "manufacturer": "Panduit",
+      "model": "DP5e Flat Cat 5e Punchdown Patch Panel 24 Ports, 1RU, Black",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/DP245E88TGY.yaml"
+      ]
+    },
+    {
+      "id": "nb-2213f0b401bb1b4b",
+      "manufacturer": "Netgear",
+      "model": "GS108PP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Netgear/GS108PP.yaml",
+        "https://www.netgear.com/support/product/gs108pp#docs"
+      ]
+    },
+    {
+      "id": "nb-88bc04bb88386c00",
+      "manufacturer": "D-Link",
+      "model": "DGS-1100-08PLV2",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/D-Link/DGS-1100-08PLV2.yaml",
+        "https://www.dlink.ru/ru/products/1366/2518.html"
+      ]
+    },
+    {
+      "id": "nb-e449413120cc6f09",
+      "manufacturer": "NetApp",
+      "model": "DE460C",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/NetApp/DE460C.yaml"
+      ]
+    },
+    {
+      "id": "nb-ba797213d2a5841a",
+      "manufacturer": "Cisco",
+      "model": "ASR1002-HX",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1002-HX.yaml"
+      ]
+    },
+    {
+      "id": "nb-1520b9b243e9bb38",
+      "manufacturer": "HPE",
+      "model": "Aruba 2930F-8G-PoE+-2SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2930F-8G-PoEP-2SFPP.yaml",
+        "https://www.arubanetworks.com/assets/ds/DS_2930FSwitchSeries.pdf"
+      ]
+    },
+    {
+      "id": "nb-4b21539470f6d751",
+      "manufacturer": "Arista",
+      "model": "CCS-720DP-48S-2F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-720DP-48S-2F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720D-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-13db0a5351fdba7d",
+      "manufacturer": "Juniper",
+      "model": "EX2300-C-12P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX2300-C-12P.yaml"
+      ]
+    },
+    {
+      "id": "nb-14b4f71277d991de",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 310B",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-310B.yaml"
+      ]
+    },
+    {
+      "id": "nb-615a4c8f7c283c9a",
+      "manufacturer": "MikroTik",
+      "model": "CCR1016-12S-1S+",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/CCR1016-12S-1S-Plus.yaml",
+        "https://mikrotik.com/product/CCR1016-12S-1Splus"
+      ]
+    },
+    {
+      "id": "nb-385b1e5bac71b7ef",
+      "manufacturer": "Ubiquiti",
+      "model": "Power Distribution Pro",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USP-PDU-Pro.yaml",
+        "https://store.ui.com/products/usp-pdu-pro"
+      ]
+    },
+    {
+      "id": "nb-3b6043083efdc428",
+      "manufacturer": "Huawei",
+      "model": "S5700-52P-LI-AC",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/S5700-52P-LI-AC.yaml",
+        "https://support.huawei.com/enterprise/en/doc/EDOC1000013597/d75bfeb2/s5700-52p-li-ac"
+      ]
+    },
+    {
+      "id": "nb-c8a9b3d42f78ee94",
+      "manufacturer": "Extreme Networks",
+      "model": "4220-12T-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4220-12T-4X.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+      ]
+    },
+    {
+      "id": "nb-73980deb1c5f24bc",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R720",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R720.yaml"
+      ]
+    },
+    {
+      "id": "nb-b47c684d217e4ade",
+      "manufacturer": "HPE",
+      "model": "ProLiant DL360 Gen9",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-DL360-Gen9.yaml",
+        "https://www.hpe.com/psnow/doc/c04346229.pdf"
+      ]
+    },
+    {
+      "id": "nb-bd5913fe938354ff",
+      "manufacturer": "Lenovo",
+      "model": "ThinkSystem SR680a V3",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Lenovo/ThinkSystem-SR680a-v3.yaml",
+        "https://lenovopress.com/lp1909"
+      ]
+    },
+    {
+      "id": "nb-d532953f6aab1767",
+      "manufacturer": "Supermicro",
+      "model": "SuperServer 6029P-TR",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Supermicro/SYS-6029P-TR.yaml",
+        "https://www.supermicro.com/products/system/2U/6029/SYS-6029P-TR.cfm"
+      ]
+    },
+    {
+      "id": "nb-87d53966e8a77039",
+      "manufacturer": "Synology",
+      "model": "RS815+",
+      "category": "nas",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/RS815+.yaml",
+        "https://www.synology.com/en-us/products/RS815+#specs"
+      ]
+    },
+    {
+      "id": "nb-de900000f3f9295d",
+      "manufacturer": "APC",
+      "model": "AP4424A",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP4424A.yaml"
+      ]
+    },
+    {
+      "id": "nb-07e5ff352f97fad1",
+      "manufacturer": "Eaton",
+      "model": "Tripp Lite SMART1500RMXL2UA",
+      "category": "ups",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Eaton/Tripp-Lite-SMART1500RMXL2UA.yaml"
+      ]
+    },
+    {
+      "id": "nb-7ea04d02eec80c94",
+      "manufacturer": "Panduit",
+      "model": "DP5e Flat Cat 5e Punchdown Patch Panel 48 Ports, 2RU, Black",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/DP485E88TGY.yaml"
+      ]
+    },
+    {
+      "id": "nb-93ff4488bf02a184",
+      "manufacturer": "Netgear",
+      "model": "GS308T",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Netgear/GS308T.yaml",
+        "https://www.netgear.com/business/wired/switches/smart/gs308t/"
+      ]
+    },
+    {
+      "id": "nb-c9dda6663d585595",
+      "manufacturer": "D-Link",
+      "model": "DGS-1100-08V2",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/D-Link/DGS-1100-08V2.yaml",
+        "https://www.dlink.ru/ru/products/1/2516.html"
+      ]
+    },
+    {
+      "id": "nb-f5d67a61fbc01300",
+      "manufacturer": "NetApp",
+      "model": "NS224-T-0-24-CF-C",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/NetApp/NS224-T-0-24-CF-C.yaml"
+      ]
+    },
+    {
+      "id": "nb-b953f55ddfc9d913",
+      "manufacturer": "Cisco",
+      "model": "ASR1002-X",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1002-X.yaml"
+      ]
+    },
+    {
+      "id": "nb-0e6accdf31d7d113",
+      "manufacturer": "HPE",
+      "model": "Aruba 2930M-24G",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2930M-24G.yaml",
+        "https://www.arubanetworks.com/assets/ds/DS_2930MSwitchSeries.pdf"
+      ]
+    },
+    {
+      "id": "nb-3a4c93d66b83c701",
+      "manufacturer": "Arista",
+      "model": "CCS-720DT-24S-2F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-720DT-24S-2F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720D-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-01d2c09685f7b01f",
+      "manufacturer": "Juniper",
+      "model": "EX3400-48T",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX3400-48T.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex3400-ethernet-switch-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-8ad4df2cb7211e53",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 500D",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-500D.yaml"
+      ]
+    },
+    {
+      "id": "nb-6f1403f8ddecb484",
+      "manufacturer": "MikroTik",
+      "model": "Chateau 5G ax",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/Chateau-5G-ax.yaml",
+        "https://mikrotik.com/product/chateau_5g_ax"
+      ]
+    },
+    {
+      "id": "nb-88aa53e158b54b05",
+      "manufacturer": "Ubiquiti",
+      "model": "U7 Pro XG",
+      "category": "ap",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/U7-Pro-XG.yaml",
+        "https://techspecs.ui.com/unifi/wifi/u7-pro-xg"
+      ]
+    },
+    {
+      "id": "nb-99ab5630f088ba2c",
+      "manufacturer": "Huawei",
+      "model": "S5720-52X-PWR-SI-AC",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/S5720-52X-PWR-SI-AC.yaml",
+        "https://support.huawei.com/enterprise/en/doc/EDOC1000013597/a3f3c66e/s5720-52x-pwr-si-ac"
+      ]
+    },
+    {
+      "id": "nb-edb5b19d211b3fd8",
+      "manufacturer": "Extreme Networks",
+      "model": "4220-24T-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4220-24T-4X.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+      ]
+    },
+    {
+      "id": "nb-d3f25e78482e4bff",
+      "manufacturer": "Dell",
+      "model": "PowerEdge R730xd",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerEdge-R730xd.yaml",
+        "https://i.dell.com/sites/csdocuments/Shared-Content_data-Sheets_Documents/en/PowerEdge-OEM-R730xd-Carrier-Grade-Spec-Sheet.pdf",
+        "https://i.dell.com/sites/doccontent/shared-content/data-sheets/en/Documents/Dell-PowerEdge-R730-and-R730xd-Technical-Guide-v1-7.pdf"
+      ]
+    },
+    {
+      "id": "nb-e4121ee57f092985",
+      "manufacturer": "HPE",
+      "model": "ProLiant DL380e Gen8",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-DL380e-Gen8.yaml",
+        "https://www.hpe.com/psnow/doc/c04128166"
+      ]
+    },
+    {
+      "id": "nb-2cb44217d425b70f",
+      "manufacturer": "Supermicro",
+      "model": "SuperStorage 6049P-E1CR36L",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Supermicro/SSG-6049P-E1CR36L.yaml",
+        "https://www.supermicro.com/en/products/system/4U/6049/SSG-6049P-E1CR36L.cfm"
+      ]
+    },
+    {
+      "id": "nb-503a26493f9206a4",
+      "manufacturer": "APC",
+      "model": "AP4430A",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP4430A.yaml"
+      ]
+    },
+    {
+      "id": "nb-0ada4f1bb27f261c",
+      "manufacturer": "Eaton",
+      "model": "Tripp Lite SMART2200CRMXL",
+      "category": "ups",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Eaton/Tripp-Lite-SMART2200CRMXL.yaml"
+      ]
+    },
+    {
+      "id": "nb-e5e2d32326c01d41",
+      "manufacturer": "Panduit",
+      "model": "Mini-Com Flush Mount Angled Patch Panel (48 Port, 2RU)",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/CPPA48FMWBLY.yaml"
+      ]
+    },
+    {
+      "id": "nb-dc46d6be5cb5b6af",
+      "manufacturer": "Netgear",
+      "model": "ProSafe GS510TPP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Netgear/ProSafe-GS510TPP.yaml",
+        "https://www.downloads.netgear.com/files/GDC/GS510TPP/GS510TLP_GS510TPP_GS418TPP_DS.pdf"
+      ]
+    },
+    {
+      "id": "nb-90d3445d2598509a",
+      "manufacturer": "D-Link",
+      "model": "DGS-1520-52",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/D-Link/DGS-1520-52.yaml",
+        "https://eu.dlink.com/it/it/products/dgs-1520-layer-3-stackable-smart-managed-switches"
+      ]
+    },
+    {
+      "id": "nb-a8af9348bfc46f13",
+      "manufacturer": "Cisco",
+      "model": "ASR1004",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1004.yaml",
+        "https://www.cisco.com/c/en/us/products/routers/asr-1004-router/index.html"
+      ]
+    },
+    {
+      "id": "nb-cd1c3bbe082c129d",
+      "manufacturer": "HPE",
+      "model": "Aruba 2930M-48G",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2930M-48G.yaml",
+        "https://www.hpe.com/psnow/doc/PSN1009875168USEN.pdf"
+      ]
+    },
+    {
+      "id": "nb-b68b49db7fee9c88",
+      "manufacturer": "Arista",
+      "model": "CCS-720DT-48S-2F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-720DT-48S-2F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720D-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-491844a78b378fad",
+      "manufacturer": "Juniper",
+      "model": "EX4000-12MP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX4000-12MP.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex4000-line-of-ethernet-switches-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-fb441fc59970c5e3",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 50E",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-50E.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiGate_FortiWiFi_50E_Series.pdf"
+      ]
+    },
+    {
+      "id": "nb-25db6819881d422b",
+      "manufacturer": "MikroTik",
+      "model": "CRS112-8P-4S-IN",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/CRS112-8P-4S-IN.yaml",
+        "https://mikrotik.com/product/crs112_8p_4s_in#fndtn-specifications"
+      ]
+    },
+    {
+      "id": "nb-0b8ba8c517126e6a",
+      "manufacturer": "Ubiquiti",
+      "model": "U7 Pro XGS",
+      "category": "ap",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/U7-Pro-XGS.yaml",
+        "https://techspecs.ui.com/unifi/wifi/u7-pro-xgs"
+      ]
+    },
+    {
+      "id": "nb-520f1d7a35b7e950",
+      "manufacturer": "Huawei",
+      "model": "S5731-H24T4XC",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/S5731-H24T4XC.yaml",
+        "https://support.huawei.com/enterprise/en/doc/EDOC1000013597/523c958c/s5731-h24t4xc-02352qpp-02352qpp-001-02352qpp-005"
+      ]
+    },
+    {
+      "id": "nb-e9dabe5202e7c565",
+      "manufacturer": "Extreme Networks",
+      "model": "4220-48P-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4220-48P-4X.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+      ]
+    },
+    {
+      "id": "nb-b6192e3e8a90a5fe",
+      "manufacturer": "Dell",
+      "model": "PowerProtect DP4400",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerProtect-DP4400.yaml"
+      ]
+    },
+    {
+      "id": "nb-c6b1705740436107",
+      "manufacturer": "HPE",
+      "model": "ProLiant DL380p Gen8",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-DL380p-Gen8.yaml",
+        "https://www.hpe.com/psnow/doc/c04123238"
+      ]
+    },
+    {
+      "id": "nb-418d42c0d18a34a4",
+      "manufacturer": "Supermicro",
+      "model": "SuperServer 5018D-FN8T",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Supermicro/SYS-5018D-FN8T.yaml",
+        "https://www.supermicro.com/products/system/1U/5018/SYS-5018D-FN8T.cfm"
+      ]
+    },
+    {
+      "id": "nb-aa67f910589a5502",
+      "manufacturer": "APC",
+      "model": "AP4431A",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP4431A.yaml"
+      ]
+    },
+    {
+      "id": "nb-e8d124c1106f5ffd",
+      "manufacturer": "Panduit",
+      "model": "Mini-Com Flush Mount Angled Patch Panel (72 Port, 2RU)",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/CPPA72FMWBLY.yaml"
+      ]
+    },
+    {
+      "id": "nb-0c237b37d9df0ddb",
+      "manufacturer": "Cisco",
+      "model": "ASR1006",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1006.yaml"
+      ]
+    },
+    {
+      "id": "nb-e2f5cc04c6ef0ee3",
+      "manufacturer": "HPE",
+      "model": "Aruba 2930M-48G-PoE+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2930M-48G-PoEP.yaml",
+        "https://www.hpe.com/psnow/doc/a00001977enw"
+      ]
+    },
+    {
+      "id": "nb-b1f6fce68b44bdac",
+      "manufacturer": "Arista",
+      "model": "CCS-720XP-96ZC2-4F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-720XP-96ZC2-4F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720XP-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-759e188d649a5347",
+      "manufacturer": "Juniper",
+      "model": "EX4000-12P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX4000-12P.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex4000-line-of-ethernet-switches-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-f9a7d60382905603",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 800D",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-800D.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiGate_800D.pdf"
+      ]
+    },
+    {
+      "id": "nb-746a1ccfbf605854",
+      "manufacturer": "MikroTik",
+      "model": "CRS418-8P-8G-2S+RM",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/CRS418-8P-8G-2S-Plus-RM.yaml",
+        "https://mikrotik.com/product/crs418_8p_8g_2s_rm"
+      ]
+    },
+    {
+      "id": "nb-6c3c831ad8429c1d",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Security Gateway Pro",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USG-PRO-4.yaml"
+      ]
+    },
+    {
+      "id": "nb-1adb46683cc91954",
+      "manufacturer": "Huawei",
+      "model": "S5732-H48UM2CC",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/S5732-H48UM2CC.yaml",
+        "https://support.huawei.com/enterprise/en/doc/EDOC1000013597/48b9ca2b/s5732-h48um2cc-02353hub-02353hub-002-02353sjt-02353sjt-001-02353sjt-003-02353sjt-004-02353sjt-010-02353sjt-011-02353sjt-013-02353sjt-014-02353sjt-015-02353sjt-016-02353sjt-018-02353sjt-019"
+      ]
+    },
+    {
+      "id": "nb-cf0f597e804145ae",
+      "manufacturer": "Extreme Networks",
+      "model": "4220-48T-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4220-48T-4X.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+      ]
+    },
+    {
+      "id": "nb-b49efa2c795bb352",
+      "manufacturer": "Dell",
+      "model": "PowerScale F710",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerScale-F710.yaml",
+        "https://www.delltechnologies.com/asset/en-us/products/storage/technical-support/h15963-ss-powerscale-all-flash-nodes.pdf",
+        "https://infohub.delltechnologies.com/en-us/l/powerscale-all-flash-f210-f710-f910/overview-5806/"
+      ]
+    },
+    {
+      "id": "nb-0e9380b77257926e",
+      "manufacturer": "HPE",
+      "model": "ProLiant DX385 Gen10 Plus",
+      "category": "server",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/ProLiant-DX385-Gen10-Plus.yaml",
+        "https://www.hpe.com/psnow/doc/a00056112enw"
+      ]
+    },
+    {
+      "id": "nb-c7a1f257de229c1c",
+      "manufacturer": "APC",
+      "model": "AP4432A",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP4432A.yaml"
+      ]
+    },
+    {
+      "id": "nb-b0fab63898dd7024",
+      "manufacturer": "Panduit",
+      "model": "Mini-Com Flush Mount Patch Panel (24 Port, 1RU)",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/CPP24FMWBLY.yaml"
+      ]
+    },
+    {
+      "id": "nb-61c1119b6a8fb4cf",
+      "manufacturer": "Cisco",
+      "model": "ASR1009-X",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1009-X.yaml",
+        "https://www.cisco.com/c/en/us/products/routers/asr-1009-x-router/index.html"
+      ]
+    },
+    {
+      "id": "nb-a77e3ed47a30e394",
+      "manufacturer": "HPE",
+      "model": "Aruba 6000-12G-POE4-2SFP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6000-12G-POE4-2SFP.yaml"
+      ]
+    },
+    {
+      "id": "nb-f73dd791a2fc73e8",
+      "manufacturer": "Arista",
+      "model": "CCS-722XPM-48Y4-2F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/CCS-722XPM-48Y4-2F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/CCS-722XP-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-06d181bdfaacef1b",
+      "manufacturer": "Juniper",
+      "model": "EX4000-12T",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX4000-12T.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex4000-line-of-ethernet-switches-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-1569935c143ae3b4",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 100D",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-100D.yaml"
+      ]
+    },
+    {
+      "id": "nb-23bca6f7679f1595",
+      "manufacturer": "MikroTik",
+      "model": "hAP ac lite TC",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/RB952Ui-5ac2nD-TC.yaml",
+        "https://mikrotik.com/product/RB952Ui-5ac2nD-TC#fndtn-specifications"
+      ]
+    },
+    {
+      "id": "nb-d6dd7311f2ef95bd",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi SmartPower RPS",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USP-RPS.yaml",
+        "https://techspecs.ui.com/unifi/power-tech/usp-rps"
+      ]
+    },
+    {
+      "id": "nb-c0ac0f175a7366e6",
+      "manufacturer": "Huawei",
+      "model": "S5735-L48P4XE-A-V2",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/S5735-L48P4XE-A-V2.yaml",
+        "https://support.huawei.com/enterprise/en/doc/EDOC1100277349/a75e5938"
+      ]
+    },
+    {
+      "id": "nb-53d11b15f96aebfd",
+      "manufacturer": "Extreme Networks",
+      "model": "4220-4MW-20P-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4220-4MW-20P-4X.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+      ]
+    },
+    {
+      "id": "nb-66c3ee1f91a9421d",
+      "manufacturer": "Dell",
+      "model": "PowerSwitch N2048",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerSwitch-N2048.yaml",
+        "https://www.dell.com/en-us/shop/productdetailstxn/networking-n2000-series#support_section"
+      ]
+    },
+    {
+      "id": "nb-6a9f15ba9e440e40",
+      "manufacturer": "HPE",
+      "model": "StoreEasy 1460 Gen10",
+      "category": "storage",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/StoreEasy-1460-Gen10.yaml",
+        "https://support.hpe.com/hpesc/public/docDisplay?docId=a00076208en_us&page=GUID-B01C0612-BBDB-4439-A08A-E688379356C4.html"
+      ]
+    },
+    {
+      "id": "nb-624f4c89a65b309a",
+      "manufacturer": "APC",
+      "model": "AP4433",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP4433.yaml"
+      ]
+    },
+    {
+      "id": "nb-86a48551b44be392",
+      "manufacturer": "Panduit",
+      "model": "Mini-Com Flush Mount Patch Panel (48 Port, 2RU)",
+      "category": "patch-panel",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/CPP48FMWBLY.yaml"
+      ]
+    },
+    {
+      "id": "nb-26b1060dca08dcdb",
+      "manufacturer": "Cisco",
+      "model": "ASR1013",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1013.yaml"
+      ]
+    },
+    {
+      "id": "nb-7b81ceb62353c88e",
+      "manufacturer": "HPE",
+      "model": "Aruba 6000-24G-4SFP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6000-24G-4SFP.yaml"
+      ]
+    },
+    {
+      "id": "nb-a4126d6cef91ca26",
+      "manufacturer": "Arista",
+      "model": "DCS-7020SR-24C2-F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7020SR-24C2-F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/7020R-48_Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-0378e314e40b7a32",
+      "manufacturer": "Juniper",
+      "model": "EX4000-24MP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX4000-24MP.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex4000-line-of-ethernet-switches-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-c81defef5301d096",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 100EF",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-100EF.yaml",
+        "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiGate_100E_Series.pdf"
+      ]
+    },
+    {
+      "id": "nb-826994f30d34d1c2",
+      "manufacturer": "MikroTik",
+      "model": "hAP ac2",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/RBD52G-5HacD2HnD-TC.yaml",
+        "https://mikrotik.com/product/hap_ac2"
+      ]
+    },
+    {
+      "id": "nb-2bd3616443d83776",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Switch 24 Pro",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-24.yaml",
+        "https://techspecs.ui.com/unifi/switching/usw-pro-24"
+      ]
+    },
+    {
+      "id": "nb-fb08077e5b9dd1cd",
+      "manufacturer": "Huawei",
+      "model": "S5735-L8P4S-A1",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/S5735-L8P4S-A1.yaml",
+        "https://support.huawei.com/enterprise/en/doc/EDOC1000013597/243365cb/s5735-l8p4s-a1-98011295"
+      ]
+    },
+    {
+      "id": "nb-dc19eda57299b02a",
+      "manufacturer": "Extreme Networks",
+      "model": "4220-4MW-8P-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4220-4MW-8P-4X.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+      ]
+    },
+    {
+      "id": "nb-9d2017e0aa6f2f3c",
+      "manufacturer": "Dell",
+      "model": "PowerSwitch N3248P-ON",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerSwitch-N3248P-ON.yaml",
+        "https://www.delltechnologies.com/asset/en-au/products/networking/technical-support/dell-networking-n3200-powerswitch-specsheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-8575f3e84e37fd0d",
+      "manufacturer": "APC",
+      "model": "AP4433A",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP4433A.yaml"
+      ]
+    },
+    {
+      "id": "nb-5bd28430fbf397fc",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 1300-12XS",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C1300-12XS.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1300-series-switches/nb-06-cat1300-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-842ab89f3df610f2",
+      "manufacturer": "HPE",
+      "model": "Aruba 6000-48G-POE4-4SFP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6000-48G-POE4-4SFP.yaml"
+      ]
+    },
+    {
+      "id": "nb-0355b604a6794595",
+      "manufacturer": "Arista",
+      "model": "DCS-7020TR-48-F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7020TR-48-F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/7020R-48_Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-fc86b47706121d42",
+      "manufacturer": "Juniper",
+      "model": "EX4000-24P",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX4000-24P.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex4000-line-of-ethernet-switches-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-a954659fb87b4e11",
+      "manufacturer": "Fortinet",
+      "model": "FortiGate 1200D",
+      "category": "firewall",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-1200D.yaml"
+      ]
+    },
+    {
+      "id": "nb-9f034976d9130ca7",
+      "manufacturer": "MikroTik",
+      "model": "hAP ax S",
+      "category": "router",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/E62iUGS-2axD5axT.yaml",
+        "https://mikrotik.com/product/hap_ax_s#product_specification"
+      ]
+    },
+    {
+      "id": "nb-e5030fe747d79fe6",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Switch 24 Pro PoE Gen2",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-24-PoE.yaml",
+        "https://techspecs.ui.com/unifi/switching/usw-pro-24-poe"
+      ]
+    },
+    {
+      "id": "nb-22aef0e6cd06d2b7",
+      "manufacturer": "Huawei",
+      "model": "S5735-L8T4X-A1",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Huawei/S5735-L8T4X-A1.yaml",
+        "https://support.huawei.com/enterprise/en/doc/EDOC1000013597/a34cc129/s5735-l8t4x-a1"
+      ]
+    },
+    {
+      "id": "nb-69510e57b0827c16",
+      "manufacturer": "Extreme Networks",
+      "model": "4220-8MW-40P-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Extreme Networks/4220-8MW-40P-4X.yaml",
+        "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88"
+      ]
+    },
+    {
+      "id": "nb-61497bf34bd5fcfd",
+      "manufacturer": "Dell",
+      "model": "PowerSwitch S4128F-ON",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Dell/PowerSwitch-S4128F-ON.yaml",
+        "https://www.delltechnologies.com/asset/en-us/products/networking/technical-support/dell-networking-s4100-series-spec-sheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-ce5e88c6a9b7562d",
+      "manufacturer": "APC",
+      "model": "AP4434A",
+      "category": "pdu",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/APC/AP4434A.yaml"
+      ]
+    },
+    {
+      "id": "nb-06c19caa563462d0",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 1300-12XT-2X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C1300-12XT-2X.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1300-series-switches/nb-06-cat1300-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-4f13830c6517574d",
+      "manufacturer": "HPE",
+      "model": "Aruba 6000-48G-POE4-4SFP 740W",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6000-48G-POE4-4SFP-740W.yaml"
+      ]
+    },
+    {
+      "id": "nb-857386ff2603fa07",
+      "manufacturer": "Arista",
+      "model": "DCS-7020TRA-48-F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7020TRA-48-F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/7020R-48_Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-0323789c8aa37403",
+      "manufacturer": "Juniper",
+      "model": "EX4000-24T",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX4000-24T.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex4000-line-of-ethernet-switches-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-d10f5a09e83e59bf",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Switch 48 Pro",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-48.yaml",
+        "https://techspecs.ui.com/unifi/switching/usw-pro-48"
+      ]
+    },
+    {
+      "id": "nb-1e89ff3122676000",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 1300-16P-4X",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C1300-16P-4X.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1300-series-switches/nb-06-cat1300-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-3af5a2fcbefac97c",
+      "manufacturer": "HPE",
+      "model": "Aruba 6100-12G-POE4-2SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6100-12G-POE4-2SFPP.yaml"
+      ]
+    },
+    {
+      "id": "nb-22b5637a0a90560a",
+      "manufacturer": "Arista",
+      "model": "DCS-7050CX3-32C-F",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7050CX3-32C-F.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/7050X3-Datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-ba01da0f6a8e0932",
+      "manufacturer": "Juniper",
+      "model": "EX4000-48MP",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Juniper/EX4000-48MP.yaml",
+        "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/switches/ex4000-line-of-ethernet-switches-datasheet.pdf"
+      ]
+    },
+    {
+      "id": "nb-d064231ab7e45734",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Switch 48 Pro PoE Gen2",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-48-PoE.yaml",
+        "https://techspecs.ui.com/unifi/switching/usw-pro-48-poe"
+      ]
+    },
+    {
+      "id": "nb-8bebc236c1cb62fd",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 1300-16T-2G",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C1300-16T-2G.yaml",
+        "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1300-series-switches/nb-06-cat1300-ser-data-sheet-cte-en.html"
+      ]
+    },
+    {
+      "id": "nb-b331c13345891559",
+      "manufacturer": "HPE",
+      "model": "Aruba 6100-24G-POE4-4SFP+",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-6100-24G-POE4-4SFPP.yaml"
+      ]
+    },
+    {
+      "id": "nb-99fbabbfd63a81ae",
+      "manufacturer": "Arista",
+      "model": "DCS-7050CX3-32S-R",
+      "category": "switch",
+      "sourcePages": [
+        "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Arista/DCS-7050CX3-32S-R.yaml",
+        "https://www.arista.com/assets/data/pdf/Datasheets/7050X3-Datasheet.pdf"
+      ]
+    }
+  ]
+}

@@ -247,8 +247,10 @@ class OfflineBundleBuilder(unittest.TestCase):
         self.assertTrue(all(sha(p) == digest for p, digest in before.items()))
 
     def test_11_selected_operators_keep_adjacent_script_dependencies(self):
-        selected = set(builder.OPERATORS)
-        self.assertEqual(len(selected), 25)
+        selected = set(builder.SQL_OPERATORS)
+        self.assertEqual(len(selected), 26)
+        self.assertEqual(len(builder.OPERATORS), 25)
+        self.assertEqual(selected - set(builder.OPERATORS), {"RackClick.SqlSecrets.ps1"})
         # This reads actual operator imports/calls, rather than repeating the allowlist.
         adjacent = re.compile(r"Join-Path\s+\$PSScriptRoot\s+['\"]([^'\"]+\.ps1)['\"]", re.I)
         for name in selected:
@@ -267,7 +269,7 @@ class OfflineBundleBuilder(unittest.TestCase):
         manifest = self.home / "manifest.json"; manifest.write_bytes(b"synthetic manifest")
         lock = self.home / "lock.json"; lock.write_bytes(b"synthetic lock")
         candidate = self.home / "candidate"; candidate.mkdir()
-        for name in builder.OPERATORS:
+        for name in builder.SQL_OPERATORS:
             path = self.home / "tools/windows" / name
             path.parent.mkdir(parents=True, exist_ok=True); path.write_bytes(b"# synthetic operator")
         for name in builder.MANUALS:
@@ -298,6 +300,7 @@ class OfflineBundleBuilder(unittest.TestCase):
                 self.assertEqual(report["applicationManifestSha256"], digest)
                 self.assertEqual(report["slices"]["application"], {"files": server + _frontend, "bytes": size})
                 self.assertEqual(report["versions"]["schema"], schema)
+                self.assertEqual(report["slices"]["operators"]["files"], 26 if name == "43-sql" else 25)
                 self.assertEqual(report["bundleArchiveSha256"], sha(destination))
                 self.assertEqual((evidence / "SHA256SUMS.txt").read_text(encoding="utf-8"),
                                  sha(destination) + "  " + destination.name + "\n")
@@ -315,7 +318,7 @@ class OfflineBundleBuilder(unittest.TestCase):
                  "evidence/s1-20261018/sesenta-tandas-473-532/CANDIDATA532-FINAL03.json"),
             builder.APPLICATION_SHARED_SHA256:
                 ("592", 6939574, "evidence/s1-20261018/sesenta-tandas-533-592/CANDIDATA592-FINAL02.json")}
-        # Los cuatro manifiestos históricos siguen fijados; el registro completo es exactamente la matriz actual (13 perfiles).
+        # Los cuatro manifiestos históricos siguen fijados; la matriz completa es literal e incluye43-sql.
         self.assertTrue(set(profiles) <= set(builder.APPLICATION_PROFILES))
         self.assertEqual({row[0] for row in MATRIX}, set(builder.APPLICATION_PROFILES))
         for digest, (name, size, relative) in profiles.items():
@@ -352,7 +355,7 @@ class OfflineBundleBuilder(unittest.TestCase):
 
     @unittest.skipUnless(os.name == "nt", "native Windows PowerShell 5.1 profile contract")
     def test_15_native_reader_uses_the_same_closed_profile_matrix(self):
-        # Matriz completa (9–14) contra la tabla literal; el lector nativo debe coincidir fila a fila.
+        # Matriz completa contra la tabla literal; el lector nativo debe coincidir fila a fila.
         module = ROOT / "tools/windows/RackClick.OfflineBundle.ps1"
         before = sha(module)
         digests = [row[0] for row in MATRIX]

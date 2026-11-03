@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "baseline_id": "RC-CIERRE-20261029-v2",
-  "date": "2026-10-29",
+  "baseline_id": "RC-CIERRE-20261103-v3",
+  "date": "2026-11-03",
   "title": "Plan medible del trabajo restante de RackClick",
-  "scope": "CierreS1–S4 y requisitos producto autorizados de revisión4; no se inventa aceptación ni se retira alcance por propuestas ambiguas. Enmienda autorizada29.10: graciaMFA45 desdecreación/rollout yexenciónpropia deladministradorglobalSystemhaus; pesos e IDs conservados.",
+  "scope": "CierreS1–S4 y requisitos producto autorizados de revisión4; no se inventa aceptación ni se retira alcance por propuestas ambiguas. Enmienda autorizada29.10: graciaMFA45 desdecreación/rollout yexenciónpropia deladministradorglobalSystemhaus; pesos e IDs conservados. Enmienda03.11: archivo administrativo autorizado sólo del antecedente run-1/25.10 sin salida conservada, con incertidumbre y reapertura; sin falso positivo ni revocación inferida.",
   "metric": {
     "name": "Cierre del trabajo restante inventariado25.10, política MFA revisada29.10.2026",
     "unit": "puntos de cierre",
@@ -23,7 +23,8 @@
       "Requisitos omitidos/nuevos exigen nueva versión explicada; no ampliar silenciosamente el denominador.",
       "Unknown en hitos históricos es falta de conciliación, no afirmación de que no existe implementación.",
       "Los55 criteriosS1–S4 son cobertura; no son55pruebas nuevas ni otro denominador.",
-      "La revisiónv2 conserva53tareas/280subpasos/100puntos; documenta el cambio de Wascar a45días y exención global. F-07.04 mantiene todos sus negativos y pesa0,50; no acredita instalación/recuperación/QA."
+      "La revisiónv2 conserva53tareas/280subpasos/100puntos; documenta el cambio de Wascar a45días y exención global. F-07.04 mantiene todos sus negativos y pesa0,50; no acredita instalación/recuperación/QA.",
+      "V3 del03.11 conserva53tareas/280checkpoints/100puntos. Sólo admite archivo administrativo autorizado del antecedente run-1/25.10 con incertidumbre y reapertura; .02/.04 no son prueba de revocación. Si aparece evidencia concreta se reabren y se retira su crédito."
     ]
   },
   "areas": [
@@ -69,14 +70,25 @@
       "area": "F",
       "title": "Clasificar hallazgos de secretos y tratar sólo credenciales reales",
       "kind": "higiene de entrega",
-      "status": "implementación",
-      "current": "Escáner Gitleaks/hook fijados y revisados; no falta instalar otro escáner. El barrido guardó coincidencias, no un historial limpio.",
+      "status": "archivado administrativamente con incertidumbre residual",
+      "current": "F-01.01/.03 conservan su clasificación/registro técnico. F-01.02/.04 cerrados administrativamente por decisión expresa de Wascar03.11 y enmienda limitadav3: antecedente25.10 indeterminado y salida perdida, sin falso positivo, prueba de revocación ni cambios deD. Reabrir ambos y retirar5/4 si aparece evidencia concreta; no es higiene global ni aceptación de exposiciones futuras.",
       "available": [
-        "147 commits/9454 archivos del barrido21oct;23 candidatos y69 indeterminados históricos pendientes de clasificación. No son92 secretos demostrados ni deben sumarse los conjuntos histórico/actual."
+        "Se reutilizó el barrido del 21.10 y se recuperaron trazas puntuales de 15 rutas, sin repetir el barrido completo. Los 92 y 90 conjuntos se solapan; no se suman como secretos distintos."
       ],
       "evidence": [
         "docs/IMPLEMENTACION-REV4.md",
-        "evidence/s1-20261021/rev4-fundamento/CIERRE.md"
+        "evidence/s1-20261021/rev4-fundamento/CIERRE.md",
+        "evidence/s1-20261102/f01-01-clasificacion/RESULTADOS.md",
+        "evidence/s1-20261102/f01-01-clasificacion/REVISION-INDEPENDIENTE.md",
+        "evidence/s1-20261102/f01-02-tratamiento/RESULTADOS.md",
+        "evidence/s1-20261102/f01-02-tratamiento/REVISION-INDEPENDIENTE.md",
+        "evidence/s1-20261102/f01-03-registro/RESULTADOS.md",
+        "evidence/s1-20261102/f01-03-registro/REVISION-INDEPENDIENTE.md",
+        "evidence/s1-20261102/f01-04-cierre/RESULTADOS.md",
+        "evidence/s1-20261102/f01-04-cierre/REVISION-INDEPENDIENTE.md",
+        "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+        "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md",
+        "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
       ],
       "criteria": [
         "rev4 C.0",
@@ -89,7 +101,7 @@
         "wascar": "Coordinar sólo una rotación que afecte instalaciones/credenciales bajo su control",
         "environment": "Acceso local privado a hallazgos; no enviar secretos al chat"
       },
-      "closure": "Cada candidato/indeterminado tiene clasificación y resolución verificables; credenciales reales expuestas revocadas/rotadas de forma coordinada; comprobación focal de fuentes/paquete sin exposición.",
+      "closure": "Cada candidato/indeterminado tiene clasificación y resolución verificables; credenciales reales expuestas revocadas/rotadas de forma coordinada; comprobación focal de fuentes/paquete sin exposición. Excepción limitada al antecedente run-1 del25.10.2026 sin salida conservada: archivo administrativo expreso del titular con clasificación indeterminada y reapertura obligatoria si aparece evidencia concreta. No equivale a falso positivo, ausencia de exposición o revocación demostrada.",
       "milestones": {
         "definition_confirmed": {
           "state": "done",
@@ -101,48 +113,57 @@
           ]
         },
         "implementation_complete": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "El resultado completo de esta tarea no está implementado; partes existentes se conservan en real_state/done_scope.",
+          "reason": "Registro/disposición administrativa limitada y revisión según baselinev3, con aceptación expresa del propietario. No acredita ausencia global de exposición o revocación.",
           "evidence": [
             "docs/IMPLEMENTACION-REV4.md",
-            "evidence/s1-20261021/rev4-fundamento/CIERRE.md"
+            "evidence/s1-20261021/rev4-fundamento/CIERRE.md",
+            "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
           ]
         },
         "technical_tests_same_scope": {
           "state": "pending",
           "applicable": true,
-          "reason": "Faltan pruebas del entregable completo/final o de los cambios afectados; no repetir suites que ya cubren partes invariantes.",
+          "reason": "Se conserva el estado técnico previo: este archivo administrativo no aporta una nueva prueba global de ausencia de exposición ni atribución de seguridad de la candidata. Véase la disposición limitadav3 y las comprobaciones focales históricas.",
           "evidence": [
             "docs/IMPLEMENTACION-REV4.md",
             "evidence/s1-20261021/rev4-fundamento/CIERRE.md"
           ]
         },
         "independent_review_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Revisión distinta final/afectada pendiente tras implementar o integrar el resultado.",
+          "reason": "Registro/disposición administrativa limitada y revisión según baselinev3, con aceptación expresa del propietario. No acredita ausencia global de exposición o revocación.",
           "evidence": [
             "docs/IMPLEMENTACION-REV4.md",
-            "evidence/s1-20261021/rev4-fundamento/CIERRE.md"
+            "evidence/s1-20261021/rev4-fundamento/CIERRE.md",
+            "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
           ]
         },
         "integrated_current_candidate": {
           "state": "unknown",
           "applicable": true,
-          "reason": "Existe implementación o evidencia anterior, pero esta tarea no prueba atribución completa al conjunto candidato/instancia objetivo actual.",
+          "reason": "Se conserva el estado técnico previo: este archivo administrativo no aporta una nueva prueba global de ausencia de exposición ni atribución de seguridad de la candidata. Véase la disposición limitadav3 y las comprobaciones focales históricas.",
           "evidence": [
             "docs/IMPLEMENTACION-REV4.md",
             "evidence/s1-20261021/rev4-fundamento/CIERRE.md"
           ]
         },
         "target_acceptance": {
-          "state": "unknown",
+          "state": "done",
           "applicable": true,
-          "reason": "No se dispone de aceptación identificada de este resultado; su necesidad operativa se coordina sin inventar un gate humano nuevo.",
+          "reason": "Registro/disposición administrativa limitada y revisión según baselinev3, con aceptación expresa del propietario. No acredita ausencia global de exposición o revocación.",
           "evidence": [
             "docs/IMPLEMENTACION-REV4.md",
-            "evidence/s1-20261021/rev4-fundamento/CIERRE.md"
+            "evidence/s1-20261021/rev4-fundamento/CIERRE.md",
+            "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
           ]
         }
       },
@@ -153,32 +174,67 @@
         {
           "id": "F-01.01",
           "text": "Clasificar candidatos e indeterminados privados con trazabilidad por ruta/commit y sin publicar valores.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f01-01-clasificacion/RESULTADOS.md",
+            "evidence/s1-20261102/f01-01-clasificacion/REVISION-INDEPENDIENTE.md"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f01-01-clasificacion/REVISION-INDEPENDIENTE.md"
+          ]
         },
         {
           "id": "F-01.02",
-          "text": "Si una credencial es real, coordinar revocación/rotación con la instancia afectada; corregir exposición y volver a verificar cambios/artefactos relevantes.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "text": "Si una credencial es real, coordinar revocación/rotación con la instancia afectada; corregir exposición y volver a verificar cambios/artefactos relevantes. Para el antecedente run-1 del25.10.2026 sin salida conservada, se admite sólo el archivo administrativo expreso documentado, con incertidumbre y reapertura obligatoria; no clasifica como falso positivo ni prueba revocación.",
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f01-02-tratamiento/RESULTADOS.md",
+            "evidence/s1-20261102/f01-02-tratamiento/REVISION-INDEPENDIENTE.md",
+            "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f01-02-tratamiento/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
+          ],
+          "closure_method": "administrative_disposition",
+          "residual_uncertainty": true,
+          "reopen_on_concrete_evidence": true
         },
         {
           "id": "F-01.03",
           "text": "Registrar falsos positivos y criterio específico sin supresiones amplias; reescritura de historial no está autorizada por defecto.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f01-03-registro/RESULTADOS.md",
+            "evidence/s1-20261102/f01-03-registro/REVISION-INDEPENDIENTE.md"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f01-03-registro/REVISION-INDEPENDIENTE.md"
+          ]
         },
         {
           "id": "F-01.04",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f01-04-cierre/RESULTADOS.md",
+            "evidence/s1-20261102/f01-04-cierre/REVISION-INDEPENDIENTE.md",
+            "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md"
+          ],
           "weight_points": "5/8",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261102/f01-04-cierre/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
+          ],
+          "closure_method": "independent_review_of_administrative_disposition",
+          "residual_uncertainty": true,
+          "reopen_on_concrete_evidence": true
         }
       ],
       "baseline_state": "pending_remaining_work_as_of_2026-10-25",
@@ -187,20 +243,46 @@
         "rev4 C.0",
         "rev4 C.6",
         "AGENTS: nunca versionar secretos/diagnósticos privados"
-      ]
+      ],
+      "administrative_disposition": {
+        "decision": "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+        "factualClassification": "indeterminate",
+        "falsePositiveDeclared": false,
+        "revocationProven": false,
+        "reopenCheckpoints": [
+          "F-01.02",
+          "F-01.04"
+        ],
+        "withdrawCreditOnReopen": "5/4",
+        "technicalHygieneGloballyProven": false
+      }
     },
     {
       "id": "F-02",
       "area": "F",
       "title": "Cifrar configuración SQL y recuperar sus secretos en otra instancia",
       "kind": "producto/operación",
-      "status": "implementación",
-      "current": "Connection string runtime permanece en archivo privado protegido por ACL y texto plano. DPAPI de otros secretos del instalador no acredita cifrado de ésta.",
+      "status": "cerrado técnicamente con revisión independiente",
+      "current": "F-02.01–.04 cerrados: postboot13, Restore14-r2 desde backup sintético LEAO hacia E con cuenta/SID/roles/material nuevos,20clientes SQL/API,operadores/ficha/diagnóstico/backup reales y reanudación sin regeneración. Windows no se reinició tras Restore14; ese pendiente sigue en los criterios Windows, sin adopción global. D se conserva y F01 tiene disposición administrativa posterior03.11, separada del cierre técnico.",
       "available": [],
       "evidence": [
         "docs/IMPLEMENTACION-REV4.md",
         "docs/RECUPERACION-DESPLIEGUE-WINDOWS-S1.md",
-        "docs/REVISION-INSTALADOR14-06-CODEX.md"
+        "docs/REVISION-INSTALADOR14-06-CODEX.md",
+        "evidence/s1-20261102/f02-01-sql/RESULTADOS.md",
+        "evidence/s1-20261102/f02-01-sql/REVISION-INDEPENDIENTE.md",
+        "docs/CONTRATO-CONEXION-SQL-CIFRADA-v1.md",
+        "evidence/s1-20261102/f02-02-operadores/RESULTADOS.md",
+        "evidence/s1-20261102/f02-02-operadores/REVISION-INDEPENDIENTE.md",
+        "docs/OPERADORES-SQL-CIFRADOS-v2.md",
+        "evidence/s1-20261102/f02-03-restauracion/RESULTADOS.md",
+        "evidence/s1-20261102/f02-03-restauracion/REVISION-INDEPENDIENTE.md",
+        "docs/REANUDACION-RESTORE-SQL-PROTEGIDO.md",
+        "evidence/s1-20261102/vm12-e/RESULTADOS.md",
+        "evidence/s1-20261102/vm12-e/review/DICTAMEN-F02-01.md",
+        "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+        "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-02.md",
+        "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
       ],
       "criteria": [
         "rev4 C.6",
@@ -228,53 +310,63 @@
           ]
         },
         "implementation_complete": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "El resultado completo de esta tarea no está implementado; partes existentes se conservan en real_state/done_scope.",
+          "reason": "Objetivo técnico propio de F-02 demostrado y revisado en E13/Restore14-r2; no equivale a adopción del producto ni a postboot14.",
           "evidence": [
             "docs/IMPLEMENTACION-REV4.md",
             "docs/RECUPERACION-DESPLIEGUE-WINDOWS-S1.md",
-            "docs/REVISION-INSTALADOR14-06-CODEX.md"
+            "docs/REVISION-INSTALADOR14-06-CODEX.md",
+            "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+            "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
           ]
         },
         "technical_tests_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Faltan pruebas del entregable completo/final o de los cambios afectados; no repetir suites que ya cubren partes invariantes.",
+          "reason": "Objetivo técnico propio de F-02 demostrado y revisado en E13/Restore14-r2; no equivale a adopción del producto ni a postboot14.",
           "evidence": [
             "docs/IMPLEMENTACION-REV4.md",
             "docs/RECUPERACION-DESPLIEGUE-WINDOWS-S1.md",
-            "docs/REVISION-INSTALADOR14-06-CODEX.md"
+            "docs/REVISION-INSTALADOR14-06-CODEX.md",
+            "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+            "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
           ]
         },
         "independent_review_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Revisión distinta final/afectada pendiente tras implementar o integrar el resultado.",
+          "reason": "Objetivo técnico propio de F-02 demostrado y revisado en E13/Restore14-r2; no equivale a adopción del producto ni a postboot14.",
           "evidence": [
             "docs/IMPLEMENTACION-REV4.md",
             "docs/RECUPERACION-DESPLIEGUE-WINDOWS-S1.md",
-            "docs/REVISION-INSTALADOR14-06-CODEX.md"
+            "docs/REVISION-INSTALADOR14-06-CODEX.md",
+            "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+            "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
           ]
         },
         "integrated_current_candidate": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Resultado completo todavía no integrado en la candidata objetivo; no confundir app03 interna con GUI MFA/instalación final.",
+          "reason": "Objetivo técnico propio de F-02 demostrado y revisado en E13/Restore14-r2; no equivale a adopción del producto ni a postboot14.",
           "evidence": [
             "docs/IMPLEMENTACION-REV4.md",
             "docs/RECUPERACION-DESPLIEGUE-WINDOWS-S1.md",
-            "docs/REVISION-INSTALADOR14-06-CODEX.md"
+            "docs/REVISION-INSTALADOR14-06-CODEX.md",
+            "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+            "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
           ]
         },
         "target_acceptance": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Aceptación o validación del objetivo final pendiente; responsable y criterio concreto se definen en owners/close_criterion.",
+          "reason": "Objetivo técnico propio de F-02 demostrado y revisado en E13/Restore14-r2; no equivale a adopción del producto ni a postboot14.",
           "evidence": [
             "docs/IMPLEMENTACION-REV4.md",
             "docs/RECUPERACION-DESPLIEGUE-WINDOWS-S1.md",
-            "docs/REVISION-INSTALADOR14-06-CODEX.md"
+            "docs/REVISION-INSTALADOR14-06-CODEX.md",
+            "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+            "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
           ]
         }
       },
@@ -285,32 +377,68 @@
         {
           "id": "F-02.01",
           "text": "Diseñar e integrar protección compatible con cuenta/instancia reales y canal mínimo de lectura para el servicio; conservar separación owner/migración/runtime.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f02-01-sql/RESULTADOS.md",
+            "evidence/s1-20261102/f02-01-sql/REVISION-INDEPENDIENTE.md",
+            "docs/CONTRATO-CONEXION-SQL-CIFRADA-v1.md",
+            "evidence/s1-20261102/vm12-e/RESULTADOS.md",
+            "evidence/s1-20261102/vm12-e/service-observed13.json",
+            "evidence/s1-20261102/vm12-e/source-next-actual.json"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f02-01-sql/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261102/vm12-e/review/DICTAMEN-F02-01.md"
+          ]
         },
         {
           "id": "F-02.02",
           "text": "Actualizar operadores/fichas de acceso, diagnóstico y backup para no filtrar la clave ni depender de copiar un secreto ligado al host antiguo.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f02-02-operadores/RESULTADOS.md",
+            "evidence/s1-20261102/f02-02-operadores/REVISION-INDEPENDIENTE.md",
+            "docs/OPERADORES-SQL-CIFRADOS-v2.md",
+            "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+            "evidence/s1-20261103/e13-postboot-restore14/restore14-observed.json"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f02-02-operadores/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-02.md"
+          ]
         },
         {
           "id": "F-02.03",
           "text": "Ensayar reanudación y Restore en destino nuevo con identidad/roles/claves nuevos; error explícito ante clave ausente/incorrecta.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f02-03-restauracion/RESULTADOS.md",
+            "evidence/s1-20261102/f02-03-restauracion/REVISION-INDEPENDIENTE.md",
+            "docs/REANUDACION-RESTORE-SQL-PROTEGIDO.md",
+            "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+            "evidence/s1-20261103/e13-postboot-restore14/resume14-reconciled.json"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f02-03-restauracion/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
+          ]
         },
         {
           "id": "F-02.04",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+            "evidence/s1-20261103/e13-postboot-restore14/resume14-reconciled.json"
+          ],
           "weight_points": "5/8",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
+          ]
         }
       ],
       "baseline_state": "pending_remaining_work_as_of_2026-10-25",
@@ -6547,10 +6675,161 @@
     "builds": 0,
     "commits": 0
   },
-  "frozen_structure_sha256": "ae686f21994f3af247456f0dcc56108c16c0a229f7500d86bd20ddb41f78cdf3",
+  "frozen_structure_sha256": "9ef507b41abc2c8cab58e38bf345c4a4f30dd48a8a156b0d1d4ebd7ea45be974",
   "baseline_revision": {
-    "previous": "RC-CIERRE-20261025-v1",
-    "evidence": "evidence/s1-20261029/mfa-dashboard-codex/REBASE.md",
-    "reason": "Decisión explícita de Wascar29oct; sustitución limitada de exigencia inmediata por45días/exención global, sin cambiar puntuación ni denominador."
-  }
+    "previous": "RC-CIERRE-20261029-v2",
+    "previous_date": "2026-10-29",
+    "previous_revision": {
+      "previous": "RC-CIERRE-20261025-v1",
+      "evidence": "evidence/s1-20261029/mfa-dashboard-codex/REBASE.md",
+      "reason": "Decisión explícita de Wascar29oct; sustitución limitada de exigencia inmediata por45días/exención global, sin cambiar puntuación ni denominador."
+    },
+    "evidence": "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+    "reason": "Archivo administrativo explícito de Wascar del antecedente concreto run-1/25.10 no conservado; incertidumbre y reapertura obligatoria. No equivale a falso positivo, revocación o higiene global; pesos/IDs/denominador sin cambios.",
+    "oldLedgerSha256": "5d5f9951060975267721663e1be830c20eb4272f6020b54df2604c84a1464c34",
+    "oldFrozenStructureSha256": "ae686f21994f3af247456f0dcc56108c16c0a229f7500d86bd20ddb41f78cdf3",
+    "preservedSnapshot": "evidence/s1-20261103/f01-archivo-administrativo/before-state/PLAN-CIERRE-RACKCLICK.json"
+  },
+  "checkpoint_updates": [
+    {
+      "date": "2026-11-02",
+      "checkpoint": "F-01.01",
+      "from": "pending",
+      "to": "done",
+      "fixedWeight": "5/8",
+      "evidence": "evidence/s1-20261102/f01-01-clasificacion/RESULTADOS.md",
+      "review": "evidence/s1-20261102/f01-01-clasificacion/REVISION-INDEPENDIENTE.md",
+      "scopeChanged": false
+    },
+    {
+      "date": "2026-11-02",
+      "checkpoint": "F-01.02",
+      "from": "pending",
+      "to": "in_progress",
+      "creditAdded": 0,
+      "evidence": "evidence/s1-20261102/f01-02-tratamiento/RESULTADOS.md",
+      "review": "evidence/s1-20261102/f01-02-tratamiento/REVISION-INDEPENDIENTE.md",
+      "scopeChanged": false
+    },
+    {
+      "date": "2026-11-02",
+      "checkpoint": "F-01.03",
+      "from": "pending",
+      "to": "done",
+      "fixedWeight": "5/8",
+      "evidence": "evidence/s1-20261102/f01-03-registro/RESULTADOS.md",
+      "review": "evidence/s1-20261102/f01-03-registro/REVISION-INDEPENDIENTE.md",
+      "scopeChanged": false
+    },
+    {
+      "date": "2026-11-02",
+      "checkpoint": "F-01.04",
+      "from": "pending",
+      "to": "in_progress",
+      "creditAdded": 0,
+      "evidence": "evidence/s1-20261102/f01-04-cierre/RESULTADOS.md",
+      "review": "evidence/s1-20261102/f01-04-cierre/REVISION-INDEPENDIENTE.md",
+      "scopeChanged": false
+    },
+    {
+      "date": "2026-11-02",
+      "checkpoint": "F-02.01",
+      "from": "pending",
+      "to": "in_progress",
+      "creditAdded": 0,
+      "evidence": "evidence/s1-20261102/f02-01-sql/RESULTADOS.md",
+      "review": "evidence/s1-20261102/f02-01-sql/REVISION-INDEPENDIENTE.md",
+      "scopeChanged": false
+    },
+    {
+      "date": "2026-11-02",
+      "checkpoint": "F-02.02",
+      "from": "pending",
+      "to": "in_progress",
+      "creditAdded": 0,
+      "evidence": "evidence/s1-20261102/f02-02-operadores/RESULTADOS.md",
+      "review": "evidence/s1-20261102/f02-02-operadores/REVISION-INDEPENDIENTE.md",
+      "scopeChanged": false
+    },
+    {
+      "date": "2026-11-02",
+      "checkpoint": "F-02.03",
+      "from": "pending",
+      "to": "in_progress",
+      "creditAdded": 0,
+      "evidence": "evidence/s1-20261102/f02-03-restauracion/RESULTADOS.md",
+      "review": "evidence/s1-20261102/f02-03-restauracion/REVISION-INDEPENDIENTE.md",
+      "scopeChanged": false
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-02.01",
+      "from": "in_progress",
+      "to": "done",
+      "creditAdded": "5/8",
+      "evidence": "evidence/s1-20261102/vm12-e/RESULTADOS.md",
+      "review": "evidence/s1-20261102/vm12-e/review/DICTAMEN-F02-01.md",
+      "scopeChanged": false,
+      "reason": "Cuenta efectiva y canal protegido demostrados en E13; sin añadir reboot o Restore al criterio de este checkpoint."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-02.02",
+      "from": "in_progress",
+      "to": "done",
+      "creditAdded": "5/8",
+      "evidence": "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+      "review": "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-02.md",
+      "scopeChanged": false,
+      "reason": "Criterio literal contrastado en Restore14-r2 con cuenta/SID nuevos, operadores/ficha/backup reales y reanudación conciliada; postboot14 y adopción general permanecen en sus resultados correspondientes."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-02.03",
+      "from": "in_progress",
+      "to": "done",
+      "creditAdded": "5/8",
+      "evidence": "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+      "review": "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md",
+      "scopeChanged": false,
+      "reason": "Criterio literal contrastado en Restore14-r2 con cuenta/SID nuevos, operadores/ficha/backup reales y reanudación conciliada; postboot14 y adopción general permanecen en sus resultados correspondientes."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-02.04",
+      "from": "pending",
+      "to": "done",
+      "creditAdded": "5/8",
+      "evidence": "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+      "review": "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md",
+      "scopeChanged": false,
+      "reason": "Criterio literal contrastado en Restore14-r2 con cuenta/SID nuevos, operadores/ficha/backup reales y reanudación conciliada; postboot14 y adopción general permanecen en sus resultados correspondientes."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-01.02",
+      "from": "in_progress",
+      "to": "done",
+      "creditAdded": "5/8",
+      "evidence": "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md",
+      "scopeChanged": true,
+      "baselineRevision": "RC-CIERRE-20261103-v3",
+      "closureMethod": "administrative_disposition",
+      "reason": "Decisión explícita de Wascar y criterio enmendado ANTES de acreditar; no cierre técnico de exposición ni revocación inferida."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-01.04",
+      "from": "in_progress",
+      "to": "done",
+      "creditAdded": "5/8",
+      "evidence": "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md",
+      "scopeChanged": true,
+      "baselineRevision": "RC-CIERRE-20261103-v3",
+      "closureMethod": "independent_review_of_administrative_disposition",
+      "reason": "Decisión explícita de Wascar y criterio enmendado ANTES de acreditar; no cierre técnico de exposición ni revocación inferida."
+    }
+  ]
 }

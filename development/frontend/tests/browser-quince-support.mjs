@@ -1,6 +1,6 @@
 // Windows Edge/CDP integration. No Playwright or additional npm dependency.
 import { spawn } from 'node:child_process';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { createServer } from 'node:net';
 import { once } from 'node:events';
 import path from 'node:path';
@@ -30,7 +30,9 @@ export class CDP {
  async button(text) { await this.evaluate(`(()=>{const button=[...document.querySelectorAll('button')].find(b=>b.textContent.trim()===${JSON.stringify(text)});if(!button)throw Error('Button missing');button.click()})()`); }
 }
 
-export const fixture=JSON.parse(process.env.RACKCLICK_FIXTURE),out=evidence;
+const fixturePath=process.env.RACKCLICK_FIXTURE_PATH;
+if(fixturePath){const resolved=path.resolve(fixturePath),privateRoot=path.join(root,'.local')+path.sep;if(!resolved.startsWith(privateRoot))throw Error('Private local fixture path required');}
+export const fixture=JSON.parse(fixturePath?await readFile(fixturePath,'utf8'):process.env.RACKCLICK_FIXTURE),out=evidence;
 export async function runScenario(scenario){
  let browser,tab;
  try{

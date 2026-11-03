@@ -11,7 +11,7 @@ const same=(a:string|null,b:string|null)=>a===null||b===null?a===b:a.toLowerCase
 const integer=(x:unknown,min:number,max=2147483647)=>Number.isInteger(x)&&Number(x)>=min&&Number(x)<=max;
 // Names.Validate and InventoryJson.Text count Unicode scalar values, including supplementary characters.
 const text=(x:unknown,empty=false):x is string=>typeof x==='string'&&(empty&&x.length===0||x.length>0&&x===x.replace(/^\p{White_Space}+|\p{White_Space}+$/gu,''))&&x.length<=200&&Array.from(x).length<=100&&!/[\p{Cc}\uD800-\uDFFF]/u.test(x);
-const families=new Set(['rj45','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c']);
+const families=new Set(['rj45','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c','sfp56','qsfpdd','idc','ipc','fiber','sfpdd','cfp2','sas','dsl','telephony','isdn','expansion','power_dc']);
 const entityKeys='relation,kind,id,name,parentKind,parentId,deviceKind,rackId,roomId,sizeU,positionU,sortOrder,groupType,prefix,portCount';
 const invalid=():never=>{throw new ApiError(200,'response_invalid')};
 const idFields=new Set(['id','parentId','rackId','roomId']);

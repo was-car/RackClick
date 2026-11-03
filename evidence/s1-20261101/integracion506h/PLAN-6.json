@@ -1,0 +1,57 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506h-20261101-v1",
+  "targetSchema": 37,
+  "baselineSchema": 36,
+  "baselineDefinitions": 728,
+  "baselineCommercial": 723,
+  "physicalTypes": [
+    "rj45",
+    "sfp",
+    "sfp28",
+    "qsfp",
+    "sfp56",
+    "qsfpdd",
+    "power"
+  ],
+  "authoring": {
+    "aruba": [
+      {
+        "id": "nb-086e891acea2817b",
+        "manufacturer": "HPE",
+        "model": "Aruba 6300F-24G-4SFP56"
+      },
+      {
+        "id": "nb-51dcd09a4e5de9b0",
+        "manufacturer": "HPE",
+        "model": "Aruba 6300F-48G-POE4-4SFP56"
+      },
+      {
+        "id": "nb-460527db3780ce3d",
+        "manufacturer": "HPE",
+        "model": "Aruba 6300M-24G-4SFP56"
+      }
+    ],
+    "nokia": [
+      {
+        "id": "nb-dbb1fdc53d9b42a1",
+        "manufacturer": "Nokia",
+        "model": "7220 IXR-D5 32*400GE"
+      },
+      {
+        "id": "nb-14eb45daaa9298fa",
+        "manufacturer": "Nokia",
+        "model": "7220 IXR-H3 32QSFPDD 2SFP+"
+      },
+      {
+        "id": "nb-f9014eaa7cd819dc",
+        "manufacturer": "Nokia",
+        "model": "7220 IXR-H4 64QSFPDD 2SFP+"
+      }
+    ]
+  },
+  "selectedBefore": 368,
+  "selectedAfterIfAllAccepted": 374,
+  "models": 6,
+  "reason": "First actual profiles using reviewed SFP56/QSFP-DD contract; no quantity quota or unsupported media fallback."
+}

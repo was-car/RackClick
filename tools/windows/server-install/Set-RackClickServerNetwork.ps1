@@ -1,4 +1,4 @@
-#requires -Version 5.1
+﻿#requires -Version 5.1
 [CmdletBinding()]
 param([string]$InstallationId='606b8c29-41de-4dc0-b63d-ade836000d9e',[string]$BindAddress='192.168.250.78',[string]$AllowedSubnet='192.168.250.0/24',[string]$PublicHost='',[switch]$CheckOnly,[switch]$FunctionsOnly)
 # Standalone maintenance of the frozen 05 installation. No Windows network or database changes.
@@ -42,13 +42,13 @@ function Test-RcNetworkFirewallAddresses([string[]]$Observed,[string[]]$Expected
 }
 function Get-RcNetworkExpectedSchema($Receipt){
     if($null-eq$Receipt.PSObject.Properties['applicationSchemaVersion']){return 14}
-    if($Receipt.applicationSchemaVersion-isnot[int]-or$Receipt.applicationSchemaVersion-notin@(14,15)){Stop-RcNetwork 'network_configuration_binding_invalid'}
+    if($Receipt.applicationSchemaVersion-isnot[int]-or$Receipt.applicationSchemaVersion-notin@(14,15,43)){Stop-RcNetwork 'network_configuration_binding_invalid'}
     return $Receipt.applicationSchemaVersion
 }
 function Assert-RcNetworkMfaProfile($Profile,$Receipt){
     . (Join-Path $PSScriptRoot 'RackClick.MfaRuntime.ps1')
     try{$mfa=Get-ServerMfaProfile -Manifest $Profile -InstallationId $Receipt.installationId}catch{Stop-RcNetwork 'network_configuration_binding_invalid'}
-    if((Get-RcNetworkExpectedSchema $Receipt)-eq15-and-not$mfa.enabled){Stop-RcNetwork 'network_configuration_binding_invalid'}
+    if((Get-RcNetworkExpectedSchema $Receipt)-in@(15,43)-and-not$mfa.enabled){Stop-RcNetwork 'network_configuration_binding_invalid'}
 }
 function ConvertTo-RcNetworkConfiguration($Profile,$Config,$Receipt,$Tls,$Plan){
     Assert-RcNetworkMfaProfile $Profile $Receipt
@@ -74,7 +74,7 @@ function Import-RcNetworkHelpers($Context){
     $root=$Context.receipt.codeRoot;Assert-RcNetworkCodeAcl $root;$payload=Join-Path $root 'payload.json';Assert-RcNetworkCodeAcl $payload
     $stream=[IO.File]::Open($payload,'Open','Read','Read');$Context.codeLocks.Add($stream)|Out-Null
     $bytes=[IO.File]::ReadAllBytes($payload)
-    if((Get-RcNetworkHash $bytes)-cne'14e3092a863663bbf1f71f9e23918e7b419a057d7505bca7d42bc6b1a40b42ad'){Stop-RcNetwork 'network_frozen_payload_mismatch'}
+    if((Get-RcNetworkHash $bytes)-cne'112e902e11f8ef3826bc938f8a0c23fcd9bff9dac5ec1a60bc2dc7f0248cca17'){Stop-RcNetwork 'network_frozen_payload_mismatch'}
     $manifest=[Text.Encoding]::UTF8.GetString($bytes)|ConvertFrom-Json;$seen=@{}
     foreach($file in $manifest.files){if($file.path-cmatch'^operators/[A-Za-z0-9_./-]+\.ps1$'-or$file.path-cmatch'^service/[A-Za-z0-9_.-]+\.dll$'){
         if($file.path-match'(^|/)\.\.?(/|$)'-or$seen.ContainsKey($file.path)){Stop-RcNetwork 'network_payload_path_invalid'};$seen[$file.path]=$true

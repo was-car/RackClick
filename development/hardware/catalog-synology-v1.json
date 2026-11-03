@@ -1,0 +1,51 @@
+{
+  "formatVersion": 1,
+  "catalogKey": "rackclick-synology-01",
+  "definitions": [
+    {
+      "key": "synology-rs1221plus",
+      "revision": "synology-20261030-v1",
+      "identity": {
+        "manufacturer": "Synology",
+        "family": "RackStation",
+        "model": "RS1221+",
+        "sku": "RS1221+"
+      },
+      "provenance": {
+        "kind": "manufacturer-specification",
+        "source": "https://global.download.synology.com/download/Document/Hardware/HIG/RackStation/21-year/RS1221%2B/enu/Syno_HIG_RS1221%2B_enu.pdf",
+        "assets": []
+      },
+      "kind": "rack",
+      "rackUnits": 2,
+      "dimensionsMm": {
+        "width": 482,
+        "height": 88,
+        "depth": 306.6
+      },
+      "color": "#28292a",
+      "slots": [],
+      "groups": [
+        {
+          "key": "rear-lan",
+          "type": "rj45",
+          "count": 4,
+          "face": "rear",
+          "name": "LAN",
+          "prefix": "LAN ",
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "rear-power",
+          "type": "power",
+          "count": 1,
+          "face": "rear",
+          "name": "AC inlet",
+          "prefix": "AC ",
+          "powerRole": "inlet"
+        }
+      ],
+      "passthrough": null
+    }
+  ]
+}

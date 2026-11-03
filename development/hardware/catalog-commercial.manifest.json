@@ -1,0 +1,24 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 18,
+  "catalogKey": "rackclick-commercial-01",
+  "state": "curated_development_not_a_release",
+  "inputs": {
+    "development/hardware/catalog-commercial-v1.json": "d034c999cef12c9427a5390fe23a277f408b3303121c4a67e8c20c1c96580863",
+    "development/hardware/catalog-schema18.lock.json": "588ad2e51f3f2b878d1d5990a4b867a13ee65333d2493de5589903f058b86168",
+    "development/hardware/startech-c6panelutp241uft.facts.json": "999085a1ed5c31ed7d3d9dfdbdb7fa8c0cfd92b5b1858c2918f6c66425ae029b",
+    "development/server/database/017-hardware-catalog.sql": "d037ef96c84ee8b7211b933bf2775da6a6e28b19451818c19ca3056516d21615"
+  },
+  "files": {
+    "development/server/src/RackClick.Server/CommercialHardwareProfiles.Generated.cs": "26c3a1ebc1ecf188f77ea3246e81e4a872d151277223e2c89b7edd7c10f95a9e",
+    "development/frontend/src/hardware-commercial.generated.json": "70e7ba5f9f8cc14b7909464be43375a2a79439a10714bd1d511ea90d8fa193f1",
+    "development/server/database/018-commercial-hardware.sql": "71b9151c7ddd8b2c8b28f2de49f4ef312b3ca6d406f1054685424392c85535ad"
+  },
+  "definitions": [
+    {
+      "key": "startech-c6panelutp241uft",
+      "revision": "startech-20261030-v1",
+      "sha256": "bb14899b34783bfd8acb650598040475369d2451d73bda153f49542d5afc39d4"
+    }
+  ]
+}

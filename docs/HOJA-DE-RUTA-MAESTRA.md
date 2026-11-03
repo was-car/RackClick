@@ -1,55 +1,60 @@
 # Hoja de ruta maestra de RackClick
 
-30.10.2026 · Entrada única para continuar el proyecto. Integra el cierre existente, las peticiones de Wascar, la comparación RC10 y el catálogo de fabricantes. No declara implementado lo que sólo está investigado.
+2026-11-03 · Entrada única para continuar el proyecto. Integra el cierre existente, las peticiones de Wascar, la comparación RC10 y el catálogo de fabricantes. No declara implementado lo que sólo está investigado.
 
-**Abrir este documento al planificar.** [Registro completo JSON](REGISTRO-REQUISITOS-MAESTRO.json) · [Trazabilidad de las 302 acciones](TRAZABILIDAD-RC10-MAESTRA.csv) · [Conciliación de documentos](CONCILIACION-PLANES-30-10-2026.md).
+**Abrir este documento al planificar.** [Registro completo JSON](REGISTRO-REQUISITOS-MAESTRO.json) · [Trazabilidad de las 302 acciones](TRAZABILIDAD-RC10-MAESTRA.csv) · [Pasos numerados para elegir](PLAN-PENDIENTES-NUMERADO.md) · [Conciliación de documentos](CONCILIACION-PLANES-30-10-2026.md).
 
 ## Estado que se conserva
 
-El servidor 10 funciona con PostgreSQL 17, servicio Windows/HTTPS y MFA real probado por Wascar. Los 10 clientes originales ya se cargaron con su inventario y la seguridad conservada. Hay jerarquía, Click-Click, grupos/permisos, plantillas/favoritos y varios formatos de exportación. Faltan resultados de integración, recuperación, variantes y aceptación; no se comienza otro piloto.
+D fue actualizada en sitio a aplicación45 el03.11.2026, conservando servicio/SID/DB/cuentas/MFA/certificados/URL. HTTPS ready45 y backup real posteriorPASS, Auto/Running. Inventario actual preservado:50clientes,180racks,1561equipos/objetos,20650puertos,2202conexiones;43tablas comparadas idénticas. Catálogo884revisiones/877comerciales, selección506 intacta. Datos previos manuales no se sustituyen por cifras históricas Demo50. Windows no reiniciado para postboot45; QA/login personal posterior y cierre restante pendientes. No volver a migrar o cargar Demo50.
 
-El cierre cuantificado mantiene 53 resultados (50 con peso y 3 controles), 280 subpasos y 23 acreditados. Son comprobaciones de cierre, no 280 funciones que haya que escribir. Las 302 acciones RC10 son detalle trazado; el catálogo nuevo es una ampliación diferenciada.
+El cierre cuantificado mantiene 53 resultados (50 con peso y 3 controles), 280 subpasos y 31 acreditados. Son comprobaciones de cierre, no funciones nuevas que haya que escribir. Las 302 acciones RC10 son detalle trazado; el catálogo nuevo es una ampliación diferenciada.
 
 ## Qué falta, por bloques
 
 | Bloque | Trabajo que falta cerrar |
 |---|---|
-| F · Seguridad/MFA | Clasificación de hallazgos reales; configuración SQL y secretos recuperables; custodia/ACL finales; sobre portable, rotación, códigos y emergencia del último administrador; reautenticación y matriz final. Conservar panel/login/gracia de 45 días ya construidos. |
+| F · Seguridad/MFA | Clasificación de hallazgos reales; configuración SQL y secretos recuperables; custodia/ACL finales; sobre portable, rotación, custodia/cierre de códigos y emergencia del último administrador; reautenticación y matriz final. Conservar panel/login/gracia de 45 días ya construidos. |
 | I · Inventario y colaboración | Variantes de conectores/caras/PoE, reconexión y lotes por IDs/grupo/tipo; compensación/rehacer seguro, concurrencia GUI, Dosen/finales y decisión separada sobre terminales internos. |
 | A · Administración | Recorrido más visual de usuarios/grupos/ámbitos, aceptación de C1 vigente, auditoría fuera de las21 formas y retención/correlación. La autorización sigue en servidor. |
 | P · Paridad RC9/RC10 | Import/export JSON normal y merge/round-trip; branding/técnico/logo; PNG y cierre de formatos; herramientas/atajos; racks primero, detalles plegables, avisos, EN/DE/ES y accesibilidad. |
-| W · Windows y red | Matriz soportada y negativos de cuenta/servicio; red/certificados casa-trabajo sencillos; repetición/cancelación/diagnóstico y recorrido instalado completo. New10/postboot ya probado se conserva. |
+| W · Windows y red | Matriz soportada y negativos de cuenta/servicio; red/certificados casa-trabajo sencillos; repetición/cancelación/diagnóstico y recorrido instalado completo. New11/postboot deD ya probado se conserva. |
 | R · Backup y recuperación | Retención, destinos local/USB/UNC, cifrado y secretos/MFA, restore completo en otro Windows, actualización/rollback y reset delimitado. Integrar operación en dashboard. |
 | E · Entrega | Candidata única, build repetible, licencias/SBOM/avisos, manual final y QA por módulos, carga de 10 usuarios con demo completa y adopción. |
-| C-HW · Fabricantes | Convertir investigación en catálogo curado: contrato/variantes, conectores, caras/geometría/licencias, selector, pruebas por modelo, publicación y mantenimiento. Primeros 100 perfiles es propuesta. |
+| C-HW · Fabricantes | Selección506/506 integrada en43 y cargada enD. Cerrar QA/reservas de configuración/geometría, procedencia/licencias, publicación y mantenimiento; no repetir la autoría de esos modelos. |
 | FUT · Después | Descubrimiento SNMP/LLDP/API, paquetes de campo S5 y federación AD/OIDC real; mantienen su alcance posterior. |
 
 Rendimiento requiere medición en la candidata con datos/usuarios representativos. La lista no demuestra un fallo de PostgreSQL ni exige cambiar de base. Las mejoras se decidirán sobre resultados reproducidos.
 
 ## Peticiones de Wascar registradas
 
-- **REQ-UX-01 · Racks primero, información secundaria plegable** → P-11 (relacionados:I-04). Rack/frontal/trasera visibles al llegar; PoE y datos extensos desplegables sin ocultar errores o cambios pendientes. Estado:pendiente_de_implementacion.
+- **REQ-UX-01 · Racks primero, información secundaria plegable** → P-11 (relacionados:I-04). Rack/frontal/trasera visibles al llegar; PoE y datos extensos desplegables sin ocultar errores o cambios pendientes. Estado:implementado_y_probado_en_laboratorio_pendiente_integracion_y_qa.
 - **REQ-UX-02 · Administración de usuarios y grupos más visual** → A-02 (relacionados:P-11, F-10). Lista/búsqueda, usuario seleccionado, pertenencias, ámbitos y métodos claros; distinguir global/cliente/técnico/lector sin otorgar derechos por nombre de rol. Estado:pendiente_de_mejora_y_aceptacion.
-- **REQ-UX-03 · Barra compacta de informes y exportaciones** → P-07 (relacionados:P-11). Acciones agrupadas por rack/cliente; controles técnicos extensos bajo demanda; formato de cada descarga identificado correctamente. Estado:pendiente_de_presentacion.
-- **REQ-UX-04 · Datos sintéticos completos y repetibles para QA** → E-05 (relacionados:P-01, E-06). Mantener los10clientes originales en C y preparar carga opcional verificable para futuros laboratorios sin reemplazar cuentas ni MFA. Estado:carga_actual_hecha_facilidad_repetible_pendiente.
-- **REQ-UX-05 · Exportar/importar inventario y backup desde dashboard** → R-04 (relacionados:R-01, R-03, P-01, P-03, F-05). Separar intercambio JSON de copia PostgreSQL/secretos. Acceso administrativo, progreso, integridad, destino nuevo y recuperación MFA comprobada; no sobrescribir una base silenciosamente. Estado:pendiente_de_integracion.
+- **REQ-UX-03 · Barra compacta de informes y exportaciones** → P-07 (relacionados:P-11). Acciones agrupadas por rack/cliente; controles técnicos extensos bajo demanda; formato de cada descarga identificado correctamente. Estado:contexto_y_metadatos_de_tres_exportadores_probados_pendiente_integracion_y_resto_de_formatos.
+- **REQ-UX-04 · Datos sintéticos completos y repetibles para QA** → E-05 (relacionados:P-01, E-06, C-HW-05, I-03, I-05, I-06, R-04). Demo50 y prueba de diez actores/ambitos ya realizados en laboratorio con umbrales de humo previos. D11 carga50/2553comandos verificada en185.681s y backup posterior completo; MFA/TLS del cargador probado aparte en cuenta sintetica. Faltan carga extendida instalada, memoria/CPU/consultas/picos/recuperacion y aceptacion practica, no crear de nuevo la demo. Estado:demo50_cargada_y_verificada_D11_QA_visual_pendiente.
+- **REQ-UX-05 · Exportar/importar inventario y backup desde dashboard** → R-04 (relacionados:R-01, R-03, P-01, P-03, F-05). Separar intercambio JSON de copia PostgreSQL/secretos. Acceso administrativo, progreso, integridad, destino nuevo y recuperación MFA comprobada; no sobrescribir una base silenciosamente. Exportación actual RackClickInventory-v1 por cliente probada PG17.11/API/Edge,4MiB sin truncar, recibo/SHA256, sólo inventario. Importación/merge/originalRC9/backup PostgreSQL y Windows43 siguen pendientes; docs/PUNTO3-FUNCIONES-PENDIENTES.md. Estado:exportacion_JSON_actual_probada_importacion_y_backup_pendientes.
 - **REQ-UX-06 · Operación sencilla entre casa y trabajo** → W-04 (relacionados:W-05, E-04). Nombre/origen/red/certificado coherentes y mantenimiento guiado, sin otra secuencia manual de editar varios archivos; no modificar la IP de Windows sin instrucción. Estado:herramientas_existentes_cierre_facilidad_pendiente.
 - **REQ-UX-07 · Acceso privado del operador y datos de conexión DB** → E-04 (relacionados:F-02, W-03). Indicar cómo obtener credenciales locales autorizadas de cada instancia y usar HeidiSQL cuando proceda; nunca incluir contraseñas en manuales públicos o ZIP documental. Estado:conciliar_documentacion_y_acceso_privado.
-- **REQ-UX-08 · MFA propio y administrativo con política confirmada** → F-10 (relacionados:F-07, F-08, F-09, F-11). Conservar gracia de 45 días/exención global/avisos, control servidor y ausencia de secretos ajenos; cerrar recuperación, últimos administradores y reautenticación. Estado:implementado_parcial_cierre_y_recuperacion_pendientes.
+- **REQ-UX-08 · MFA propio y administrativo con política confirmada** → F-10 (relacionados:F-07, F-08, F-09, F-11). Enrolamiento/login/GUI y politica45 existentes; F-07.01-.04 acreditados. D11 tiene proveedor real y prueba HTTPS/DPAPI de cuenta sintetica. Falta cierre integral y escenarios pendientes; no crear otro login. Codigos de recuperacion del punto3 probados en desarrollo43, no canje nativo en D. Conservar politica45 y exencion global confirmadas; recuperacion/emergencia/rotacion y aceptacion pendientes. Estado:implementado_parcial_cierre_y_recuperacion_pendientes.
 - **REQ-UX-09 · Avisos multiusuario comprensibles** → P-09 (relacionados:I-05, A-03). Otro usuario ve qué cambió y dónde, sin perder su borrador ni inventar contexto histórico; ámbitos y revocación vigentes. Estado:implementacion_existente_matriz_final_pendiente.
 - **REQ-UX-10 · QA y manual paso a paso para una sola persona** → E-05 (relacionados:E-04, E-07). Ubicación/botón/campo, resultado esperado, rol, disponibilidad y candidata; conservar Pass/NotPass/observaciones y exportación de Wascar. Estado:proceso_existente_mantener_por_candidata.
+- **REQ-HW-MOUNT-01 · Montaje explícito y físico antes de ampliar marcas** → C-HW-02 (relacionados:C-HW-04, C-HW-05, C-HW-06). Montajes y contratos probados por familias, incluidos en43 y Demo50 de D. Conservar IDs/puertos/cables. Faltan reservas explicitadas y aceptacion, no repetir bandeja/firewall desde cero. Estado:contrato_y_catalogo43_integrados_D11_QA_pendiente.
+- **REQ-HW-VISUAL-01 · Carcasa real para modelos principales y genérica para el resto** → C-HW-04 (relacionados:C-HW-01, C-HW-03, C-HW-05, C-HW-06). 506/506 seleccionados integrados con868revisiones/861comerciales; tecnica interactiva aprobada conservada. Demo50 disponible en D11; faltan aceptacion visual, reservas/fuentes y mantenimiento. Los dibujados no son fotografias redistribuidas ni todos los modelos del mercado. Estado:seleccion506_integrada_y_cargada_D11_QA_visual_pendiente.
+- **REQ-CATALOGO-BUSQUEDA-01 · Selección compacta por búsqueda, sin lista larga en el rack** → C-HW-04 (relacionados:C-HW-03, C-HW-05, REQ-HW-VISUAL-01). Buscador compacto por marca/familia/modelo/SKU y alias sofos-&gt;Sophos ya integrado. Faltan QA de busqueda/teclado y excepciones de configuracion; no crear una lista larga ni volver a instalar perfiles. Estado:selector868_integrado_D11_QA_pendiente.
+- **REQ-DE-CPE-01 · Routers, repetidores y familias habituales de Alemania** → C-HW-07 (relacionados:C-HW-01, C-HW-03, C-HW-04, C-HW-05). Seis routers FRITZ!/DrayTek y diez repetidores FRITZ!,TP-Link,devolo,Telekom instalados enD45 mediante actualización revisada y continuaciones registradas. Servicio/HTTPS/backup45 verificados;datos/MFA conservados. Falta revisiónvisual deWascar y resto de sondeo; selección506/pesos intactos. Estado:dieciseis_modelos_instalados_D45_QA_visual_pendiente.
+- **REQ-UX-RACK-02 · Proporciones, etiquetas y desplazamiento en soportes** → P-11 (relacionados:C-HW-04, REQ-HW-VISUAL-01, REQ-UX-01, REQ-CATALOGO-BUSQUEDA-01). Mínimosporcara/objetivos24px,anchochildrelativoapadreconpisoUIacotado,ampliaciónconrelayout,captionsyrevisionesplegables,nombrescompletosconservados. Faltan aceptaciónvisualyactualizacióncompletaautorizadaenD. Laobservacióndebotonesoffline reutiliza302 acciones;noduplicarplanes. Estado:corregido_desarrollo_revision_visual_independiente_candidata_instalada_pendiente.
 
 ## Catálogo de fabricantes: ampliación trazada
 
 [Alcance completo](ALCANCE-CATALOGO-FABRICANTES.md) · [Visor de consulta](../CATALOGO-HARDWARE.html). 12.008definiciones comunitarias y144 racks no son12.152plantillas aprobadas. 195 registros primarios pueden solaparse;19 tienen campos físicos parciales. Fechas/revisiones desconocidas se conservan. No se instala PacketTracer ni se copian fotos por estar publicadas.
 
 - **C-HW-01 · Inventario de fabricantes, modelos y fuentes** — investigacion_entregada_no_plantillas_integradas. Conservar12.008definiciones/144 racks/195 registros primarios con su procedencia y límites.
-- **C-HW-02 · Contrato y normalización de catálogo de fabricantes** — pendiente. Identidad/SKU/revisión, conectores, cara/geometría, montaje, módulos, puertos combo y mapeos rechazados explícitamente.
-- **C-HW-03 · Selección y validación del primer catálogo curado** — propuesto_100_perfiles_no_implementado. Propuesta100 perfiles: 12 Sophos,16 Fortinet,12 Palo Alto,20 Cisco,12 Aruba,8 Synology,8 QNAP,6 racks,6 UPS/PDU; no es el total del mercado ni cantidad aprobada lista.
-- **C-HW-04 · Selector por marca/familia/modelo y vistas físicas** — pendiente. Reutilizar catálogo/favoritos/plantillas; frontal/trasera y puertos clicables con recursos propios o licencia comprobada.
-- **C-HW-05 · Prueba por modelo y revisión independiente** — pendiente. Comparar con manuales, crear instancias UUID distintas, conservar cables, recargar/otra sesión y probar negativos de ámbito/combo/modular.
-- **C-HW-06 · Publicación y actualización del catálogo** — pendiente. Versión/manifiesto/digest, compatibilidad y rollback sin alterar instancias existentes; incluir en candidata y guía QA.
-- **C-HW-07 · Ampliación y mantenimiento de cobertura** — planificado_sin_censo_total_acreditado. Ventana objetivo2018–2026 y equipos históricos instalados; fechas desconocidas nulas, nuevos modelos por el mismo proceso, búsqueda/rendimiento medidos.
+- **C-HW-02 · Contrato y normalización de catálogo de fabricantes** — seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente. 506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.
+- **C-HW-03 · Selección y validación del primer catálogo curado** — seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente. 506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.
+- **C-HW-04 · Selector por marca/familia/modelo y vistas físicas** — seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente. 506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.
+- **C-HW-05 · Prueba por modelo y revisión independiente** — seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente. 506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.
+- **C-HW-06 · Publicación y actualización del catálogo** — seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente. 506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.
+- **C-HW-07 · Ampliación y mantenimiento de cobertura** — seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente. 506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.
 
 ## Evolución posterior y referencias
 
@@ -95,9 +100,10 @@ Regeneración documental desde la raíz: C:/Python312/python.exe -B tools/build_
 
 ## Siguiente grupo propuesto
 
-- **SIG-01 · Racks primero e informes compactos** (REQ-UX-01, REQ-UX-03, P-11, P-07). Cambio GUI acotado, prueba de navegador con datos originales, revisión distinta y guion QA.
-- **SIG-02 · Contrato del catálogo por fabricante** (C-HW-02). Esquema/mapeos/variantes y selección inicial trazada; sin importar miles de YAML automáticamente.
-- **SIG-03 · Cerrar recuperación portable MFA de la instalación** (F-05, F-06, R-03, R-04). Recorrido técnico end-to-end reutilizando componentes existentes; revisar primero el corte seguro y las pruebas necesarias.
+- **SIG-DE-CPE-01 · Revisión visual de Alemania, repetidores y soportes antes del paso 9** (C-HW-07, P-11, REQ-DE-CPE-01, REQ-UX-RACK-02). Wascar revisa D45 con Ctrl+F5; usar perfiles del catálogo/sala y comprobar soportes sin repetir instalación ni Demo50. Registrar observaciones; retomar9/F-03.02 según priorización. Postboot45/instalación limpia/Restore45 mantienen su criterio propio.
+- **SIG-CIERRE-01 · Elegir un paso del inventario numerado de pendientes** (E-07, F-10, E-05). Conciliar evidencia actual y criterios historicos; usar PLAN-PENDIENTES-NUMERADO.md sin cambiar pesos ni tocar D.
+- **SIG-RECUPERACION-02 · Cerrar recuperacion MFA portable y local de forma integrada** (F-05, F-06, F-08, F-09, R-03, R-04). Reutilizar componentes revisados; pruebas en otro laboratorio cuando se elija ese paso, no en D.
+- **SIG-JSON-03 · Importacion JSON normal con previsualizacion y original** (P-01, P-02, P-03, P-04, REQ-UX-05). Completar importacion/merge/round-trip sin confundir cargador fijo de demo con importador general.
 
 Estas tres salidas pueden prepararse con archivos/responsables separados; sus dependencias se revisan antes de implementar. Este bloque sólo consolida documentos; no inicia esas tres tandas, instalaciones o ensayos VM.
 
@@ -111,17 +117,17 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 
 #### F-01 · Clasificar hallazgos de secretos y tratar sólo credenciales reales
 
-- **Cierre acreditado:** 0/4 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Escáner Gitleaks/hook fijados y revisados; no falta instalar otro escáner. El barrido guardó coincidencias, no un historial limpio.
-- **Resultado que falta cerrar:** Cada candidato/indeterminado tiene clasificación y resolución verificables; credenciales reales expuestas revocadas/rotadas de forma coordinada; comprobación focal de fuentes/paquete sin exposición.
-- **Fuentes:** [IMPLEMENTACION-REV4.md](IMPLEMENTACION-REV4.md); [CIERRE.md](../evidence/s1-20261021/rev4-fundamento/CIERRE.md)
+- **Cierre acreditado:** 4/4 subpasos; 2,50/2,50 puntos. Estado:cerrado_acreditado.
+- **Lo que hay:** F-01.01/.03 conservan su clasificación/registro técnico. F-01.02/.04 cerrados administrativamente por decisión expresa de Wascar03.11 y enmienda limitadav3: antecedente25.10 indeterminado y salida perdida, sin falso positivo, prueba de revocación ni cambios deD. Reabrir ambos y retirar5/4 si aparece evidencia concreta; no es higiene global ni aceptación de exposiciones futuras.
+- **Criterio conservado; no reabrir por este registro:** Cada candidato/indeterminado tiene clasificación y resolución verificables; credenciales reales expuestas revocadas/rotadas de forma coordinada; comprobación focal de fuentes/paquete sin exposición. Excepción limitada al antecedente run-1 del25.10.2026 sin salida conservada: archivo administrativo expreso del titular con clasificación indeterminada y reapertura obligatoria si aparece evidencia concreta. No equivale a falso positivo, ausencia de exposición o revocación demostrada.
+- **Fuentes:** [F01-RESOLUCION-ANTECEDENTE.md](F01-RESOLUCION-ANTECEDENTE.md); [REVISION-RESOLUCION.md](../evidence/s1-20261102/cierre-bloqueantes-01-07/f01/REVISION-RESOLUCION.md); [DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md](DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md); [RESULTADOS.md](../evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md); [REVISION-ARCHIVO-ADMINISTRATIVO.md](../evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md)
 
 #### F-02 · Cifrar configuración SQL y recuperar sus secretos en otra instancia
 
-- **Cierre acreditado:** 0/4 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Connection string runtime permanece en archivo privado protegido por ACL y texto plano. DPAPI de otros secretos del instalador no acredita cifrado de ésta.
-- **Resultado que falta cerrar:** El secreto SQL no queda en claro en el archivo entregado/configuración recuperable; servicio estándar arranca y Restore nuevo funciona mediante procedimiento documentado, sin secretos en logs/paquetes.
-- **Fuentes:** [IMPLEMENTACION-REV4.md](IMPLEMENTACION-REV4.md); [RECUPERACION-DESPLIEGUE-WINDOWS-S1.md](RECUPERACION-DESPLIEGUE-WINDOWS-S1.md); [REVISION-INSTALADOR14-06-CODEX.md](REVISION-INSTALADOR14-06-CODEX.md)
+- **Cierre acreditado:** 4/4 subpasos; 2,50/2,50 puntos. Estado:cerrado_acreditado.
+- **Lo que hay:** F-02.01–.04 cerrados: postboot13, Restore14-r2 desde backup sintético LEAO hacia E con cuenta/SID/roles/material nuevos,20clientes SQL/API,operadores/ficha/diagnóstico/backup reales y reanudación sin regeneración. Windows no se reinició tras Restore14; ese pendiente sigue en los criterios Windows, sin adopción global. D se conserva y F01 tiene disposición administrativa posterior03.11, separada del cierre técnico.
+- **Criterio conservado; no reabrir por este registro:** El secreto SQL no queda en claro en el archivo entregado/configuración recuperable; servicio estándar arranca y Restore nuevo funciona mediante procedimiento documentado, sin secretos en logs/paquetes.
+- **Fuentes:** [IMPLEMENTACION-REV4.md](IMPLEMENTACION-REV4.md); [RECUPERACION-DESPLIEGUE-WINDOWS-S1.md](RECUPERACION-DESPLIEGUE-WINDOWS-S1.md); [REVISION-INSTALADOR14-06-CODEX.md](REVISION-INSTALADOR14-06-CODEX.md); [RESULTADOS.md](../evidence/s1-20261102/f02-01-sql/RESULTADOS.md); [REVISION-INDEPENDIENTE.md](../evidence/s1-20261102/f02-01-sql/REVISION-INDEPENDIENTE.md); [CONTRATO-CONEXION-SQL-CIFRADA-v1.md](CONTRATO-CONEXION-SQL-CIFRADA-v1.md); [RESULTADOS.md](../evidence/s1-20261102/f02-02-operadores/RESULTADOS.md); [REVISION-INDEPENDIENTE.md](../evidence/s1-20261102/f02-02-operadores/REVISION-INDEPENDIENTE.md); [OPERADORES-SQL-CIFRADOS-v2.md](OPERADORES-SQL-CIFRADOS-v2.md); [RESULTADOS.md](../evidence/s1-20261102/f02-03-restauracion/RESULTADOS.md); [REVISION-INDEPENDIENTE.md](../evidence/s1-20261102/f02-03-restauracion/REVISION-INDEPENDIENTE.md); [REANUDACION-RESTORE-SQL-PROTEGIDO.md](REANUDACION-RESTORE-SQL-PROTEGIDO.md); [SQL-PROTEGIDO-INSTANCIA3.md](SQL-PROTEGIDO-INSTANCIA3.md); [INSTALADOR12-SQL-PROTEGIDO.md](INSTALADOR12-SQL-PROTEGIDO.md); [CIERRE-BLOQUEANTES-PASOS-01-A-07.md](CIERRE-BLOQUEANTES-PASOS-01-A-07.md); [RESULTADOS.md](../evidence/s1-20261102/cierre-bloqueantes-01-07/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/vm12-e/RESULTADOS.md); [DICTAMEN-F02-01.md](../evidence/s1-20261102/vm12-e/review/DICTAMEN-F02-01.md); [RESULTADOS.md](../evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md); [DICTAMEN-F02-03-04.md](../evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md)
 
 #### F-03 · Registrar decisión de custodia y ubicación definitiva D2
 
@@ -133,9 +139,9 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 #### F-04 · Implementar proveedor TOTP Windows bajo la identidad real del servicio
 
 - **Cierre acreditado:** 1/4 subpasos; 0,62/2,50 puntos. Estado:parcial_acreditado.
-- **Lo que hay:** En C Windows Server2025 limpia, candidata 10 instala almacén dedicado e inicia proveedor Windows DPAPI bajo cuenta estándar SCM. Enrolamiento y nuevo login TOTP por HTTPS verificados antes y después del reinicio. Negativos de pérdida de clave/versión y arranque cerrado conciliados con las fuentes actuales. No se cierra la recuperación portable ni todos los negativos de ACL/otros tokens.
+- **Lo que hay:** Proveedor, escritor, almacen y composicion productiva ya integrados. D11 usa el SID real del servicio; enrolamiento y verificacion TOTP por HTTPS/DPAPI funcionaron con QA-MFA11. Completar negativos de ACL/otros tokens y cierre del resultado; no recrear el proveedor.
 - **Resultado que falta cerrar:** Servicio real lee/descifra y verifica factores; otra cuenta no lee, servicio no escribe ni modifica ACL, management no se amplía; negativos y revisión independiente registrados.
-- **Fuentes:** [Program.cs](../development/server/src/RackClick.Server/Program.cs); [MfaStore.cs](../development/server/src/RackClick.Server/MfaStore.cs); [MfaSecretCipher.cs](../development/server/src/RackClick.Server/MfaSecretCipher.cs); [DECISION-D2-CUSTODIA-CLAVE-TOTP.md](DECISION-D2-CUSTODIA-CLAVE-TOTP.md); [REVISION-D2-CODEX.md](REVISION-D2-CODEX.md)
+- **Fuentes:** [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 #### F-05 · Integrar y cerrar la recuperación portable de claves MFA
 
@@ -154,16 +160,16 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 #### F-07 · Completar enrolamiento restringido cuando MFA sea exigible
 
 - **Cierre acreditado:** 4/5 subpasos; 2,00/2,50 puntos. Estado:parcial_acreditado.
-- **Lo que hay:** Enrolamiento, login MFA, GUI y gracia de 45 días tienen trabajo acreditado; Wascar probó MFA administrativo en candidata 10. Falta el cierre integral del resultado y sus escenarios pendientes, no crear otra pantalla de login.
+- **Lo que hay:** Enrolamiento/login/GUI y politica45 existentes; F-07.01-.04 acreditados. D11 tiene proveedor real y prueba HTTPS/DPAPI de cuenta sintetica. Falta cierre integral y escenarios pendientes; no crear otro login. Codigos de recuperacion del punto3 probados en desarrollo43, no canje nativo en D.
 - **Resultado que falta cerrar:** Cuando se exige MFA o se inicia enrolamiento, el desafío no concede acceso API; confirmar un factor válido emite una única sesión nueva, con negativos de concurrencia y revisión. Respetar la gracia de 45 días y exención global confirmadas, sin bloquear de golpe todas las cuentas nuevas.
-- **Fuentes:** [MFA-DASHBOARD-GRACIA-45-29-10-2026.md](MFA-DASHBOARD-GRACIA-45-29-10-2026.md); [RESULTADOS.md](../evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md)
+- **Fuentes:** [MFA-DASHBOARD-GRACIA-45-29-10-2026.md](MFA-DASHBOARD-GRACIA-45-29-10-2026.md); [RESULTADOS.md](../evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md); [PUNTO3-FUNCIONES-PENDIENTES.md](PUNTO3-FUNCIONES-PENDIENTES.md); [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 #### F-08 · Implementar códigos de recuperación y reenrolamiento restringido
 
 - **Cierre acreditado:** 0/5 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Tabla app_mfa_recovery_code existe; generación/entrega/consumo y transición posterior no demostrados como flujo de producto.
+- **Lo que hay:** Codigos propios y canje a reenrolamiento restringido implementados y revisados en desarrollo43, con revocacion transaccional y entrega unica. Faltan ultimo administrador, custodia operativa, canje en candidata instalada y conciliacion/acreditacion, no otro generador de codigos.
 - **Resultado que falta cerrar:** Cada código sirve una sola vez incluso en concurrencia; recuperación no abre API antes del estado autorizado; reenrolamiento y revocación/auditoría sin secretos probados por revisor distinto.
-- **Fuentes:** [014-mfa.sql](../development/server/database/014-mfa.sql); [DECISION-D2-CUSTODIA-CLAVE-TOTP.md](DECISION-D2-CUSTODIA-CLAVE-TOTP.md); [REVISION-D2-CODEX.md](REVISION-D2-CODEX.md); [PLAN-MFA-Y-FRENTES-C1-C5.md](PLAN-MFA-Y-FRENTES-C1-C5.md)
+- **Fuentes:** [PUNTO3-FUNCIONES-PENDIENTES.md](PUNTO3-FUNCIONES-PENDIENTES.md); [RESULTADOS.md](../evidence/s1-20261102/punto3/RESULTADOS.md)
 
 #### F-09 · Implementar recuperación local cuando no quedan clave, sobre ni códigos
 
@@ -183,16 +189,16 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 #### F-11 · Integrar segundo paso y todos los formularios de reautenticación
 
 - **Cierre acreditado:** 0/5 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** RackClickApi.login sigue password→csrf→me; no gestiona202 como desafío. La GUI RC9 vigente no ofrece MFA.
+- **Lo que hay:** El coordinador actual ya gestiona login con desafío 202, enrolamiento, verificación TOTP y canje limitado de códigos. Panel y login MFA se probaron en navegador; D11 confirmó el proveedor Windows real y el flujo TOTP por HTTPS. Falta completar la reautenticación por familia de operación sensible y la persistencia de intenciones inciertas al navegar o recargar; no rehacer el login ni afirmar que la GUI carece de MFA.
 - **Resultado que falta cerrar:** Login y cada familia de reauth completan factor para mismo actor, conservan borrador y recuperan respuesta sin duplicar; navegador/ENDEES revisados antes de habilitar QA.
-- **Fuentes:** [api.ts](../development/frontend/src/api.ts); [AUTENTICACION-MFA-S1.md](AUTENTICACION-MFA-S1.md); [PLAN-MFA-Y-FRENTES-C1-C5.md](PLAN-MFA-Y-FRENTES-C1-C5.md)
+- **Fuentes:** [MFA-DASHBOARD-GRACIA-45-29-10-2026.md](MFA-DASHBOARD-GRACIA-45-29-10-2026.md); [PUNTO3-FUNCIONES-PENDIENTES.md](PUNTO3-FUNCIONES-PENDIENTES.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 #### F-12 · Acreditar MFA y fundamento sobre la candidata completa por HTTP/HTTPS
 
 - **Cierre acreditado:** 0/5 subpasos; 0,00/0,00 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** HTTP y GUI MFA/gracia de 45 días revisados en laboratorio15; Browser8etapasPASS y Quality378PASS/1Dockeromitida. Proveedor sintético de DI separado, no custodia productiva final/HTTPS de la candidata. F-12.03/.04/.05 pendientes.
+- **Lo que hay:** Candidata43 y D11 identificadas: servicio/HTTPS/DPAPI reales; TOTP del cargador corregido probado con cuenta sintetica y permiso global denegado. Completar matriz de seguridad/codigos/recuperacion/reauth; no anunciar ausencia de proveedor o deshabilitar lo ya probado por Wascar.
 - **Resultado que falta cerrar:** Evidencia identifica bytes/esquema/proveedor/entorno y demuestra flujos positivos/negativos MFA completos más controles afectados; ninguna omisión pasa por éxito, sin anunciar QA/producción por pruebas del almacén.
-- **Fuentes:** [CIERRE.md](../evidence/s1-20261023/distribucion14-decision/CIERRE.md); [REVISION-M3-CORRECCIONES-CODEX.md](REVISION-M3-CORRECCIONES-CODEX.md); [REVISION-D14-05-CODEX.md](REVISION-D14-05-CODEX.md); [REVISION-INSTALADOR14-06-CODEX.md](REVISION-INSTALADOR14-06-CODEX.md); [MAPA-ENTREGA.json](MAPA-ENTREGA.json); [REVISION-MFA-L1-CODEX-25-10-2026.md](REVISION-MFA-L1-CODEX-25-10-2026.md); [MENSAJE-PARA-CLAUDE-MFA-L1-HTTP-25-10-2026.md](MENSAJE-PARA-CLAUDE-MFA-L1-HTTP-25-10-2026.md); [CIERRE.md](../evidence/s1-20261025/mfa-l1-revision-codex/CIERRE.md); [REVISION-SEGURIDAD.md](../evidence/s1-20261025/mfa-l1-revision-codex/REVISION-SEGURIDAD.md); [REVISION-MFA-L1-RONDA2-CODEX-25-10-2026.md](REVISION-MFA-L1-RONDA2-CODEX-25-10-2026.md); [CIERRE.md](../evidence/s1-20261025/mfa-l1-ronda2-codex/CIERRE.md); [REVISION-SEGURIDAD.md](../evidence/s1-20261025/mfa-l1-ronda2-codex/REVISION-SEGURIDAD.md); [RESULTADO-REGRESION-ORIGINAL.json](../evidence/s1-20261025/mfa-l1-ronda2-codex/RESULTADO-REGRESION-ORIGINAL.json); [RESULTADO-RUNTIME-Y-CLI.json](../evidence/s1-20261025/mfa-l1-ronda2-codex/RESULTADO-RUNTIME-Y-CLI.json); [MFA-DASHBOARD-GRACIA-45-29-10-2026.md](MFA-DASHBOARD-GRACIA-45-29-10-2026.md); [RESULTADOS.md](../evidence/s1-20261029/mfa-dashboard-codex/RESULTADOS.md)
+- **Fuentes:** [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 ### I · Jerarquía, inventario y colaboración
 
@@ -294,9 +300,9 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 #### P-03 · Exportar JSON actual y original exacto como funciones distintas
 
 - **Cierre acreditado:** 0/6 subpasos; 0,00/1,36 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** implementacion: GETproject es consultaSQL, no exportRC9. Original/mapeos archivados por herramienta lab; no rutas/UI exportJSON/original localizadas en producto. R3 histórico es distinto.; integracion: Sin flujo producto actual/original identificado.; prueba: Preservación original y reportes exactos no prueban exportJSONnormal.; revision: Sin revisión de ese flujo.; qa: No disponible como exportJSONnormal.
+- **Lo que hay:** Exportación JSON actual por cliente con recibo, permisos vigentes, SHA256 y descarga probada en desarrollo43. La intención incierta no persiste al desmontar; importación/merge/originalRC9/backupPG quedan pendientes. No cierre íntegro de P-03.
 - **Resultado que falta cerrar:** Actual refleja commits vigentes y original conserva hash; funciones separadas respetan permisos, prueba/revisión/QA por versión.
-- **Fuentes:** [CONTRATO-SERVIDOR-v0.1.md](CONTRATO-SERVIDOR-v0.1.md); [MAPA-RC9-R3.md](MAPA-RC9-R3.md); [rc9_restore.py](../tools/windows/rc9_restore.py); [Program.cs](../development/server/src/RackClick.Server/Program.cs); [InventoryPanel.jsx](../development/frontend/src/InventoryPanel.jsx)
+- **Fuentes:** [PUNTO3-FUNCIONES-PENDIENTES.md](PUNTO3-FUNCIONES-PENDIENTES.md); [RESULTADOS.md](../evidence/s1-20261102/punto3/RESULTADOS.md)
 
 #### P-04 · Demostrar round-trip JSON y preservar extensiones
 
@@ -322,9 +328,9 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 #### P-07 · Cerrar formatos existentes y resolver obligación PDF
 
 - **Cierre acreditado:** 0/6 subpasos; 0,00/1,36 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** CSV, XLSX, SVG, HTML imprimible y XLS HTML existen y se probaron por HTTP en el laboratorio de comparación. Falta su cierre GUI/formato/aceptación; PNG y la obligación de PDF nativo se tratan explícitamente, sin confundirlos con impresión HTML.
+- **Lo que hay:** CSV, XLSX, SVG, HTML imprimible y XLS HTML existen y se probaron por HTTP en el laboratorio de comparación. Falta su cierre GUI/formato/aceptación; PNG y la obligación de PDF nativo se tratan explícitamente, sin confundirlos con impresión HTML. Imprimible, SVG y XLS HTML tienen ahora propuesta del rack al primer abrir, adopcion explicita posterior y metadatos bajo demanda, probados/revisados en laboratorio. Pendientes/errores/transporte se conservan. Falta integrar y el resto de presentacion/formatos; no repetir esos controles desde cero.
 - **Resultado que falta cerrar:** Todos formatos prometidos tienen salida/lector/impresión y permisos verificados; PDF tiene decisión y evidencia; diferencias aceptadas, no eliminadas por plan ambiguo.
-- **Fuentes:** [COMPARACION-OFFLINE-RC10-SERVIDOR.md](COMPARACION-OFFLINE-RC10-SERVIDOR.md)
+- **Fuentes:** [COMPARACION-OFFLINE-RC10-SERVIDOR.md](COMPARACION-OFFLINE-RC10-SERVIDOR.md); [TANDA-INFORMES-CONTEXTO-30-10-2026.md](TANDA-INFORMES-CONTEXTO-30-10-2026.md); [REVISION-INFORMES-CONTEXTO-30-10-2026.md](REVISION-INFORMES-CONTEXTO-30-10-2026.md)
 
 #### P-08 · Concluir aceptación de plantillas/favoritos/preferencias existentes
 
@@ -350,9 +356,9 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 #### P-11 · Completar teclado, lector, contraste y paridad visual funcional
 
 - **Cierre acreditado:** 0/6 subpasos; 0,00/1,36 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** implementacion: GUIRC9/Click-Click/SVG, ARIA/foco y status persistente848/849 existen; no auditoría integral.; integracion: 849 históricoWindows/QA11; nuevaGUI posterior debe integrarse.; prueba: Edge/AX/teclado390px/DOM acotados; voz Narrador/NVDA no acreditada. Falta flujo completo front/rear/tooltips/inspector/contraste.; revision: DOM localizadas, no certificación ni aceptaciónvisualtotal.; qa: QA78 sin lector habitual debe Bloqueado, nunca Pass automático.
+- **Lo que hay:** Racks/tarjetas primero, jerarquia y PoE plegables, accesos con foco y exportadores montados ya implementados y probados en laboratorio con datos originales. Revision independiente favorable; falta integrar candidata, QA y la matriz completa de accesibilidad/lector/contraste. No volver a implementar el reordenamiento.
 - **Resultado que falta cerrar:** Matriz completa con resultados reales por versión, problemas resueltos/límites aceptados, conservando GUI/Click-Click. Voz no inferida de AX; QA de Wascar.
-- **Fuentes:** [ACCESIBILIDAD-RELACIONES-GRUPOS-S1.md](ACCESIBILIDAD-RELACIONES-GRUPOS-S1.md); [INTEGRACION-AVISO-GRUPOS-WINDOWS-QA-S1.md](INTEGRACION-AVISO-GRUPOS-WINDOWS-QA-S1.md); [IMPLEMENTACION-REV4.md](IMPLEMENTACION-REV4.md); [CIERRE.md](../evidence/s1-20261018/tanda-849/CIERRE.md); [CIERRE.md](../evidence/s1-20261018/sesenta-tandas-850-909/CIERRE.md)
+- **Fuentes:** [TANDA-RACKS-PRIMERO-30-10-2026.md](TANDA-RACKS-PRIMERO-30-10-2026.md); [REVISION-RACKS-PRIMERO-30-10-2026.md](REVISION-RACKS-PRIMERO-30-10-2026.md)
 
 ### W · Instalación y operación Windows
 
@@ -366,23 +372,23 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 #### W-02 · Instalar desde cero en Windows limpio y declarar la matriz soportada
 
 - **Cierre acreditado:** 2/5 subpasos; 1,00/2,50 puntos. Estado:parcial_acreditado.
-- **Lo que hay:** New10 en C y postboot ya están acreditados parcialmente. No repetir esa instalación para producir otro recibo; falta la matriz y escenarios restantes, incluida recuperación final y Windows11 como host cuando se ofrezca.
+- **Lo que hay:** New11 en D limpio Windows Server2025/noDC, CRT/runtime/PG incluidos, cuenta estandar, servicio/HTTPS y postboot verificados tras reinicio de Wascar. W-02.01/.02 ya acreditados por10; faltan matriz de dependencias/hosts/rechazos. No reinstalar D ni duplicar credito.
 - **Resultado que falta cerrar:** Recorrido nuevo de instalación completo en los hosts declarados, con versiones y resultados reales; ausencia de soporte no probado indicada explícitamente.
-- **Fuentes:** [RESULTADOS.md](../evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md)
+- **Fuentes:** [RESULTADOS.md](../evidence/s1-20261102/windows43/RESULTADOS.md); [INSTALADOR11-WINDOWS43.md](INSTALADOR11-WINDOWS43.md); [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 #### W-03 · Cuenta mínima, servicio Windows y arranque automático reales
 
 - **Cierre acreditado:** 0/5 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Servicio estándar y arranque automático funcionaron en C. El resultado completo necesita sus negativos y comprobaciones finales de permisos/operación, sin tratarlo como servicio aún inexistente.
+- **Lo que hay:** D11 verificada: SCM Running/Auto, SID y cuenta estandar, HTTPS43 y postboot real; custodias e identidades separadas. Faltan negativos/ACL completos y fallos de parada/hijo, no construir otro servicio.
 - **Resultado que falta cerrar:** Servicio y PostgreSQL funcionan bajo identidad mínima tras reinicio real; logs/estados y acceso privado son verificables.
-- **Fuentes:** [RESULTADOS.md](../evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md)
+- **Fuentes:** [RESULTADOS.md](../evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 #### W-04 · HTTPS, certificados, red y acceso casa/trabajo en la edición final
 
 - **Cierre acreditado:** 0/6 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Cambio de red fue confirmado en la instalación histórica y existen herramientas automáticas. No se traslada esa aceptación automáticamente al payload14 nuevo.
+- **Lo que hay:** D11 tiene origen, CA y firewall limitados verificados; cargador y MFA usaron TLS normal. Faltan otro equipo cliente, cambio casa/trabajo de la candidata, renovacion/caducidad y recuperacion de certificados.
 - **Resultado que falta cerrar:** Acceso LAN confiable y cambio de red con datos conservados; renovación y errores documentados, sin exponer claves privadas.
-- **Fuentes:** [RACKCLICK-CASA-Y-TRABAJO.html](RACKCLICK-CASA-Y-TRABAJO.html); [CONTINUIDAD-CODEX.md](CONTINUIDAD-CODEX.md); [CONTRATO-SERVIDOR-v0.1.md](CONTRATO-SERVIDOR-v0.1.md)
+- **Fuentes:** [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 #### W-05 · Repetición, cancelación, mantenimiento y diagnóstico del instalador
 
@@ -394,18 +400,18 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 #### W-06 · Recorrido completo de persistencia y concurrencia del servidor instalado
 
 - **Cierre acreditado:** 0/5 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Hay pruebas reales por bloques y New/Restore privados. Falta el recorrido integral sobre la candidata final instalada con dos sesiones y reinicio.
+- **Lo que hay:** D11 contiene Demo50 creada por2553comandos API y contrastada por colecciones/UUID/conexiones. Faltan recorrido instalado con roles y segunda cuenta, reinicio posterior del conjunto y concurrencia/perdida de respuesta. No recrear clientes ni repetir carga.
 - **Resultado que falta cerrar:** S-55 reproducido completo y conflictos/recuperación coherentes sobre build/DB/host identificados.
-- **Fuentes:** [ACEPTACION.md](ACEPTACION.md); [REVISION-INSTALADOR14-06-CODEX.md](REVISION-INSTALADOR14-06-CODEX.md)
+- **Fuentes:** [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 ### R · Backup, recuperación y actualización
 
 #### R-01 · Backup programado local y retención comprobada
 
 - **Cierre acreditado:** 0/5 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Ya hay copias nativas, programación y exportación operativa. Falta cerrar retención/fallos/restaurabilidad y facilitar su administración desde dashboard; no atribuir al botón web una existencia sólo operativa.
+- **Lo que hay:** Backup inicial, tarea programada tras postboot y backup posterior a Demo50 completados con resultado0 en D. Faltan retencion configurable, destinos/fallos y restaurabilidad; backup completo no demuestra recuperacion MFA portable.
 - **Resultado que falta cerrar:** Ejecución programada real, política de retención y fallos comprobados; sólo copias completas verificadas quedan elegibles.
-- **Fuentes:** [COMPARACION-OFFLINE-RC10-SERVIDOR.md](COMPARACION-OFFLINE-RC10-SERVIDOR.md); [RESULTADOS.md](../evidence/s1-20261029/rc9-demo-original-codex/RESULTADOS.md)
+- **Fuentes:** [COMPARACION-OFFLINE-RC10-SERVIDOR.md](COMPARACION-OFFLINE-RC10-SERVIDOR.md); [RESULTADOS.md](../evidence/s1-20261029/rc9-demo-original-codex/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 #### R-02 · Destinos USB y UNC con copia local previa y tolerancia a fallos
 
@@ -424,9 +430,9 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 #### R-04 · Recuperación completa en otro Windows y activación controlada
 
 - **Cierre acreditado:** 0/5 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Restore13→14/14→14 y revocación de desafíos/sesiones están probados en laboratorios; New/Restore offline14 producen recibos reales. Falta recuperación integral del host instalado.
+- **Lo que hay:** Restore43-&gt;43 y15-&gt;43 en laboratorio nuevo conserva inventario/UUID y revoca sesiones. D11 New y su backup posterior funcionan. Falta recuperacion integral en otro Windows con MFA/SID/HTTPS/reinicio y RTO; no ensayarla sobre D conservada.
 - **Resultado que falta cerrar:** Servicio recuperado completo y operativo en otro host con identidad nueva, integridad y revocación comprobadas; origen conservado.
-- **Fuentes:** [REVISION-D14-05-CODEX.md](REVISION-D14-05-CODEX.md); [REVISION-INSTALADOR14-06-CODEX.md](REVISION-INSTALADOR14-06-CODEX.md); [RECUPERACION-DESPLIEGUE-WINDOWS-S1.md](RECUPERACION-DESPLIEGUE-WINDOWS-S1.md)
+- **Fuentes:** [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/windows43/RESULTADOS.md)
 
 #### R-05 · Actualización y rollback compatibles con datos posteriores
 
@@ -438,18 +444,18 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 #### R-06 · Reset y recuperación administrativa delimitados
 
 - **Cierre acreditado:** 0/5 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Hay herramientas de reset/archivo y recuperación administrativa. MFA/emergencia está en F-08/F-09; no es necesario rehacerlas en este bloque.
+- **Lo que hay:** Limpieza local de inventario D explicitamente autorizada y revisada: preview, dryrun, commit, auditoria y seguridad preservada. No equivale a reset completo de instancia, nueva base/roles ni emergencia MFA.
 - **Resultado que falta cerrar:** Reset acotado y recuperación de acceso operativos y documentados; cancelar no modifica datos ni deja acceso omitido.
-- **Fuentes:** [RECUPERAR-ADMINISTRADOR-S1.md](RECUPERAR-ADMINISTRADOR-S1.md); [ACEPTACION.md](ACEPTACION.md); [REVISION-D14-05-CODEX.md](REVISION-D14-05-CODEX.md)
+- **Fuentes:** [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 ### E · Paquete, manual, rendimiento y aceptación
 
 #### E-01 · Candidata final única con fuentes y componentes compatibles
 
 - **Cierre acreditado:** 0/5 subpasos; 0,00/1,43 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Hay candidataM3 limpia03, C2 revisado aparte y instalador06 interno. No hay una única entrega final que integre todo el alcance.
+- **Lo que hay:** Candidata11/esquema43 identificada e instalada, mas cargador02 separado revisado. Falta integrar los pendientes restantes y ese parche en la futura entrega final unica; no reconstruir por cambios solo documentales ni tocar D.
 - **Resultado que falta cerrar:** Una sola candidata completa trazable y coherente, sin depender de archivos de entregas anteriores ni aceptar una mezcla no revisada.
-- **Fuentes:** [REVISION-INSTALADOR14-06-CODEX.md](REVISION-INSTALADOR14-06-CODEX.md); [REVISION-D14-05-CODEX.md](REVISION-D14-05-CODEX.md); [CONTRATO-SERVIDOR-v0.1.md](CONTRATO-SERVIDOR-v0.1.md)
+- **Fuentes:** [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 #### E-02 · Aprovisionamiento y construcción repetibles desde fuentes oficiales
 
@@ -468,23 +474,23 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 #### E-04 · Manual autónomo de instalación, uso y operación
 
 - **Cierre acreditado:** 0/6 subpasos; 0,00/1,43 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Existe manual autónomo10 con carpetas/comandos/formulario/credenciales/reinicio. Debe mantenerse y comprobarse con el paquete final y sus nuevas funciones, no volver a redactar toda la instalación desde cero.
+- **Lo que hay:** Manual11 con pasos00-07, acceso privado y guias D/cargador02 disponibles y usados en ensayo. Faltan manual completo del producto, idiomas/capturas y recorridos futuros de recuperacion/importacion/operacion; no empezar otro manual desde cero.
 - **Resultado que falta cerrar:** El recorrido completo funciona siguiendo sólo manual+paquete final, sin pedir archivos antiguos ni instrucciones ocultas.
-- **Fuentes:** [PASOS-COMPLETOS-INSTALADOR10-WASCAR.md](PASOS-COMPLETOS-INSTALADOR10-WASCAR.md); [RESULTADOS.md](../evidence/s1-20261029/manual-autonomo10-codex/RESULTADOS.md)
+- **Fuentes:** [INSTALADOR11-WINDOWS43.md](INSTALADOR11-WINDOWS43.md); [INSTALADOR11-WINDOWS43.html](INSTALADOR11-WINDOWS43.html); [RESULTADOS.md](../evidence/s1-20261102/windows43/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md); [VM11-D-PASOS-QA.md](VM11-D-PASOS-QA.md); [INSTALADOR14-SQL-PROTEGIDO.md](INSTALADOR14-SQL-PROTEGIDO.md)
 
 #### E-05 · QA manual por módulos sobre candidata identificada
 
 - **Cierre acreditado:** 0/5 subpasos; 0,00/1,43 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Los resultados de Wascar y la QA MFA comunicada se conservan. Dar casos pequeños por módulo/candidata; resultados antiguos de otra versión no se convierten en PASS nuevo ni se obliga a repetir lo no afectado.
+- **Lo que hay:** D11 y Demo50 estan disponibles. HojaQA11 de14casos,167casos totales, export/import y observaciones preservadas. Wascar expresa satisfaccion general, pero no sustituye resultados por caso/rol/version. Faltan cuentas diferenciadas y QA por modulos; no trasladar PASS historicos.
 - **Resultado que falta cerrar:** Casos críticos y recorridos pactados tienen resultados atribuibles; ningún resultado del usuario sobrescrito ni aprobado por el desarrollador.
-- **Fuentes:** [QA-DATOS-ORIGINALES-MFA10-WASCAR.md](QA-DATOS-ORIGINALES-MFA10-WASCAR.md); [QA-CASOS-WASCAR.json](QA-CASOS-WASCAR.json)
+- **Fuentes:** [QA-CIERRE-CANDIDATA11.md](QA-CIERRE-CANDIDATA11.md); [RESULTADOS.md](../evidence/s1-20261102/qa-cierre11/RESULTADOS.md); [QA-CASOS-WASCAR.json](QA-CASOS-WASCAR.json); [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 #### E-06 · Medir carga real de diez usuarios y demo completa
 
 - **Cierre acreditado:** 0/5 subpasos; 0,00/1,43 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** No hay resultado final de rendimiento identificado para diez usuarios y demo68racks en el host candidato. No se ha demostrado un cuello de botella concreto.
+- **Lo que hay:** Demo50 y prueba de diez actores/ambitos ya realizados en laboratorio con umbrales de humo previos. D11 carga50/2553comandos verificada en185.681s y backup posterior completo; MFA/TLS del cargador probado aparte en cuenta sintetica. Faltan carga extendida instalada, memoria/CPU/consultas/picos/recuperacion y aceptacion practica, no crear de nuevo la demo.
 - **Resultado que falta cerrar:** Informe reproducibleS-48 demuestra datos consistentes y comportamiento aceptable con carga declarada; regresiones medidas resueltas.
-- **Fuentes:** [ACEPTACION.md](ACEPTACION.md); [IMPLEMENTACION-REV4.md](IMPLEMENTACION-REV4.md); [CIERRE-RESTANTE.md](CIERRE-RESTANTE.md)
+- **Fuentes:** [PLAN-LABORATORIO-50-CLIENTES.md](PLAN-LABORATORIO-50-CLIENTES.md); [LABORATORIO-50-CLIENTES.md](LABORATORIO-50-CLIENTES.md); [RESULTADOS.md](../evidence/s1-20261102/demo50/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/windows43/demo/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
 
 #### E-07 · Revisión final y adopción explícita de Wascar
 
@@ -495,6 +501,6 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 
 ## Progreso y cierre de esta consolidación
 
-**9,76/100 del cierre restante**, misma base RC-CIERRE-20261029-v2,53 resultados/280 subpasos/23 acreditados. **No es porcentaje global del producto.** Registrar pendientes, descargar modelos o regenerar esta hoja no suma implementación.
+**14,76/100 del cierre restante**, misma base RC-CIERRE-20261103-v3,53 resultados/280 subpasos/23 acreditados. **No es porcentaje global del producto.** Registrar pendientes, descargar modelos o regenerar esta hoja no suma implementación.
 
 El cierre de esta consolidación es documental: ninguna función, plantilla o prueba de producto se acredita por este registro. Los originales y los paquetes históricos se conservan.

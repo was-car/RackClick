@@ -10,7 +10,7 @@ const keys=(x:any,k:string)=>!!x&&typeof x==='object'&&!Array.isArray(x)&&Object
 const uuid=(x:any)=>typeof x==='string'&&/^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(x)&&x!=='00000000-0000-0000-0000-000000000000';
 const text=(x:any,max=100)=>typeof x==='string'&&Array.from(x).length<=max&&!/\p{Cc}/u.test(x);
 const color=(x:any)=>typeof x==='string'&&/^#[0-9a-f]{6}$/i.test(x);
-const types=new Set(['rj45','rj45_poe','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c']);
+const types=new Set(['rj45','rj45_poe','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c','sfp56','qsfpdd','idc','ipc','fiber','sfpdd','cfp2','sas','dsl','telephony','isdn','expansion','power_dc']);
 const family=(type:string)=>type==='rj45_poe'?'rj45':type;
 const unique=(items:string[])=>new Set(items).size===items.length;
 export const catalogPresetKeys=Object.freeze('pp24 pp48 ppf24 sw24 sw24p sw48 sw48p swsfp srv1u srv2u srv4u nas2u nas4u san rtr fw pdu ups mc bl1u bl2u sp1u sp2u cbl1u shelf sw8 sw16 sw8p rtr8 fw4 nas1u srv1u4 ap'.split(' '));

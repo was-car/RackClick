@@ -17,6 +17,12 @@ if ((bootstrap ? 1 : 0) + (migrate ? 1 : 0) + (recoverAdmin ? 1 : 0) + (mfaKeysI
     return;
 }
 var builder = WebApplication.CreateBuilder(args.Where(a => a is not ("--bootstrap" or "--migrate" or "--recover-admin" or "--mfa-keys-init" or "--mfa-require-all")).ToArray());
+// Protected SQL material is runtime-only; maintenance must provide its separate identity.
+if (bootstrap || migrate || recoverAdmin || mfaRequireAll)
+{
+    try { SqlSecretConnection.RequireSeparateMaintenanceIdentity(builder.Configuration); }
+    catch (SqlSecretException e) { Console.Error.WriteLine(e.Code); Environment.ExitCode = 1; return; }
+}
 if (recoverAdmin)
 {
     if (!Console.IsInputRedirected)
@@ -56,8 +62,9 @@ string frontendPath = Path.GetFullPath(builder.Configuration["RackClick:Frontend
     ?? Path.Combine(AppContext.BaseDirectory, "wwwroot"), builder.Environment.ContentRootPath);
 bool guiIntegrated = Directory.Exists(frontendPath) && File.Exists(Path.Combine(frontendPath, "index.html"));
 using var frontendFiles = guiIntegrated ? new Microsoft.Extensions.FileProviders.PhysicalFileProvider(frontendPath) : null;
-string connection = builder.Configuration.GetConnectionString("RackClick")
-    ?? throw new InvalidOperationException("ConnectionStrings:RackClick is required; no database is created automatically.");
+string connection;
+try { connection = SqlSecretConnection.Resolve(builder.Configuration); }
+catch (SqlSecretException e) { Console.Error.WriteLine(e.Code); Environment.ExitCode = 1; return; }
 await using var source = NpgsqlDataSource.Create(connection);
 // Las ramas de línea de comandos usan un almacén propio sin MFA: no requieren proveedor ni origen HTTPS.
 var cliStore = new PostgresStore(source);
@@ -168,7 +175,7 @@ app.Use(async (context, next) =>
         if (context.Request.ContentLength > bodyLimit) throw new DomainError(413, "request_too_large");
         if (context.Request.Path.StartsWithSegments("/api") && context.Request.Path != "/api/v1/auth/login" &&
             context.Request.Path != "/api/v1/auth/mfa/verify" && context.Request.Path != "/api/v1/auth/mfa/enroll/start" &&
-            context.Request.Path != "/api/v1/auth/mfa/enroll/confirm")
+            context.Request.Path != "/api/v1/auth/mfa/enroll/confirm" && context.Request.Path != "/api/v1/auth/mfa/recover")
         {
             string token = context.Request.Cookies[cookie] ?? "";
             var session = await store.Session(token, context.RequestAborted)
@@ -260,6 +267,19 @@ app.MapPost("/api/v1/auth/mfa/enroll/start", async (HttpContext context) =>
     var start = await mfa.StartEnrollment(challenge, context.Request.Headers["X-RackClick-CSRF"].ToString(), context.RequestAborted);
     return Results.Ok(new { secret = start.SecretBase32, otpauth = start.OtpAuthUri });
 }).RequireRateLimiting("login");
+app.MapPost("/api/v1/auth/mfa/recover", async (MfaVerifyRequest input, HttpContext context) =>
+{
+    if (mfa is null) throw new DomainError(503, "mfa_unavailable");
+    string challenge = context.Request.Cookies[mfaCookie] ?? throw new DomainError(401, "mfa_challenge_invalid");
+    var recovery = await mfa.RedeemRecoveryCode(challenge, input.Code ?? "", context.Request.Headers["X-RackClick-CSRF"].ToString(), context.RequestAborted);
+    context.Response.Cookies.Delete(cookie, new CookieOptions { Path = "/" });
+    context.Response.Cookies.Append(mfaCookie, recovery.ChallengeToken, new CookieOptions
+    {
+        HttpOnly = true, Secure = !developmentHttp, SameSite = SameSiteMode.Strict, Path = "/api/v1/auth/mfa",
+        MaxAge = TimeSpan.FromMinutes(5), IsEssential = true
+    });
+    return Results.Json(new { mfaRequired = true, purpose = "enroll", csrf = recovery.Csrf }, statusCode: 202);
+}).RequireRateLimiting("login").WithName("RecoverMfa").WithSummary("Redeem a recovery code for restricted authenticator enrollment; no API session is issued.");
 app.MapPost("/api/v1/auth/mfa/enroll/confirm", async (MfaVerifyRequest input, HttpContext context) =>
 {
     if (mfa is null) throw new DomainError(503, "mfa_unavailable");
@@ -280,6 +300,8 @@ app.MapGet("/api/v1/me", async Task<IResult> (HttpContext c) => Results.Ok(new
 }));
 app.MapGet("/api/v1/openapi.json", () => Results.Json(OpenApiDocument.Create()));
 app.MapMfaAccounts(store, mfa is not null);
+app.MapMfaRecoveryCodes(store, mfa is not null);
+app.MapInventoryJsonExports(inventory);
 app.MapGet("/api/v1/me/preferences", async Task<IResult> (HttpContext c) =>
 {
     UserPreferences.RequireEmptyRead(c.Request);

@@ -12,10 +12,13 @@ public sealed partial class InventoryStore
     {
         Guid original = Id(payload, "id"), rack = Guid.NewGuid();
         var before = await Row(db, tx, actor, customer, "inventory_rack", original, ct);
+        await using (var hardware = Cmd(db, tx, "SELECT EXISTS(SELECT 1 FROM inventory_device WHERE systemhaus_id=@house AND customer_id=@customer AND rack_id=@rack AND hardware_profile_key IS NOT NULL)",
+            ("house", actor.HouseId), ("customer", customer), ("rack", original)))
+            if (await hardware.ExecuteScalarAsync(ct) is true) throw new DomainError(422, "hardware_duplicate_unsupported");
         string name = payload.ContainsKey("name") ? Names.Validate(String(payload, "name")) : Names.Validate(String(before, "name") + " (Copy)");
         await Exec(db, tx, """
-            INSERT INTO inventory_rack(id,systemhaus_id,customer_id,room_id,name,location,size_u,properties)
-            SELECT @new,systemhaus_id,customer_id,room_id,@name,location,size_u,properties FROM inventory_rack
+            INSERT INTO inventory_rack(id,systemhaus_id,customer_id,room_id,name,location,size_u,properties,hardware_profile_key)
+            SELECT @new,systemhaus_id,customer_id,room_id,@name,location,size_u,properties,hardware_profile_key FROM inventory_rack
             WHERE systemhaus_id=@house AND customer_id=@customer AND id=@old
             """, ct, ("new", rack), ("name", name), ("house", actor.HouseId), ("customer", customer), ("old", original));
         var devices = await QueryIds(db, tx, "SELECT id FROM inventory_device WHERE systemhaus_id=@house AND customer_id=@customer AND rack_id=@rack ORDER BY sort_order,id", ct,

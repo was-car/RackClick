@@ -1,0 +1,472 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506g-20261101-v1",
+  "targetSchema": 35,
+  "baseSchema": 34,
+  "baselineDefinitions": 678,
+  "baselineCommercial": 673,
+  "baseCovered": 318,
+  "supportedTypes": [
+    "rj45",
+    "sfp",
+    "sfp28",
+    "qsfp",
+    "power"
+  ],
+  "authoring": {
+    "core": [
+      {
+        "id": "nb-672799eaa4f759d6",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R7715",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-c263db2c3b4a2925",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R760xd2",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-ecabe45d7f7fcc48",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R7615",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-948fad2f13709dc9",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R7725",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-eda39086bd9e9cda",
+        "manufacturer": "HPE",
+        "model": "ProLiant DL345 Gen11",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-7b7fd92e11204896",
+        "manufacturer": "Supermicro",
+        "model": "AS-1124US-TNRP",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-15047e48f0df3f18",
+        "manufacturer": "Supermicro",
+        "model": "AS-2115HS-TNR",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-35d87f3fc5c78828",
+        "manufacturer": "Supermicro",
+        "model": "Storage SuperServer SSG-610P-ACR12N4H",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-32bb124abaaa021b",
+        "manufacturer": "ASUS",
+        "model": "RS300-E11-RS4",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-177693053e26efa4",
+        "manufacturer": "Lenovo",
+        "model": "System x3650 M5",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-34f23e64e816971f",
+        "manufacturer": "Supermicro",
+        "model": "ASG-2015S-E1CR24L",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-f802ebc80b7bb96e",
+        "manufacturer": "Lenovo",
+        "model": "ThinkSystem SR650 V4",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-d3f25e78482e4bff",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R730xd",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-e4121ee57f092985",
+        "manufacturer": "HPE",
+        "model": "ProLiant DL380e Gen8",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-2cb44217d425b70f",
+        "manufacturer": "Supermicro",
+        "model": "SuperStorage 6049P-E1CR36L",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-c6b1705740436107",
+        "manufacturer": "HPE",
+        "model": "ProLiant DL380p Gen8",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-418d42c0d18a34a4",
+        "manufacturer": "Supermicro",
+        "model": "SuperServer 5018D-FN8T",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-0e9380b77257926e",
+        "manufacturer": "HPE",
+        "model": "ProLiant DX385 Gen10 Plus",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-2b88f84c9db567bf",
+        "manufacturer": "Ciena",
+        "model": "3926",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-5eb1039c16a0df6a",
+        "manufacturer": "Ciena",
+        "model": "3930",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-feb9fd36baf516b8",
+        "manufacturer": "Ciena",
+        "model": "3942 AC",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-d7b89b29215a9708",
+        "manufacturer": "Ciena",
+        "model": "5160",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-4a0b0e3bbe63b84a",
+        "manufacturer": "Ciena",
+        "model": "5162",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-75df9fe3366f5eba",
+        "manufacturer": "HPE",
+        "model": "Aruba 6300M-48SR10-POE8-4QSFP28",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-36567f277193e94e",
+        "manufacturer": "Ciena",
+        "model": "8114",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      }
+    ],
+    "edge": [
+      {
+        "id": "nb-c5937f7093956ec3",
+        "manufacturer": "Check Point",
+        "model": "SG7000",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-79c9c5a3726513c9",
+        "manufacturer": "Check Point",
+        "model": "SG16000",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-5d4d2d2ec5a6b81b",
+        "manufacturer": "Check Point",
+        "model": "SG19200",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-765b000f7862b2a5",
+        "manufacturer": "Barracuda",
+        "model": "F400C-F20",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-7a6f331eb573b567",
+        "manufacturer": "Barracuda",
+        "model": "F380",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-021661043dd2d49f",
+        "manufacturer": "F5",
+        "model": "BIG-IP 2000",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-9c4abe55a270318f",
+        "manufacturer": "F5",
+        "model": "BIG-IP r2600",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-ec99b9ef925f518f",
+        "manufacturer": "F5",
+        "model": "BIG-IP r10600",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-f5940bcac5635cc5",
+        "manufacturer": "F5",
+        "model": "BIG-IP r5600",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-18abeefcccac198a",
+        "manufacturer": "Kemp Technologies",
+        "model": "LoadMaster X1",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-2565622a0959d865",
+        "manufacturer": "Mellanox",
+        "model": "SN2100",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-fe8f97a3849d4e66",
+        "manufacturer": "Ruckus",
+        "model": "ZoneDirector 3000",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-9127f2021330b9a8",
+        "manufacturer": "HPE",
+        "model": "ProLiant ML350 Gen10",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-d45ace2059d491dd",
+        "manufacturer": "Huawei",
+        "model": "CloudEngine S5732-H48UM4Y2CZ-V2",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-fb08077e5b9dd1cd",
+        "manufacturer": "Huawei",
+        "model": "S5735-L8P4S-A1",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-22aef0e6cd06d2b7",
+        "manufacturer": "Huawei",
+        "model": "S5735-L8T4X-A1",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "sonicwall-tz370w",
+        "manufacturer": "SonicWall",
+        "model": "TZ370W",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "palo-alto-pa-5445",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-5445",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "palo-alto-pa-5450",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-5450",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-e54b976f708867aa",
+        "manufacturer": "Juniper",
+        "model": "ACX7024X",
+        "category": "router",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-b1f6fce68b44bdac",
+        "manufacturer": "Arista",
+        "model": "CCS-720XP-96ZC2-4F",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-f73dd791a2fc73e8",
+        "manufacturer": "Arista",
+        "model": "CCS-722XPM-48Y4-2F",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-a8af9348bfc46f13",
+        "manufacturer": "Cisco",
+        "model": "ASR1004",
+        "category": "router",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-0c237b37d9df0ddb",
+        "manufacturer": "Cisco",
+        "model": "ASR1006",
+        "category": "router",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-028e1d1cc36b14e6",
+        "manufacturer": "Cisco",
+        "model": "Nexus 9504",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-export const configurationTypes=['rj45','rj45_poe','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c'];
+export const configurationTypes=['rj45','rj45_poe','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c','sfp56','qsfpdd','idc','ipc','fiber','sfpdd','cfp2','sas','dsl','telephony','isdn','expansion','power_dc'];
 export const configurationFamily=(type:string)=>type==='rj45_poe'?'rj45':type;
 export const emptyConfiguration=()=>({kind:'rackEquipment',sizeU:1,poeBudget:null,icon:'▦',color:'#64748b',visualFamily:'panel',portGroups:[]});
 export function editableConfiguration(definition:any){return {...structuredClone(definition),portGroups:definition.portGroups.map((g:any)=>({...structuredClone(g),localId:crypto.randomUUID(),ports:g.ports.map((p:any)=>({...structuredClone(p),localId:crypto.randomUUID()}))}))}}

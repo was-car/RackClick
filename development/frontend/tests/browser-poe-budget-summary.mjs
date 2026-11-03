@@ -5,6 +5,13 @@ import {runScenario,infrastructure,snapshot,saved,submit,normalize,fixture as id
 const row=id=>`[data-poe-device="${id}"]`;
 await runScenario(async({first,session,checks,shot,out})=>{
  await infrastructure(first);let expected=await snapshot(first),original=structuredClone(expected);
+ assert.equal(await first.evaluate(`document.querySelector('[data-poe-budget-summary]').tagName`),'DETAILS');
+ assert.equal(await first.evaluate(`document.querySelector('[data-poe-budget-summary]').open`),false);
+ assert.ok(await first.evaluate(`(()=>{const n=document.querySelector('[data-poe-budget-summary]>summary [data-poe-overview-exceeded]');return n&&n.textContent.startsWith('2 ·')&&n.getBoundingClientRect().height>0})()`),'Both over-budget warnings remain visible with PoE collapsed');
+ assert.ok(await first.evaluate(`document.querySelector('[data-poe-budget-summary]>summary [data-poe-overview-incomplete]').getBoundingClientRect().height>0`));
+ await first.click('[data-poe-budget-summary]>summary');
+ await first.wait(`document.querySelector('[data-poe-budget-summary]').open`,'explicit PoE expansion');
+ checks.push('Read-only PoE starts collapsed; two exceeded-budget warnings and incomplete-data summary stay visible; native click expands details');
  async function summary(tab,id,known,budget,unknown,eligible,exceeded,incomplete){
   const selector=row(id);await tab.wait(`(()=>{const r=document.querySelector('${selector}');return r&&r.querySelector('[data-poe-known]')?.textContent===${JSON.stringify(known+' W')}&&r.querySelector('[data-poe-limit]')?.textContent===${JSON.stringify(budget)}&&r.querySelector('[data-poe-unknown]')?.textContent===${JSON.stringify(String(unknown))}&&r.querySelector('[data-poe-eligible]')?.textContent===${JSON.stringify(String(eligible))}&&!!r.querySelector('[data-poe-exceeded]')===${exceeded}&&!!r.querySelector('[data-poe-incomplete]')===${incomplete}})()`,'complete summary projection');
   assert.deepEqual(await tab.evaluate(`(()=>{const r=document.querySelector('${selector}');return {known:r.querySelector('[data-poe-known]').textContent,budget:r.querySelector('[data-poe-limit]').textContent,unknown:r.querySelector('[data-poe-unknown]').textContent,eligible:r.querySelector('[data-poe-eligible]').textContent,exceeded:!!r.querySelector('[data-poe-exceeded]'),incomplete:!!r.querySelector('[data-poe-incomplete]')}})()`),{known:known+' W',budget,unknown:String(unknown),eligible:String(eligible),exceeded,incomplete});

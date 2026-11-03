@@ -230,8 +230,8 @@ try {
  $report.stage='payload'
  $archive=Join-Path $plan.codeRoot 'RackClick.zip';$installer=Join-Path $plan.codeRoot 'operators\Install-RackClickOfflineBundle.ps1';$profileScript=Join-Path $plan.codeRoot 'operators\server-install\New-RackClickServerProfile.ps1';$runtimeScript=Join-Path $plan.codeRoot 'operators\server-install\Invoke-RackClickServerRuntime.ps1'
  foreach ($file in @($archive,$installer,$profileScript,$runtimeScript)) {Assert-PreparationProtectedInput $file $identity.User.Value}
- if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -cne '29927a6581fb1229163b75af66dd8d0924be0199b239052a164da096f0aef9ce') {throw 'preparation_bundle_hash_mismatch'}
- $args=@('-ArchivePath',$archive,'-ExpectedArchiveSha256','29927a6581fb1229163b75af66dd8d0924be0199b239052a164da096f0aef9ce','-DestinationPath',$plan.instancePath,'-PostgresPort',[string]$plan.postgresPort,'-HttpPort',[string]$plan.httpsPort,'-Mode',$plan.mode)
+ if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -cne 'b9564d390b266cd3e03316f5981dc4f9f53aab8e4fb218c0ee43c0428b6f5df6') {throw 'preparation_bundle_hash_mismatch'}
+ $args=@('-ArchivePath',$archive,'-ExpectedArchiveSha256','b9564d390b266cd3e03316f5981dc4f9f53aab8e4fb218c0ee43c0428b6f5df6','-DestinationPath',$plan.instancePath,'-PostgresPort',[string]$plan.postgresPort,'-HttpPort',[string]$plan.httpsPort,'-Mode',$plan.mode)
  if ($plan.mode -ceq 'New') {$args+=@('-BootstrapUser',$plan.bootstrapUser,'-SystemhausName',$plan.systemhaus)} else {
   $report.stage='recovery_input'
   Assert-PreparationRecoverySourceBinding $plan $identity.User.Value

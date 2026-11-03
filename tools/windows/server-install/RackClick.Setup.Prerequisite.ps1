@@ -1,4 +1,4 @@
-#requires -Version 5.1
+﻿#requires -Version 5.1
 # Import has no side effects. CRT installation is broker-only and explicit.
 function Get-SetupCrtPolicy {
     param([bool]$Is64Bit,[object]$Installed,[string]$RegistryVersion,[string]$VcruntimeVersion,[string]$MsvcpVersion)
@@ -58,7 +58,7 @@ function Install-SetupCrt {
         $archiveStream=[IO.File]::Open($archive,'Open','Read','Read')
         $hash=[Security.Cryptography.SHA256]::Create()
         try{$actual=([BitConverter]::ToString($hash.ComputeHash($archiveStream))).Replace('-','').ToLowerInvariant()}finally{$hash.Dispose()}
-        if($actual -cne '29927a6581fb1229163b75af66dd8d0924be0199b239052a164da096f0aef9ce'){throw 'crt_archive_hash_mismatch'}
+        if($actual -cne 'b9564d390b266cd3e03316f5981dc4f9f53aab8e4fb218c0ee43c0428b6f5df6'){throw 'crt_archive_hash_mismatch'}
         $archiveStream.Position=0
         Add-Type -AssemblyName System.IO.Compression
         $zip=New-Object IO.Compression.ZipArchive($archiveStream,[IO.Compression.ZipArchiveMode]::Read,$true)

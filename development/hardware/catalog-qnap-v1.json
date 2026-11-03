@@ -1,0 +1,42 @@
+{
+  "formatVersion": 1,
+  "catalogKey": "rackclick-qnap-01",
+  "definitions": [
+    {
+      "key": "qnap-ts464-8g",
+      "revision": "qnap-20261030-v1",
+      "identity": {
+        "manufacturer": "QNAP",
+        "family": "TS-x64",
+        "model": "TS-464",
+        "sku": "TS-464-8G"
+      },
+      "provenance": {
+        "kind": "manufacturer-specification",
+        "source": "https://www.qnap.com/en/product/ts-464/specs/hardware/TS-464-8G.pdf",
+        "assets": []
+      },
+      "kind": "desktop",
+      "rackUnits": 0,
+      "dimensionsMm": {
+        "width": 170,
+        "height": 165,
+        "depth": 226.5
+      },
+      "color": "#252729",
+      "slots": [],
+      "groups": [
+        {
+          "key": "rear-lan",
+          "type": "rj45",
+          "count": 2,
+          "face": "rear",
+          "name": "LAN",
+          "prefix": "LAN ",
+          "powerRole": "unspecified"
+        }
+      ],
+      "passthrough": null
+    }
+  ]
+}

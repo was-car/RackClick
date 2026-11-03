@@ -1,7 +1,9 @@
+import {hardwareProfile} from './hardware-mounting.ts';
+import {recordedConnectorDescriptor} from './hardware-connector-classification.mjs';
 import { ApiError, type RackClickApi } from './api.ts';
 import type { Project } from './inventory-model.ts';
 export const readKinds = ['all','site','building','room','rack','device','port','connection'];
-export const readFamilies = ['all','rj45','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c'];
+export const readFamilies = ['all','rj45','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c','sfp56','qsfpdd','idc','ipc','fiber','sfpdd','cfp2','sas','dsl','telephony','isdn','expansion','power_dc'];
 export const readStatuses = ['all','free','reserved','disabled','faulty'];
 export type ReadView = 'search'|'ports'|'connections';
 export type ReadFilter = {query:string;kind:string;status:string;family:string;offset:number;limit:number};
@@ -24,7 +26,7 @@ export function expectedReadPort(p:Project,id:string):any{
  const x=p.ports.find(x=>x.id===id);if(!x)return null;
  const d=p.devices.find(d=>d.id===x.deviceId)!,g=p.portGroups.find(g=>g.id===x.groupId)!,r=p.racks.find(r=>r.id===d.rackId);
  const cables=p.connections.filter(c=>c.fromPortId===id||c.toPortId===id);
- return {customerId:p.customerId,id:x.id,deviceId:d.id,deviceName:d.name,deviceKind:d.kind,rackId:d.rackId,roomId:d.roomId??r?.roomId??null,path:inventoryPath(p,'port',id),groupId:g.id,groupName:g.name,type:x.type,family:x.type==='rj45_poe'?'rj45':x.type,gn:x.gn,label:x.label,status:x.status,face:x.face,poe:x.poe,watts:x.watts,color:x.color,powerRole:x.powerRole,connected:cables.length>0,connectionIds:cables.map(c=>c.id).sort(),peerPortIds:cables.map(c=>c.fromPortId===id?c.toPortId:c.fromPortId).sort()};
+ return {customerId:p.customerId,id:x.id,deviceId:d.id,deviceName:d.name,deviceKind:d.kind,rackId:d.rackId,roomId:d.roomId??r?.roomId??null,path:inventoryPath(p,'port',id),groupId:g.id,groupName:g.name,type:x.type,family:x.type==='rj45_poe'?'rj45':x.type,gn:x.gn,label:x.label,status:x.status,face:x.face,poe:x.poe,watts:x.watts,color:x.color,powerRole:x.powerRole,...(recordedConnectorDescriptor(d,x,hardwareProfile)?{physicalConnector:recordedConnectorDescriptor(d,x,hardwareProfile)}:{}),connected:cables.length>0,connectionIds:cables.map(c=>c.id).sort(),peerPortIds:cables.map(c=>c.fromPortId===id?c.toPortId:c.fromPortId).sort()};
 }
 export function validReadEnvelope(data:any,etag:string|null,p:Project,view:ReadView,f:ReadFilter):boolean{
  if(!keys(data,'customerId,revision,query,kind,status,family,offset,limit,total,nextOffset,items')||data.customerId!==p.customerId||data.revision!==p.revision||etag!=='"'+p.revision+'"'||data.query!==f.query||data.kind!==(view==='search'?f.kind:null)||data.status!==(view==='ports'?f.status:null)||data.family!==(view==='ports'?f.family:null)||data.offset!==f.offset||data.limit!==f.limit||!Number.isSafeInteger(data.total)||data.total<0||!Array.isArray(data.items)||data.items.length!==Math.min(f.limit,Math.max(0,data.total-f.offset))||data.nextOffset!==(f.offset+data.items.length<data.total?f.offset+data.items.length:null))return false;

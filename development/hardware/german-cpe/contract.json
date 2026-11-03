@@ -1,0 +1,21 @@
+{
+  "formatVersion": 1,
+  "revision": "german-cpe-20261103-v1",
+  "targetSchema": 44,
+  "previousDefinitions": 868,
+  "models": 6,
+  "newGroupTypes": [
+    "usb_a",
+    "usb_c"
+  ],
+  "typeDescriptors": {
+    "telephony": [
+      "voice-tae"
+    ]
+  },
+  "reserved": [
+    "No simultaneidad de las bocas FON RJ11/TAE de una misma línea; no simular PBX interna.",
+    "WLAN,DECT,Zigbee,reset yantenas son inertes; no bocasdecable.",
+    "Laterales proyectados dentro de detalletrasero; no es una segunda cara física."
+  ]
+}

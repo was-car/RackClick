@@ -1,0 +1,35 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 16,
+  "catalogKey": "rackclick-hardware-reference",
+  "sourceSha256": "896ccb28d6f04f27810230ab603f7365b2730b06d463babf6d68dd97abbcf8f3",
+  "lockSha256": "ce8c5e48888d91431ec438709a24c8b3b6ec6cbb5260168c567cedb166d0d8c0",
+  "referenceSha256": "837cac53424dcf8324fd7dcad2cdc1907c79d21084755c7964b3d33accc4c2b6",
+  "files": {
+    "development/server/src/RackClick.Server/InventoryHardwareProfiles.Generated.cs": "d55e82c94d070cc1e053a0497beb82ddb2eee1372a762f6040ae0301ce33ac9f",
+    "development/frontend/src/hardware-catalog.generated.json": "80e0ceaac239438918459a859c955a373f5c82f7d52601cde72b573eea884891"
+  },
+  "definitions": [
+    {
+      "key": "shelf-2u",
+      "revision": "hw-reference-v1",
+      "sha256": "8e2f625187eee860ed35a17c7107c9b7b2f3d208d11a5f9890efafc4ec59629f"
+    },
+    {
+      "key": "desktop-firewall-6",
+      "revision": "hw-reference-v1",
+      "sha256": "3fcdbe32d119fc4b86d8cdb1afc0c14ebe34bf8e9c33913477d2e86873091610"
+    },
+    {
+      "key": "switch-24",
+      "revision": "hw-reference-v1",
+      "sha256": "b8f92a735d3630a10630d5aab0a69fe224f6200a0d4e490531ad88af4a861c1a"
+    },
+    {
+      "key": "patchpanel-24",
+      "revision": "hw-reference-v1",
+      "sha256": "550bc18d29d309b3aba551923bd34c3d184560646e541fb2baf150672fcc4de6"
+    }
+  ],
+  "state": "synthetic_development_not_a_release"
+}

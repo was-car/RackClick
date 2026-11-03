@@ -1,0 +1,15 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 19,
+  "sourceSha256": "621920f2760f8f7fba899aaa7bb90bc22d244198e252b6f4ef16987922e0c798",
+  "factsSha256": "4c47e00083d41212a37d51f9f182f0b5e965950b138b5967568110d7c27f4aef",
+  "baseMigrationSha256": "71b9151c7ddd8b2c8b28f2de49f4ef312b3ca6d406f1054685424392c85535ad",
+  "definitions": [
+    {
+      "key": "aruba-jl682a",
+      "revision": "aruba-20261030-v1",
+      "sha256": "c8f8835cabd68d60f122f5006cd8b207be78dfe3d129b805c38c0eb12b00fb2d"
+    }
+  ],
+  "state": "curated_development_not_a_release"
+}

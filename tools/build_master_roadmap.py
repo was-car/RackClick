@@ -140,6 +140,10 @@ def build():
                 "implementación ni exclusión de su criterio original.",
         })
     extensions = []
+    # Unweighted catalog/future results can own an observation. This does not
+    # extend the ledger IDs used for RC10 mappings or weight calculations.
+    reference_ids = ids | {item['id'] for section in
+        ('observations', 'catalogStream', 'future', 'references', 'operations') for item in config[section]}
     for key, classification in [
         ("observations", "peticion_usuario_trazada"),
         ("catalogStream", "ampliacion_catalogo"),
@@ -148,9 +152,9 @@ def build():
         ("operations", "proceso_operativo"),
     ]:
         for item in config[key]:
-            if item.get("owner") and item["owner"] not in ids:
+            if item.get("owner") and item["owner"] not in reference_ids:
                 raise ValueError("invalid_observation_owner")
-            if not set(item.get("related", [])) <= ids:
+            if not set(item.get("related", [])) <= reference_ids:
                 raise ValueError("invalid_related_result")
             extensions.append({
                 **item, "classification": classification, "addsClosureWeight": False,
@@ -201,22 +205,26 @@ def build():
     points = f"{float(total):.2f}".replace(".", ",")
     lines = [
         "# Hoja de ruta maestra de RackClick", "",
-        f"30.10.2026 · Entrada única para continuar el proyecto. "
+        f"{config['date']} · Entrada única para continuar el proyecto. "
         "Integra el cierre existente, las peticiones de Wascar, la comparación RC10 "
         "y el catálogo de fabricantes. No declara implementado lo que sólo está investigado.", "",
         "**Abrir este documento al planificar.** "
         "[Registro completo JSON](REGISTRO-REQUISITOS-MAESTRO.json) · "
         "[Trazabilidad de las302acciones](TRAZABILIDAD-RC10-MAESTRA.csv) · "
+        "[Pasos numerados para elegir](PLAN-PENDIENTES-NUMERADO.md) · "
         "[Conciliación de documentos](CONCILIACION-PLANES-30-10-2026.md).", "",
         "## Estado que se conserva", "",
-        "El servidor10 funciona con PostgreSQL17, servicio Windows/HTTPS y MFA real "
+        config.get("currentSnapshot", {}).get("text", "El servidor10 funciona con PostgreSQL17, servicio Windows/HTTPS y MFA real "
         "probado por Wascar. Los10clientes originales ya se cargaron con su inventario "
         "y la seguridad conservada. Hay jerarquía, Click-Click, grupos/permisos, "
         "plantillas/favoritos y varios formatos de exportación. "
         "Faltan resultados de integración, recuperación, variantes y aceptación; "
-        "no se comienza otro piloto.", "",
-        "El cierre cuantificado mantiene53resultados (50con peso y3controles), "
-        "280subpasos y23acreditados. Son comprobaciones de cierre, no280funciones "
+        "no se comienza otro piloto."), "",
+        f"El cierre cuantificado mantiene {registry['metric']['sourceTasks']} resultados "
+        f"({registry['metric']['scoredSourceTasks']} con peso y "
+        f"{registry['metric']['sourceTasks'] - registry['metric']['scoredSourceTasks']} controles), "
+        f"{registry['metric']['checkpoints']} subpasos y {registry['metric']['doneCheckpoints']} acreditados. "
+        "Son comprobaciones de cierre, no funciones nuevas "
         "que haya que escribir. Las302acciones RC10 son detalle trazado; "
         "el catálogo nuevo es una ampliación diferenciada.", "",
         "## Qué falta, por bloques", "",
@@ -224,7 +232,7 @@ def build():
         "|---|---|",
         "| F · Seguridad/MFA | Clasificación de hallazgos reales; configuración SQL "
         "y secretos recuperables; custodia/ACL finales; sobre portable, rotación, "
-        "códigos y emergencia del último administrador; reautenticación y matriz "
+        "custodia/cierre de códigos y emergencia del último administrador; reautenticación y matriz "
         "final. Conservar panel/login/gracia45 ya construidos. |",
         "| I · Inventario y colaboración | Variantes de conectores/caras/PoE, "
         "reconexión y lotes por IDs/grupo/tipo; compensación/rehacer seguro, "
@@ -237,15 +245,15 @@ def build():
         "racks primero, detalles plegables, avisos, EN/DE/ES y accesibilidad. |",
         "| W · Windows y red | Matriz soportada y negativos de cuenta/servicio; "
         "red/certificados casa-trabajo sencillos; repetición/cancelación/diagnóstico "
-        "y recorrido instalado completo. New10/postboot ya probado se conserva. |",
+        "y recorrido instalado completo. New11/postboot deD ya probado se conserva. |",
         "| R · Backup y recuperación | Retención, destinos local/USB/UNC, "
         "cifrado y secretos/MFA, restore completo en otroWindows, "
         "actualización/rollback y reset delimitado. Integrar operación en dashboard. |",
         "| E · Entrega | Candidata única, build repetible, licencias/SBOM/avisos, "
         "manual final y QA por módulos, carga10usuarios con demo completa y adopción. |",
-        "| C-HW · Fabricantes | Convertir investigación en catálogo curado: "
-        "contrato/variantes, conectores, caras/geometría/licencias, selector, pruebas "
-        "por modelo, publicación y mantenimiento. Primer100perfiles es propuesta. |",
+        "| C-HW · Fabricantes | Selección506/506 integrada en43 y cargada enD. "
+        "Cerrar QA/reservas de configuración/geometría, procedencia/licencias, "
+        "publicación y mantenimiento; no repetir la autoría de esos modelos. |",
         "| FUT · Después | Descubrimiento SNMP/LLDP/API, paquetes de campo S5 "
         "y federación AD/OIDC real; mantienen su alcance posterior. |", "",
         "Rendimiento requiere medición en la candidata con datos/usuarios "

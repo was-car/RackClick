@@ -1,0 +1,3994 @@
+{
+  "formatVersion": 1,
+  "revision": "batch50-20261030-v1",
+  "models": [
+    {
+      "definition": {
+        "key": "qnap-ts-233",
+        "revision": "batch50-20261030-v1",
+        "identity": {
+          "manufacturer": "QNAP",
+          "family": "TS-x33",
+          "model": "TS-233",
+          "sku": "TS-233"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.qnap.com/en/product/ts-233/specs/hardware/TS-233.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 91.7,
+          "height": 186,
+          "depth": 157.6
+        },
+        "color": "#e6e8e9",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 158,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 134,
+              "h": 270,
+              "fill": "#e6e8e9",
+              "stroke": "#70767b",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 18,
+                "y": 20,
+                "w": 20,
+                "h": 252,
+                "fill": "#353a3e"
+              },
+              {
+                "kind": "text",
+                "x": 49,
+                "y": 40,
+                "text": "QNAP",
+                "size": 10,
+                "fill": "#b1b8be"
+              },
+              {
+                "kind": "circle",
+                "cx": 28,
+                "cy": 48,
+                "r": 1.5,
+                "fill": "#899a78"
+              },
+              {
+                "kind": "circle",
+                "cx": 28,
+                "cy": 62,
+                "r": 1.5,
+                "fill": "#899a78"
+              },
+              {
+                "kind": "circle",
+                "cx": 28,
+                "cy": 76,
+                "r": 1.5,
+                "fill": "#899a78"
+              },
+              {
+                "kind": "circle",
+                "cx": 28,
+                "cy": 90,
+                "r": 1.5,
+                "fill": "#899a78"
+              },
+              {
+                "kind": "circle",
+                "cx": 28,
+                "cy": 104,
+                "r": 1.5,
+                "fill": "#899a78"
+              },
+              {
+                "kind": "rect",
+                "x": 24,
+                "y": 176,
+                "w": 8,
+                "h": 18,
+                "fill": "#d4dadd",
+                "radius": 3
+              },
+              {
+                "kind": "rect",
+                "x": 24,
+                "y": 201,
+                "w": 8,
+                "h": 18,
+                "fill": "#d4dadd",
+                "radius": 3
+              },
+              {
+                "kind": "rect",
+                "x": 24,
+                "y": 233,
+                "w": 8,
+                "h": 18,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 28.0,
+                "y1": 236,
+                "x2": 28.0,
+                "y2": 248,
+                "stroke": "#237dba",
+                "width": 2
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 158,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 134,
+              "h": 270,
+              "fill": "#b9bdc0",
+              "stroke": "#d8dddf",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "vent",
+                "x": 24,
+                "y": 33,
+                "w": 109,
+                "h": 105,
+                "count": 10
+              },
+              {
+                "kind": "circle",
+                "cx": 127,
+                "cy": 166,
+                "r": 1.4,
+                "fill": "#26333c"
+              },
+              {
+                "kind": "text",
+                "x": 93,
+                "y": 164,
+                "text": "RESET",
+                "size": 5,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "rect",
+                "x": 112,
+                "y": 222,
+                "w": 8,
+                "h": 18,
+                "fill": "#172027"
+              },
+              {
+                "kind": "rect",
+                "x": 124,
+                "y": 222,
+                "w": 8,
+                "h": 18,
+                "fill": "#172027"
+              },
+              {
+                "kind": "circle",
+                "cx": 123,
+                "cy": 261,
+                "r": 7,
+                "fill": "#121a20",
+                "stroke": "#a2abb2"
+              },
+              {
+                "kind": "circle",
+                "cx": 123,
+                "cy": 261,
+                "r": 2,
+                "fill": "#8b969e"
+              },
+              {
+                "kind": "text",
+                "x": 135,
+                "y": 264,
+                "text": "DC",
+                "size": 6,
+                "fill": "#88939b"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 113,
+                "y": 187,
+                "dx": 0,
+                "dy": 36,
+                "w": 19,
+                "h": 24
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.qnap.com/en/product/ts-233/specs/hardware/TS-233.pdf",
+            "kind": "manufacturer-specification",
+            "observed": "Exact SKU read via web PDF parser, 30.10.2026; binary not downloaded or hashed. Network counts, nominal dimensions and power verified."
+          },
+          {
+            "url": "https://download.qnap.com/TechnicalDocument/Storage/Home%20NAS/ts-x33/ts-x33-ug-en-us.pdf",
+            "kind": "manufacturer-hardware-guide",
+            "observed": "Downloaded and rendered with Windows.Data.Pdf; relevant model diagrams inspected.",
+            "sha256": "897161474f10441af8a500178dfd621603979b32967bb21b88f435b9369a82cb",
+            "bytes": 2158341
+          },
+          {
+            "url": "https://marketing.qnap.com/download/15721/?version=ts-233",
+            "kind": "manufacturer-photo-archive",
+            "observed": "Front and rear extracted to private references and visually inspected; chassis family is not proof of RAM.",
+            "sha256": "016bba84464ba909f940dad63f21db2e7bfa42d21a3dc798ca369980ccc2c21f",
+            "bytes": 20375717
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts233/TS-233_back.png",
+            "sha256": "0de005d6024267f05a70ec2fc8c06139afabea0cc8695aa04fe098b64dfea1fe",
+            "view": "rear",
+            "match": "exact_chassis_not_memory"
+          },
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts233/front.png",
+            "sha256": "f7b0f8a6a7a78d22764f96182ba1be4ca380175363e3393aa7b8bbdd57e8b2e6",
+            "view": "front",
+            "match": "exact_chassis_not_memory"
+          }
+        ],
+        "dimensionsBasis": "Current exact-SKU nominal dimensions, W/H/D mm; full mounted height including feet and clearance is not certified.",
+        "limits": [
+          "Photographs establish chassis, not installed RAM, drives or optional cards.",
+          "Own schematic, not original photo or colorimetric replica.",
+          "USB, DC adapter, HDMI, PCIe, buttons, LEDs and fans are decorative; no storage/RAID, optional NIC or speed negotiation simulated.",
+          "Guide2024 gives188.64×90.18×156.26mm H/W/D; current SKU sheet gives186×91.7×157.6mm and excludes feet. Discrepancy retained; no averaged values."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "qnap-ts-262-4g",
+        "revision": "batch50-20261030-v1",
+        "identity": {
+          "manufacturer": "QNAP",
+          "family": "TS-x62",
+          "model": "TS-262",
+          "sku": "TS-262-4G"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.qnap.com/en/product/ts-262/specs/hardware/TS-262-4G.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 105,
+          "height": 165,
+          "depth": 226.5
+        },
+        "color": "#eef0f1",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 196,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 172,
+              "h": 270,
+              "fill": "#eef0f1",
+              "stroke": "#70767b",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 16,
+                "y": 17,
+                "w": 130,
+                "h": 260,
+                "fill": "#eef0f1",
+                "stroke": "#61666a",
+                "radius": 7
+              },
+              {
+                "kind": "rect",
+                "x": 147,
+                "y": 16,
+                "w": 33,
+                "h": 262,
+                "fill": "#c8b58e",
+                "radius": 8
+              },
+              {
+                "kind": "text",
+                "x": 27,
+                "y": 42,
+                "text": "QNAP",
+                "size": 13,
+                "fill": "#a6adb2"
+              },
+              {
+                "kind": "circle",
+                "cx": 164,
+                "cy": 39,
+                "r": 10,
+                "fill": "#c8b58e",
+                "stroke": "#6c6f69"
+              },
+              {
+                "kind": "line",
+                "x1": 164,
+                "y1": 33,
+                "x2": 164,
+                "y2": 41,
+                "stroke": "#8a8d81",
+                "width": 1
+              },
+              {
+                "kind": "text",
+                "x": 161,
+                "y": 72,
+                "text": "STATUS",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 171,
+                "cy": 70,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 161,
+                "y": 87,
+                "text": "LAN",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 171,
+                "cy": 85,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 161,
+                "y": 102,
+                "text": "USB",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 171,
+                "cy": 100,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 161,
+                "y": 117,
+                "text": "1",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 171,
+                "cy": 115,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 161,
+                "y": 132,
+                "text": "2",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 171,
+                "cy": 130,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "rect",
+                "x": 159,
+                "y": 224,
+                "w": 9,
+                "h": 20,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 163.5,
+                "y1": 227,
+                "x2": 163.5,
+                "y2": 241,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "circle",
+                "cx": 164,
+                "cy": 258,
+                "r": 9,
+                "fill": "#c8b58e",
+                "stroke": "#777f78"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 196,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 172,
+              "h": 270,
+              "fill": "#b9bdc0",
+              "stroke": "#dde1e3",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 51,
+                "y": 25,
+                "w": 100,
+                "h": 20,
+                "fill": "#aeb5ba",
+                "stroke": "#7c858d",
+                "radius": 3
+              },
+              {
+                "kind": "fan",
+                "cx": 120,
+                "cy": 119,
+                "r": 57
+              },
+              {
+                "kind": "circle",
+                "cx": 30,
+                "cy": 54,
+                "r": 1.2,
+                "fill": "#26323b"
+              },
+              {
+                "kind": "text",
+                "x": 38,
+                "y": 56,
+                "text": "RESET",
+                "size": 4,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "rect",
+                "x": 26,
+                "y": 64,
+                "w": 8,
+                "h": 19,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 30.0,
+                "y1": 67,
+                "x2": 30.0,
+                "y2": 80,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 26,
+                "y": 98,
+                "w": 8,
+                "h": 20,
+                "fill": "#11191f"
+              },
+              {
+                "kind": "rect",
+                "x": 39,
+                "y": 98,
+                "w": 8,
+                "h": 20,
+                "fill": "#11191f"
+              },
+              {
+                "kind": "rect",
+                "x": 26,
+                "y": 136,
+                "w": 23,
+                "h": 9,
+                "fill": "#11191f"
+              },
+              {
+                "kind": "text",
+                "x": 26,
+                "y": 154,
+                "text": "HDMI",
+                "size": 5,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "rect",
+                "x": 136,
+                "y": 252,
+                "w": 10,
+                "h": 4,
+                "fill": "#151e26"
+              },
+              {
+                "kind": "circle",
+                "cx": 34,
+                "cy": 260,
+                "r": 7,
+                "fill": "#121a20",
+                "stroke": "#a2abb2"
+              },
+              {
+                "kind": "circle",
+                "cx": 34,
+                "cy": 260,
+                "r": 2,
+                "fill": "#8b969e"
+              },
+              {
+                "kind": "text",
+                "x": 46,
+                "y": 263,
+                "text": "DC",
+                "size": 6,
+                "fill": "#88939b"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 27,
+                "y": 184,
+                "dx": 0,
+                "dy": 34,
+                "w": 19,
+                "h": 24
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.qnap.com/en/product/ts-262/specs/hardware/TS-262-4G.pdf",
+            "kind": "manufacturer-specification",
+            "observed": "Exact SKU read via web PDF parser, 30.10.2026; binary not downloaded or hashed. Network counts, nominal dimensions and power verified."
+          },
+          {
+            "url": "https://download.qnap.com/TechnicalDocument/Storage/SMB%20NAS/ts-x62%26x64/ts-x62%26x64-ug-en-us.pdf",
+            "kind": "manufacturer-hardware-guide",
+            "observed": "Reused prior pinned family guide23, same primary diagrams.",
+            "sha256": "5773a3346c41c689f814d599d521964633c3d40f8dc265f7f5e2279b10324523",
+            "bytes": 5121734
+          },
+          {
+            "url": "https://marketing.qnap.com/download/17345/?version=ts-262",
+            "kind": "manufacturer-photo-archive",
+            "observed": "Front and rear extracted to private references and visually inspected; chassis family is not proof of RAM.",
+            "sha256": "6fb80c315d983bc28a9aa8f856f565d75847a7e56f1de53803247a6b735a1121",
+            "bytes": 21749783
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts262/photo_TS-262_back.png",
+            "sha256": "25eee7ec1e4bd4b0001a29995f05f41dd25a7f103116c9d8a5f2897d82b0ae65",
+            "view": "rear",
+            "match": "exact_chassis_not_memory"
+          },
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts262/photo_TS-262_front.png",
+            "sha256": "8e261f5bf1ed458176909f48eb7c6e9c04e276bf11a38f98e53aaabef29f7de2",
+            "view": "front",
+            "match": "exact_chassis_not_memory"
+          }
+        ],
+        "dimensionsBasis": "Current exact-SKU nominal dimensions, W/H/D mm; full mounted height including feet and clearance is not certified.",
+        "limits": [
+          "Photographs establish chassis, not installed RAM, drives or optional cards.",
+          "Own schematic, not original photo or colorimetric replica.",
+          "USB, DC adapter, HDMI, PCIe, buttons, LEDs and fans are decorative; no storage/RAID, optional NIC or speed negotiation simulated.",
+          "Current sheet excludes feet. Family guide gives168mm body height and226mm depth; retain discrepancy, no total-foot-height claim."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "qnap-ts-264-8g",
+        "revision": "batch50-20261030-v1",
+        "identity": {
+          "manufacturer": "QNAP",
+          "family": "TS-x64",
+          "model": "TS-264",
+          "sku": "TS-264-8G"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.qnap.com/en/product/ts-264/specs/hardware/TS-264-8G.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 105,
+          "height": 165,
+          "depth": 226.5
+        },
+        "color": "#17191c",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 196,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 172,
+              "h": 270,
+              "fill": "#17191c",
+              "stroke": "#70767b",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 16,
+                "y": 17,
+                "w": 130,
+                "h": 260,
+                "fill": "#17191c",
+                "stroke": "#61666a",
+                "radius": 7
+              },
+              {
+                "kind": "rect",
+                "x": 147,
+                "y": 16,
+                "w": 33,
+                "h": 262,
+                "fill": "#c8b58e",
+                "radius": 8
+              },
+              {
+                "kind": "text",
+                "x": 27,
+                "y": 42,
+                "text": "QNAP",
+                "size": 13,
+                "fill": "#a6adb2"
+              },
+              {
+                "kind": "circle",
+                "cx": 164,
+                "cy": 39,
+                "r": 10,
+                "fill": "#c8b58e",
+                "stroke": "#6c6f69"
+              },
+              {
+                "kind": "line",
+                "x1": 164,
+                "y1": 33,
+                "x2": 164,
+                "y2": 41,
+                "stroke": "#8a8d81",
+                "width": 1
+              },
+              {
+                "kind": "text",
+                "x": 161,
+                "y": 72,
+                "text": "STATUS",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 171,
+                "cy": 70,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 161,
+                "y": 87,
+                "text": "LAN",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 171,
+                "cy": 85,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 161,
+                "y": 102,
+                "text": "USB",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 171,
+                "cy": 100,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 161,
+                "y": 117,
+                "text": "1",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 171,
+                "cy": 115,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 161,
+                "y": 132,
+                "text": "2",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 171,
+                "cy": 130,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "rect",
+                "x": 159,
+                "y": 224,
+                "w": 9,
+                "h": 20,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 163.5,
+                "y1": 227,
+                "x2": 163.5,
+                "y2": 241,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "circle",
+                "cx": 164,
+                "cy": 258,
+                "r": 9,
+                "fill": "#c8b58e",
+                "stroke": "#777f78"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 196,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 172,
+              "h": 270,
+              "fill": "#b9bdc0",
+              "stroke": "#25282a",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 51,
+                "y": 25,
+                "w": 100,
+                "h": 20,
+                "fill": "#aeb5ba",
+                "stroke": "#7c858d",
+                "radius": 3
+              },
+              {
+                "kind": "fan",
+                "cx": 120,
+                "cy": 119,
+                "r": 57
+              },
+              {
+                "kind": "circle",
+                "cx": 30,
+                "cy": 54,
+                "r": 1.2,
+                "fill": "#26323b"
+              },
+              {
+                "kind": "text",
+                "x": 38,
+                "y": 56,
+                "text": "RESET",
+                "size": 4,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "rect",
+                "x": 26,
+                "y": 64,
+                "w": 8,
+                "h": 19,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 30.0,
+                "y1": 67,
+                "x2": 30.0,
+                "y2": 80,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 26,
+                "y": 98,
+                "w": 8,
+                "h": 20,
+                "fill": "#11191f"
+              },
+              {
+                "kind": "rect",
+                "x": 39,
+                "y": 98,
+                "w": 8,
+                "h": 20,
+                "fill": "#11191f"
+              },
+              {
+                "kind": "rect",
+                "x": 26,
+                "y": 136,
+                "w": 23,
+                "h": 9,
+                "fill": "#11191f"
+              },
+              {
+                "kind": "text",
+                "x": 26,
+                "y": 154,
+                "text": "HDMI",
+                "size": 5,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "rect",
+                "x": 136,
+                "y": 252,
+                "w": 10,
+                "h": 4,
+                "fill": "#151e26"
+              },
+              {
+                "kind": "circle",
+                "cx": 34,
+                "cy": 260,
+                "r": 7,
+                "fill": "#121a20",
+                "stroke": "#a2abb2"
+              },
+              {
+                "kind": "circle",
+                "cx": 34,
+                "cy": 260,
+                "r": 2,
+                "fill": "#8b969e"
+              },
+              {
+                "kind": "text",
+                "x": 46,
+                "y": 263,
+                "text": "DC",
+                "size": 6,
+                "fill": "#88939b"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "x": 27,
+                "y": 184,
+                "dx": 0,
+                "dy": 34,
+                "w": 19,
+                "h": 24
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.qnap.com/en/product/ts-264/specs/hardware/TS-264-8G.pdf",
+            "kind": "manufacturer-specification",
+            "observed": "Exact SKU read via web PDF parser, 30.10.2026; binary not downloaded or hashed. Network counts, nominal dimensions and power verified."
+          },
+          {
+            "url": "https://download.qnap.com/TechnicalDocument/Storage/SMB%20NAS/ts-x62%26x64/ts-x62%26x64-ug-en-us.pdf",
+            "kind": "manufacturer-hardware-guide",
+            "observed": "Reused prior pinned family guide23, same primary diagrams.",
+            "sha256": "5773a3346c41c689f814d599d521964633c3d40f8dc265f7f5e2279b10324523",
+            "bytes": 5121734
+          },
+          {
+            "url": "https://marketing.qnap.com/download/17212/?version=ts-264",
+            "kind": "manufacturer-photo-archive",
+            "observed": "Front and rear extracted to private references and visually inspected; chassis family is not proof of RAM.",
+            "sha256": "0e2364b80ecdaada5f5594c99cb402a01f921c7492992cadcfb25956cff482a5",
+            "bytes": 28707901
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts264/photo_TS-264_back.png",
+            "sha256": "ce8f1fe6640aae7a15883925ff808206cfc5121deaf86edcd13a92476aa2b073",
+            "view": "rear",
+            "match": "exact_chassis_not_memory"
+          },
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts264/photo_TS-264_front.png",
+            "sha256": "0c0f1a2be7a9b4aaf1cf87ecff717c5415001364b7aca92bcf3d589b10322bc9",
+            "view": "front",
+            "match": "exact_chassis_not_memory"
+          }
+        ],
+        "dimensionsBasis": "Current exact-SKU nominal dimensions, W/H/D mm; full mounted height including feet and clearance is not certified.",
+        "limits": [
+          "Photographs establish chassis, not installed RAM, drives or optional cards.",
+          "Own schematic, not original photo or colorimetric replica.",
+          "USB, DC adapter, HDMI, PCIe, buttons, LEDs and fans are decorative; no storage/RAID, optional NIC or speed negotiation simulated.",
+          "Current sheet excludes feet. Family guide gives168mm body height and226mm depth; retain discrepancy, no total-foot-height claim."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "qnap-ts-462-4g",
+        "revision": "batch50-20261030-v1",
+        "identity": {
+          "manufacturer": "QNAP",
+          "family": "TS-x62",
+          "model": "TS-462",
+          "sku": "TS-462-4G"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.qnap.com/en/product/ts-462/specs/hardware/TS-462-4G.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 170,
+          "height": 165,
+          "depth": 226.5
+        },
+        "color": "#eef0f1",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 302,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 278,
+              "h": 270,
+              "fill": "#eef0f1",
+              "stroke": "#70767b",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 16,
+                "y": 17,
+                "w": 236,
+                "h": 260,
+                "fill": "#eef0f1",
+                "stroke": "#61666a",
+                "radius": 7
+              },
+              {
+                "kind": "rect",
+                "x": 253,
+                "y": 16,
+                "w": 33,
+                "h": 262,
+                "fill": "#c8b58e",
+                "radius": 8
+              },
+              {
+                "kind": "text",
+                "x": 27,
+                "y": 42,
+                "text": "QNAP",
+                "size": 13,
+                "fill": "#a6adb2"
+              },
+              {
+                "kind": "circle",
+                "cx": 270,
+                "cy": 39,
+                "r": 10,
+                "fill": "#c8b58e",
+                "stroke": "#6c6f69"
+              },
+              {
+                "kind": "line",
+                "x1": 270,
+                "y1": 33,
+                "x2": 270,
+                "y2": 41,
+                "stroke": "#8a8d81",
+                "width": 1
+              },
+              {
+                "kind": "text",
+                "x": 267,
+                "y": 72,
+                "text": "STATUS",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 277,
+                "cy": 70,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 267,
+                "y": 87,
+                "text": "LAN",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 277,
+                "cy": 85,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 267,
+                "y": 102,
+                "text": "USB",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 277,
+                "cy": 100,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 267,
+                "y": 117,
+                "text": "1",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 277,
+                "cy": 115,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 267,
+                "y": 132,
+                "text": "2",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 277,
+                "cy": 130,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 267,
+                "y": 147,
+                "text": "3",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 277,
+                "cy": 145,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 267,
+                "y": 162,
+                "text": "4",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 277,
+                "cy": 160,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "rect",
+                "x": 265,
+                "y": 224,
+                "w": 9,
+                "h": 20,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 269.5,
+                "y1": 227,
+                "x2": 269.5,
+                "y2": 241,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "circle",
+                "cx": 270,
+                "cy": 258,
+                "r": 9,
+                "fill": "#c8b58e",
+                "stroke": "#777f78"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 302,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 278,
+              "h": 270,
+              "fill": "#b9bdc0",
+              "stroke": "#dce0e2",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 50,
+                "y": 24,
+                "w": 116,
+                "h": 20,
+                "fill": "#b6bdc2",
+                "stroke": "#838e96",
+                "radius": 3
+              },
+              {
+                "kind": "fan",
+                "cx": 196,
+                "cy": 171,
+                "r": 83
+              },
+              {
+                "kind": "circle",
+                "cx": 27,
+                "cy": 53,
+                "r": 1.2,
+                "fill": "#24303a"
+              },
+              {
+                "kind": "rect",
+                "x": 26,
+                "y": 65,
+                "w": 9,
+                "h": 20,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 30.5,
+                "y1": 68,
+                "x2": 30.5,
+                "y2": 82,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 26,
+                "y": 101,
+                "w": 9,
+                "h": 20,
+                "fill": "#141b22"
+              },
+              {
+                "kind": "rect",
+                "x": 41,
+                "y": 101,
+                "w": 9,
+                "h": 20,
+                "fill": "#141b22"
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 139,
+                "w": 25,
+                "h": 9,
+                "fill": "#111a20"
+              },
+              {
+                "kind": "text",
+                "x": 26,
+                "y": 157,
+                "text": "HDMI",
+                "size": 5,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "rect",
+                "x": 69,
+                "y": 89,
+                "w": 10,
+                "h": 4,
+                "fill": "#131d26"
+              },
+              {
+                "kind": "circle",
+                "cx": 34,
+                "cy": 262,
+                "r": 7,
+                "fill": "#121a20",
+                "stroke": "#a2abb2"
+              },
+              {
+                "kind": "circle",
+                "cx": 34,
+                "cy": 262,
+                "r": 2,
+                "fill": "#8b969e"
+              },
+              {
+                "kind": "text",
+                "x": 46,
+                "y": 265,
+                "text": "DC",
+                "size": 6,
+                "fill": "#88939b"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 27,
+                "y": 183,
+                "dx": 0,
+                "dy": 36,
+                "w": 20,
+                "h": 25
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.qnap.com/en/product/ts-462/specs/hardware/TS-462-4G.pdf",
+            "kind": "manufacturer-specification",
+            "observed": "Exact SKU read via web PDF parser, 30.10.2026; binary not downloaded or hashed. Network counts, nominal dimensions and power verified."
+          },
+          {
+            "url": "https://download.qnap.com/TechnicalDocument/Storage/SMB%20NAS/ts-x62%26x64/ts-x62%26x64-ug-en-us.pdf",
+            "kind": "manufacturer-hardware-guide",
+            "observed": "Reused prior pinned family guide23, same primary diagrams.",
+            "sha256": "5773a3346c41c689f814d599d521964633c3d40f8dc265f7f5e2279b10324523",
+            "bytes": 5121734
+          },
+          {
+            "url": "https://marketing.qnap.com/download/17345/?version=ts-462",
+            "kind": "manufacturer-photo-archive",
+            "observed": "Front and rear extracted to private references and visually inspected; chassis family is not proof of RAM.",
+            "sha256": "46d42e977c081a9d39c84223553cd081a7972daadfcaeb5715522ad34f975812",
+            "bytes": 30516980
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts462/photo_TS-462_back.png",
+            "sha256": "f0541ccd4cbf8bda31d471d6738e933a34682b88829a10c2f2f3f89047e00435",
+            "view": "rear",
+            "match": "exact_chassis_not_memory"
+          },
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts462/photo_TS-462_front.png",
+            "sha256": "dc3f7e875560a4381433f69d71dd303b516a13c4a1783e36910815d93738ac11",
+            "view": "front",
+            "match": "exact_chassis_not_memory"
+          }
+        ],
+        "dimensionsBasis": "Current exact-SKU nominal dimensions, W/H/D mm; full mounted height including feet and clearance is not certified.",
+        "limits": [
+          "Photographs establish chassis, not installed RAM, drives or optional cards.",
+          "Own schematic, not original photo or colorimetric replica.",
+          "USB, DC adapter, HDMI, PCIe, buttons, LEDs and fans are decorative; no storage/RAID, optional NIC or speed negotiation simulated.",
+          "Current sheet excludes feet; family guide uses168mm height/226mm depth."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "qnap-ts-453d-8g",
+        "revision": "batch50-20261030-v1",
+        "identity": {
+          "manufacturer": "QNAP",
+          "family": "TS-x53D",
+          "model": "TS-453D",
+          "sku": "TS-453D-8G"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.qnap.com/en/product/ts-453d/specs/hardware/TS-453D-8G.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 170,
+          "height": 168,
+          "depth": 226
+        },
+        "color": "#16191b",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 298,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 274,
+              "h": 270,
+              "fill": "#16191b",
+              "stroke": "#70767b",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 16,
+                "y": 17,
+                "w": 232,
+                "h": 260,
+                "fill": "#16191b",
+                "stroke": "#61666a",
+                "radius": 7
+              },
+              {
+                "kind": "rect",
+                "x": 249,
+                "y": 16,
+                "w": 33,
+                "h": 262,
+                "fill": "#647a71",
+                "radius": 8
+              },
+              {
+                "kind": "text",
+                "x": 27,
+                "y": 42,
+                "text": "QNAP",
+                "size": 13,
+                "fill": "#a6adb2"
+              },
+              {
+                "kind": "circle",
+                "cx": 266,
+                "cy": 39,
+                "r": 10,
+                "fill": "#647a71",
+                "stroke": "#6c6f69"
+              },
+              {
+                "kind": "line",
+                "x1": 266,
+                "y1": 33,
+                "x2": 266,
+                "y2": 41,
+                "stroke": "#8a8d81",
+                "width": 1
+              },
+              {
+                "kind": "text",
+                "x": 263,
+                "y": 72,
+                "text": "STATUS",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 273,
+                "cy": 70,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 263,
+                "y": 87,
+                "text": "LAN",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 273,
+                "cy": 85,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 263,
+                "y": 102,
+                "text": "USB",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 273,
+                "cy": 100,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 263,
+                "y": 117,
+                "text": "1",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 273,
+                "cy": 115,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 263,
+                "y": 132,
+                "text": "2",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 273,
+                "cy": 130,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 263,
+                "y": 147,
+                "text": "3",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 273,
+                "cy": 145,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "text",
+                "x": 263,
+                "y": 162,
+                "text": "4",
+                "size": 4,
+                "fill": "#7e7f72",
+                "anchor": "end"
+              },
+              {
+                "kind": "circle",
+                "cx": 273,
+                "cy": 160,
+                "r": 1.7,
+                "fill": "#819474"
+              },
+              {
+                "kind": "rect",
+                "x": 261,
+                "y": 224,
+                "w": 9,
+                "h": 20,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 265.5,
+                "y1": 227,
+                "x2": 265.5,
+                "y2": 241,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "circle",
+                "cx": 266,
+                "cy": 258,
+                "r": 9,
+                "fill": "#647a71",
+                "stroke": "#777f78"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 298,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 274,
+              "h": 270,
+              "fill": "#b9bdc0",
+              "stroke": "#24272a",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 51,
+                "y": 25,
+                "w": 108,
+                "h": 20,
+                "fill": "#aeb6bc",
+                "stroke": "#7a868f",
+                "radius": 3
+              },
+              {
+                "kind": "fan",
+                "cx": 194,
+                "cy": 184,
+                "r": 82
+              },
+              {
+                "kind": "circle",
+                "cx": 35,
+                "cy": 57,
+                "r": 1.3,
+                "fill": "#25333e"
+              },
+              {
+                "kind": "rect",
+                "x": 40,
+                "y": 94,
+                "w": 10,
+                "h": 4,
+                "fill": "#111a20"
+              },
+              {
+                "kind": "rect",
+                "x": 27,
+                "y": 141,
+                "w": 25,
+                "h": 9,
+                "fill": "#111a20"
+              },
+              {
+                "kind": "text",
+                "x": 27,
+                "y": 157,
+                "text": "HDMI",
+                "size": 5,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "circle",
+                "cx": 34,
+                "cy": 264,
+                "r": 7,
+                "fill": "#121a20",
+                "stroke": "#a2abb2"
+              },
+              {
+                "kind": "circle",
+                "cx": 34,
+                "cy": 264,
+                "r": 2,
+                "fill": "#8b969e"
+              },
+              {
+                "kind": "text",
+                "x": 46,
+                "y": 267,
+                "text": "DC",
+                "size": 6,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 180,
+                "w": 9,
+                "h": 22,
+                "fill": "#131d25"
+              },
+              {
+                "kind": "rect",
+                "x": 39,
+                "y": 180,
+                "w": 9,
+                "h": 22,
+                "fill": "#131d25"
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 220,
+                "w": 9,
+                "h": 22,
+                "fill": "#131d25"
+              },
+              {
+                "kind": "rect",
+                "x": 39,
+                "y": 220,
+                "w": 9,
+                "h": 22,
+                "fill": "#131d25"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "x": 55,
+                "y": 180,
+                "dx": 0,
+                "dy": 40,
+                "w": 20,
+                "h": 25
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.qnap.com/en/product/ts-453d/specs/hardware/TS-453D-8G.pdf",
+            "kind": "manufacturer-specification",
+            "observed": "Exact SKU read via web PDF parser, 30.10.2026; binary not downloaded or hashed. Network counts, nominal dimensions and power verified."
+          },
+          {
+            "url": "https://download.qnap.com/TechnicalDocument/Storage/SMB%20NAS/ts-x53d/ts-x53d-ug-en-us.pdf",
+            "kind": "manufacturer-hardware-guide",
+            "observed": "Downloaded and rendered with Windows.Data.Pdf; relevant model diagrams inspected.",
+            "sha256": "5b1ca267ed815d8da7ded1c61f146c84c8c7c7871e7632d71891c9c656412181",
+            "bytes": 1905685
+          },
+          {
+            "url": "https://marketing.qnap.com/download/10135/?version=ts-453d",
+            "kind": "manufacturer-photo-archive",
+            "observed": "Front and rear extracted to private references and visually inspected; chassis family is not proof of RAM.",
+            "sha256": "cbd66b91e04bdf7e0dcccd2b25c7c4c58664180671f631e5990489490003a819",
+            "bytes": 103899727
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts453d/TS-453D_Back.png",
+            "sha256": "29a9a2ef83058776089db1dd381ab9e4b2b1b8619a28914b25c50dccde7db045",
+            "view": "rear",
+            "match": "exact_chassis_not_memory"
+          },
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts453d/TS-453D_Front.png",
+            "sha256": "9874bbe23d430256103d28b5ee62b60dfb31225dcad6aefce83797ad5a187a93",
+            "view": "front",
+            "match": "exact_chassis_not_memory"
+          }
+        ],
+        "dimensionsBasis": "Current exact-SKU nominal dimensions, W/H/D mm; full mounted height including feet and clearance is not certified.",
+        "limits": [
+          "Photographs establish chassis, not installed RAM, drives or optional cards.",
+          "Own schematic, not original photo or colorimetric replica.",
+          "USB, DC adapter, HDMI, PCIe, buttons, LEDs and fans are decorative; no storage/RAID, optional NIC or speed negotiation simulated.",
+          "Shared x53D rear diagram illustrates two-fan6bay family; exact453D photo and SKU sheet confirm one120mm system fan. No copied6bay rear."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "qnap-ts-451d2-4g",
+        "revision": "batch50-20261030-v1",
+        "identity": {
+          "manufacturer": "QNAP",
+          "family": "TS-451D2",
+          "model": "TS-451D2",
+          "sku": "TS-451D2-4G"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.qnap.com/en/product/ts-451d2/specs/hardware/TS-451D2-4G.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 160,
+          "height": 165.3,
+          "depth": 219.4
+        },
+        "color": "#292c2e",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 286,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 262,
+              "h": 270,
+              "fill": "#292c2e",
+              "stroke": "#70767b",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 18,
+                "y": 20,
+                "w": 29,
+                "h": 255,
+                "fill": "#202426"
+              },
+              {
+                "kind": "text",
+                "x": 55,
+                "y": 41,
+                "text": "QNAP",
+                "size": 12,
+                "fill": "#c4ccd2"
+              },
+              {
+                "kind": "circle",
+                "cx": 33,
+                "cy": 54,
+                "r": 1.3,
+                "fill": "#869a68"
+              },
+              {
+                "kind": "circle",
+                "cx": 33,
+                "cy": 68,
+                "r": 1.3,
+                "fill": "#869a68"
+              },
+              {
+                "kind": "circle",
+                "cx": 33,
+                "cy": 82,
+                "r": 1.3,
+                "fill": "#869a68"
+              },
+              {
+                "kind": "circle",
+                "cx": 33,
+                "cy": 96,
+                "r": 1.3,
+                "fill": "#869a68"
+              },
+              {
+                "kind": "circle",
+                "cx": 33,
+                "cy": 110,
+                "r": 1.3,
+                "fill": "#869a68"
+              },
+              {
+                "kind": "circle",
+                "cx": 33,
+                "cy": 124,
+                "r": 1.3,
+                "fill": "#869a68"
+              },
+              {
+                "kind": "circle",
+                "cx": 33,
+                "cy": 138,
+                "r": 1.3,
+                "fill": "#869a68"
+              },
+              {
+                "kind": "tray",
+                "x": 53,
+                "y": 65,
+                "w": 47,
+                "h": 201,
+                "lock": true
+              },
+              {
+                "kind": "tray",
+                "x": 105,
+                "y": 65,
+                "w": 47,
+                "h": 201,
+                "lock": true
+              },
+              {
+                "kind": "tray",
+                "x": 157,
+                "y": 65,
+                "w": 47,
+                "h": 201,
+                "lock": true
+              },
+              {
+                "kind": "tray",
+                "x": 209,
+                "y": 65,
+                "w": 47,
+                "h": 201,
+                "lock": true
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 197,
+                "w": 15,
+                "h": 15,
+                "fill": "#151d25",
+                "stroke": "#56636d",
+                "radius": 3
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 220,
+                "w": 15,
+                "h": 15,
+                "fill": "#151d25",
+                "stroke": "#56636d",
+                "radius": 3
+              },
+              {
+                "kind": "rect",
+                "x": 28,
+                "y": 246,
+                "w": 10,
+                "h": 22,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 33.0,
+                "y1": 249,
+                "x2": 33.0,
+                "y2": 265,
+                "stroke": "#237dba",
+                "width": 2
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 286,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 262,
+              "h": 270,
+              "fill": "#b9bdc0",
+              "stroke": "#24272a",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "fan",
+                "cx": 128,
+                "cy": 149,
+                "r": 93
+              },
+              {
+                "kind": "circle",
+                "cx": 259,
+                "cy": 43,
+                "r": 1.3,
+                "fill": "#27353f"
+              },
+              {
+                "kind": "rect",
+                "x": 252,
+                "y": 62,
+                "w": 9,
+                "h": 22,
+                "fill": "#151e26"
+              },
+              {
+                "kind": "text",
+                "x": 240,
+                "y": 57,
+                "text": "HDMI",
+                "size": 5,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "rect",
+                "x": 247,
+                "y": 179,
+                "w": 9,
+                "h": 20,
+                "fill": "#171e25"
+              },
+              {
+                "kind": "rect",
+                "x": 260,
+                "y": 179,
+                "w": 9,
+                "h": 20,
+                "fill": "#171e25"
+              },
+              {
+                "kind": "rect",
+                "x": 260,
+                "y": 207,
+                "w": 9,
+                "h": 20,
+                "fill": "#171e25"
+              },
+              {
+                "kind": "rect",
+                "x": 46,
+                "y": 258,
+                "w": 13,
+                "h": 4,
+                "fill": "#172028"
+              },
+              {
+                "kind": "circle",
+                "cx": 258,
+                "cy": 260,
+                "r": 7,
+                "fill": "#121a20",
+                "stroke": "#a2abb2"
+              },
+              {
+                "kind": "circle",
+                "cx": 258,
+                "cy": 260,
+                "r": 2,
+                "fill": "#8b969e"
+              },
+              {
+                "kind": "text",
+                "x": 270,
+                "y": 263,
+                "text": "DC",
+                "size": 6,
+                "fill": "#88939b"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "x": 248,
+                "y": 105,
+                "dx": 0,
+                "dy": 35,
+                "w": 20,
+                "h": 25
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.qnap.com/en/product/ts-451d2/specs/hardware/TS-451D2-4G.pdf",
+            "kind": "manufacturer-specification",
+            "observed": "Exact SKU read via web PDF parser, 30.10.2026; binary not downloaded or hashed. Network counts, nominal dimensions and power verified."
+          },
+          {
+            "url": "https://download.qnap.com/TechnicalDocument/Storage/Home%20NAS/ts-451d2/ts-451d2-ug-en-us.pdf",
+            "kind": "manufacturer-hardware-guide",
+            "observed": "Downloaded and rendered with Windows.Data.Pdf; relevant model diagrams inspected.",
+            "sha256": "c5f1ffd2ecca0de23d05838d87a1e5bbe64232a6cb4172201cf89f36c6119061",
+            "bytes": 1571880
+          },
+          {
+            "url": "https://marketing.qnap.com/download/11097/?version=ts-451d2",
+            "kind": "manufacturer-photo-archive",
+            "observed": "Front and rear extracted to private references and visually inspected; chassis family is not proof of RAM.",
+            "sha256": "3b8fc3665849b348b60ecf66b88bf0b8a716491deb238b29796dd2dd6f8107c0",
+            "bytes": 15779638
+          },
+          {
+            "url": "https://www.qnap.com/i/_attach_file/product/photo/1000_625/490_1597135469_E794A2E59381E59C96_TS-451D2_right.png",
+            "kind": "manufacturer-product-image",
+            "observed": "Product-page OG front perspective inspected for colour; straight front geometry from model guide."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts-451d2/▓ú½~╣╧_TS-451D2_back.png",
+            "sha256": "624f59353da3d6caa5a00fdcd3fee209d5da697a090ff4c412c9234e7d322b0b",
+            "view": "rear",
+            "match": "exact_chassis_not_memory"
+          },
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts-451d2-primary-front.png",
+            "sha256": "693aa77ba74ebdd8f27bbea417dfdeb428835de2aa04f41de7b237d80cae7788",
+            "view": "angle",
+            "match": "exact_chassis_not_memory"
+          },
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/451d2/guide-page-8.png",
+            "sha256": "00a005e10be65c52ea0218510354abe1357ba926b7ced4ae2674f75f0588ea95",
+            "view": "front",
+            "match": "exact_chassis_diagram_upper_front"
+          }
+        ],
+        "dimensionsBasis": "Current exact-SKU nominal dimensions, W/H/D mm; full mounted height including feet and clearance is not certified.",
+        "limits": [
+          "Photographs establish chassis, not installed RAM, drives or optional cards.",
+          "Own schematic, not original photo or colorimetric replica.",
+          "USB, DC adapter, HDMI, PCIe, buttons, LEDs and fans are decorative; no storage/RAID, optional NIC or speed negotiation simulated.",
+          "The four physical tray fronts are visible; no installed disks or RAID are inferred."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "qnap-ts-473a-8g",
+        "revision": "batch50-20261030-v1",
+        "identity": {
+          "manufacturer": "QNAP",
+          "family": "TS-x73A",
+          "model": "TS-473A",
+          "sku": "TS-473A-8G"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.qnap.com/en/product/ts-473a/specs/hardware/TS-473A-8G.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 199.3,
+          "height": 180.2,
+          "depth": 279.6
+        },
+        "color": "#242729",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-power",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 330,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 306,
+              "h": 270,
+              "fill": "#242729",
+              "stroke": "#70767b",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 17,
+                "y": 17,
+                "w": 296,
+                "h": 63,
+                "fill": "#171a1d"
+              },
+              {
+                "kind": "text",
+                "x": 305,
+                "y": 37,
+                "text": "QNAP",
+                "size": 13,
+                "fill": "#c7cdd2",
+                "anchor": "end"
+              },
+              {
+                "kind": "text",
+                "x": 24,
+                "y": 35,
+                "text": "STATUS  LAN",
+                "size": 5,
+                "fill": "#99a780"
+              },
+              {
+                "kind": "text",
+                "x": 306,
+                "y": 56,
+                "text": "TS-473A",
+                "size": 8,
+                "fill": "#bdc6cc",
+                "anchor": "end"
+              },
+              {
+                "kind": "tray",
+                "x": 23.0,
+                "y": 85,
+                "w": 52.25,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 49.125,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 79.25,
+                "y": 85,
+                "w": 52.25,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 105.375,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 135.5,
+                "y": 85,
+                "w": 52.25,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 161.625,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 191.75,
+                "y": 85,
+                "w": 52.25,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 217.875,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "rect",
+                "x": 268,
+                "y": 203,
+                "w": 40,
+                "h": 16,
+                "fill": "#11191f",
+                "stroke": "#67717a",
+                "radius": 3
+              },
+              {
+                "kind": "rect",
+                "x": 268,
+                "y": 229,
+                "w": 40,
+                "h": 24,
+                "fill": "#11191f",
+                "stroke": "#67717a",
+                "radius": 2
+              },
+              {
+                "kind": "rect",
+                "x": 274,
+                "y": 233,
+                "w": 9,
+                "h": 17,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 278.5,
+                "y1": 236,
+                "x2": 278.5,
+                "y2": 247,
+                "stroke": "#962f29",
+                "width": 2
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 330,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 306,
+              "h": 270,
+              "fill": "#b9bdc0",
+              "stroke": "#24272a",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 53,
+                "y": 27,
+                "w": 132.0,
+                "h": 18,
+                "fill": "#b8bfc4",
+                "stroke": "#818d96",
+                "radius": 2
+              },
+              {
+                "kind": "rect",
+                "x": 53,
+                "y": 51,
+                "w": 132.0,
+                "h": 18,
+                "fill": "#b8bfc4",
+                "stroke": "#818d96",
+                "radius": 2
+              },
+              {
+                "kind": "circle",
+                "cx": 36,
+                "cy": 55,
+                "r": 1.3,
+                "fill": "#25333d"
+              },
+              {
+                "kind": "fan",
+                "cx": 61,
+                "cy": 134,
+                "r": 38
+              },
+              {
+                "kind": "vent",
+                "x": 282,
+                "y": 31,
+                "w": 27,
+                "h": 45,
+                "count": 5
+              },
+              {
+                "kind": "text",
+                "x": 59,
+                "y": 273,
+                "text": "USB-C",
+                "size": 5,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "fan",
+                "cx": 222,
+                "cy": 188,
+                "r": 82
+              },
+              {
+                "kind": "rect",
+                "x": 43,
+                "y": 230,
+                "w": 9,
+                "h": 20,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 47.5,
+                "y1": 233,
+                "x2": 47.5,
+                "y2": 247,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 57,
+                "y": 230,
+                "w": 9,
+                "h": 20,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 61.5,
+                "y1": 233,
+                "x2": 61.5,
+                "y2": 247,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 70,
+                "y": 258,
+                "w": 5,
+                "h": 13,
+                "fill": "#141e27"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "x": 29,
+                "y": 185,
+                "dx": 26,
+                "dy": 36,
+                "w": 20,
+                "h": 25
+              },
+              {
+                "groupKey": "rear-power",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 235,
+                "y": 33,
+                "dx": 0,
+                "dy": 36,
+                "w": 25,
+                "h": 31,
+                "labels": {
+                  "1": "AC"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.qnap.com/en/product/ts-473a/specs/hardware/TS-473A-8G.pdf",
+            "kind": "manufacturer-specification",
+            "observed": "Exact SKU read via web PDF parser, 30.10.2026; binary not downloaded or hashed. Network counts, nominal dimensions and power verified."
+          },
+          {
+            "url": "https://download.qnap.com/TechnicalDocument/Storage/SMB%20NAS/tvs-x73a/ts-x73a-ug-01-en-us.pdf",
+            "kind": "manufacturer-hardware-guide",
+            "observed": "Downloaded and rendered with Windows.Data.Pdf; relevant model diagrams inspected.",
+            "sha256": "ab975ec721441ad8d8fdd587fb809a566192c389e75be22c2deca3f92abf4bde",
+            "bytes": 3026690
+          },
+          {
+            "url": "https://marketing.qnap.com/download/12834/?version=ts-473a",
+            "kind": "manufacturer-photo-archive",
+            "observed": "Front and rear extracted to private references and visually inspected; chassis family is not proof of RAM.",
+            "sha256": "05ff2ef4cb370bfe4ff578eb15a9977b3a0caa001d0a635400271d2b52545718",
+            "bytes": 23379158
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts-473a/TS-473A_back.png",
+            "sha256": "9fdf90289406279f3ca18f69e9a70547c0033304aa645c223b17c8279c908314",
+            "view": "rear",
+            "match": "exact_chassis_not_memory"
+          },
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts-473a/TS-473A_front.png",
+            "sha256": "df4ba5670742dda38d13d474d32e939d7f6418971a252f21575b4c82026e0aca",
+            "view": "front",
+            "match": "exact_chassis_not_memory"
+          }
+        ],
+        "dimensionsBasis": "Current exact-SKU nominal dimensions, W/H/D mm; full mounted height including feet and clearance is not certified.",
+        "limits": [
+          "Photographs establish chassis, not installed RAM, drives or optional cards.",
+          "Own schematic, not original photo or colorimetric replica.",
+          "USB, DC adapter, HDMI, PCIe, buttons, LEDs and fans are decorative; no storage/RAID, optional NIC or speed negotiation simulated.",
+          "Current exact sheet excludes feet and gives180.2mm height/279.6mm depth; guide2021 gives188.2mm/280.8mm. Discrepancy retained.",
+          "LAN2 is physically left of LAN1, as engraved in exact model rear photos.",
+          "Fans drawn include the visible CPU fan plus system fan(s); no telemetry.",
+          "Power inlet represented schematically from its registered AC input, no optional/redundant supply invented."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "qnap-ts-673a-8g",
+        "revision": "batch50-20261030-v1",
+        "identity": {
+          "manufacturer": "QNAP",
+          "family": "TS-x73A",
+          "model": "TS-673A",
+          "sku": "TS-673A-8G"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.qnap.com/en/product/ts-673a/specs/hardware/TS-673A-8G.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 264.3,
+          "height": 180.2,
+          "depth": 279.6
+        },
+        "color": "#242729",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-power",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 430,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 406,
+              "h": 270,
+              "fill": "#242729",
+              "stroke": "#70767b",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 17,
+                "y": 17,
+                "w": 396,
+                "h": 63,
+                "fill": "#171a1d"
+              },
+              {
+                "kind": "text",
+                "x": 405,
+                "y": 37,
+                "text": "QNAP",
+                "size": 13,
+                "fill": "#c7cdd2",
+                "anchor": "end"
+              },
+              {
+                "kind": "text",
+                "x": 24,
+                "y": 35,
+                "text": "STATUS  LAN",
+                "size": 5,
+                "fill": "#99a780"
+              },
+              {
+                "kind": "text",
+                "x": 406,
+                "y": 56,
+                "text": "TS-673A",
+                "size": 8,
+                "fill": "#bdc6cc",
+                "anchor": "end"
+              },
+              {
+                "kind": "tray",
+                "x": 23.0,
+                "y": 85,
+                "w": 50.166666666666664,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 48.08333333333333,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 77.16666666666666,
+                "y": 85,
+                "w": 50.166666666666664,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 102.24999999999999,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 131.33333333333331,
+                "y": 85,
+                "w": 50.166666666666664,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 156.41666666666666,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 185.5,
+                "y": 85,
+                "w": 50.166666666666664,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 210.58333333333334,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 239.66666666666666,
+                "y": 85,
+                "w": 50.166666666666664,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 264.75,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 293.8333333333333,
+                "y": 85,
+                "w": 50.166666666666664,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 318.91666666666663,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "rect",
+                "x": 368,
+                "y": 203,
+                "w": 40,
+                "h": 16,
+                "fill": "#11191f",
+                "stroke": "#67717a",
+                "radius": 3
+              },
+              {
+                "kind": "rect",
+                "x": 368,
+                "y": 229,
+                "w": 40,
+                "h": 24,
+                "fill": "#11191f",
+                "stroke": "#67717a",
+                "radius": 2
+              },
+              {
+                "kind": "rect",
+                "x": 374,
+                "y": 233,
+                "w": 9,
+                "h": 17,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 378.5,
+                "y1": 236,
+                "x2": 378.5,
+                "y2": 247,
+                "stroke": "#962f29",
+                "width": 2
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 430,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 406,
+              "h": 270,
+              "fill": "#b9bdc0",
+              "stroke": "#24272a",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 53,
+                "y": 27,
+                "w": 172.0,
+                "h": 18,
+                "fill": "#b8bfc4",
+                "stroke": "#818d96",
+                "radius": 2
+              },
+              {
+                "kind": "rect",
+                "x": 53,
+                "y": 51,
+                "w": 172.0,
+                "h": 18,
+                "fill": "#b8bfc4",
+                "stroke": "#818d96",
+                "radius": 2
+              },
+              {
+                "kind": "circle",
+                "cx": 36,
+                "cy": 55,
+                "r": 1.3,
+                "fill": "#25333d"
+              },
+              {
+                "kind": "fan",
+                "cx": 61,
+                "cy": 134,
+                "r": 38
+              },
+              {
+                "kind": "vent",
+                "x": 382,
+                "y": 31,
+                "w": 27,
+                "h": 45,
+                "count": 5
+              },
+              {
+                "kind": "text",
+                "x": 59,
+                "y": 273,
+                "text": "USB-C",
+                "size": 5,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "fan",
+                "cx": 215,
+                "cy": 179,
+                "r": 62
+              },
+              {
+                "kind": "fan",
+                "cx": 347,
+                "cy": 179,
+                "r": 62
+              },
+              {
+                "kind": "rect",
+                "x": 43,
+                "y": 230,
+                "w": 9,
+                "h": 20,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 47.5,
+                "y1": 233,
+                "x2": 47.5,
+                "y2": 247,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 57,
+                "y": 230,
+                "w": 9,
+                "h": 20,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 61.5,
+                "y1": 233,
+                "x2": 61.5,
+                "y2": 247,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 70,
+                "y": 258,
+                "w": 5,
+                "h": 13,
+                "fill": "#141e27"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "x": 29,
+                "y": 185,
+                "dx": 26,
+                "dy": 36,
+                "w": 20,
+                "h": 25
+              },
+              {
+                "groupKey": "rear-power",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 335,
+                "y": 33,
+                "dx": 0,
+                "dy": 36,
+                "w": 25,
+                "h": 31,
+                "labels": {
+                  "1": "AC"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.qnap.com/en/product/ts-673a/specs/hardware/TS-673A-8G.pdf",
+            "kind": "manufacturer-specification",
+            "observed": "Exact SKU read via web PDF parser, 30.10.2026; binary not downloaded or hashed. Network counts, nominal dimensions and power verified."
+          },
+          {
+            "url": "https://download.qnap.com/TechnicalDocument/Storage/SMB%20NAS/tvs-x73a/ts-x73a-ug-01-en-us.pdf",
+            "kind": "manufacturer-hardware-guide",
+            "observed": "Downloaded and rendered with Windows.Data.Pdf; relevant model diagrams inspected.",
+            "sha256": "ab975ec721441ad8d8fdd587fb809a566192c389e75be22c2deca3f92abf4bde",
+            "bytes": 3026690
+          },
+          {
+            "url": "https://marketing.qnap.com/download/12834/?version=ts-673a",
+            "kind": "manufacturer-photo-archive",
+            "observed": "Front and rear extracted to private references and visually inspected; chassis family is not proof of RAM.",
+            "sha256": "600d5d4b0324905d4577f95b1a86f3cc97a84791c0070eb07f81a8e52fbea645",
+            "bytes": 26926514
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts-673a/TS-673A_back.png",
+            "sha256": "37ffc0ec09678193d30ebc6ec145e88f169602292bb9117867b2e63250c04670",
+            "view": "rear",
+            "match": "exact_chassis_not_memory"
+          },
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts-673a/TS-673A_front.png",
+            "sha256": "70995b210756f0f979f6b9e229bc5886346cca1c9db226b866a2bbd87dcbdb49",
+            "view": "front",
+            "match": "exact_chassis_not_memory"
+          }
+        ],
+        "dimensionsBasis": "Current exact-SKU nominal dimensions, W/H/D mm; full mounted height including feet and clearance is not certified.",
+        "limits": [
+          "Photographs establish chassis, not installed RAM, drives or optional cards.",
+          "Own schematic, not original photo or colorimetric replica.",
+          "USB, DC adapter, HDMI, PCIe, buttons, LEDs and fans are decorative; no storage/RAID, optional NIC or speed negotiation simulated.",
+          "Current exact sheet excludes feet and gives180.2mm height/279.6mm depth; guide2021 gives188.2mm/280.8mm. Discrepancy retained.",
+          "LAN2 is physically left of LAN1, as engraved in exact model rear photos.",
+          "Fans drawn include the visible CPU fan plus system fan(s); no telemetry.",
+          "Power inlet represented schematically from its registered AC input, no optional/redundant supply invented."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "qnap-ts-873a-8g",
+        "revision": "batch50-20261030-v1",
+        "identity": {
+          "manufacturer": "QNAP",
+          "family": "TS-x73A",
+          "model": "TS-873A",
+          "sku": "TS-873A-8G"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.qnap.com/en/product/ts-873a/specs/hardware/TS-873A-8G.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 329.3,
+          "height": 180.2,
+          "depth": 279.6
+        },
+        "color": "#242729",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-power",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 530,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 506,
+              "h": 270,
+              "fill": "#242729",
+              "stroke": "#70767b",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 17,
+                "y": 17,
+                "w": 496,
+                "h": 63,
+                "fill": "#171a1d"
+              },
+              {
+                "kind": "text",
+                "x": 505,
+                "y": 37,
+                "text": "QNAP",
+                "size": 13,
+                "fill": "#c7cdd2",
+                "anchor": "end"
+              },
+              {
+                "kind": "text",
+                "x": 24,
+                "y": 35,
+                "text": "STATUS  LAN",
+                "size": 5,
+                "fill": "#99a780"
+              },
+              {
+                "kind": "text",
+                "x": 506,
+                "y": 56,
+                "text": "TS-873A",
+                "size": 8,
+                "fill": "#bdc6cc",
+                "anchor": "end"
+              },
+              {
+                "kind": "tray",
+                "x": 23.0,
+                "y": 85,
+                "w": 49.125,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 47.5625,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 76.125,
+                "y": 85,
+                "w": 49.125,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 100.6875,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 129.25,
+                "y": 85,
+                "w": 49.125,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 153.8125,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 182.375,
+                "y": 85,
+                "w": 49.125,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 206.9375,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 235.5,
+                "y": 85,
+                "w": 49.125,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 260.0625,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 288.625,
+                "y": 85,
+                "w": 49.125,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 313.1875,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 341.75,
+                "y": 85,
+                "w": 49.125,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 366.3125,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "tray",
+                "x": 394.875,
+                "y": 85,
+                "w": 49.125,
+                "h": 178,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 419.4375,
+                "cy": 79,
+                "r": 1.5,
+                "fill": "#8aa66c"
+              },
+              {
+                "kind": "rect",
+                "x": 468,
+                "y": 203,
+                "w": 40,
+                "h": 16,
+                "fill": "#11191f",
+                "stroke": "#67717a",
+                "radius": 3
+              },
+              {
+                "kind": "rect",
+                "x": 468,
+                "y": 229,
+                "w": 40,
+                "h": 24,
+                "fill": "#11191f",
+                "stroke": "#67717a",
+                "radius": 2
+              },
+              {
+                "kind": "rect",
+                "x": 474,
+                "y": 233,
+                "w": 9,
+                "h": 17,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 478.5,
+                "y1": 236,
+                "x2": 478.5,
+                "y2": 247,
+                "stroke": "#962f29",
+                "width": 2
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 530,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 506,
+              "h": 270,
+              "fill": "#b9bdc0",
+              "stroke": "#24272a",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 53,
+                "y": 27,
+                "w": 212.0,
+                "h": 18,
+                "fill": "#b8bfc4",
+                "stroke": "#818d96",
+                "radius": 2
+              },
+              {
+                "kind": "rect",
+                "x": 53,
+                "y": 51,
+                "w": 212.0,
+                "h": 18,
+                "fill": "#b8bfc4",
+                "stroke": "#818d96",
+                "radius": 2
+              },
+              {
+                "kind": "circle",
+                "cx": 36,
+                "cy": 55,
+                "r": 1.3,
+                "fill": "#25333d"
+              },
+              {
+                "kind": "fan",
+                "cx": 61,
+                "cy": 134,
+                "r": 38
+              },
+              {
+                "kind": "vent",
+                "x": 482,
+                "y": 31,
+                "w": 27,
+                "h": 45,
+                "count": 5
+              },
+              {
+                "kind": "text",
+                "x": 59,
+                "y": 273,
+                "text": "USB-C",
+                "size": 5,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "fan",
+                "cx": 245,
+                "cy": 180,
+                "r": 76
+              },
+              {
+                "kind": "fan",
+                "cx": 409,
+                "cy": 180,
+                "r": 76
+              },
+              {
+                "kind": "rect",
+                "x": 43,
+                "y": 230,
+                "w": 9,
+                "h": 20,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 47.5,
+                "y1": 233,
+                "x2": 47.5,
+                "y2": 247,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 57,
+                "y": 230,
+                "w": 9,
+                "h": 20,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 61.5,
+                "y1": 233,
+                "x2": 61.5,
+                "y2": 247,
+                "stroke": "#962f29",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 70,
+                "y": 258,
+                "w": 5,
+                "h": 13,
+                "fill": "#141e27"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "x": 29,
+                "y": 185,
+                "dx": 26,
+                "dy": 36,
+                "w": 20,
+                "h": 25
+              },
+              {
+                "groupKey": "rear-power",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 435,
+                "y": 33,
+                "dx": 0,
+                "dy": 36,
+                "w": 25,
+                "h": 31,
+                "labels": {
+                  "1": "AC"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.qnap.com/en/product/ts-873a/specs/hardware/TS-873A-8G.pdf",
+            "kind": "manufacturer-specification",
+            "observed": "Exact SKU read via web PDF parser, 30.10.2026; binary not downloaded or hashed. Network counts, nominal dimensions and power verified."
+          },
+          {
+            "url": "https://download.qnap.com/TechnicalDocument/Storage/SMB%20NAS/tvs-x73a/ts-x73a-ug-01-en-us.pdf",
+            "kind": "manufacturer-hardware-guide",
+            "observed": "Downloaded and rendered with Windows.Data.Pdf; relevant model diagrams inspected.",
+            "sha256": "ab975ec721441ad8d8fdd587fb809a566192c389e75be22c2deca3f92abf4bde",
+            "bytes": 3026690
+          },
+          {
+            "url": "https://marketing.qnap.com/download/12834/?version=ts-873a",
+            "kind": "manufacturer-photo-archive",
+            "observed": "Front and rear extracted to private references and visually inspected; chassis family is not proof of RAM.",
+            "sha256": "93a99e30b66d7054fc418623808b071dadb819fec5c227b9f101c64d0c56213d",
+            "bytes": null
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/baseline35/network-nas/assets/qnap-ts873a-8g/rear-1a9c8fde4f89.png",
+            "sha256": "1a9c8fde4f8938b754f8b288aea796586ba81d12f1668e1dda04ccbab0e924ef",
+            "view": "rear",
+            "match": "exact_chassis_not_memory"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/baseline35/network-nas/assets/qnap-ts873a-8g/front-72125cfa0690.png",
+            "sha256": "72125cfa0690aea22718dd6d0224901e6bbadc27239b7701f1a5274e5608e67c",
+            "view": "front",
+            "match": "exact_chassis_not_memory"
+          }
+        ],
+        "dimensionsBasis": "Current exact-SKU nominal dimensions, W/H/D mm; full mounted height including feet and clearance is not certified.",
+        "limits": [
+          "Photographs establish chassis, not installed RAM, drives or optional cards.",
+          "Own schematic, not original photo or colorimetric replica.",
+          "USB, DC adapter, HDMI, PCIe, buttons, LEDs and fans are decorative; no storage/RAID, optional NIC or speed negotiation simulated.",
+          "Current exact sheet excludes feet and gives180.2mm height/279.6mm depth; guide2021 gives188.2mm/280.8mm. Discrepancy retained.",
+          "LAN2 is physically left of LAN1, as engraved in exact model rear photos.",
+          "Fans drawn include the visible CPU fan plus system fan(s); no telemetry.",
+          "Power inlet represented schematically from its registered AC input, no optional/redundant supply invented."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "qnap-ts-932px-4g",
+        "revision": "batch50-20261030-v1",
+        "identity": {
+          "manufacturer": "QNAP",
+          "family": "TS-x32PX",
+          "model": "TS-932PX",
+          "sku": "TS-932PX-4G"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.qnap.com/en/product/ts-932px/specs/hardware/TS-932PX-4G.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 224.6,
+          "height": 176.5,
+          "depth": 224.1
+        },
+        "color": "#24282b",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-sfp",
+            "type": "sfp",
+            "count": 2,
+            "face": "rear",
+            "name": "SFP+",
+            "prefix": "SFP+ ",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 368,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 344,
+              "h": 270,
+              "fill": "#24282b",
+              "stroke": "#70767b",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 17,
+                "y": 17,
+                "w": 37,
+                "h": 260,
+                "fill": "#191e22"
+              },
+              {
+                "kind": "text",
+                "x": 21,
+                "y": 40,
+                "text": "QNAP",
+                "size": 10,
+                "fill": "#c5cdd2"
+              },
+              {
+                "kind": "tray",
+                "x": 62,
+                "y": 25,
+                "w": 52,
+                "h": 177,
+                "lock": true
+              },
+              {
+                "kind": "tray",
+                "x": 119,
+                "y": 25,
+                "w": 52,
+                "h": 177,
+                "lock": true
+              },
+              {
+                "kind": "tray",
+                "x": 176,
+                "y": 25,
+                "w": 52,
+                "h": 177,
+                "lock": true
+              },
+              {
+                "kind": "tray",
+                "x": 233,
+                "y": 25,
+                "w": 52,
+                "h": 177,
+                "lock": true
+              },
+              {
+                "kind": "tray",
+                "x": 290,
+                "y": 25,
+                "w": 52,
+                "h": 177,
+                "lock": true
+              },
+              {
+                "kind": "tray",
+                "x": 62,
+                "y": 213,
+                "w": 138,
+                "h": 24,
+                "lock": true
+              },
+              {
+                "kind": "tray",
+                "x": 208,
+                "y": 213,
+                "w": 138,
+                "h": 24,
+                "lock": true
+              },
+              {
+                "kind": "tray",
+                "x": 62,
+                "y": 244,
+                "w": 138,
+                "h": 24,
+                "lock": true
+              },
+              {
+                "kind": "tray",
+                "x": 208,
+                "y": 244,
+                "w": 138,
+                "h": 24,
+                "lock": true
+              },
+              {
+                "kind": "circle",
+                "cx": 47,
+                "cy": 80,
+                "r": 1.2,
+                "fill": "#889d74"
+              },
+              {
+                "kind": "circle",
+                "cx": 47,
+                "cy": 93,
+                "r": 1.2,
+                "fill": "#889d74"
+              },
+              {
+                "kind": "circle",
+                "cx": 47,
+                "cy": 106,
+                "r": 1.2,
+                "fill": "#889d74"
+              },
+              {
+                "kind": "circle",
+                "cx": 47,
+                "cy": 119,
+                "r": 1.2,
+                "fill": "#889d74"
+              },
+              {
+                "kind": "circle",
+                "cx": 47,
+                "cy": 132,
+                "r": 1.2,
+                "fill": "#889d74"
+              },
+              {
+                "kind": "circle",
+                "cx": 47,
+                "cy": 145,
+                "r": 1.2,
+                "fill": "#889d74"
+              },
+              {
+                "kind": "circle",
+                "cx": 47,
+                "cy": 158,
+                "r": 1.2,
+                "fill": "#889d74"
+              },
+              {
+                "kind": "circle",
+                "cx": 47,
+                "cy": 171,
+                "r": 1.2,
+                "fill": "#889d74"
+              },
+              {
+                "kind": "circle",
+                "cx": 47,
+                "cy": 184,
+                "r": 1.2,
+                "fill": "#889d74"
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 212,
+                "w": 16,
+                "h": 15,
+                "fill": "#101820",
+                "stroke": "#697780",
+                "radius": 2
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 237,
+                "w": 16,
+                "h": 15,
+                "fill": "#101820",
+                "stroke": "#697780",
+                "radius": 2
+              },
+              {
+                "kind": "rect",
+                "x": 29,
+                "y": 254,
+                "w": 9,
+                "h": 18,
+                "fill": "#141d24",
+                "stroke": "#8c969e"
+              },
+              {
+                "kind": "line",
+                "x1": 33.5,
+                "y1": 257,
+                "x2": 33.5,
+                "y2": 269,
+                "stroke": "#237dba",
+                "width": 2
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 368,
+            "height": 320,
+            "plate": {
+              "x": 12,
+              "y": 12,
+              "w": 344,
+              "h": 270,
+              "fill": "#b9bdc0",
+              "stroke": "#24272a",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "fan",
+                "cx": 145,
+                "cy": 152,
+                "r": 113
+              },
+              {
+                "kind": "circle",
+                "cx": 328,
+                "cy": 35,
+                "r": 1.3,
+                "fill": "#283842"
+              },
+              {
+                "kind": "text",
+                "x": 299,
+                "y": 35,
+                "text": "RESET",
+                "size": 5,
+                "fill": "#88939b"
+              },
+              {
+                "kind": "rect",
+                "x": 299,
+                "y": 227,
+                "w": 9,
+                "h": 20,
+                "fill": "#111c24"
+              },
+              {
+                "kind": "rect",
+                "x": 312,
+                "y": 227,
+                "w": 9,
+                "h": 20,
+                "fill": "#111c24"
+              },
+              {
+                "kind": "rect",
+                "x": 280,
+                "y": 259,
+                "w": 12,
+                "h": 4,
+                "fill": "#121e28"
+              },
+              {
+                "kind": "circle",
+                "cx": 328,
+                "cy": 261,
+                "r": 7,
+                "fill": "#121a20",
+                "stroke": "#a2abb2"
+              },
+              {
+                "kind": "circle",
+                "cx": 328,
+                "cy": 261,
+                "r": 2,
+                "fill": "#8b969e"
+              },
+              {
+                "kind": "text",
+                "x": 340,
+                "y": 264,
+                "text": "DC",
+                "size": 6,
+                "fill": "#88939b"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "x": 298,
+                "y": 100,
+                "dx": 25,
+                "dy": 36,
+                "w": 20,
+                "h": 25
+              },
+              {
+                "groupKey": "rear-sfp",
+                "rows": [
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "x": 325,
+                "y": 142,
+                "dx": 0,
+                "dy": 34,
+                "w": 22,
+                "h": 27,
+                "labels": {
+                  "1": "3",
+                  "2": "4"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.qnap.com/en/product/ts-932px/specs/hardware/TS-932PX-4G.pdf",
+            "kind": "manufacturer-specification",
+            "observed": "Exact SKU read via web PDF parser, 30.10.2026; binary not downloaded or hashed. Network counts, nominal dimensions and power verified."
+          },
+          {
+            "url": "https://download.qnap.com/TechnicalDocument/Storage/SMB%20NAS/ts-x32px/ts-932px-ug-03-es-es.pdf",
+            "kind": "manufacturer-hardware-guide",
+            "observed": "Downloaded and rendered with Windows.Data.Pdf; relevant model diagrams inspected.",
+            "sha256": "23d4630d21eb85adcd3e8959d7eeb13cc289f13b7910802c04241ed9dc466f67",
+            "bytes": 2244667
+          },
+          {
+            "url": "https://marketing.qnap.com/download/10472/?version=ts-932px",
+            "kind": "manufacturer-photo-archive",
+            "observed": "Front and rear extracted to private references and visually inspected; chassis family is not proof of RAM.",
+            "sha256": "4c668d6b6f58cc3407ad663dab5ca950c2b80b251e211e6c89ec1dbd93642750",
+            "bytes": 27944376
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts-932px/▓ú½~╣╧_TS-932PX_back.png",
+            "sha256": "ba426cad3aaf9b480632d153e707bb8103263d4147075ca11d0a728d8ae92024",
+            "view": "rear",
+            "match": "exact_chassis_not_memory"
+          },
+          {
+            "path": ".local/batch50-qnap-737bb1b9b3c44572a186987bd8af4f61/references/ts-932px/▓ú½~╣╧_TS-932PX_front.png",
+            "sha256": "3f40371eabeb62a874f9b6341840f43c9695ab958dd537bd38f7841474919dc7",
+            "view": "front",
+            "match": "exact_chassis_not_memory"
+          }
+        ],
+        "dimensionsBasis": "Current exact-SKU nominal dimensions, W/H/D mm; full mounted height including feet and clearance is not certified.",
+        "limits": [
+          "Photographs establish chassis, not installed RAM, drives or optional cards.",
+          "Own schematic, not original photo or colorimetric replica.",
+          "USB, DC adapter, HDMI, PCIe, buttons, LEDs and fans are decorative; no storage/RAID, optional NIC or speed negotiation simulated.",
+          "Current exact sheet excludes feet and gives176.5mm height; guide2025 gives182.7mm. Discrepancy retained.",
+          "Five3.5in plus four2.5in tray fronts do not assert any installed disks.",
+          "Exact rear photograph engraves RJ45 port2 left/1 right; SFP+ physical3 above4, mapped to group ordinals1/2.",
+          "Two built-in SFP+ cages, no optional adapters inferred."
+        ]
+      }
+    }
+  ]
+}

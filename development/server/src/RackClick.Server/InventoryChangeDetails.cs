@@ -23,7 +23,7 @@ public sealed partial class InventoryStore
     private const int DetailLimit = 512;
     private sealed record DetailCapture(bool Complete, InventoryChangedEntity[] Entities);
     private static InventoryChangeDetails NoChangeDetails() => new("notAvailable", [], []);
-    private static bool HasChangeDetails(string action) => ChangeActions.Contains("inventory." + action)
+    private static bool HasChangeDetails(string action) => action is not ("rack.createHardware" or "device.createHardware") && ChangeActions.Contains("inventory." + action)
         && action is not ("ports.update" or "operations.compensate") && !action.StartsWith("connections.", StringComparison.Ordinal);
 
     // Only persisted finite columns of the affected objects are selected. No inventory snapshot, notes or properties.

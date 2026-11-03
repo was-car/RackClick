@@ -1,4 +1,4 @@
-#requires -Version 5.1
+﻿#requires -Version 5.1
 [CmdletBinding()]
 param([string]$PlanPath,[string]$ReportDirectory)
 $ErrorActionPreference='Stop'
@@ -149,7 +149,7 @@ try {
     Set-SetupProgress 'readiness' 80 'Comprobando servicio y readiness HTTPS; no basta que el proceso exista.'
     $setupReady=$false;$setupWatch=[Diagnostics.Stopwatch]::StartNew()
     while($setupWatch.Elapsed.TotalSeconds-lt120){
-        try{$health=Invoke-RestMethod -Uri ($setupPreparationPlan.publicOrigin+'/health/ready') -TimeoutSec 5 -UseBasicParsing;if($health.status-eq'ready'-and$health.schemaVersion-eq15-and(Get-Service $setupPlan.serviceName).Status-eq'Running'){$setupReady=$true;break}}catch{}
+        try{$health=Invoke-RestMethod -Uri ($setupPreparationPlan.publicOrigin+'/health/ready') -TimeoutSec 5 -UseBasicParsing;if($health.status-eq'ready'-and$health.schemaVersion-eq43-and(Get-Service $setupPlan.serviceName).Status-eq'Running'){$setupReady=$true;break}}catch{}
         Start-Sleep -Milliseconds 500
     }
     if(-not$setupReady){throw 'setup_https_readiness_failed'}
@@ -157,7 +157,7 @@ try {
     $setupBackup=Join-Path $setupInstance ('runtime\backups\initial-'+[guid]::NewGuid().ToString('N'))
     $setupBackupResult=Invoke-SetupServiceChild (Join-Path $setupCode 'operators\server-install\Invoke-RackClickServerRuntime.ps1') @('-Operation','Backup','-ManifestPath',(ConvertTo-SetupArgument $setupManifest),'-ExpectedManifestSha256',$setupPrepared.manifestSha256,'-BackupPath',(ConvertTo-SetupArgument $setupBackup)) 'initial-backup'
     $setupReceipt=@{schemaVersion=1;installationId=$setupPlan.id;installedUtc=[DateTime]::UtcNow.ToString('o');bootAtInstall=(Get-CimInstance Win32_OperatingSystem).LastBootUpTime.ToUniversalTime().ToString('o');serviceName=$setupPlan.serviceName;serviceSid=$setupAccount.SID.Value;accountName=$setupPlan.accountName;codeRoot=$setupCode;instancePath=$setupInstance;managementPath=$setupManagement;publicOrigin=$setupPreparationPlan.publicOrigin;manifestSha256=$setupPrepared.manifestSha256;firewallRule=$setupFirewallName;trustedCaThumbprint=$setupTrusted.Thumbprint;initialBackup=$setupBackup;backupResult=$setupBackupResult;rebootVerified=$false;productAdopted=$false}
-    $setupReceipt.applicationSchemaVersion=15
+    $setupReceipt.applicationSchemaVersion=43
     Set-SetupProgress 'scheduled_backup' 90 'Registrando backup diario y comprobacion automatica del proximo arranque.'
     $setupTasks=Register-SetupLifecycleTasks -Credential $setupCredential -InstallationId $setupPlan.id -CodeRoot $setupCode -ManifestPath $setupManifest -ManifestSha256 $setupPrepared.manifestSha256 -ManagementPath $setupManagement
     foreach($key in $setupTasks.Keys){$setupReceipt[$key]=$setupTasks[$key]}

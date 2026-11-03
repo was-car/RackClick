@@ -1,6 +1,6 @@
 """Matriz literal de perfiles de aplicación del bundle: única fuente de expectativas de las pruebas de Python y PowerShell.
 
-Valores escritos a mano desde los perfiles revisados (9–13 y la candidata 14). No se calculan con el producto,
+Valores escritos a mano desde los perfiles pinados9–15,43 y43-sql. No se calculan con el producto,
 para que una regresión en la tabla del producto no pueda justificarse a sí misma.
 Columnas: digest del manifiesto, nombre, esquema de versión, servidor, frontend y bytes de distribución.
 """
@@ -20,8 +20,11 @@ MATRIX = (
     ("55bdd496ec654494fd8e3400140e3e84241488986e24481939bad67cde7a91c6", "1449", 13, 22, 18, 7159235),
     ("2ec9105661db0f5c9a97d58e2a7f44e69bfd7e1903493b72f0fc57cc94c4b71a", "14", 14, 24, 18, 7263552),
     ("e9c58c0c67500afc09c1ac979a7433830c96f94c2a2e4501d81286796d65d74d", "14", 14, 24, 18, 7489372),
+    ("294b61577ed7aa8fe68ddb1ecd6c4f11a20b4f03935c11a22404009aec6a00fb", "15", 15, 25, 18, 8007063),
+    ("d352c04381cd4f1954aa43735e540970b295f231106560c5c9880c7ee1dc78db", "43", 43, 53, 18, 25638925),
+    ("29685419d0746df89777a5da72d25f5b7ac0e571e30decec1888787fe5f0f950", "43-sql", 43, 53, 18, 25650673),
 )
-# Los doce perfiles anteriores (9–13) conservan sus datos. Los dos del esquema 14 son la candidata M3 congelada y la corregida (D14-05).
-HISTORICAL = MATRIX[:-2]
-FROZEN_14, CORRECTED_14 = MATRIX[-2], MATRIX[-1]
+# Los doce perfiles9–13 y los dos14 conservan datos y alias;15/43/43-sql se anexan.
+HISTORICAL = MATRIX[:12]
+FROZEN_14, CORRECTED_14 = MATRIX[12], MATRIX[13]
 NEW = FROZEN_14

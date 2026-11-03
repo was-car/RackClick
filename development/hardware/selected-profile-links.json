@@ -1,0 +1,217 @@
+{
+  "formatVersion": 1,
+  "scope": "Explicit reviewed identity links, no new profiles or model substitution",
+  "selectionSha256": "d9c97a9ca25de5f9739562ab0568b564c9409061742683b0e1fb88dfc5b9bbd2",
+  "reviewEvidence": "evidence/s1-20261101/integracion506/review/MAPEOS-7.json",
+  "reviewEvidenceSha256": "717fc9efa93f9d703763d1eac9c6218913e8429dc08f75a3da681314573cc6d9",
+  "primaryDiscrepancyResolution": "JL253A: installation guide pages 7, 8, 16 identifies the extra RJ45 as serial console, not an additional Ethernet Management port; no community YAML edited.",
+  "links": [
+    {
+      "selectionId": "nb-0228f0e0bca0aab5",
+      "manufacturer": "HPE",
+      "model": "Aruba 2540-48G-4SFP+",
+      "sourceSku": "JL355A",
+      "profileKey": "aruba-jl355a",
+      "profileRevision": "batch100b-20261031-v1",
+      "definitionSha256": "6cf4e92fa7bcc64aa9e7d9d64937228ebc4e606f80bef5165fcd9e4b39164a45",
+      "sourceUrl": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2540-48G-4SFPP.yaml",
+      "sourceSha256": "e5953f8a11803eed072c3bf834d2f7aeb31a0d0b5a0ba6d93721b6fb2154bdb8",
+      "existingAuthoring": "development/hardware/batch100b/network.json",
+      "existingAuthoringSha256": "01d3ed1327d150a4527f8a4a9397598bd09aa309658e4461da750a1a406e0ebf",
+      "supportedPhysicalCounts": {
+        "rj45": 48,
+        "sfp": 4,
+        "power": 1
+      },
+      "excludedCommunityEntries": [],
+      "limits": [
+        "Own flat schematic from references; no photograph or manufacturer artwork is embedded in the product.",
+        "Console/USB/DC/reset/LED/ground/vents are decorative; only fixed Ethernet, empty SFP slots and AC inlets are connectable. No PoE, adapters or optical modules are instantiated.",
+        "Nominal dimensions do not certify rack brackets, loading, cable bend, cooling or installation clearance.",
+        "Exact hardwareSKU; no undocumented board subrevision asserted. Serial dual-personality RJ45/USB is not EthernetMGMT. AllSFPcages empty. NoPoEstripe/PSUoption created."
+      ],
+      "manufacturerResolution": "Explicit ID plus exact SKU only; HPE is not a global Aruba alias."
+    },
+    {
+      "selectionId": "nb-17bc3210897c1128",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Switch Aggregation",
+      "sourceSku": "USW-Aggregation",
+      "profileKey": "ubiquiti-usw-aggregation",
+      "profileRevision": "batch100c-20261031-v1",
+      "definitionSha256": "8643c8fbbaa444eb5a82333d92190fac87156f1cd827f1ae345c86ef7de1eb0b",
+      "sourceUrl": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Aggregation.yaml",
+      "sourceSha256": "c995c777c1b877884f707fb2c309b9b101b17993438c60baf014724487b01bfc",
+      "existingAuthoring": "development/hardware/batch100c/network.json",
+      "existingAuthoringSha256": "c9946b48a3f5217ba4e5ea6642ab6352dc54bae0ead8c18d8dbd7f1d16df461a",
+      "supportedPhysicalCounts": {
+        "sfp": 8,
+        "power": 1
+      },
+      "excludedCommunityEntries": [],
+      "limits": [
+        "Own flat schematic from references; no photograph or manufacturer artwork is embedded in the product.",
+        "Console/USB/DC/reset/LED/ground/vents are decorative; only fixed Ethernet, empty SFP slots and AC inlets are connectable. No PoE, adapters or optical modules are instantiated.",
+        "Nominal dimensions do not certify rack brackets, loading, cable bend, cooling or installation clearance."
+      ],
+      "manufacturerResolution": "Same manufacturer and exact SKU."
+    },
+    {
+      "selectionId": "nb-1f54926bad83fb98",
+      "manufacturer": "HPE",
+      "model": "Aruba 2530-24G",
+      "sourceSku": "J9776A",
+      "profileKey": "aruba-j9776a",
+      "profileRevision": "batch100b-20261031-v1",
+      "definitionSha256": "5f4aa0dbb8770afa6039e560505be4577225a7c289efdf853d56344276c1237e",
+      "sourceUrl": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2530-24G.yaml",
+      "sourceSha256": "c8839b4924d06b6c2f8c563f1f05b26ab072b055065c65e5616c347d0e57bf52",
+      "existingAuthoring": "development/hardware/batch100b/network.json",
+      "existingAuthoringSha256": "01d3ed1327d150a4527f8a4a9397598bd09aa309658e4461da750a1a406e0ebf",
+      "supportedPhysicalCounts": {
+        "rj45": 24,
+        "sfp": 4,
+        "power": 1
+      },
+      "excludedCommunityEntries": [],
+      "limits": [
+        "Own flat schematic from references; no photograph or manufacturer artwork is embedded in the product.",
+        "Console/USB/DC/reset/LED/ground/vents are decorative; only fixed Ethernet, empty SFP slots and AC inlets are connectable. No PoE, adapters or optical modules are instantiated.",
+        "Nominal dimensions do not certify rack brackets, loading, cable bend, cooling or installation clearance.",
+        "Exact hardwareSKU; no undocumented board subrevision asserted. Serial dual-personality RJ45/USB is not EthernetMGMT. AllSFPcages empty. NoPoEstripe/PSUoption created.",
+        "Community front artwork is reference only, not product content. Manufacturer olderHPguide has a different finish; current Aruba finish follows namedcommunityreference.",
+        "Dimensions443x254x44.5 from QuickSpecs; olderinstallationguide uses246.1depth/44height. Nominal source discrepancy retained, not silently mixed."
+      ],
+      "manufacturerResolution": "Explicit ID plus exact SKU only; HPE is not a global Aruba alias."
+    },
+    {
+      "selectionId": "nb-2bd3616443d83776",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Switch 24 Pro",
+      "sourceSku": "USW-Pro-24",
+      "profileKey": "ubiquiti-usw-pro-24",
+      "profileRevision": "batch100c-20261031-v1",
+      "definitionSha256": "7548156fc36ea4d23479c315f3833a4828d0582e03517286edadaa02cf3bdd1f",
+      "sourceUrl": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-24.yaml",
+      "sourceSha256": "cca3725422bf42760e30e850629e17645ce181f087e47fadeaadb5d6d1871daf",
+      "existingAuthoring": "development/hardware/batch100c/network.json",
+      "existingAuthoringSha256": "c9946b48a3f5217ba4e5ea6642ab6352dc54bae0ead8c18d8dbd7f1d16df461a",
+      "supportedPhysicalCounts": {
+        "rj45": 24,
+        "sfp": 2,
+        "power": 1
+      },
+      "excludedCommunityEntries": [
+        {
+          "source": "power-ports",
+          "name": "USP-RPS connector for PSU failover",
+          "reason": "Proprietary USP-RPS/DC remains inert under the existing documented profile; never projected as an extra AC inlet."
+        }
+      ],
+      "limits": [
+        "Own flat schematic from references; no photograph or manufacturer artwork is embedded in the product.",
+        "Console/USB/DC/reset/LED/ground/vents are decorative; only fixed Ethernet, empty SFP slots and AC inlets are connectable. No PoE, adapters or optical modules are instantiated.",
+        "Nominal dimensions do not certify rack brackets, loading, cable bend, cooling or installation clearance.",
+        "USP RPS DC is decorative only; no optional external RPS unit is instantiated."
+      ],
+      "manufacturerResolution": "Same manufacturer and exact SKU."
+    },
+    {
+      "selectionId": "nb-5a8fa3b1908ef3b0",
+      "manufacturer": "HPE",
+      "model": "Aruba 2930F-24G-4SFP+",
+      "sourceSku": "JL253A",
+      "profileKey": "aruba-jl253a",
+      "profileRevision": "batch100b-20261031-v1",
+      "definitionSha256": "077e297672bc2fc5f6a74809e5978e2ff3585da3104b1dfe99e9bc90841b847e",
+      "sourceUrl": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/HPE/Aruba-2930F-24G-4SFPP.yaml",
+      "sourceSha256": "a6a02f3c787d90f982bab996c914ad4f5a21fc52e2b37cf450b91bb2079858fd",
+      "existingAuthoring": "development/hardware/batch100b/network.json",
+      "existingAuthoringSha256": "01d3ed1327d150a4527f8a4a9397598bd09aa309658e4461da750a1a406e0ebf",
+      "supportedPhysicalCounts": {
+        "rj45": 24,
+        "sfp": 4,
+        "power": 1
+      },
+      "excludedCommunityEntries": [
+        {
+          "source": "interfaces",
+          "name": "Management",
+          "reason": "Manufacturer guide c05163011 pages7-8/Table2+3 identifies serial consoles and exactly24 Ethernet plus4 SFP+; do not materialize community-only Management Ethernet."
+        }
+      ],
+      "limits": [
+        "Own flat schematic from references; no photograph or manufacturer artwork is embedded in the product.",
+        "Console/USB/DC/reset/LED/ground/vents are decorative; only fixed Ethernet, empty SFP slots and AC inlets are connectable. No PoE, adapters or optical modules are instantiated.",
+        "Nominal dimensions do not certify rack brackets, loading, cable bend, cooling or installation clearance.",
+        "Exact hardwareSKU; no undocumented board subrevision asserted. Serial dual-personality RJ45/USB is not EthernetMGMT. AllSFPcages empty. NoPoEstripe/PSUoption created."
+      ],
+      "manufacturerResolution": "Explicit ID plus exact SKU only; HPE is not a global Aruba alias."
+    },
+    {
+      "selectionId": "nb-8bebc236c1cb62fd",
+      "manufacturer": "Cisco",
+      "model": "Catalyst 1300-16T-2G",
+      "sourceSku": "C1300-16T-2G",
+      "profileKey": "cisco-c1300-16t-2g",
+      "profileRevision": "batch100-20261031-v1",
+      "definitionSha256": "ce2f5e160ee57a6458135197cea4819492c742c8b804e3772d07c5f407a66e62",
+      "sourceUrl": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C1300-16T-2G.yaml",
+      "sourceSha256": "f15fb45b4daf1247bab6c19c3aa002d323cad68ad6b1327b45c44974351ebd44",
+      "existingAuthoring": "development/hardware/batch100/network.json",
+      "existingAuthoringSha256": "6c8a22979f2c54b2f68c68fcb59860acb62007a87b423f8cc76dcacfd019a232",
+      "supportedPhysicalCounts": {
+        "rj45": 16,
+        "sfp": 2,
+        "power": 1
+      },
+      "excludedCommunityEntries": [
+        {
+          "source": "interfaces",
+          "name": "Vlan1",
+          "reason": "Virtual interface is not a physical socket."
+        }
+      ],
+      "limits": [
+        "Own flat schematic from references; no photograph or manufacturer artwork is embedded in the product.",
+        "Console/USB/DC/reset/LED/ground/vents are decorative; only fixed Ethernet, empty SFP slots and AC inlets are connectable. No PoE, adapters or optical modules are instantiated.",
+        "Nominal dimensions do not certify rack brackets, loading, cable bend, cooling or installation clearance.",
+        "No hardware subrevision is asserted beyond exact T SKU; physical reference edition is the cited manufacturer table. Region suffix only changes local cord, not an extra model.",
+        "SFP/SFP+ is an empty slot, not an installed optical/copper module."
+      ],
+      "manufacturerResolution": "Same manufacturer and exact SKU."
+    },
+    {
+      "selectionId": "nb-d10f5a09e83e59bf",
+      "manufacturer": "Ubiquiti",
+      "model": "UniFi Switch 48 Pro",
+      "sourceSku": "USW-Pro-48",
+      "profileKey": "ubiquiti-usw-pro-48",
+      "profileRevision": "batch100c-20261031-v1",
+      "definitionSha256": "d734fea18f59c2ad8960f5ddb68d4b2b76b27f94b569b12e25dda6186374131c",
+      "sourceUrl": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-48.yaml",
+      "sourceSha256": "8af2c1e7f71655dbdcb4daa6a9664f60974c16d3f4048d99e5f217cc98bcddb4",
+      "existingAuthoring": "development/hardware/batch100c/network.json",
+      "existingAuthoringSha256": "c9946b48a3f5217ba4e5ea6642ab6352dc54bae0ead8c18d8dbd7f1d16df461a",
+      "supportedPhysicalCounts": {
+        "rj45": 48,
+        "sfp": 4,
+        "power": 1
+      },
+      "excludedCommunityEntries": [
+        {
+          "source": "power-ports",
+          "name": "USP-RPS connector for PSU failover",
+          "reason": "Proprietary USP-RPS/DC remains inert under the existing documented profile; never projected as an extra AC inlet."
+        }
+      ],
+      "limits": [
+        "Own flat schematic from references; no photograph or manufacturer artwork is embedded in the product.",
+        "Console/USB/DC/reset/LED/ground/vents are decorative; only fixed Ethernet, empty SFP slots and AC inlets are connectable. No PoE, adapters or optical modules are instantiated.",
+        "Nominal dimensions do not certify rack brackets, loading, cable bend, cooling or installation clearance.",
+        "USP RPS DC is decorative only; no optional external RPS unit is instantiated."
+      ],
+      "manufacturerResolution": "Same manufacturer and exact SKU."
+    }
+  ]
+}

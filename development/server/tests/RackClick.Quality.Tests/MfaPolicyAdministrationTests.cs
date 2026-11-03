@@ -140,7 +140,7 @@ public sealed class MfaPolicyAdministrationTests
 
         Assert.Equal("mfa_policy_schema_required", error.Code);
         Assert.Equal(before, await lab.FullSnapshot());
-        Assert.Equal(14, await lab.Count("SELECT count(*) FROM schema_migration"));
+        Assert.Equal(SchemaMigrations.LatestVersion - 1, await lab.Count("SELECT count(*) FROM schema_migration"));
     }
 
     [Fact]

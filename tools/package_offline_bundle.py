@@ -43,8 +43,28 @@ APPLICATION_SCHEMA14D05_SUMS_SHA256 = "932588056beb49fb1a7d1627b41a85829833f029f
 APPLICATION_SCHEMA15_SHA256 = "294b61577ed7aa8fe68ddb1ecd6c4f11a20b4f03935c11a22404009aec6a00fb"
 APPLICATION_SCHEMA15_INVENTORY_SHA256 = "4afec995adf7c403632c59c68cf694756af626e57b4d386423d1b3d7b3f1d56b"
 APPLICATION_SCHEMA15_SUMS_SHA256 = "783eb1960103426b00f33e43fa2a9183d1efa4875da27b15636b35585eae662a"
-# These are reviewed application manifests, not caller-provided version/hash overrides.
+APPLICATION_SCHEMA43P3_SHA256 = "d352c04381cd4f1954aa43735e540970b295f231106560c5c9880c7ee1dc78db"
+APPLICATION_SCHEMA43P3_INVENTORY_SHA256 = "dbc527827b7e13e300666f8a8893bea53dd708b122b1d8be21d15b878290a452"
+APPLICATION_SCHEMA43P3_SUMS_SHA256 = "2bc0fc54c6498e45225bb9313f8efc7f9ee8e27fa4149b24bfe547bb6f503aa6"
+# New SQL-protected application43 for internal review; not installation approval.
+APPLICATION_SCHEMA43_SQL_SHA256 = "29685419d0746df89777a5da72d25f5b7ac0e571e30decec1888787fe5f0f950"
+APPLICATION_SCHEMA43_SQL_INVENTORY_SHA256 = "86ad16f9295fbd71c6aae78a403a2c336e15d284897ae4216d341b8d040ef40c"
+APPLICATION_SCHEMA43_SQL_SUMS_SHA256 = "e2cb5728431bfa51bf66d2d4b17760a8d70a3d66a30595ead24bc39cf5e8baac"
+# Closed pinned manifests, not caller-provided version/hash overrides or adoption.
+APPLICATION_SCHEMA45_SQL_SHA256 = "528a03d2efc939d1cea631b1caa9f3e6a445e44257fa757f87a95691acfb6933"
+APPLICATION_SCHEMA45_SQL_INVENTORY_SHA256 = "75b9a378560072c841afea83d305384780244bdb8b258c39de0cf29d17359930"
+APPLICATION_SCHEMA45_SQL_SUMS_SHA256 = "b623c46ba133d515765ad74bfaf6f7d1d8acdb4d784bbe84296b95e4e0557c56"
+
 APPLICATION_PROFILES = {
+    APPLICATION_SCHEMA45_SQL_SHA256: {"name": "45-sql", "files": {"server": 55, "frontend": 18}, "bytes": 25867806,
+                                      "metadata": {"inventory.json": APPLICATION_SCHEMA45_SQL_INVENTORY_SHA256,
+                                                   "SHA256SUMS.txt": APPLICATION_SCHEMA45_SQL_SUMS_SHA256}},
+    APPLICATION_SCHEMA43_SQL_SHA256: {"name": "43-sql", "files": {"server": 53, "frontend": 18}, "bytes": 25650673,
+                                      "metadata": {"inventory.json": APPLICATION_SCHEMA43_SQL_INVENTORY_SHA256,
+                                                   "SHA256SUMS.txt": APPLICATION_SCHEMA43_SQL_SUMS_SHA256}},
+    APPLICATION_SCHEMA43P3_SHA256: {"name": "43", "files": {"server": 53, "frontend": 18}, "bytes": 25638925,
+                                    "metadata": {"inventory.json": APPLICATION_SCHEMA43P3_INVENTORY_SHA256,
+                                                 "SHA256SUMS.txt": APPLICATION_SCHEMA43P3_SUMS_SHA256}},
     APPLICATION_SCHEMA15_SHA256: {"name": "15", "files": {"server": 25, "frontend": 18}, "bytes": 8007063,
                                   "metadata": {"inventory.json": APPLICATION_SCHEMA15_INVENTORY_SHA256,
                                                "SHA256SUMS.txt": APPLICATION_SCHEMA15_SUMS_SHA256}},
@@ -94,6 +114,7 @@ OPERATORS = (
     "RackClick.LaunchControl.ps1", "RackClick.Instance.ps1", "RackClick.Https.ps1",
     "RackClick.Deployment.ps1", "RackClick.Backup.ps1", "RackClick.OfflineBundle.ps1",
     "Test-RackClickOfflineBundle.ps1", "Install-RackClickOfflineBundle.ps1")
+SQL_OPERATORS = OPERATORS + ("RackClick.SqlSecrets.ps1",)
 MANUALS = ("MANUAL-PAQUETE-WINDOWS-S1.md", "CONSTRUIR-PAQUETE-WINDOWS-S1.md",
            "OPERAR-DESPLIEGUE-PRIVADO-WINDOWS-S1.md", "RECUPERACION-DESPLIEGUE-WINDOWS-S1.md")
 PG_NOTICES = ("commandlinetools_3rd_party_licenses.txt", "pgAdmin_3rd_party_licenses.txt",
@@ -129,6 +150,10 @@ def require(ok: bool, code: str) -> None:
 
 def application_schema(manifest_sha256: str) -> int:
     require(manifest_sha256 in APPLICATION_PROFILES, "application_pin_mismatch")
+    if manifest_sha256 == APPLICATION_SCHEMA45_SQL_SHA256:
+        return 45
+    if manifest_sha256 in (APPLICATION_SCHEMA43P3_SHA256, APPLICATION_SCHEMA43_SQL_SHA256):
+        return 43
     if APPLICATION_PROFILES[manifest_sha256]["name"] == "15":
         return 15
     if manifest_sha256 in (APPLICATION_SCHEMA14_SHA256, APPLICATION_SCHEMA14D05_SHA256):
@@ -140,6 +165,11 @@ def application_schema(manifest_sha256: str) -> int:
     if manifest_sha256 in (APPLICATION_PREFERENCES_SHA256, APPLICATION_RC9_EXCEL_SHA256, APPLICATION_RELATIONS_SHA256):
         return 11
     return 10 if manifest_sha256 == APPLICATION_SHARED_SHA256 else 9
+
+
+def operator_names(manifest_sha256: str) -> tuple[str, ...]:
+    require(manifest_sha256 in APPLICATION_PROFILES, "application_pin_mismatch")
+    return SQL_OPERATORS if APPLICATION_PROFILES[manifest_sha256]["name"] in {"43-sql", "45-sql"} else OPERATORS
 
 
 def json_bytes(value: object) -> bytes:
@@ -322,7 +352,16 @@ def collect_application(manifest_path: Path, expected_sha: str) -> tuple[list[Pa
     require(manifest.get("schema") == schema and type(manifest.get("schema")) is int, "application_schema_mismatch")
     distributions = manifest.get("distributions")
     require(isinstance(distributions, dict) and set(distributions) == {"server", "frontend"}, "application_inventory_invalid")
-    if schema >= 14:
+    if profile['name'] == '45-sql':
+        require(manifest_path == ROOT / '.local/distribution45/sql-01/manifest.json', "application_root_invalid")
+        require(manifest.get('profileId') == 'schema45-sql-protected-01', "application_profile_mismatch")
+        candidate = clean_path(manifest_path.parent, directory=True)
+    elif profile['name'] == '43-sql':
+        require(manifest_path == ROOT / '.local/sql-integracion-12/distribution/manifest.json',
+                "application_root_invalid")
+        require(manifest.get('profileId') == 'schema43-sql-protected-01', "application_profile_mismatch")
+        candidate = clean_path(manifest_path.parent, directory=True)
+    elif schema >= 14:
         # Cada esquema moderno tiene su área propia; nunca se recorre todo .local.
         require(manifest_path.name == "manifest.json" and manifest_path.parent.parent == ROOT / f".local/distribution{schema}",
                 "application_root_invalid")
@@ -478,7 +517,14 @@ def build(manifest: Path, expected_manifest_sha: str, sdk_archive: Path, postgre
     # 14 y15 usan las mismas dependencias pinadas en el lock14; 9–13 conservan el histórico.
     pins, lock_profile = (SOURCE_PINS_14, "14") if application_schema(expected_manifest_sha) >= 14 else (SOURCE_PINS, "legacy")
     _, components, external, source_report, extra_paths = collect_locks(sources_lock, pins, lock_profile)
-    operators = [workspace_path("tools/windows/" + n) for n in OPERATORS]
+    selected_operators = operator_names(expected_manifest_sha)
+    operators = [workspace_path("tools/windows/" + n) for n in selected_operators]
+    operator_payloads = [Payload("operators/" + p.name, read_file(p)) for p in operators]
+    # Archived 25-operator ZIPs retain their closed reader profile. Building a new
+    # legacy ZIP from today's SQL-dependent sources must fail before output.
+    require("RackClick.SqlSecrets.ps1" in selected_operators or
+            not any(b"RackClick.SqlSecrets.ps1" in p.data for p in operator_payloads),
+            "operator_dependency_missing")
     manuals = [workspace_path("docs/" + n) for n in MANUALS]
     destination, evidence = validate_outputs(destination, evidence,
         [manifest, sources_lock, sdk_archive, postgres_archive, *extra_paths, *operators, *manuals],
@@ -501,7 +547,7 @@ def build(manifest: Path, expected_manifest_sha: str, sdk_archive: Path, postgre
         postgres = archive_slice(pg, postgres_selection, "dependencies/postgresql/", "pgsql/", 1568, 141177651)
     payloads = [*application, *external, *runtime, *postgres,
                 Payload("licenses/README.txt", LICENSE_NOTICE),
-                *(Payload("operators/" + p.name, read_file(p)) for p in operators),
+                *operator_payloads,
                 *(Payload("docs/" + p.name, read_file(p)) for p in manuals)]
     validate_names([p.path for p in payloads])
     # Reserve evidence only after every source and inventory has passed. Error evidence is retained.
@@ -513,7 +559,7 @@ def build(manifest: Path, expected_manifest_sha: str, sdk_archive: Path, postgre
         report["slices"] = {"application": {"files": sum(profile["files"].values()), "bytes": profile["bytes"]},
                             "dotnet": {"files": 339, "bytes": 110497993},
                             "postgresql": {"files": 1568, "bytes": 141177651},
-                            "operators": {"files": len(OPERATORS)}, "manuals": {"files": len(MANUALS)}}
+                            "operators": {"files": len(selected_operators)}, "manuals": {"files": len(MANUALS)}}
         with (evidence / "REPORT.json").open("xb") as stream:
             stream.write(json_bytes(report))
         with (evidence / "SHA256SUMS.txt").open("x", encoding="utf-8", newline="\n") as stream:

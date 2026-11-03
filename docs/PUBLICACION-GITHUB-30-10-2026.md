@@ -29,3 +29,6 @@ La revisión de fuentes es de una persona distinta del implementador. El revisor
 ## Continuación
 
 Tras esta actualización se retoma [la prioridad maestra](HOJA-DE-RUTA-MAESTRA.md): racks primero e informes compactos; contrato del catálogo por fabricante; recuperación portable MFA aprovechando los componentes existentes. El índice de cierre restante permanece **9,76/100**, con la misma base y pesos; no se recalcula un porcentaje global del producto por este trabajo de publicación.
+
+
+Publicacion verificada30.10.2026: repositorio privado was-car/RackClick, main `fd689d04b44e41ab46f909fd56082ec6903e3acd`. Los1094archivos del arbol remoto coinciden con el commit seleccionado. Se conservaron78auxiliares historicos ya publicados, sin cambiar operadores actuales ni producto. Copia de fuentes y git bundle privados preparados; puntero .local/github-private-current.json actualizado, puntero anterior conservado. Sin Release binaria ni cambios en QA/VM. Evidencia final: evidence/s1-20261030/github-update/PUBLICACION-VERIFICADA.json.

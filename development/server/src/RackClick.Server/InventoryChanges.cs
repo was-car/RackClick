@@ -22,8 +22,8 @@ public sealed partial class InventoryStore
         "inventory.site.create", "inventory.site.update", "inventory.site.delete",
         "inventory.building.create", "inventory.building.update", "inventory.building.delete",
         "inventory.room.create", "inventory.room.update", "inventory.room.delete",
-        "inventory.rack.create", "inventory.rack.update", "inventory.rack.assignRoom", "inventory.rack.delete", "inventory.rack.duplicate",
-        "inventory.device.create", "inventory.device.createFromCatalog", "inventory.device.createFromPrivateTemplate", "inventory.device.createFromSharedTemplate", "inventory.device.update", "inventory.device.move", "inventory.device.reorder",
+        "inventory.rack.create", "inventory.rack.createHardware", "inventory.rack.update", "inventory.rack.assignRoom", "inventory.rack.delete", "inventory.rack.duplicate",
+        "inventory.device.create", "inventory.device.createHardware", "inventory.device.createFromCatalog", "inventory.device.createFromPrivateTemplate", "inventory.device.createFromSharedTemplate", "inventory.device.update", "inventory.device.move", "inventory.device.reorder",
         "inventory.device.delete", "inventory.devices.delete", "inventory.device.editPortGroups", "inventory.ports.update",
         "inventory.operations.compensate", "inventory.connections.create", "inventory.connections.createBatch", "inventory.connections.update",
         "inventory.connections.disconnect", "inventory.connections.reconnect"

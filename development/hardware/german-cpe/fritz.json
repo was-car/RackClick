@@ -1,0 +1,1281 @@
+{
+  "formatVersion": 1,
+  "revision": "german-cpe-20261103-v1",
+  "models": [
+    {
+      "definition": {
+        "key": "fritz-7530ax-de",
+        "revision": "german-cpe-20261103-v1",
+        "identity": {
+          "manufacturer": "FRITZ!",
+          "family": "FRITZ!Box DSL compacto",
+          "model": "FRITZ!Box 7530 AX",
+          "sku": "20002930"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://fritz.com/products/fritz-box-7530-ax-20002930",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 200,
+          "height": 45,
+          "depth": 152
+        },
+        "color": "#f2f1ef",
+        "slots": [],
+        "groups": [
+          {
+            "key": "dsl",
+            "type": "dsl",
+            "count": 1,
+            "face": "rear",
+            "name": "DSL",
+            "prefix": "DSL ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "physicalConnector": "dsl-8p8c",
+            "interfaceRole": "dsl"
+          },
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 4,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "fon-rj",
+            "type": "telephony",
+            "count": 1,
+            "face": "rear",
+            "name": "FON",
+            "prefix": "FON ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "physicalConnector": "voice-rj11",
+            "interfaceRole": "voice"
+          },
+          {
+            "key": "dc",
+            "type": "power_dc",
+            "count": 1,
+            "face": "rear",
+            "name": "POWER",
+            "prefix": "POWER ",
+            "powerRole": "inlet",
+            "physicalFace": "rear",
+            "physicalConnector": "dc-barrel",
+            "powerSystem": "dc"
+          },
+          {
+            "key": "usb",
+            "type": "usb_a",
+            "count": 1,
+            "face": "rear",
+            "name": "USB2",
+            "prefix": "USB2 ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "fon-tae",
+            "type": "telephony",
+            "count": 1,
+            "face": "rear",
+            "name": "FON TAE",
+            "prefix": "FON TAE ",
+            "powerRole": "unspecified",
+            "physicalConnector": "voice-tae",
+            "interfaceRole": "voice"
+          }
+        ],
+        "passthrough": null,
+        "mounting": {
+          "kind": "desktop",
+          "target": "parent"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "20002930",
+            "quantity": 1,
+            "description": "Modelo/SKU explícito; fuente externaDC. No accesorios derack implícitos."
+          }
+        ],
+        "continuities": []
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 500,
+            "height": 140,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 106,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 18
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "FRITZ!Box 7530 AX",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "rect",
+                "x": 310,
+                "y": 38,
+                "w": 175,
+                "h": 40,
+                "fill": "#bd2026",
+                "radius": 15
+              },
+              {
+                "kind": "vent",
+                "x": 35,
+                "y": 39,
+                "w": 245,
+                "h": 30,
+                "count": 30
+              },
+              {
+                "kind": "circle",
+                "cx": 55,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 105,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 155,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 205,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 255,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 500,
+            "height": 140,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 106,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 18
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "FRITZ!Box 7530 AX",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "rect",
+                "x": 4,
+                "y": 30,
+                "w": 492,
+                "h": 18,
+                "fill": "#ba2429",
+                "radius": 6
+              },
+              {
+                "kind": "rect",
+                "x": 61,
+                "y": 70,
+                "w": 161,
+                "h": 36,
+                "fill": "#e9c550",
+                "radius": 2
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 125,
+                "text": "DSL / LAN / FON / USB / DC",
+                "size": 9,
+                "fill": "#35424c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "dsl",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 18,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ]
+                ],
+                "x": 63,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1",
+                  "2": "2",
+                  "3": "3",
+                  "4": "4"
+                }
+              },
+              {
+                "groupKey": "fon-rj",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 234,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "dc",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 279,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "usb",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 324,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "fon-tae",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 369,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://fritz.com/products/fritz-box-7530-ax-20002930",
+            "kind": "manufacturer_web",
+            "observed": "Consultado03.11.2026. Identidad, conexiones ydimensionesdelSKU. No se conservaHTMLlocal cuando proveedor rechaza descargaautomatizada."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": "development/hardware/german-cpe/fritz-7530ax-de-reference.md",
+            "sha256": "e9c6b222d5ce9b7643be3c7f56b968290ad9914be19ef1112654f8bad5ce280c",
+            "view": "front",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          },
+          {
+            "path": "development/hardware/german-cpe/fritz-7530ax-de-reference.md",
+            "sha256": "e9c6b222d5ce9b7643be3c7f56b968290ad9914be19ef1112654f8bad5ce280c",
+            "view": "rear",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          }
+        ],
+        "limits": [
+          "SKUalemán. Páginaoficialactual200×45×152; fuenteshistóricas208×37×150 son revisión anterior yno se mezclan.",
+          "RJ11yTAE FON son alternativas deuna sola línea: no representan dos líneas. USB/TAElaterales proyectadosenpaneltrasero; su ubicación lateral queda como reserva visual.",
+          "Vectorpropio esquemático, coloresblanco/rojoFRITZ yblancoDrayTek; no renderfotográfico nifidelidadmilimétrica. BocasUUIDseparadas.",
+          "Desktop0U necesita bandeja; cotasnominalesno certificanventilación,carga,antenas oinstalación. No transferenciadeprotocolos niQoS.",
+          "Fuentes/fotoscomerciales consultadas comoreferencia, no redistribuidas."
+        ],
+        "dimensionsBasis": "CotasnominalesW/H/Ddelmodelo/regiónenfuenteoficialactual; separaciónentrepuertos esquemática ylaterales agrupados explícitamente."
+      }
+    },
+    {
+      "definition": {
+        "key": "fritz-7590ax-v2-de",
+        "revision": "german-cpe-20261103-v1",
+        "identity": {
+          "manufacturer": "FRITZ!",
+          "family": "FRITZ!Box DSL ancho",
+          "model": "FRITZ!Box 7590 AX v2",
+          "sku": "20002998"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://fritz.com/en/products/fritz-box-7590-ax-20002998",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 254,
+          "height": 63,
+          "depth": 191
+        },
+        "color": "#f2f1ef",
+        "slots": [],
+        "groups": [
+          {
+            "key": "dsl",
+            "type": "dsl",
+            "count": 1,
+            "face": "rear",
+            "name": "DSL",
+            "prefix": "DSL ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "physicalConnector": "dsl-8p8c",
+            "interfaceRole": "dsl"
+          },
+          {
+            "key": "fon-rj",
+            "type": "telephony",
+            "count": 2,
+            "face": "rear",
+            "name": "FON",
+            "prefix": "FON ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "physicalConnector": "voice-rj11",
+            "interfaceRole": "voice"
+          },
+          {
+            "key": "wan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "WAN",
+            "prefix": "WAN ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 4,
+            "face": "rear",
+            "name": "LAN",
+            "prefix": "LAN ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "dc",
+            "type": "power_dc",
+            "count": 1,
+            "face": "rear",
+            "name": "POWER",
+            "prefix": "POWER ",
+            "powerRole": "inlet",
+            "physicalFace": "rear",
+            "physicalConnector": "dc-barrel",
+            "powerSystem": "dc"
+          },
+          {
+            "key": "usb-rear",
+            "type": "usb_a",
+            "count": 1,
+            "face": "rear",
+            "name": "USB3 rear",
+            "prefix": "USB3 rear ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear"
+          },
+          {
+            "key": "usb-side",
+            "type": "usb_a",
+            "count": 1,
+            "face": "rear",
+            "name": "USB3 side",
+            "prefix": "USB3 side ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "fon-tae",
+            "type": "telephony",
+            "count": 1,
+            "face": "rear",
+            "name": "FON1 TAE",
+            "prefix": "FON1 TAE ",
+            "powerRole": "unspecified",
+            "physicalConnector": "voice-tae",
+            "interfaceRole": "voice"
+          }
+        ],
+        "passthrough": null,
+        "mounting": {
+          "kind": "desktop",
+          "target": "parent"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "20002998",
+            "quantity": 1,
+            "description": "Modelo/SKU explícito; fuente externaDC. No accesorios derack implícitos."
+          }
+        ],
+        "continuities": []
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 500,
+            "height": 140,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 106,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 18
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "FRITZ!Box 7590 AX v2",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "rect",
+                "x": 310,
+                "y": 38,
+                "w": 175,
+                "h": 40,
+                "fill": "#bd2026",
+                "radius": 15
+              },
+              {
+                "kind": "vent",
+                "x": 35,
+                "y": 39,
+                "w": 245,
+                "h": 30,
+                "count": 30
+              },
+              {
+                "kind": "circle",
+                "cx": 55,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 105,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 155,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 205,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 255,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 500,
+            "height": 140,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 106,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 18
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "FRITZ!Box 7590 AX v2",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "rect",
+                "x": 4,
+                "y": 30,
+                "w": 492,
+                "h": 18,
+                "fill": "#ba2429",
+                "radius": 6
+              },
+              {
+                "kind": "rect",
+                "x": 136.5,
+                "y": 70,
+                "w": 35.0,
+                "h": 36,
+                "fill": "#e9c550",
+                "radius": 2
+              },
+              {
+                "kind": "rect",
+                "x": 177.67,
+                "y": 70,
+                "w": 149.5,
+                "h": 36,
+                "fill": "#e9c550",
+                "radius": 2
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 125,
+                "text": "DSL / LAN / FON / USB / DC",
+                "size": 9,
+                "fill": "#35424c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "dsl",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 18,
+                "y": 74,
+                "dx": 38.17,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "fon-rj",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 59.17,
+                "y": 74,
+                "dx": 38.17,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1",
+                  "2": "2"
+                }
+              },
+              {
+                "groupKey": "wan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 138.5,
+                "y": 74,
+                "dx": 38.17,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ]
+                ],
+                "x": 179.67,
+                "y": 74,
+                "dx": 38.17,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1",
+                  "2": "2",
+                  "3": "3",
+                  "4": "4"
+                }
+              },
+              {
+                "groupKey": "dc",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 335.33,
+                "y": 74,
+                "dx": 38.17,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "usb-rear",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 376.5,
+                "y": 74,
+                "dx": 38.17,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "usb-side",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 417.67,
+                "y": 74,
+                "dx": 38.17,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "fon-tae",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 458.83,
+                "y": 74,
+                "dx": 38.17,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://fritz.com/en/products/fritz-box-7590-ax-20002998",
+            "kind": "manufacturer_web",
+            "observed": "Consultado03.11.2026. Identidad, conexiones ydimensionesdelSKU. No se conservaHTMLlocal cuando proveedor rechaza descargaautomatizada."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": "development/hardware/german-cpe/fritz-7590ax-v2-de-reference.md",
+            "sha256": "f76ed87d88bf89930365b1db3b465e2dff7ac909b71a28832236a6c47f4add73",
+            "view": "front",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          },
+          {
+            "path": "development/hardware/german-cpe/fritz-7590ax-v2-de-reference.md",
+            "sha256": "f76ed87d88bf89930365b1db3b465e2dff7ac909b71a28832236a6c47f4add73",
+            "view": "rear",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          }
+        ],
+        "limits": [
+          "Sólo v2sinS0. No añadir ISDN; SKU20002929conS0 es otroperfil.",
+          "FON1TAEyRJ11sonalternativas; doslíneasanalógicas, no tres. USB/TAElateralesproyectadosenpaneltrasero yrotulados side; no ubicación certificada.",
+          "Vectorpropio esquemático, coloresblanco/rojoFRITZ yblancoDrayTek; no renderfotográfico nifidelidadmilimétrica. BocasUUIDseparadas.",
+          "Desktop0U necesita bandeja; cotasnominalesno certificanventilación,carga,antenas oinstalación. No transferenciadeprotocolos niQoS.",
+          "Fuentes/fotoscomerciales consultadas comoreferencia, no redistribuidas."
+        ],
+        "dimensionsBasis": "CotasnominalesW/H/Ddelmodelo/regiónenfuenteoficialactual; separaciónentrepuertos esquemática ylaterales agrupados explícitamente."
+      }
+    },
+    {
+      "definition": {
+        "key": "fritz-7690-de",
+        "revision": "german-cpe-20261103-v1",
+        "identity": {
+          "manufacturer": "FRITZ!",
+          "family": "FRITZ!Box DSL Wi-Fi7",
+          "model": "FRITZ!Box 7690",
+          "sku": "20003057"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://fritz.com/products/fritz-box-7690-20003057",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 254,
+          "height": 63,
+          "depth": 191
+        },
+        "color": "#f2f1ef",
+        "slots": [],
+        "groups": [
+          {
+            "key": "dsl",
+            "type": "dsl",
+            "count": 1,
+            "face": "rear",
+            "name": "DSL",
+            "prefix": "DSL ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "physicalConnector": "dsl-8p8c",
+            "interfaceRole": "dsl"
+          },
+          {
+            "key": "fon-rj",
+            "type": "telephony",
+            "count": 2,
+            "face": "rear",
+            "name": "FON",
+            "prefix": "FON ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "physicalConnector": "voice-rj11",
+            "interfaceRole": "voice"
+          },
+          {
+            "key": "wan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "WAN2.5G",
+            "prefix": "WAN2.5G ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "lan-fast",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "LAN2.5G",
+            "prefix": "LAN2.5G ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "LAN1G",
+            "prefix": "LAN1G ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "dc",
+            "type": "power_dc",
+            "count": 1,
+            "face": "rear",
+            "name": "POWER",
+            "prefix": "POWER ",
+            "powerRole": "inlet",
+            "physicalFace": "rear",
+            "physicalConnector": "dc-barrel",
+            "powerSystem": "dc"
+          },
+          {
+            "key": "usb",
+            "type": "usb_a",
+            "count": 1,
+            "face": "rear",
+            "name": "USB2",
+            "prefix": "USB2 ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "fon-tae",
+            "type": "telephony",
+            "count": 1,
+            "face": "rear",
+            "name": "FON1 TAE",
+            "prefix": "FON1 TAE ",
+            "powerRole": "unspecified",
+            "physicalConnector": "voice-tae",
+            "interfaceRole": "voice"
+          }
+        ],
+        "passthrough": null,
+        "mounting": {
+          "kind": "desktop",
+          "target": "parent"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "20003057",
+            "quantity": 1,
+            "description": "Modelo/SKU explícito; fuente externaDC. No accesorios derack implícitos."
+          }
+        ],
+        "continuities": []
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 500,
+            "height": 140,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 106,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 18
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "FRITZ!Box 7690",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "rect",
+                "x": 310,
+                "y": 38,
+                "w": 175,
+                "h": 40,
+                "fill": "#bd2026",
+                "radius": 15
+              },
+              {
+                "kind": "vent",
+                "x": 35,
+                "y": 39,
+                "w": 245,
+                "h": 30,
+                "count": 30
+              },
+              {
+                "kind": "circle",
+                "cx": 55,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 105,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 155,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 205,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 255,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 500,
+            "height": 140,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 106,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 18
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "FRITZ!Box 7690",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "rect",
+                "x": 4,
+                "y": 30,
+                "w": 492,
+                "h": 18,
+                "fill": "#ba2429",
+                "radius": 6
+              },
+              {
+                "kind": "rect",
+                "x": 148,
+                "y": 70,
+                "w": 35,
+                "h": 36,
+                "fill": "#e9c550",
+                "radius": 2
+              },
+              {
+                "kind": "rect",
+                "x": 193,
+                "y": 70,
+                "w": 35,
+                "h": 36,
+                "fill": "#e9c550",
+                "radius": 2
+              },
+              {
+                "kind": "rect",
+                "x": 238,
+                "y": 70,
+                "w": 77,
+                "h": 36,
+                "fill": "#e9c550",
+                "radius": 2
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 125,
+                "text": "DSL / LAN / FON / USB / DC",
+                "size": 9,
+                "fill": "#35424c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "dsl",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 18,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "fon-rj",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 63,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1",
+                  "2": "2"
+                }
+              },
+              {
+                "groupKey": "wan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 150,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "lan-fast",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 195,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 240,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1",
+                  "2": "2"
+                }
+              },
+              {
+                "groupKey": "dc",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 327,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "usb",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 372,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "fon-tae",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 417,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://fritz.com/products/fritz-box-7690-20003057",
+            "kind": "manufacturer_web",
+            "observed": "Consultado03.11.2026. Identidad, conexiones ydimensionesdelSKU. No se conservaHTMLlocal cuando proveedor rechaza descargaautomatizada."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": "development/hardware/german-cpe/fritz-7690-de-reference.md",
+            "sha256": "083c54fbf3c3a24a91f1635813eabfe990c8eb0ef1d20a10c3c047c2768a487d",
+            "view": "front",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          },
+          {
+            "path": "development/hardware/german-cpe/fritz-7690-de-reference.md",
+            "sha256": "083c54fbf3c3a24a91f1635813eabfe990c8eb0ef1d20a10c3c047c2768a487d",
+            "view": "rear",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          }
+        ],
+        "limits": [
+          "SinS0; Wi-Fi7,DECTyZigbee no son bocas.",
+          "FON1RJ11/TAEalternativos, no doslíneas. USB/TAElateralproyectadodetalletrasero.",
+          "Vectorpropio esquemático, coloresblanco/rojoFRITZ yblancoDrayTek; no renderfotográfico nifidelidadmilimétrica. BocasUUIDseparadas.",
+          "Desktop0U necesita bandeja; cotasnominalesno certificanventilación,carga,antenas oinstalación. No transferenciadeprotocolos niQoS.",
+          "Fuentes/fotoscomerciales consultadas comoreferencia, no redistribuidas."
+        ],
+        "dimensionsBasis": "CotasnominalesW/H/Ddelmodelo/regiónenfuenteoficialactual; separaciónentrepuertos esquemática ylaterales agrupados explícitamente."
+      }
+    }
+  ]
+}

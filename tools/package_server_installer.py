@@ -42,8 +42,27 @@ def checked_edition(edition, bundle_sha256):
     if not isinstance(bundle_sha256, str) or HEX64_PATTERN.fullmatch(bundle_sha256) is None:
         raise ValueError('bundle_sha256_invalid')
     setup = checked_path(ROOT / 'tools/windows/server-install/RackClick.Setup.ps1').read_text(encoding='utf-8')
-    if setup.count("'" + bundle_sha256 + "'") != 1:
+    setup_pins = re.findall(r"(?m)^\s*if[ \t]*\([^\r\n]*manifest\.bundleArchiveSha256-cne'([0-9a-f]{64})'[^\r\n]*\)\s*\{", setup)
+    raw_setup_pins = re.findall(r"manifest\.bundleArchiveSha256-cne'([0-9a-f]{64})'", setup)
+    if setup_pins != [bundle_sha256] or raw_setup_pins != setup_pins:
         raise ValueError('edition_source_pin_mismatch')
+    # These native branches run only on the target Windows host. Keeping the
+    # payload hash consistent is insufficient if either branch pins an old ZIP.
+    folder = ROOT / 'tools/windows/server-install'
+    crt = checked_path(folder / 'RackClick.Setup.Prerequisite.ps1').read_text(encoding='utf-8-sig')
+    prepare = checked_path(folder / 'Prepare-RackClickServer.ps1').read_text(encoding='utf-8-sig')
+    pins = (
+        re.findall(r"(?m)^\s*if[ \t]*\(\$actual -cne '([0-9a-f]{64})'\)", crt),
+        re.findall(r"(?m)^\s*if[ \t]*\([^\r\n]*Hash\.ToLowerInvariant\(\) -cne '([0-9a-f]{64})'\)", prepare),
+        re.findall(r"(?m)^\s*\$args=@\([^\r\n]*'-ExpectedArchiveSha256','([0-9a-f]{64})'", prepare),
+    )
+    raw_pins = (
+        re.findall(r"\$actual -cne '([0-9a-f]{64})'", crt),
+        re.findall(r"Hash\.ToLowerInvariant\(\) -cne '([0-9a-f]{64})'", prepare),
+        re.findall(r"'-ExpectedArchiveSha256','([0-9a-f]{64})'", prepare),
+    )
+    if any(values != [bundle_sha256] for values in (*pins, *raw_pins)):
+        raise ValueError('native_bundle_pins_incoherent')
     return edition
 
 
@@ -95,8 +114,9 @@ def build(archive, service_publish, output, *, bundle_sha256, edition, stamp=STA
         if len(set(names)) != len(names):
             raise ValueError('duplicate_original_member')
         actual = [name for name in names if name.startswith('operators/')]
-        expected = {'operators/' + name for name in OPERATORS}
-        if len(actual) != 25 or set(actual) != expected:
+        selected_operators = OPERATORS + ('RackClick.SqlSecrets.ps1',) if edition in {'12', '13', '14', '15'} else OPERATORS
+        expected = {'operators/' + name for name in selected_operators}
+        if len(actual) != len(expected) or set(actual) != expected:
             raise ValueError('original_operator_inventory_mismatch')
         for name in sorted(expected):
             payload[name] = original.read(name)
@@ -130,13 +150,16 @@ def build(archive, service_publish, output, *, bundle_sha256, edition, stamp=STA
         payload['service/' + path.relative_to(service_publish).as_posix()] = path.read_bytes()
     if digest(payload.get('service/RackClick.WindowsService.dll', b'')) != SERVICE_DLL_SHA256:
         raise ValueError('service_dll_hash_mismatch')
-    payload['docs/INSTALACION-SERVIDOR-DESDE-CERO.html'] = checked_path(ROOT / 'docs/INSTALACION-SERVIDOR-DESDE-CERO.html').read_bytes()
+    manual = 'docs/INSTALADOR' + edition + '-SQL-PROTEGIDO.html' if edition in {'12', '13', '14', '15'} else 'docs/INSTALADOR11-WINDOWS43.html' if edition == '11' else 'docs/INSTALACION-SERVIDOR-DESDE-CERO.html'
+    payload['docs/INSTALACION-SERVIDOR-DESDE-CERO.html'] = checked_path(ROOT / manual).read_bytes()
+    if edition == '11':
+        payload['docs/INSTALADOR11-WINDOWS43.md'] = checked_path(ROOT / 'docs/INSTALADOR11-WINDOWS43.md').read_bytes()
     if edition in {'09', '10'}:
         guide = 'docs/INSTALADOR' + edition + '-ENSAYO-MFA.md'
         payload[guide] = checked_path(ROOT / guide).read_bytes()
     payload['LICENSES/service-host-dependencies.json'] = checked_path(ROOT / 'development/windows-service/packages.lock.json').read_bytes()
     payload['LICENSES/service-host-NOTICE.txt'] = b'RackClick Windows service host dependencies: Microsoft.Extensions.Hosting.WindowsServices 10.0.12 and locked Microsoft/System transitive dependencies. MIT; see dotnet-LICENSE.txt and service-host-dependencies.json. Official source: https://www.nuget.org/packages/Microsoft.Extensions.Hosting.WindowsServices/10.0.12\n'
-    payload['00-EMPEZAR-AQUI.html'] = checked_path(ROOT / 'docs/INSTALACION-SERVIDOR-DESDE-CERO.html').read_bytes()
+    payload['00-EMPEZAR-AQUI.html'] = checked_path(ROOT / manual).read_bytes()
     payload['00-ESTADO.txt'] = (
         'RACKCLICK - CANDIDATA DE INSTALACION Y QA EN WINDOWS SERVER - EDICION ' + edition + '\r\n'
         'Abre 00-EMPEZAR-AQUI.html para requisitos, cuentas y recorrido completo.\r\n'

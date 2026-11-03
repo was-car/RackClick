@@ -1,0 +1,20 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 22,
+  "sourceSha256": "4f00127eb3a882ef5a3e7388c59b18b57ff7dcfe8d03026758c00172e201dc09",
+  "factsSha256": "99bb4ab8eadecdc74aa94ce91925de96ea96c5865484f1fd2808e87651b48676",
+  "baseMigrationSha256": "fbfcc6a922c1d07e8633fee50f20a954d0c38e657de6a8d0e75da990cbff31b4",
+  "definitions": [
+    {
+      "key": "synology-ds423plus",
+      "revision": "synology-ds423plus-20261030-v1",
+      "sha256": "7cc1c771e91b0f2bafe57b3d7573a33ba1bcf4dc45bbb173fb8ac789abeb57bf"
+    },
+    {
+      "key": "shelf-5u",
+      "revision": "mount-support-20261030-v1",
+      "sha256": "1adc216af0ab3a2f35e10d5ac20d88da7d7a5711ed587b1fc38e5db79838f1e4"
+    }
+  ],
+  "state": "curated_development_not_a_release"
+}

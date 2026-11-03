@@ -1,0 +1,53 @@
+{
+  "formatVersion": 1,
+  "model": "TS-464",
+  "sku": "TS-464-8G",
+  "url": "https://www.qnap.com/en/product/ts-464/specs/hardware/TS-464-8G.pdf",
+  "pdfSha256": null,
+  "specificationAccess": "Official web PDF reader; direct requests returned HTTP202 with empty body; no binary PDF hash claimed.",
+  "guide": {
+    "url": "https://download.qnap.com/TechnicalDocument/Storage/SMB%20NAS/ts-x62%26x64/ts-x62%26x64-ug-en-us.pdf",
+    "pdfSha256": "5773a3346c41c689f814d599d521964633c3d40f8dc265f7f5e2279b10324523",
+    "documentVersion": 7,
+    "documentDate": "06/02/2023"
+  },
+  "retrieved": "2026-10-30",
+  "releaseDate": null,
+  "hardwareRevision": null,
+  "facts": {
+    "widthMm": 170,
+    "heightMm": 165,
+    "depthMm": 226.5,
+    "kind": "desktop",
+    "dimensionsExcludeFootPad": true,
+    "totalHeightWithFeetMm": null,
+    "rearRj45": 2,
+    "ethernetMbps": 2500,
+    "poe": false
+  },
+  "olderGuideDimensionsMm": {
+    "width": 170,
+    "height": 168,
+    "depth": 226,
+    "source": "Guide PDFpage7, TS-464 row; different from current exact-SKU nominal specification."
+  },
+  "locators": {
+    "ports": "Guide PDFpage13 TS-464 upper figure; PDFpage17 TS-x64 numbering LAN1upper and LAN2lower; two2.5GbE RJ45.",
+    "dimensions": "Exact TS-464-8G hardware PDFpage2: H165xW170xD226.5mm, foot pads excluded. Generic up-to30mm note does not establish this model foot height.",
+    "front": "Guide PDFpages9-10 TS-462/TS-464 front with closed cover, status column at right; official family front photograph has gold right stripe."
+  },
+  "nonConnectableReferences": {
+    "driveBays": 4,
+    "usbFront": 1,
+    "usbRear": 3,
+    "hdmi": 1,
+    "pcieCover": 1,
+    "fan": 1,
+    "dcInput": 1,
+    "externalPowerAdapter": 1
+  },
+  "scope": "Exact TS-464-8G inventory identity, using manufacturer current nominal dimensions excluding foot pads. Only2rear Ethernet inventory connectors. No DC-to-AC-PDU link: external adapter needs a typed adapter contract. USB, HDMI, PCIe, optional NIC, M.2/SATA, disks, RAID, storage and telemetry are not modeled. Four bays do not assert installed drives.",
+  "mountScope": "Existing own shelf-5u main440x190x300mm represents nominal body dimensions only. Total installed height including feet is unknown. Check complete height, clearance, mechanical load and ventilation before physical installation; no certified fit is claimed. Historical shelf-2u60mm remains unchanged.",
+  "photographScope": "Official TS-464 chassis-family photographs are private references only; installed8GB memory and optional cards cannot be established from photographs. No manufacturer photograph is redistributed in the application.",
+  "geometry": "Own interactive flat drawing; approximate colors; front closed cover and gold right stripe. No physical hardware revision asserted."
+}

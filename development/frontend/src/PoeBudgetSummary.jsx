@@ -6,9 +6,10 @@ const words = {
 };
 export function PoeBudgetSummary({ snapshot, rackId, lang }) {
  const w = words[lang] || words.en, devices = snapshot.devices.filter(d => !rackId || d.rackId === rackId);
+ const summaries = devices.map(device => ({ device, stats: poeBudget(device, snapshot.ports.filter(p => p.deviceId === device.id)) }));
+ const exceeded = summaries.filter(row => row.stats.exceeded).length, incomplete = summaries.filter(row => row.stats.incomplete).length;
  const counts = new Map(); for (const d of snapshot.devices) counts.set(d.name, (counts.get(d.name) || 0) + 1);
- return <section className="ir-inspector" data-poe-budget-summary aria-label={w.title} style={{overflowWrap:'anywhere'}}><h2>{w.title}</h2><p>{w.note}</p>{!devices.length && <p>{w.empty}</p>}{devices.map(d => {
-  const stats = poeBudget(d, snapshot.ports.filter(p => p.deviceId === d.id));
+ return <details className="ir-inspector rc-poe-disclosure" data-poe-budget-summary aria-label={w.title} style={{overflowWrap:'anywhere'}}><summary><span>{w.title}</span>{exceeded > 0 && <span className="ir-warning" role="status" data-poe-overview-exceeded>{exceeded} · {w.exceeded}</span>}{incomplete > 0 && <span data-poe-overview-incomplete>{incomplete} · {w.incomplete}</span>}</summary><h2>{w.title}</h2><p>{w.note}</p>{!devices.length && <p>{w.empty}</p>}{summaries.map(({device:d,stats}) => {
   return <article key={d.id} data-poe-device={d.id} style={{borderBottom:'1px solid var(--border)',paddingBlock:8}}><h3>{d.name}{counts.get(d.name) > 1 && <small> · {d.id}</small>}</h3><dl><dt>{w.known}</dt><dd data-poe-known>{stats.sum} W</dd><dt>{w.budget}</dt><dd data-poe-limit>{stats.budget === null ? w.missing : stats.budget + ' W'}</dd><dt>{w.eligible}</dt><dd data-poe-eligible>{stats.eligible}</dd><dt>{w.unknown}</dt><dd data-poe-unknown>{stats.unknown}</dd></dl>{stats.exceeded && <p className="ir-warning" data-poe-exceeded role="status">{w.exceeded}</p>}{stats.incomplete && <p data-poe-incomplete>{w.incomplete}</p>}</article>;
- })}</section>;
+ })}</details>;
 }

@@ -83,7 +83,7 @@ function Initialize-SetupMfaStore {
     $bundle=$null;$process=$null;$started=$false
     try{
         $bundle=Read-RackClickOfflineBundle -ArchivePath (Join-Path $CodeRoot 'RackClick.zip') -ExpectedArchiveSha256 $ExpectedBundleSha256
-        if((Get-OfflineBundleExpectedSchema (Get-OfflineBundleApplicationProfile $bundle.manifest.applicationManifestSha256))-ne15){throw 'setup_mfa_schema_required_15'}
+        if((Get-OfflineBundleExpectedSchema (Get-OfflineBundleApplicationProfile $bundle.manifest.applicationManifestSha256))-notin@(15,43)){throw 'setup_mfa_schema_required_15_or_43'}
         $content=Join-Path $InstancePath 'content'
         Assert-RackClickOfflineInstalledContent -Bundle $bundle -ContentPath $content
         $dotnet=Join-Path $content 'dependencies\dotnet\dotnet.exe'

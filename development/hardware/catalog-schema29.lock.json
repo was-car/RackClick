@@ -1,0 +1,117 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 29,
+  "state": "curated_development_not_a_release",
+  "sourceSha256": {
+    "development/hardware/selected506a/aruba.json": "175e934d8996905947c9b6c41eda6507b102ea44fd74ad139a1898b6fcce60b9",
+    "development/hardware/selected506a/ubiquiti.json": "83edafa842cfbcf9b0a81a281e33be00ff42029241f4cde89ce7ee3f0201f16c"
+  },
+  "baseMigrationSha256": "049a472b6c5e4334f17d096a10bc524de967d3ead46e1c89725bf0b396a663cd",
+  "sharedCompilerSha256": "9f9d963a86cb29ed339ed9cf4a923dcb9b028e3c420a6972eff54b1993d9f5a7",
+  "selectionIds": [
+    "aruba-jl675a",
+    "aruba-r9y04a",
+    "nb-0c303ce9bca6c601",
+    "nb-3af5a2fcbefac97c",
+    "nb-4f13830c6517574d",
+    "nb-7b81ceb62353c88e",
+    "nb-842ab89f3df610f2",
+    "nb-90ee2ca04fd0e2d5",
+    "nb-a77e3ed47a30e394",
+    "nb-adf2142c84f07df9",
+    "nb-b331c13345891559",
+    "nb-d064231ab7e45734",
+    "nb-e5030fe747d79fe6",
+    "nb-eaa7b5f1797fad5b",
+    "nb-f505dfd941515251",
+    "nb-f6915d5d3881b84d",
+    "nb-f83ce1b7723518c4"
+  ],
+  "definitions": [
+    {
+      "key": "selected-aruba-jl675a",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "bd532a133c632b57c7ddada482176850726c87ec6aa9d2d60a173db6c250d188"
+    },
+    {
+      "key": "selected-aruba-r9y04a",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "ae9dfebad2b588be984108b53e55225511f0d56e87e264ae6adec5b2207222a7"
+    },
+    {
+      "key": "selected-nb-0c303ce9bca6c601",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "75e90de8ef513fb3184b9038fdb7d1195117105368f289653cb4e1dbcb82845f"
+    },
+    {
+      "key": "selected-nb-3af5a2fcbefac97c",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "60c2d29b9e2f0da15128ccc9b590160cc81dbc213ed5fd3f1bd7aaeff807dc7a"
+    },
+    {
+      "key": "selected-nb-4f13830c6517574d",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "b3f272535766473a9e9f6188fb4dca7d93104534a226c4f711fcc305e8ee4303"
+    },
+    {
+      "key": "selected-nb-7b81ceb62353c88e",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "97be4c8cfd55d7ab544a548b65fa4a7f7c36d2ffe5e1a3ab2c51179a27cdbd4c"
+    },
+    {
+      "key": "selected-nb-842ab89f3df610f2",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "592b18cce8df396e95116b4b6883755aa6b8e69aece7fe8316163b8000e79581"
+    },
+    {
+      "key": "selected-nb-90ee2ca04fd0e2d5",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "89e370f3925aa6dce2f181e52e5332f4f246cffbad3ee19bd2934908c645bfa5"
+    },
+    {
+      "key": "selected-nb-a77e3ed47a30e394",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "d7bace0bcb414262df7ac68d5ad9aa60d6d64e17a9e1c1b9adf4949cb9ddf7a0"
+    },
+    {
+      "key": "selected-nb-adf2142c84f07df9",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "31857d1fdb9f662918b0f3b7770ab024c3bc2bbe8627fbdd0b672bb0f7d59869"
+    },
+    {
+      "key": "selected-nb-b331c13345891559",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "b9c0a40a5ba3fc4c5fe644de9e504c490fa14b26cbcc95bab2702dc725d5e800"
+    },
+    {
+      "key": "selected-nb-d064231ab7e45734",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "585d33441eee33622546cc153e02f646d93dd740c2333e909219ef9db943f2fe"
+    },
+    {
+      "key": "selected-nb-e5030fe747d79fe6",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "b17c69d7d7a40db073a0244c78dfa9df3a9536ba2a708bfe7c66964b2940a8b0"
+    },
+    {
+      "key": "selected-nb-eaa7b5f1797fad5b",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "02376983ad91dcdccdb83d5ae4d3945767847b0835598582d17ccf8ded53f974"
+    },
+    {
+      "key": "selected-nb-f505dfd941515251",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "d6a6e665d0a1af6335804a023ea35a4fc883bcf5b97f792c6cf10ae99ab40d99"
+    },
+    {
+      "key": "selected-nb-f6915d5d3881b84d",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "3cbc27c1b75dc12d598254311e23ecf960d8a1dff37171a89eca87fc66efa3b4"
+    },
+    {
+      "key": "selected-nb-f83ce1b7723518c4",
+      "revision": "selected506a-20261101-v1",
+      "sha256": "3a379859cb8289133719c00e5d71c7c870092134cf634dbb85bdb0287204892f"
+    }
+  ]
+}

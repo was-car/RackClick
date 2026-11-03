@@ -51,7 +51,7 @@ public sealed partial class PostgresStore(NpgsqlDataSource source)
     internal static async Task RejectReportOperation(NpgsqlConnection db, NpgsqlTransaction tx, Actor actor, Guid requestId, CancellationToken ct)
     {
         // Generic recovery/replay must never expose a report artifact using inventory/security authority alone.
-        await using var command = Command(db, tx, "SELECT EXISTS(SELECT 1 FROM operation WHERE systemhaus_id=@house AND actor_id=@actor AND request_id=@request AND result_json->>'kind' IN ('report','spreadsheetReport','rc9ExcelReport'))",
+        await using var command = Command(db, tx, "SELECT EXISTS(SELECT 1 FROM operation WHERE systemhaus_id=@house AND actor_id=@actor AND request_id=@request AND result_json->>'kind' IN ('report','spreadsheetReport','rc9ExcelReport','inventoryExport'))",
             ("house", actor.HouseId), ("actor", actor.Id), ("request", requestId));
         if (await command.ExecuteScalarAsync(ct) is true) throw new DomainError(404, "not_found");
     }

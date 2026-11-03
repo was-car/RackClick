@@ -1,0 +1,344 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506k-20261101-v1",
+  "baselineSchema": 39,
+  "foundationSchema": 40,
+  "targetSchema": 41,
+  "baselineDefinitions": 752,
+  "baselineCommercial": 747,
+  "selectedBefore": 392,
+  "plannedCandidates": 56,
+  "models": 52,
+  "selectedAfterIfAllAccepted": 444,
+  "physicalTypes": [
+    "rj45",
+    "sfp",
+    "sfp28",
+    "sfp56",
+    "qsfp",
+    "qsfpdd",
+    "power",
+    "console",
+    "idc"
+  ],
+  "authoring": {
+    "power": [
+      {
+        "id": "nb-476a5e2e14826616",
+        "manufacturer": "APC",
+        "model": "AP4421A"
+      },
+      {
+        "id": "nb-d14bed6bc445f3b0",
+        "manufacturer": "Eaton",
+        "model": "Tripp Lite PDUMH15AT"
+      },
+      {
+        "id": "nb-23088fe782f499ac",
+        "manufacturer": "APC",
+        "model": "AP4422A"
+      },
+      {
+        "id": "nb-a30f5454503d7402",
+        "manufacturer": "Eaton",
+        "model": "Tripp Lite PDUMH20HVAT"
+      },
+      {
+        "id": "nb-2d5dd2ca4dacb1c5",
+        "manufacturer": "APC",
+        "model": "AP4423A"
+      },
+      {
+        "id": "nb-de900000f3f9295d",
+        "manufacturer": "APC",
+        "model": "AP4424A"
+      },
+      {
+        "id": "nb-503a26493f9206a4",
+        "manufacturer": "APC",
+        "model": "AP4430A"
+      },
+      {
+        "id": "nb-aa67f910589a5502",
+        "manufacturer": "APC",
+        "model": "AP4431A"
+      },
+      {
+        "id": "nb-c7a1f257de229c1c",
+        "manufacturer": "APC",
+        "model": "AP4432A"
+      },
+      {
+        "id": "nb-624f4c89a65b309a",
+        "manufacturer": "APC",
+        "model": "AP4433"
+      },
+      {
+        "id": "nb-8575f3e84e37fd0d",
+        "manufacturer": "APC",
+        "model": "AP4433A"
+      },
+      {
+        "id": "nb-ce5e88c6a9b7562d",
+        "manufacturer": "APC",
+        "model": "AP4434A"
+      },
+      {
+        "id": "nb-15a85a8a3b05a92f",
+        "manufacturer": "APC",
+        "model": "AP6031A"
+      },
+      {
+        "id": "raritan-px3-5190r",
+        "manufacturer": "Raritan",
+        "model": "PX3-5190R"
+      },
+      {
+        "id": "nb-1b78d3ee187d5923",
+        "manufacturer": "WTI",
+        "model": "VMR-16HD20-2"
+      },
+      {
+        "id": "apc-smt1500rmi2u",
+        "manufacturer": "APC by Schneider Electric",
+        "model": "SMT1500RMI2U"
+      },
+      {
+        "id": "eaton-5px1500irt2ug2",
+        "manufacturer": "Eaton",
+        "model": "5PX1500IRT2UG2"
+      },
+      {
+        "id": "nb-e195af6788f9b56c",
+        "manufacturer": "APC",
+        "model": "SMT3000RMI2UC"
+      },
+      {
+        "id": "nb-1157b9a10bc8e5f4",
+        "manufacturer": "APC",
+        "model": "SMX3000RMLV2U"
+      },
+      {
+        "id": "nb-f9fc50287eafd86c",
+        "manufacturer": "APC",
+        "model": "Smart-UPS SRT5KRMXLT"
+      },
+      {
+        "id": "nb-c91a00ac9965db90",
+        "manufacturer": "APC",
+        "model": "SMT2200RM2U"
+      },
+      {
+        "id": "nb-19ed1459663d3e17",
+        "manufacturer": "Eaton",
+        "model": "5PX1500iRT"
+      },
+      {
+        "id": "nb-f5d26f8fec76743c",
+        "manufacturer": "Eaton",
+        "model": "9PX3000iRT2U"
+      },
+      {
+        "id": "nb-d3866e263332a4fc",
+        "manufacturer": "Eaton",
+        "model": "9PX3000iRT3U"
+      },
+      {
+        "id": "nb-c2814dde21fa98df",
+        "manufacturer": "SNR",
+        "model": "SNR-UPS-ONRT-1000-S24 ELEMENT II"
+      },
+      {
+        "id": "nb-81391abd9812b183",
+        "manufacturer": "Eaton",
+        "model": "Tripp Lite SMART1500LCD"
+      },
+      {
+        "id": "nb-07e5ff352f97fad1",
+        "manufacturer": "Eaton",
+        "model": "Tripp Lite SMART1500RMXL2UA"
+      },
+      {
+        "id": "nb-0ada4f1bb27f261c",
+        "manufacturer": "Eaton",
+        "model": "Tripp Lite SMART2200CRMXL"
+      }
+    ],
+    "passive": [
+      {
+        "id": "nb-d9eff11e7e0c11f7",
+        "manufacturer": "Panduit",
+        "model": "Cat 6 Punchdown Patch Panel, 24 Ports, 1 RU, Black"
+      },
+      {
+        "id": "nb-4b2e4c72b9d36b73",
+        "manufacturer": "Panduit",
+        "model": "Cat 6A Punchdown Patch Panel, 48 Ports, 2 RU, Black"
+      },
+      {
+        "id": "nb-04f3c36861d3b6f5",
+        "manufacturer": "Panduit",
+        "model": "Cat 6 Punchdown Patch Panel, 48 Ports, 2 RU, Black"
+      },
+      {
+        "id": "nb-70f105515d0bf559",
+        "manufacturer": "Panduit",
+        "model": "Cat 6A Punchdown Patch Panel, 24 Ports, 1 RU, Black"
+      },
+      {
+        "id": "nb-f060040e382de573",
+        "manufacturer": "Panduit",
+        "model": "DP5e Flat Cat 5e Punchdown Patch Panel 24 Ports, 1RU, Black"
+      },
+      {
+        "id": "nb-7ea04d02eec80c94",
+        "manufacturer": "Panduit",
+        "model": "DP5e Flat Cat 5e Punchdown Patch Panel 48 Ports, 2RU, Black"
+      }
+    ],
+    "mechanical": [
+      {
+        "id": "startech-cabshelf1u",
+        "manufacturer": "StarTech.com",
+        "model": "CABSHELF1U"
+      },
+      {
+        "id": "nb-edde85c1a3ba283d",
+        "manufacturer": "EFB Elektronik",
+        "model": "691651ATS8"
+      },
+      {
+        "id": "nb-bdf6ab2dce05aee0",
+        "manufacturer": "Panduit",
+        "model": "Opticom Rack Mount Enclosure, Black, 1 RU, 3 FAP/Cassette Slots"
+      },
+      {
+        "id": "nb-29ce493b266db9c3",
+        "manufacturer": "Panduit",
+        "model": "Opticom Rack Mount Enclosure, Black, 2 RU, 6 FAP/Cassette Slots"
+      },
+      {
+        "id": "nb-a6a79509854ba38b",
+        "manufacturer": "Commscope",
+        "model": "360G2-1U-MOD-SD"
+      },
+      {
+        "id": "nb-78fb5e27dc863dbc",
+        "manufacturer": "Commscope",
+        "model": "SD-4U"
+      },
+      {
+        "id": "nb-93773a73e59631e4",
+        "manufacturer": "FS",
+        "model": "FHD-1UFMT-N"
+      },
+      {
+        "id": "nb-9b748f4aeb7c8a2d",
+        "manufacturer": "Commscope",
+        "model": "CPP-UDDM-M-1U-24"
+      },
+      {
+        "id": "nb-75ff355641be29f1",
+        "manufacturer": "Commscope",
+        "model": "CPPA-UDDM-M-2U-48"
+      },
+      {
+        "id": "nb-682f01a7e3775f50",
+        "manufacturer": "Commscope",
+        "model": "CPP-SDDM-SL-1U-24"
+      }
+    ],
+    "storage": [
+      {
+        "id": "nb-7dd2b21e61ad99a0",
+        "manufacturer": "Terramaster",
+        "model": "F2-424"
+      },
+      {
+        "id": "nb-4de91d17b80dbbff",
+        "manufacturer": "Terramaster",
+        "model": "F6-424 Max"
+      }
+    ],
+    "serial": [
+      {
+        "id": "nb-908a100c3ca29495",
+        "manufacturer": "Digi",
+        "model": "PortServer TS 16"
+      },
+      {
+        "id": "nb-21d28e7d5a06429b",
+        "manufacturer": "Lantronix",
+        "model": "ETS16PR"
+      },
+      {
+        "id": "nb-b924dbf6777c2eb2",
+        "manufacturer": "Lantronix",
+        "model": "ETS32PR"
+      },
+      {
+        "id": "nb-a966d159c428b1d4",
+        "manufacturer": "Opengear",
+        "model": "CM8116"
+      },
+      {
+        "id": "nb-08b0ee66b1eb36c8",
+        "manufacturer": "Opengear",
+        "model": "CM8148"
+      },
+      {
+        "id": "nb-dbdce8efed0e65d8",
+        "manufacturer": "Opengear",
+        "model": "CM7132-2-DAC"
+      }
+    ]
+  },
+  "reservedModels": [
+    {
+      "id": "nb-8311f81875534b26",
+      "manufacturer": "APC",
+      "model": "AP7950B",
+      "reason": "Vertical0U needs a separate mount contract; never force1U."
+    },
+    {
+      "id": "nb-03c8ee9bbb014c7c",
+      "manufacturer": "Cabeus",
+      "model": "PDU-8P",
+      "reason": "Exact SKU dimensions/rear not sufficiently established."
+    },
+    {
+      "id": "nb-1a5e040822eebdd7",
+      "manufacturer": "Cabeus",
+      "model": "PL-24-Cat-5e-Dual-IDC",
+      "reason": "IDC module/rear envelope not sufficiently established."
+    },
+    {
+      "id": "nb-5bb0012c11525238",
+      "manufacturer": "Vertiv",
+      "model": "SA1-01002",
+      "reason": "Shares the switch U/rails; do not consume a fictitious independent U."
+    }
+  ],
+  "support": {
+    "key": "shelf-7u-deep",
+    "revision": "mount-support7u-20261101-v1",
+    "kind": "shelf",
+    "rackUnits": 7,
+    "dimensionsMm": {
+      "width": 482.6,
+      "height": 310,
+      "depth": 500
+    },
+    "slot": {
+      "key": "main",
+      "width": 440,
+      "height": 280,
+      "depth": 500
+    },
+    "manufacturer": null,
+    "meaning": "Own synthetic reservation/support, not a commercial shelf or certified load/installation"
+  },
+  "expectedDefinitions": 805,
+  "expectedCommercial": 799,
+  "reason": "Several bounded physical families with new classified connectors, true IDC, serial, empty mechanical accessories and two towers. Accepted only after sources, contract, persistence and independent review; no quota-driven fabrication."
+}

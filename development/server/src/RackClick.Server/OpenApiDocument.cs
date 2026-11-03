@@ -119,6 +119,8 @@ public static partial class OpenApiDocument
         AddChanges(paths, schemas);
         AddAdmin(paths, schemas);
         AddMfaAccounts(paths, schemas);
+        AddMfaRecoveryCodes(paths, schemas);
+        AddInventoryJsonExports(paths, schemas);
         AddUserCatalogFavorites(paths, schemas);
         AddUserPreferences(paths, schemas);
         AddUserPortColors(paths, schemas);

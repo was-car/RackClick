@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http;
 using RackClick.Domain;
 
@@ -12,7 +13,11 @@ public sealed record InventorySearchItem(Guid CustomerId, Guid Id, string Kind, 
 public sealed record InventoryPortView(Guid CustomerId, Guid Id, Guid DeviceId, string DeviceName, string DeviceKind,
     Guid? RackId, Guid? RoomId, InventoryViewPath[] Path, Guid GroupId, string GroupName, string Type, string Family,
     int Gn, string Label, string Status, string Face, bool Poe, decimal? Watts, string? Color, string PowerRole,
-    bool Connected, Guid[] ConnectionIds, Guid[] PeerPortIds);
+    bool Connected, Guid[] ConnectionIds, Guid[] PeerPortIds)
+{
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public string? PhysicalConnector { get; init; }
+}
 public sealed record InventoryConnectionView(Guid CustomerId, Guid Id, InventoryPortView From, InventoryPortView To,
     string Note, string? Color, string Patch, bool? CrossRack);
 public sealed record InventoryReadView(Guid CustomerId, long Revision, string Query, string? Kind, string? Status,
@@ -20,6 +25,16 @@ public sealed record InventoryReadView(Guid CustomerId, long Revision, string Qu
 
 public sealed partial class InventoryStore
 {
+    private static string? ReadPhysicalConnector(JsonElement device, JsonElement port)
+    {
+        static string? TextOrNull(JsonElement value, string key) => value.ValueKind == JsonValueKind.Object &&
+            value.TryGetProperty(key, out var text) && text.ValueKind == JsonValueKind.String ? text.GetString() : null;
+        if (!device.TryGetProperty("properties", out var deviceProperties) ||
+            !port.TryGetProperty("properties", out var portProperties)) return null;
+        return InventoryHardwareProfiles.TrustedPhysicalConnector(TextOrNull(device, "hardwareProfileKey"),
+            TextOrNull(deviceProperties, "hardwareProfileVersion"), TextOrNull(portProperties, "hardwareGroupKey"),
+            TextOrNull(port, "type"), TextOrNull(port, "face"), TextOrNull(portProperties, "hardwarePhysicalConnector"));
+    }
     private sealed record ViewFilter(string Query, string? Kind, string? Status, string? Family, int Offset, int Limit);
     public Task<InventoryReadView> ReadView(Actor actor, Guid customer, string view, long expected, IQueryCollection query, CancellationToken ct)
     {
@@ -47,7 +62,7 @@ public sealed partial class InventoryStore
         catch (Exception e) when (e is DomainError or ArgumentException) { throw new DomainError(422, "request_invalid"); }
         return new(text, view == "search" ? Choice("kind", ["all", "site", "building", "room", "rack", "device", "port", "connection"]) : null,
             view == "ports" ? Choice("status", ["all", "free", "reserved", "disabled", "faulty"]) : null,
-            view == "ports" ? Choice("family", ["all", "rj45", "sfp", "sfp28", "qsfp", "mgmt", "console", "power", "usb_a", "usb_c"]) : null,
+            view == "ports" ? Choice("family", ["all", "rj45", "sfp", "sfp28", "sfp56", "qsfp", "qsfpdd", "mgmt", "console", "idc", "power", "usb_a", "usb_c", "ipc", "fiber", "sfpdd", "cfp2", "sas", "dsl", "telephony", "isdn", "expansion", "power_dc"]) : null,
             Number("offset", 0, 0, 1000000), Number("limit", 50, 1, 100));
     }
 
@@ -91,7 +106,10 @@ public sealed partial class InventoryStore
                 S(port, "label"), S(port, "status"), S(port, "face"), port.GetProperty("poe").GetBoolean(),
                 port.GetProperty("watts").ValueKind == JsonValueKind.Null ? null : port.GetProperty("watts").GetDecimal(),
                 port.GetProperty("color").GetString(), S(port, "powerRole"), incident.Length != 0,
-                incident.Select(c => G(c)).ToArray(), incident.Select(c => G(c, "fromPortId") == id ? G(c, "toPortId") : G(c, "fromPortId")).ToArray());
+                incident.Select(c => G(c)).ToArray(), incident.Select(c => G(c, "fromPortId") == id ? G(c, "toPortId") : G(c, "fromPortId")).ToArray())
+            {
+                PhysicalConnector = ReadPhysicalConnector(device, port)
+            };
         }
         var cables = connections.Values.Select(c => {
             var from = portViews[G(c, "fromPortId")]; var to = portViews[G(c, "toPortId")];

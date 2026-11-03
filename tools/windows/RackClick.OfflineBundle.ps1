@@ -87,7 +87,8 @@ function Read-OfflineBundleEntryJson {
 }
 
 function Get-OfflineBundleOperatorNames {
-    return @('Invoke-RackClickPrivateDeployment.ps1','New-RackClickDatabaseBackup.ps1','New-RackClickLabHttpsProfile.ps1',
+    param([hashtable]$Profile=$null)
+    $names=@('Invoke-RackClickPrivateDeployment.ps1','New-RackClickDatabaseBackup.ps1','New-RackClickLabHttpsProfile.ps1',
         'New-RackClickLabInstance.ps1','New-RackClickPrivateDeployment.ps1','New-RackClickRecoveredInstance.ps1',
         'RackClick.Backup.ps1','RackClick.Deployment.ps1','RackClick.Https.ps1','RackClick.Instance.ps1',
         'RackClick.LaunchControl.ps1','RackClick.Process.Gate.ps1','RackClick.Process.ps1','RackClick.Stage.ps1',
@@ -95,11 +96,13 @@ function Get-OfflineBundleOperatorNames {
         'Start-RackClickLabInstance.ps1','Stop-RackClickLabInstance.ps1','Test-RackClickPrivateDeployment.ps1',
         'Test-RuntimePrerequisites.ps1','Test-ServerDistribution.ps1','RackClick.OfflineBundle.ps1',
         'Test-RackClickOfflineBundle.ps1','Install-RackClickOfflineBundle.ps1')
+    if ($null -ne $Profile -and $Profile.name -cin @('43-sql','45-sql')) {$names+=@('RackClick.SqlSecrets.ps1')}
+    return $names
 }
 
 function Get-OfflineBundleApplicationProfile {
     param([string]$ManifestSha256)
-    # Closed, reviewed profiles. The archive still requires its independent external hash.
+    # Closed pinned profiles, not installation approval. The archive requires its independent external hash.
     switch -CaseSensitive ($ManifestSha256) {
         'b7b26834ac5186792a01014b7221f4ba94940da19efafb84546ca635f868fa00' {return @{name='337';server=18;frontend=18;bytes=6578061L}}
         'cf51b03c80ddec460944295daf09705f3dbdec0cd83e054f5bfc6592fb081685' {return @{name='397';server=18;frontend=18;bytes=6653702L}}
@@ -116,6 +119,9 @@ function Get-OfflineBundleApplicationProfile {
         '2ec9105661db0f5c9a97d58e2a7f44e69bfd7e1903493b72f0fc57cc94c4b71a' {return @{name='14';server=24;frontend=18;bytes=7263552L;metadata=@{'inventory.json'='9303ebd4d1e2075cbf144ae868ec10568b02f754eb4f3d95f33faffa91094086';'SHA256SUMS.txt'='47089172d9b7a13adb409b38289fc0ecee98866f0345810762de008e16b19b50'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
         'e9c58c0c67500afc09c1ac979a7433830c96f94c2a2e4501d81286796d65d74d' {return @{name='14';server=24;frontend=18;bytes=7489372L;metadata=@{'inventory.json'='9303ebd4d1e2075cbf144ae868ec10568b02f754eb4f3d95f33faffa91094086';'SHA256SUMS.txt'='932588056beb49fb1a7d1627b41a85829833f029f2429a0d695a5cb77c1bf31b'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
         '294b61577ed7aa8fe68ddb1ecd6c4f11a20b4f03935c11a22404009aec6a00fb' {return @{name='15';server=25;frontend=18;bytes=8007063L;metadata=@{'inventory.json'='4afec995adf7c403632c59c68cf694756af626e57b4d386423d1b3d7b3f1d56b';'SHA256SUMS.txt'='783eb1960103426b00f33e43fa2a9183d1efa4875da27b15636b35585eae662a'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
+        'd352c04381cd4f1954aa43735e540970b295f231106560c5c9880c7ee1dc78db' {return @{name='43';server=53;frontend=18;bytes=25638925L;metadata=@{'inventory.json'='dbc527827b7e13e300666f8a8893bea53dd708b122b1d8be21d15b878290a452';'SHA256SUMS.txt'='2bc0fc54c6498e45225bb9313f8efc7f9ee8e27fa4149b24bfe547bb6f503aa6'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
+        '29685419d0746df89777a5da72d25f5b7ac0e571e30decec1888787fe5f0f950' {return @{name='43-sql';server=53;frontend=18;bytes=25650673L;metadata=@{'inventory.json'='86ad16f9295fbd71c6aae78a403a2c336e15d284897ae4216d341b8d040ef40c';'SHA256SUMS.txt'='e2cb5728431bfa51bf66d2d4b17760a8d70a3d66a30595ead24bc39cf5e8baac'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
+        '528a03d2efc939d1cea631b1caa9f3e6a445e44257fa757f87a95691acfb6933' {return @{name='45-sql';server=55;frontend=18;bytes=25867806L;metadata=@{'inventory.json'='75b9a378560072c841afea83d305384780244bdb8b258c39de0cf29d17359930';'SHA256SUMS.txt'='b623c46ba133d515765ad74bfaf6f7d1d8acdb4d784bbe84296b95e4e0557c56'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
         default {Stop-OfflineBundleCheck 'application_pin_mismatch'}
     }
 }
@@ -123,6 +129,8 @@ function Get-OfflineBundleApplicationProfile {
 function Get-OfflineBundleExpectedSchema {
     param([hashtable]$Profile)
     # Un único lugar para el esquema esperado de cada perfil; lo usan la validación de diseño y la lectura del ZIP.
+    if ($Profile.name -ceq '45-sql') {return 45}
+    if ($Profile.name -cin @('43','43-sql')) {return 43}
     if ($Profile.name -ceq '15') {return 15}
     if ($Profile.name -ceq '14') {return 14}
     if ($Profile.name -ceq '592') {return 10}
@@ -144,7 +152,7 @@ function Assert-OfflineBundleLayout {
     }
     if ($Manifest.schemaVersion -isnot [int] -or $Manifest.schemaVersion -ne 1 -or $Manifest.kind -cne 'RackClickOfflineBundle' -or
         $Manifest.platform -cne 'win-x64' -or $Manifest.id -isnot [string] -or $Manifest.id -cnotmatch '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$' -or
-        $Manifest.versions.schema -isnot [int] -or $Manifest.versions.schema -notin @(9,10,11,12,13,14,15) -or
+        $Manifest.versions.schema -isnot [int] -or $Manifest.versions.schema -notin @(9,10,11,12,13,14,15,43,45) -or
         $Manifest.versions.dotnetRuntime -cne '10.0.12' -or $Manifest.versions.postgresql -cne '17.11' -or
         $Manifest.versions.vcRedist -cne '14.51.36247.0' -or $Manifest.versions.vcRuntimeMinimum -cne '14.44.35211.0' -or
         $Manifest.files -isnot [pscustomobject]) {Stop-OfflineBundleCheck 'manifest_schema_invalid'}
@@ -153,7 +161,7 @@ function Assert-OfflineBundleLayout {
     if ($Manifest.versions.schema -ne $expectedSchema) {Stop-OfflineBundleCheck 'application_schema_mismatch'}
     $files=@($Manifest.files.PSObject.Properties)
     if ($files.Count -ne $Entries.Count-1) {Stop-OfflineBundleCheck 'inventory_mismatch'}
-    $operators=Get-OfflineBundleOperatorNames
+    $operators=Get-OfflineBundleOperatorNames $profile
     $docs=@('MANUAL-PAQUETE-WINDOWS-S1.md','CONSTRUIR-PAQUETE-WINDOWS-S1.md','OPERAR-DESPLIEGUE-PRIVADO-WINDOWS-S1.md','RECUPERACION-DESPLIEGUE-WINDOWS-S1.md')
     $counts=@{server=0;frontend=0;operators=0;dotnet=0;postgresql=0;docs=0;licenses=0;manifest=0;prerequisites=0;metadata=0;notices=0};$applicationBytes=0L
     foreach ($file in $files) {

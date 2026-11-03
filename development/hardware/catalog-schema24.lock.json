@@ -1,0 +1,315 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 24,
+  "state": "curated_development_not_a_release",
+  "sourceSha256": {
+    "development/hardware/batch50/synology.json": "94fecd54e027f99a8827f2f26d2a0bb98a416f8555b6ce49bb026c5fa54de010",
+    "development/hardware/batch50/qnap.json": "6fbdc49dbdee25e760f91624dceac5f62fa44cff50d71dafc78e282534636378",
+    "development/hardware/batch50/network.json": "dd07f0c30d57bdb07fa40139623a60ba44e9ce32fc03740186a004068119bfc0"
+  },
+  "baseMigrationSha256": "d7d2a1466813da72cff26051ae29c84f9f980b9f6479743d7ed420ce3d897694",
+  "modelKeys": [
+    "aruba-jl680a",
+    "aruba-jl685a",
+    "aruba-jl805a",
+    "aruba-jl806a",
+    "aruba-jl808a",
+    "aruba-jl810a",
+    "aruba-jl812a",
+    "aruba-jl814a",
+    "cisco-c1300-24t-4g",
+    "cisco-c1300-48t-4g",
+    "cisco-cbs250-16t-2g",
+    "cisco-cbs250-24t-4g",
+    "cisco-cbs250-48t-4g",
+    "cisco-cbs350-16t-2g",
+    "cisco-cbs350-24t-4g",
+    "cisco-cbs350-48t-4g",
+    "fortinet-fg40f",
+    "fortinet-fg71f",
+    "qnap-ts-233",
+    "qnap-ts-262-4g",
+    "qnap-ts-264-8g",
+    "qnap-ts-451d2-4g",
+    "qnap-ts-453d-8g",
+    "qnap-ts-462-4g",
+    "qnap-ts-473a-8g",
+    "qnap-ts-673a-8g",
+    "qnap-ts-873a-8g",
+    "qnap-ts-932px-4g",
+    "sophos-xgs107-gen1",
+    "sophos-xgs87-gen1",
+    "synology-ds1520plus",
+    "synology-ds1522plus",
+    "synology-ds1525plus",
+    "synology-ds1621plus",
+    "synology-ds1821plus",
+    "synology-ds1823xsplus",
+    "synology-ds218plus",
+    "synology-ds220plus",
+    "synology-ds223",
+    "synology-ds223j",
+    "synology-ds224plus",
+    "synology-ds225plus",
+    "synology-ds720plus",
+    "synology-ds723plus",
+    "synology-ds725plus",
+    "synology-ds920plus",
+    "synology-ds923plus",
+    "synology-ds925plus",
+    "synology-rs819",
+    "synology-rs822plus"
+  ],
+  "definitions": [
+    {
+      "key": "aruba-jl680a",
+      "revision": "batch50-20261030-v1",
+      "sha256": "b2474b1302d7bae55f9f6e5ba9aff019cf1c5a21f9d6572524911d3d962eb957"
+    },
+    {
+      "key": "aruba-jl685a",
+      "revision": "batch50-20261030-v1",
+      "sha256": "becd09f8f1a26b8994d58010d889a08b63d01c59fa9cab22620b70fbe74c56cf"
+    },
+    {
+      "key": "aruba-jl805a",
+      "revision": "batch50-20261030-v1",
+      "sha256": "bae7e57d3087bdb27d690fec6d3bcbce4822ff18088d27735a52118d8f2ff03f"
+    },
+    {
+      "key": "aruba-jl806a",
+      "revision": "batch50-20261030-v1",
+      "sha256": "43eba2ec7b7ea869976599a7915dc7294c48adca9d8dbadb65969e45beb018d1"
+    },
+    {
+      "key": "aruba-jl808a",
+      "revision": "batch50-20261030-v1",
+      "sha256": "52b4c7914057e8ee050aa0ced558277150ce3c8f7b28a5975ebb28548b7f17eb"
+    },
+    {
+      "key": "aruba-jl810a",
+      "revision": "batch50-20261030-v1",
+      "sha256": "559df62bb53136b22cc4b49651ba7a05615ca33749123276d7aeeb005febc75d"
+    },
+    {
+      "key": "aruba-jl812a",
+      "revision": "batch50-20261030-v1",
+      "sha256": "bd5f5ef557186ce06c4572dbf43c30eba419453efaa9abeea34de0517fe568a2"
+    },
+    {
+      "key": "aruba-jl814a",
+      "revision": "batch50-20261030-v1",
+      "sha256": "f9078fbe743003835c89e7e1c5132ddb92bced08077b6418f4cbe479bf31f3ed"
+    },
+    {
+      "key": "cisco-c1300-24t-4g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "b1f00754da0a0fc65df95c2ccfef1cc499527ef5cabd59d24e07b4d9b48554a5"
+    },
+    {
+      "key": "cisco-c1300-48t-4g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "2345cfd3f5d48232e60079c5bf7b93fdd62421c7a7aad5c102a7a96ca5307bd8"
+    },
+    {
+      "key": "cisco-cbs250-16t-2g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "3cac9fbb437441c40f84b67351f1f3d7ed7b8c5129df86cf97abbec38b9ae748"
+    },
+    {
+      "key": "cisco-cbs250-24t-4g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "545499602163949fd8b0b61d267a06360d8ac34c3ad84d5398d8061cb629af44"
+    },
+    {
+      "key": "cisco-cbs250-48t-4g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "b55b6e97d4713ccf5f72e7d393c84d728d627484e177f1f28fe0b8ef820dd03a"
+    },
+    {
+      "key": "cisco-cbs350-16t-2g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "bef0c743c83c875051742a6b32eae1ae475a3c078d9a3f749d5a7ce57da5b053"
+    },
+    {
+      "key": "cisco-cbs350-24t-4g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "df605074bedd892324c3223288638ff2401424114dce8556f926c593bfa7c1da"
+    },
+    {
+      "key": "cisco-cbs350-48t-4g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "f4f42d4e142dcb66c8da0c4d64e290ad40f5568b9a2731646da24933202059f3"
+    },
+    {
+      "key": "fortinet-fg40f",
+      "revision": "batch50-20261030-v1",
+      "sha256": "ab48165b86babceb814e341d40f1e5af5f4be1d80f85e8e826be3ee4917aabfe"
+    },
+    {
+      "key": "fortinet-fg71f",
+      "revision": "batch50-20261030-v1",
+      "sha256": "4d9b5ec2858b48444a8b993deecac03c355e8f25f1865055d8d365866f4deae2"
+    },
+    {
+      "key": "qnap-ts-233",
+      "revision": "batch50-20261030-v1",
+      "sha256": "da15663241de7ededc83656c22fceb88046a1915ef2fa50301e0602de3a74aa9"
+    },
+    {
+      "key": "qnap-ts-262-4g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "c7e247fc1d24b206dbfbedeed35ffe42ff760d83fa74fcc5769aa991390ed3bb"
+    },
+    {
+      "key": "qnap-ts-264-8g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "65c1570418d15623972d5ad56d32c7de64176f185057008479ba804418ffe5ae"
+    },
+    {
+      "key": "qnap-ts-451d2-4g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "25c353956b670da0955dce32c37849e439f6363588c74f6d476edcbc03490951"
+    },
+    {
+      "key": "qnap-ts-453d-8g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "b9be31044b09dc7d40baed67b49db2072585c63f641508413b2863965b166579"
+    },
+    {
+      "key": "qnap-ts-462-4g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "ffbc8d946eb056689b40edbf2e878d790cea153ada0988ab3b93db4c1ae1eb5b"
+    },
+    {
+      "key": "qnap-ts-473a-8g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "6e81ae7bb2a267ebd2503ed932ff47ba615b467e30d57fb3b80884c8f0692ce2"
+    },
+    {
+      "key": "qnap-ts-673a-8g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "d5f86dbdbd520beef86bcfd3f2743e52b9b05ab5d3005276fdd774d75b798fac"
+    },
+    {
+      "key": "qnap-ts-873a-8g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "66bfdbbad7d9e11b5ef374eedb6728c0b91f3bcf0df5997d3377b1316069b9a1"
+    },
+    {
+      "key": "qnap-ts-932px-4g",
+      "revision": "batch50-20261030-v1",
+      "sha256": "5a5dd9607ec143158eef7513b9a6ca60082aa110df97be680c33b838ac0dc2e3"
+    },
+    {
+      "key": "sophos-xgs107-gen1",
+      "revision": "batch50-20261030-v1",
+      "sha256": "c97f3b809743cca0f1b8ff5ca3b92c005513c462e48de653af3d0e04d71f03f8"
+    },
+    {
+      "key": "sophos-xgs87-gen1",
+      "revision": "batch50-20261030-v1",
+      "sha256": "906a2ec2c5d9d40bab0f54883178d98aa90f9e581fdcffc789f6e2e1a6ce165c"
+    },
+    {
+      "key": "synology-ds1520plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "02071d7a20b92b65df42e8ac64cea0d5f48e715ef52384d49926e81742c48b33"
+    },
+    {
+      "key": "synology-ds1522plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "0fb5d3ff3a38cc42e15425ea8fc8b84b72b416fab593504090c6b85180f84d83"
+    },
+    {
+      "key": "synology-ds1525plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "d39e2c2fa48a6bee33daef2af76f06d2e349f7279a53d5f1c0c5f02b67224fb3"
+    },
+    {
+      "key": "synology-ds1621plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "23869251c9c118db5093a69a9d38e8d11da0c566f9d3827b5e59927f4203750d"
+    },
+    {
+      "key": "synology-ds1821plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "efa3c03b5c8ccf3cd11b54df09a7df20d8efc249945ed0e5f338ef841733578f"
+    },
+    {
+      "key": "synology-ds1823xsplus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "862f8f5029488f82e9e578295da03d9f75882e8898260d94c1a1a5cb3084c6eb"
+    },
+    {
+      "key": "synology-ds218plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "15f2fc1234ed60c465818108447ff2ff81f7d331522b127849f7057335afbded"
+    },
+    {
+      "key": "synology-ds220plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "f179326978fce4cfa9db13564e69b38e2a656e82e936b80f0535157e4502ca1a"
+    },
+    {
+      "key": "synology-ds223",
+      "revision": "batch50-20261030-v1",
+      "sha256": "acb03849357e9f0e3692127b2eb6ddea6af4c0b8dc7a833b9978741ca878b94b"
+    },
+    {
+      "key": "synology-ds223j",
+      "revision": "batch50-20261030-v1",
+      "sha256": "5a8e9237132149577da4e42c0383d56f494cefc3ba4eec1294db97ff151f1af8"
+    },
+    {
+      "key": "synology-ds224plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "c61f6eec8c1b14c72338aaa766d9310f64d2c9ea86d1ab37b306efe2e8ecdb96"
+    },
+    {
+      "key": "synology-ds225plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "2de863d99e1a47411e34625aee38a77328d9ccc0022289275239f3d31764496d"
+    },
+    {
+      "key": "synology-ds720plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "3e273f4396fef5c4bf81cbba996dd2b0ec14fe7aaf28d6dd2bc26a96b147a47a"
+    },
+    {
+      "key": "synology-ds723plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "82408e395acfd1011fc42d5061fb7abaae09864244aed1b7594d93a2b7d12185"
+    },
+    {
+      "key": "synology-ds725plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "1db8d4f432e18ee3de99f7bec7c92d489a719477065f3c47e2a821465caa4477"
+    },
+    {
+      "key": "synology-ds920plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "fd6768fd9cc9d943659d6716b9baf336ee7aeb4956cead640bd77f153c1f2c03"
+    },
+    {
+      "key": "synology-ds923plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "8025bcacf52340e0332ed42b4847e690369cade5563cc0375329b47726268ab3"
+    },
+    {
+      "key": "synology-ds925plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "0e4e3c080f89c50e1f95bafaea5011fba5315c5b70044c5d60049dd44bbfde7c"
+    },
+    {
+      "key": "synology-rs819",
+      "revision": "batch50-20261030-v1",
+      "sha256": "c25c022262ae6f202056c0c43dcbcb66283e48f50e9a3858c668afb442eef4a8"
+    },
+    {
+      "key": "synology-rs822plus",
+      "revision": "batch50-20261030-v1",
+      "sha256": "d69ced05a66323eeb560d220929e06473809dbcef206736c61a4619a3631581f"
+    }
+  ]
+}

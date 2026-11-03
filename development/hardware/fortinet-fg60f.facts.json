@@ -1,0 +1,40 @@
+{
+  "formatVersion": 1,
+  "model": "FG-60F",
+  "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortigate-fortiwifi-60f-series.pdf",
+  "retrieved": "2026-10-30",
+  "pdfSha256": "77a97c99e5e800837dc7eed4551c485d95e9822f60b4782bf97f90597a4eabc6",
+  "facts": {
+    "widthMm": 216,
+    "heightMm": 38.5,
+    "depthMm": 160,
+    "rackUnitsAdditional": 0,
+    "formFactor": "desktop",
+    "rearLan": 5,
+    "rearFortiLink": 2,
+    "rearDmz": 1,
+    "rearWan": 2,
+    "connectableEthernetPorts": 10,
+    "poe": false,
+    "fanless": true
+  },
+  "nonConnectableReferences": {
+    "consoleRj45": 1,
+    "usb": 1,
+    "dcInput": {
+      "volts": 12,
+      "maxAmps": 3,
+      "supply": "external AC/DC adapter",
+      "reason": "Generic power inlet/outlet cannot validate AC/DC, polarity or adapter compatibility; no DC inventory port in this revision."
+    }
+  },
+  "scope": "Ethernet-only profile. Console RJ45 is not Ethernet; USB and DC are noninteractive references pending separate contracts. External adapter is not a modeled device.",
+  "locators": {
+    "ports": "Pinned official PDF page8 HardwareSpecifications:WAN/DMZ2/1,Internal5,FortiLink2,Console1,USB1; exactFG60F front/rear page7.",
+    "dimensions": "Pinned official PDF page8 Dimensions:HeightxWidthxLength38.5x216x160mm; FormFactorDesktop.",
+    "power": "Pinned official PDF page9 PowerRating12Vdc3A; externalDCadapter100-240VAC; fanless0dBA."
+  },
+  "geometry": "Own flat interactive drawing; no manufacturer photograph embedded",
+  "hardwareRevision": null,
+  "releaseDate": null
+}

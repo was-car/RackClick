@@ -1,13 +1,13 @@
 {
-  "baseline_id": "RC-CIERRE-20261025-v1",
+  "baseline_id": "RC-CIERRE-20261103-v3",
   "measurement_kind": "remaining_work_closure_not_product_progress",
   "global_product_percentage": null,
   "historical_78_retired": true,
-  "closure_points": 7.630952380952381,
+  "closure_points": 14.755952380952381,
   "total_closure_points": 100,
   "tasks": 53,
   "scored_tasks": 50,
-  "completed_tasks": 1,
+  "completed_tasks": 3,
   "checkpoints": 280,
   "criteria_covered": 55,
   "areas": [
@@ -15,7 +15,7 @@
       "id": "F",
       "name": "Fundamento, seguridad y MFA",
       "assigned": 25,
-      "closed": 1.0
+      "closed": 7.625
     },
     {
       "id": "I",
@@ -39,7 +39,7 @@
       "id": "W",
       "name": "Instalación y operación Windows",
       "assigned": 15,
-      "closed": 3.0
+      "closed": 3.5
     },
     {
       "id": "R",

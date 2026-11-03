@@ -1,0 +1,912 @@
+{
+  "formatVersion": 1,
+  "revision": "german-cpe-20261103-v1",
+  "models": [
+    {
+      "definition": {
+        "key": "draytek-vigor167",
+        "revision": "german-cpe-20261103-v1",
+        "identity": {
+          "manufacturer": "DrayTek",
+          "family": "Vigor167 modem",
+          "model": "Vigor167",
+          "sku": "Vigor167"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.draytek.de/de/produkte/modem-router/vigor167/",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 181,
+          "height": 40,
+          "depth": 125
+        },
+        "color": "#f2f1ef",
+        "slots": [],
+        "groups": [
+          {
+            "key": "dc",
+            "type": "power_dc",
+            "count": 1,
+            "face": "rear",
+            "name": "POWER",
+            "prefix": "POWER ",
+            "powerRole": "inlet",
+            "physicalFace": "rear",
+            "physicalConnector": "dc-barrel",
+            "powerSystem": "dc"
+          },
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "P",
+            "prefix": "P ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "dsl",
+            "type": "dsl",
+            "count": 1,
+            "face": "rear",
+            "name": "DSL",
+            "prefix": "DSL ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "physicalConnector": "dsl-rj11",
+            "interfaceRole": "dsl"
+          }
+        ],
+        "passthrough": null,
+        "mounting": {
+          "kind": "desktop",
+          "target": "parent"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "Vigor167",
+            "quantity": 1,
+            "description": "Modelo/SKU explícito; fuente externaDC. No accesorios derack implícitos."
+          }
+        ],
+        "continuities": []
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 500,
+            "height": 132,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 98,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "Vigor167",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "vent",
+                "x": 46,
+                "y": 40,
+                "w": 380,
+                "h": 24,
+                "count": 32
+              },
+              {
+                "kind": "circle",
+                "cx": 55,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 105,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 155,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 205,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 255,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 500,
+            "height": 132,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 98,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "Vigor167",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "rect",
+                "x": 61,
+                "y": 70,
+                "w": 77,
+                "h": 36,
+                "fill": "#e9c550",
+                "radius": 2
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 125,
+                "text": "2 LAN / DSL / DC — sin USB",
+                "size": 9,
+                "fill": "#35424c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "dc",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 18,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "x": 63,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "P1",
+                  "2": "P2"
+                }
+              },
+              {
+                "groupKey": "dsl",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 150,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.draytek.de/de/produkte/modem-router/vigor167/",
+            "kind": "manufacturer_web",
+            "observed": "Consultado03.11.2026. Identidad, conexiones ydimensionesdelSKU. No se conservaHTMLlocal cuando proveedor rechaza descargaautomatizada."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": "development/hardware/german-cpe/draytek-vigor167-reference.md",
+            "sha256": "880adda93db1e8574fdb14ac4e7f26b5edb786ea11384663bff0c8ecc898f6c3",
+            "view": "front",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          },
+          {
+            "path": "development/hardware/german-cpe/draytek-vigor167-reference.md",
+            "sha256": "880adda93db1e8574fdb14ac4e7f26b5edb786ea11384663bff0c8ecc898f6c3",
+            "view": "rear",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          }
+        ],
+        "limits": [
+          "Carcasa167sinWi-Fi niUSB. DSLRJ11noesEthernetRJ45.",
+          "Modeloidentificado pornombreenfuenteoficial; revisar etiqueta yregióneninstalación.",
+          "Vectorpropio esquemático, coloresblanco/rojoFRITZ yblancoDrayTek; no renderfotográfico nifidelidadmilimétrica. BocasUUIDseparadas.",
+          "Desktop0U necesita bandeja; cotasnominalesno certificanventilación,carga,antenas oinstalación. No transferenciadeprotocolos niQoS.",
+          "Fuentes/fotoscomerciales consultadas comoreferencia, no redistribuidas."
+        ],
+        "dimensionsBasis": "CotasnominalesW/H/Ddelmodelo/regiónenfuenteoficialactual; separaciónentrepuertos esquemática ylaterales agrupados explícitamente."
+      }
+    },
+    {
+      "definition": {
+        "key": "draytek-vigor2766",
+        "revision": "german-cpe-20261103-v1",
+        "identity": {
+          "manufacturer": "DrayTek",
+          "family": "Vigor2766 sinWLAN",
+          "model": "Vigor2766",
+          "sku": "Vigor2766"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.draytek.de/de/produkte/modem-router/vigor2766-serie/",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 207,
+          "height": 42,
+          "depth": 131
+        },
+        "color": "#f2f1ef",
+        "slots": [],
+        "groups": [
+          {
+            "key": "usb",
+            "type": "usb_a",
+            "count": 2,
+            "face": "rear",
+            "name": "USB",
+            "prefix": "USB ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear"
+          },
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 4,
+            "face": "rear",
+            "name": "P",
+            "prefix": "P ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "dsl",
+            "type": "dsl",
+            "count": 1,
+            "face": "rear",
+            "name": "DSL",
+            "prefix": "DSL ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "physicalConnector": "dsl-rj11",
+            "interfaceRole": "dsl"
+          },
+          {
+            "key": "dc",
+            "type": "power_dc",
+            "count": 1,
+            "face": "rear",
+            "name": "POWER",
+            "prefix": "POWER ",
+            "powerRole": "inlet",
+            "physicalFace": "rear",
+            "physicalConnector": "dc-barrel",
+            "powerSystem": "dc"
+          }
+        ],
+        "passthrough": null,
+        "mounting": {
+          "kind": "desktop",
+          "target": "parent"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "Vigor2766",
+            "quantity": 1,
+            "description": "Modelo/SKU explícito; fuente externaDC. No accesorios derack implícitos."
+          }
+        ],
+        "continuities": []
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 500,
+            "height": 132,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 98,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "Vigor2766",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "vent",
+                "x": 46,
+                "y": 40,
+                "w": 380,
+                "h": 24,
+                "count": 32
+              },
+              {
+                "kind": "circle",
+                "cx": 55,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 105,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 155,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 205,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 255,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 500,
+            "height": 132,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 98,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "Vigor2766",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "rect",
+                "x": 103,
+                "y": 70,
+                "w": 161,
+                "h": 36,
+                "fill": "#e9c550",
+                "radius": 2
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 125,
+                "text": "LAN / DSL / DC — USB según modelo",
+                "size": 9,
+                "fill": "#35424c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "usb",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 18,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1",
+                  "2": "2"
+                }
+              },
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ]
+                ],
+                "x": 105,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1",
+                  "2": "2",
+                  "3": "3",
+                  "4": "4"
+                }
+              },
+              {
+                "groupKey": "dsl",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 276,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "dc",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 321,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.draytek.de/de/produkte/modem-router/vigor2766-serie/",
+            "kind": "manufacturer_web",
+            "observed": "Consultado03.11.2026. Identidad, conexiones ydimensionesdelSKU. No se conservaHTMLlocal cuando proveedor rechaza descargaautomatizada."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": "development/hardware/german-cpe/draytek-vigor2766-reference.md",
+            "sha256": "32c1f452969e6e862a8f1606f923a34688cac006a56172d73f765cc5d24a0691",
+            "view": "front",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          },
+          {
+            "path": "development/hardware/german-cpe/draytek-vigor2766-reference.md",
+            "sha256": "32c1f452969e6e862a8f1606f923a34688cac006a56172d73f765cc5d24a0691",
+            "view": "rear",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          }
+        ],
+        "limits": [
+          "P4 esLAN/WANconfigurable: un únicoextremo,nootroWANinventado.",
+          "SinFXSniWLAN. No confundirconVac,acni ax194×50×155. Catálogoseleccionaversión2766concarcasa207×42×131.",
+          "Vectorpropio esquemático, coloresblanco/rojoFRITZ yblancoDrayTek; no renderfotográfico nifidelidadmilimétrica. BocasUUIDseparadas.",
+          "Desktop0U necesita bandeja; cotasnominalesno certificanventilación,carga,antenas oinstalación. No transferenciadeprotocolos niQoS.",
+          "Fuentes/fotoscomerciales consultadas comoreferencia, no redistribuidas."
+        ],
+        "dimensionsBasis": "CotasnominalesW/H/Ddelmodelo/regiónenfuenteoficialactual; separaciónentrepuertos esquemática ylaterales agrupados explícitamente."
+      }
+    },
+    {
+      "definition": {
+        "key": "draytek-vigor2766ac",
+        "revision": "german-cpe-20261103-v1",
+        "identity": {
+          "manufacturer": "DrayTek",
+          "family": "Vigor2766ac WLAN",
+          "model": "Vigor2766ac",
+          "sku": "Vigor2766ac"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.draytek.de/de/produkte/modem-router/vigor2766-serie/",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 207,
+          "height": 42,
+          "depth": 131
+        },
+        "color": "#f2f1ef",
+        "slots": [],
+        "groups": [
+          {
+            "key": "usb",
+            "type": "usb_a",
+            "count": 2,
+            "face": "rear",
+            "name": "USB",
+            "prefix": "USB ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear"
+          },
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 4,
+            "face": "rear",
+            "name": "P",
+            "prefix": "P ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "dsl",
+            "type": "dsl",
+            "count": 1,
+            "face": "rear",
+            "name": "DSL",
+            "prefix": "DSL ",
+            "powerRole": "unspecified",
+            "physicalFace": "rear",
+            "physicalConnector": "dsl-rj11",
+            "interfaceRole": "dsl"
+          },
+          {
+            "key": "dc",
+            "type": "power_dc",
+            "count": 1,
+            "face": "rear",
+            "name": "POWER",
+            "prefix": "POWER ",
+            "powerRole": "inlet",
+            "physicalFace": "rear",
+            "physicalConnector": "dc-barrel",
+            "powerSystem": "dc"
+          }
+        ],
+        "passthrough": null,
+        "mounting": {
+          "kind": "desktop",
+          "target": "parent"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "Vigor2766ac",
+            "quantity": 1,
+            "description": "Modelo/SKU explícito; fuente externaDC. No accesorios derack implícitos."
+          }
+        ],
+        "continuities": []
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 500,
+            "height": 132,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 98,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "Vigor2766ac",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "vent",
+                "x": 46,
+                "y": 40,
+                "w": 380,
+                "h": 24,
+                "count": 32
+              },
+              {
+                "kind": "circle",
+                "cx": 55,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 105,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 155,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 205,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "circle",
+                "cx": 255,
+                "cy": 104,
+                "r": 3,
+                "fill": "#79a97c"
+              },
+              {
+                "kind": "rect",
+                "x": 12,
+                "y": 5,
+                "w": 8,
+                "h": 110,
+                "fill": "#e6e5e2",
+                "radius": 3
+              },
+              {
+                "kind": "rect",
+                "x": 480,
+                "y": 5,
+                "w": 8,
+                "h": 110,
+                "fill": "#e6e5e2",
+                "radius": 3
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 500,
+            "height": 132,
+            "plate": {
+              "x": 3,
+              "y": 30,
+              "w": 494,
+              "h": 98,
+              "fill": "#f2f1ef",
+              "stroke": "#9da6ab",
+              "radius": 9
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 22,
+                "y": 24,
+                "text": "Vigor2766ac",
+                "size": 14,
+                "fill": "#384149"
+              },
+              {
+                "kind": "rect",
+                "x": 103,
+                "y": 70,
+                "w": 161,
+                "h": 36,
+                "fill": "#e9c550",
+                "radius": 2
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 125,
+                "text": "LAN / DSL / DC — USB según modelo",
+                "size": 9,
+                "fill": "#35424c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "usb",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 18,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1",
+                  "2": "2"
+                }
+              },
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ]
+                ],
+                "x": 105,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1",
+                  "2": "2",
+                  "3": "3",
+                  "4": "4"
+                }
+              },
+              {
+                "groupKey": "dsl",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 276,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "dc",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 321,
+                "y": 74,
+                "dx": 42,
+                "dy": 0,
+                "w": 31,
+                "h": 28,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.draytek.de/de/produkte/modem-router/vigor2766-serie/",
+            "kind": "manufacturer_web",
+            "observed": "Consultado03.11.2026. Identidad, conexiones ydimensionesdelSKU. No se conservaHTMLlocal cuando proveedor rechaza descargaautomatizada."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": "development/hardware/german-cpe/draytek-vigor2766ac-reference.md",
+            "sha256": "db9ee72a16daea59eb4a5719b185022ff8c450d4ef59439f9cb900bd1effbdda",
+            "view": "front",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          },
+          {
+            "path": "development/hardware/german-cpe/draytek-vigor2766ac-reference.md",
+            "sha256": "db9ee72a16daea59eb4a5719b185022ff8c450d4ef59439f9cb900bd1effbdda",
+            "view": "rear",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          }
+        ],
+        "limits": [
+          "DosantenasWLANdecorativas,nobocas. SinFXS:2766Vac esotro modelo.",
+          "P4LAN/WANconfigurable,unúnicoextremo. Cotas decarcasa sincontornoextendido deantenas: montajesrequierenholgurareal,nocertificada.",
+          "Vectorpropio esquemático, coloresblanco/rojoFRITZ yblancoDrayTek; no renderfotográfico nifidelidadmilimétrica. BocasUUIDseparadas.",
+          "Desktop0U necesita bandeja; cotasnominalesno certificanventilación,carga,antenas oinstalación. No transferenciadeprotocolos niQoS.",
+          "Fuentes/fotoscomerciales consultadas comoreferencia, no redistribuidas."
+        ],
+        "dimensionsBasis": "CotasnominalesW/H/Ddelmodelo/regiónenfuenteoficialactual; separaciónentrepuertos esquemática ylaterales agrupados explícitamente."
+      }
+    }
+  ]
+}

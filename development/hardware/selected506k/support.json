@@ -1,0 +1,40 @@
+{
+  "formatVersion": 1,
+  "definitions": [
+    {
+      "key": "shelf-7u-deep",
+      "revision": "mount-support7u-20261101-v1",
+      "identity": {
+        "manufacturer": null,
+        "family": null,
+        "model": null,
+        "sku": null
+      },
+      "provenance": {
+        "kind": "own-synthetic",
+        "source": "evidence/s1-20261101/integracion506k/PLAN-FAMILIAS.json",
+        "assets": []
+      },
+      "kind": "shelf",
+      "rackUnits": 7,
+      "dimensionsMm": {
+        "width": 482.6,
+        "height": 310,
+        "depth": 500
+      },
+      "color": "#46505c",
+      "slots": [
+        {
+          "key": "main",
+          "dimensionsMm": {
+            "width": 440,
+            "height": 280,
+            "depth": 500
+          }
+        }
+      ],
+      "groups": [],
+      "passthrough": null
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 #requires -Version 5.1
+. (Join-Path $PSScriptRoot 'RackClick.SqlSecrets.ps1')
 # Shared implementation for explicit, loopback-only native backup/restore operations.
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
@@ -100,6 +101,16 @@ function Read-BackupProfile {
     Assert-BackupPrivateAcl $Path
     if ((Get-Item -LiteralPath $Path).Length -gt 16384) { Stop-RackClickBackup 'profile_invalid' }
     try { $profile = [IO.File]::ReadAllText($Path) | ConvertFrom-Json } catch { Stop-RackClickBackup 'profile_invalid' }
+    if ($profile.schemaVersion -eq 2) {
+        $null=Get-SqlBackupContext $profile
+        $secretPath=Assert-BackupPath $profile.passwordFile
+        if (-not [IO.File]::Exists($secretPath)) {Stop-RackClickBackup 'password_file_missing'}
+        Assert-BackupPrivateAcl $secretPath
+        if ((Get-Item -LiteralPath $secretPath).Length -gt 16384) {Stop-RackClickBackup 'password_file_invalid'}
+        try {$protected=[IO.File]::ReadAllText($secretPath)|ConvertFrom-Json -ErrorAction Stop} catch {Stop-RackClickBackup 'password_file_invalid'}
+        $password=Unprotect-SqlBackupPassword $protected $profile
+        return @{host='127.0.0.1';port=[int]$profile.port;database=$profile.database;user=$profile.user;password=$password}
+    }
     $names = @($profile.PSObject.Properties.Name | Sort-Object)
     if (($names -join ',') -ne 'database,host,passwordFile,port,schemaVersion,user' -or $profile.schemaVersion -ne 1 -or
         $profile.host -cne '127.0.0.1' -or $profile.port -isnot [int] -or $profile.port -lt 1024 -or $profile.port -gt 65535 -or

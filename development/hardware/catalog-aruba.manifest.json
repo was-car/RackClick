@@ -1,0 +1,24 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 19,
+  "catalogKey": "rackclick-aruba-01",
+  "state": "curated_development_not_a_release",
+  "inputs": {
+    "development/hardware/catalog-aruba-v1.json": "621920f2760f8f7fba899aaa7bb90bc22d244198e252b6f4ef16987922e0c798",
+    "development/hardware/aruba-jl682a.facts.json": "4c47e00083d41212a37d51f9f182f0b5e965950b138b5967568110d7c27f4aef",
+    "development/hardware/catalog-schema19.lock.json": "35d2623afe029e15adde2dbd23148c3f8396fdf2e9e0dd75426853da8c14fce2",
+    "development/server/database/018-commercial-hardware.sql": "71b9151c7ddd8b2c8b28f2de49f4ef312b3ca6d406f1054685424392c85535ad"
+  },
+  "files": {
+    "development/server/src/RackClick.Server/ArubaHardwareProfiles.Generated.cs": "87b18fce70bb0ee04fb1b92cfdb017e88153055a09f8c8ea5b80bd7d6dc1f9fd",
+    "development/frontend/src/hardware-aruba.generated.json": "84d87b3b42332d11c4d0b085170295016ce516b217fd24756fcbe20785ec2a5b",
+    "development/server/database/019-aruba-hardware.sql": "9db0bace668df025e81684fe60439229d9124da053d62c741af9ba0cba2c79f7"
+  },
+  "definitions": [
+    {
+      "key": "aruba-jl682a",
+      "revision": "aruba-20261030-v1",
+      "sha256": "c8f8835cabd68d60f122f5006cd8b207be78dfe3d129b805c38c0eb12b00fb2d"
+    }
+  ]
+}

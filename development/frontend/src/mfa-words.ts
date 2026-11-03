@@ -80,7 +80,7 @@ export const mfaWords = {
 export function mfaErrorState(error: { code?: string; status?: number; uncertain?: boolean }, starting = false) {
  if (error?.status === 503 && (error?.code === 'mfa_unavailable' || error?.code === 'service_unavailable')) return { key: 'unavailable', restart: true };
  if (error?.uncertain || error?.status === 0 || error?.code === 'network_unconfirmed') return { key: 'uncertain', restart: true };
- if (error?.code === 'mfa_code_invalid') return { key: 'codeInvalid', restart: false };
+ if (error?.code === 'mfa_code_invalid' || error?.code === 'mfa_recovery_code_invalid') return { key: 'codeInvalid', restart: false };
  if (error?.code === 'mfa_challenge_invalid' || error?.code === 'mfa_enrollment_not_started' || error?.code === 'mfa_enrollment_required' || error?.code === 'mfa_step_stale') return { key: 'expired', restart: true };
  if (error?.status === 403 || error?.code === 'csrf_invalid' || error?.code === 'origin_invalid') return { key: 'rejected', restart: true };
  if (error?.status === 429 || error?.code === 'rate_limited') return { key: 'limited', restart: starting };

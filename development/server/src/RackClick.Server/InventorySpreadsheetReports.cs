@@ -221,14 +221,16 @@ public sealed partial class InventoryStore
                 }
                 xml.WriteEndElement();
             }
+            bool includePhysicalConnector = ReportIncludesPhysicalConnector(items);
+            string[] columns = includePhysicalConnector ? [..ReportPortColumns, "physical_connector"] : ReportPortColumns;
             string[] prefix = ["customer_id", "source_revision"];
-            Row(kind == "ports" ? prefix.Concat(ReportPortColumns) : prefix.Concat(["connection_id", "note", "color", "patch", "cross_rack"])
-                .Concat(ReportPortColumns.Select(c => "from_" + c)).Concat(ReportPortColumns.Select(c => "to_" + c)));
+            Row(kind == "ports" ? prefix.Concat(columns) : prefix.Concat(["connection_id", "note", "color", "patch", "cross_rack"])
+                .Concat(columns.Select(c => "from_" + c)).Concat(columns.Select(c => "to_" + c)));
             string[] context = [customer.ToString("D"), revision.ToString(CultureInfo.InvariantCulture)];
             foreach (object item in items)
-                if (item is InventoryPortView port) Row(context.Concat(PortCells(port)));
+                if (item is InventoryPortView port) Row(context.Concat(PortCells(port, includePhysicalConnector)));
                 else if (item is InventoryConnectionView cable) Row(context.Concat([cable.Id.ToString("D"), cable.Note, cable.Color ?? "", cable.Patch,
-                    cable.CrossRack.HasValue ? cable.CrossRack.Value ? "true" : "false" : ""]).Concat(PortCells(cable.From)).Concat(PortCells(cable.To)));
+                    cable.CrossRack.HasValue ? cable.CrossRack.Value ? "true" : "false" : ""]).Concat(PortCells(cable.From, includePhysicalConnector)).Concat(PortCells(cable.To, includePhysicalConnector)));
             xml.WriteEndElement(); xml.WriteEndElement();
         });
         using var output = new SpreadsheetStream(ReportMaximumBytes);

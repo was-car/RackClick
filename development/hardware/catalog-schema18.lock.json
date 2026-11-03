@@ -1,0 +1,15 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 18,
+  "sourceSha256": "d034c999cef12c9427a5390fe23a277f408b3303121c4a67e8c20c1c96580863",
+  "factsSha256": "999085a1ed5c31ed7d3d9dfdbdb7fa8c0cfd92b5b1858c2918f6c66425ae029b",
+  "baseMigrationSha256": "d037ef96c84ee8b7211b933bf2775da6a6e28b19451818c19ca3056516d21615",
+  "definitions": [
+    {
+      "key": "startech-c6panelutp241uft",
+      "revision": "startech-20261030-v1",
+      "sha256": "bb14899b34783bfd8acb650598040475369d2451d73bda153f49542d5afc39d4"
+    }
+  ],
+  "state": "curated_development_not_a_release"
+}

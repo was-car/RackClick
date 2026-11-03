@@ -1,0 +1,176 @@
+{
+  "formatVersion": 1,
+  "catalogKey": "rackclick-hardware-reference",
+  "definitions": [
+    {
+      "key": "shelf-2u",
+      "revision": "hw-reference-v1",
+      "identity": {
+        "manufacturer": null,
+        "family": null,
+        "model": null,
+        "sku": null
+      },
+      "provenance": {
+        "kind": "own-synthetic",
+        "source": "docs/CONTRATO-HARDWARE-MONTAJE-v1.md",
+        "assets": []
+      },
+      "kind": "shelf",
+      "rackUnits": 2,
+      "dimensionsMm": {
+        "width": 482.6,
+        "height": 44,
+        "depth": 300
+      },
+      "color": "#46505c",
+      "slots": [
+        {
+          "key": "main",
+          "dimensionsMm": {
+            "width": 440,
+            "height": 60,
+            "depth": 300
+          }
+        }
+      ],
+      "groups": [],
+      "passthrough": null
+    },
+    {
+      "key": "desktop-firewall-6",
+      "revision": "hw-reference-v1",
+      "identity": {
+        "manufacturer": null,
+        "family": null,
+        "model": null,
+        "sku": null
+      },
+      "provenance": {
+        "kind": "own-synthetic",
+        "source": "docs/CONTRATO-HARDWARE-MONTAJE-v1.md",
+        "assets": []
+      },
+      "kind": "desktop",
+      "rackUnits": 0,
+      "dimensionsMm": {
+        "width": 220,
+        "height": 38,
+        "depth": 200
+      },
+      "color": "#cbd5e1",
+      "slots": [],
+      "groups": [
+        {
+          "key": "front-lan",
+          "type": "rj45",
+          "count": 6,
+          "face": "front",
+          "name": "LAN",
+          "prefix": "LAN "
+        },
+        {
+          "key": "rear-management",
+          "type": "rj45",
+          "count": 1,
+          "face": "rear",
+          "name": "Management",
+          "prefix": "MGMT "
+        }
+      ],
+      "passthrough": null
+    },
+    {
+      "key": "switch-24",
+      "revision": "hw-reference-v1",
+      "identity": {
+        "manufacturer": null,
+        "family": null,
+        "model": null,
+        "sku": null
+      },
+      "provenance": {
+        "kind": "own-synthetic",
+        "source": "docs/CONTRATO-HARDWARE-MONTAJE-v1.md",
+        "assets": []
+      },
+      "kind": "rack",
+      "rackUnits": 1,
+      "dimensionsMm": {
+        "width": 482.6,
+        "height": 44,
+        "depth": 200
+      },
+      "color": "#607d8b",
+      "slots": [],
+      "groups": [
+        {
+          "key": "front-lan",
+          "type": "rj45",
+          "count": 24,
+          "face": "front",
+          "name": "LAN",
+          "prefix": ""
+        },
+        {
+          "key": "rear-uplink",
+          "type": "sfp",
+          "count": 2,
+          "face": "rear",
+          "name": "Uplink",
+          "prefix": "SFP "
+        }
+      ],
+      "passthrough": null
+    },
+    {
+      "key": "patchpanel-24",
+      "revision": "hw-reference-v1",
+      "identity": {
+        "manufacturer": null,
+        "family": null,
+        "model": null,
+        "sku": null
+      },
+      "provenance": {
+        "kind": "own-synthetic",
+        "source": "docs/CONTRATO-HARDWARE-MONTAJE-v1.md",
+        "assets": []
+      },
+      "kind": "rack",
+      "rackUnits": 1,
+      "dimensionsMm": {
+        "width": 482.6,
+        "height": 44,
+        "depth": 100
+      },
+      "color": "#303640",
+      "slots": [],
+      "groups": [
+        {
+          "key": "front-patch",
+          "type": "rj45",
+          "count": 24,
+          "face": "front",
+          "name": "Front",
+          "prefix": "F "
+        },
+        {
+          "key": "rear-patch",
+          "type": "rj45",
+          "count": 24,
+          "face": "rear",
+          "name": "Rear",
+          "prefix": "R "
+        }
+      ],
+      "passthrough": {
+        "frontGroup": "front-patch",
+        "rearGroup": "rear-patch",
+        "count": 24,
+        "mapping": "one-to-one",
+        "tracingAvailable": false
+      }
+    }
+  ]
+}

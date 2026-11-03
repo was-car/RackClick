@@ -1,5 +1,7 @@
 import { mfaWords, mfaErrorState } from './mfa-words.ts';
 import { makeQrModules } from './mfa-qr.ts';
+import { recoveryCodeFormat } from './mfa-recovery.ts';
+import { mfaRecoveryWords } from './mfa-recovery-words.ts';
 const { useState, useRef, useEffect, useMemo } = React;
 
 // Research 27.10.2026: MDN autocomplete (one-time-code) and Microsoft MFA/TOTP guidance.
@@ -20,10 +22,12 @@ function AuthenticatorQr({ otpauth, label, unavailable }) {
 
 export default function MfaChallengeForm({ api, challenge, lang, onComplete, onCancel }) {
  const w = mfaWords[lang] || mfaWords.en;
+ const rw = mfaRecoveryWords[lang] || mfaRecoveryWords.en;
  const enroll = challenge.purpose === 'enroll';
  const [enrollment, setEnrollment] = useState(null), [code, setCode] = useState('');
  const [busy, setBusy] = useState(false), [started, setStarted] = useState(false), [problem, setProblem] = useState(null);
  const [restart, setRestart] = useState(false);
+ const [recoveryMode,setRecoveryMode]=useState(false),[replacement,setReplacement]=useState(null);
  const [boundChallenge, setBoundChallenge] = useState(challenge);
  const live = useRef(false), epoch = useRef(0), inFlight = useRef(false), startAttempted = useRef(false);
  const currentChallenge = useRef(challenge), latestChallenge = useRef(challenge), codeInput = useRef(null), startButton = useRef(null);
@@ -35,7 +39,7 @@ export default function MfaChallengeForm({ api, challenge, lang, onComplete, onC
   currentChallenge.current = challenge; latestChallenge.current = challenge; live.current = true; epoch.current++;
   setBoundChallenge(challenge);
   inFlight.current = false; startAttempted.current = false;
-  setEnrollment(null); setCode(''); setBusy(false); setStarted(false); setProblem(null); setRestart(false);
+  setEnrollment(null); setCode(''); setBusy(false); setStarted(false); setProblem(null); setRestart(false);setRecoveryMode(false);setReplacement(null);
   (challenge.purpose === 'enroll' ? startButton.current : codeInput.current)?.focus();
   return () => { live.current = false; epoch.current++; currentChallenge.current = null; latestChallenge.current = null; };
  }, [challenge]);
@@ -64,11 +68,16 @@ export default function MfaChallengeForm({ api, challenge, lang, onComplete, onC
  async function submit(event) {
   event.preventDefault();
   if (inFlight.current || !sameChallenge || restart || (enroll && !enrollment)) return;
-  if (!/^[0-9]{6}$/.test(code)) { setProblem('codeFormat'); codeInput.current?.focus(); return; }
+  if (recoveryMode ? !recoveryCodeFormat(code) : !/^[0-9]{6}$/.test(code)) { setProblem(recoveryMode?'recoveryFormat':'codeFormat'); codeInput.current?.focus(); return; }
   inFlight.current = true; setBusy(true); setProblem(null);
   const attempt = epoch.current;
   let session;
   try {
+   if (recoveryMode) {
+    const next=await api.recoverMfa(challenge,code);
+    if(stillCurrent(attempt)){clear();setReplacement(next);}
+    return;
+   }
    session = await (enroll ? api.confirmMfaEnrollment(challenge, code) : api.verifyMfa(challenge, code));
   } catch (error) {
    if (stillCurrent(attempt)) fail(error, false);
@@ -86,16 +95,18 @@ export default function MfaChallengeForm({ api, challenge, lang, onComplete, onC
 
  const visibleEnrollment = sameChallenge && !restart ? enrollment : null;
  const ready = sameChallenge && !restart && (!enroll || !!visibleEnrollment);
+ if(replacement&&sameChallenge)return <MfaChallengeForm api={api} challenge={replacement} lang={lang} onComplete={onComplete} onCancel={onCancel}/>;
  return <section data-mfa-challenge data-mfa-purpose={challenge.purpose} className="rc-mfa-challenge" aria-labelledby={titleId}>
   <h2 id={titleId}>{enroll ? w.enrollTitle : w.verifyTitle}</h2>
   <p className="rc-muted">{enroll ? w.enrollHelp : w.verifyHelp}</p>
   {enroll && !started && !restart && <button data-mfa-start ref={startButton} className="rc-mfa-start" type="button" disabled={busy || !sameChallenge} onClick={beginEnrollment}>{w.start}</button>}
   {visibleEnrollment && <div className="rc-mfa-setup"><p>{w.setupHelp}</p><AuthenticatorQr otpauth={visibleEnrollment.otpauth} label={w.qr} unavailable={w.qrUnavailable}/><details className="rc-mfa-manual"><summary>{w.manual}</summary><code data-mfa-secret>{visibleEnrollment.secret}</code><p className="rc-muted">{w.manualHelp}</p></details><p className="rc-muted rc-mfa-memory">{w.memoryHelp}</p></div>}
   <form className="rc-form" onSubmit={submit}>
-   {ready && <><label>{w.code}<input data-mfa-code ref={codeInput} name="mfa-code" type="text" inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{6}" maxLength={6} aria-describedby={helpId} required value={code} disabled={busy} onChange={event => setCode(event.target.value)}/></label><p id={helpId} className="rc-muted rc-mfa-code-help">{w.codeHelp}</p></>}
-   {problem && sameChallenge && <div role="alert" className="rc-error" data-mfa-error>{w[problem] || w.error}</div>}
+   {ready && <><label>{recoveryMode?rw.code:w.code}<input data-mfa-code data-mfa-recovery-code={recoveryMode?'true':undefined} ref={codeInput} name="mfa-code" type="text" inputMode={recoveryMode?'text':'numeric'} autoComplete={recoveryMode?'off':'one-time-code'} pattern={recoveryMode?undefined:'[0-9]{6}'} maxLength={recoveryMode?39:6} aria-describedby={helpId} required value={code} disabled={busy} onChange={event => setCode(event.target.value)}/></label><p id={helpId} className="rc-muted rc-mfa-code-help">{recoveryMode?rw.codeHelp:w.codeHelp}</p></>}
+   {problem && sameChallenge && <div role="alert" className="rc-error" data-mfa-error>{problem==='recoveryFormat'?rw.format:recoveryMode&&problem==='codeInvalid'?rw.codeInvalid:w[problem] || w.error}</div>}
    {busy && <p role="status" className="rc-muted">{enroll && !visibleEnrollment ? w.starting : w.working}</p>}
-   {ready && <button data-mfa-submit type="submit" disabled={busy || !/^[0-9]{6}$/.test(code)}>{enroll ? w.confirm : w.verify}</button>}
+   {ready && <button data-mfa-submit type="submit" disabled={busy || (recoveryMode?!recoveryCodeFormat(code):!/^[0-9]{6}$/.test(code))}>{recoveryMode?rw.submit:enroll ? w.confirm : w.verify}</button>}
+   {!enroll&&ready&&<button type="button" data-mfa-use-recovery disabled={busy} onClick={()=>{clear();setRecoveryMode(!recoveryMode);codeInput.current?.focus();}}>{recoveryMode?rw.back:rw.recover}</button>}
    <button data-mfa-cancel type="button" disabled={busy} onClick={cancel}>{w.cancel}</button>
   </form>
   <p className="rc-muted rc-mfa-cancel-help">{w.cancelHelp}</p>

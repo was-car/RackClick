@@ -1,0 +1,395 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 41,
+  "state": "curated_development_not_a_release",
+  "sourceSha256": {
+    "development/hardware/selected506k/power.json": "bf5ad17a23db63231a1daa162aaec0afb73bf3dc3fe8c808501ab4df83e547bd",
+    "development/hardware/selected506k/passive.json": "ad19f87d3634ad3ebc3221dfc4e14febe0f8f09e166e77c169847d63e513b313",
+    "development/hardware/selected506k/mechanical.json": "707f2f8bff2b7ca29a130ba1d69c29c9791d30987911df8526f131b00a7857a2",
+    "development/hardware/selected506k/storage.json": "7f4db748d05ae675cfde6abac5da758dd4f70eeff52b742a9583a3c3076c78aa",
+    "development/hardware/selected506k/serial.json": "f659fb27b5cc39be37f16b079eca5117eff9b878971113d532f888f473b32ace"
+  },
+  "baseMigrationSha256": "7ac5d01fc5cd283828f63972d70b58ddfa5bcb0399c4debe98bf4e3a5ee5eee5",
+  "baselineMigrationSha256": "217d2c16bdd38bc6cf88fa74abe93dd90ca651e129ad98570e3709202697b0e9",
+  "supportSourceSha256": "6c75bd7bb19d74fe84ca69766acfa9fb34b8845a4537651f66a3ac53c2cdc10d",
+  "sharedCompilerSha256": "752ce03491cadb59c428ad7627731d917d121be298efd95cdf0d178211888696",
+  "baseEngineSha256": "9f9d963a86cb29ed339ed9cf4a923dcb9b028e3c420a6972eff54b1993d9f5a7",
+  "transitiveCompilerSha256": {
+    "tools/hardware_physical_v3.py": "37ed4bf2b04fc552d602d5b508d26656e300c834d152aaf1b0d42d2866903bb2",
+    "tools/hardware_physical_v2.py": "dbd814fdc36227e1f2ac661df4654791ec5cf61ee9630c3c86081f93f798f4fe",
+    "tools/build_hardware_catalog.py": "740cb180bd9c4e81fd0903de2691fc1563ce7f327fbfd881e8b72f7e62eb6859",
+    "tools/build_hardware_catalog19.py": "9bcfa374eb5913bcc559a67119dc07d6125f64d233822fd205cb8207a9d4f545",
+    "tools/build_hardware_catalog20.py": "2e081cabf0d89a9b3fecedd3c34bc18063cb2d0fe373ef22ea52090589161298",
+    "tools/build_hardware_catalog21.py": "30790524bea09543a6591ba834e9c14ff1ca7fa7f401617221e20d309f74fd8f",
+    "tools/build_hardware_catalog22.py": "4d2bc78c324e958d6c120cf5f7fa7a579be0a27aabdeb958c99a9d8cd178d323",
+    "tools/build_hardware_catalog23.py": "45c6ca7b32d6a13fc2e64a259ac79d8959ea3a1965e2358862155e1355933b06"
+  },
+  "selectionSha256": "d9c97a9ca25de5f9739562ab0568b564c9409061742683b0e1fb88dfc5b9bbd2",
+  "planSha256": "f9ef28a4019e3452e23aa8a9589614669da45e76c59d639c38c3814f4338b81d",
+  "profileLinksSha256": "8dd28502a3eca9bcf66bd504a718d266eceaa1503b8bafccc3bf93428428b6ed",
+  "baselineSourceSha256": {
+    "development/hardware/batch100/nas.json": "788ff6dcd96d5fb183bc5efbc03348393159ab37b67ec4d9733b037e02b0c7a9",
+    "development/hardware/batch100/network.json": "6c8a22979f2c54b2f68c68fcb59860acb62007a87b423f8cc76dcacfd019a232",
+    "development/hardware/batch100/security.json": "e06204c052536e35ef32ef534dd863975a7928c7b70ca5b0e8a5d46034fe491f",
+    "development/hardware/batch100b/nas.json": "32e1f08b131b52141b68085edb90730e2642dd95304c2c0bfffc79e020563d08",
+    "development/hardware/batch100b/network.json": "01d3ed1327d150a4527f8a4a9397598bd09aa309658e4461da750a1a406e0ebf",
+    "development/hardware/batch100b/security.json": "a03510ca564dea390adc5ce0b03827c8b715a74ad2db50bda97328beb1df2c7d",
+    "development/hardware/batch100c/nas.json": "dc8015b658b3443361a5667cc80abd97b7e8b86d8583aba3faf591749fb7cadf",
+    "development/hardware/batch100c/network.json": "c9946b48a3f5217ba4e5ea6642ab6352dc54bae0ead8c18d8dbd7f1d16df461a",
+    "development/hardware/batch100c/security.json": "bc4948bef0c6fc0b6ba51a099c207962e808f02d5085a445273d9358a4a6609a",
+    "development/hardware/batch50/network.json": "dd07f0c30d57bdb07fa40139623a60ba44e9ce32fc03740186a004068119bfc0",
+    "development/hardware/batch50/qnap.json": "6fbdc49dbdee25e760f91624dceac5f62fa44cff50d71dafc78e282534636378",
+    "development/hardware/batch50/synology.json": "94fecd54e027f99a8827f2f26d2a0bb98a416f8555b6ce49bb026c5fa54de010",
+    "development/hardware/batch50b/network.json": "7825e0c4594782bd27d3edcfdb3ccd647312967391db390770ddee422c69d62e",
+    "development/hardware/batch50b/qnap.json": "6222e030ef8482afcf11547bce8329bf7efab58202c1782de1b9ec91df7bf1c7",
+    "development/hardware/batch50b/synology.json": "4a2af32e452cfc121e2368e2f1319d803638d84928b8744f93d7a3d6dffe80eb",
+    "development/hardware/catalog-aruba-v1.json": "621920f2760f8f7fba899aaa7bb90bc22d244198e252b6f4ef16987922e0c798",
+    "development/hardware/catalog-commercial-v1.json": "d034c999cef12c9427a5390fe23a277f408b3303121c4a67e8c20c1c96580863",
+    "development/hardware/catalog-diskstation-v1.json": "4f00127eb3a882ef5a3e7388c59b18b57ff7dcfe8d03026758c00172e201dc09",
+    "development/hardware/catalog-fortinet-v1.json": "546f47ca440dcea3cb8cf7793f9cc575ec04154fd054777ed0decfbc79e3dec9",
+    "development/hardware/catalog-qnap-v1.json": "89801b1c35cbff275ea1bf3505abd033eb229c76a2027fd10b0f29c5a4606aa4",
+    "development/hardware/catalog-source-v1.json": "896ccb28d6f04f27810230ab603f7365b2730b06d463babf6d68dd97abbcf8f3",
+    "development/hardware/catalog-synology-v1.json": "c0365434769ada6a7a0ffd21b44e9ca7903fd1c1acfc575683f6158926a2155e",
+    "development/hardware/selected506a/aruba.json": "175e934d8996905947c9b6c41eda6507b102ea44fd74ad139a1898b6fcce60b9",
+    "development/hardware/selected506a/ubiquiti.json": "83edafa842cfbcf9b0a81a281e33be00ff42029241f4cde89ce7ee3f0201f16c",
+    "development/hardware/selected506b/access.json": "8d4b3ef30bfd0fb5c020d89b5ab5ca79ea842237f5b70498e4fc1c08a2b4ebed",
+    "development/hardware/selected506b/core.json": "443253eb5570cff6bba469a36ccda85fdf7d1affbe93c1e531d17b1817cc918b",
+    "development/hardware/selected506c/edge.json": "d57e7dc97027ac48f2e4e02a1d05e3b7456d1f5d0e38f19ea2e4375511fbe8c7",
+    "development/hardware/selected506c/firewalls.json": "d4a96e69b46cf37d05e68a87afa9211d83534fe23aa5103d821e09235c23e2b8",
+    "development/hardware/selected506d/core.json": "8fc642c1d13804eafaeecf70da13e095d6f76aeed85da4fed2b7af1b96ad872a",
+    "development/hardware/selected506d/edge.json": "7020925dcc3318fe50afbe90e991945ed05fda0a8397d16bb52c2181ea2e4023",
+    "development/hardware/selected506e/core.json": "f01c77a6bee554bae431c621c3b73050e7ab751f9a38fdb8d9393fa58824f51a",
+    "development/hardware/selected506e/edge.json": "8dc4f98226e12e29efca69134cb9ebf19bc706825bb72352615a80163008be0c",
+    "development/hardware/selected506f/core.json": "086848507ed1f05fa353a0dfe51cbc462713d5cd49d786ed23da630b08ec71f2",
+    "development/hardware/selected506f/edge.json": "c1e617cff9194d50d2aaaeea3ec21b55d3f40bf9432184178b2a109ac0dd7229",
+    "development/hardware/selected506g/core.json": "1891c4ffb4bb89e07e45217689439f82919d162e4e68854764ac112141cd164c",
+    "development/hardware/selected506g/edge.json": "282d0728606c823b75f2885e2280036e1fb428d8af9b4f53990fb09670677152",
+    "development/hardware/selected506h/aruba.json": "d9b423cc6269b54216c7ec65a7b3762c64ac5e1cd62c463578db271708f4efbd",
+    "development/hardware/selected506h/nokia.json": "d08d4e9701026c976f175efdd370be55908313c3fef8c060b6b3a3750079ab02",
+    "development/hardware/selected506i/enterprise.json": "14c2b9822a996fdf5b80b114e61f326220194b12a50fa47957ebb40843cbe014",
+    "development/hardware/selected506i/transport.json": "de014c153c56b82b78d09c1816c67dc3069ae07f5a63edd816a10cbc7f5cb9e7",
+    "development/hardware/selected506j/access-points.json": "fab925367f2c6bde6a6bb6a5c5fd9ce7d94a6ebd6f571521e2956abf8cde557c",
+    "development/hardware/selected506j/passive-panels.json": "1df65974b6f7cf6f4d661a9758abd953ee37f97d51f9d644d96f343b81254b9e"
+  },
+  "selectionIds": [
+    "apc-smt1500rmi2u",
+    "eaton-5px1500irt2ug2",
+    "nb-04f3c36861d3b6f5",
+    "nb-07e5ff352f97fad1",
+    "nb-08b0ee66b1eb36c8",
+    "nb-0ada4f1bb27f261c",
+    "nb-1157b9a10bc8e5f4",
+    "nb-15a85a8a3b05a92f",
+    "nb-19ed1459663d3e17",
+    "nb-1b78d3ee187d5923",
+    "nb-21d28e7d5a06429b",
+    "nb-23088fe782f499ac",
+    "nb-29ce493b266db9c3",
+    "nb-2d5dd2ca4dacb1c5",
+    "nb-476a5e2e14826616",
+    "nb-4b2e4c72b9d36b73",
+    "nb-4de91d17b80dbbff",
+    "nb-503a26493f9206a4",
+    "nb-624f4c89a65b309a",
+    "nb-682f01a7e3775f50",
+    "nb-70f105515d0bf559",
+    "nb-75ff355641be29f1",
+    "nb-78fb5e27dc863dbc",
+    "nb-7dd2b21e61ad99a0",
+    "nb-7ea04d02eec80c94",
+    "nb-81391abd9812b183",
+    "nb-8575f3e84e37fd0d",
+    "nb-908a100c3ca29495",
+    "nb-93773a73e59631e4",
+    "nb-9b748f4aeb7c8a2d",
+    "nb-a30f5454503d7402",
+    "nb-a6a79509854ba38b",
+    "nb-a966d159c428b1d4",
+    "nb-aa67f910589a5502",
+    "nb-b924dbf6777c2eb2",
+    "nb-bdf6ab2dce05aee0",
+    "nb-c2814dde21fa98df",
+    "nb-c7a1f257de229c1c",
+    "nb-c91a00ac9965db90",
+    "nb-ce5e88c6a9b7562d",
+    "nb-d14bed6bc445f3b0",
+    "nb-d3866e263332a4fc",
+    "nb-d9eff11e7e0c11f7",
+    "nb-dbdce8efed0e65d8",
+    "nb-de900000f3f9295d",
+    "nb-e195af6788f9b56c",
+    "nb-edde85c1a3ba283d",
+    "nb-f060040e382de573",
+    "nb-f5d26f8fec76743c",
+    "nb-f9fc50287eafd86c",
+    "raritan-px3-5190r",
+    "startech-cabshelf1u"
+  ],
+  "definitions": [
+    {
+      "key": "selected-apc-smt1500rmi2u",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "c485bc92f3a068f3afaa3d76c1bc16f884df7a28ca9c2076750790f108f4fafd"
+    },
+    {
+      "key": "selected-eaton-5px1500irt2ug2",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "38aee3343dc8178ff242e0cc190b4ad71240cee91a1aa70b2530fa92799db62f"
+    },
+    {
+      "key": "selected-nb-04f3c36861d3b6f5",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "7ff473789ccd11ba35941b1bc9c17bbccb638413d008000f1283337b5873a847"
+    },
+    {
+      "key": "selected-nb-07e5ff352f97fad1",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "6f0d88b7a4564faff600e242459907f855077e8b41653f23df8f341f37658d07"
+    },
+    {
+      "key": "selected-nb-08b0ee66b1eb36c8",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "add68a62c402b558767fba713cd560cd9f2b9c8b9dff35d4634add7395ed0ac9"
+    },
+    {
+      "key": "selected-nb-0ada4f1bb27f261c",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "b02394a50b54d66f9a4d878442a452efd9c5644616c39b2f4476597707b212f3"
+    },
+    {
+      "key": "selected-nb-1157b9a10bc8e5f4",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "bf14a15a91a427329be027f878a85bf8aa71d4a042db44647f1323bfca4d5075"
+    },
+    {
+      "key": "selected-nb-15a85a8a3b05a92f",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "87382dc3645de34dba4073e4a3e1c7af0699f46c307276324ad20abbf19c6092"
+    },
+    {
+      "key": "selected-nb-19ed1459663d3e17",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "1c018f8dae935ac6b1e65db4d4c6973493e82d7fef5be59b6acbdc07bf8766fa"
+    },
+    {
+      "key": "selected-nb-1b78d3ee187d5923",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "f169e54e073e6fd69f3ad60111f0ff37b34a5ea9503fde7ce3314164e248a734"
+    },
+    {
+      "key": "selected-nb-21d28e7d5a06429b",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "dadb7ace90ed8b38279c028ba621c1126e64ac7d04711dd7fa187aae9dc62e89"
+    },
+    {
+      "key": "selected-nb-23088fe782f499ac",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "749f5c131a55bdc89574f0bb2544409a88bfd6812a2083f154ce6e4fcc2c87b3"
+    },
+    {
+      "key": "selected-nb-29ce493b266db9c3",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "ddb53a998fe95ee6555b6d642b0951a811a82417cf059f47616fe05c59dd3eb1"
+    },
+    {
+      "key": "selected-nb-2d5dd2ca4dacb1c5",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "22df2b66337e280e318b96d5ddc0cf7dccb74e614d2d19314ffe396f1edeebb1"
+    },
+    {
+      "key": "selected-nb-476a5e2e14826616",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "12698c234fc01626d83f0cf34dd201122f9464e320d898c0065ba3ce43763362"
+    },
+    {
+      "key": "selected-nb-4b2e4c72b9d36b73",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "e66a9483c9b501bbe2f9f726950e1c2c586e3bbd90e306f5308d9e6cd6675e93"
+    },
+    {
+      "key": "selected-nb-4de91d17b80dbbff",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "01feef37ffc9362dc5e54a6ab5e0b0a4ef3b46b8573c792291e0a080296d37bd"
+    },
+    {
+      "key": "selected-nb-503a26493f9206a4",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "31fc45569dc3452378150fb60dede21ab466ca72d3c5f56836ec2100b5be2d06"
+    },
+    {
+      "key": "selected-nb-624f4c89a65b309a",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "6a22aa28380cc2f949852950591c717155ef67c07fda6844dadf3f314af81d52"
+    },
+    {
+      "key": "selected-nb-682f01a7e3775f50",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "689e91acbbacb1e68b8f0b30fe92447b0bd85e1ec01fedbf4df12e092be2b006"
+    },
+    {
+      "key": "selected-nb-70f105515d0bf559",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "a455cd2a1d93f4ec4aa5676d251143c1e29a1743fed3e43e1e88d2ed82a2eb17"
+    },
+    {
+      "key": "selected-nb-75ff355641be29f1",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "172247d47dfd958bb82de43c0d72b601a1837a60f6242c99f62196fcbb23c825"
+    },
+    {
+      "key": "selected-nb-78fb5e27dc863dbc",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "017578963f046fd915d8eef3463bc13ce56e232cb5ffbee869dde2c3f8b1e8ee"
+    },
+    {
+      "key": "selected-nb-7dd2b21e61ad99a0",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "052fcb67568858a3114f80e3a8e18006fbaa5b9c3c2b0e9dd1ac06de303aabfd"
+    },
+    {
+      "key": "selected-nb-7ea04d02eec80c94",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "6cfe3006d9b1bdd94319b6d81fa42f84597c4f38c8ec3c07dcb0a09268e1983a"
+    },
+    {
+      "key": "selected-nb-81391abd9812b183",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "423a9a011b71670228bfcdffa9282bf07d23b5e0e5b4df742e6630003efb1818"
+    },
+    {
+      "key": "selected-nb-8575f3e84e37fd0d",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "6800135253cd2f4400beea389b288e270d29644f3f01e680d37b18f5a7809753"
+    },
+    {
+      "key": "selected-nb-908a100c3ca29495",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "49cedd726c7d238adb09dfd63ffaae4f3eb212d7adad948a469095ef64eecb1d"
+    },
+    {
+      "key": "selected-nb-93773a73e59631e4",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "c2e1716d3357a37cbf691791aa1f3f5a4cd166c9027f8a35df2127340aaf6eed"
+    },
+    {
+      "key": "selected-nb-9b748f4aeb7c8a2d",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "b0a63c550ceb7d7231fe52c5ca961d75f2c5398c0d618391bdcfc33d6938ece1"
+    },
+    {
+      "key": "selected-nb-a30f5454503d7402",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "65a70dac3607e6beaea8410a7c8f255c3ebe20ec25e3ba40b5b98c7647c457e1"
+    },
+    {
+      "key": "selected-nb-a6a79509854ba38b",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "2d4c610b08351e8ee43f297fea0fff36101abba5504daae9463aedb2a5bc8164"
+    },
+    {
+      "key": "selected-nb-a966d159c428b1d4",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "22d1cbf9f9820e1e7d5a8c9fb22ee92cb2ce220ac0550285483aa12a83071a30"
+    },
+    {
+      "key": "selected-nb-aa67f910589a5502",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "b5259f60e4ed01472d93918b6470a20740de4c92082a64fdcdcfef3d45e35efd"
+    },
+    {
+      "key": "selected-nb-b924dbf6777c2eb2",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "f62f6e6c893887319902925cf9f4d3dd0797bf67bcb34eb13be2cfc68aa14796"
+    },
+    {
+      "key": "selected-nb-bdf6ab2dce05aee0",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "ffeb001c154e028daa2bc0e3ad7192a0fa5892f60708791b43db6d6119bd7b26"
+    },
+    {
+      "key": "selected-nb-c2814dde21fa98df",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "0b1780ce46efa394f8188dd9ced22f36947137d616d33967d893d9e384f5df9f"
+    },
+    {
+      "key": "selected-nb-c7a1f257de229c1c",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "c97fcff2a95e5f0e8461c54b956f0410dd8a33fd484f97ae94471ed45c9351e5"
+    },
+    {
+      "key": "selected-nb-c91a00ac9965db90",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "404e69444fdc6d7e66eec6b11d5ba90d6196e3aff1ec893e3e2009caca9104ca"
+    },
+    {
+      "key": "selected-nb-ce5e88c6a9b7562d",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "ae34effa4c6e1410a539f9569059f72e3624510e336cffdf24e5b7776cfd44e1"
+    },
+    {
+      "key": "selected-nb-d14bed6bc445f3b0",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "36a3224fc4df000e9bfbd01a057bb27c57e8912999948c26252d8fe0740abcd1"
+    },
+    {
+      "key": "selected-nb-d3866e263332a4fc",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "addaff9b9efd1cc36f61eff7186ced7b44ed3392fcc34e5bd133267e3352d40c"
+    },
+    {
+      "key": "selected-nb-d9eff11e7e0c11f7",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "00f8f0d0a019d57b873a47aaa40cb867e4f301973cbee77dfec1a39ef2b58f8e"
+    },
+    {
+      "key": "selected-nb-dbdce8efed0e65d8",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "aff9967dda9ef319e1be803880a3bc7767bc2b809fbb79e47ff37148180866b7"
+    },
+    {
+      "key": "selected-nb-de900000f3f9295d",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "6c1f4214c19fcf4f71955c4a7be2c52b1feba114594e8eaf46ce5e75cd11f436"
+    },
+    {
+      "key": "selected-nb-e195af6788f9b56c",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "de56c9fe278a36333b31e32f115fe4cb42619e05b93740f5eb75cf5d18f309c0"
+    },
+    {
+      "key": "selected-nb-edde85c1a3ba283d",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "7f45808584c7a4bab5285b8e7b412d4ba4f7fbd52bdc161db873999d2d2d5278"
+    },
+    {
+      "key": "selected-nb-f060040e382de573",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "9014769ddd455d48911f4046720061fdb5f119c0ab61e735393b61e1ed013acc"
+    },
+    {
+      "key": "selected-nb-f5d26f8fec76743c",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "6e7bfbf9c8b7d4ec77852281fde8b045b85e46eed6b779a9c08ba52b4c60a922"
+    },
+    {
+      "key": "selected-nb-f9fc50287eafd86c",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "230d6ab5d8b410128c4d34287c36e0e524ef0c37085be192b8b60f91138f4d7a"
+    },
+    {
+      "key": "selected-raritan-px3-5190r",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "b15686c7ec54533dc30aa2438ca614f1dfa5718653a2e140052002053550cd05"
+    },
+    {
+      "key": "selected-startech-cabshelf1u",
+      "revision": "selected506k-20261101-v1",
+      "sha256": "dfefbb7c76c81c09e8c82551f485c3d422e28256b45a9e7513471ee4da1e4b1e"
+    },
+    {
+      "key": "shelf-7u-deep",
+      "revision": "mount-support7u-20261101-v1",
+      "sha256": "9cbe6b3e50490e9093ea53e16a41861b90b30aa7615dbc2bd07b5055769f8579"
+    }
+  ]
+}

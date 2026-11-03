@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {runScenario,infrastructure,snapshot,normalize} from './browser-quince-support.mjs';
+await runScenario(async({first,session,checks,out,fixture})=>{
+ await infrastructure(first);const before=normalize(await snapshot(first));
+ await first.evaluate(`document.querySelector('[data-json-export-toggle]').scrollIntoView({block:'center'})`);
+ await first.click('[data-json-export-toggle]');assert.equal(await first.evaluate(`document.querySelector('[data-json-export-generate]').disabled`),true);
+ await first.click('[data-json-export-ack]');await first.click('[data-json-export-generate]');
+ await first.wait(`!!document.querySelector('[data-json-export-status="confirmed"]')`,'server-confirmed inventory JSON');
+ assert.deepEqual(normalize(await snapshot(first)),before);
+ await first.evaluate(`(()=>{const original=URL.createObjectURL;URL.createObjectURL=blob=>{window.__inventoryJsonDownload=blob.text();return original(blob)};return true})()`);
+ await first.click('[data-json-export-download]');await first.wait(`!!document.querySelector('[data-json-export-status="started"]')`,'inventory JSON download');
+ const exported=await first.evaluate(`window.__inventoryJsonDownload.then(JSON.parse)`);
+ assert.equal(exported.kind,'RackClickInventory');assert.equal(exported.formatVersion,1);assert.equal(exported.customerId,fixture.customer);
+ assert.deepEqual(normalize({customerId:exported.customerId,revision:exported.revision,...exported.inventory}),before);
+ assert.equal(await first.evaluate(`document.querySelectorAll('[data-json-export-error]').length`),0);
+ const reader=await session('hardware-reader');await infrastructure(reader);assert.equal(await reader.evaluate(`!!document.querySelector('[data-json-export-toggle]')`),false);
+ await writeFile(path.join(out,'JSON-EXPORT-BROWSER.json'),JSON.stringify({result:'PASS',acknowledgementRequired:true,serverConfirmedBeforeDownload:true,exactSnapshotDownload:true,sourceUnchanged:true,readerControlAbsent:true},null,2)+'\n');
+ checks.push('current inventory JSON: explicit contents acknowledgement, committed receipt, exact Blob download, source unchanged and reader denied');
+});

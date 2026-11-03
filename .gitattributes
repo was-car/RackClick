@@ -1,7 +1,21 @@
-*.sh text eol=lf
-.githooks/* text eol=lf
+# Catalog digests describe exact bytes. Preserve them across Windows checkouts.
+# Scope is limited to frozen inputs and generated catalog derivatives.
+development/hardware/catalog-*.json -text
+development/frontend/src/hardware-reference.json -text
+development/frontend/src/hardware-catalog.generated.json -text
+development/server/src/RackClick.Server/InventoryHardwareProfiles.Generated.cs -text
+development/server/src/RackClick.Server/HardwareCatalog.Generated.targets -text
+development/server/database/017-hardware-catalog.sql -text
+development/hardware/startech-c6panelutp241uft.facts.json -text
+development/frontend/src/hardware-commercial.generated.json -text
+development/server/src/RackClick.Server/CommercialHardwareProfiles.Generated.cs -text
+development/server/src/RackClick.Server/CommercialHardware.Generated.targets -text
+development/server/database/018-commercial-hardware.sql -text
 
-# Preserve pinned product, fixtures and operator bytes across Windows checkouts.
+# Exact published source/lock bytes on Windows clones.
 /development/** -text
 /tools/** -text
 /reference/** -text
+/evidence/** -text
+
+/licenses/** -text

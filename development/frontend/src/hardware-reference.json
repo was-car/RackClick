@@ -1,0 +1,94 @@
+{
+  "version": "hw-reference-v1",
+  "synthetic": true,
+  "profiles": [
+    {
+      "key": "shelf-2u",
+      "kind": "shelf",
+      "sizeU": 2,
+      "widthMm": 482.6,
+      "heightMm": 44,
+      "depthMm": 300,
+      "slot": {
+        "key": "main",
+        "widthMm": 440,
+        "heightMm": 60,
+        "depthMm": 300
+      },
+      "groups": []
+    },
+    {
+      "key": "desktop-firewall-6",
+      "kind": "desktop",
+      "sizeU": 0,
+      "widthMm": 220,
+      "heightMm": 38,
+      "depthMm": 200,
+      "groups": [
+        {
+          "key": "front-lan",
+          "face": "front",
+          "type": "rj45",
+          "count": 6
+        },
+        {
+          "key": "rear-management",
+          "face": "rear",
+          "type": "rj45",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "key": "switch-24",
+      "kind": "rack",
+      "sizeU": 1,
+      "widthMm": 482.6,
+      "heightMm": 44,
+      "depthMm": 200,
+      "groups": [
+        {
+          "key": "front-lan",
+          "face": "front",
+          "type": "rj45",
+          "count": 24
+        },
+        {
+          "key": "rear-uplink",
+          "face": "rear",
+          "type": "sfp",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "key": "patchpanel-24",
+      "kind": "rack",
+      "sizeU": 1,
+      "widthMm": 482.6,
+      "heightMm": 44,
+      "depthMm": 100,
+      "passthrough": {
+        "frontGroup": "front-patch",
+        "rearGroup": "rear-patch",
+        "count": 24,
+        "mapping": "one-to-one",
+        "tracingAvailable": false
+      },
+      "groups": [
+        {
+          "key": "front-patch",
+          "face": "front",
+          "type": "rj45",
+          "count": 24
+        },
+        {
+          "key": "rear-patch",
+          "face": "rear",
+          "type": "rj45",
+          "count": 24
+        }
+      ]
+    }
+  ]
+}

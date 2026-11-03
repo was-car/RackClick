@@ -1,0 +1,55 @@
+import {chooseHardware} from './browser-hardware-picker-support.mjs';
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {runScenario,infrastructure,snapshot,saved,submit,normalize} from './browser-quince-support.mjs';
+await runScenario(async({first,session,checks,fixture:f,out,shot})=>{
+ await infrastructure(first);await first.click(`[data-rack-id="${f.rack}"] .rc-rack-open`);
+ const dsRevision='qnap-20261030-v1',shelfRevision='mount-support-20261030-v1';
+ async function add(key,version,name,parent){await first.click('[data-add-hardware]');await chooseHardware(first,key,version);await first.field('[data-hardware-name]',name);await first.field('[data-hardware-rack]',f.rack);if(parent)await first.field('[data-hardware-parent]',parent);await submit(first);await saved(first);return (await snapshot(first)).devices.find(d=>d.name===name).id;}
+ const low=await add('shelf-2u','hw-reference-v1','Bandeja baja preservada');
+ const beforePreview=normalize(await snapshot(first));await first.click('[data-add-hardware]');await chooseHardware(first,'qnap-ts464-8g',dsRevision);
+ assert.deepEqual(await first.evaluate(`([...document.querySelectorAll('[data-hardware-parent] option')]).filter(n=>n.value).map(n=>n.value)`),[]);await first.click('dialog footer button[type="button"]');assert.deepEqual(normalize(await snapshot(first)),beforePreview);
+ await first.click('[data-add-hardware]');await chooseHardware(first,'shelf-5u',shelfRevision);
+ assert.equal(await first.evaluate(`document.querySelector('[data-hardware-preview]').textContent.includes('440 × 190 × 300')`),true);assert.equal(await first.evaluate(`!!document.querySelector('[data-commercial-source]')`),false);
+ assert.equal(await first.evaluate(`document.querySelector('[data-hardware-selected]').textContent.includes('5 U')`),true);
+ await first.field('[data-hardware-name]','Bandeja alta NAS 5U');await first.field('[data-hardware-rack]',f.rack);await submit(first);await saved(first);const tall=(await snapshot(first)).devices.find(d=>d.name==='Bandeja alta NAS 5U').id;
+ await first.click('[data-add-hardware]');await chooseHardware(first,'qnap-ts464-8g',dsRevision);assert.deepEqual(await first.evaluate(`([...document.querySelectorAll('[data-hardware-parent] option')]).filter(n=>n.value).map(n=>n.value)`),[tall]);
+ await first.field('[data-hardware-name]','QNAP TS-464-8G Ω');await first.field('[data-hardware-rack]',f.rack);await first.field('[data-hardware-parent]',tall);await submit(first);await saved(first);const nas=(await snapshot(first)).devices.find(d=>d.name==='QNAP TS-464-8G Ω').id;
+ const rs=await add('synology-rs1221plus','synology-20261030-v1','RackStation para comparar');
+ const aruba=await add('aruba-jl682a','aruba-20261030-v1','Aruba para QNAP');
+ const p=await snapshot(first),d=p.devices.find(d=>d.id===nas),ports=p.ports.filter(x=>x.deviceId===nas);assert.equal(ports.length,2);assert.equal(p.ports.length,38);assert.equal(d.sizeU,0);assert.equal(d.mountParentId,tall);assert.deepEqual(d.properties.physicalDimensionsMm,{width:170,height:165,depth:226.5});
+ assert.equal(await first.evaluate(`document.querySelector('[data-mount-occupancy]').textContent.includes('10/10 U')`),true);
+ const row=`[data-devid="${nas}"]`,scroll=row+' .rc-shell-scroll';
+ assert.equal(await first.evaluate(`document.querySelector('${row} [data-shell-rendering]').dataset.shellRendering`),'qnap-ts464-front');assert.equal(await first.evaluate(`document.querySelectorAll('${row} [data-qnap-cover]').length`),1);assert.equal(await first.evaluate(`document.querySelectorAll('${row} [data-vport]').length`),0);
+ assert.equal(await first.evaluate(`document.querySelector('${row}').closest('[data-hardware-key="shelf-5u"]')!==null`),true);
+ assert.equal(await first.evaluate(`document.querySelector('[data-devid="${tall}"] .rc-shelf-bay>.rc-mount-caption').textContent.includes('440 × 190 × 300')`),true);
+ assert.equal(await first.evaluate(`document.querySelector('[data-devid="${low}"] .rc-shelf-bay>.rc-mount-caption').textContent.includes('440 × 60 × 300')`),true);
+ assert.equal(await first.evaluate(`document.querySelector('[data-devid="${tall}"]').textContent.includes('null · null')`),false);
+ assert.equal(await first.evaluate(`!!document.querySelector('${row} img,${row} image')`),false);
+ await first.send('Emulation.setDeviceMetricsOverride',{width:1920,height:1400,deviceScaleFactor:1,mobile:false});await first.evaluate(`document.querySelector('${row}').scrollIntoView({block:'center'})`);await shot(first,'qnap-front-on-shelf.png');
+ await first.click('[data-face="rear"]');assert.equal(await first.evaluate(`document.querySelectorAll('${row} [data-qnap-fan]').length`),1);assert.equal(await first.evaluate(`document.querySelectorAll('${row} [data-vport]').length`),2);
+ const port=n=>ports.find(p=>p.gn===n).id;
+ async function clickPort(id,button='left'){
+  const at=await first.evaluate(`(()=>{const b=document.querySelector('[data-vport="${id}"]');b.scrollIntoView({block:'center',inline:'center'});const r=b.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2,w:r.width,h:r.height}})()`);assert.ok(at.w>=24&&at.h>=24);
+  for(const type of ['mousePressed','mouseReleased'])await first.send('Input.dispatchMouseEvent',{type,x:at.x,y:at.y,button,clickCount:1});
+ }
+ await first.send('Page.bringToFront');await first.send('Emulation.setFocusEmulationEnabled',{enabled:true});const before=normalize(await snapshot(first));
+ for(const p of ports){await clickPort(p.id);await first.wait(`document.querySelector('[data-vport="${p.id}"]').getAttribute('aria-pressed')==='true'`,'QNAP UUID');await first.click('.ir-connect-hint button');}assert.deepEqual(normalize(await snapshot(first)),before);
+ await first.evaluate(`document.querySelector('[data-vport="${port(2)}"]').focus()`);await first.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13,text:'\r'});await first.send('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});await first.wait(`document.querySelector('[data-vport="${port(2)}"]').getAttribute('aria-pressed')==='true'`,'keyboard LAN2');await first.click('.ir-connect-hint button');
+ const arubaPort=p.ports.find(x=>x.deviceId===aruba&&x.type==='rj45'&&x.gn===1).id,rsPort=p.ports.find(x=>x.deviceId===rs&&x.type==='rj45'&&x.gn===1).id;
+ await clickPort(port(1));await first.click('[data-face="front"]');await clickPort(arubaPort);await saved(first);await first.click('[data-face="rear"]');await clickPort(port(2));await clickPort(rsPort);await saved(first);
+ const network=(await snapshot(first)).connections;assert.equal(network.length,2);await first.evaluate(`(()=>{document.querySelector('${scroll}').scrollLeft=0;document.querySelector('${row}').scrollIntoView({block:'center'})})()`);await shot(first,'qnap-rear-two-cables.png');
+ checks.push('GUI filters low2U60mm shelf, creates own5U190mm support with no manufacturer claim, TS-464-8G0U child plus RS1221+2U and Aruba; 10U total, 38ports, twoEthernet cables with cross-face click');
+ const wire=network.find(c=>c.fromPortId===port(2));assert.ok(wire);const aligned=`(()=>{const w=document.querySelector('[data-wire="${wire.id}"]'),b=document.querySelector('[data-vport="${wire.fromPortId}"]');if(!w||!b)return false;const p=w.getPointAtLength(0),q=new DOMPoint(p.x,p.y).matrixTransform(w.getScreenCTM()),r=b.getBoundingClientRect();return Math.hypot(q.x-r.x-r.width/2,q.y-r.y-r.height/2)<1.1})()`;
+ await first.send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false});await first.evaluate(`document.querySelector('${scroll}').scrollLeft=40`);await first.wait(aligned,'tower cable follows scroll');await shot(first,'qnap-mobile-rear.png');await first.click('[data-face="front"]');assert.equal(await first.evaluate(`document.querySelector('${scroll}').scrollLeft`),0);await first.click('[data-face="rear"]');assert.equal(await first.evaluate(`document.querySelector('${scroll}').scrollLeft`),0);
+ await first.send('Emulation.setDeviceMetricsOverride',{width:1920,height:1400,deviceScaleFactor:1,mobile:false});await clickPort(port(1),'right');await first.wait(`!!document.querySelector('dialog section.rc-form')`,'label');await first.field('dialog section.rc-form>label:nth-last-child(2) select','label');await first.field('dialog section.rc-form>label:last-child input','QNAP <svg> Ω');await submit(first);await saved(first);
+ assert.equal(await first.evaluate(`([...document.querySelectorAll('${row} .rc-qnap-label')]).some(n=>n.textContent==='QNAP <svg> Ω')`),true);assert.equal(await first.evaluate(`!!document.querySelector('${row} .rc-qnap-label svg')`),false);
+ await first.click(`[data-hardware-edit="${nas}"]`);await first.field('dialog [name=name]','TS-464-8G editado Ω');await first.field('dialog [name=notes]','Cubierta cerrada, sin discos ni adaptador modelados');await submit(first);await saved(first);
+ const expected=normalize(await snapshot(first));assert.deepEqual(expected.ports.filter(p=>p.deviceId===nas).map(p=>p.id),before.ports.filter(p=>p.deviceId===nas).map(p=>p.id));
+ await first.send('Page.reload',{ignoreCache:true});await first.wait(`!!document.querySelector('[data-customer-id="${f.customer}"]')`,'reload');await infrastructure(first);assert.deepEqual(normalize(await snapshot(first)),expected);
+ const second=await session('hardware-second');await infrastructure(second);assert.deepEqual(normalize(await snapshot(second)),expected);await second.click(`[data-rack-id="${f.rack}"] .rc-rack-open`);assert.equal(await second.evaluate(`document.querySelector('${row} [data-shell-rendering]').dataset.shellRendering`),'qnap-ts464-front');
+ const reader=await session('hardware-reader');await infrastructure(reader);assert.deepEqual(normalize(await snapshot(reader)),expected);await reader.click(`[data-rack-id="${f.rack}"] .rc-rack-open`);assert.equal(await reader.evaluate(`document.querySelector('[data-hardware-edit="${nas}"]').disabled`),true);
+ checks.push('Closed black front/gold strip and one rear fan and USB/DC are drawings only; two LAN UUIDs/cancel/keyboard/label/metadata/mobile wire/face reset/reload/other session/reader preserved');
+ await writeFile(path.join(out,'expected-project.json'),JSON.stringify(expected,null,2)+'\n');
+});

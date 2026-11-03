@@ -1,0 +1,58 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 44,
+  "state": "curated_development_not_a_release",
+  "inputs": {
+    "development/hardware/catalog-schema43.lock.json": "fde93af0c8bb3e8567a2b4015533e0474d7ccc2b110167c58a83b8d8933316b8",
+    "development/hardware/german-cpe/contract.json": "f8788bfaa5dcb024213651d20f10123bb6571c250284a5920ba8539f6e55adef",
+    "development/hardware/german-cpe/draytek-vigor167-reference.md": "880adda93db1e8574fdb14ac4e7f26b5edb786ea11384663bff0c8ecc898f6c3",
+    "development/hardware/german-cpe/draytek-vigor2766-reference.md": "32c1f452969e6e862a8f1606f923a34688cac006a56172d73f765cc5d24a0691",
+    "development/hardware/german-cpe/draytek-vigor2766ac-reference.md": "db9ee72a16daea59eb4a5719b185022ff8c450d4ef59439f9cb900bd1effbdda",
+    "development/hardware/german-cpe/draytek.json": "0aa0875d12f62258f768fb394d91797bcf4e1e9571cea43d2ae12911c9895a4d",
+    "development/hardware/german-cpe/fritz-7530ax-de-reference.md": "e9c6b222d5ce9b7643be3c7f56b968290ad9914be19ef1112654f8bad5ce280c",
+    "development/hardware/german-cpe/fritz-7590ax-v2-de-reference.md": "f76ed87d88bf89930365b1db3b465e2dff7ac909b71a28832236a6c47f4add73",
+    "development/hardware/german-cpe/fritz-7690-de-reference.md": "083c54fbf3c3a24a91f1635813eabfe990c8eb0ef1d20a10c3c047c2768a487d",
+    "development/hardware/german-cpe/fritz.json": "c5b1b7f77ab97df2914f7e4af1e2ffe8b0b9f4eb9267196f771bcf97c5dda5a0",
+    "development/server/database/042-hardware-family-l.sql": "b2af3b7b5e1f232f1ff0565001a0dea81448b16353132f0207e565be69656f53",
+    "development/server/database/043-selected506l-hardware.sql": "be28876d62a2067a1ccc95220af14e1a7f11b8b78735ab51127df2e2bd13fef6",
+    "tools/build_hardware_batch50.py": "9f9d963a86cb29ed339ed9cf4a923dcb9b028e3c420a6972eff54b1993d9f5a7",
+    "tools/build_hardware_selected506l.py": "024b6828c6ef20db633589492b461358efc1974789c38f1affc54225beb55fd2",
+    "tools/hardware_family_l.py": "687352e9583b3def23f98f469b956afdbc1092f9a595d4ea47c11d0f335b28f9",
+    "tools/hardware_family_l_contract.json": "0256618e7eb14a2ed15d5cfea2249eb521ef1948e00e661eb39c5458e7ea08ce",
+    "tools/hardware_family_v2.py": "752ce03491cadb59c428ad7627731d917d121be298efd95cdf0d178211888696",
+    "tools/hardware_physical_v2.py": "dbd814fdc36227e1f2ac661df4654791ec5cf61ee9630c3c86081f93f798f4fe",
+    "tools/hardware_physical_v3.py": "37ed4bf2b04fc552d602d5b508d26656e300c834d152aaf1b0d42d2866903bb2"
+  },
+  "definitions": [
+    {
+      "key": "draytek-vigor167",
+      "revision": "german-cpe-20261103-v1",
+      "sha256": "06ce9c1709e1ec6f8848a1422393f364ae928562680840a167e7f017fda26e45"
+    },
+    {
+      "key": "draytek-vigor2766",
+      "revision": "german-cpe-20261103-v1",
+      "sha256": "a18edec815c64c14d79ebc618368e6f14eaece463440d9ddae826dc458b51ac8"
+    },
+    {
+      "key": "draytek-vigor2766ac",
+      "revision": "german-cpe-20261103-v1",
+      "sha256": "f1f64745f1ccee59c29397a5f592f536ee4fac7e7d40a7c2995b693a1dfe0107"
+    },
+    {
+      "key": "fritz-7530ax-de",
+      "revision": "german-cpe-20261103-v1",
+      "sha256": "9ec77a0b14d668ed809b85d8bd1c37dc629c6d4acd60bc12d90d69e7cd05cfab"
+    },
+    {
+      "key": "fritz-7590ax-v2-de",
+      "revision": "german-cpe-20261103-v1",
+      "sha256": "8fbc14fdf21b45a762353cd33f1b41452da8bca6ec562e822414cd49d6799c2b"
+    },
+    {
+      "key": "fritz-7690-de",
+      "revision": "german-cpe-20261103-v1",
+      "sha256": "d403fbbd30f7f2191cf347b202130b0609150a28c0eea297265d8d511ff54f1e"
+    }
+  ]
+}

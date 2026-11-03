@@ -11,7 +11,7 @@ export const validSharedTemplateName=(x:any)=>typeof x==='string'&&text(trimTemp
 const freeText=(x:any,max:number)=>typeof x==='string'&&Array.from(x).length<=max&&!/[\p{Cc}\p{Cs}]/u.test(x.replace(/[\r\n\t]/g,''));
 const hash=(x:any)=>typeof x==='string'&&/^[0-9a-f]{64}$/.test(x);
 const color=(x:any)=>x===null||typeof x==='string'&&/^#[0-9a-f]{6}$/i.test(x);
-const kinds=['rackEquipment','dose','endDevice'],types=['rj45','rj45_poe','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c'];
+const kinds=['rackEquipment','dose','endDevice'],types=['rj45','rj45_poe','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c','sfp56','qsfpdd','idc','ipc','fiber','sfpdd','cfp2','sas','dsl','telephony','isdn','expansion','power_dc'];
 const order=(x:any)=>Number.isInteger(x)&&x>=0&&x<=2147483647;
 export type SharedTemplateMeta={id:string;name:string;active:boolean;definitionVersion:1;definitionSha256:string;kind:string;sizeU:number|null;groupCount:number;portCount:number;publishedById:string;publishedByName:string};
 export type SharedTemplateList={kind:'sharedTemplates';customerId:string;revision:number;templates:SharedTemplateMeta[]};

@@ -48,6 +48,13 @@ public sealed partial class InventoryStore
         bool create = type == "device.create", move = type == "device.move";
         Guid id = create ? Guid.NewGuid() : Id(payload, "id");
         JsonObject? before = create ? null : await Row(db, tx, actor, customer, "inventory_device", id, ct);
+        if (before?["hardware_profile_key"] is not null)
+        {
+            if (type == "device.update") return await UpdateHardware(db, tx, actor, customer, payload, before, ct);
+            RequireLegacyMutableDevice(before);
+        }
+        if (payload.Any(field => field.Key is "hardwareProfileKey" or "profileKey" or "mountParentId" or "mountSlotKey"))
+            throw new DomainError(422, "hardware_command_required");
         string kind = create ? String(payload, "kind") : String(before!, "kind");
         if (kind is not ("rackEquipment" or "dose" or "endDevice")) throw new DomainError(422, "device_kind_invalid");
         Guid? rack = create || move ? OptionalId(payload, "rackId") : OptionalId(before!, "rack_id");
@@ -86,10 +93,14 @@ public sealed partial class InventoryStore
     }
 
     private static async Task<Guid[]> AddGroup(NpgsqlConnection db, NpgsqlTransaction tx, Actor actor, Guid customer, Guid device,
-        JsonObject input, int order, CancellationToken ct)
+        JsonObject input, int order, CancellationToken ct, int maximum = 96)
     {
+        if (input.ContainsKey("physicalConnector") || input.ContainsKey("physicalFace") || input.ContainsKey("interfaceRole") || input.ContainsKey("signalRole") || input.ContainsKey("hardwarePhysicalConnector") ||
+            input["properties"] is JsonObject metadata && metadata.Any(f => f.Key is "hardwarePhysicalConnector" or "hardwarePhysicalFace" or "hardwareInterfaceRole" or "hardwareSignalRole" or "hardwarePowerSystem" or "declaredPowerSystem"))
+            throw new DomainError(422, "hardware_metadata_immutable");
         string type = InventoryRules.PortType(String(input, "type"));
-        int count = Integer(input, "count", 1, 96);
+        if(type!="power_dc" && input["powerSystem"] is not null) throw new DomainError(422,"hardware_metadata_invalid");
+        int count = Integer(input, "count", 1, maximum);
         Guid group = Guid.NewGuid();
         await Exec(db, tx, """
             INSERT INTO inventory_port_group(id,systemhaus_id,customer_id,device_id,type,name,prefix,sort_order)
@@ -98,6 +109,13 @@ public sealed partial class InventoryStore
             ("type", InventoryRules.Family(type)), ("name", Text(input, "name", 100)), ("prefix", Text(input, "prefix", 100)), ("order", order));
         var ids = new List<Guid> { group };
         for (int i = 0; i < count; i++) ids.Add(await AddPort(db, tx, actor, customer, device, group, type, i + 1, i, ct));
+        if (type == "power_dc")
+        {
+            string system = input["powerSystem"] is null ? "dc" : String(input, "powerSystem");
+            _ = FamilyLRules.Feature("powerSystem", system);
+            await Exec(db, tx, "UPDATE inventory_port SET properties=jsonb_set(properties,'{declaredPowerSystem}',to_jsonb(@system::text),true) WHERE systemhaus_id=@house AND customer_id=@customer AND group_id=@group", ct,
+                ("system", system), ("house", actor.HouseId), ("customer", customer), ("group", group));
+        }
         return ids.ToArray();
     }
     private static async Task<Guid> AddPort(NpgsqlConnection db, NpgsqlTransaction tx, Actor actor, Guid customer, Guid device, Guid group,
@@ -115,13 +133,18 @@ public sealed partial class InventoryStore
     private static async Task<Change> UpdatePorts(NpgsqlConnection db, NpgsqlTransaction tx, Actor actor, Guid customer, JsonObject payload, CancellationToken ct)
     {
         Guid device = Id(payload, "deviceId"), group = Id(payload, "groupId");
-        await Row(db, tx, actor, customer, "inventory_device", device, ct);
+        var owner = await Row(db, tx, actor, customer, "inventory_device", device, ct);
         var groupRow = await Row(db, tx, actor, customer, "inventory_port_group", group, ct);
         string groupType = String(payload, "groupType");
         if (Id(groupRow, "device_id") != device || String(groupRow, "type") != groupType) throw new DomainError(422, "port_scope_invalid");
         Guid[] ids = Ids(payload, "portIds");
         if (ids.Length == 0) throw new DomainError(422, "port_ids_required");
         if (payload["changes"] is not JsonObject changes || changes.Count == 0) throw new DomainError(422, "changes_required");
+        if (changes["properties"] is JsonObject physicalPatch && physicalPatch.Any(field => field.Key is "hardwarePhysicalConnector" or "hardwarePhysicalFace" or "hardwareInterfaceRole" or "hardwareSignalRole" or "hardwarePowerSystem" or "declaredPowerSystem"))
+            throw new DomainError(422, "hardware_metadata_immutable");
+        if (owner["hardware_profile_key"] is not null && changes["properties"] is JsonObject hardwarePatch
+            && hardwarePatch.Any(field => field.Key is "hardwareGroupKey" or "hardwarePortKey"))
+            throw new DomainError(422, "hardware_metadata_immutable");
         if (changes.Any(p => p.Key is not ("status" or "poe" or "watts" or "color" or "label" or "face" or "powerRole" or "properties")))
             throw new DomainError(422, "field_unknown");
         var before = new List<JsonObject>();
@@ -140,9 +163,15 @@ public sealed partial class InventoryStore
                 type = poe ? "rj45_poe" : "rj45";
             }
             string role = changes.ContainsKey("powerRole") ? InventoryRules.PowerRole(String(changes, "powerRole")) : String(port, "power_role");
-            if (type != "power" && role != "unspecified") throw new DomainError(422, "power_role_invalid");
+            if (!FamilyLRules.IsPower(type) && role != "unspecified") throw new DomainError(422, "power_role_invalid");
+            // A fixed hardware inlet is not an editable generic power socket.
+            // Retain its sealed role; labels/status and same-role requests stay valid.
+            if (owner["hardware_profile_key"] is not null && role != String(port, "power_role"))
+                throw new DomainError(422, "hardware_metadata_immutable");
             string status = changes.ContainsKey("status") ? InventoryRules.Status(String(changes, "status")) : String(port, "status");
             string face = changes.ContainsKey("face") ? InventoryRules.Face(String(changes, "face")) : String(port, "face");
+            if (owner["hardware_profile_key"] is not null && face != String(port, "face"))
+                throw new DomainError(422, "hardware_metadata_immutable");
             decimal? watts = changes.ContainsKey("watts") ? InventoryRules.Watts(Number(changes, "watts", 90)) : Number(port, "watts", 90);
             string label = changes.ContainsKey("label") ? Text(changes, "label", 500) : String(port, "label");
             string? color = changes.ContainsKey("color") ? Color(changes) : Color(port);

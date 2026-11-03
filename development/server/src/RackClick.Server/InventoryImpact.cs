@@ -40,7 +40,7 @@ public sealed partial class InventoryStore
         else if (type == "device.editPortGroups")
         {
             Guid device = Id(payload, "deviceId");
-            await Row(db, tx, actor, customer, "inventory_device", device, ct);
+            RequireLegacyMutableDevice(await Row(db, tx, actor, customer, "inventory_device", device, ct));
             ports = Ids(payload, "removedPortIds");
             foreach (Guid id in ports)
             {
@@ -52,6 +52,11 @@ public sealed partial class InventoryStore
             groups = All("portGroups").Where(g => Id(g, "deviceId") == device && !desired.Contains(Id(g, "id"))).Select(g => Id(g, "id")).ToArray();
         }
         else throw new DomainError(422, "preview_unsupported");
+        if (type is "device.delete" or "devices.delete")
+        {
+            var omittedChildren = All("devices").Any(d => OptionalId(d, "mountParentId") is Guid parent && devices.Contains(parent) && !devices.Contains(Id(d, "id")));
+            if (omittedChildren) throw new DomainError(409, "mount_children_present");
+        }
         if (devices.Length > 0)
         {
             groups = All("portGroups").Where(g => devices.Contains(Id(g, "deviceId"))).Select(g => Id(g, "id")).ToArray();
@@ -133,7 +138,7 @@ public sealed partial class InventoryStore
         JsonObject payload, long revision, CancellationToken ct)
     {
         Guid device = Id(payload, "deviceId");
-        await Row(db, tx, actor, customer, "inventory_device", device, ct);
+        RequireLegacyMutableDevice(await Row(db, tx, actor, customer, "inventory_device", device, ct));
         var groups = Array(payload, "groups", 32).Select(g => g as JsonObject ?? throw new DomainError(422, "port_group_invalid")).ToArray();
         var oldIds = await QueryIds(db, tx, "SELECT id FROM inventory_port WHERE systemhaus_id=@house AND customer_id=@customer AND device_id=@device", ct,
             ("house", actor.HouseId), ("customer", customer), ("device", device));

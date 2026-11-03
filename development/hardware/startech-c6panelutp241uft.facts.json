@@ -1,0 +1,24 @@
+{
+  "formatVersion": 1,
+  "model": "C6PANELUTP241UFT",
+  "url": "https://media.startech.com/cms/pdfs/c6panelutp241uft_datasheet.pdf",
+  "retrieved": "2026-10-30",
+  "pdfSha256": "2c049f679d6062c51ac1d70155c3df4a83432232f964cb9b3614571abf471f35",
+  "facts": {
+    "widthMm": 483,
+    "heightMm": 44.3,
+    "depthMm": 138,
+    "rackUnits": 1,
+    "frontRj45": 24,
+    "rearRj45": 24,
+    "couplersPreinstalled": true
+  },
+  "locators": {
+    "ports": "PDF pp1-2, feed-through preinstalled RJ45 couplers; front illustration",
+    "dimensions": "PDF p2 Physical and Environmental; metric entries"
+  },
+  "geometry": "Own technical schematic, no copied image or logo",
+  "rearNumbering": "Logical pair ordinals, not asserted as printed markings",
+  "hardwareRevision": null,
+  "releaseDate": null
+}

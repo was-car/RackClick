@@ -1,0 +1,500 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506c-20261101-v1",
+  "targetSchema": 31,
+  "baselineDefinitions": 478,
+  "baselineCommercial": 473,
+  "baseCovered": 118,
+  "authoring": {
+    "firewalls": [
+      {
+        "id": "sophos-xg-135",
+        "manufacturer": "Sophos",
+        "model": "XG 135",
+        "category": "firewall",
+        "sourcePages": [
+          "https://docs.sophos.com/nsg/hardware/quickstart/xg/sophos-quick-start-guide-xg-1xx%28w%29-rev3-xg-106%28w%29-rev1.pdf"
+        ]
+      },
+      {
+        "id": "sophos-xgs-116",
+        "manufacturer": "Sophos",
+        "model": "XGS 116",
+        "category": "firewall",
+        "sourcePages": [
+          "https://docs.sophos.com/nsg/hardware/operatinginstructions/xgs/sophos-operating-instructions-xgs-116-116w-126-126w-136-136w.pdf"
+        ]
+      },
+      {
+        "id": "sophos-xgs-138",
+        "manufacturer": "Sophos",
+        "model": "XGS 138",
+        "category": "firewall",
+        "sourcePages": [
+          "https://assets.sophos.com/X24WTUEQ/at/7wf85vbnnqf939bbhtxgfk/sophos-firewall-br.pdf"
+        ]
+      },
+      {
+        "id": "nb-9b7461820cabfd63",
+        "manufacturer": "Sophos",
+        "model": "XGS 126",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Sophos/XGS-126.yaml",
+          "https://assets.sophos.com/X24WTUEQ/at/7wf85vbnnqf939bbhtxgfk/sophos-firewall-br.pdf"
+        ]
+      },
+      {
+        "id": "nb-60535d6487d8c516",
+        "manufacturer": "Sophos",
+        "model": "XGS 136",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Sophos/XGS-136.yaml",
+          "https://assets.sophos.com/X24WTUEQ/at/7wf85vbnnqf939bbhtxgfk/sophos-firewall-br.pdf"
+        ]
+      },
+      {
+        "id": "fortinet-fortigate-80f",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 80F",
+        "category": "firewall",
+        "sourcePages": [
+          "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortigate-fortiwifi-80f-series.pdf"
+        ]
+      },
+      {
+        "id": "fortinet-fortigate-100f",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 100F",
+        "category": "firewall",
+        "sourcePages": [
+          "https://fortinetweb.s3.amazonaws.com/docs.fortinet.com/v2/attachments/42d64717-83f1-11e9-81a4-00505692583a/FG-100F-QSG.pdf"
+        ]
+      },
+      {
+        "id": "nb-9e1720811fc797a6",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 50G",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-50G.yaml",
+          "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortigate-fortiwifi-50g-series.pdf"
+        ]
+      },
+      {
+        "id": "nb-8db15759990d4860",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 100E",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-100E.yaml",
+          "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiGate_100E_Series.pdf"
+        ]
+      },
+      {
+        "id": "nb-908ff89d52fbb695",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 200D",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-200D.yaml"
+        ]
+      },
+      {
+        "id": "nb-920e5812c8fd4f87",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 80D",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-80D.yaml"
+        ]
+      },
+      {
+        "id": "nb-dfed66cafdc81794",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 140E-POE",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-140E-POE.yaml"
+        ]
+      },
+      {
+        "id": "nb-640a1e0ad66b9b51",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 1000D",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-1000D.yaml"
+        ]
+      },
+      {
+        "id": "nb-d18ad51e4dbe98fd",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 101E",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-101E.yaml",
+          "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiGate_100E_Series.pdf"
+        ]
+      },
+      {
+        "id": "nb-d71c560a21e0db1e",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 201F",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-201F.yaml"
+        ]
+      },
+      {
+        "id": "nb-14b4f71277d991de",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 310B",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-310B.yaml"
+        ]
+      },
+      {
+        "id": "nb-8ad4df2cb7211e53",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 500D",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-500D.yaml"
+        ]
+      },
+      {
+        "id": "nb-1569935c143ae3b4",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 100D",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-100D.yaml"
+        ]
+      },
+      {
+        "id": "nb-c81defef5301d096",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 100EF",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-100EF.yaml",
+          "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiGate_100E_Series.pdf"
+        ]
+      },
+      {
+        "id": "nb-a954659fb87b4e11",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 1200D",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-1200D.yaml"
+        ]
+      },
+      {
+        "id": "nb-f9a7d60382905603",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 800D",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-800D.yaml",
+          "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiGate_800D.pdf"
+        ]
+      },
+      {
+        "id": "nb-083677535cff6791",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 400F",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Fortinet/FG-400F.yaml",
+          "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortigate-400f-series.pdf"
+        ]
+      },
+      {
+        "id": "nb-229917b69a037991",
+        "manufacturer": "WatchGuard",
+        "model": "Firebox T25",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/WatchGuard/Firebox-T25.yaml",
+          "https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Hardware-Guides/firebox-t25-hardware-guide.html"
+        ]
+      },
+      {
+        "id": "nb-6c1be13449ccaccb",
+        "manufacturer": "WatchGuard",
+        "model": "Firebox T45",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/WatchGuard/Firebox-T45.yaml",
+          "https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Hardware-Guides/firebox-t45-hardware-guide.html"
+        ]
+      },
+      {
+        "id": "nb-068b536b05b168d6",
+        "manufacturer": "Barracuda",
+        "model": "F80B",
+        "category": "firewall",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Barracuda/f80b.yaml",
+          "https://campus.barracuda.com/product/cloudgenfirewall/doc/86213130/f80-revision-b/"
+        ]
+      }
+    ],
+    "edge": [
+      {
+        "id": "ubiquiti-udm-pro",
+        "manufacturer": "Ubiquiti",
+        "model": "UDM-Pro",
+        "category": "router",
+        "sourcePages": [
+          "https://techspecs.ui.com/unifi/cloud-gateways/udm-pro"
+        ]
+      },
+      {
+        "id": "nb-5f2f318828e8a714",
+        "manufacturer": "Ubiquiti",
+        "model": "UniFi Cloud Gateway Ultra",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/UCG-Ultra.yaml",
+          "https://techspecs.ui.com/unifi/cloud-gateways/ucg-ultra?subcategory=all-cloud-gateways"
+        ]
+      },
+      {
+        "id": "nb-67a1252a6921143c",
+        "manufacturer": "Ubiquiti",
+        "model": "UniFi Dream Machine Pro Special Edition",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/UniFi-Dream-Machine-Pro-Special-Edition.yaml",
+          "https://techspecs.ui.com/unifi/unifi-cloud-gateways/udm-se"
+        ]
+      },
+      {
+        "id": "nb-1dda3b7e93aeec53",
+        "manufacturer": "Ubiquiti",
+        "model": "UniFi Dream Machine Pro Max",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/UniFi-Dream-Machine-Pro-Max.yaml",
+          "https://techspecs.ui.com/unifi/unifi-cloud-gateways/udm-pro-max"
+        ]
+      },
+      {
+        "id": "nb-91b2bc4ecae870e8",
+        "manufacturer": "Ubiquiti",
+        "model": "UNAS Pro",
+        "category": "nas",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/UNAS-Pro.yaml",
+          "https://techspecs.ui.com/unifi/integrations/unas-pro"
+        ]
+      },
+      {
+        "id": "nb-6c3c831ad8429c1d",
+        "manufacturer": "Ubiquiti",
+        "model": "UniFi Security Gateway Pro",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USG-PRO-4.yaml"
+        ]
+      },
+      {
+        "id": "nb-026eafe7e1684a8c",
+        "manufacturer": "MikroTik",
+        "model": "RB4011iGS+RM",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/RB4011iGS-Plus-RM.yaml",
+          "https://mikrotik.com/product/rb4011igs_rm"
+        ]
+      },
+      {
+        "id": "nb-9e6429de560eb723",
+        "manufacturer": "TP-Link",
+        "model": "TL-SG105E",
+        "category": "switch",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/TP-Link/TL-SG105E.yaml",
+          "https://www.tp-link.com/us/home-networking/5-port-switch/tl-sg105e/#specifications"
+        ]
+      },
+      {
+        "id": "nb-23bca6f7679f1595",
+        "manufacturer": "MikroTik",
+        "model": "hAP ac lite TC",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/RB952Ui-5ac2nD-TC.yaml",
+          "https://mikrotik.com/product/RB952Ui-5ac2nD-TC#fndtn-specifications"
+        ]
+      },
+      {
+        "id": "nb-9f034976d9130ca7",
+        "manufacturer": "MikroTik",
+        "model": "hAP ax S",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/E62iUGS-2axD5axT.yaml",
+          "https://mikrotik.com/product/hap_ax_s#product_specification"
+        ]
+      },
+      {
+        "id": "nb-5a7762f3d43d50a1",
+        "manufacturer": "Synology",
+        "model": "FS6400",
+        "category": "nas",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/FS6400.yaml",
+          "https://global.synologydownload.com/download/Document/Hardware/DataSheet/FlashStation/20-year/FS6400/enu/Synology_FS6400_Data_Sheet_enu.pdf"
+        ]
+      },
+      {
+        "id": "nb-3c48ca91bd3e9e90",
+        "manufacturer": "Synology",
+        "model": "DS918+",
+        "category": "nas",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/DS918+.yaml",
+          "https://www.synology.com/en-us/support/download/DS918+"
+        ]
+      },
+      {
+        "id": "nb-bb280d4ca41dc95b",
+        "manufacturer": "Synology",
+        "model": "RS2416RP+",
+        "category": "nas",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/RS2416RP+.yaml",
+          "https://global.synologydownload.com/download/Document/Hardware/DataSheet/RackStation/16-year/RS2416RP+/enu/Synology_RS2416_Plus_RS2416RP_Plus_Data_Sheet_enu.pdf"
+        ]
+      },
+      {
+        "id": "nb-86babf3249d2b78a",
+        "manufacturer": "Synology",
+        "model": "RS3614xs+",
+        "category": "nas",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/RS3614xs+.yaml",
+          "https://global.download.synology.com/download/Document/Hardware/DataSheet/RackStation/14-year/RS3614xs+/enu/Synology_RS3614xs_Plus_Data_Sheet_enu.pdf"
+        ]
+      },
+      {
+        "id": "nb-87d53966e8a77039",
+        "manufacturer": "Synology",
+        "model": "RS815+",
+        "category": "nas",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Synology/RS815+.yaml",
+          "https://www.synology.com/en-us/products/RS815+#specs"
+        ]
+      },
+      {
+        "id": "nb-7a9733566074ec15",
+        "manufacturer": "QNAP",
+        "model": "TS-883XU-RP",
+        "category": "nas",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/QNAP/TS-883XU-RP.yaml",
+          "https://www.qnap.com/en/product/ts-883xu-rp/specs/hardware"
+        ]
+      },
+      {
+        "id": "nb-a121938648f6b54a",
+        "manufacturer": "QNAP",
+        "model": "TVS-EC1580MU-SAS-RP",
+        "category": "nas",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/QNAP/TVS-EC1580MU-SAS-RP.yaml",
+          "https://www.qnap.com/en/product/tvs-ec1580mu-sas-rp"
+        ]
+      },
+      {
+        "id": "cisco-isr4331",
+        "manufacturer": "Cisco",
+        "model": "ISR4331",
+        "category": "router",
+        "sourcePages": [
+          "https://www.cisco.com/c/en/us/td/docs/routers/access/4400/hardware/installation/guide4400-4300/C4400_isr/Overview.html",
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ISR4331.yaml"
+        ]
+      },
+      {
+        "id": "nb-74505fc219eccc33",
+        "manufacturer": "Cisco",
+        "model": "ISR4321",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ISR4321.yaml"
+        ]
+      },
+      {
+        "id": "nb-c0a3827bad315c40",
+        "manufacturer": "Cisco",
+        "model": "ISR4351",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ISR4351.yaml"
+        ]
+      },
+      {
+        "id": "nb-16082636813a2c65",
+        "manufacturer": "Cisco",
+        "model": "Catalyst 8300-1N1S-4T2X",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/C8300-1N1S-4T2X.yaml",
+          "https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8300-series-edge-platforms/datasheet-c78-744088.html"
+        ]
+      },
+      {
+        "id": "nb-ed10b6f53c36d127",
+        "manufacturer": "Cisco",
+        "model": "ASR1001-X",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1001-X.yaml"
+        ]
+      },
+      {
+        "id": "nb-f545d3718ff68f34",
+        "manufacturer": "Cisco",
+        "model": "ASR1001",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1001.yaml"
+        ]
+      },
+      {
+        "id": "nb-7e1f01ffe3e19e8a",
+        "manufacturer": "Cisco",
+        "model": "ASR1001-HX",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1001-HX.yaml"
+        ]
+      },
+      {
+        "id": "nb-b953f55ddfc9d913",
+        "manufacturer": "Cisco",
+        "model": "ASR1002-X",
+        "category": "router",
+        "sourcePages": [
+          "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Cisco/ASR1002-X.yaml"
+        ]
+      }
+    ]
+  },
+  "purpose": "50 exact pending original identities, subject to primary source/mounting validation; no product generation yet",
+  "scopeDecisions": [
+    {
+      "excluded": "nb-6f1403f8ddecb484",
+      "replacement": "nb-9e6429de560eb723",
+      "reason": "Chateau antenna assembly exceeds supported height; do not rotate or invent dimensions. Original ID remains pending."
+    }
+  ]
+}

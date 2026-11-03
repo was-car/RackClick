@@ -1,0 +1,54 @@
+{
+  "formatVersion": 1,
+  "model": "DS423+",
+  "url": "https://global.download.synology.com/download/Document/Hardware/HIG/DiskStation/23-year/DS423%2B/enu/DS423p_HIG_enu.pdf",
+  "pdfSha256": "bf2db977fd378468d83a0b1a05bfbea8288b23d3eb0d53567a3f3dee538fd5b8",
+  "datasheet": {
+    "url": "https://global.download.synology.com/download/Document/Hardware/DataSheet/DiskStation/23-year/DS423%2B/enu/Synology_DS423%2B_Data_Sheet_enu.pdf",
+    "pdfSha256": "236e3424594a688c21eeb63d24a455e1621d65eb741168221ee9055cbb4e4cec",
+    "revision": "DS423plus-2023-ENU-REV000"
+  },
+  "retrieved": "2026-10-30",
+  "releaseDate": null,
+  "hardwareRevision": null,
+  "facts": {
+    "widthMm": 199,
+    "heightMm": 166,
+    "depthMm": 223,
+    "kind": "desktop",
+    "rearRj45": 2,
+    "ethernetMbps": 1000,
+    "poe": false
+  },
+  "locators": {
+    "ports": "Official HIG PDFpage4/printed3 AtAGlance LAN1-LAN2 left-to-right; USB1front1rear; DC12V circular bottom-left; two fans side-by-side. Table continuesPDFpage5.",
+    "dimensions": "Official datasheet PDFpage5: H166xW199xD223mm, desktop, two1GbE RJ45; PDFpage4 HardwareOverview."
+  },
+  "nonConnectableReferences": {
+    "driveBays": 4,
+    "usbFront": 1,
+    "usbRear": 1,
+    "fans": 2,
+    "dcInput": 1,
+    "externalPowerAdapter": 1
+  },
+  "scope": "Exact DS423+ base model, not DS423 or DS923+. Only Ethernet ports are inventory connectors. DC input and its external adapter require a typed adapter contract before connectivity; no DC-to-AC-PDU link. USB, SATA/M.2, installed drives, storage contents and telemetry are not modeled. Four bays do not assert installed drives.",
+  "geometry": "Own flat interactive drawing; official photographs and PDF figures are private references only; approximate color.",
+  "ownSyntheticSupport": {
+    "key": "shelf-5u",
+    "revision": "mount-support-20261030-v1",
+    "rackUnits": 5,
+    "dimensionsMm": {
+      "width": 482.6,
+      "height": 222,
+      "depth": 300
+    },
+    "slot": {
+      "key": "main",
+      "widthMm": 440,
+      "heightMm": 190,
+      "depthMm": 300
+    },
+    "scope": "Own generic dimensional reservation only. Not a Synology accessory. No mechanical load, fit, manufacturer ventilation clearance or airflow certification. Historical shelf-2u and its60mm slot stay unchanged."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506i-20261101-v1",
+  "targetSchema": 38,
+  "baselineSchema": 37,
+  "baselineDefinitions": 734,
+  "baselineCommercial": 729,
+  "physicalTypes": [
+    "rj45",
+    "sfp",
+    "sfp28",
+    "qsfp",
+    "sfp56",
+    "qsfpdd",
+    "power"
+  ],
+  "authoring": {
+    "enterprise": [
+      {
+        "id": "palo-alto-pa-5580",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-5580"
+      },
+      {
+        "id": "nb-015e42f0df73715b",
+        "manufacturer": "Fortinet",
+        "model": "FortiGate 3701F"
+      },
+      {
+        "id": "nb-5bbf29fdc1f2fb3c",
+        "manufacturer": "Huawei",
+        "model": "NE8000 F1A-8H20Q"
+      }
+    ],
+    "transport": [
+      {
+        "id": "nb-268313b973eee49c",
+        "manufacturer": "Ciena",
+        "model": "5171 Router"
+      },
+      {
+        "id": "nb-595b36736b9f95f2",
+        "manufacturer": "Juniper",
+        "model": "ACX7332"
+      }
+    ]
+  },
+  "selectedBefore": 374,
+  "selectedAfterIfAllAccepted": 379,
+  "models": 5,
+  "reason": "Five documented profiles accepted; original six-model plan preserved in contract/PLAN-6-ORIGINAL.json; NokiaSR-1se reserved for power ambiguity.",
+  "originallyPlannedModels": 6,
+  "acceptedModels": 5,
+  "reservedModels": [
+    {
+      "id": "nb-fd5b5a585af75ae9",
+      "manufacturer": "Nokia",
+      "model": "7750 SR-1se 36QSFPDD-800ge",
+      "status": "reserved_not_integrated",
+      "reason": "PSU population and physical AC inputs lack sufficient primary manual; no assumptions"
+    }
+  ]
+}

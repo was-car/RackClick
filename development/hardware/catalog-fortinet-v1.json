@@ -1,0 +1,69 @@
+{
+  "formatVersion": 1,
+  "catalogKey": "rackclick-fortinet-01",
+  "definitions": [
+    {
+      "key": "fortinet-fg60f",
+      "revision": "fortinet-20261030-v1",
+      "identity": {
+        "manufacturer": "Fortinet",
+        "family": "FortiGate 60F Series",
+        "model": "FortiGate 60F",
+        "sku": "FG-60F"
+      },
+      "provenance": {
+        "kind": "manufacturer-specification",
+        "source": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortigate-fortiwifi-60f-series.pdf",
+        "assets": []
+      },
+      "kind": "desktop",
+      "rackUnits": 0,
+      "dimensionsMm": {
+        "width": 216,
+        "height": 38.5,
+        "depth": 160
+      },
+      "color": "#e9e9e6",
+      "slots": [],
+      "groups": [
+        {
+          "key": "rear-lan",
+          "type": "rj45",
+          "count": 5,
+          "face": "rear",
+          "name": "LAN",
+          "prefix": "",
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "rear-fortilink",
+          "type": "rj45",
+          "count": 2,
+          "face": "rear",
+          "name": "FortiLink",
+          "prefix": "FortiLink ",
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "rear-dmz",
+          "type": "rj45",
+          "count": 1,
+          "face": "rear",
+          "name": "DMZ",
+          "prefix": "DMZ ",
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "rear-wan",
+          "type": "rj45",
+          "count": 2,
+          "face": "rear",
+          "name": "WAN",
+          "prefix": "WAN ",
+          "powerRole": "unspecified"
+        }
+      ],
+      "passthrough": null
+    }
+  ]
+}

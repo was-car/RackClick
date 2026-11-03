@@ -18,10 +18,10 @@ public static partial class OpenApiDocument
         schemas["InventoryBuilding"] = Shape(["id", "siteId", "name", "properties"], ("id", uuid), ("siteId", uuid), ("name", text), ("properties", props));
         schemas["InventoryRoom"] = Shape(["id", "buildingId", "name", "properties"], ("id", uuid), ("buildingId", uuid), ("name", text), ("properties", props));
         schemas["InventoryRack"] = Shape(["id", "roomId", "name", "location", "sizeU", "properties"], ("id", uuid), ("roomId", nullableId), ("name", text), ("location", text), ("sizeU", integer), ("properties", props));
-        schemas["InventoryDevice"] = Shape(["id", "kind", "rackId", "roomId", "name", "sizeU", "sortOrder", "poeBudget", "properties"],
+        schemas["InventoryDevice"] = Shape(["id", "kind", "rackId", "roomId", "name", "sizeU", "sortOrder", "poeBudget", "hardwareProfileKey", "mountParentId", "mountSlotKey", "properties"],
             ("id", uuid), ("kind", Obj(("type", "string"), ("enum", new[] { "rackEquipment", "dose", "endDevice" }))),
-            ("rackId", nullableId), ("roomId", nullableId), ("name", text), ("sizeU", Obj(("type", "integer"), ("nullable", true))),
-            ("sortOrder", integer), ("poeBudget", number), ("properties", props));
+            ("rackId", nullableId), ("roomId", nullableId), ("name", text), ("sizeU", Obj(("type", "integer"), ("nullable", true), ("minimum", 0), ("description", "Additional rack units reserved. A mounted reference firewall has zero additional U; its physical dimensions remain nonzero and its parent reserves the clearance."))),
+            ("sortOrder", integer), ("poeBudget", number), ("hardwareProfileKey", nullableText), ("mountParentId", nullableId), ("mountSlotKey", nullableText), ("properties", props));
         schemas["InventoryPortGroup"] = Shape(["id", "deviceId", "type", "name", "prefix", "sortOrder"],
             ("id", uuid), ("deviceId", uuid), ("type", text), ("name", text), ("prefix", text), ("sortOrder", integer));
         schemas["InventoryPort"] = Shape(["id", "deviceId", "groupId", "type", "gn", "sortOrder", "label", "status", "poe", "watts", "color", "face", "powerRole", "properties"],
@@ -58,6 +58,8 @@ public static partial class OpenApiDocument
         object Pair = Shape(["fromPortId", "toPortId"], ("fromPortId", uuid), ("toPortId", uuid), ("note", text), ("color", nullableText), ("patch", text), ("properties", props), ("confirmedReservedPortIds", ids));
         var commands = new Dictionary<string, object?>
         {
+            ["device.createHardware"] = Shape(["profileKey", "name"], ("profileKey", text), ("profileVersion", Obj(("type", "string"), ("default", InventoryHardwareProfiles.Version), ("description", "Exact immutable revision. rackId/roomId/parent depend on its mounting contract; unknown dimensions never enable shelf fit."))), ("rackId", nullableId), ("roomId", nullableId), ("name", text), ("mountParentId", nullableId), ("mountSlotKey", nullableText)),
+            ["rack.createHardware"] = Shape(["profileKey", "profileVersion", "roomId", "name"], ("profileKey", text), ("profileVersion", text), ("roomId", uuid), ("name", text), ("location", text)),
             ["site.create"] = Named(false), ["site.update"] = Named(true), ["site.delete"] = IdOnly,
             ["building.create"] = Named(false, "siteId"), ["building.update"] = Named(true, "siteId"), ["building.delete"] = IdOnly,
             ["room.create"] = Named(false, "buildingId"), ["room.update"] = Named(true, "buildingId"), ["room.delete"] = IdOnly,

@@ -1,6 +1,6 @@
-"""Genera una distribución de servidor y frontend de esquema 14 o 15 desde un perfil cerrado.
+"""Genera una distribución de servidor y frontend de esquema 14, 15 o 43 desde un perfil cerrado.
 
-Entradas explícitas: perfil cerrado14 o15 en docs/, publicación del servidor sin apphost y frontend
+Entradas explícitas: perfil cerrado14,15 o43 en docs/, publicación del servidor sin apphost y frontend
 construido. Salida: carpeta nueva con server/, frontend/, manifest.json, inventory.json y SHA256SUMS.txt.
 No sobrescribe nada, no usa pruebas ni generadores históricos y no adopta ni instala el producto.
 """
@@ -17,7 +17,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PROFILE_PATH = ROOT / 'docs' / 'DISTRIBUCION14-PERFIL.json'
 PROFILE15_PATH = ROOT / 'docs' / 'DISTRIBUCION15-PERFIL.json'
-PROFILE_SCHEMAS = {PROFILE_PATH: 14, PROFILE15_PATH: 15}
+PROFILE43_PATH = ROOT / 'docs' / 'DISTRIBUCION43-PERFIL.json'
+PROFILE43P3_PATH = ROOT / 'docs' / 'DISTRIBUCION43-PUNTO3-PERFIL.json'
+PROFILE43_SQL_PATH = ROOT / 'docs' / 'DISTRIBUCION43-SQL-PERFIL.json'
+PROFILE45_SQL_PATH = ROOT / 'docs' / 'DISTRIBUCION45-SQL-PERFIL.json'
+PROFILE_SCHEMAS = {PROFILE_PATH: 14, PROFILE15_PATH: 15, PROFILE43_PATH: 43, PROFILE43P3_PATH: 43, PROFILE43_SQL_PATH: 43, PROFILE45_SQL_PATH: 45}
 FILE_ATTRIBUTE_REPARSE_POINT = 0x400
 SHA_LINE = re.compile(r'^[a-f0-9]{64}$')
 
@@ -73,6 +77,10 @@ def load_profile(profile_path: Path = PROFILE_PATH) -> dict:
     if profile.get('formatVersion') != 1 or profile.get('kind') != 'RackClickDistributionProfileDefinition':
         raise DistributionError('profile_invalid')
     if profile.get('applicationSchema') != schema or profile.get('state') != 'definition_only_not_a_release':
+        raise DistributionError('profile_invalid')
+    if profile_path == PROFILE43_SQL_PATH and profile.get('profileId') != 'schema43-sql-protected-01':
+        raise DistributionError('profile_invalid')
+    if profile_path == PROFILE45_SQL_PATH and profile.get('profileId') != 'schema45-sql-protected-01':
         raise DistributionError('profile_invalid')
     app = profile['serverApplicationFiles']
     sql = profile['serverSqlFiles']

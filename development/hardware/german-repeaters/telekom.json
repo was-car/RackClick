@@ -1,0 +1,312 @@
+{
+  "formatVersion": 1,
+  "revision": "german-repeaters-20261103-v1",
+  "models": [
+    {
+      "definition": {
+        "key": "telekom-speedhome-wlan-2021",
+        "revision": "german-repeaters-20261103-v1",
+        "identity": {
+          "manufacturer": "Telekom",
+          "family": "Speed Home WLAN original",
+          "model": "Speed Home WLAN (2021)",
+          "sku": "40823475"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.telekom.com/resource/blob/627822/c83408f468252af4369eea285310d15a/dl-produktsteckbrief-speed-home-data.pdf",
+          "assets": []
+        },
+        "kind": "tabletop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 157,
+          "height": 157,
+          "depth": 69
+        },
+        "color": "#25282b",
+        "slots": [],
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "LAN · 1 GbE",
+            "prefix": "LAN ",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "dc",
+            "type": "power_dc",
+            "count": 1,
+            "face": "rear",
+            "name": "DC input · external PSU",
+            "prefix": "DC ",
+            "powerRole": "inlet",
+            "physicalConnector": "dc-barrel",
+            "powerSystem": "dc"
+          }
+        ],
+        "passthrough": null,
+        "mounting": {
+          "kind": "tabletop",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "40823475",
+            "quantity": 1,
+            "description": "Unidad y alimentación nominal del modelo; sin montaje de rack ni adaptadores implícitos."
+          }
+        ],
+        "continuities": []
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 320,
+            "height": 350,
+            "plate": {
+              "x": 17.0,
+              "y": 20,
+              "w": 286,
+              "h": 286,
+              "fill": "#25282b",
+              "stroke": "#92999e",
+              "radius": 143
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 160,
+                "cy": 163,
+                "r": 143,
+                "fill": "#25282b"
+              },
+              {
+                "kind": "rect",
+                "x": 106,
+                "y": 307,
+                "w": 108,
+                "h": 14,
+                "fill": "#202326",
+                "radius": 5
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 76,
+                "text": "Telekom",
+                "size": 19,
+                "fill": "#f2f2f2",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 103,
+                "text": "Speed Home WLAN",
+                "size": 12,
+                "fill": "#f2f2f2",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 160,
+                "cy": 140.12,
+                "r": 5,
+                "fill": "#2b9c68"
+              },
+              {
+                "kind": "rect",
+                "x": 143,
+                "y": 228.78,
+                "w": 34,
+                "h": 21,
+                "fill": "#65686b",
+                "radius": 5
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 244.78,
+                "text": "+",
+                "size": 14,
+                "fill": "#f2f2f2",
+                "anchor": "middle"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 320,
+            "height": 350,
+            "plate": {
+              "x": 17.0,
+              "y": 20,
+              "w": 286,
+              "h": 286,
+              "fill": "#25282b",
+              "stroke": "#92999e",
+              "radius": 143
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 160,
+                "cy": 163,
+                "r": 143,
+                "fill": "#25282b"
+              },
+              {
+                "kind": "rect",
+                "x": 106,
+                "y": 307,
+                "w": 108,
+                "h": 14,
+                "fill": "#202326",
+                "radius": 5
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 52,
+                "text": "LAN / POWER",
+                "size": 12,
+                "fill": "#f2f2f2",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 62,
+                "y": 72,
+                "w": 196,
+                "h": 2,
+                "fill": "#6d7377",
+                "radius": 0
+              },
+              {
+                "kind": "rect",
+                "x": 62,
+                "y": 81,
+                "w": 196,
+                "h": 2,
+                "fill": "#6d7377",
+                "radius": 0
+              },
+              {
+                "kind": "rect",
+                "x": 62,
+                "y": 90,
+                "w": 196,
+                "h": 2,
+                "fill": "#6d7377",
+                "radius": 0
+              },
+              {
+                "kind": "rect",
+                "x": 62,
+                "y": 99,
+                "w": 196,
+                "h": 2,
+                "fill": "#6d7377",
+                "radius": 0
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 155.0,
+                "text": "LAN · 1 GbE",
+                "size": 11,
+                "fill": "#f2f2f2",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 221.0,
+                "text": "DC input · external PSU",
+                "size": 11,
+                "fill": "#f2f2f2",
+                "anchor": "middle"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 111.0,
+                "y": 163,
+                "dx": 55,
+                "dy": 0,
+                "w": 43,
+                "h": 34,
+                "labels": {
+                  "1": "1",
+                  "2": "2"
+                }
+              },
+              {
+                "groupKey": "dc",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 136.0,
+                "y": 229,
+                "dx": 60,
+                "dy": 0,
+                "w": 48,
+                "h": 34,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.telekom.com/resource/blob/627822/c83408f468252af4369eea285310d15a/dl-produktsteckbrief-speed-home-data.pdf",
+            "kind": "manufacturer_web",
+            "observed": "Consulta primaria 03.11.2026; identidad, población y límites resumidos en referencia propia. Sin fotos redistribuidas."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": "development/hardware/german-repeaters/telekom-reference.md",
+            "sha256": "c086dc0adbecda21af3808ca1b7e2ba806123a7598221fa74d99d449389c59b4",
+            "view": "front",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          },
+          {
+            "path": "development/hardware/german-repeaters/telekom-reference.md",
+            "sha256": "c086dc0adbecda21af3808ca1b7e2ba806123a7598221fa74d99d449389c59b4",
+            "view": "rear",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          }
+        ],
+        "limits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mecánico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces automáticos.",
+          "Detalle trasero operativo agrupado: no afirma posición mecánica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja implícitos. Cotas nominales no certifican ventilación, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificación eléctrica. DC no certifica diámetro ni polaridad.",
+          "Original junio 2021, artículo 40823475. Ficha indexada; descarga directa 404. Manual actual 2.Gen excluido."
+        ],
+        "dimensionsBasis": "W/H/D nominales por SKU cuando constan. Devolo: tres cotas null por reserva de ejes, sin prueba de encaje."
+      }
+    }
+  ]
+}

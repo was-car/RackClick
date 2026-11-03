@@ -1,0 +1,64 @@
+RACKCLICK - CARGA OPCIONAL DE 50 CLIENTES SINTETICOS - ESQUEMA 43
+
+00. USO
+Este cargador agrega inventario de demostracion por la API normal. No importa
+usuarios, contrasenas, sesiones, factores MFA ni claves de PostgreSQL. La cuenta
+administrativa y su autenticador se conservan. No es una copia PostgreSQL ni el
+Full Backup original RC9. No instala Python, Node ni SDK.
+
+01. ANTES DE EMPEZAR
+Use UNA INSTALACION NUEVA DE LABORATORIO, VACIA y en funcionamiento. No ejecute
+esto en la instalacion que contiene sus clientes actuales. No los borre para
+hacer sitio: prepare otra instancia. El servidor tiene que mostrar esquema43,
+HTTPS valido/confiable y cero clientes. Hace falta administrador GLOBAL del
+Systemhaus con permisos vigentes. Si su cuenta exige enrolamiento MFA, termine
+primero ese enrolamiento en el navegador. Si ya usa MFA, se pedira un codigo.
+Conserve la copia de seguridad y el snapshot que usted gestione en VMware.
+
+02. EJECUTAR
+Abra esta carpeta, que contiene el plan demo50-replay.json y el script.
+Haga doble clic en CARGAR-50-CLIENTES.cmd. No se necesita elevar PowerShell.
+Escriba la URL HTTPS exacta del servidor, por ejemplo:
+  https://192.168.178.141:5443
+No cambie la IP de Windows para cargar datos. Introduzca usuario y contrasena
+de RackClick; la contrasena no se muestra ni se guarda en archivos de salida.
+Si se solicita, introduzca el codigo TOTP de seis cifras. El cargador nunca
+desactiva MFA, cambia la politica ni ignora certificados TLS.
+
+Se comprueban primero el plan, el esquema, los permisos y el destino vacio.
+Para comenzar escriba exactamente:
+  CARGAR 50 CLIENTES SINTETICOS
+
+Tambien puede abrir Inicio, escribir Windows PowerShell, abrirlo normal y usar:
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Import-RackClickDemo50.ps1 -Origin 'https://192.168.178.141:5443' -PlanPath .\demo50-replay.json -ExpectedPlanSha256 'a3b44a37d8ca81f2f13d515d26905a520af8f09ffb2cfe498f97d06367bf423a'
+
+03. ESPERAR Y COMPROBAR
+El avance muestra cada cliente verificado, de c01 a c50. Se conservan nombres,
+metadatos, perfiles, grupos, puertos, montajes y conexiones. Los UUID se crean
+en el nuevo servidor y se remapean por los recibos; no se copian identificadores
+de cuentas. Cada comando exige revision y confirmacion del servidor.
+El final esperado es success=true y code=demo50_loaded_verified. Contiene:
+  50 clientes, 66 sitios, 88 edificios, 226 salas, 180 racks,
+  1563 equipos/objetos, 2869 grupos, 20665 puertos y 2207 conexiones.
+Entre al navegador, recargue Clientes y abra algunos escenarios. La carpeta
+de datos incluye un indice HTML para consultar los50 sin ejecutar la carga.
+
+04. SI FALLA
+Pare y conserve el codigo y las ultimas lineas. NO repita, NO borre clientes y
+NO cambie permisos. Cada comando confirmado queda guardado: la carga completa
+NO es una transaccion atomica y puede dejar una demostracion parcial. Un fallo
+de red se trata como incierto y no se reintenta automaticamente. Un nuevo ensayo
+debe usar otra instalacion vacia, despues de revisar la causa.
+demo_empty_installation_required: ya hay clientes; el cargador no los toca.
+demo_plan_hash_mismatch: plan distinto; no cargar ni rehacer el hash a mano.
+demo_global_administrator_required: cuenta sin capacidades globales suficientes.
+demo_finish_enrollment_in_browser_first: complete su autenticador en la web.
+demo_http_rejected_or_uncertain_no_retry: conservar resultado, no repetir.
+
+05. LIMITES
+El plan contiene solo un conjunto sintetico revisado. No es importador generico
+ni interfaz de copias desde dashboard. El switch DevelopmentLoopbackHttp es
+exclusivo de las pruebas de desarrollo, no se usa desde este CMD. Los grupos y
+puertos se contrastan por dispositivo, grupo, tipo e indice; gn no es identidad.
+La lectura/creacion real con HTTPS y MFA del instalador se acredita por separado
+del ensayo automatizado HTTP/PG de este componente.

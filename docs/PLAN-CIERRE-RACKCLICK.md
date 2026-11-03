@@ -1,10 +1,10 @@
 # RackClick · inventario completo y plan de cierre medible
 
-Base **RC-CIERRE-20261029-v2**, 2026-10-29. El inventario inicial se creó mediante conciliación documental. Los avances posteriores y sus pruebas se acreditan en los subpasos, con evidencias propias; no se convierten en aceptación de QA.
+Base **RC-CIERRE-20261103-v3**, 2026-11-03. El inventario inicial se creó mediante conciliación documental. Los avances posteriores y sus pruebas se acreditan en los subpasos, con evidencias propias; no se convierten en aceptación de QA.
 
 **El 78 % anterior queda retirado como indicador vigente.** Sus 7 puntos pendientes funcionales eran 2 de fundamento, 3 de inventario, 1 de administración y 1 de paridad: no eran 7 tareas. El inventario actual distingue 7 bloques, con trabajo concreto y evidencia.
 
-**Cierre de este trabajo restante: 9,76/100 puntos.** No significa que el producto esté al 0 %. Lo ya construido se reconoce abajo. No se conoce aquí un nuevo porcentaje global del producto y no se utiliza 78+22×cierre.
+**Cierre de este trabajo restante: 14,76/100 puntos.** No significa que el producto esté al 0 %. Lo ya construido se reconoce abajo. No se conoce aquí un nuevo porcentaje global del producto y no se utiliza 78+22×cierre.
 
 El inventario tiene **53 entradas: 50 resultados ponderados y 3 decisiones/controles sin doble puntuación; 280 subpasos**. No son jornadas, pruebas nuevas ni nuevas funciones. Los 55 criterios S1–S4 están trazados; S-50/retorno de campo pertenece a S5.
 
@@ -20,7 +20,7 @@ El denominador inicial es 100. No aumenta por bugs, ZIPs, pruebas repetidas o su
 
 | Bloque | Peso del cierre | Cerrado | Resultados con peso |
 |---|---:|---:|---:|
-| F · Fundamento, seguridad y MFA | 25 | 2,62 | 10 |
+| F · Fundamento, seguridad y MFA | 25 | 7,62 | 10 |
 | I · Jerarquía, inventario y colaboración | 15 | 3,63 | 6 |
 | A · Usuarios, grupos y administración | 5 | 0,00 | 4 |
 | P · Paridad funcional y visual RC9 | 15 | 0,00 | 11 |
@@ -34,8 +34,8 @@ El denominador inicial es 100. No aumenta por bugs, ZIPs, pruebas repetidas o su
 
 | ID | Resultado | Tipo de pendiente | Puntos de cierre |
 |---|---|---|---:|
-| F-01 | Clasificar hallazgos de secretos y tratar sólo credenciales reales | implementación | 2,50 |
-| F-02 | Cifrar configuración SQL y recuperar sus secretos en otra instancia | implementación | 2,50 |
+| F-01 | Clasificar hallazgos de secretos y tratar sólo credenciales reales | archivado administrativamente con incertidumbre residual | 2,50 |
+| F-02 | Cifrar configuración SQL y recuperar sus secretos en otra instancia | cerrado técnicamente con revisión independiente | 2,50 |
 | F-03 | Registrar decisión de custodia y ubicación definitiva D2 | decisión de custodia/recuperación confirmada; concreción técnica pendiente | 0,00 |
 | F-04 | Implementar proveedor TOTP Windows bajo la identidad real del servicio | Proveedor real integrado en candidata10; F-04.03 cerrado, ACL/otros tokens y cierre total pendientes | 2,50 |
 | F-05 | Implementar sobre portable autenticado y restauración de claves | implementación | 2,50 |
@@ -116,41 +116,41 @@ Las referencias acreditan sus builds/entornos originales y límites; no se convi
 
 ### F-01 · Clasificar hallazgos de secretos y tratar sólo credenciales reales
 
-**Situación:** Escáner Gitleaks/hook fijados y revisados; no falta instalar otro escáner. El barrido guardó coincidencias, no un historial limpio.
+**Situación:** F-01.01/.03 conservan su clasificación/registro técnico. F-01.02/.04 cerrados administrativamente por decisión expresa de Wascar03.11 y enmienda limitadav3: antecedente25.10 indeterminado y salida perdida, sin falso positivo, prueba de revocación ni cambios deD. Reabrir ambos y retirar5/4 si aparece evidencia concreta; no es higiene global ni aceptación de exposiciones futuras.
 
 **Qué falta:**
 
-- [ ] F-01.01 · Clasificar candidatos e indeterminados privados con trazabilidad por ruta/commit y sin publicar valores.
-- [ ] F-01.02 · Si una credencial es real, coordinar revocación/rotación con la instancia afectada; corregir exposición y volver a verificar cambios/artefactos relevantes.
-- [ ] F-01.03 · Registrar falsos positivos y criterio específico sin supresiones amplias; reescritura de historial no está autorizada por defecto.
-- [ ] F-01.04 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
+- [x] F-01.01 · Clasificar candidatos e indeterminados privados con trazabilidad por ruta/commit y sin publicar valores.
+- [x] F-01.02 · Si una credencial es real, coordinar revocación/rotación con la instancia afectada; corregir exposición y volver a verificar cambios/artefactos relevantes. Para el antecedente run-1 del25.10.2026 sin salida conservada, se admite sólo el archivo administrativo expreso documentado, con incertidumbre y reapertura obligatoria; no clasifica como falso positivo ni prueba revocación.
+- [x] F-01.03 · Registrar falsos positivos y criterio específico sin supresiones amplias; reescritura de historial no está autorizada por defecto.
+- [x] F-01.04 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
 
-**Se cierra cuando:** Cada candidato/indeterminado tiene clasificación y resolución verificables; credenciales reales expuestas revocadas/rotadas de forma coordinada; comprobación focal de fuentes/paquete sin exposición.
+**Se cierra cuando:** Cada candidato/indeterminado tiene clasificación y resolución verificables; credenciales reales expuestas revocadas/rotadas de forma coordinada; comprobación focal de fuentes/paquete sin exposición. Excepción limitada al antecedente run-1 del25.10.2026 sin salida conservada: archivo administrativo expreso del titular con clasificación indeterminada y reapertura obligatoria si aparece evidencia concreta. No equivale a falso positivo, ausencia de exposición o revocación demostrada.
 
 **Responsable:** Desarrollo: Clasificación, correcciones y verificación saneada; Wascar: Coordinar sólo una rotación que afecte instalaciones/credenciales bajo su control; Entorno: Acceso local privado a hallazgos; no enviar secretos al chat. **Dependencias:** Sin dependencia previa nueva identificada.
 
-**Tipo de pendiente:** implementación. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
+**Tipo de pendiente:** archivado administrativamente con incertidumbre residual. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
 
 **Criterios:** rev4 C.0; rev4 C.6; AGENTS: nunca versionar secretos/diagnósticos privados.
 
-**Evidencia existente:** [docs/IMPLEMENTACION-REV4.md](IMPLEMENTACION-REV4.md), [evidence/s1-20261021/rev4-fundamento/CIERRE.md](../evidence/s1-20261021/rev4-fundamento/CIERRE.md). Todas las referencias e hitos separados están en elJSON.
+**Evidencia existente:** [docs/IMPLEMENTACION-REV4.md](IMPLEMENTACION-REV4.md), [evidence/s1-20261021/rev4-fundamento/CIERRE.md](../evidence/s1-20261021/rev4-fundamento/CIERRE.md), [evidence/s1-20261102/f01-01-clasificacion/RESULTADOS.md](../evidence/s1-20261102/f01-01-clasificacion/RESULTADOS.md). Todas las referencias e hitos separados están en elJSON.
 
 ### F-02 · Cifrar configuración SQL y recuperar sus secretos en otra instancia
 
-**Situación:** Connection string runtime permanece en archivo privado protegido por ACL y texto plano. DPAPI de otros secretos del instalador no acredita cifrado de ésta.
+**Situación:** F-02.01–.04 cerrados: postboot13, Restore14-r2 desde backup sintético LEAO hacia E con cuenta/SID/roles/material nuevos,20clientes SQL/API,operadores/ficha/diagnóstico/backup reales y reanudación sin regeneración. Windows no se reinició tras Restore14; ese pendiente sigue en los criterios Windows, sin adopción global. D se conserva y F01 tiene disposición administrativa posterior03.11, separada del cierre técnico.
 
 **Qué falta:**
 
-- [ ] F-02.01 · Diseñar e integrar protección compatible con cuenta/instancia reales y canal mínimo de lectura para el servicio; conservar separación owner/migración/runtime.
-- [ ] F-02.02 · Actualizar operadores/fichas de acceso, diagnóstico y backup para no filtrar la clave ni depender de copiar un secreto ligado al host antiguo.
-- [ ] F-02.03 · Ensayar reanudación y Restore en destino nuevo con identidad/roles/claves nuevos; error explícito ante clave ausente/incorrecta.
-- [ ] F-02.04 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
+- [x] F-02.01 · Diseñar e integrar protección compatible con cuenta/instancia reales y canal mínimo de lectura para el servicio; conservar separación owner/migración/runtime.
+- [x] F-02.02 · Actualizar operadores/fichas de acceso, diagnóstico y backup para no filtrar la clave ni depender de copiar un secreto ligado al host antiguo.
+- [x] F-02.03 · Ensayar reanudación y Restore en destino nuevo con identidad/roles/claves nuevos; error explícito ante clave ausente/incorrecta.
+- [x] F-02.04 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
 
 **Se cierra cuando:** El secreto SQL no queda en claro en el archivo entregado/configuración recuperable; servicio estándar arranca y Restore nuevo funciona mediante procedimiento documentado, sin secretos en logs/paquetes.
 
 **Responsable:** Desarrollo: Implementación y pruebas; Wascar: Custodia operativa si el diseño necesita material de recuperación de su responsabilidad; Entorno: Windows destino nuevo y SID real de servicio. **Dependencias:** Coordinación C4/C5: cuenta de servicio y procedimiento de recuperación
 
-**Tipo de pendiente:** implementación. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
+**Tipo de pendiente:** cerrado técnicamente con revisión independiente. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
 
 **Criterios:** rev4 C.6; S-45; S-56.
 

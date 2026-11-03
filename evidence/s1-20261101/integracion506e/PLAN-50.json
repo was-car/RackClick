@@ -1,0 +1,474 @@
+{
+  "revision": "selected506e-20261101-v1",
+  "targetSchema": 33,
+  "baseSchema": 32,
+  "baselineDefinitions": 578,
+  "baselineCommercial": 573,
+  "baseCovered": 218,
+  "supportedTypes": [
+    "rj45",
+    "sfp",
+    "sfp28",
+    "qsfp",
+    "power"
+  ],
+  "notRelease": true,
+  "sourceSelectionSha256": "d9c97a9ca25de5f9739562ab0568b564c9409061742683b0e1fb88dfc5b9bbd2",
+  "formatVersion": 1,
+  "authoring": {
+    "core": [
+      {
+        "id": "cisco-c9200l-24t-4g",
+        "manufacturer": "Cisco",
+        "model": "C9200L-24T-4G",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "cisco-c9200l-48p-4g",
+        "manufacturer": "Cisco",
+        "model": "C9200L-48P-4G",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-56d658406c3821e4",
+        "manufacturer": "Cisco",
+        "model": "Catalyst 1300-24P-4X",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-c6ac814fdd7b9934",
+        "manufacturer": "Cisco",
+        "model": "Catalyst 9200L-24P-4G",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-59ffa19030bec2db",
+        "manufacturer": "Cisco",
+        "model": "Catalyst 9200L-48T-4G",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-5e6bc5b25105aac2",
+        "manufacturer": "Cisco",
+        "model": "Catalyst 9300-24P",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-9d22e570931da32f",
+        "manufacturer": "Cisco",
+        "model": "Catalyst 9300-48T",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-703a133fe021a249",
+        "manufacturer": "Cisco",
+        "model": "Catalyst 9300L-48P-4X",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-3a0dec7f06699680",
+        "manufacturer": "Cisco",
+        "model": "Meraki MS125-48FP",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-24e436f8efc76877",
+        "manufacturer": "Cisco",
+        "model": "ASR1002",
+        "category": "router",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-ba797213d2a5841a",
+        "manufacturer": "Cisco",
+        "model": "ASR1002-HX",
+        "category": "router",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-f05a32f1a3f1d292",
+        "manufacturer": "Cisco",
+        "model": "Firepower 2110",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-823b267b5cd72e2c",
+        "manufacturer": "Cisco",
+        "model": "FPR3110-NGFW-K9",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-44d618c14f1ee6e3",
+        "manufacturer": "Cisco",
+        "model": "FPR4112-NGFW-K9",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-6de5e10b8660c81a",
+        "manufacturer": "HPE",
+        "model": "Aruba 8325-32C Front-to-Back",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-75adec80da5ff093",
+        "manufacturer": "HPE",
+        "model": "Aruba 8360-48Y6C Front-to-Back",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-0e6accdf31d7d113",
+        "manufacturer": "HPE",
+        "model": "Aruba 2930M-24G",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-cd1c3bbe082c129d",
+        "manufacturer": "HPE",
+        "model": "Aruba 2930M-48G",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-e2f5cc04c6ef0ee3",
+        "manufacturer": "HPE",
+        "model": "Aruba 2930M-48G-PoE+",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-b68b49db7fee9c88",
+        "manufacturer": "Arista",
+        "model": "CCS-720DT-48S-2F",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-0355b604a6794595",
+        "manufacturer": "Arista",
+        "model": "DCS-7020TR-48-F",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-857386ff2603fa07",
+        "manufacturer": "Arista",
+        "model": "DCS-7020TRA-48-F",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-e4457af07a020f38",
+        "manufacturer": "Nokia",
+        "model": "7220 IXR-D2 25/100GE",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-63eb4152092cd08f",
+        "manufacturer": "Nokia",
+        "model": "7220 IXR-D2L 25/100GE",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-89d64c27c959137e",
+        "manufacturer": "Nokia",
+        "model": "7220 IXR-D3 32*100GE",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      }
+    ],
+    "edge": [
+      {
+        "id": "palo-alto-pa-1410",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-1410",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "palo-alto-pa-1420",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-1420",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "palo-alto-pa-3220",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-3220",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "ubiquiti-usw-24-poe",
+        "manufacturer": "Ubiquiti",
+        "model": "USW-24-POE",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-e94a1bc6fc227b74",
+        "manufacturer": "Ubiquiti",
+        "model": "Enterprise Campus Switch 24-Port PoE",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-ec11fe6fea97c18d",
+        "manufacturer": "Juniper",
+        "model": "SRX380",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-8daa73dfc2be1ec5",
+        "manufacturer": "MikroTik",
+        "model": "CRS309-1G-8S+IN",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-f390c56e840a7483",
+        "manufacturer": "MikroTik",
+        "model": "CRS317-1G-16S+RM",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-00de5627d2ff4666",
+        "manufacturer": "MikroTik",
+        "model": "CRS328-24P-4S+RM",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-858c4b2d8df65bb9",
+        "manufacturer": "Netgear",
+        "model": "S3300-28X-PoE+",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-7d81ebcda392315d",
+        "manufacturer": "Netgear",
+        "model": "S3300-52X",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-66c3ee1f91a9421d",
+        "manufacturer": "Dell",
+        "model": "PowerSwitch N2048",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-b00080f2380582f6",
+        "manufacturer": "Extreme Networks",
+        "model": "X440-G2-24p-10GE4",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-dd10d7331f22b8bf",
+        "manufacturer": "Extreme Networks",
+        "model": "4120-48MW-4Y",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-c8a9b3d42f78ee94",
+        "manufacturer": "Extreme Networks",
+        "model": "4220-12T-4X",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-e9dabe5202e7c565",
+        "manufacturer": "Extreme Networks",
+        "model": "4220-48P-4X",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-cf0f597e804145ae",
+        "manufacturer": "Extreme Networks",
+        "model": "4220-48T-4X",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-53d11b15f96aebfd",
+        "manufacturer": "Extreme Networks",
+        "model": "4220-4MW-20P-4X",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-dc19eda57299b02a",
+        "manufacturer": "Extreme Networks",
+        "model": "4220-4MW-8P-4X",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-69510e57b0827c16",
+        "manufacturer": "Extreme Networks",
+        "model": "4220-8MW-40P-4X",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-3b6043083efdc428",
+        "manufacturer": "Huawei",
+        "model": "S5700-52P-LI-AC",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-99ab5630f088ba2c",
+        "manufacturer": "Huawei",
+        "model": "S5720-52X-PWR-SI-AC",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-520f1d7a35b7e950",
+        "manufacturer": "Huawei",
+        "model": "S5731-H24T4XC",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-1adb46683cc91954",
+        "manufacturer": "Huawei",
+        "model": "S5732-H48UM2CC",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-c0ac0f175a7366e6",
+        "manufacturer": "Huawei",
+        "model": "S5735-L48P4XE-A-V2",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      }
+    ]
+  }
+}

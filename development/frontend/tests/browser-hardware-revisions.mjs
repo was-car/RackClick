@@ -1,0 +1,35 @@
+import {chooseHardware} from './browser-hardware-picker-support.mjs';
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {runScenario,infrastructure,snapshot,saved,submit,normalize} from './browser-quince-support.mjs';
+
+await runScenario(async({first,session,fixture:f,checks,out,shot})=>{
+ const requests=[];
+ first.ws.addEventListener('message',event=>{const message=JSON.parse(event.data);if(message.method==='Network.requestWillBeSent'&&message.params.request.method==='POST'&&message.params.request.url.endsWith('/commands'))requests.push(JSON.parse(message.params.request.postData));});
+ await infrastructure(first);const original=normalize(await snapshot(first));
+ await first.click(`[data-rack-id="${f.rack}"] .rc-rack-open`);
+ await first.wait(`document.querySelectorAll('[data-hardware-revision-unavailable]').length===2`,'unavailable template revisions');
+ assert.equal(await first.evaluate(`document.querySelector('[data-devid="${f.firewall}"]').dataset.hardwareVersion`),'missing-firewall-revision');
+ assert.equal(await first.evaluate(`!!document.querySelector('[data-mounted-on="${f.shelf}"]')`),true);
+ assert.equal(await first.evaluate(`document.querySelectorAll('[data-devid="${f.firewall}"] [data-vport]').length`),6);
+ assert.equal(await first.evaluate(`document.querySelector('[data-mounted-rack]').innerText.includes('220 × 38 × 200 mm')`),true);
+ assert.equal(await first.evaluate(`document.querySelector('[data-mounted-rack]').innerText.includes('440 × 60 × 300')`),false);
+ assert.equal(await first.evaluate(`document.querySelectorAll('[data-wire]').length`),1);
+ await first.evaluate(`document.querySelector('[data-mounted-rack]').scrollIntoView({block:'start'})`);await shot(first,'unknown-revision-front.png');
+ await first.click('[data-face="rear"]');assert.equal(await first.evaluate(`document.querySelectorAll('[data-devid="${f.firewall}"] [data-vport]').length`),1);
+ assert.deepEqual(normalize(await snapshot(first)),original);
+ checks.push('Unknown parent/child revisions retain nesting, six front/one rear real ports, recorded dimensions and existing cable; no v1 bay dimensions or implicit replacement');
+ await first.click('[data-add-hardware]');await first.field('[data-hardware-profile]','desktop-firewall-6');
+ assert.equal(await first.evaluate(`document.querySelector('[data-hardware-parent]').options.length`),1);await first.button('Cancelar');
+ checks.push('Shelf with unavailable revision is absent from eligible mounting choices');
+ await first.click('[data-add-hardware]');await chooseHardware(first,'switch-24','hw-reference-v1');await first.field('[data-hardware-name]','Switch explicit revision');await first.field('[data-hardware-rack]',f.mixedRack);
+ assert.equal(await first.evaluate(`document.querySelector('[data-hardware-revision]').textContent.includes('hw-reference-v1')`),true);
+ await submit(first);await saved(first);assert.equal(requests.length,1);assert.equal(requests[0].payload.profileVersion,'hw-reference-v1');
+ const expected=normalize(await snapshot(first));for(const old of original.devices)assert.deepEqual(expected.devices.find(d=>d.id===old.id),old);assert.deepEqual(expected.connections,original.connections);
+ checks.push('GUI shows and sends exact v1 revision; adding a new model leaves existing instances and cable unchanged');
+ await first.send('Page.reload');await first.wait(`!!document.querySelector('[data-customer-id="${f.customer}"]')`,'reloaded clients');await infrastructure(first);assert.deepEqual(normalize(await snapshot(first)),expected);
+ const second=await session('hardware-second');await infrastructure(second);assert.deepEqual(normalize(await snapshot(second)),expected);
+ checks.push('Reload and independent authorized session retain recorded revisions, ports and connections');
+ await writeFile(path.join(out,'expected-project.json'),JSON.stringify(expected,null,2)+'\n');
+});

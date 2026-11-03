@@ -147,7 +147,10 @@ function Get-SetupServiceKnownRuntimeCodes {
         'server_certificate_san_mismatch','server_certificate_manifest_invalid','server_certificate_file_hash_mismatch',
         'server_public_certificate_mismatch','server_certificate_chain_invalid','server_certificate_binding_invalid',
         'server_manifest_reference_required','server_manifest_hash_mismatch','server_manifest_invalid','server_manifest_binding_invalid',
-        'server_installation_hash_mismatch','server_installation_not_prepared','server_deployment_binding_invalid'
+        'server_installation_hash_mismatch','server_installation_not_prepared','server_deployment_binding_invalid',
+        'sql_secret_missing','sql_secret_invalid','sql_secret_access_unsafe','sql_secret_unreadable',
+        'sql_secret_decryption_failed','sql_secret_config_invalid','sql_secret_plaintext_conflict','sql_secret_runtime_only',
+        'sql_operator_unprotect_failed','sql_operator_runtime_invalid','instance_sql_ciphertext_invalid'
     )
 }
 function Read-SetupServiceDiagnosticLeaf([string]$Root,[string]$Relative,[string]$ServiceSid) {

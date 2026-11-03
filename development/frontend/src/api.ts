@@ -110,6 +110,17 @@ export class RackClickApi {
   }
   async confirmMfaEnrollment(challenge: MfaChallenge, code: string) { return this.finishMfa(challenge, code, 'enroll'); }
   async verifyMfa(challenge: MfaChallenge, code: string) { return this.finishMfa(challenge, code, 'verify'); }
+  async recoverMfa(challenge: MfaChallenge, code: string): Promise<MfaChallenge> {
+    this.requireChallenge(challenge, 'verify');
+    if (typeof code !== 'string' || !/^(?:[a-f0-9]{32}|(?:[a-f0-9]{4}-){7}[a-f0-9]{4})$/i.test(code.trim())) throw new ApiError(422, 'mfa_recovery_code_invalid');
+    const { data, status } = await this.request('/auth/mfa/recover', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-RackClick-CSRF': challenge.csrf }, body: JSON.stringify({ code: code.trim() }) });
+    this.requireChallenge(challenge, 'verify');
+    if (status !== 202 || data?.mfaRequired !== true || data?.purpose !== 'enroll' || typeof data.csrf !== 'string' || !data.csrf || data.csrf === challenge.csrf) throw new ApiError(status, 'response_invalid', true);
+    const next = Object.freeze({ purpose: 'enroll', csrf: data.csrf, generation: challenge.generation }) as MfaChallenge;
+    this.challenge = next; this.enrollmentStarted = false;
+    // Recovery is only an enrollment challenge. It must not install local authority or call /me.
+    return next;
+  }
   async me(): Promise<Session> {
     if (this.authenticationPending) throw new ApiError(401, 'authentication_required');
     const generation = this.authenticationGeneration;

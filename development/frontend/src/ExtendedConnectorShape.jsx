@@ -1,0 +1,31 @@
+import {extendedConnectorMetadata,extendedConnectorLabel,isExtendedConnector} from './hardware-connector-family-l.mjs';
+
+// Own vector drawings. Explicit media stay visually distinct from RJ45 LAN.
+export function ExtendedConnectorShape({type,physicalConnector,inline=false}){
+ const known=isExtendedConnector(type,physicalConnector),pc=known?physicalConnector:null;
+ if(!extendedConnectorMetadata[type]&&!known)return null;
+ const label=extendedConnectorLabel(type,pc);
+ let body;
+ if(type==='power'&&pc==='schuko-f')body=<><rect x="1" y="2" width="38" height="36" rx="5" fill="#242c31" stroke="#8a989e"/><circle cx="20" cy="20" r="13" fill="#111a20" stroke="#76858c"/><circle cx="14" cy="20" r="2.3" fill="#4f5e65"/><circle cx="26" cy="20" r="2.3" fill="#4f5e65"/><path d="M18 6h4v5h-4ZM18 29h4v5h-4Z" fill="#b5ad8e"/></>;
+ else if(type==='power'&&pc==='eu-2pin-plug')body=<><rect x="3" y="8" width="34" height="25" rx="11" fill="#e0ded6" stroke="#8a8d8b"/>{[12,28].map(x=><g key={x}><circle cx={x} cy="20" r="3.5" fill="#a7adb1" stroke="#5d6871"/><circle cx={x-1} cy="19" r="1" fill="#eef3f5"/></g>)}<text x="20" y="39" textAnchor="middle" fontSize="5" fill="#d9e4ec">2P</text></>;
+ else if(type==='fiber'){
+  const sc=pc?.startsWith('sc-'),duplex=pc?.includes('duplex'),count=duplex?2:1;
+  body=<><rect x="2" y="5" width="36" height="31" rx="2" fill={pc?.endsWith('apc')?'#3c8e5f':'#447bad'} stroke="#bbcfdf"/>{Array.from({length:count},(_,i)=><g key={i}><rect x={duplex?5+i*16:9} y="10" width={duplex?14:22} height="20" fill="#121e2a" stroke="#8898a3"/><circle cx={duplex?12+i*16:20} cy="20" r={sc?4:3} fill="#e5d8ae"/><path d={duplex?`M${8+i*16} 31h8v4h-8Z`:'M15 31h10v4H15Z'} fill="#c7d8df"/></g>)}</>;
+ }else if(type==='sfpdd'||type==='cfp2'||type==='sas'){
+  body=<><rect x="1" y="7" width="38" height="28" rx="2" fill="#aebbc7" stroke="#596b78"/><rect x="4" y="10" width="32" height="20" fill="#111a23"/><path d="M7 31h26M13 34v3h14v-3" fill="none" stroke="#a3b7c4"/><text x="20" y="23" textAnchor="middle" fontSize={type==='sas'?7:6} fill="#d5e9f3">{extendedConnectorMetadata[type].label}</text></>;
+ }else if(type==='power_dc'){
+  if(pc==='dc-barrel')body=<><circle cx="20" cy="20" r="17" fill="#272e34" stroke="#9dabb3"/><circle cx="20" cy="20" r="10" fill="#0b131b"/><circle cx="20" cy="20" r="3" fill="#bac5ca"/></>;
+  else if(pc==='usb-c-pd')body=<><rect x="2" y="10" width="36" height="20" rx="10" fill="#aab8c2"/><rect x="6" y="14" width="28" height="12" rx="6" fill="#101b23"/><path d="M11 20h18" stroke="#c5a774" strokeWidth="3"/><text x="20" y="38" textAnchor="middle" fontSize="6" fill="#d7b48b">PD</text></>;
+  else if(pc==='unifi-smartpower')body=<><rect x="2" y="4" width="36" height="32" rx="2" fill="#a9aeb2" stroke="#e3e7e9"/><path d="M7 9h26v22H7Z" fill="#151e28"/>{Array.from({length:4},(_,i)=><rect key={i} x={10+i*6} y="12" width="3" height="15" fill="#c7b67d"/>)}<text x="20" y="38" textAnchor="middle" fontSize="5" fill="#d3dce2">USP</text></>;
+  else if(pc?.startsWith('dc-terminal-')){const count=pc.endsWith('6p')?6:pc.endsWith('3p')?3:2;body=<><rect x="1" y="9" width="38" height="24" rx="2" fill="#4b8b62" stroke="#bdd4be"/>{Array.from({length:count},(_,i)=><g key={i}><circle cx={4+(i+.5)*32/count} cy="19" r={Math.min(4,12/count)} fill="#b3b8aa"/><path d={`M${4+(i+.5)*32/count} 15v8`} stroke="#37483c"/></g>)}<text x="20" y="7" textAnchor="middle" fontSize="6" fill="#c8ddc9">DC</text></>}
+  else body=<><rect x="3" y="7" width="34" height="28" rx="3" fill="#352c28" stroke="#b7a48f"/><text x="20" y="24" textAnchor="middle" fontSize="9" fill="#edc49b">DC</text></>;
+ }else if(type==='ipc')body=<><rect x="2" y="7" width="36" height="27" rx="3" fill="#b5b6b0" stroke="#686e69"/>{Array.from({length:4},(_,i)=><path key={i} d={`M${7+i*8} 11v17m-2-13h4m-4 9h4`} stroke={i%2?'#68845d':'#b49460'} strokeWidth="3"/>)}<text x="20" y="6" textAnchor="middle" fontSize="5" fill="#d4dfd4">IPC</text></>;
+ else if(type==='console'&&pc==='serial-mini-din8')body=<><circle cx="20" cy="20" r="17" fill="#555d62" stroke="#bbc8d0"/><circle cx="20" cy="20" r="12" fill="#101a25"/>{[[13,15],[20,13],[27,15],[11,22],[17,23],[23,23],[29,22],[20,29]].map(([x,y],i)=><circle key={i} cx={x} cy={y} r="1.5" fill="#cbb77b"/>)}</>;
+ else if(type==='console'&&pc==='serial-usb-c')body=<><rect x="2" y="10" width="36" height="20" rx="10" fill="#aab8c2"/><rect x="6" y="14" width="28" height="12" rx="6" fill="#101b23"/><text x="20" y="23" textAnchor="middle" fontSize="5" fill="#b2d5e9">SER</text></>;
+ else if(type==='console'&&['serial-mini-usb','serial-micro-usb'].includes(pc))body=<><path d={pc==='serial-mini-usb'?'M3 10h34l-5 20H8Z':'M4 13h32l3 13H1Z'} fill="#aab8c2" stroke="#607586"/><path d="M8 16h24v8H8Z" fill="#0b1723"/>{Array.from({length:5},(_,i)=><path key={i} d={`M${12+i*4} 19v5`} stroke="#ceb779"/>)}<text x="20" y="37" textAnchor="middle" fontSize="5" fill="#b2d5e9">SER</text></>;
+ else if(type==='telephony'&&pc==='voice-tae')body=<><rect x="7" y="2" width="26" height="36" rx="2" fill="#d7d3ca" stroke="#777268"/><rect x="12" y="6" width="16" height="28" rx="1" fill="#17191d"/>{[10,18,26].map(y=><g key={y}><rect x="10" y={y} width="5" height="4" fill="#9e916e"/><rect x="25" y={y} width="5" height="4" fill="#9e916e"/></g>)}<text x="20" y="23" textAnchor="middle" fontSize="5" fill="#e1dbcf">TAE</text></>;
+ else if(pc){const contacts=pc.endsWith('rj11')?6:8;body=<><rect x="2" y="4" width="36" height="32" rx="2" fill="#b2b7ba" stroke="#778895"/><path d="M6 9h28v17h-8v7H14v-7H6Z" fill="#1b1b28"/>{Array.from({length:contacts},(_,i)=><path key={i} d={`M${8+i*24/(contacts-1)} 9v6`} stroke="#cab381"/>)}<text x="20" y="24" textAnchor="middle" fontSize="4.5" fill="#d0bde1">{extendedConnectorMetadata[type]?.label}</text></>}
+ else body=<><rect x="3" y="7" width="34" height="28" rx="3" fill="#2a2836" stroke="#b1a3c4"/><text x="20" y="24" textAnchor="middle" fontSize="5" fill="#d3c6e5">{extendedConnectorMetadata[type]?.label}</text></>;
+ const attrs={'data-physical-media':type,'data-hardware-connector':pc||type,'data-connector-known':known?'true':'false','aria-hidden':true};
+ return inline?<g {...attrs}>{body}</g>:<svg {...attrs} viewBox="0 0 40 40"><title>{label}</title>{body}</svg>;
+}

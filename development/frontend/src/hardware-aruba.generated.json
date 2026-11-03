@@ -1,0 +1,44 @@
+{
+  "version": "aruba-20261030-v1",
+  "synthetic": false,
+  "profiles": [
+    {
+      "key": "aruba-jl682a",
+      "kind": "rack",
+      "sizeU": 1,
+      "widthMm": 442.5,
+      "heightMm": 43.9,
+      "depthMm": 221.5,
+      "groups": [
+        {
+          "key": "front-copper",
+          "face": "front",
+          "type": "rj45",
+          "count": 24,
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "front-uplink",
+          "face": "front",
+          "type": "sfp",
+          "count": 4,
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "rear-power",
+          "face": "rear",
+          "type": "power",
+          "count": 1,
+          "powerRole": "inlet"
+        }
+      ],
+      "identity": {
+        "manufacturer": "HPE Aruba Networking",
+        "family": "Instant On 1930",
+        "model": "JL682A",
+        "sku": "JL682A"
+      },
+      "source": "https://assets.ext.hpe.com/is/content/hpedam/a50000620enw"
+    }
+  ]
+}

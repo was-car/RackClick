@@ -1,0 +1,55 @@
+{
+  "formatVersion": 1,
+  "catalogKey": "rackclick-commercial-01",
+  "definitions": [
+    {
+      "key": "startech-c6panelutp241uft",
+      "revision": "startech-20261030-v1",
+      "identity": {
+        "manufacturer": "StarTech.com",
+        "family": "Cat6 feed-through",
+        "model": "C6PANELUTP241UFT",
+        "sku": "C6PANELUTP241UFT"
+      },
+      "provenance": {
+        "kind": "manufacturer-specification",
+        "source": "https://media.startech.com/cms/pdfs/c6panelutp241uft_datasheet.pdf",
+        "assets": []
+      },
+      "kind": "rack",
+      "rackUnits": 1,
+      "dimensionsMm": {
+        "width": 483,
+        "height": 44.3,
+        "depth": 138
+      },
+      "color": "#17191c",
+      "slots": [],
+      "groups": [
+        {
+          "key": "front-copper",
+          "type": "rj45",
+          "count": 24,
+          "face": "front",
+          "name": "Front",
+          "prefix": ""
+        },
+        {
+          "key": "rear-copper",
+          "type": "rj45",
+          "count": 24,
+          "face": "rear",
+          "name": "Rear (logical numbering)",
+          "prefix": ""
+        }
+      ],
+      "passthrough": {
+        "frontGroup": "front-copper",
+        "rearGroup": "rear-copper",
+        "count": 24,
+        "mapping": "one-to-one",
+        "tracingAvailable": false
+      }
+    }
+  ]
+}

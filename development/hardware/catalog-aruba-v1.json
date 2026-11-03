@@ -1,0 +1,60 @@
+{
+  "formatVersion": 1,
+  "catalogKey": "rackclick-aruba-01",
+  "definitions": [
+    {
+      "key": "aruba-jl682a",
+      "revision": "aruba-20261030-v1",
+      "identity": {
+        "manufacturer": "HPE Aruba Networking",
+        "family": "Instant On 1930",
+        "model": "JL682A",
+        "sku": "JL682A"
+      },
+      "provenance": {
+        "kind": "manufacturer-specification",
+        "source": "https://assets.ext.hpe.com/is/content/hpedam/a50000620enw",
+        "assets": []
+      },
+      "kind": "rack",
+      "rackUnits": 1,
+      "dimensionsMm": {
+        "width": 442.5,
+        "height": 43.9,
+        "depth": 221.5
+      },
+      "color": "#e7e8ea",
+      "slots": [],
+      "groups": [
+        {
+          "key": "front-copper",
+          "type": "rj45",
+          "count": 24,
+          "face": "front",
+          "name": "LAN",
+          "prefix": "",
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "front-uplink",
+          "type": "sfp",
+          "count": 4,
+          "face": "front",
+          "name": "SFP/SFP+",
+          "prefix": "SFP ",
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "rear-power",
+          "type": "power",
+          "count": 1,
+          "face": "rear",
+          "name": "AC inlet",
+          "prefix": "AC ",
+          "powerRole": "inlet"
+        }
+      ],
+      "passthrough": null
+    }
+  ]
+}

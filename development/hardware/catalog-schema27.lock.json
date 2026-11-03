@@ -1,0 +1,616 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 27,
+  "state": "curated_development_not_a_release",
+  "sourceSha256": {
+    "development/hardware/batch100b/security.json": "a03510ca564dea390adc5ce0b03827c8b715a74ad2db50bda97328beb1df2c7d",
+    "development/hardware/batch100b/network.json": "01d3ed1327d150a4527f8a4a9397598bd09aa309658e4461da750a1a406e0ebf",
+    "development/hardware/batch100b/nas.json": "32e1f08b131b52141b68085edb90730e2642dd95304c2c0bfffc79e020563d08"
+  },
+  "baseMigrationSha256": "b3f9047f237c1f0597aab565bb1751e9ce3c58209b8385bd85609b42a40c42e5",
+  "sharedCompilerSha256": "9f9d963a86cb29ed339ed9cf4a923dcb9b028e3c420a6972eff54b1993d9f5a7",
+  "modelKeys": [
+    "aruba-j9775a",
+    "aruba-j9776a",
+    "aruba-j9855a",
+    "aruba-j9856a",
+    "aruba-jl253a",
+    "aruba-jl254a",
+    "aruba-jl259a",
+    "aruba-jl260a",
+    "aruba-jl354a",
+    "aruba-jl355a",
+    "glinet-a1300",
+    "glinet-ar150",
+    "glinet-ar300m16",
+    "glinet-ar750",
+    "glinet-ax1800",
+    "glinet-axt1800",
+    "glinet-b1300",
+    "glinet-mt1300",
+    "glinet-mt2500",
+    "glinet-mt3000",
+    "glinet-mt300n-v2",
+    "glinet-mt6000",
+    "glinet-mv1000",
+    "glinet-sft1200",
+    "glinet-x750",
+    "glinet-xe300",
+    "mikrotik-ccr1072-1g-8splus",
+    "mikrotik-hap-ac2",
+    "mikrotik-hap-ax-lite",
+    "mikrotik-hap-mini",
+    "mikrotik-hex-e50ug",
+    "qnap-qsw-1105-5t-original",
+    "qnap-qsw-1108-8t-original",
+    "qnap-qsw-2104-2s-original",
+    "qnap-qsw-2104-2t-original",
+    "qnap-qsw-308s",
+    "qnap-qsw-m2106-4s",
+    "qnap-qsw-m2106r-2s2t",
+    "qnap-qsw-m2108-2s",
+    "qnap-qsw-m3212r-8s4t",
+    "qnap-qsw-m3216r-8s8t",
+    "qnap-qsw-m408s",
+    "qnap-ts-1232pxu-4g",
+    "qnap-ts-1232pxu-rp-4g",
+    "qnap-ts-1253du-rp-4g",
+    "qnap-ts-1264u-rp-8g",
+    "qnap-ts-1273au-rp-8g",
+    "qnap-ts-1673au-rp-16g",
+    "qnap-ts-431xeu-2g",
+    "qnap-ts-432pxu-2g",
+    "qnap-ts-432pxu-rp-2g",
+    "qnap-ts-435xeu-4g",
+    "qnap-ts-453du-4g",
+    "qnap-ts-453du-rp-4g",
+    "qnap-ts-464eu-8g",
+    "qnap-ts-464u-8g",
+    "qnap-ts-464u-rp-8g",
+    "qnap-ts-832pxu-4g",
+    "qnap-ts-832pxu-rp-4g",
+    "qnap-ts-853du-rp-4g",
+    "qnap-ts-864eu-8g",
+    "qnap-ts-864eu-rp-8g",
+    "qnap-ts-873au-4g",
+    "qnap-ts-873au-rp-4g",
+    "sonicwall-nsa2700",
+    "sonicwall-nsa3700",
+    "sonicwall-nsa4700",
+    "sonicwall-nsa5700",
+    "sonicwall-tz270",
+    "sonicwall-tz370",
+    "sonicwall-tz470",
+    "sonicwall-tz570",
+    "sonicwall-tz670",
+    "terramaster-f2-425-plus",
+    "terramaster-f4-424",
+    "terramaster-f4-424-max",
+    "terramaster-f4-425-plus",
+    "terramaster-u4-423",
+    "terramaster-u4-500",
+    "terramaster-u8-423",
+    "terramaster-u8-450",
+    "tplink-er605-un2-30",
+    "tplink-er707-m2-un1-30",
+    "tplink-er7206-un2-30",
+    "tplink-er7412-m2-un1-30",
+    "tplink-er8411-un1-2",
+    "zyxel-gs1200-5",
+    "zyxel-gs1200-8",
+    "zyxel-gs1900-16-ds22",
+    "zyxel-gs1900-24-ds22",
+    "zyxel-gs1900-24e-ds22",
+    "zyxel-gs1900-48-ds22",
+    "zyxel-gs1900-8-ds22",
+    "zyxel-gs1915-24e",
+    "zyxel-gs1915-8",
+    "zyxel-xgs1210-12",
+    "zyxel-xgs1250-12",
+    "zyxel-xgs1930-28",
+    "zyxel-xgs1930-52",
+    "zyxel-xmg1915-10e"
+  ],
+  "definitions": [
+    {
+      "key": "aruba-j9775a",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "1b32d51cfc0b97339c5eb64667adc262c045277ed19c914957fd831e8868ab65"
+    },
+    {
+      "key": "aruba-j9776a",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "5f4aa0dbb8770afa6039e560505be4577225a7c289efdf853d56344276c1237e"
+    },
+    {
+      "key": "aruba-j9855a",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "96040b364c4859826aee7275e23b01b19b7e187ba2758d72bb89ef445b24fd89"
+    },
+    {
+      "key": "aruba-j9856a",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "02451dad9e1a080000ef111e633e4af29693b58c9c341a63b8a49eedf6cd31a9"
+    },
+    {
+      "key": "aruba-jl253a",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "077e297672bc2fc5f6a74809e5978e2ff3585da3104b1dfe99e9bc90841b847e"
+    },
+    {
+      "key": "aruba-jl254a",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "885c93b4112c313c11bd5f8a355d6d1eb01197b369b2c263d311b5166af775f1"
+    },
+    {
+      "key": "aruba-jl259a",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "3e2b3c901e7cdd4d67921063b94a46b8c2e998dff09a98b2032a4c41841d8be6"
+    },
+    {
+      "key": "aruba-jl260a",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "7a386510fd82c1e7ee4b12b7c5597d6779fdd078482f779ad6ca68a35d10c34e"
+    },
+    {
+      "key": "aruba-jl354a",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "a5427a3afc11d845b82cb097c78bf54482f85c9e2cd2ca982660cc37c226c5d9"
+    },
+    {
+      "key": "aruba-jl355a",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "6cf4e92fa7bcc64aa9e7d9d64937228ebc4e606f80bef5165fcd9e4b39164a45"
+    },
+    {
+      "key": "glinet-a1300",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "c32ee72c4317d3a34f74643052a3de7317577044de68655d80e024d8d24ca8b6"
+    },
+    {
+      "key": "glinet-ar150",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "8a4be29e5f09f8cdb5b594acdd05652cf7175e8a666ece97180ee461a9aa353b"
+    },
+    {
+      "key": "glinet-ar300m16",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "4e51245f9643096c1770835558f9409a0b565379845256867cdd886e2ca8c000"
+    },
+    {
+      "key": "glinet-ar750",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "bba6682a1403b50e065d06709e110aaad5b87133adcb496aa8d3d318c997de6a"
+    },
+    {
+      "key": "glinet-ax1800",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "3566b366eda40dfc5c3ccec2823827368b5cb1ee034e33be833c33d0738e9a89"
+    },
+    {
+      "key": "glinet-axt1800",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "29d1be2098846a9c63ee8f79018beb150d869a785a331c9fc7e183e8516b4c3b"
+    },
+    {
+      "key": "glinet-b1300",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "f88f3bf3447c74f6e7a45511c732652c917bb235f9e4fec75330fc9a7c179f70"
+    },
+    {
+      "key": "glinet-mt1300",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "9796d99a7372fb8cf8f11346f54f6b0343bbe0e4db8b97fcb24068f93c52a16c"
+    },
+    {
+      "key": "glinet-mt2500",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "3b901ac619d3c61fef918ad06391fbf03e3ea268ce15f6d68611616e58330248"
+    },
+    {
+      "key": "glinet-mt3000",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "588e250a1ef793c756b7ea0ca757b30ce4c72d426ed4b2ce0e23638d886e62bb"
+    },
+    {
+      "key": "glinet-mt300n-v2",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "c548ec291465dc142528aadc7efbac35e8037a153820a5e76bcf0819f68c3099"
+    },
+    {
+      "key": "glinet-mt6000",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "1fe1a0edc4b1a0caaa73bbe2cb3cf4ac7084528bbe06d58c8c695befaba2618a"
+    },
+    {
+      "key": "glinet-mv1000",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "8fde5e1fd6d755e487fd1ca0ee539177ee3f4afdd5c496ca72c7fee58aa11917"
+    },
+    {
+      "key": "glinet-sft1200",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "8afc2e3a7adb47de130feec42747bffbfb705841a1635993ccbce1d2a3390dd2"
+    },
+    {
+      "key": "glinet-x750",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "6fa7ef2c1fc34e6c0259d11a21f5211f1b3310a97d5defaa0e2983dcaa9a9268"
+    },
+    {
+      "key": "glinet-xe300",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "4e3508328938d1b2c6c3f2cd5741d428a99dc84c200f94e8310b108d41123528"
+    },
+    {
+      "key": "mikrotik-ccr1072-1g-8splus",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "ef907acebb25c7c54076ccae56617a5ea6c0c2a856c1af31b4bdb857e1eb1522"
+    },
+    {
+      "key": "mikrotik-hap-ac2",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "af0933b6cabadba3c1c650acb77bf6e88637e046e36bbda9b0c99dd2d753ce6d"
+    },
+    {
+      "key": "mikrotik-hap-ax-lite",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "b3cdc9a09ac994ce75a91b8bc6d9daaedc1c6ef39be77151d4e9745386f8d07c"
+    },
+    {
+      "key": "mikrotik-hap-mini",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "11c64412024e88aecf1a739d52b2eb18d97f4fa1f729c4eb489749021b72cef5"
+    },
+    {
+      "key": "mikrotik-hex-e50ug",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "dec3a82093a3284c1306dd744e269bf611c4d531280e49094f3fd6966f38d306"
+    },
+    {
+      "key": "qnap-qsw-1105-5t-original",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "58c51218baea3f9966a8c72533aa5fe7446e22f1462e5df3e8cfd91bcfc608fe"
+    },
+    {
+      "key": "qnap-qsw-1108-8t-original",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "84eb4bcacba2a3a30dd76f78c5809fa6b23c0e243acf72753535d6d51c28ca69"
+    },
+    {
+      "key": "qnap-qsw-2104-2s-original",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "75dd089908c4580439be92cf0b2c865f001e9eb9300dd22321ad978fd23bc9c0"
+    },
+    {
+      "key": "qnap-qsw-2104-2t-original",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "bebd06708886386da246a6572088a370bb846d84fb30eb18298d7bc1ada8abc9"
+    },
+    {
+      "key": "qnap-qsw-308s",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "a1977918f335ee65e6ef30b52019cc10b4ba4f8e902e904564f1a5c6f83e3d00"
+    },
+    {
+      "key": "qnap-qsw-m2106-4s",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "cfbbc4c42000a65c3babd9a9add8a45381449c86c72906b2ceef6116682307d0"
+    },
+    {
+      "key": "qnap-qsw-m2106r-2s2t",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "248cf68764b037851364a9110f9d8dab28d76c768b925ff286b0c38c55ee5c9d"
+    },
+    {
+      "key": "qnap-qsw-m2108-2s",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "7b78d6ef7dff1b2a592a8d10b32af29f8e1527f3247df3fd822773965bdd62a8"
+    },
+    {
+      "key": "qnap-qsw-m3212r-8s4t",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "7a68aee75980a53290aaa8f2d576f08a8c53441230d16ad93af23a0639a73fb4"
+    },
+    {
+      "key": "qnap-qsw-m3216r-8s8t",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "6890f3fc086e682b4f91fd0cf38df56543b4cee95f8ff33ccda1b1d52f71ca9b"
+    },
+    {
+      "key": "qnap-qsw-m408s",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "8c4bb2bc39e45ff32a54b711ff2e546b4aa22a40513eb7c2cab0e65578025ce8"
+    },
+    {
+      "key": "qnap-ts-1232pxu-4g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "893eb7093601a45e892801fd11435339b23f41282c994f32811ca0e8b5a76996"
+    },
+    {
+      "key": "qnap-ts-1232pxu-rp-4g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "4d3f3fbd958247bdd34e3f017d25f8bced07003bba87a29c9c2f791b970d8299"
+    },
+    {
+      "key": "qnap-ts-1253du-rp-4g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "4f18510d780dc5ee605aeed5ebd3a585c9102467616125d4e883494a9acf5db7"
+    },
+    {
+      "key": "qnap-ts-1264u-rp-8g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "ee703710f328a067fe7759e9cad604c7287706dad846dccc7b67803c82a95ba4"
+    },
+    {
+      "key": "qnap-ts-1273au-rp-8g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "e1898dd83353526a3ad1f4ef98eb9cee7e3823785d3611d1b24fc7dd4c8eb1a9"
+    },
+    {
+      "key": "qnap-ts-1673au-rp-16g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "50adba7a6dc0cb5f8e24c60156988f2724f58bc649eff8fe4246beec7503f508"
+    },
+    {
+      "key": "qnap-ts-431xeu-2g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "af4e20ef7df54fd724f4b147bc3367204b6d305a9b684617c9438ea4290dd2c3"
+    },
+    {
+      "key": "qnap-ts-432pxu-2g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "61de2f05e176f396c08abe1b0f91af00be68b21da6815eb4da7a0d7727aaeedf"
+    },
+    {
+      "key": "qnap-ts-432pxu-rp-2g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "9c1d06ec975d069fc68de4c9d8cde69ef824b2fccc9fccf1b3c0c88a89eb5b00"
+    },
+    {
+      "key": "qnap-ts-435xeu-4g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "d4e585f001e469e399f943e8f32a3bd3a35a39970fd497c504e191c2551097ae"
+    },
+    {
+      "key": "qnap-ts-453du-4g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "b91bc3d1f607312d246db9a036949675efe3bec776c7ff819e3d15e5384a143a"
+    },
+    {
+      "key": "qnap-ts-453du-rp-4g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "d5fd301308c4158e113ebb2ade6b1961e6a9b42d5d52dd4954e9e1e5ea541f6b"
+    },
+    {
+      "key": "qnap-ts-464eu-8g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "4febb64b24efd391963b05f5aa22bd6ba7bd8356409db6210f1b7179bb0d5860"
+    },
+    {
+      "key": "qnap-ts-464u-8g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "65c5030e1a29561cf4f06f7603af80d2546cef483e271d23c09162af3341bff1"
+    },
+    {
+      "key": "qnap-ts-464u-rp-8g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "ecc75e2fb3b6f8dcf0a0353f578fe6bcafe2eff917611ba0beec6ad85fbe0032"
+    },
+    {
+      "key": "qnap-ts-832pxu-4g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "078ed6f881a680cc75b8f5cf28b6a11c3a5bdd98ca543d9c4f1c033d00c0fc84"
+    },
+    {
+      "key": "qnap-ts-832pxu-rp-4g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "73985982e94a60b3d3e999c03649f74f99c92f1dd792f44148f4d1abb014fe9e"
+    },
+    {
+      "key": "qnap-ts-853du-rp-4g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "ea974e66b9d318c817dd401b8604c338ae67a756f460efeeaa818a9cd9049db8"
+    },
+    {
+      "key": "qnap-ts-864eu-8g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "79a1da610035671ba7e31e4a68a29d2e052888f4bf25ae32093a0058cf8912ad"
+    },
+    {
+      "key": "qnap-ts-864eu-rp-8g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "ce892853b9b7bff9b0bc2af7563d399aaf87d7ea8677dcd3faef334a942f48a9"
+    },
+    {
+      "key": "qnap-ts-873au-4g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "115b07af97791c183ba980948a5c9e4dfdafab4d640d9cc09f0274ade1d418a8"
+    },
+    {
+      "key": "qnap-ts-873au-rp-4g",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "a61d93b61ecc956c2279fc5d0ad16cfa48c12cee8424de8b8ae35cd3ff013bf4"
+    },
+    {
+      "key": "sonicwall-nsa2700",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "51fb58c1aeb800faa9b6d5b0fcc91440e2d3918e5ef3743457d8b51a30c1dfae"
+    },
+    {
+      "key": "sonicwall-nsa3700",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "7151ada4da803857b65b417de1401d72d59405db8455aae8847a5d0197a0cca8"
+    },
+    {
+      "key": "sonicwall-nsa4700",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "652a5a4caf36ee83727052b7ee3c0135ca33718cd52152c4fcc25cceca423a7b"
+    },
+    {
+      "key": "sonicwall-nsa5700",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "cf780ba1ffaac4b60a505f3591f009e51eb33fbbc071b832518b314ddb0f6b0f"
+    },
+    {
+      "key": "sonicwall-tz270",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "e0681e9b71fc174c12f0490f37390ee3c2d8d040b7db0b278f52863a811a4f53"
+    },
+    {
+      "key": "sonicwall-tz370",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "1c952190c6b03a60c6fdda10d1dfcc7f7eda9e4fe9c25a228c3cfe0a7e66c24b"
+    },
+    {
+      "key": "sonicwall-tz470",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "634c2c9e41697d874932add0d051c5206a31a5e06b878f34f8ff9e3dd5860b89"
+    },
+    {
+      "key": "sonicwall-tz570",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "7d61f55950415aac789371a4bd0471b8fc1b357599e107f9f627f0142bab3b29"
+    },
+    {
+      "key": "sonicwall-tz670",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "4ffdd161add1116b5480f9c0d54bd965b8e749cdcf2307add7b89faaeb1511be"
+    },
+    {
+      "key": "terramaster-f2-425-plus",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "45bd2d850be5b89a5bb943eacab36afbc09bab82a170a27712f17466332bff5c"
+    },
+    {
+      "key": "terramaster-f4-424",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "7c1dfb4fa2e56fd1d08bc33952a9ba0dc9fb83c83a214f975cf0b90e8e0f423b"
+    },
+    {
+      "key": "terramaster-f4-424-max",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "babd6558d7736d7d2c9fc1fa327e70310cf1cb7fc414013b1e955cd9d7927b0e"
+    },
+    {
+      "key": "terramaster-f4-425-plus",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "78b4d370043e0d2924e8397fb6f66cb5c55f3610883c5e29f4e18923c6ab5916"
+    },
+    {
+      "key": "terramaster-u4-423",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "5a03d67d5ea66d6eadb63cad499a7dd510e8022f3ccfdd23d8af845f4b6e1d6b"
+    },
+    {
+      "key": "terramaster-u4-500",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "ea2201560a36869eecb64b3f31f636c0b49a9903f42575b4b79ca39a2f034417"
+    },
+    {
+      "key": "terramaster-u8-423",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "689c7d833b43debbf4808901fffb7e81317ef4fd3cedfbcae2d7708753e31516"
+    },
+    {
+      "key": "terramaster-u8-450",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "888c9711731298e46e0b12b52153f52522d522ae011cb48784224dd8ca986ff5"
+    },
+    {
+      "key": "tplink-er605-un2-30",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "83590dbd8101cb7f0f071abccda4a1b6a0abad2d8797677364290f77affbc500"
+    },
+    {
+      "key": "tplink-er707-m2-un1-30",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "991d4ac4053accfa97d14bbba062dcdb8587a8cc2d13e577007de0e98cbb6d80"
+    },
+    {
+      "key": "tplink-er7206-un2-30",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "b29b7cc8b335b41f8e65f5495038a79e67683650e4628ee271129cbc455961a7"
+    },
+    {
+      "key": "tplink-er7412-m2-un1-30",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "11b4ad8c7262ed76b6575d1bcc228f3c937fc00d96ed27f94a187b3409127917"
+    },
+    {
+      "key": "tplink-er8411-un1-2",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "5d6a4e69a7ca6cfa43d4b40917b5161d8f59eb9a687e021dab349faed685fc56"
+    },
+    {
+      "key": "zyxel-gs1200-5",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "db81e4ba6f07b60f2099c76f5d3bbaab4baca8150402511c3a11a26663bc90af"
+    },
+    {
+      "key": "zyxel-gs1200-8",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "83797ef648c4c98fef3db9441ade85ec417570041f57adf30e34aeb6023f772e"
+    },
+    {
+      "key": "zyxel-gs1900-16-ds22",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "285a5d638a962fdeb6690c4a8c8c91f242c66c967d821ea0be948a518bbab504"
+    },
+    {
+      "key": "zyxel-gs1900-24-ds22",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "1b209cc0fba25b7dd89b2406b47d7945b15cc0873cc9983109ce4471e5b561bd"
+    },
+    {
+      "key": "zyxel-gs1900-24e-ds22",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "4a56af006919db948982aecc47612ff81b5e6c0fc966afe5a56c61b273846239"
+    },
+    {
+      "key": "zyxel-gs1900-48-ds22",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "aa8d71c5a2ea9a642e1cb396de12f458534e70d376567d8f3a486dbc95699124"
+    },
+    {
+      "key": "zyxel-gs1900-8-ds22",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "5a4f076c1af87bd8d8fb71ce146d3de736c0f166ac2f4f688c296488842945fd"
+    },
+    {
+      "key": "zyxel-gs1915-24e",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "d75c203b885fc960237102d72f1dc606773565c109e9da83868d75d4b08ebb8f"
+    },
+    {
+      "key": "zyxel-gs1915-8",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "b842171ec461854eca5f7f63decc90032afb35b0e20d7d99ef077c397ac53aa7"
+    },
+    {
+      "key": "zyxel-xgs1210-12",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "c0c7376fdafeef83cc3b3b650125e3cc70d4fc1512f24d4c256b80498ad76f8c"
+    },
+    {
+      "key": "zyxel-xgs1250-12",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "70631e5dd7e978f684de70251a6aa28fdddc4329f9b2a5258ec1a14a3365580c"
+    },
+    {
+      "key": "zyxel-xgs1930-28",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "ed37390b8db520533404586fffd775026c89ebffef374f042591a299fef7a733"
+    },
+    {
+      "key": "zyxel-xgs1930-52",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "87104b822c5cbdca2f4ccde55726b272e914363ac402f2b3a43c4ce191a6114e"
+    },
+    {
+      "key": "zyxel-xmg1915-10e",
+      "revision": "batch100b-20261031-v1",
+      "sha256": "bd0a6ae13d49cb326757033dc443265e7b6395e4101ee4dd2883e282a67adc5d"
+    }
+  ]
+}

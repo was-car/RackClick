@@ -1,5 +1,5 @@
 import {ApiError,type RackClickApi} from './api.ts';
-export const defaultPortColors=Object.freeze({rj45:'#3b82f6',rj45_poe:'#3b82f6',sfp:'#a855f7',sfp28:'#ef4444',qsfp:'#10b981',mgmt:'#f59e0b',console:'#6b7280',power:'#ef4444',usb_a:'#9ca3af',usb_c:'#9ca3af'});
+export const defaultPortColors=Object.freeze({rj45:'#3b82f6',rj45_poe:'#3b82f6',sfp:'#a855f7',sfp28:'#ef4444',qsfp:'#10b981',mgmt:'#f59e0b',console:'#6b7280',power:'#ef4444',usb_a:'#9ca3af',usb_c:'#9ca3af',sfp56:'#06b6d4',qsfpdd:'#f97316',idc:'#a3b86c',ipc:'#b39d6b',fiber:'#62b6ad',sfpdd:'#57a4d2',cfp2:'#9673c4',sas:'#c39c70',dsl:'#d5ad69',telephony:'#bd8fb5',isdn:'#a9a0d5',expansion:'#b89287',power_dc:'#e49f66'});
 export type PortColorKey=keyof typeof defaultPortColors;
 export type PortColors=Partial<Record<PortColorKey,string>>;
 export type UserPortColors={kind:'userPortColors';ownerId:string;revision:number;colors:PortColors};
@@ -7,7 +7,7 @@ export type PortColorsDraft=Readonly<{actorId:string;colors:Readonly<PortColors>
 const fields=(x:any,n:string)=>!!x&&typeof x==='object'&&!Array.isArray(x)&&Object.keys(x).sort().join()===n.split(',').sort().join();
 export const portColorsUuid=(x:any):x is string=>typeof x==='string'&&/^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(x)&&x!=='00000000-0000-0000-0000-000000000000';
 const revision=(x:any)=>Number.isSafeInteger(x)&&x>=0;
-export const validPortColors=(x:any):x is PortColors=>!!x&&typeof x==='object'&&!Array.isArray(x)&&Object.keys(x).length<=10&&Object.entries(x).every(([k,v])=>Object.hasOwn(defaultPortColors,k)&&typeof v==='string'&&/^#[0-9a-f]{6}$/.test(v));
+export const validPortColors=(x:any):x is PortColors=>!!x&&typeof x==='object'&&!Array.isArray(x)&&Object.keys(x).length<=Object.keys(defaultPortColors).length&&Object.entries(x).every(([k,v])=>Object.hasOwn(defaultPortColors,k)&&typeof v==='string'&&/^#[0-9a-f]{6}$/.test(v));
 export const samePortColors=(a:PortColors,b:PortColors)=>Object.keys(a).length===Object.keys(b).length&&Object.entries(a).every(([k,v])=>Object.hasOwn(b,k)&&b[k as PortColorKey]===v);
 export const validUserPortColors=(x:any,actorId:string):x is UserPortColors=>fields(x,'kind,ownerId,revision,colors')&&x.kind==='userPortColors'&&portColorsUuid(actorId)&&x.ownerId===actorId&&revision(x.revision)&&validPortColors(x.colors)&&(x.revision!==0||Object.keys(x.colors).length===0);
 export const validPortColorsDraft=(x:any):x is PortColorsDraft=>fields(x,'actorId,colors,revision,requestId')&&portColorsUuid(x.actorId)&&portColorsUuid(x.requestId)&&revision(x.revision)&&validPortColors(x.colors);

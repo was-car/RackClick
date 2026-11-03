@@ -1,37 +1,43 @@
-# RackClick · servidor y documentación de red
+# RackClick
 
-**Repositorio privado de desarrollo · actualización 30.10.2026.** RackClick documenta clientes, sitios, edificios, salas, racks, equipos, puertos y conexiones. Conserva el diseño RC9 y el flujo Click-Click para recorrer y conectar infraestructura.
+**[English](README.md) · [Deutsch](README.de.md) · [Español](README.es.md)**
 
-## Empezar
+RackClick documents network infrastructure through an interactive view of racks, devices and physical connections. Select two ports with **Click–Click** to document a cable, then follow its endpoints through the customer's infrastructure.
 
-**[Instalación desde GitHub, paso a paso](docs/INSTALACION-DESDE-GITHUB.md)**: requisitos, herramientas oficiales, compilación, arranque, acceso privado, datos sintéticos y parada. No requiere una base existente. El laboratorio sólo escucha en este Windows y conserva las bases que crea.
+The server brings the established offline interface to shared, permission-controlled data. The hierarchy is **Systemhaus → customers → sites → buildings → rooms → racks → devices → ports and connections**. Room outlets and end devices also belong to the inventory.
 
-La instalación como **servicio Windows con HTTPS** tiene un [manual propio de edición 10](docs/PASOS-COMPLETOS-INSTALADOR10-WASCAR.md). Su instalador binario permanece en la entrega privada local, pendiente de cerrar las condiciones de redistribución; no se incluye ni se publica como Release en este repositorio. La demo de fuentes no sustituye ese servicio ni habilita MFA.
+## What is included
 
-## Qué contiene esta actualización
+- Interactive front and rear views, physical mounting and shelves, port states, cabling and power/PoE documentation.
+- A searchable hardware catalogue with **884 profile revisions for 877 distinct commercial models**, including the original 506-model selection, German provider routers and repeaters. A revision is not an additional physical model.
+- Shared inventory, customer scopes, user and customer groups, capabilities, audit records and confirmed writes.
+- Native MFA enrolment/login and user administration. The policy allows **45 days** before MFA becomes mandatory; global Systemhaus administrators are exempt. Portable recovery, emergency procedures, rotation and full acceptance remain pending.
+- Application languages **English, German and Spanish**. This repository provides its overview and source-demo guide in those three languages; historical technical records retain their original language.
 
-| Parte | Estado |
+## Try the sources
+
+Follow the **[Windows source-demo guide](docs/GETTING-STARTED.en.md)**. It covers prerequisites, cloning, official pinned tools, building, checking, login and stopping the demo.
+
+The example contains **10 synthetic customers, 68 racks, 311 devices, 5,408 ports and 623 connections**. It contains inventory only, without accounts, sessions or MFA factors. Each start creates a separate local PostgreSQL lab and random credentials. The demo uses HTTP on loopback and explicitly disables MFA; it is not the Windows service installer or a network deployment.
+
+## Development status · 3 November 2026
+
+The current source schema is **45**. The application has been updated on an existing Windows test installation with HTTPS, automatic service startup and backup checks; its inventory and security data were preserved. A clean New/Restore installation and post-reboot verification of this latest package are still pending. Previous Windows tests do not replace those checks.
+
+Offline parity, recovery, performance and final QA continue under the [master roadmap](docs/HOJA-DE-RUTA-MAESTRA.md). Discovery through SNMP/LLDP and real identity federation are future scope. This is a private development source snapshot, not a final accepted production release.
+
+## Technology and repository
+
+**React/JavaScript** frontend; **C# / ASP.NET Core / .NET 10** server; **PostgreSQL 17** through direct Npgsql and SQL migrations.
+
+| Path | Purpose |
 |---|---|
-| ASP.NET Core/.NET 10, Npgsql directo y PostgreSQL 17 | Fuentes congeladas de la candidata 10, esquema 15. Migración e identidad de ejecución separadas. |
-| Frontend React/JavaScript/TypeScript | GUI RC9, jerarquía, inventario, grupos/permisos y panel MFA. Sin CDN en ejecución. |
-| MFA | Enrolamiento, login/verificación, gestión propia y administrativa, claves Windows/DPAPI y política de 45 días. Cuenta administrativa probada por Wascar en la candidata nativa. Recuperación portable y aceptación completa pendientes. |
-| Ejemplo sintético | 10 clientes, 68 racks, 311 equipos, 5408 puertos y 623 conexiones. Inventario canónico, sin usuarios, contraseñas, sesiones ni secretos MFA. |
-| Arranque de demostración | `tools/start_demo.py`: base nueva, importación confirmada, credenciales locales aleatorias y parada de sus propios procesos. HTTP en loopback; proveedor MFA desactivado explícitamente. |
-| Plan y requisitos | [Hoja de ruta maestra](docs/HOJA-DE-RUTA-MAESTRA.md), trazabilidad RC10 y registro de peticiones pendientes. |
-| Investigación | [Fuentes oficiales y repositorios originales](docs/FUENTES-OFICIALES-DESARROLLO.md), con criterios de licencia, compatibilidad y reutilización. |
+| `development/frontend/` | Interface, interactive device profiles and frontend tests |
+| `development/server/` | Domain, HTTP server, SQL migrations and server tests |
+| `development/hardware/` | Catalogue inputs and model references |
+| `development/examples/` | Synthetic inventory examples |
+| `tools/` | Build, validation, demo and Windows operator sources |
+| `docs/` | Guides, contracts, decisions and roadmap |
+| `reference/` | Adopted offline reference used by the build |
 
-Versiones fijadas: SDK 10.0.401, runtime 10.0.12, PostgreSQL 17.11, Node 24.21.0, esbuild 0.25.10, Npgsql 10.0.3 y Otp.NET 1.4.1. No actualizar silenciosamente `global.json` ni los locks para sortear una restauración fallida.
-
-## Qué sigue pendiente
-
-Esta publicación no es adopción del servidor final. Faltan recuperación integral de secretos/MFA, rotación/códigos/emergencia, variantes y aceptación de inventario, paridad RC10, mejora visual de administración, backups desde el dashboard, instalación/red/actualización completas, rendimiento medido, licencias y QA final. El [índice de cierre](docs/HOJA-DE-RUTA-MAESTRA.md) mide el pendiente: 9,76/100; no es un porcentaje global nuevo del producto.
-
-Los documentos históricos conservan resultados anteriores y pueden enlazar evidencias privadas no publicadas. La guía anterior y la hoja de ruta tienen precedencia para continuar. Algunos empaquetadores históricos dependen de artefactos `.local` excluidos y no reconstruyen por sí solos los ZIP congelados.
-
-## Datos, seguridad y procedencia
-
-El código propio no recibe una licencia abierta por alojarse aquí. Se conservan los avisos de terceros y la [revisión de publicación](docs/REVISION-PUBLICACION-30-10-2026.md). No copiar imágenes ni módulos de terceros sin revisar sus términos.
-
-No se publican laboratorios, bases, credenciales, claves, sobres MFA, certificados privados, binlogs, transcripciones ni resultados personales de QA. El ejemplo es sólo inventario sintético; cada instalación necesita sus propias identidades y secretos. [PUBLICATION-TRANSFORMS.json](PUBLICATION-TRANSFORMS.json) registra las seis contraseñas de fixtures sustituidas por generación aleatoria en esta selección, sin cambiar el código de producto congelado.
-
-No hay despliegue automático ni CI que se anuncie como verde. Las pruebas Windows/DPAPI/PostgreSQL necesitan su entorno real. Los pasos efectivamente repetidos sobre esta selección se registran en [PUBLICACION-GITHUB-30-10-2026.md](docs/PUBLICACION-GITHUB-30-10-2026.md).
+Native installer binaries are retained outside GitHub while redistribution conditions are reviewed. Private databases, credentials, certificates, MFA keys and build logs are excluded. Repository access does not grant a new open-source licence; [third-party notices](THIRD-PARTY-NOTICES.md) remain applicable. Use the committed locks and documented tools rather than changing versions to match a local SDK.

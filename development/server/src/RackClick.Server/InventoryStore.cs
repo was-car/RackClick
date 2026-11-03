@@ -70,14 +70,14 @@ public sealed partial class InventoryStore(NpgsqlDataSource source)
 
     private static async Task<string> Snapshot(NpgsqlConnection db, NpgsqlTransaction tx, Actor actor, Guid customer, CancellationToken ct)
     {
-        static string Collection(string table, string fields, string order = "id") =>
-            $"(SELECT COALESCE(jsonb_agg(jsonb_build_object({fields}) ORDER BY {order}), '[]'::jsonb) FROM {table} WHERE systemhaus_id=@house AND customer_id=@customer)";
+        static string Collection(string table, string fields, string order = "id", string? extra = null) =>
+            $"(SELECT COALESCE(jsonb_agg(jsonb_build_object({fields}){(extra is null ? "" : " || " + extra)} ORDER BY {order}), '[]'::jsonb) FROM {table} WHERE systemhaus_id=@house AND customer_id=@customer)";
         string sql = "SELECT jsonb_build_object('customerId',id,'revision',revision," +
             "'sites'," + Collection("inventory_site", "'id',id,'name',name,'properties',properties") + "," +
             "'buildings'," + Collection("inventory_building", "'id',id,'siteId',site_id,'name',name,'properties',properties") + "," +
             "'rooms'," + Collection("inventory_room", "'id',id,'buildingId',building_id,'name',name,'properties',properties") + "," +
-            "'racks'," + Collection("inventory_rack", "'id',id,'roomId',room_id,'name',name,'location',location,'sizeU',size_u,'properties',properties") + "," +
-            "'devices'," + Collection("inventory_device", "'id',id,'kind',kind,'rackId',rack_id,'roomId',room_id,'name',name,'sizeU',size_u,'sortOrder',sort_order,'poeBudget',poe_budget,'properties',properties", "sort_order,id") + "," +
+            "'racks'," + Collection("inventory_rack", "'id',id,'roomId',room_id,'name',name,'location',location,'sizeU',size_u,'properties',properties", "id", "CASE WHEN hardware_profile_key IS NULL THEN '{}'::jsonb ELSE jsonb_build_object('hardwareProfileKey',hardware_profile_key) END") + "," +
+            "'devices'," + Collection("inventory_device", "'id',id,'kind',kind,'rackId',rack_id,'roomId',room_id,'name',name,'sizeU',size_u,'sortOrder',sort_order,'poeBudget',poe_budget,'hardwareProfileKey',hardware_profile_key,'mountParentId',mount_parent_id,'mountSlotKey',mount_slot_key,'properties',properties", "sort_order,id") + "," +
             "'portGroups'," + Collection("inventory_port_group", "'id',id,'deviceId',device_id,'type',type,'name',name,'prefix',prefix,'sortOrder',sort_order", "sort_order,id") + "," +
             "'ports'," + Collection("inventory_port", "'id',id,'deviceId',device_id,'groupId',group_id,'type',type,'gn',gn,'sortOrder',sort_order,'label',label,'status',status,'poe',poe,'watts',watts,'color',color,'face',face,'powerRole',power_role,'properties',properties", "sort_order,id") + "," +
             "'connections',(SELECT COALESCE(jsonb_agg(jsonb_build_object('id',c.id,'fromPortId',a.port_id,'toPortId',b.port_id," +
@@ -181,6 +181,8 @@ public sealed partial class InventoryStore(NpgsqlDataSource source)
         "room.create" or "room.update" or "room.delete" or "rack.create" or "rack.update" or "rack.assignRoom"
             => Hierarchy(db, tx, actor, customer, type, payload, ct),
         "device.create" or "device.update" or "device.move" or "device.reorder" => Device(db, tx, actor, customer, type, payload, ct),
+        "rack.createHardware" => CreateRackHardware(db, tx, actor, customer, payload, ct),
+        "device.createHardware" => CreateHardware(db, tx, actor, customer, payload, ct),
         "device.createFromCatalog" => CreateFromCatalog(db, tx, actor, customer, payload, ct),
         "device.createFromPrivateTemplate" => CreateFromPrivateTemplate(db, tx, actor, customer, payload, ct),
         "device.createFromSharedTemplate" => CreateFromSharedTemplate(db, tx, actor, customer, payload, ct),
@@ -206,6 +208,11 @@ public sealed partial class InventoryStore(NpgsqlDataSource source)
                 ("house", actor.HouseId), ("customer", customer), ("id", id));
             return new(id, before, null, new { resourceId = id, removedIds = new[] { id } });
         }
+        if (entity=="rack" && payload.Any(f=>f.Key is "hardwareProfileKey" or "profileKey" or "profileVersion")) throw new DomainError(422,"hardware_command_required");
+        if (entity=="rack" && before?["hardware_profile_key"] is not null &&
+            ((payload.ContainsKey("sizeU") && Integer(payload,"sizeU",1,1000)!=Integer(before,"size_u",1,1000)) ||
+             payload["properties"] is JsonObject rackPatch && rackPatch.Any(f=>f.Key is not ("notes" or "color"))))
+            throw new DomainError(422,"hardware_metadata_immutable");
         string name = payload.ContainsKey("name") || before is null ? Names.Validate(String(payload, "name")) : String(before, "name");
         string properties = Properties(payload, before?["properties"] as JsonObject);
         string? parentKey = entity switch { "building" => "siteId", "room" => "buildingId", "rack" => "roomId", _ => null };

@@ -1,0 +1,2492 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506a-20261101-v1",
+  "models": [
+    {
+      "definition": {
+        "key": "selected-nb-0c303ce9bca6c601",
+        "revision": "selected506a-20261101-v1",
+        "identity": {
+          "manufacturer": "Ubiquiti",
+          "family": "UniFi Enterprise",
+          "model": "UniFi Switch Enterprise 24 PoE",
+          "sku": "USW-Enterprise-24-PoE"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://techspecs.ui.com/unifi/switching/usw-enterprise-24-poe",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 442,
+          "height": 44,
+          "depth": 325
+        },
+        "color": "#c7cbcf",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-gigabit",
+            "type": "rj45",
+            "count": 12,
+            "face": "front",
+            "name": "1 GbE",
+            "prefix": "1G ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "front-multigigabit",
+            "type": "rj45",
+            "count": 12,
+            "face": "front",
+            "name": "2.5 GbE",
+            "prefix": "2.5G ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "front-sfp",
+            "type": "sfp",
+            "count": 2,
+            "face": "front",
+            "name": "10G SFP+ cages",
+            "prefix": "SFP+ ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "Integrated AC inlet",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#c7cbcf",
+              "stroke": "#7c858a",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 13,
+                "y": 43,
+                "w": 51,
+                "h": 53,
+                "fill": "#102333",
+                "stroke": "#657582",
+                "radius": 5
+              },
+              {
+                "kind": "circle",
+                "cx": 38.5,
+                "cy": 69,
+                "r": 10,
+                "fill": "#23629a",
+                "stroke": "#9ba9b5"
+              },
+              {
+                "kind": "circle",
+                "cx": 38.5,
+                "cy": 69,
+                "r": 4,
+                "fill": "#94afc8"
+              },
+              {
+                "kind": "text",
+                "x": 38.5,
+                "y": 113,
+                "text": "Enterprise 24",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 84,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 313,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 542,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 771,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "circle",
+                "cx": 971,
+                "cy": 106,
+                "r": 2,
+                "fill": "#282d30"
+              },
+              {
+                "kind": "text",
+                "x": 971,
+                "y": 117,
+                "text": "RESET",
+                "size": 5,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 481,
+                "y": 106,
+                "w": 114,
+                "h": 3,
+                "fill": "#858b8f"
+              },
+              {
+                "kind": "text",
+                "x": 538,
+                "y": 117,
+                "text": "2.5G",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 615,
+                "y": 106,
+                "w": 258,
+                "h": 3,
+                "fill": "#858b8f"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-gigabit",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                ],
+                "x": 84,
+                "y": 67,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "1",
+                  "2": "2",
+                  "3": "3",
+                  "4": "4",
+                  "5": "5",
+                  "6": "6",
+                  "7": "7",
+                  "8": "8"
+                }
+              },
+              {
+                "groupKey": "front-gigabit",
+                "rows": [
+                  [
+                    9,
+                    10,
+                    11,
+                    12
+                  ]
+                ],
+                "x": 351,
+                "y": 67,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "9": "9",
+                  "10": "10",
+                  "11": "11",
+                  "12": "12"
+                }
+              },
+              {
+                "groupKey": "front-multigigabit",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ]
+                ],
+                "x": 481.8,
+                "y": 67,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "13",
+                  "2": "14",
+                  "3": "15",
+                  "4": "16"
+                }
+              },
+              {
+                "groupKey": "front-multigigabit",
+                "rows": [
+                  [
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12
+                  ]
+                ],
+                "x": 615,
+                "y": 67,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "5": "17",
+                  "6": "18",
+                  "7": "19",
+                  "8": "20",
+                  "9": "21",
+                  "10": "22",
+                  "11": "23",
+                  "12": "24"
+                }
+              },
+              {
+                "groupKey": "front-sfp",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 884,
+                "y": 76,
+                "dx": 36,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "25",
+                  "2": "26"
+                }
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#9fa3a5",
+              "stroke": "#6c7479",
+              "radius": 2
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 41,
+                "y": 65,
+                "w": 143,
+                "h": 37,
+                "fill": "#353a3e",
+                "stroke": "#6a7277",
+                "radius": 3
+              },
+              {
+                "kind": "text",
+                "x": 112,
+                "y": 115,
+                "text": "RPS / DC - non-operational",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 42,
+                "y": 31,
+                "w": 59,
+                "h": 21,
+                "fill": "#b4b7b9"
+              },
+              {
+                "kind": "text",
+                "x": 47,
+                "y": 45,
+                "text": "LABEL",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 885,
+                "y": 115,
+                "text": "AC INPUT",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "line",
+                "x1": 4,
+                "y1": 30,
+                "x2": 4,
+                "y2": 109,
+                "stroke": "#646e75",
+                "width": 1
+              },
+              {
+                "kind": "line",
+                "x1": 996,
+                "y1": 30,
+                "x2": 996,
+                "y2": 109,
+                "stroke": "#646e75",
+                "width": 1
+              },
+              {
+                "kind": "rect",
+                "x": 42,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 251,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 460,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 669,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "circle",
+                "cx": 26,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              },
+              {
+                "kind": "circle",
+                "cx": 498,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              },
+              {
+                "kind": "circle",
+                "cx": 972,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 854,
+                "y": 49,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 62,
+                "h": 50,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://techspecs.ui.com/unifi/switching/usw-enterprise-24-poe",
+            "kind": "manufacturer-techspecs",
+            "observed": "Official Overview: SKU USW-Enterprise-24-PoE; dimensions width 442, depth 325, height 44 mm; rack mount 1U; 12 x 1GbE + 12 x 2.5GbE; 2 x 10G SFP+ cages. Technical section identifies integrated AC supply and DC backup. Current rounded dimensions retained; no electrical circuit or telemetry is simulated.",
+            "sha256": "6fdbbdc74ae85cad80d4104488f3107a3adc5f4318391d9e7bce4e23ebc2d3fd",
+            "bytes": 649962
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Enterprise-24-PoE.yaml",
+            "kind": "community-yaml",
+            "observed": "Exact selected SKU; names and type counts crosschecked against the official technical specifications. Community elevation pictures remain unverified references.",
+            "sha256": "6bf961634128d1db84f1114cdf7fb2af1599d360c3f60dd3c69f62386843d3fa"
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/community-expansion/assets/nb-0c303ce9bca6c601/front-bb7957a69fa9.png",
+            "sha256": "bb7957a69fa9d229e8e8888fa1573db843313dbb223df013a5c67751fc9ede60",
+            "view": "front",
+            "match": "community_unverified"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/community-expansion/assets/nb-0c303ce9bca6c601/rear-891eeab7c39f.png",
+            "sha256": "891eeab7c39fa78dff07571f3d4f365f62b1499e4327d4034d33b96343f3f0e7",
+            "view": "rear",
+            "match": "community_unverified"
+          }
+        ],
+        "dimensionsBasis": "Nominal chassis dimensions from the current official Overview, in W x H x D mm. Older community/QSG decimals are not silently substituted; mounting ears, tolerances and ventilation are not certified.",
+        "limits": [
+          "Own planar approximation from the inspected community front and rear elevations; community_unverified identity is retained. No photograph is used as an operational background.",
+          "Current official nominal dimensions are used. Older QSG/community descriptions can differ by rounding (442/442.4, 44/43.7, 285/285.4, 400/399.6 mm). No fit, loading, tolerance or cooling certification is implied.",
+          "Fixed copper ports and empty SFP+ cages are materialized; no transceiver, DAC, breakout, speed negotiation, module or optional device is installed.",
+          "One integrated AC inlet is operational under the existing broad power-role contract. Proprietary RPS/DC backup is explicitly decorative and never mapped as an AC endpoint.",
+          "The LCD, reset, indicators, fans and Etherlighting-style details are static drawing elements, not measured state. The body color is an approximation, not calibrated colorimetry.",
+          "Factory port numbers are visual labels. Each endpoint identity remains the original group key plus ordinal and its later instance UUID; no connection is keyed by a displayed number.",
+          "PoE capabilities are documented by the manufacturer but are not automatically applied as per-port PSE state or a simulated power budget by this profile."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-d064231ab7e45734",
+        "revision": "selected506a-20261101-v1",
+        "identity": {
+          "manufacturer": "Ubiquiti",
+          "family": "UniFi Pro PoE Gen2",
+          "model": "UniFi Switch 48 Pro PoE Gen2",
+          "sku": "USW-PRO-48-POE"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://techspecs.ui.com/unifi/switching/usw-pro-48-poe",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 442,
+          "height": 44,
+          "depth": 400
+        },
+        "color": "#c7cbcf",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-gigabit",
+            "type": "rj45",
+            "count": 48,
+            "face": "front",
+            "name": "1 GbE",
+            "prefix": "1G ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "front-sfp",
+            "type": "sfp",
+            "count": 4,
+            "face": "front",
+            "name": "10G SFP+ cages",
+            "prefix": "SFP+ ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "Integrated AC inlet",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#c7cbcf",
+              "stroke": "#7c858a",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 13,
+                "y": 43,
+                "w": 51,
+                "h": 53,
+                "fill": "#102333",
+                "stroke": "#657582",
+                "radius": 5
+              },
+              {
+                "kind": "circle",
+                "cx": 38.5,
+                "cy": 69,
+                "r": 10,
+                "fill": "#23629a",
+                "stroke": "#9ba9b5"
+              },
+              {
+                "kind": "circle",
+                "cx": 38.5,
+                "cy": 69,
+                "r": 4,
+                "fill": "#94afc8"
+              },
+              {
+                "kind": "text",
+                "x": 38.5,
+                "y": 113,
+                "text": "UniFi Pro 48 PoE",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 84,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 313,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 542,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 771,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "circle",
+                "cx": 971,
+                "cy": 106,
+                "r": 2,
+                "fill": "#282d30"
+              },
+              {
+                "kind": "text",
+                "x": 971,
+                "y": 117,
+                "text": "RESET",
+                "size": 5,
+                "fill": "#555b60",
+                "anchor": "middle"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-gigabit",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7,
+                    9,
+                    11,
+                    13,
+                    15,
+                    17,
+                    19,
+                    21,
+                    23
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8,
+                    10,
+                    12,
+                    14,
+                    16,
+                    18,
+                    20,
+                    22,
+                    24
+                  ]
+                ],
+                "x": 84,
+                "y": 44,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "1",
+                  "3": "3",
+                  "5": "5",
+                  "7": "7",
+                  "9": "9",
+                  "11": "11",
+                  "13": "13",
+                  "15": "15",
+                  "17": "17",
+                  "19": "19",
+                  "21": "21",
+                  "23": "23",
+                  "2": "2",
+                  "4": "4",
+                  "6": "6",
+                  "8": "8",
+                  "10": "10",
+                  "12": "12",
+                  "14": "14",
+                  "16": "16",
+                  "18": "18",
+                  "20": "20",
+                  "22": "22",
+                  "24": "24"
+                }
+              },
+              {
+                "groupKey": "front-gigabit",
+                "rows": [
+                  [
+                    25,
+                    27,
+                    29,
+                    31,
+                    33,
+                    35,
+                    37,
+                    39,
+                    41,
+                    43,
+                    45,
+                    47
+                  ],
+                  [
+                    26,
+                    28,
+                    30,
+                    32,
+                    34,
+                    36,
+                    38,
+                    40,
+                    42,
+                    44,
+                    46,
+                    48
+                  ]
+                ],
+                "x": 487,
+                "y": 44,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "25": "25",
+                  "27": "27",
+                  "29": "29",
+                  "31": "31",
+                  "33": "33",
+                  "35": "35",
+                  "37": "37",
+                  "39": "39",
+                  "41": "41",
+                  "43": "43",
+                  "45": "45",
+                  "47": "47",
+                  "26": "26",
+                  "28": "28",
+                  "30": "30",
+                  "32": "32",
+                  "34": "34",
+                  "36": "36",
+                  "38": "38",
+                  "40": "40",
+                  "42": "42",
+                  "44": "44",
+                  "46": "46",
+                  "48": "48"
+                }
+              },
+              {
+                "groupKey": "front-sfp",
+                "rows": [
+                  [
+                    1,
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "x": 891,
+                "y": 44,
+                "dx": 36,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "49",
+                  "3": "51",
+                  "2": "50",
+                  "4": "52"
+                }
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#9fa3a5",
+              "stroke": "#6c7479",
+              "radius": 2
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 41,
+                "y": 65,
+                "w": 143,
+                "h": 37,
+                "fill": "#353a3e",
+                "stroke": "#6a7277",
+                "radius": 3
+              },
+              {
+                "kind": "text",
+                "x": 112,
+                "y": 115,
+                "text": "RPS / DC - non-operational",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 42,
+                "y": 31,
+                "w": 59,
+                "h": 21,
+                "fill": "#b4b7b9"
+              },
+              {
+                "kind": "text",
+                "x": 47,
+                "y": 45,
+                "text": "LABEL",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 885,
+                "y": 115,
+                "text": "AC INPUT",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "line",
+                "x1": 4,
+                "y1": 30,
+                "x2": 4,
+                "y2": 109,
+                "stroke": "#646e75",
+                "width": 1
+              },
+              {
+                "kind": "line",
+                "x1": 996,
+                "y1": 30,
+                "x2": 996,
+                "y2": 109,
+                "stroke": "#646e75",
+                "width": 1
+              },
+              {
+                "kind": "rect",
+                "x": 42,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 251,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 460,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 669,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "circle",
+                "cx": 26,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              },
+              {
+                "kind": "circle",
+                "cx": 498,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              },
+              {
+                "kind": "circle",
+                "cx": 972,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 854,
+                "y": 49,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 62,
+                "h": 50,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://techspecs.ui.com/unifi/switching/usw-pro-48-poe",
+            "kind": "manufacturer-techspecs",
+            "observed": "Official Overview: SKU USW-PRO-48-POE; dimensions width 442, depth 400, height 44 mm; rack mount 1U; 48 x 1GbE; 4 x 10G SFP+ cages. Technical section identifies integrated AC supply and DC backup. Current rounded dimensions retained; no electrical circuit or telemetry is simulated.",
+            "sha256": "470575076754fa05f40c950241caa4afd0cc016ba05e61a331687a0a911302f7",
+            "bytes": 656271
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-48-PoE.yaml",
+            "kind": "community-yaml",
+            "observed": "Exact selected SKU; names and type counts crosschecked against the official technical specifications. Community elevation pictures remain unverified references.",
+            "sha256": "03e4fe262f70683ee20c041d0f7a0751e78f63ceb0dafad0ad1872a9589919e5"
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-d064231ab7e45734/front-979c66f805e4.png",
+            "sha256": "979c66f805e4d91f7cf691c84f54496b68445f86bb12ad9446b5d1b6d37b731c",
+            "view": "front",
+            "match": "community_unverified"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-d064231ab7e45734/rear-8d82ad2f5e41.png",
+            "sha256": "8d82ad2f5e41d9ffd970e4136dd74759c50ee21ac2dcfd6f8fff64c9d235a999",
+            "view": "rear",
+            "match": "community_unverified"
+          }
+        ],
+        "dimensionsBasis": "Nominal chassis dimensions from the current official Overview, in W x H x D mm. Older community/QSG decimals are not silently substituted; mounting ears, tolerances and ventilation are not certified.",
+        "limits": [
+          "Own planar approximation from the inspected community front and rear elevations; community_unverified identity is retained. No photograph is used as an operational background.",
+          "Current official nominal dimensions are used. Older QSG/community descriptions can differ by rounding (442/442.4, 44/43.7, 285/285.4, 400/399.6 mm). No fit, loading, tolerance or cooling certification is implied.",
+          "Fixed copper ports and empty SFP+ cages are materialized; no transceiver, DAC, breakout, speed negotiation, module or optional device is installed.",
+          "One integrated AC inlet is operational under the existing broad power-role contract. Proprietary RPS/DC backup is explicitly decorative and never mapped as an AC endpoint.",
+          "The LCD, reset, indicators, fans and Etherlighting-style details are static drawing elements, not measured state. The body color is an approximation, not calibrated colorimetry.",
+          "Factory port numbers are visual labels. Each endpoint identity remains the original group key plus ordinal and its later instance UUID; no connection is keyed by a displayed number.",
+          "PoE capabilities are documented by the manufacturer but are not automatically applied as per-port PSE state or a simulated power budget by this profile."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-e5030fe747d79fe6",
+        "revision": "selected506a-20261101-v1",
+        "identity": {
+          "manufacturer": "Ubiquiti",
+          "family": "UniFi Pro PoE Gen2",
+          "model": "UniFi Switch 24 Pro PoE Gen2",
+          "sku": "USW-Pro-24-POE"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://techspecs.ui.com/unifi/switching/usw-pro-24-poe",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 442,
+          "height": 44,
+          "depth": 285
+        },
+        "color": "#c7cbcf",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-gigabit",
+            "type": "rj45",
+            "count": 24,
+            "face": "front",
+            "name": "1 GbE",
+            "prefix": "1G ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "front-sfp",
+            "type": "sfp",
+            "count": 2,
+            "face": "front",
+            "name": "10G SFP+ cages",
+            "prefix": "SFP+ ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "Integrated AC inlet",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#c7cbcf",
+              "stroke": "#7c858a",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 13,
+                "y": 43,
+                "w": 51,
+                "h": 53,
+                "fill": "#102333",
+                "stroke": "#657582",
+                "radius": 5
+              },
+              {
+                "kind": "circle",
+                "cx": 38.5,
+                "cy": 69,
+                "r": 10,
+                "fill": "#23629a",
+                "stroke": "#9ba9b5"
+              },
+              {
+                "kind": "circle",
+                "cx": 38.5,
+                "cy": 69,
+                "r": 4,
+                "fill": "#94afc8"
+              },
+              {
+                "kind": "text",
+                "x": 38.5,
+                "y": 113,
+                "text": "UniFi Pro 24 PoE",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 84,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 313,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 542,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 771,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "circle",
+                "cx": 971,
+                "cy": 106,
+                "r": 2,
+                "fill": "#282d30"
+              },
+              {
+                "kind": "text",
+                "x": 971,
+                "y": 117,
+                "text": "RESET",
+                "size": 5,
+                "fill": "#555b60",
+                "anchor": "middle"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-gigabit",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7,
+                    9,
+                    11,
+                    13,
+                    15,
+                    17,
+                    19,
+                    21,
+                    23
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8,
+                    10,
+                    12,
+                    14,
+                    16,
+                    18,
+                    20,
+                    22,
+                    24
+                  ]
+                ],
+                "x": 478,
+                "y": 44,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "1",
+                  "3": "3",
+                  "5": "5",
+                  "7": "7",
+                  "9": "9",
+                  "11": "11",
+                  "13": "13",
+                  "15": "15",
+                  "17": "17",
+                  "19": "19",
+                  "21": "21",
+                  "23": "23",
+                  "2": "2",
+                  "4": "4",
+                  "6": "6",
+                  "8": "8",
+                  "10": "10",
+                  "12": "12",
+                  "14": "14",
+                  "16": "16",
+                  "18": "18",
+                  "20": "20",
+                  "22": "22",
+                  "24": "24"
+                }
+              },
+              {
+                "groupKey": "front-sfp",
+                "rows": [
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "x": 930,
+                "y": 44,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "25",
+                  "2": "26"
+                }
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#9fa3a5",
+              "stroke": "#6c7479",
+              "radius": 2
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 41,
+                "y": 65,
+                "w": 143,
+                "h": 37,
+                "fill": "#353a3e",
+                "stroke": "#6a7277",
+                "radius": 3
+              },
+              {
+                "kind": "text",
+                "x": 112,
+                "y": 115,
+                "text": "RPS / DC - non-operational",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 42,
+                "y": 31,
+                "w": 59,
+                "h": 21,
+                "fill": "#b4b7b9"
+              },
+              {
+                "kind": "text",
+                "x": 47,
+                "y": 45,
+                "text": "LABEL",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 885,
+                "y": 115,
+                "text": "AC INPUT",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "line",
+                "x1": 4,
+                "y1": 30,
+                "x2": 4,
+                "y2": 109,
+                "stroke": "#646e75",
+                "width": 1
+              },
+              {
+                "kind": "line",
+                "x1": 996,
+                "y1": 30,
+                "x2": 996,
+                "y2": 109,
+                "stroke": "#646e75",
+                "width": 1
+              },
+              {
+                "kind": "rect",
+                "x": 42,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 251,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 460,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 669,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "circle",
+                "cx": 26,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              },
+              {
+                "kind": "circle",
+                "cx": 498,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              },
+              {
+                "kind": "circle",
+                "cx": 972,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 854,
+                "y": 49,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 62,
+                "h": 50,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://techspecs.ui.com/unifi/switching/usw-pro-24-poe",
+            "kind": "manufacturer-techspecs",
+            "observed": "Official Overview: SKU USW-Pro-24-POE; dimensions width 442, depth 285, height 44 mm; rack mount 1U; 24 x 1GbE; 2 x 10G SFP+ cages. Technical section identifies integrated AC supply and DC backup. Current rounded dimensions retained; no electrical circuit or telemetry is simulated.",
+            "sha256": "b3fdaf5a8a33812590c12cca0b21f39aaaae3277637a9b6f3d7fd5efc723a478",
+            "bytes": 654648
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-24-PoE.yaml",
+            "kind": "community-yaml",
+            "observed": "Exact selected SKU; names and type counts crosschecked against the official technical specifications. Community elevation pictures remain unverified references.",
+            "sha256": "70a8a2fc2b068065bb242995afab246d68c07ec400e207f3362e6f0c34539e60"
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-e5030fe747d79fe6/front-5a4f1266b88e.png",
+            "sha256": "5a4f1266b88ee334cb9e866f8ff14b6190b9440554dffcedefd488f058a64581",
+            "view": "front",
+            "match": "community_unverified"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-e5030fe747d79fe6/rear-da50ab97d8ff.png",
+            "sha256": "da50ab97d8ff1599788d4c2400b09f81dbe4592262ae44be83b5a6f28fa0ee4d",
+            "view": "rear",
+            "match": "community_unverified"
+          }
+        ],
+        "dimensionsBasis": "Nominal chassis dimensions from the current official Overview, in W x H x D mm. Older community/QSG decimals are not silently substituted; mounting ears, tolerances and ventilation are not certified.",
+        "limits": [
+          "Own planar approximation from the inspected community front and rear elevations; community_unverified identity is retained. No photograph is used as an operational background.",
+          "Current official nominal dimensions are used. Older QSG/community descriptions can differ by rounding (442/442.4, 44/43.7, 285/285.4, 400/399.6 mm). No fit, loading, tolerance or cooling certification is implied.",
+          "Fixed copper ports and empty SFP+ cages are materialized; no transceiver, DAC, breakout, speed negotiation, module or optional device is installed.",
+          "One integrated AC inlet is operational under the existing broad power-role contract. Proprietary RPS/DC backup is explicitly decorative and never mapped as an AC endpoint.",
+          "The LCD, reset, indicators, fans and Etherlighting-style details are static drawing elements, not measured state. The body color is an approximation, not calibrated colorimetry.",
+          "Factory port numbers are visual labels. Each endpoint identity remains the original group key plus ordinal and its later instance UUID; no connection is keyed by a displayed number.",
+          "PoE capabilities are documented by the manufacturer but are not automatically applied as per-port PSE state or a simulated power budget by this profile."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-eaa7b5f1797fad5b",
+        "revision": "selected506a-20261101-v1",
+        "identity": {
+          "manufacturer": "Ubiquiti",
+          "family": "UniFi Pro Max PoE",
+          "model": "UniFi Switch Pro Max 24 PoE",
+          "sku": "USW-Pro-Max-24-PoE"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://techspecs.ui.com/unifi/switching/usw-pro-max-24-poe",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 442,
+          "height": 44,
+          "depth": 325
+        },
+        "color": "#c7cbcf",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-gigabit",
+            "type": "rj45",
+            "count": 16,
+            "face": "front",
+            "name": "1 GbE",
+            "prefix": "1G ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "front-multigigabit",
+            "type": "rj45",
+            "count": 8,
+            "face": "front",
+            "name": "2.5 GbE",
+            "prefix": "2.5G ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "front-sfp",
+            "type": "sfp",
+            "count": 2,
+            "face": "front",
+            "name": "10G SFP+ cages",
+            "prefix": "SFP+ ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "Integrated AC inlet",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#c7cbcf",
+              "stroke": "#7c858a",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 13,
+                "y": 43,
+                "w": 51,
+                "h": 53,
+                "fill": "#102333",
+                "stroke": "#657582",
+                "radius": 5
+              },
+              {
+                "kind": "circle",
+                "cx": 38.5,
+                "cy": 69,
+                "r": 10,
+                "fill": "#23629a",
+                "stroke": "#9ba9b5"
+              },
+              {
+                "kind": "circle",
+                "cx": 38.5,
+                "cy": 69,
+                "r": 4,
+                "fill": "#94afc8"
+              },
+              {
+                "kind": "text",
+                "x": 38.5,
+                "y": 113,
+                "text": "UniFi Pro Max 24",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 84,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 313,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 542,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 771,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "circle",
+                "cx": 971,
+                "cy": 106,
+                "r": 2,
+                "fill": "#282d30"
+              },
+              {
+                "kind": "text",
+                "x": 971,
+                "y": 117,
+                "text": "RESET",
+                "size": 5,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 481,
+                "y": 106,
+                "w": 114,
+                "h": 3,
+                "fill": "#858b8f"
+              },
+              {
+                "kind": "text",
+                "x": 538,
+                "y": 117,
+                "text": "2.5G",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 615,
+                "y": 106,
+                "w": 258,
+                "h": 3,
+                "fill": "#858b8f"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-gigabit",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                ],
+                "x": 84,
+                "y": 67,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "1",
+                  "2": "2",
+                  "3": "3",
+                  "4": "4",
+                  "5": "5",
+                  "6": "6",
+                  "7": "7",
+                  "8": "8"
+                }
+              },
+              {
+                "groupKey": "front-gigabit",
+                "rows": [
+                  [
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                ],
+                "x": 351,
+                "y": 67,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "9": "9",
+                  "10": "10",
+                  "11": "11",
+                  "12": "12",
+                  "13": "13",
+                  "14": "14",
+                  "15": "15",
+                  "16": "16"
+                }
+              },
+              {
+                "groupKey": "front-multigigabit",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                ],
+                "x": 615,
+                "y": 67,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "17",
+                  "2": "18",
+                  "3": "19",
+                  "4": "20",
+                  "5": "21",
+                  "6": "22",
+                  "7": "23",
+                  "8": "24"
+                }
+              },
+              {
+                "groupKey": "front-sfp",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 884,
+                "y": 76,
+                "dx": 36,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "25",
+                  "2": "26"
+                }
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#9fa3a5",
+              "stroke": "#6c7479",
+              "radius": 2
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 41,
+                "y": 65,
+                "w": 143,
+                "h": 37,
+                "fill": "#353a3e",
+                "stroke": "#6a7277",
+                "radius": 3
+              },
+              {
+                "kind": "text",
+                "x": 112,
+                "y": 115,
+                "text": "RPS / DC - non-operational",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 42,
+                "y": 31,
+                "w": 59,
+                "h": 21,
+                "fill": "#b4b7b9"
+              },
+              {
+                "kind": "text",
+                "x": 47,
+                "y": 45,
+                "text": "LABEL",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 885,
+                "y": 115,
+                "text": "AC INPUT",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "line",
+                "x1": 4,
+                "y1": 30,
+                "x2": 4,
+                "y2": 109,
+                "stroke": "#646e75",
+                "width": 1
+              },
+              {
+                "kind": "line",
+                "x1": 996,
+                "y1": 30,
+                "x2": 996,
+                "y2": 109,
+                "stroke": "#646e75",
+                "width": 1
+              },
+              {
+                "kind": "rect",
+                "x": 42,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 251,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 460,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "rect",
+                "x": 669,
+                "y": 26,
+                "w": 202,
+                "h": 2,
+                "fill": "#30373b"
+              },
+              {
+                "kind": "circle",
+                "cx": 26,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              },
+              {
+                "kind": "circle",
+                "cx": 498,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              },
+              {
+                "kind": "circle",
+                "cx": 972,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 854,
+                "y": 49,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 62,
+                "h": 50,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-24-poe",
+            "kind": "manufacturer-techspecs",
+            "observed": "Official Overview: SKU USW-Pro-Max-24-PoE; dimensions width 442, depth 325, height 44 mm; rack mount 1U; 16 x 1GbE + 8 x 2.5GbE; 2 x 10G SFP+ cages. Technical section identifies integrated AC supply and DC backup. Current rounded dimensions retained; no electrical circuit or telemetry is simulated.",
+            "sha256": "8265764239b2f1e8a5a950a2a73fe67553d7f248b5ea531be2fb21b32e0c3e9d",
+            "bytes": 660885
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-Max-24-PoE.yaml",
+            "kind": "community-yaml",
+            "observed": "Exact selected SKU; names and type counts crosschecked against the official technical specifications. Community elevation pictures remain unverified references.",
+            "sha256": "42c8d9f6dd509128894c058eba8a34941eae63eb49d3ada6b3323b75f7230309"
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/community-expansion/assets/nb-eaa7b5f1797fad5b/front-d1a9a362c685.png",
+            "sha256": "d1a9a362c6851bf048c5517781720d401c9cf5ca57f0ecaf8cdf085ed0e1fd33",
+            "view": "front",
+            "match": "community_unverified"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/community-expansion/assets/nb-eaa7b5f1797fad5b/rear-5ee7e7562cdb.png",
+            "sha256": "5ee7e7562cdbe74ba536d32b962a964cce9c55d9cb179bc0e3d638de694950c4",
+            "view": "rear",
+            "match": "community_unverified"
+          }
+        ],
+        "dimensionsBasis": "Nominal chassis dimensions from the current official Overview, in W x H x D mm. Older community/QSG decimals are not silently substituted; mounting ears, tolerances and ventilation are not certified.",
+        "limits": [
+          "Own planar approximation from the inspected community front and rear elevations; community_unverified identity is retained. No photograph is used as an operational background.",
+          "Current official nominal dimensions are used. Older QSG/community descriptions can differ by rounding (442/442.4, 44/43.7, 285/285.4, 400/399.6 mm). No fit, loading, tolerance or cooling certification is implied.",
+          "Fixed copper ports and empty SFP+ cages are materialized; no transceiver, DAC, breakout, speed negotiation, module or optional device is installed.",
+          "One integrated AC inlet is operational under the existing broad power-role contract. Proprietary RPS/DC backup is explicitly decorative and never mapped as an AC endpoint.",
+          "The LCD, reset, indicators, fans and Etherlighting-style details are static drawing elements, not measured state. The body color is an approximation, not calibrated colorimetry.",
+          "Factory port numbers are visual labels. Each endpoint identity remains the original group key plus ordinal and its later instance UUID; no connection is keyed by a displayed number.",
+          "PoE capabilities are documented by the manufacturer but are not automatically applied as per-port PSE state or a simulated power budget by this profile."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-f83ce1b7723518c4",
+        "revision": "selected506a-20261101-v1",
+        "identity": {
+          "manufacturer": "Ubiquiti",
+          "family": "UniFi Pro Max PoE",
+          "model": "UniFi Switch Pro Max 48 PoE",
+          "sku": "USW-Pro-Max-48-PoE"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://techspecs.ui.com/unifi/switching/usw-pro-max-48-poe",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 442.4,
+          "height": 44,
+          "depth": 400
+        },
+        "color": "#c7cbcf",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-gigabit",
+            "type": "rj45",
+            "count": 32,
+            "face": "front",
+            "name": "1 GbE",
+            "prefix": "1G ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "front-multigigabit",
+            "type": "rj45",
+            "count": 16,
+            "face": "front",
+            "name": "2.5 GbE",
+            "prefix": "2.5G ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "front-sfp",
+            "type": "sfp",
+            "count": 4,
+            "face": "front",
+            "name": "10G SFP+ cages",
+            "prefix": "SFP+ ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "Integrated AC inlet",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#c7cbcf",
+              "stroke": "#7c858a",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 13,
+                "y": 43,
+                "w": 51,
+                "h": 53,
+                "fill": "#102333",
+                "stroke": "#657582",
+                "radius": 5
+              },
+              {
+                "kind": "circle",
+                "cx": 38.5,
+                "cy": 69,
+                "r": 10,
+                "fill": "#23629a",
+                "stroke": "#9ba9b5"
+              },
+              {
+                "kind": "circle",
+                "cx": 38.5,
+                "cy": 69,
+                "r": 4,
+                "fill": "#94afc8"
+              },
+              {
+                "kind": "text",
+                "x": 38.5,
+                "y": 113,
+                "text": "UniFi Pro Max 48",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 84,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 313,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 542,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "rect",
+                "x": 771,
+                "y": 26,
+                "w": 211,
+                "h": 2,
+                "fill": "#2e3438"
+              },
+              {
+                "kind": "circle",
+                "cx": 971,
+                "cy": 106,
+                "r": 2,
+                "fill": "#282d30"
+              },
+              {
+                "kind": "text",
+                "x": 971,
+                "y": 117,
+                "text": "RESET",
+                "size": 5,
+                "fill": "#555b60",
+                "anchor": "middle"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-gigabit",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7,
+                    9,
+                    11,
+                    13,
+                    15,
+                    17,
+                    19,
+                    21,
+                    23
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8,
+                    10,
+                    12,
+                    14,
+                    16,
+                    18,
+                    20,
+                    22,
+                    24
+                  ]
+                ],
+                "x": 84,
+                "y": 44,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "1",
+                  "3": "3",
+                  "5": "5",
+                  "7": "7",
+                  "9": "9",
+                  "11": "11",
+                  "13": "13",
+                  "15": "15",
+                  "17": "17",
+                  "19": "19",
+                  "21": "21",
+                  "23": "23",
+                  "2": "2",
+                  "4": "4",
+                  "6": "6",
+                  "8": "8",
+                  "10": "10",
+                  "12": "12",
+                  "14": "14",
+                  "16": "16",
+                  "18": "18",
+                  "20": "20",
+                  "22": "22",
+                  "24": "24"
+                }
+              },
+              {
+                "groupKey": "front-gigabit",
+                "rows": [
+                  [
+                    25,
+                    27,
+                    29,
+                    31
+                  ],
+                  [
+                    26,
+                    28,
+                    30,
+                    32
+                  ]
+                ],
+                "x": 487,
+                "y": 44,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "25": "25",
+                  "27": "27",
+                  "29": "29",
+                  "31": "31",
+                  "26": "26",
+                  "28": "28",
+                  "30": "30",
+                  "32": "32"
+                }
+              },
+              {
+                "groupKey": "front-multigigabit",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7,
+                    9,
+                    11,
+                    13,
+                    15
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8,
+                    10,
+                    12,
+                    14,
+                    16
+                  ]
+                ],
+                "x": 617.8,
+                "y": 44,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "33",
+                  "3": "35",
+                  "5": "37",
+                  "7": "39",
+                  "9": "41",
+                  "11": "43",
+                  "13": "45",
+                  "15": "47",
+                  "2": "34",
+                  "4": "36",
+                  "6": "38",
+                  "8": "40",
+                  "10": "42",
+                  "12": "44",
+                  "14": "46",
+                  "16": "48"
+                }
+              },
+              {
+                "groupKey": "front-sfp",
+                "rows": [
+                  [
+                    1,
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "x": 891,
+                "y": 44,
+                "dx": 36,
+                "dy": 34,
+                "w": 29,
+                "h": 25,
+                "labels": {
+                  "1": "49",
+                  "3": "51",
+                  "2": "50",
+                  "4": "52"
+                }
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#9fa3a5",
+              "stroke": "#6c7479",
+              "radius": 2
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 41,
+                "y": 65,
+                "w": 143,
+                "h": 37,
+                "fill": "#353a3e",
+                "stroke": "#6a7277",
+                "radius": 3
+              },
+              {
+                "kind": "text",
+                "x": 112,
+                "y": 115,
+                "text": "RPS / DC - non-operational",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 42,
+                "y": 31,
+                "w": 59,
+                "h": 21,
+                "fill": "#b4b7b9"
+              },
+              {
+                "kind": "text",
+                "x": 47,
+                "y": 45,
+                "text": "LABEL",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 885,
+                "y": 115,
+                "text": "AC INPUT",
+                "size": 6,
+                "fill": "#555b60",
+                "anchor": "middle"
+              },
+              {
+                "kind": "line",
+                "x1": 4,
+                "y1": 30,
+                "x2": 4,
+                "y2": 109,
+                "stroke": "#646e75",
+                "width": 1
+              },
+              {
+                "kind": "line",
+                "x1": 996,
+                "y1": 30,
+                "x2": 996,
+                "y2": 109,
+                "stroke": "#646e75",
+                "width": 1
+              },
+              {
+                "kind": "fan",
+                "cx": 361,
+                "cy": 70,
+                "r": 39
+              },
+              {
+                "kind": "fan",
+                "cx": 466,
+                "cy": 70,
+                "r": 39
+              },
+              {
+                "kind": "fan",
+                "cx": 571,
+                "cy": 70,
+                "r": 39
+              },
+              {
+                "kind": "fan",
+                "cx": 676,
+                "cy": 70,
+                "r": 39
+              },
+              {
+                "kind": "circle",
+                "cx": 26,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              },
+              {
+                "kind": "circle",
+                "cx": 498,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              },
+              {
+                "kind": "circle",
+                "cx": 972,
+                "cy": 109,
+                "r": 3,
+                "fill": "#777f84",
+                "stroke": "#b2b8ba"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 854,
+                "y": 49,
+                "dx": 32.7,
+                "dy": 34,
+                "w": 62,
+                "h": 50,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-48-poe",
+            "kind": "manufacturer-techspecs",
+            "observed": "Official Overview: SKU USW-Pro-Max-48-PoE; dimensions width 442.4, depth 400, height 44 mm; rack mount 1U; 32 x 1GbE + 16 x 2.5GbE; 4 x 10G SFP+ cages. Technical section identifies integrated AC supply and DC backup. Current rounded dimensions retained; no electrical circuit or telemetry is simulated.",
+            "sha256": "1a3a221623e6296799088efe93719a87a757670fb93d51f190494da1b772da86",
+            "bytes": 661886
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/USW-Pro-Max-48-PoE.yaml",
+            "kind": "community-yaml",
+            "observed": "Exact selected SKU; names and type counts crosschecked against the official technical specifications. Community elevation pictures remain unverified references.",
+            "sha256": "4233565ccec3493f20470e82411905d7d5619a3286cb377267596a276d13fc6c"
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/community-expansion/assets/nb-f83ce1b7723518c4/front-7dc0b89af5a0.png",
+            "sha256": "7dc0b89af5a05e23b367711287dd20b3162d20ed5b92825a8e667a3c5fd5d33d",
+            "view": "front",
+            "match": "community_unverified"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/community-expansion/assets/nb-f83ce1b7723518c4/rear-47aef7537eb9.png",
+            "sha256": "47aef7537eb9db451ae1d412392dadf003794edebd38661c4063112f26155e0c",
+            "view": "rear",
+            "match": "community_unverified"
+          }
+        ],
+        "dimensionsBasis": "Nominal chassis dimensions from the current official Overview, in W x H x D mm. Older community/QSG decimals are not silently substituted; mounting ears, tolerances and ventilation are not certified.",
+        "limits": [
+          "Own planar approximation from the inspected community front and rear elevations; community_unverified identity is retained. No photograph is used as an operational background.",
+          "Current official nominal dimensions are used. Older QSG/community descriptions can differ by rounding (442/442.4, 44/43.7, 285/285.4, 400/399.6 mm). No fit, loading, tolerance or cooling certification is implied.",
+          "Fixed copper ports and empty SFP+ cages are materialized; no transceiver, DAC, breakout, speed negotiation, module or optional device is installed.",
+          "One integrated AC inlet is operational under the existing broad power-role contract. Proprietary RPS/DC backup is explicitly decorative and never mapped as an AC endpoint.",
+          "The LCD, reset, indicators, fans and Etherlighting-style details are static drawing elements, not measured state. The body color is an approximation, not calibrated colorimetry.",
+          "Factory port numbers are visual labels. Each endpoint identity remains the original group key plus ordinal and its later instance UUID; no connection is keyed by a displayed number.",
+          "PoE capabilities are documented by the manufacturer but are not automatically applied as per-port PSE state or a simulated power budget by this profile."
+        ]
+      }
+    }
+  ]
+}

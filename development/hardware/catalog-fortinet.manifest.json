@@ -1,0 +1,24 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 20,
+  "catalogKey": "rackclick-fortinet-01",
+  "state": "curated_development_not_a_release",
+  "inputs": {
+    "development/hardware/catalog-fortinet-v1.json": "546f47ca440dcea3cb8cf7793f9cc575ec04154fd054777ed0decfbc79e3dec9",
+    "development/hardware/fortinet-fg60f.facts.json": "70155f8a2174d265359c28ff13e1b0403ca5ffc22a0dc2a3490313aaa76f71a2",
+    "development/hardware/catalog-schema20.lock.json": "99a78725f0ed77d96378a2d4885d4602b7391d77c1bdcad32442f74f734dc951",
+    "development/server/database/019-aruba-hardware.sql": "9db0bace668df025e81684fe60439229d9124da053d62c741af9ba0cba2c79f7"
+  },
+  "files": {
+    "development/server/src/RackClick.Server/FortinetHardwareProfiles.Generated.cs": "c283968c87dbb2e0f9e47b4f86c0e942c1baf1af2a79684db9875867206542dd",
+    "development/frontend/src/hardware-fortinet.generated.json": "f61bc0a792c1bea8815e7aae24297c30be0557d4dd90af053eb3fc92b5c28611",
+    "development/server/database/020-fortinet-hardware.sql": "9cbb64c1c4d53f495dfd04ea2eb00453b2abc9d22ebd7d622583243feb2d24b9"
+  },
+  "definitions": [
+    {
+      "key": "fortinet-fg60f",
+      "revision": "fortinet-20261030-v1",
+      "sha256": "8da8a5f68522835631cb6387d576610b43023a25b8d42810e9024c2afa40dd1d"
+    }
+  ]
+}

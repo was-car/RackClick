@@ -67,7 +67,7 @@ test('all 24 descriptive action shapes respect persisted before/after identity a
   const name='inventory.device.'+action;await read(page(name,captured(before,after),resource));actions.add(name);
  }
  const batch=page('inventory.devices.delete',captured([entity('device',device),entity('portGroup',group)],[]),id(20));await read(batch);actions.add(batch.events[0].action);
- assert.equal(actions.size,24);assert.equal([...changeActions].filter(a=>!actions.has(a)).length,7);
+ assert.equal(actions.size,24);assert.equal([...changeActions].filter(a=>!actions.has(a)).length,9);assert.ok(!actions.has('inventory.rack.createHardware')&&!actions.has('inventory.device.createHardware'));
 });
 test('Dose and end device record a room, never invent rack placement, U positions or physical circuits',async()=>{
  for(const deviceKind of ['dose','endDevice']){

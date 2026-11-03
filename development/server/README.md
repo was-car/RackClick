@@ -1,10 +1,43 @@
-# Estado de la publicación · 30.10.2026
+> **02.11.2026 · Candidata de aplicación43 consolidada.** Catálogo506, MFA/gracia45 y administración existentes en distribución71archivos/ZIP de revisión. [Manual/estado](../../docs/CANDIDATA-CONSOLIDADA43.md). No es instaladorWindows43 ni actualiza VM/QA; operadores/New/Restore y pruebas nativas finales pendientes. Los registros siguientes son históricos.
 
-Candidata10, esquema15 y MFA de panel/login integrados. Para compilar y abrir una base sintética nueva, seguir [Instalación desde GitHub](../../docs/INSTALACION-DESDE-GITHUB.md). El laboratorio HTTP local no activa MFA ni instala un servicio. Los registros siguientes son históricos; no representan una nueva métrica global.
+> Desarrollo41: grupo K52,805 definiciones/799 comerciales, selección444/506. [Manual](../../docs/INTEGRACION-506-GRUPO-K.md). No actualiza instalación nativa; paquete integral/Restore/QA pendientes.
 
----
+**01.11.2026 · Desarrollo 39, grupo J.** Trece configuraciones de dos familias; 752 definiciones/747 comerciales y selección 392/506 (77,47 %). Migración 38→39, PostgreSQL/Edge y revisión independiente: [manual](../../docs/INTEGRACION-506-GRUPO-J.md). Paneles CC688BL explícitos/AP sobre bandeja, instalación nativa MFA conservada, paquete Windows/Restore/QA final pendientes. Los registros siguientes son históricos.
+
+**01.11.2026 · Desarrollo 38, grupo I.** Cinco perfiles de red; 739 definiciones/734 comerciales y selección 379/506 (74,90 %). Migración 37→38, PostgreSQL/Edge y revisión independiente: [manual](../../docs/INTEGRACION-506-GRUPO-I.md). Nokia SR-1se reservado; instalación nativa MFA conservada, paquete Windows/Restore/QA final pendientes. Los registros siguientes son históricos.
+
+**01.11.2026 · Desarrollo37, grupoH.** Seis perfiles Aruba/Nokia con SFP56/QSFP-DD;734definiciones/729comerciales,selección374/506(73,91%). Migración36→37,PG/Edge y revisión independiente registradas en [manual](../../docs/INTEGRACION-506-GRUPO-H.md). La instalación nativaMFA se conserva: paqueteWindows/Restore37yQAfinal pendientes; no copiarDLL/SQLaislados. Registros siguientes históricos.
+
+**01.11.2026 · Catálogo de desarrollo 31, grupo C.** 50 perfiles nuevos; 528 definiciones / 523 comerciales; selección original 168/506. Se preserva 30→31 en PostgreSQL/Edge. [Manual y límites](../../docs/INTEGRACION-506-GRUPO-C.md). La instalación nativa con MFA no se actualiza con estas fuentes: faltan paquete completo, consumidores, Restore y QA. Los registros siguientes son históricos.
+
+**01.11.2026 · Catálogo de desarrollo 29.** Grupo seleccionado 506A: 17 perfiles nuevos y 655 extremos; 68/506 reconocidos tras siete vínculos de SKU revisados. SQL 001–028 y 411 definiciones previas conservados. Pruebas PostgreSQL/Edge y regresión en el [manual](../../docs/INTEGRACION-506-GRUPO-A.md). Paquete completo con los 506, instalación, Restore y QA pendientes. No actualizar un servidor copiando DLL/SQL aislados.
+
+> 01.11.2026: fuentes 28 añaden cien modelos, 411 perfiles/406 comerciales. VER-100-MODELOS-05.html es revisión local, no instalador ni actualización de candidata 10. Ver docs/HARDWARE-LOTE100-05.md; no copiar DLL/SQL aislados.
+
+> 31.10.2026: fuentes27 añaden100modelos adicionales,311perfiles/306comerciales. VER-100-MODELOS-04.html es revisión local, no instalador/actualización de candidata10. Ver docs/HARDWARE-LOTE100-04.md; no copiar DLL/SQL aislados.
+
+> 31.10.2026: fuentes26 añaden100modelos adicionales,211perfiles/206comerciales. VER-100-MODELOS-03.html es revisión local, no instalador/actualización de candidata10. Ver docs/HARDWARE-LOTE100-03.md; no copiar DLL/SQL aislados.
+
+> 31.10.2026: fuentes de desarrollo25 añaden el segundo lote de50modelos (111perfiles/106comerciales). El HTML02 es un visor local para revisar, no un instalador ni actualización de candidata10. Ver `docs/HARDWARE-LOTE50-02.md`; no copiar DLL o SQL aislados.
+
+> Fuente de desarrollo24:50modelos adicionales,61perfiles totales y motor por bancos. [HTML/manual/fuentes/límites](../../docs/HARDWARE-LOTE50.md). Instalación10/MFA intacta; distribución/Restore24/candidata completa pendientes. No copiar DLL/SQL aislados.
+
+> Fuente de desarrollo23: QNAPTS-464-8G desktop0U/dosLANtraseras, soporte5Ureutilizado. [Pruebas y límites](../../docs/QNAP-TS464-LOTE06.md). Instalación10 intacta; distribución/Restore23 pendientes. No copiar DLL/SQL aislados.
+
+> Fuente de desarrollo22: DiskStationDS423+ desktop0U/dosLAN y soporte genérico propio5U. [Pruebas y límites](../../docs/DS423PLUS-LOTE05.md). Instalación10 intacta; distribución/Restore22 pendientes. No copiar DLL/SQL aislados.
+
+> Fuente de desarrollo21: SynologyRS1221+ rack2U con4LAN/1AC. [Pruebas y límites](../../docs/SYNOLOGY-RS1221PLUS-LOTE04.md). Instalación10 intacta; distribución/Restore21 pendientes. No copiar DLL/SQL aislados.
+
+> Fuente de desarrollo20: perfil FortinetFG-60F con diez Ethernet traseras y sobremesa sobre bandeja. [Pruebas y límites](../../docs/FORTIGATE60F-LOTE03.md). Instalación10 no actualizada; distribución/Restore20 pendientes. No copiar DLL/SQL aislados.
 
 # RackClick Server — desarrollo interno S1
+
+**30.10.2026 · Fuentes de desarrollo en esquema19.** Se añade Aruba1930JL682A (24RJ45+4SFPfrontales yACinlettrasero), con catálogo19 y roles de alimentación en grupos. Bootstrap19/migración18→19/GUI/rollback/revisión independiente comprobados. La instalación10 de Wascar se conserva en su esquema anterior; no copiar esta DLL ni SQL sueltos. Distribución/Restore19 pendientes. [Resultado y límites](../../docs/ARUBA1930-JL682A-LOTE02.md). Los registros siguientes son históricos.
+
+
+
+**30.10.2026 · Desarrollo de hardware/montaje v1.** El código actual añade explícitamente esquema16; la instalación/candidata10 conservada continúa en15. Cuatro perfiles genéricos sintéticos y montaje padre/hijo integrados y probados en PG17/Edge, con revisión independiente. No se debe usar el instalador15 para desplegar esta fuente ni modificar una base instalada a mano. [Contrato](../../docs/CONTRATO-HARDWARE-MONTAJE-v1.md), [resultado y comandos de prueba](../../docs/TANDA-HARDWARE-MONTAJE-30-10-2026.md). Fabricantes, catálogo general versionado, exportaciones de montaje e integración de distribución/operadores16 siguen pendientes; QA136 planned. Los registros anteriores se conservan como historia.
+
 
 **Consola VS Code21.10.2026:** [solución predeterminada, SDK local y pasos de recarga](../../docs/SOLUCION-CONSOLA-VSCODE.md). `.local` queda excluido del trabajo del editor; se conserva SDK401 exacto con rutas relativas. Restore/build de la solución real comprobados; no cambio de aplicación, GUI, DB ni QA.
 
@@ -267,3 +300,24 @@ Confirmado en este alcance: Unicode creación/login, persistencia tras reinicio 
 ## Revocación individual27 · 04.10.2026
 
 Tanda27,04.10.2026: API de revocación de una sesión por userId+ID público, permiso GLOBAL vigente en servidor y borrado exacto. Commit, revisión, auditoría e idempotencia atómicos; recuperación GET vinculada a actor/House/ambos IDs y cancelación durable. Replay no consulta la fila eliminada ni cierra un login posterior; wasCurrent conserva significado histórico. Recuperación propia mediante login NUEVO del mismo actor probada. Seis grupos finales Windows/PostgreSQL del implementador y seis independientes correctos; única regresiónconsulta26 de cuatro correcta. Sin GUI, SQL nuevo ni actualización/migración de QA. QA16 continúa en restaurado schema3/DLL23/GUI24; original intacto por lectura de hashes/configuración, sin SQL/auth/health de QA27. Recuperación compatible con schema4 debe ensayarse antes de futuro despliegue; no usar --no-schema-change ni rollback sólo de archivos aDLL23 sobre DB4. [Contrato27](../../docs/API-ADMIN-SESIONES-REVOCACION-S1.md), [evidencia](../../evidence/s1-20261004/admin-sesiones-revocacion-27/CIERRE.md). No aplicar el estado histórico remoto como resultado Windows vigente.
+
+
+## Desarrollo interno de catálogo —30.10.2026
+
+La rama de trabajo añade esquema17 con definiciones/slots/grupos/correspondencias
+SQL inmutables y runtimeSELECT. No es todavía una actualización instalable: los
+operadores/Restore/distribución deben propagarse y ensayarse por separado.
+No sustituir una DLL en la instalación10. Contrato y resultados en
+[CONTRATO-CATALOGO-SQL17.md](../../docs/CONTRATO-CATALOGO-SQL17.md) y
+[TANDA-CATALOGO-SQL17-30-10-2026.md](../../docs/TANDA-CATALOGO-SQL17-30-10-2026.md).
+El perfil cerrado16 del compilador de autoría fija las cuatro referencias v1;
+es distinto de la versión17 de la base. No implica soporte de nuevos fabricantes.
+
+
+### Primer modelo comercial — esquema18,30.10.2026
+
+La fuente de desarrollo añade StarTech C6PANELUTP241UFT y precisión decimal
+mediante018. Las cuatro referencias v1 y001–017 se conservan. Publicación de
+fuentes controlada no equivale a instalador: operadores/Restore/distribución18
+requieren propagación y ensayo antes de actualizar instalación10.
+Ver [resultado y contrato](../../docs/PRIMER-MODELO-COMERCIAL-STARTECH.md).

@@ -1,0 +1,282 @@
+{
+  "formatVersion": 1,
+  "revision": "family-l-contract-v1",
+  "baselineHardwareTypes": [
+    "rj45",
+    "sfp",
+    "sfp28",
+    "sfp56",
+    "qsfp",
+    "qsfpdd",
+    "power",
+    "console",
+    "idc"
+  ],
+  "additionalHardwareTypes": [
+    "ipc",
+    "fiber",
+    "sfpdd",
+    "cfp2",
+    "sas",
+    "dsl",
+    "telephony",
+    "isdn",
+    "expansion",
+    "power_dc"
+  ],
+  "hardwareTypes": [
+    "rj45",
+    "sfp",
+    "sfp28",
+    "sfp56",
+    "qsfp",
+    "qsfpdd",
+    "power",
+    "console",
+    "idc",
+    "ipc",
+    "fiber",
+    "sfpdd",
+    "cfp2",
+    "sas",
+    "dsl",
+    "telephony",
+    "isdn",
+    "expansion",
+    "power_dc"
+  ],
+  "limits": {
+    "hardwareGroupPorts": 512,
+    "hardwareProfilePorts": 1024,
+    "manualGroupPorts": 96,
+    "hardwareRackUnits": 60
+  },
+  "mountKinds": [
+    "rack",
+    "desktop",
+    "shelf",
+    "rackContainer",
+    "vertical0U",
+    "sharedU",
+    "wall",
+    "pole",
+    "din",
+    "floor"
+  ],
+  "mountTargets": [
+    "rack",
+    "room",
+    "parent"
+  ],
+  "mountDefaults": {
+    "rack": {
+      "target": "rack"
+    },
+    "shelf": {
+      "target": "rack"
+    },
+    "desktop": {
+      "target": "parent"
+    },
+    "rackContainer": {
+      "target": "room"
+    },
+    "vertical0U": {
+      "target": "rack"
+    },
+    "sharedU": {
+      "target": "parent"
+    },
+    "wall": {
+      "target": "room"
+    },
+    "pole": {
+      "target": "room"
+    },
+    "din": {
+      "target": "room"
+    },
+    "floor": {
+      "target": "room"
+    }
+  },
+  "zeroFootprintKinds": [
+    "desktop",
+    "rackContainer",
+    "vertical0U",
+    "sharedU",
+    "wall",
+    "pole",
+    "din",
+    "floor"
+  ],
+  "physicalFaces": [
+    "front",
+    "rear",
+    "top",
+    "bottom"
+  ],
+  "interfaceRoles": [
+    "ethernet",
+    "storage",
+    "cluster",
+    "ha",
+    "management",
+    "optical-line",
+    "optical-client",
+    "serial",
+    "proprietary",
+    "voice",
+    "dsl"
+  ],
+  "signalRoles": [
+    "tx",
+    "rx",
+    "bidi",
+    "passive"
+  ],
+  "powerSystems": [
+    "dc",
+    "usb-pd",
+    "unifi-smartpower"
+  ],
+  "typeDescriptors": {
+    "ipc": [
+      "belden-revconnect-core"
+    ],
+    "fiber": [
+      "lc-duplex-upc",
+      "lc-simplex-upc",
+      "sc-duplex-upc",
+      "sc-simplex-upc",
+      "sc-simplex-apc"
+    ],
+    "sfpdd": [
+      "sfp-dd"
+    ],
+    "cfp2": [
+      "cfp2"
+    ],
+    "sas": [
+      "sff-8644",
+      "sff-8088"
+    ],
+    "dsl": [
+      "dsl-8p8c",
+      "dsl-rj11"
+    ],
+    "telephony": [
+      "voice-8p8c",
+      "voice-rj11"
+    ],
+    "isdn": [
+      "isdn-8p8c"
+    ],
+    "expansion": [
+      "avaya-ipoffice-expansion-8p8c"
+    ],
+    "power_dc": [
+      "dc-barrel",
+      "unifi-smartpower",
+      "usb-c-pd",
+      "dc-terminal-2p",
+      "dc-terminal-3p",
+      "dc-terminal-6p"
+    ],
+    "console": [
+      "serial-mini-din8",
+      "serial-usb-c",
+      "serial-mini-usb",
+      "serial-micro-usb"
+    ],
+    "power": [
+      "schuko-f"
+    ]
+  },
+  "schema": {
+    "definition.mounting": {
+      "kind": "same as definition.kind",
+      "target": "mountDefaults[kind].target",
+      "capacityU": "integer only rackContainer; rackUnits remains0",
+      "parentProfileKeys": "optional string[]; sharedU organisational relation only"
+    },
+    "definition.rackUnits": "0 for zeroFootprintKinds; otherwise known actual occupiedU",
+    "definition.dimensionsMm": "width/height/depth number|null; all three required known for shelf and desktop fit",
+    "definition.configuration": "optional array {slot:string,partNumber:string,quantity:integer>=1,description:string}; fixed declared BOM only",
+    "definition.continuities": "optional array {fromGroup:string,toGroup:string,count:integer,mapping:\"one-to-one\",tracingAvailable:false}; face independent; no routing",
+    "group.physicalConnector": "optional string|null; K23 preserved plus typeDescriptors extensions",
+    "group.physicalFace": "optional physicalFaces|null; operational group.face stays front/rear, top/bottom detail explicitly labelled",
+    "group.interfaceRole": "optional interfaceRoles|null; factual classification, not interoperability certificate",
+    "group.signalRole": "optional signalRoles|null; descriptive, no internal optical route simulation",
+    "group.powerSystem": "required for power_dc, otherwise absent/null; strict same system and opposite inlet/outlet roles only for power_dc"
+  },
+  "semantics": {
+    "rackContainer": "create inventory_rack with capacityU; no inventory_device and zero occupiedU",
+    "sharedU": "parent must be positiveU root device in same rack; organisational link, no fit claimed",
+    "room": "wall/pole/din/floor create room endDevice, no rackU",
+    "unknownDimensions": "permitted outside shelf-fit; never coerce null to0 or infer height fromU",
+    "physicalConnector": "classification only, unchanged K cord policy",
+    "power_dc": "separate fromAC power; same powerSystem plus roles, no voltage/pinout certification",
+    "matrixWdm": "real external ports only; no false1:1 or inferred active paths"
+  },
+  "sqlSidecars": {
+    "profile": {
+      "table": "hardware_profile_extension",
+      "key": [
+        "profile_key",
+        "revision"
+      ],
+      "column": "metadata",
+      "fields": [
+        "mounting",
+        "configuration",
+        "continuities"
+      ]
+    },
+    "group": {
+      "table": "hardware_group_extension",
+      "key": [
+        "profile_key",
+        "revision",
+        "group_key"
+      ],
+      "column": "metadata",
+      "fields": [
+        "physicalFace",
+        "interfaceRole",
+        "signalRole",
+        "powerSystem"
+      ]
+    }
+  },
+  "runtimePortProperties": {
+    "physicalFace": "hardwarePhysicalFace",
+    "interfaceRole": "hardwareInterfaceRole",
+    "signalRole": "hardwareSignalRole",
+    "powerSystem": "hardwarePowerSystem"
+  },
+  "mountSlots": {
+    "vertical0U": [
+      "vertical-left",
+      "vertical-right"
+    ],
+    "sharedU": [
+      "shared"
+    ]
+  },
+  "verticalHeightPolicy": "height must be known and <=rack capacityU*44.45; one device per side",
+  "profileCSharp": {
+    "WidthMm": "decimal?",
+    "HeightMm": "decimal?",
+    "DepthMm": "decimal?",
+    "MountingJson": "string?",
+    "ConfigurationJson": "string?",
+    "ContinuitiesJson": "string?"
+  },
+  "groupCSharp": {
+    "PhysicalFace": "string?",
+    "InterfaceRole": "string?",
+    "SignalRole": "string?",
+    "PowerSystem": "string?"
+  }
+}

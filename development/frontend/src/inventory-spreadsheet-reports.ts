@@ -1,5 +1,5 @@
 import {ApiError,type RackClickApi,type Session} from './api.ts';
-import {reportAllowed,reportUuid,portReportColumns,connectionReportColumns,type ReportRequest} from './inventory-reports.ts';
+import {reportAllowed,reportUuid,portReportColumns,connectionReportColumns,reportColumns,validReportColumns,type ReportRequest} from './inventory-reports.ts';
 
 export const spreadsheetMime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 const maximum=4194304;
@@ -100,7 +100,9 @@ function parseWorkbook(partsXml:string[],kind:string,rowCount:number){
  relationship(roots[1],'officeDocument','xl/workbook.xml');relationship(roots[3],'worksheet','worksheets/sheet1.xml');
  const workbook=expectElement(roots[2],'workbook',spreadsheetNs),sheets=children(workbook);if(sheets.length!==1)invalid();expectElement(sheets[0],'sheets',spreadsheetNs);const sheet=children(sheets[0]);if(sheet.length!==1)invalid();expectElement(sheet[0],'sheet',spreadsheetNs,{name:kind==='ports'?'Ports':'Connections',sheetId:'1',[`{${officeRelNs}}id`]:'rId1'});empty(sheet[0]);
  const worksheet=expectElement(roots[4],'worksheet',spreadsheetNs),sheetData=children(worksheet);if(sheetData.length!==1)invalid();expectElement(sheetData[0],'sheetData',spreadsheetNs);
- const columns=kind==='ports'?portReportColumns:connectionReportColumns,rowElements=children(sheetData[0]);if(rowElements.length!==rowCount+1)invalid();
+ const rowElements=children(sheetData[0]);if(rowElements.length!==rowCount+1)invalid();
+ const legacy=reportColumns(kind),expanded=reportColumns(kind,true),firstCount=children(rowElements[0]).length;
+ const columns=firstCount===legacy.length?legacy:firstCount===expanded.length?expanded:invalid();
  const rows:string[][]=[];
  for(let ri=0;ri<rowElements.length;ri++){
   const row=rowElements[ri];expectElement(row,'row',spreadsheetNs,{r:String(ri+1)});const cells=children(row);if(cells.length!==columns.length)invalid();const values:string[]=[];
@@ -112,7 +114,7 @@ function parseWorkbook(partsXml:string[],kind:string,rowCount:number){
   }
   rows.push(values);
  }
- if(JSON.stringify(rows[0])!==JSON.stringify(columns))invalid();return rows;
+ if(!validReportColumns(kind,rows))invalid();return rows;
 }
 
 export async function validateSpreadsheetResult(data:any,operation:ReportRequest){

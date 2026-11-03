@@ -1,5 +1,5 @@
 {
-  "revision": "2026-10-29-mfa-dashboard-grace45-planned-131",
+  "revision": "2026-11-03-servidor-D45-171",
   "groupsBundle": "c457e5860274dcf87ec68dbdb1f7fef60b2589adaba20a00f2410157dc05487c",
   "cases": [
     {
@@ -2300,6 +2300,655 @@
         "Anota Pass/Not Pass/No probado y la observación. No pegues contraseñas, códigos, secretos TOTP ni contenido del acceso privado en la observación o en el chat."
       ],
       "expected": "La candidata instala esquema15 y su almacén privado MFA bajo la cuenta estándar, inicia automáticamente tras reinicio y ofrece MFA real en el dashboard. La integridad del ZIP o los tests locales por sí solos no cuentan como esta prueba."
+    },
+    {
+      "id": "QA-133",
+      "module": "Inventario · Presentación",
+      "title": "Racks primero e información secundaria desplegable",
+      "feature": "planned",
+      "steps": [
+        "Caso preparado, aún no disponible en la candidata 10 instalada: no marques Pass sobre esa versión. Espera una candidata identificada que incluya racks-first. Conserva tus resultados anteriores; consulta docs/QA-RACKS-PRIMERO-WASCAR.md.",
+        "Abre RackClick e inicia sesión. En la pantalla Clientes pulsa la tarjeta de un cliente sintético que tenga racks. Al entrar, busca las tarjetas de racks debajo de la barra de acciones: deben aparecer antes de PoE e informes.",
+        "Pulsa una tarjeta de rack por su nombre. Comprueba que su frontal aparece debajo de la barra, sin atravesar el resumen PoE ni los selectores de informes. Comprueba también la cara trasera con el control habitual del rack.",
+        "En la barra superior de inventario pulsa Información e informes. La página debe ir directamente a la zona secundaria. Debajo de los exportadores busca Presupuesto PoE: empieza plegado. Pulsa su título para abrirlo y otra vez para cerrarlo.",
+        "Con PoE cerrado, si hay un exceso de presupuesto o datos incompletos, comprueba que su aviso y recuento siguen en el título. Si este cliente no tiene esos datos, anota No aplica a esa comprobación; no inventes un exceso.",
+        "Pulsa Volver a los racks, a la derecha del título Información e informes. Después pulsa Gestionar infraestructura en la barra superior: debe abrir la jerarquía y situarte en ella. Los nombres de sitios, edificios y salas permanecen literales.",
+        "Usa Tab hasta el título del desplegable y Enter para abrir/cerrar; debe verse el foco. Reduce la ventana a un tamaño estrecho: las tarjetas permanecen primero y no debe haber desplazamiento horizontal.",
+        "Recarga la página y entra otra vez en el mismo cliente. Repite desde otra ventana de navegador con una sesión autorizada: el inventario debe coincidir y los paneles informativos comenzar plegados."
+      ],
+      "expected": "Racks y tarjetas se muestran primero; PoE y jerarquía se abren por ratón/teclado, con avisos resumidos visibles. No se pierden nombres, selección ni datos. Caso no habilitado todavía en la instalación de Wascar."
+    },
+    {
+      "id": "QA-134",
+      "module": "Inventario · Informes",
+      "title": "Conservar selección y borrador al ir a información e informes",
+      "feature": "planned",
+      "steps": [
+        "Caso preparado, aún no disponible en candidata 10. Usa sólo la candidata futura indicada por el equipo y un cliente sintético; no cambies un cable real para probar la navegación.",
+        "Abre un rack y pulsa un puerto libre una sola vez. Debe aparecer la indicación de Click-Click en la barra. No pulses otro puerto: la prueba de navegación no necesita crear una conexión.",
+        "Pulsa Información e informes en la barra superior. En la zona secundaria pulsa Diagrama del rack · SVG. Elige un rack y la cara trasera, pero aún no generes el informe.",
+        "Pulsa Volver a los racks y después Información e informes. Comprueba que siguen la indicación del puerto seleccionado, el rack elegido y la cara trasera en el formulario.",
+        "Genera el informe sólo si tienes permiso. Espera la confirmación del servidor antes de descargar. Si aparece una operación pendiente o un error, anótalo y utiliza el botón de consultar/reintentar del propio informe; no vuelvas a generarlo como una operación distinta.",
+        "Comprueba que la navegación a racks y de vuelta no borra ni oculta dentro de otro desplegable la operación pendiente o el error. Si no se produjo ese estado durante tu prueba, déjalo como No probado; no cortes la red del servidor para forzarlo.",
+        "Cancela la selección de puerto con Quitar selección. Anota Pass, Not Pass y observaciones por separado en tu guía habitual; no cambies resultados anteriores."
+      ],
+      "expected": "Se conservan selección y formulario; los exportadores permanecen montados y su confirmación/pendientes/errores siguen controlados. La navegación no crea una conexión ni concede permisos."
+    },
+    {
+      "id": "QA-135",
+      "module": "Inventario · Informes con contexto",
+      "title": "Rack visible propuesto y detalles técnicos bajo demanda",
+      "feature": "planned",
+      "steps": [
+        "Caso preparado, todavía no instalado en candidata 10: espera una candidata identificada con las tandas racks-first e informes-contexto. No reinstales ni repitas MFA para esta prueba. Consulta docs/QA-INFORMES-CONTEXTO-WASCAR.md.",
+        "En Clientes entra en un cliente sintético y abre una tarjeta de rack. Encima de su dibujo pulsa Trasera. Recuerda el nombre de ese rack para compararlo con los formularios.",
+        "En la barra superior pulsa Información e informes. Abre Diagrama del rack · SVG. En su primera apertura deben estar elegidos el rack que acabas de abrir y la cara trasera; aún no generes nada.",
+        "En el selector de rack elige la opción vacía. Cierra el formulario pulsando su título y ábrelo de nuevo: debe seguir vacío y Generar deshabilitado. Pulsa Usar el rack y la cara visibles: nombre del rack, que aparece junto al formulario, para recuperarlos explícitamente.",
+        "En la parte inferior del formulario busca Detalles técnicos. Pulsa su título o enfócalo con Tab y pulsa Enter: aparece la revisión. Ciérralo; no debe desaparecer ningún aviso de error, estado pendiente ni botón de consultar/reintentar.",
+        "Genera el SVG si tienes permiso y espera la confirmación del servidor. Filas y Descargar quedan visibles; abre Detalles técnicos para ver el SHA256. No confundas una solicitud pendiente con un informe confirmado.",
+        "Vuelve a los racks y abre otro. Regresa a Información e informes: un formulario ya utilizado conserva su elección anterior. Para adoptar el nuevo rack pulsa su botón Usar el rack y la cara visibles. La confirmación anterior deja de servir; hay que generar el informe del nuevo alcance.",
+        "Si durante tu uso aparece una operación pendiente, no cambies su alcance ni generes otra. Comprueba que el botón de adoptar el rack visible está deshabilitado, abre Detalles técnicos para identificar la solicitud y utiliza Consultar/Reintentar del propio informe. Si no ocurre, anota ese negativo como No probado; no cortes la red del servidor.",
+        "Repite la primera apertura en Informes e impresión y XLS (HTML RC9). Ambos proponen el rack abierto cuando se usan por primera vez. Si eliges el informe de cliente completo en impresión, cerrar y abrir no debe cambiarlo a rack.",
+        "Comprueba una ventana estrecha y, si usas otro idioma, los rótulos EN/DE/ES. Los nombres de clientes/racks se mantienen literales y no debe aparecer desplazamiento horizontal. Anota Pass, Not Pass y observaciones sin modificar resultados anteriores."
+      ],
+      "expected": "El contexto se propone sólo al primer abrir y luego se adopta explícitamente; elecciones/solicitudes pendientes se conservan. Revisión, ID de solicitud y SHA están bajo demanda; estados/errores/recuperación/descarga siguen visibles. XLS se identifica como HTML RC9, sin anunciar otro formato. Disponible sólo tras integrar una candidata nueva."
+    },
+    {
+      "id": "QA-136",
+      "module": "Inventario · Hardware y montaje",
+      "title": "Bandeja con firewall, switch y patch panel con ambas caras",
+      "feature": "planned",
+      "steps": [
+        "Preparado, todavía no disponible en la instalación 10. Espera una candidata identificada con esquema 18 (incluye catálogo SQL y primer modelo comercial). No reinstales la VM ni repitas MFA. Guía completa: docs/QA-HARDWARE-MONTAJE-WASCAR.md.",
+        "En un cliente sintético crea y abre un rack nuevo de 4 U. En la barra superior pulsa Añadir hardware de referencia. Elige Bandeja, reserva de 2 U, escribe Bandeja QA y guarda.",
+        "Pulsa otra vez ese botón, elige Firewall de sobremesa, 6 + 1 RJ45 y selecciona Bandeja QA en Bandeja de montaje. Escribe Firewall QA y guarda: debe aparecer dentro de la bandeja, sin sumar U adicionales.",
+        "Añade al mismo rack Switch, 24 RJ45 + 2 SFP y Patch panel pasante, 24 + 24 RJ45. Debe indicar Reservado 4/4 U y Libre 0 U. Intenta añadir otro switch: rechazo por falta de espacio, sin equipo ni éxito nuevo. Cancela el diálogo.",
+        "Sobre el dibujo pulsa Frontal. Haz Click-Click entre LAN1 del firewall y el puerto 1 del switch; espera Guardado por el servidor. Conecta también el puerto 2 del switch con F1 del panel.",
+        "Pulsa Trasera encima del dibujo: MGMT1 del firewall, 2 SFP del switch y 24 RJ45 del panel. Conecta R1 con MGMT1 y espera la confirmación. F1 y R1 son distintos aunque repitan el número 1.",
+        "En el firewall pulsa el lápiz de su cabecera. Cambia nombre y notas, guarda, recarga con F5 y abre de nuevo el cliente/rack. Otra sesión autorizada debe leer lo mismo. No deben ofrecerse U ni presupuesto PoE como campos editables de ese perfil.",
+        "Intenta eliminar sólo la bandeja con ×: debe pedir retirar antes el equipo montado y conservar todos los datos/cables. No elimines el rack completo en este paso.",
+        "Con una cuenta de sólo lectura comprueba que puedes leer pero no crear ni editar. En un rack mixto verifica que el equipo RC9 anterior conserva su dibujo, −/+, subir/bajar y cara automática.",
+        "Información e informes: el inventario imprimible debe identificar 0 U adicionales y el soporte. SVG/XLS antiguos informan el límite de montaje sin descargar archivos parciales. Guarda Pass, Not Pass u observaciones en la guía sin sobrescribir otros resultados."
+      ],
+      "expected": "Cuatro objetos independientes, ocupación 2+0+1+1=4 U, 81 puertos del conjunto y cables por IDs en ambas caras. Guardado, recarga, otra sesión y permisos verificados por servidor. Sólo cuatro referencias sintéticas; fabricantes y formatos de exportación montada siguen pendientes."
+    },
+    {
+      "id": "QA-137",
+      "module": "Inventario · Revisiones de hardware",
+      "title": "Revisión fijada al crear y conservada al editar/recargar",
+      "feature": "planned",
+      "steps": [
+        "Preparado, todavía no instalado en candidata10. Espera una candidata identificada con montaje y revisión de hardware. No reinstales ahora ni repitas MFA. Guía: docs/QA-REVISIONES-HARDWARE-WASCAR.md.",
+        "En Clientes abre un cliente sintético y un rack con espacio. En la barra superior pulsa Añadir hardware de referencia y elige Switch, 24 RJ45 + 2 SFP.",
+        "Bajo los campos busca Revisión de plantilla: hw-reference-v1. Es informativa, no un campo para escribir versiones arbitrarias. Escribe nombre, selecciona rack y pulsa Guardar abajo a la derecha.",
+        "Espera Guardado por el servidor. En la cabecera del switch deben aparecer clave y revisión; comprueba 24 RJ45 frontales y 2 SFP traseros.",
+        "Con el lápiz del equipo cambia nombre o notas y guarda. No deben cambiar la revisión, los puertos ni los cables. Recarga con F5 y vuelve al cliente/rack; otra sesión autorizada debe leer lo mismo.",
+        "Si hay otra instancia del mismo perfil, renombrar una no cambia la otra. No alteres SQL ni archivos para simular una revisión desconocida: el negativo está automatizado en laboratorio.",
+        "Si aparece una advertencia de revisión no disponible durante el uso normal, conserva una captura y comunícala. Los objetos, puertos y montaje guardados deben seguir visibles en una vista genérica. Registra Pass, Not Pass o Bloqueado sin modificar resultados anteriores."
+      ],
+      "expected": "Cada creación nueva fija clave y revisión exactas; las anteriores que omiten versión permanecen en v1. Editar/recargar no cambia el modelo de las instancias ni sus puertos. No se sustituye una revisión desconocida por otra. Sólo cuatro referencias genéricas disponibles; caso pendiente de candidata nueva."
+    },
+    {
+      "id": "QA-138",
+      "module": "Inventario · Primer modelo comercial",
+      "title": "StarTech C6PANELUTP241UFT con dos caras y revisión exacta",
+      "feature": "planned",
+      "steps": [
+        "Preparado, todavía no disponible en la instalación 10. Espera una candidata completa identificada de esquema 18. No reinstales ni repitas MFA. Guion: docs/QA-PRIMER-MODELO-COMERCIAL-WASCAR.md.",
+        "En Clientes abre un cliente sintético y crea/abre un rack nuevo de 2 U. En la barra superior pulsa Añadir hardware de referencia. En Perfil de referencia elige StarTech.com · C6PANELUTP241UFT con su revisión.",
+        "Comprueba la vista previa: 483 × 44.3 × 138 mm, 1 U, 24 RJ45 frontales y 24 traseros. Debe distinguir datos contrastados y esquema técnico propio. El enlace Ficha del fabricante es opcional.",
+        "Escribe Panel StarTech A en Nombre y pulsa Guardar abajo a la derecha. Espera Guardado por el servidor. Repite para Panel StarTech B en el mismo rack: dos objetos independientes, 2/2 U.",
+        "En Frontal comprueba la carcasa plana negra del StarTech, cuatro bloques de seis bocas gris/negro CAT6 y números blancos inferiores. Las imágenes originales sirven de referencia: no debe aparecer una fotografía oblicua. Cada boca es visible, enfocada con Tab y conectable. En pantalla estrecha desplaza la barra horizontal hasta el24; el cable debe seguir su boca.",
+        "Encima del dibujo pulsa Frontal. Haz clic en el conector 1 de A y después en el 1 de B. Espera el guardado. Pulsa Trasera y conecta el 1 trasero de A con el 1 trasero de B: otro cable, otros UUID.",
+        "Al pulsar Trasera, comprueba los cuatro bancos de seis acopladores negros con sus retenciones y24bocas visibles. Debajo de la carcasa aparecen los números lógicos24→1; no son rótulos impresos atribuidos al fabricante. Pulsa una boca trasera y conecta con la correspondiente de B: cable distinto del frontal. Una revisión desconocida conserva vista genérica y todos sus puertos.",
+        "Sobre una boca libre haz clic derecho. En el diálogo de Puertos, selecciona el campo Etiqueta, escribe un nombre y guarda. El nombre aparece en el portaetiquetas superior y en el tooltip. Repite para Estado reservado y un color propio: borde de estado e indicador de color, con la carcasa sin repintar. Espera siempre Guardado por el servidor.",
+        "En la cabecera del primer panel pulsa el lápiz, cambia nombre/notas y guarda. Revisión, modelo, dimensiones y puertos deben mantenerse. Pulsa F5, vuelve al cliente/rack y comprueba los dos cables.",
+        "En Trasera, haz clic derecho sobre una boca libre. En Puertos cambia el campo a Etiqueta, escribe una nota y guarda. La anotación debe verse debajo del número lógico y seguir en el tooltip después de F5; el UUID y el cable frontal no cambian.",
+        "Abre otra sesión autorizada si tienes esa cuenta: debe leer lo mismo. Con cuenta de sólo lectura, leer sin crear/editar; si no se entregó esa cuenta, anota No probado.",
+        "Intenta añadir un tercer panel al rack lleno: rechazo sin equipo ni éxito nuevo. Cancela el diálogo. Registra Pass, Not Pass y observaciones sin sobrescribir resultados anteriores."
+      ],
+      "expected": "Dos instancias con UUID propios;24acopladores/48extremos físicos por panel, no48interfaces activas. Revisión exacta y44.3mm, Click-Click/caras/etiquetas/estado/color, guardado y recarga conservados. Frontal plano interactivo dibujado desde referencia original; boca visible y ancla del cable coincidentes. Foto oblicua descartada para presentación operativa. Trasera específica plana StarTech con24bocas/cuerpos deacoplador y retenciones,24→1lógico; números/etiquetas fuera de carcasa, sin crear más puertos. Fuentevisual deproveedor declarada, no revisión físicacertificada. Otrosmodelos/revisionesdesconocidos mantienen genérico. Ver docs/TRASERA-INTERACTIVA-STARTECH-LOTE01.md y docs/FRONTAL-INTERACTIVO-REFERENCIA-ORIGINAL-LOTE01.md y docs/QA-CARCASAS-LOTE01-WASCAR.md. Preparado en laboratorio, pendiente candidata completa y aceptación visual de Wascar."
+    },
+    {
+      "id": "QA-139",
+      "module": "Inventario · Catálogo comercial",
+      "title": "Aruba Instant On1930 JL682A: cobre, SFP y alimentación",
+      "feature": "planned",
+      "steps": [
+        "Preparado sólo en desarrollo 19. Todavía no disponible en tu instalación 10. Espera una candidata completa identificada; no copies DLL/SQL/JS sueltos ni repitas MFA.",
+        "En el menú izquierdo pulsa Clientes, abre un cliente sintético y un rack con al menos 2 U libres. En la barra superior pulsa Añadir hardware de referencia. En Perfil de referencia elige HPE Aruba Networking · JL682A · aruba-20261030-v1.",
+        "Comprueba la vista previa: 442.5 × 43.9 × 221.5 mm, 1 U; 24 RJ45 + 4 SFP delante y 1 POWER detrás. El enlace abre QuickSpecs oficial. Escribe Aruba A en Nombre y pulsa Guardar abajo a la derecha. Espera Guardado por el servidor; repite como Aruba B.",
+        "Encima del rack pulsa Frontal: carcasa blanca/gris, dos filas de 12 RJ45 a la derecha y cuatro bahías SFP/SFP+ en el extremo derecho. Los rótulos 25–28 corresponden a los ordinales 1–4 del grupo SFP. Reset, LED y ranuras mecánicas son decorativos.",
+        "Haz clic en la boca RJ45 número 1 de A y después en la 1 de B. Espera Guardado por el servidor. Repite entre la bahía 25 de A (SFP1) y la 28 de B (SFP4): segundo cable con otros UUID, sin mezclar grupos porque compartan el ordinal 1.",
+        "Reduce la ventana y desplaza horizontalmente el frontal hasta la última bahía SFP. Pulsa Trasera: la entrada AC debe quedar visible a la izquierda sin arrastrar la barra de vuelta. No deben aparecer SFP/RJ45 ni ventiladores detrás.",
+        "Si el laboratorio entregado tiene una PDU documentada con salida de alimentación: pulsa la entrada AC de A y luego esa salida de la PDU; espera Guardado por el servidor. Si no hay una salida documentada, anota No probado; no conectes dos entradas ni inventes una toma.",
+        "Vuelve a Frontal. Haz clic derecho en una boca libre; en el editor de Puertos elige Etiqueta y escribe una nota. Guarda y comprueba la anotación y el tooltip. Con Tab y Enter selecciona una boca libre y cancela desde el aviso de conexión.",
+        "En la cabecera de A pulsa el lápiz, cambia nombre/notas y guarda. Pulsa F5 y vuelve al mismo cliente/rack: conserva puertos, cables y nombres. Otra sesión autorizada debe leer lo mismo; un lector puede consultar pero no editar. Registra Pass/Not Pass/observaciones sin sustituir resultados anteriores."
+      ],
+      "expected": "Dos modelos independientes con 29 UUID cada uno: 24 RJ45 + 4 SFP frontales y una entrada AC trasera (inlet). Carcasa plana referenciada; Click-Click, etiquetas, recarga, permisos y guardado conservados. Cambiar de cara vuelve al inicio del desplazamiento. El genérico switch-24 y StarTech mantienen sus perfiles. No se simula PoE, ventiladores, telemetría o transceptores instalados. Sólo desarrollo, pendiente candidata/QA. Detalle: docs/ARUBA1930-JL682A-LOTE02.md."
+    },
+    {
+      "id": "QA-140",
+      "module": "Inventario · Catálogo comercial",
+      "title": "FortiGate 60F: frontal de indicadores, diez Ethernet traseros y bandeja",
+      "feature": "planned",
+      "steps": [
+        "Caso preparado en desarrollo 20; aún no disponible en tu instalación 10. Espera una candidata completa identificada. No copies DLL, SQL o JavaScript sueltos.",
+        "En el menú izquierdo abre Clientes, el cliente sintético de prueba y un rack con 4 U libres. En la barra superior pulsa Añadir hardware de referencia. En Perfil de referencia elige Bandeja, revisión hw-reference-v1; escribe Bandeja A y guarda. Espera Guardado por el servidor.",
+        "Pulsa otra vez Añadir hardware de referencia. En Perfil de referencia elige Fortinet · FortiGate 60F · fortinet-20261030-v1. Comprueba 216 × 38.5 × 160 mm y 0 U adicionales. Escribe Firewall A, elige Bandeja A en Bandeja de montaje y guarda. Debe quedar dentro de su bandeja, sin consumir otras U.",
+        "Repite creando Bandeja B y Firewall B sobre ella. Las dos bandejas reservan 4 U; los firewalls no añaden U. Una bandeja ocupada no debe admitir un segundo equipo en el mismo alojamiento. No borres una bandeja con su equipo dentro.",
+        "Encima del rack pulsa Frontal. Debes ver la carcasa clara, nombre del modelo e indicadores, sin bocas Ethernet. En escritorio debe caber el frontal completo. Los indicadores son decorativos: no demuestran el estado del aparato real.",
+        "Pulsa Trasera. De izquierda a derecha, tras DC/USB/CONSOLE, las bocas de red son WAN2, WAN1, DMZ, B, A, 5, 4, 3, 2, 1. CONSOLE es serie; no es una undécima boca Ethernet. DC12V y USB sólo se muestran. No intentes conectarlos a Ethernet ni a una salida AC de PDU.",
+        "Haz clic en LAN 1 de A y después en LAN 1 de B. Espera Guardado por el servidor. Repite desde A a B con FortiLink A→B y WAN1→WAN2, usando bocas todavía libres. Deben ser tres cables distintos; no se mezclan porque sus grupos repitan el ordinal interno 1.",
+        "Reduce la ventana, desplaza la trasera y selecciona una boca libre. Cancela desde el aviso de conexión. Los cables deben seguir sus bocas. Cambia Frontal y Trasera: el desplazamiento vuelve al inicio. Con Tab y Enter comprueba también una boca libre.",
+        "Haz clic derecho en DMZ libre; en el editor de puertos elige Etiqueta, escribe una nota y guarda. En el lápiz de la cabecera del firewall cambia nombre y notas y guarda. Las etiquetas impresas del equipo se conservan; tu nota aparece fuera de la carcasa y en el tooltip.",
+        "Pulsa F5, vuelve al cliente/rack y comprueba nombres, relación con la bandeja, diez bocas Ethernet por firewall y tres cables. Abre otra sesión autorizada: debe leer lo mismo. Con una cuenta lectora comprueba que puede consultar pero no editar. Registra Pass/Not Pass/observaciones sin sustituir resultados anteriores."
+      ],
+      "expected": "Dos FG-60F de sobremesa con diez Ethernet traseros cada uno y cuatro grupos identificados por IDs, sobre dos bandejas. Frente sin puertos de red, trasera fiel y cables persistentes. Lectura/guardado y autorización conservados. DC12V, consola serie, USB, adaptador y telemetría no están operativos en este lote. Los genéricos, StarTech y Aruba siguen separados. Pendiente candidata completa y QA; detalle en docs/FORTIGATE60F-LOTE03.md."
+    },
+    {
+      "id": "QA-141",
+      "module": "Inventario · Catálogo comercial",
+      "title": "Synology RS1221+: dos U, ocho bandejas y conectores traseros",
+      "feature": "planned",
+      "steps": [
+        "Sólo preparado en desarrollo 21; todavía no disponible en la instalación 10. Espera una candidata completa identificada y su laboratorio de prueba. No copies DLL, SQL o JS por separado.",
+        "En el menú izquierdo abre Clientes, un cliente sintético y un rack con al menos 4 U libres para dos NAS. Si vas a añadir el Aruba y la PDU de los pasos siguientes, reserva además sus U. Usa una salida de PDU documentada y entregada en el laboratorio; si falta, deja la conexión de alimentación como No probado, sin inventar una toma.",
+        "En la barra superior pulsa Añadir hardware de referencia. En Perfil de referencia elige Synology · RS1221+ · synology-20261030-v1. Comprueba 482 × 88 × 306.6 mm con orejas, 2 U y ningún selector de bandeja de montaje: es un equipo rack independiente. Escribe Synology A en Nombre, guarda y espera Guardado por el servidor. Repite como Synology B.",
+        "Encima del rack pulsa Frontal. Deben verse ocho bandejas, en dos filas de cuatro, carcasa negra y orejas laterales. No hay bocas Ethernet delanteras. Indicadores, botones y bandejas no son controles del NAS real; no se afirma que tenga ocho discos instalados ni un RAID configurado.",
+        "Pulsa Trasera. Comprueba dos ventiladores, cuatro LAN de izquierda a derecha LAN4, LAN3, LAN2, LAN1 y una única zona AC abajo a la izquierda. No debe parecer el RS1221RP+ de doble alimentación. USB, eSATA, consola de fabricación y PCIe sólo están dibujados; no añaden puertos de red ni una tarjeta opcional.",
+        "Haz clic en LAN1 de Synology A y luego en LAN1 de Synology B. Espera Guardado por el servidor. Si hay un Aruba JL682A en el mismo rack, selecciona LAN2 del NAS en Trasera, cambia a Frontal sin cancelar la selección y pulsa una boca RJ45 libre del Aruba. Espera Guardado por el servidor; deben ser cables distintos con extremos correctos.",
+        "Vuelve a Trasera. Si la PDU entregada tiene una salida de alimentación disponible, pulsa la zona AC de Synology A y después esa salida. Espera Guardado por el servidor. No conectes dos entradas AC. El receso de alimentación está representado esquemáticamente; sus contactos internos no se especifican.",
+        "Reduce la ventana y desplaza horizontalmente la trasera hasta los LAN. Las bocas siguen siendo pulsables y los cables permanecen unidos a ellas. Cambia Frontal y Trasera: el desplazamiento debe volver al inicio. Con Tab y Enter selecciona una boca libre y cancela desde el aviso de conexión.",
+        "Haz clic derecho en LAN3 libre. En el editor de puertos elige Etiqueta, escribe una nota y guarda. Debe verse como texto, conservando el rótulo impreso LAN3. Pulsa el lápiz de la cabecera del NAS, cambia nombre y notas, guarda y espera la confirmación.",
+        "Pulsa F5 y vuelve al mismo cliente/rack. Comprueba nombres, dos U por NAS, cinco extremos por NAS y cables. Otra sesión autorizada debe leer lo mismo; una cuenta lectora puede consultar pero no editar. Registra Pass/Not Pass/observaciones sin sustituir resultados anteriores."
+      ],
+      "expected": "RS1221+ exacto de 2 U, con ocho bandejas dibujadas y cinco extremos de inventario: cuatro Ethernet y una entrada AC traseros. Conexiones por UUID, cambio entre caras, guardado, recarga y permisos conservados; el RP+, discos/RAID, NIC opcional, USB/eSATA y consola no se simulan. Pendiente candidata completa y QA. Detalle: docs/SYNOLOGY-RS1221PLUS-LOTE04.md."
+    },
+    {
+      "id": "QA-142",
+      "module": "Inventario · Catálogo comercial",
+      "title": "DiskStation DS423+: cuatro bahías de sobremesa, soporte alto y dos LAN",
+      "feature": "planned",
+      "steps": [
+        "Preparado sólo en desarrollo22; todavía no disponible en la instalación10. Espera una candidata completa identificada y un laboratorio de prueba. No copies DLL, SQL ni JS por separado.",
+        "En el menú izquierdo abre Clientes, un cliente sintético y su rack. Para reproducir la comparación completa usa un rack vacío de10U: bandeja baja2U, soporte alto5U, RackStation2U y Aruba1U. No uses datos reales.",
+        "En la barra superior pulsa Añadir hardware de referencia. En Perfil de referencia elige la bandeja genérica de2U, escribe Bandeja baja y guarda. Vuelve a Añadir hardware de referencia y elige Synology · DS423+ · synology-ds423plus-20261030-v1. Comprueba199×166×223mm y0U adicionales. La bandeja baja de60mm de altura no debe ofrecerse como padre. Cancela sin crear un NAS.",
+        "Pulsa Añadir hardware de referencia y elige el soporte genérico de5U, revisión mount-support-20261030-v1. Comprueba la vista previa: alojamiento main de440×190×300mm. Escribe Soporte alto, guarda y espera Guardado por el servidor. No debe aparecer una marca Synology ni campos null para este soporte propio.",
+        "Vuelve a elegir el DS423+ exacto. En Bandeja de montaje selecciona Soporte alto y el alojamiento main. Escribe DiskStation A en Nombre, guarda y espera la confirmación. La bandeja reserva5U y el NAS añade0U; no debe caber un segundo hijo en el mismo alojamiento. El soporte es una referencia propia, sin certificación de carga o ventilación.",
+        "Encima del rack pulsa Frontal. Comprueba el cuerpo negro erguido y cuatro bandejas verticales, con indicadores/USB/encendido a la derecha. No hay bocas de red delanteras. Las bandejas no simulan discos ni RAID.",
+        "Pulsa Trasera. Deben verse dos ventiladores en paralelo y dos LAN bajo el izquierdo, LAN1 a la izquierda de LAN2. USB, reset, ranura y DC son dibujo sin conexión operativa. No conectes DC a una salida AC de PDU ni inventes el adaptador.",
+        "Si el laboratorio tiene ArubaJL682A y RackStationRS1221+ de los casos anteriores, pulsa LAN1 del DS en Trasera, cambia a Frontal y pulsa una boca RJ45 libre del Aruba. Espera Guardado por el servidor. Vuelve a Trasera y une LAN2 del DS con un LAN libre del RackStation. Deben quedar dos cables distintos con extremos correctos.",
+        "Reduce la ventana y desplaza horizontalmente el NAS hasta las LAN. Deben poder pulsarse y el cable debe seguir centrado. Cambia Frontal y Trasera: el desplazamiento vuelve al inicio. Usa Tab y Enter en una boca, y cancela desde el aviso de conexión.",
+        "Con clic derecho en un puerto abre el editor, elige Etiqueta y guarda texto de prueba. El rótulo impreso LAN1/LAN2 se conserva. En el lápiz de cabecera cambia nombre y notas, guarda y espera confirmación. Pulsa F5, vuelve al rack y comprueba dimensiones, montaje, UUID/puertos, etiquetas y cables.",
+        "Abre otra sesión autorizada: debe leer el mismo inventario. Una cuenta lectora puede consultar pero no editar; una operación rechazada no debe anunciar guardado ni cambiar los datos. Anota Pass/Not Pass y observaciones sin sustituir resultados anteriores."
+      ],
+      "expected": "DS423+ exacto de sobremesa con cuatro bandejas dibujadas, dos Ethernet traseras y0U adicionales sobre soporte propio5U de190mm. Se rechaza el soporte bajo60mm y se conservan Click-Click, UUID, guardado, recarga y permisos. No se simulan DS423 sin plus, discos/RAID ni alimentación DC con adaptador. Pendiente candidata completa y QA. Detalle: docs/DS423PLUS-LOTE05.md."
+    },
+    {
+      "id": "QA-143",
+      "module": "Inventario · Catálogo comercial",
+      "title": "QNAP TS-464-8G: cubierta negra/dorado y dos LAN traseras verticales",
+      "feature": "planned",
+      "steps": [
+        "Sólo preparado en desarrollo23. Espera una candidata completa identificada y un laboratorio de prueba; todavía no está en la instalación10. No copies DLL, SQL o JS aislados.",
+        "En el menú izquierdo abre Clientes, un cliente sintético y su rack. Para la comparación completa usa10U libres: bandeja baja2U, soporte alto5U, RackStation2U y Aruba1U. No uses datos reales.",
+        "En la barra superior pulsa Añadir hardware de referencia. Si falta, crea primero la bandeja genérica5U, revisión mount-support-20261030-v1, nombre Soporte QNAP. Comprueba440×190×300mm del alojamiento main y espera Guardado por el servidor.",
+        "Vuelve a Añadir hardware de referencia. En Perfil de referencia elige QNAP · TS-464 · qnap-20261030-v1 (perfil exactoTS-464-8G). Comprueba170×165×226.5mm,0U adicionales, frontal sin bocas y trasera2RJ45. Son dimensiones nominales sin pies; altura completa, holguras y carga requieren comprobación antes de un montaje físico real.",
+        "En Bandeja de montaje elige Soporte QNAP, escribe QNAP A en Nombre y guarda. La bandeja baja2U/60mm no debe aparecer como padre válido. Un soporte ocupado debe estar deshabilitado; el NAS añade0U a las5U del soporte. Espera Guardado por el servidor.",
+        "Encima del rack pulsa Frontal. Comprueba cubierta negra cerrada y franja dorada a la derecha. Las cuatro bahías quedan detrás de la cubierta, sin cuatro bandejas abiertas. Botones, indicadores y USB no controlan un NAS real ni afirman discos/RAID.",
+        "Pulsa Trasera. Comprueba un ventilador grande y columna izquierda: USB/HDMI arriba, LAN1 encima de LAN2 y DC abajo. Sólo las dos LAN son pulsables como extremos. No conectes DC a una PDU ni inventes adaptador, HDMI o tarjeta PCIe opcional.",
+        "Con ArubaJL682A y RackStationRS1221+ disponibles, pulsa LAN1 del QNAP en Trasera, cambia a Frontal y pulsa una boca RJ45 libre del Aruba. Espera Guardado por el servidor. Vuelve a Trasera y une LAN2 del QNAP con un LAN libre del RackStation. Deben ser dos cables con extremos correctos.",
+        "Reduce la ventana y desplaza la trasera hasta las LAN: bocas alcanzables y cable anclado. Cambia Frontal/Trasera: vuelve al inicio. Usa Tab/Enter para seleccionar una boca y cancela desde el aviso de conexión.",
+        "Con clic derecho abre el editor de puerto, elige Etiqueta y guarda texto de prueba. El rótulo LAN1/LAN2 se conserva. En el lápiz de cabecera cambia nombre/notas, espera confirmación y pulsa F5. Reabre el rack: nombre, montaje, etiquetas y cables deben persistir.",
+        "Otra sesión autorizada debe leer lo mismo. Una cuenta lectora consulta sin editar; un rechazo no muestra éxito ni cambia inventario. Anota Pass/Not Pass y observaciones conservando los resultados anteriores."
+      ],
+      "expected": "TS-464-8G con cubierta negra cerrada y dorado, dos LAN traseras en vertical y0U adicionales sobre soporte propio. UUID/Click-Click/guardado/recarga/permisos conservados. No se infiere RAM de la foto, altura completa con pies, discos/RAID, adaptador o tarjeta opcional. Pendiente candidata completa y QA. Detalle: docs/QNAP-TS464-LOTE06.md."
+    },
+    {
+      "id": "QA-144",
+      "module": "Inventario · Lote50 por marcas",
+      "title": "50modelos nuevos: revisión visual y posterior candidata24",
+      "feature": "planned",
+      "steps": [
+        "La revisión visual local ya está disponible: abre VER-50-MODELOS.html con doble clic en Edge o Chrome, manteniendo CARCASAS-50-01 en la misma carpeta. No necesita PowerShell ni contraseña. La parte del servidor de este caso espera una candidata completa24 identificada; no copies DLL, SQL o JS a la instalación10.",
+        "En la columna izquierda escribe una marca o modelo. Pulsa el resultado y comprueba el título/SKU; están20Synology,10QNAP,8Aruba,8Cisco,2Fortinet y2Sophos nuevos, sin contar los seis perfiles anteriores. También hay50HTML individuales dentro de CARCASAS-50-01/modelos.",
+        "En el panel central revisa Frontal y Trasera, uno debajo del otro. Contrasta color/carcasa, cubierta abierta o cerrada, bandejas, ventiladores, auxiliares, número y orden de bocas. Las advertencias de referencia familiar o no confirmada son parte de la ficha; no las marques como exactas por el nombre.",
+        "Pulsa una boca de red y después RJ45 o SFP de prueba del mismo tipo. Para alimentación usa la salida AC de prueba; no unas dos entradas. Comprueba el cable al desplazar horizontalmente o estrechar la ventana. Sólo es demostración local: no escribe en el servidor. USB, DC, consola, HDMI y piezas auxiliares sin contrato no crean cables.",
+        "Debajo del modelo elige Pass, Not Pass o No probado y escribe qué cara/puerto/color habría que corregir. Pulsa Siguiente para continuar. Usa el índice para mantener juntas las50; los HTML individuales pueden tener almacenamiento separado según el navegador.",
+        "Al terminar o cuando quieras parar, pulsa Exportar mis resultados JSON en la columna izquierda. Conserva el archivo RackClick-Revision-Visual-50.json y envíalo. Importar en casillas vacías conserva notas existentes. No sustituye resultados QA anteriores.",
+        "Sólo tras recibir una candidata completa24, abre Clientes y un rack sintético. En la barra superior pulsa Añadir hardware de referencia, selecciona modelo y revisión batch50-20261030-v1; verifica dimensiones/puertos. Si es sobremesa selecciona un soporte compatible del mismo rack y alojamiento main; si es rack no asignes padre. Espera Guardado por el servidor.",
+        "En esa candidata, crea enlaces de los tipos disponibles contra extremos compatibles del laboratorio. Cambia frontal/trasera cuando haga falta; comprueba el UUID/extremo elegido, etiquetas y estados. Una consola con forma RJ45 sigue siendo decorativa, no Ethernet. No inventes adaptadores o módulos.",
+        "Pulsa F5 y vuelve al mismo cliente/rack. Otra sesión autorizada debe leer los mismos equipos/montajes/cables; una cuenta lectora puede consultar sin editar. Registra aparte la prueba de persistencia del servidor y la aprobación visual: un Pass del visor no las sustituye."
+      ],
+      "expected": "50HTML locales disponibles para revisar carcasas con resultado/observaciones exportables. Catálogo24 de desarrollo con50definiciones adicionales y639extremos tipados, manteniendo61perfiles totales.13vistas de familia y4no confirmadas se identifican, no se afirman exactas/adoptadas. Integración en candidata completa/QA sigue pendiente; no sobrescribir datos, MFA ni resultados previos. Detalle: docs/HARDWARE-LOTE50.md."
+    },
+    {
+      "id": "QA-145",
+      "module": "Inventario · Segundo lote50 por marcas",
+      "title": "Otros50modelos: HTML02 y futura candidata25",
+      "feature": "planned",
+      "steps": [
+        "Revisión visual disponible sin instalar: extrae todo RackClick-Revision-Visual-50-02.zip en una carpeta nueva. Abre VER-50-MODELOS-02.html con doble clic en Edge o Chrome; conserva CARCASAS-50-02 a su lado. No se necesita PowerShell, usuario o contraseña. El servidor espera una candidata completa25, no una copia de DLL/SQL.",
+        "A la izquierda, en Buscar marca o modelo, escribe Synology, QNAP, TP-Link, NETGEAR o D-Link. Pulsa un modelo y confirma título/SKU. Son50nuevos, sin repetir los56comerciales anteriores; los50HTML están en CARCASAS-50-02/modelos.",
+        "En el centro revisa Frontal y Trasera: forma, color, cubierta, bandejas, ventiladores, número y orden de bocas. Abre Alcance y límites de las fuentes de este modelo. Las variantes de fabricación y referencias de familia son límites reales, no carcasas exactas aceptadas.",
+        "Pulsa una boca y después un puerto RJ45/SFP de prueba compatible; para entradaAC usa SalidaAC de prueba. Desplaza horizontalmente y comprueba el cable unido al centro. Revisa por separado las dos entradasAC de un RackStation redundante. Sólo es demostración local; DC/USB/consola no operativos no crean cables.",
+        "Debajo, en Tu revisión de este modelo, elige Pass, Not Pass o No probado y escribe qué cara/puerto/color corregir. Pulsa Siguiente. Mantén juntas las50observaciones usando el índice; un HTML individual puede tener almacenamiento separado.",
+        "A la izquierda pulsa Exportar mis resultados JSON y conserva RackClick-Revision-Visual-50-02.json. Importar en casillas vacías conserva notas. El lote01 y el QA anterior se mantienen separados; importar un JSON01 en02 debe rechazarse sin cambios.",
+        "Sólo al recibir una candidata completa25 identificada, entra en Clientes y en un rack sintético. En la barra superior pulsa Añadir hardware de referencia, elige modelo/revisión batch50b-20261031-v1. Para sobremesa selecciona soporte compatible y alojamiento main; para rack, sin padre. Espera Guardado por el servidor.",
+        "En esa candidata crea conexiones contra extremos compatibles del laboratorio. Comprueba cada AC redundante como puerto distinto, UUID, cara, etiquetas y estados. F5 y otra sesión autorizada deben leer lo mismo; una cuenta lectora no puede editar. Registra persistencia del servidor aparte de la aprobación visual del HTML."
+      ],
+      "expected": "50HTML02 locales revisables con observaciones/JSON separados del01. Catálogo25 de desarrollo:111perfiles,106comerciales/5sintéticos;50nuevos y447extremos. Fuentes/certeza/variantes visibles. No sustituye61perfiles ni cambia instalación10/MFA o resultados previos. Integración en candidata completa, consumidores y Restore25 siguen pendientes. Manual:docs/HARDWARE-LOTE50-02.md."
+    },
+    {
+      "id": "QA-146",
+      "module": "Inventario · Lote03 de100modelos",
+      "title": "100modelos nuevos: HTML03 y futura candidata26",
+      "feature": "planned",
+      "steps": [
+        "Revisión local disponible: extrae TODO RackClick-Revision-Visual-100-03.zip en una carpeta nueva. Doble clic en VER-100-MODELOS-03.html con Edge o Chrome; conserva CARCASAS-100-03 a su lado. No hace falta PowerShell, usuario o contraseña. El servidor espera candidata completa26, no copiar DLL/SQL/JS.",
+        "En Buscar marca o modelo, a la izquierda, filtra y pulsa un modelo. Confirma nombre/SKU/revisión. Son100adicionales frente a106comerciales anteriores; los100HTML individuales están en CARCASAS-100-03/modelos.",
+        "En el centro revisa Frontal y Trasera una debajo de otra: forma/color, cubierta, bandejas, ventiladores, auxiliares, orden/cantidad de conectores. Abre Alcance y límites de las fuentes de este modelo y conserva los avisos de familia, SKU o revisión física desconocida.",
+        "Pulsa una boca y después RJ45/SFP de prueba compatible; para entradaAC usa SalidaAC de prueba. Revisa lasAC redundantes como extremos distintos y el anclaje al desplazar la cara. Es simulación local, no escritura al servidor. DC/USB/consola y piezas no contratadas no crean cables.",
+        "Pulsa Siguiente del50al51 y del100al1; Anterior desde1debevolver al100. Comprueba que las notas no se mezclen. En Tu revisión de este modelo marca Pass/Not Pass/No probado y anota la cara/puerto/color a corregir. Usa el índice para mantener juntas las100observaciones.",
+        "A la izquierda pulsa Exportar mis resultados JSON: guarda RackClick-Revision-Visual-100-03.json. Importar en casillas vacías conserva notas existentes. Importar formatos01/02 debe rechazarse sin modificar las observaciones de ninguno de loslotes; conserva también tu QA anterior.",
+        "Sólo tras recibir candidata completa26 identificada, abre Clientes y un rack sintético. Arriba pulsa Añadir hardware de referencia; elige modelo/revisión batch100-20261031-v1. Para sobremesa selecciona soporte compatible/main; para rack, sinpadre. Espera Guardado por el servidor.",
+        "En candidata26, conecta los tipos disponibles contra extremos compatibles del laboratorio; identifica cadaACporUUID, cara, grupo yordinal. Comprueba etiquetas/estados, F5 yotra sesiónautorizada; una cuenta lectora consulta sineditar. Registra persistencia delservidor aparte de la aprobaciónvisual delHTML."
+      ],
+      "expected": "100HTML03 revisables con notas/JSON independientes de01/02. Catálogo26 de desarrollo:211perfiles (206comerciales/5sintéticos),100adicionales y1410extremos tipados. Variantes/referencias inciertas visibles, no100carcasas adoptadas. Conservar111perfiles,servidor10/MFA yresultados previos. Distribución/Restore26/consumidores/candidata completa siguen pendientes. Manual:docs/HARDWARE-LOTE100-03.md."
+    },
+    {
+      "id": "QA-147",
+      "module": "Inventario · Lote04 de100modelos",
+      "title": "100modelos nuevos: HTML04 y futura candidata27",
+      "feature": "planned",
+      "steps": [
+        "Revisión local disponible: extrae TODO RackClick-Revision-Visual-100-04.zip en una carpeta nueva. Doble clic en VER-100-MODELOS-04.html con Edge o Chrome; conserva CARCASAS-100-04 a su lado. No hace falta PowerShell, usuario o contraseña. El servidor espera candidata completa27, no copiar DLL/SQL/JS.",
+        "En Buscar marca o modelo, a la izquierda, filtra y pulsa un modelo. Confirma nombre/SKU/revisión. Son100adicionales frente a206comerciales anteriores; los100HTML individuales están en CARCASAS-100-04/modelos.",
+        "En el centro revisa Frontal y Trasera una debajo de otra: forma/color, cubierta, bandejas, ventiladores, auxiliares, orden/cantidad de conectores. Abre Alcance y límites de las fuentes de este modelo y conserva los avisos de familia, SKU o revisión física desconocida.",
+        "Pulsa una boca y después RJ45/SFP de prueba compatible; para entradaAC usa SalidaAC de prueba. Revisa lasAC redundantes como extremos distintos y el anclaje al desplazar la cara. Es simulación local, no escritura al servidor. DC/USB/consola y piezas no contratadas no crean cables.",
+        "Pulsa Siguiente del50al51 y del100al1; Anterior desde1debevolver al100. Comprueba que las notas no se mezclen. En Tu revisión de este modelo marca Pass/Not Pass/No probado y anota la cara/puerto/color a corregir. Usa el índice para mantener juntas las100observaciones.",
+        "A la izquierda pulsa Exportar mis resultados JSON: guarda RackClick-Revision-Visual-100-04.json. Importar en casillas vacías conserva notas existentes. Importar formatos01/02/03 debe rechazarse sin modificar las observaciones de ninguno de loslotes; conserva también tu QA anterior.",
+        "Sólo tras recibir candidata completa27 identificada, abre Clientes y un rack sintético. Arriba pulsa Añadir hardware de referencia; elige modelo/revisión batch100b-20261031-v1. Para sobremesa selecciona soporte compatible/main; para rack, sinpadre. Espera Guardado por el servidor.",
+        "En candidata27, conecta los tipos disponibles contra extremos compatibles del laboratorio; identifica cadaACporUUID, cara, grupo yordinal. Comprueba etiquetas/estados, F5 yotra sesiónautorizada; una cuenta lectora consulta sineditar. Registra persistencia delservidor aparte de la aprobaciónvisual delHTML."
+      ],
+      "expected": "100HTML04 revisables con notas/JSON independientes de01/02/03. Catálogo27 de desarrollo:311perfiles (306comerciales/5sintéticos),100adicionales y1207extremos tipados. Variantes/referencias inciertas visibles, no100carcasas adoptadas. Conservar211perfiles,servidor10/MFA yresultados previos. Distribución/Restore27/consumidores/candidata completa siguen pendientes. Manual:docs/HARDWARE-LOTE100-04.md."
+    },
+    {
+      "id": "QA-148",
+      "module": "Inventario · lote 05 de 100 modelos",
+      "title": "100 modelos nuevos: HTML 05 y futura candidata 28",
+      "feature": "planned",
+      "steps": [
+        "Revisión local disponible: extrae TODO RackClick-Revision-Visual-100-05.zip en una carpeta nueva. Doble clic en VER-100-MODELOS-05.html con Edge o Chrome; conserva CARCASAS-100-05 a su lado. No requiere PowerShell ni credenciales. Para el servidor hay que esperar una candidata completa 28; no copies DLL/SQL/JS aislados.",
+        "En la columna izquierda, en Buscar marca o modelo, filtra y pulsa un modelo. Comprueba el título, SKU y revisión. Son cien adicionales frente a los 306 comerciales anteriores. Las cien páginas individuales están en CARCASAS-100-05/modelos.",
+        "En el centro revisa Frontal y Trasera, una debajo de otra: color, forma, cubierta, bandejas, ventiladores, auxiliares y orden/cantidad de conectores. Abre Alcance y límites de las fuentes de este modelo. Conserva las advertencias de familia, vista parcial o revisión física desconocida.",
+        "Pulsa una boca y después el puerto de prueba RJ45/SFP compatible. Para una entrada AC pulsa Salida AC de prueba; prueba las entradas redundantes por separado. Desplaza la cara y comprueba el anclaje del cable. Es demostración local. USB/DC/consola sin contrato no crean conexiones.",
+        "Debajo, en Tu revisión de este modelo, marca Pass, Not Pass o No probado y añade observaciones con cara/puerto/color. Pulsa Siguiente del 50 al 51 y del 100 al 1; Anterior desde el 1 debe volver al 100. Las notas no se mezclan al navegar.",
+        "A la izquierda pulsa Exportar mis resultados JSON y guarda RackClick-Revision-Visual-100-05.json. Importar en casillas vacías conserva notas existentes. Los formatos 01/02/03/04 deben rechazarse sin modificar ninguno de los lotes. Exporta antes de cambiar de equipo o navegador.",
+        "Sólo tras recibir candidata completa 28 identificada, abre Clientes y un rack sintético. Arriba pulsa Añadir hardware de referencia; elige modelo/revisión batch100c-20261031-v1. Para sobremesa elige soporte compatible/main; para rack, sin padre. Espera Guardado por el servidor.",
+        "En esa candidata, conecta extremos compatibles del laboratorio. Identifica cada boca por UUID, grupo y ordinal; cada AC es distinta. Comprueba etiquetas/estados, F5 y otra sesión autorizada; un lector debe consultar sin editar. Registra persistencia del servidor por separado de la aprobación visual del HTML."
+      ],
+      "expected": "Cien HTML del lote 05 con notas/JSON independientes de 01–04. Catálogo 28 de desarrollo: 411 perfiles (406 comerciales/5 sintéticos), cien nuevos y 1165 extremos tipados. Avisos de fuentes visibles, sin dar las cien carcasas por adoptadas. Se conservan 311 perfiles, candidata 10/MFA y resultados previos. Distribución/Restore 28/consumidores/candidata completa pendientes. Manual: docs/HARDWARE-LOTE100-05.md."
+    },
+    {
+      "id": "QA-149",
+      "module": "Catálogo · preparación documental de la selección",
+      "title": "Registro de 462 expedientes, fuentes y bloqueos sin activar perfiles",
+      "feature": "planned",
+      "steps": [
+        "Revisión documental local disponible: abre VER-EXPEDIENTES-462.html desde la carpeta del proyecto con Edge/Chrome. No pide cuenta ni instalación. Si usas el ZIP de expedientes, extrae todo y conserva EXPEDIENTES-462 junto al HTML. Las imágenes privadas anteriores no se redistribuyen en ese paquete.",
+        "Arriba comprueba 462 expedientes, 451 YAML y 11 expedientes oficiales. Debe indicar cero geometrías completas nuevas y cero perfiles promovidos. Tener fuentes no debe aparecer como perfil operativo terminado.",
+        "En Buscar fabricante, modelo o ID escribe PA-5450 o XG 135. A la izquierda selecciona la fila. A la derecha revisa Estado real, Cotas y montaje documentados, Referencias visuales, Declaraciones de componentes y Lo que falta para terminar este perfil.",
+        "En Categoría selecciona Racks: hay cuatro contenedores, con capacityU separado de rackUnits. No deben mostrarse como equipos 1U. Comprueba que una cota no verificada se vea como Sin verificar y que 0U/0,5U no se redondeen para montar.",
+        "Selecciona un equipo con medios compartidos o bahías. Despliega sourceComments y moduleBays/officialDeclarations. Deben conservar el texto del origen, advertir sobre combo/módulos y mantener creación/cableado bloqueados. No debe aparecer un botón de crear equipo, conectar cable o instalar.",
+        "Despliega Procedencia y afirmaciones por campo: comprueba sourceId, localizador, SHA y scope. Una afirmación family/unknown no debe pasar a exact por mezclar fuentes. Las imágenes sólo son referencias, con sus límites.",
+        "Prueba Buscar, filtro de categoría, Fuente de datos, Anterior/Siguiente y Descargar índice CSV. El CSV debe tener cabecera más 462 filas. A 390px se mantiene lectura sin desbordar el documento. Esta consulta no modifica el servidor ni los casos y observaciones anteriores."
+      ],
+      "expected": "Registro documental completo y honesto de los 462 ID originales, dividido en 3×154; fuentes/lagunas legibles y gates bloqueados. No son 462 carcasas terminadas ni plantillas instalables. Se conservan los 406 comerciales y cobertura44/506; la integración exige geometría, contrato, pruebas y revisión por modelo. Manual: docs/PREPARACION-SELECCION-462.md."
+    },
+    {
+      "id": "QA-150",
+      "module": "Catálogo · perfiles elegidos para uso real",
+      "title": "Grupo A: 17 perfiles integrados, conservación de PoE y rol eléctrico fijo",
+      "feature": "planned",
+      "steps": [
+        "Revisión visual local disponible: abre VER-SELECCION-506-A.html con Edge/Chrome desde la carpeta del proyecto; conserva PERFILES-SELECCION-506-A a su lado. El ZIP de revisión no es instalador ni modifica QA.",
+        "Arriba a la izquierda escribe marca, modelo o SKU en Buscar marca o modelo y pulsa un resultado debajo. En el centro comprueba título, SKU, dimensiones y ambas caras. Son 12 Aruba y 5 Ubiquiti nuevos; los siete vínculos revisados reutilizan perfiles anteriores.",
+        "En el centro despliega Alcance y límites de las fuentes. Revisa forma, color, numeración legible, agrupación, puertos e inertes de Frontal y Trasera. Conserva advertencias de comunidad o revisión física desconocida.",
+        "Pulsa una boca y después un puerto de prueba compatible debajo de las caras. Para AC pulsa Salida AC de prueba. Desplaza el frontal y comprueba que el cable sigue la boca. USB/consola/RPS no deben crear enlaces ficticios.",
+        "Debajo de las caras, en Tu revisión de este modelo, elige Pass/Not Pass/No probado y escribe la observación. A la izquierda pulsa Exportar mis resultados JSON. El archivo se llama RackClick-Revision-Visual-506A.json y no debe alterar notas de lotes anteriores.",
+        "Sólo después de recibir una candidata completa de esquema29 identificada: Clientes → rack sintético → botón superior Añadir hardware de referencia. Elige modelo/SKU y revisión selected506a-20261101-v1; compactos R8N89A/JL679A necesitan bandeja compatible. Espera Guardado por el servidor.",
+        "En esa candidata, conecta RJ45/SFP/AC admitidos, recarga con F5 y lee desde otra sesión autorizada. Activa PoE en una boca RJ45: debe conservar carcasa y UUID. Un lector no puede editar; cambiar una entrada eléctrica fija a salida debe rechazarse sin modificar inventario. Registra este QA servidor separado del HTML local."
+      ],
+      "expected": "17 perfiles de la lista fija, 34 caras y655extremos; guardado/persistencia sólo con candidata identificada. Cobertura68de506,438pendientes; no506listos. Consola/RPS/DC inertes y límites de referencia conservados. QA instalada intacta. Manual docs/INTEGRACION-506-GRUPO-A.md."
+    },
+    {
+      "id": "QA-151",
+      "module": "Catálogo · búsqueda compacta y selección 506",
+      "title": "Grupo B: 50 modelos y búsqueda desplegable por fabricante/modelo/SKU",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL disponible: desde la carpeta del proyecto abre VER-SELECCION-506-B.html en Edge o Chrome. Conserva PERFILES-SELECCION-506-B al lado. No instala ni modifica la QA.",
+        "En la zona superior izquierda escribe marca, modelo o SKU. Elige un resultado; revisa en el centro el fabricante, modelo, dimensiones y ambas caras. En Alcance y límites de las fuentes lee las advertencias de revisión, comunidad y medios compartidos.",
+        "En Frontal y Trasera pulsa una boca y un extremo de prueba compatible. Las alternativas cobre de los tres modelos combo son inertes en su configuración SFP activa; USB, consola serie y DC no deben crear conexiones Ethernet ficticias. Prueba ambas entradas AC fijas de los modelos que las incluyan.",
+        "Debajo de las caras marca Pass, Not Pass o No probado y añade observaciones. A la izquierda pulsa Exportar mis resultados JSON; guarda RackClick-Revision-Visual-506B.json separado de tus lotes anteriores.",
+        "Para ver el selector sin instalar abre VER-SELECTOR-CATALOGO.html, con PREVIEW-SELECTOR-CATALOGO-B al lado. En Perfil de referencia escribe sofos: debe aparecer Sophos. Prueba Fortinet y Aruba. La lista se desplaza dentro de su panel y no alarga la página. Flechas y Enter eligen; Escape cierra la lista. Detalles del modelo y conectores muestra las cotas plegadas.",
+        "En esa demostración cambia el texto después de seleccionar: el producto anterior desaparece. Escribe un modelo inexistente e intenta Revisar selección: no debe aceptarlo. La demostración no guarda inventario. Para una plantilla propia se conserva el flujo Mis plantillas privadas de la barra del inventario del servidor.",
+        "SÓLO al recibir candidata completa esquema30 identificada: Clientes → rack sintético → botón superior Añadir hardware de referencia. Busca y elige modelo/SKU de revisión selected506b-20261101-v1; indica nombre y rack; para sobremesa elige bandeja compatible. Pulsa Guardar y espera Guardado por el servidor. No copiar DLL ni SQL aislados a la instalación.",
+        "En esa candidata conecta puertos compatibles, recarga con F5, repite lectura con otra sesión autorizada y prueba con un lector sin edición. El primer Escape cierra la lista; con la lista cerrada, Escape debe cancelar el formulario. Registra el QA servidor separado de la revisión local."
+      ],
+      "expected": "50 perfiles/100 caras y1248extremos del grupoB; búsqueda compacta sin selección implícita ni cambio de SKU/revisión. Cobertura118de506 (23,32%),388pendientes;473comerciales de desarrollo en total. QA instalada intacta; falta paquete completo, consumidores/Restore30/Windows y aceptación final. Manual docs/INTEGRACION-506-GRUPO-B.md y docs/SELECTOR-CATALOGO-COMPACTO.md."
+    },
+    {
+      "id": "QA-152",
+      "module": "Catálogo · selección 506, grupo C",
+      "title": "Firewalls, routers y NAS: perfiles exactos, montaje y buscador compacto",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL disponible: abre VER-SELECCION-506-C.html con Edge/Chrome desde la carpeta del proyecto. Conserva PERFILES-SELECCION-506-C al lado. Este visor no instala ni modifica la QA.",
+        "Arriba a la izquierda busca fabricante, modelo o SKU y elige un resultado. En el centro revisa título, dimensiones y reserva U. FG1000D/FG1200D y los otros equipos de 2 U no deben presentarse como 1 U. DS918+ es de sobremesa y necesita bandeja alta compatible.",
+        "En el centro cambia entre Frontal y Trasera. Despliega Alcance y límites de las fuentes. En modelos combo, sólo el medio óptico de esta configuración está activo; cobre alternativo, consola, USB, DC/RPS y módulos opcionales quedan inertes.",
+        "Prueba un puerto y un extremo sintético compatible; para AC elige Salida AC de prueba. En modelos con dos AC de serie prueba ambas. FG800D sólo muestra una AC activa de base; QNAP TS-883XU-RP tiene dos SFP+ preinstalados y TVS-EC1580MU-SAS-RP no añade 10G opcional. Desplaza la vista y comprueba anclas.",
+        "Debajo de las caras, en Tu revisión de este modelo, marca Pass/Not Pass/No probado y escribe observaciones. A la izquierda pulsa Exportar mis resultados JSON y guarda RackClick-Revision-Visual-506C.json separado de tus lotes anteriores.",
+        "Abre VER-SELECTOR-CATALOGO-C.html, con PREVIEW-SELECTOR-CATALOGO-C al lado. En Perfil de referencia escribe sofos, Fortinet, Synology o DS918+. Elige el SKU exacto, despliega los detalles y comprueba que la lista no alarga toda la página. Flechas/Enter eligen y Escape cierra la lista. La demostración sólo revisa el comando, no guarda inventario.",
+        "SÓLO al recibir una candidata completa de esquema 31 identificada: Clientes → rack sintético → botón superior Añadir hardware de referencia. Busca y elige el modelo de revisión selected506c-20261101-v1, escribe nombre y rack; para sobremesa elige soporte compatible. Pulsa Guardar y espera Guardado por el servidor. No copiar DLL o SQL aislados.",
+        "En esa candidata, conecta puertos compatibles, recarga con F5 y comprueba los mismos datos en otra sesión autorizada. Un lector debe poder ver, sin editar. Registra ese resultado del servidor por separado del visor local y conserva las observaciones anteriores."
+      ],
+      "expected": "50 perfiles nuevos, 100 caras y 673 extremos del grupo C; roles, medios compartidos y montaje explícitos sin inventar módulos/PSU. Cartera total 523 comerciales; selección original 168/506 (33,20%), 338 pendientes. La QA instalada permanece intacta. Manual docs/INTEGRACION-506-GRUPO-C.md. Paquete completo, Restore31 y aceptación final pendientes."
+    },
+    {
+      "id": "QA-153",
+      "module": "Catálogo · selección 506, grupo D",
+      "title": "SFP28 y QSFP: carcasas propias, conexiones por UUID y búsqueda compacta",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL disponible: abre VER-SELECCION-506-D.html con Edge/Chrome. Conserva PERFILES-SELECCION-506-D en la misma carpeta. El visor no instala ni modifica la QA.",
+        "Arriba a la izquierda busca fabricante, modelo o SKU y selecciona el resultado. En el centro comprueba dimensiones y montaje: 41 modelos de 1 U, 8 de 2 U y PA-5260 de 3 U. Alterna Frontal y Trasera.",
+        "Despliega Alcance y límites de las fuentes. Revisa módulos, PSU instaladas y bahías vacías. Huawei S6730-H24X4Y4C conserva trasera neutral geometry_unverified; no se afirma una foto trasera exacta. Los dibujos de familia de Palo Alto se identifican como tales.",
+        "Pulsa un puerto y luego un extremo de prueba del mismo tipo: RJ45, SFP, SFP28, QSFP y salida AC de prueba. SFP28 y QSFP tienen formas diferenciadas. Prueba cruces incompatibles: no deben crear un cable. Una jaula multi-velocidad es un extremo, sin breakout ni QSFP-DD inventado.",
+        "Bajo las caras, en Tu revisión de este modelo, marca Pass/Not Pass/No probado y escribe observaciones. En la izquierda pulsa Exportar mis resultados JSON. Guarda RackClick-Revision-Visual-506D.json separado de los lotes anteriores.",
+        "Abre VER-SELECTOR-CATALOGO-D.html con PREVIEW-SELECTOR-CATALOGO-D al lado. En Perfil de referencia escribe sofos, Fortinet, Arista o un SKU. La lista debe mantener desplazamiento interno; flechas/Enter eligen y Escape cierra. Cambiar la búsqueda invalida la selección anterior. Revisar selección no guarda inventario.",
+        "SÓLO al recibir una candidata completa identificada de esquema 32: Clientes → rack sintético → botón superior Añadir hardware de referencia. Busca un modelo de revisión selected506d-20261101-v1, escribe el nombre y el rack, pulsa Guardar y espera Guardado por el servidor. No copiar DLL o SQL aislados.",
+        "En esa candidata conecta SFP28 con SFP28 y QSFP con QSFP mediante Click-Click. Recarga F5 y abre otra sesión autorizada: deben leerse los mismos UUID y cables. SFP28↔QSFP/RJ45 se rechaza sin cambiar inventario. Un lector ve pero no edita. Registra esta prueba del servidor separada del visor local, sin sustituir tus notas anteriores."
+      ],
+      "expected": "50 perfiles nuevos y 100 caras del grupo D; cinco tipos físicos preservados por grupo, ordinal y UUID. Catálogo de desarrollo 578 definiciones/573 comerciales; selección original 218/506 (43,08%), 288 pendientes. La QA instalada permanece intacta. Manual docs/INTEGRACION-506-GRUPO-D.md. Paquete completo, Restore32 y aceptación final pendientes."
+    },
+    {
+      "id": "QA-154",
+      "module": "Catálogo · selección506, grupo E",
+      "title": "Switches, routers y firewalls: configuraciones físicas, conexiones y persistencia",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL disponible: abre VER-SELECCION-506-E.html con Edge/Chrome. Conserva PERFILES-SELECCION-506-E en la misma carpeta. El visor no instala ni modifica la QA.",
+        "Arriba a la izquierda busca fabricante, modelo o SKU y selecciona el resultado. En el centro comprueba dimensiones y montaje según la ficha; ASR1002, ASR1002-HX y PA-3220 son de2U. Alterna Frontal y Trasera.",
+        "Despliega Alcance y límites de las fuentes. Comprueba SKU, PSU instaladas, bahías vacías, medios combo y módulos opcionales. Aruba2930M conserva sólo el medio activo; CRS309 lleva orejas de rack y no añade AC a sus entradas DC. El8360 se limita al modo25G documentado, sin50G ni breakout.",
+        "Pulsa un puerto y luego un extremo de prueba del mismo tipo: RJ45, SFP, SFP28, QSFP y salida AC de prueba. SFP28 y QSFP tienen formas diferenciadas. Prueba cruces incompatibles: no deben crear un cable. Una jaula multi-velocidad es un extremo, sin breakout ni QSFP-DD inventado.",
+        "Bajo las caras, en Tu revisión de este modelo, marca Pass/Not Pass/No probado y escribe observaciones. En la izquierda pulsa Exportar mis resultados JSON. Guarda RackClick-Revision-Visual-506E.json separado de los lotes anteriores.",
+        "Abre VER-SELECTOR-CATALOGO-E.html con PREVIEW-SELECTOR-CATALOGO-E al lado. En Perfil de referencia escribe sofos, Fortinet, Arista o un SKU. La lista debe mantener desplazamiento interno; flechas/Enter eligen y Escape cierra. Cambiar la búsqueda invalida la selección anterior. Revisar selección no guarda inventario.",
+        "SÓLO al recibir una candidata completa identificada de esquema 33: Clientes → rack sintético → botón superior Añadir hardware de referencia. Busca un modelo de revisión selected506e-20261101-v1, escribe el nombre y el rack, pulsa Guardar y espera Guardado por el servidor. No copiar DLL o SQL aislados.",
+        "En esa candidata conecta SFP28 con SFP28 y QSFP con QSFP mediante Click-Click. Recarga F5 y abre otra sesión autorizada: deben leerse los mismos UUID y cables. SFP28↔QSFP/RJ45 se rechaza sin cambiar inventario. Un lector ve pero no edita. Registra esta prueba del servidor separada del visor local, sin sustituir tus notas anteriores."
+      ],
+      "expected": "50 perfiles nuevos y100caras del grupoE; fuentes, accesorios y tipos reales sin inventar módulos. Catálogo de desarrollo628 definiciones/623 comerciales; selección original268/506(52,96%),238pendientes. La QA instalada permanece intacta. Manual docs/INTEGRACION-506-GRUPO-E.md. Paquete completo, Restore33 y aceptación final pendientes."
+    },
+    {
+      "id": "QA-155",
+      "module": "Catálogo · selección506, grupo F",
+      "title": "Servidores y equipos de red: configuraciones físicas, conexiones y persistencia",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL disponible: abre VER-SELECCION-506-F.html con Edge/Chrome. Conserva PERFILES-SELECCION-506-F en la misma carpeta. El visor no instala ni modifica la QA.",
+        "Arriba a la izquierda busca fabricante, modelo o SKU y selecciona el resultado. En el centro comprueba dimensiones y montaje: servidores de1U/2U y sobremesa con soporte, según la ficha. Alterna Frontal y Trasera.",
+        "Despliega Alcance y límites de las fuentes. Comprueba configuración de NIC, BMC separado, PSU, bahías vacías y opciones no instaladas. En S9600-32X los cuatroSFP28 alternativos permanecen inertes; el SMC combo no añade un noveno enlace. DC no recibe puertosAC ficticios.",
+        "Pulsa un puerto y luego un extremo de prueba del mismo tipo: RJ45, SFP, SFP28, QSFP y salida AC de prueba. SFP28 y QSFP tienen formas diferenciadas. Prueba cruces incompatibles: no deben crear un cable. Una jaula multi-velocidad es un extremo, sin breakout ni QSFP-DD inventado.",
+        "Bajo las caras, en Tu revisión de este modelo, marca Pass/Not Pass/No probado y escribe observaciones. En la izquierda pulsa Exportar mis resultados JSON. Guarda RackClick-Revision-Visual-506F.json separado de los lotes anteriores.",
+        "Abre VER-SELECTOR-CATALOGO-F.html con PREVIEW-SELECTOR-CATALOGO-F al lado. En Perfil de referencia escribe sofos, Fortinet, Arista o un SKU. La lista debe mantener desplazamiento interno; flechas/Enter eligen y Escape cierra. Cambiar la búsqueda invalida la selección anterior. Revisar selección no guarda inventario.",
+        "SÓLO al recibir una candidata completa identificada de esquema 34: Clientes → rack sintético → botón superior Añadir hardware de referencia. Busca un modelo de revisión selected506f-20261101-v1, escribe el nombre y el rack, pulsa Guardar y espera Guardado por el servidor. No copiar DLL o SQL aislados.",
+        "En esa candidata conecta SFP28 con SFP28 y QSFP con QSFP mediante Click-Click. Recarga F5 y abre otra sesión autorizada: deben leerse los mismos UUID y cables. SFP28↔QSFP/RJ45 se rechaza sin cambiar inventario. Un lector ve pero no edita. Registra esta prueba del servidor separada del visor local, sin sustituir tus notas anteriores."
+      ],
+      "expected": "50 perfiles nuevos y100caras del grupoF; fuentes, accesorios y tipos reales sin inventar módulos. Catálogo de desarrollo678 definiciones/673 comerciales; selección original318/506(62,85%),188pendientes. La QA instalada permanece intacta. Manual docs/INTEGRACION-506-GRUPO-F.md. Paquete completo, Restore34 y aceptación final pendientes."
+    },
+    {
+      "id": "QA-156",
+      "module": "Catálogo · selección506, grupo G",
+      "title": "Servidores y equipos de red: configuraciones físicas, conexiones y persistencia",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL disponible: abre VER-SELECCION-506-G.html con Edge/Chrome. Conserva PERFILES-SELECCION-506-G en la misma carpeta. El visor no instala ni modifica la QA.",
+        "Arriba a la izquierda busca fabricante, modelo o SKU. Comprueba las U y el soporte según la ficha: Nexus9504 es7U; Arista96ZC2 es2U. Alterna Frontal y Trasera, conservando detalles de tarjetas instaladas y bahías vacías.",
+        "Despliega Alcance y límites de las fuentes. Comprueba NIC/BMC separados, SKU/configuración, módulos y fuentes. Arista96ZC2 conserva4AC; PA5450 conserva sólo las NC/DPC instaladas. ACX7024X no añade breakout niPTP. Las reservas de geometría deben permanecer visibles.",
+        "Pulsa un puerto y luego un extremo de prueba del mismo tipo: RJ45, SFP, SFP28, QSFP y salida AC de prueba. SFP28 y QSFP tienen formas diferenciadas. Prueba cruces incompatibles: no deben crear un cable. Una jaula multi-velocidad es un extremo, sin breakout ni QSFP-DD inventado.",
+        "Bajo las caras, en Tu revisión de este modelo, marca Pass/Not Pass/No probado y escribe observaciones. En la izquierda pulsa Exportar mis resultados JSON. Guarda RackClick-Revision-Visual-506G.json separado de los lotes anteriores.",
+        "Abre VER-SELECTOR-CATALOGO-G.html con PREVIEW-SELECTOR-CATALOGO-G al lado. En Perfil de referencia escribe sofos, Fortinet, Arista o un SKU. La lista debe mantener desplazamiento interno; flechas/Enter eligen y Escape cierra. Cambiar la búsqueda invalida la selección anterior. Revisar selección no guarda inventario.",
+        "SÓLO al recibir una candidata completa identificada de esquema 35: Clientes → rack sintético → botón superior Añadir hardware de referencia. Busca un modelo de revisión selected506g-20261101-v1, escribe el nombre y el rack, pulsa Guardar y espera Guardado por el servidor. No copiar DLL o SQL aislados.",
+        "En esa candidata conecta SFP28 con SFP28 y QSFP con QSFP mediante Click-Click. Recarga F5 y abre otra sesión autorizada: deben leerse los mismos UUID y cables. SFP28↔QSFP/RJ45 se rechaza sin cambiar inventario. Un lector ve pero no edita. Registra esta prueba del servidor separada del visor local, sin sustituir tus notas anteriores."
+      ],
+      "expected": "50 perfiles nuevos y100caras del grupoG; fuentes, accesorios y tipos reales sin inventar módulos. Catálogo de desarrollo728 definiciones/723 comerciales; selección original368/506(72,73%),138pendientes. La QA instalada permanece intacta. Manual docs/INTEGRACION-506-GRUPO-G.md. Paquete completo, Restore35 y aceptación final pendientes."
+    },
+    {
+      "id": "QA-157",
+      "module": "Catálogo · conectores físicos",
+      "title": "SFP56 y QSFP-DD: símbolos, conexiones por tipo y persistencia",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL disponible: abre VER-CONECTORES-7.html en Edge/Chrome con VISTA-CONECTORES-7 al lado. En el centro pulsa SFP56 en Extremos A y después SFP56 en Extremos B. Repite QSFP-DD. La confirmación es local, sin guardar inventario.",
+        "En los mismos bloques pulsa SFP56 en A y QSFP-DD en B. Debe rechazar tipos distintos. Debajo pulsa Reiniciar demostración. AC sólo se muestra; no se conecta en este visor.",
+        "SÓLO al recibir una candidata completa identificada con esquema36 o superior: Clientes → cliente sintético → rack → edición de un equipo manual o plantilla autorizada. Añade un grupo SFP56 y otro QSFP-DD. Conserva grupos separados aunque ambos empiecen en1. Guarda y espera Guardado por el servidor.",
+        "En el rack pulsa un SFP56 y otro SFP56 libre de otro equipo; repite QSFP-DD con QSFP-DD. Comprueba el nombre y el símbolo56/DD al pasar el ratón. Intenta cruzar las familias: no debe crear cable ni mostrar un guardado falso.",
+        "Selecciona un puerto por su grupo y cambia su etiqueta; no debe cambiar otro con el mismo número de otro grupo. RecargaF5 y abre otra sesión autorizada: grupos,UUID,cables y etiquetas deben conservarse. Un lector no puede modificar.",
+        "En filtros e informes de puertos elige la familia nueva exacta. Revisa CSV/SVG y colores personales. Registra separado lo probado en el visor local y en servidor. No copiar DLL/SQL aislados ni importar estos tipos con el importador RC9 histórico."
+      ],
+      "expected": "Siete familias explícitas en desarrollo36. Los dos tipos nuevos no se degradan ni se conectan cruzados. No añade modelos:368/506(72,73%),138pendientes. Manual docs/CONECTORES-SFP56-QSFPDD.md. QA instalada sin actualizar; paquete completo y aceptación pendientes."
+    },
+    {
+      "id": "QA-158",
+      "module": "Catálogo · selección506, grupo H",
+      "title": "Aruba SFP56 y Nokia QSFP-DD: perfiles, caras y conexiones",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL: abre VER-SELECCION-506-H.html en Edge/Chrome con PERFILES-SELECCION-506-H al lado. Arriba a la izquierda busca Aruba, Nokia o un SKU y pulsa un resultado. En el centro revisa Frontal y Trasera.",
+        "Despliega Alcance y límites de las fuentes. Aruba tiene4SFP56por equipo; NokiaD5/H3tienen32QSFP-DDyH4tiene64. JL664Ausa1JL085Aexplícita y segundaPSUvacía; Nokiausa2PSUcuradas. Las seiscarasNokia deben mostrar reserva de geometría/revisión, sin convertir P/N comunitario en identidad certificada.",
+        "Pulsa un puerto y después un extremo de prueba del mismo tipo; paraAC usa la salida de prueba. PruebaSFP56↔QSFP-DD: no crea cable. Desplaza la cara y comprueba que el cable sigue anclado. Las piezas inertes no tienen UUID de red.",
+        "Debajo de las caras, en Tu revisión de este modelo, marca Pass/Not Pass/No probado y escribe observaciones. En la izquierda pulsa Exportar mis resultados JSON. Guarda RackClick-Revision-Visual-506H.json separado de los anteriores.",
+        "Abre VER-SELECTOR-CATALOGO-H.html con PREVIEW-SELECTOR-CATALOGO-H al lado. En Perfil de referencia escribe Nokia, Aruba, sofos o unSKU. Revisa desplegable acotado, flechas/Enter/Escape, revisión exacta e invalidación al cambiar texto. Revisar selección no guarda inventario.",
+        "SÓLO al recibir candidata completa identificada37o superior: Clientes → rack sintético → botón superior Añadir hardware de referencia. Selecciona uno de los seis modelos de revisiónselected506h-20261101-v1, indica nombre/rack y Guarda. Espera Guardado por el servidor. No copiar DLL/SQL aislados.",
+        "En esa candidata conecta SFP56conSFP56 yQSFP-DDconQSFP-DD porClick-Click. RecargaF5 y abre otra sesión autorizada: UUID/cables/etiquetas permanecen. Un lector no edita. Registra servidor y visor local separados, sin sustituir tus resultados anteriores."
+      ],
+      "expected": "Seis perfiles,12caras,257extremos; catálogo734/729comerciales,selección374/506(73,91%),132pendientes. GeometríaNokiareservada explícitamente; no inferir negociación,breakout,ópticas niPSUde bahías. Manual docs/INTEGRACION-506-GRUPO-H.md. QAinstalada sin actualizar."
+    },
+    {
+      "id": "QA-159",
+      "module": "Catálogo · selección 506, grupo I",
+      "title": "PA-5580, FG3701F, Huawei, Ciena Gen2 y ACX7332: caras y cables",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL: abre VER-SELECCION-506-I.html con PERFILES-SELECCION-506-I al lado. Arriba a la izquierda busca marca/modelo/SKU y pulsa un resultado. En el centro revisa ambas caras y despliega Alcance y límites de las fuentes.",
+        "Comprueba PSU instaladas y bahías vacías, grupos físicos y etiquetas. PA usa dos AC high-line, sin HSCI activo; Huawei tiene 28 SFP+ y 20 SFP28 distintos; Ciena Gen2 tiene 32 SFP28/8 SFP56, opciones vacías y trasera neutral. Nokia SR-1se no figura como integrado.",
+        "Pulsa un puerto y después el extremo de prueba del mismo tipo; AC hacia salida de prueba. SFP56 con QSFP-DD debe rechazarse. Desplaza las caras: el cable sigue al puerto. Elementos inertes no reciben conexión de red.",
+        "Bajo las caras, en Tu revisión de este modelo marca Pass/Not Pass/No probado y escribe observaciones. A la izquierda pulsa Exportar mis resultados JSON. Guarda RackClick-Revision-Visual-506I.json sin sobrescribir los anteriores.",
+        "Abre VER-SELECTOR-CATALOGO-I.html con PREVIEW-SELECTOR-CATALOGO-I al lado. En Perfil de referencia escribe sofos, Fortinet, Juniper o un SKU. Comprueba lista con desplazamiento interno, flechas/Enter/Escape e invalidación al cambiar texto. Revisar selección no guarda inventario.",
+        "SÓLO cuando recibas candidata completa identificada 38 o superior: Clientes → rack sintético → botón superior Añadir hardware de referencia. Elige un perfil de revisión selected506i-20261101-v1, nombre y rack. Guarda y espera confirmación del servidor. No copies DLL/SQL aislados.",
+        "En esa candidata conecta puertos por Click-Click, recarga F5 y abre otra sesión autorizada: etiquetas, UUID y cables persisten. El lector no edita. Registra los resultados del visor local separados de la instalación nativa."
+      ],
+      "expected": "Cinco perfiles, diez caras, 211 extremos; catálogo 739/734 comerciales, selección 379/506 (74,90 %), 127 pendientes. Reservas y configuraciones visibles; no inferir módulos, ópticas ni breakout. Manual docs/INTEGRACION-506-GRUPO-I.md. Instalación nativa sin actualizar."
+    },
+    {
+      "id": "QA-160",
+      "module": "Catálogo por familias · grupo J",
+      "title": "Paneles con acopladores y AP PoE: caras, continuidad declarada y bandeja",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL: abre VER-SELECCION-506-J.html con PERFILES-SELECCION-506-J al lado. Arriba a la izquierda busca Panduit, Ubiquiti, MikroTik, Grandstream o SKU y pulsa un resultado. En el centro revisa ambas caras y despliega Alcance y límites de las fuentes.",
+        "Paneles: comprueba que la configuración declara base vacía +24/48/72 CC688BL. Ambas bocas son RJ45, con IDs distintos; no son IDC ni cables internos. Revisa profundidad conservadora y reservas de ensamblaje. AP: revisa Ethernet real, ninguna boca WLAN/AC y colocación en bandeja declarada.",
+        "Pulsa una boca y luego el extremo de prueba RJ45; desplaza la cara y comprueba el anclaje. El visor no guarda en servidor ni calcula rutas a través del acoplador. Los elementos inertes no reciben cable.",
+        "Bajo las caras, en Tu revisión de este modelo marca Pass/Not Pass/No probado y escribe notas. A la izquierda pulsa Exportar mis resultados JSON. Guarda RackClick-Revision-Visual-506J.json separado de los anteriores.",
+        "Abre VER-SELECTOR-CATALOGO-J.html con PREVIEW-SELECTOR-CATALOGO-J al lado. En Perfil de referencia busca fabricante, SKU o sofos. Revisa altura limitada, flechas/Enter/Escape e invalidación al cambiar texto. Revisar selección no guarda inventario.",
+        "SÓLO con candidata completa identificada 39 o superior: Clientes → rack sintético → Añadir hardware de referencia. Elige revisión selected506j-20261101-v1. Panel: indica rack/nombre y guarda. AP: crea primero una bandeja compatible y libre; selecciona su hueco, nombre y guarda. Espera confirmación del servidor. Una bandeja ya ocupada debe rechazarse.",
+        "Conecta por Click-Click los puertos reales del panel/AP. En el panel prueba frontal y trasera como extremos independientes, sin asumir trazado automático. Recarga F5 y abre otra sesión autorizada: UUID, soporte y cables permanecen. Un lector no edita. No copies DLL/SQL aislados al servidor."
+      ],
+      "expected": "Trece configuraciones, 26 caras, 538 extremos; catálogo 752/747 comerciales, selección 392/506 (77,47 %), 114 pendientes. BOM explícito y PoE descriptivo; sin IDC/WLAN/AC ficticios. Manual docs/INTEGRACION-506-GRUPO-J.md y método docs/METODO-CATALOGO-POR-FAMILIAS.md. Instalación nativa intacta."
+    },
+    {
+      "id": "QA-161",
+      "module": "Catálogo por familias · grupo K",
+      "title": "52 configuraciones: potencia, IDC, accesorios, NAS y serie",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL: extrae el ZIP en carpeta nueva y abre VER-SELECCION-506-K.html con PERFILES-SELECCION-506-K al lado. Arriba a la izquierda busca fabricante/SKU, pulsa un resultado y revisa en el centro ambas caras. Despliega Alcance y límites de las fuentes.",
+        "Revisa 28 equipos de alimentación, seis paneles IDC, diez accesorios vacíos, dos NAS y seis consolas. Serie no es Ethernet. No deben aparecer bocas ficticias en cajas/bandejas vacías ni AC en NAS DC. En Opengear comprueba AC/NET/consola en su cara correcta.",
+        "Pulsa una boca y un extremo de prueba del mismo tipo; para energía elige Entrada o Salida opuesta. Desplaza las caras y comprueba anclaje. IDC↔RJ45 debe rechazarse como cable externo; no hay trazado ni cable interno automático. El visor no guarda en servidor ni certifica electricidad.",
+        "Bajo las caras, en Tu revisión de este modelo, marca Pass/Not Pass/No probado y escribe notas. A la izquierda pulsa Exportar mis resultados JSON y conserva RackClick-Revision-Visual-506K.json separado de tus anteriores revisiones.",
+        "Abre VER-SELECTOR-CATALOGO-K.html con PREVIEW-SELECTOR-CATALOGO-K al lado. En Perfil de referencia busca fabricante o sofos; usa flechas/Enter/Escape. Despliega Detalles del modelo y conectores: deben aparecer configuración/BOM, dimensiones y límites. La lista queda dentro del desplegable y no alarga el rack.",
+        "SÓLO con candidata completa41 o superior: Clientes → rack sintético → Añadir hardware de referencia. Selecciona revisión selected506k-20261101-v1, nombre/rack. Para F2-424 crea soporte sintético7U libre; para F6-424 Max elige soporte compatible. Bandejas accesorias de este lote no admiten hijos. Espera Guardado por el servidor.",
+        "Conecta por Click-Click bocas reales compatibles. Recarga F5 y abre otra sesión autorizada: identidad, montaje y cables permanecen. Un lector no edita. Revisa CSV/XLSX con IDC/serie y la columna descriptiva opcional. No copies DLL/SQL sueltos a tu servidor."
+      ],
+      "expected": "52 perfiles/104 caras/920 extremos;805 definiciones/799 comerciales; selección444/506(87,75%),62 pendientes. Sin inferencia eléctrica, módulos o trazado ficticios. Manual docs/INTEGRACION-506-GRUPO-K.md. Instalación nativa intacta."
+    },
+    {
+      "id": "QA-162",
+      "module": "Catálogo por familias · grupo L",
+      "title": "62 modelos: armarios, montajes especiales y medios tipados",
+      "feature": "planned",
+      "steps": [
+        "REVISIÓN LOCAL: abre VER-SELECCION-506-L.html junto a PERFILES-SELECCION-506-L. En el buscador superior izquierdo escribe fabricante/modelo; selecciona un resultado. En el centro revisa frontal y trasera y despliega Configuración, montaje y límites.",
+        "Comprueba armarios vacíos con capacidad, PDU vertical0U, U7 de pared, Moxa DIN con detalle superior rotulado y la matriz Calient con320TX+320RX. No deben aparecer módulos, circuitos internos o cotas que la fuente no confirme.",
+        "En las caras pulsa una boca y su extremo de prueba compatible. SmartPower, DC genérico y USB-PD son sistemas distintos. El visor no guarda inventario en el servidor. Debajo marca Pass/Not Pass/No probado, escribe observaciones y usa Exportar mis resultados JSON en la izquierda.",
+        "Abre VER-SELECTOR-CATALOGO-L.html junto a PREVIEW-SELECTOR-CATALOGO-L. Busca fabricante y elige revisión exacta; comprueba lista desplegable acotada, selección de sala para armarios/pared/DIN y rack/posición/padre para otros montajes.",
+        "SERVIDOR: caso aún no habilitado para la instalación actual. Espera una candidata completa validada; no copies DLL/SQL sueltos. Entonces se comprobarán creación, ocupación, Click-Click, guardado confirmado, F5, otra sesión y permisos de lector."
+      ],
+      "expected": "Desarrollo43:62 modelos/124caras/1673extremos y revisiónUSP separada; selección506/506. Upgrade805/799 y API/Edge17+17, permisos, rollback, recarga/otra sesión/reinicio del proceso comprobados. Caso servidor sigue planificado hasta entregar candidata completa. Manual docs/INTEGRACION-506-GRUPO-L.md. Candidata de aplicación43 consolidada para revisión; no es instalador Windows ni habilita este caso: docs/CANDIDATA-CONSOLIDADA43.md."
+    },
+    {
+      "id": "QA-163",
+      "module": "Mi seguridad · recuperación MFA",
+      "title": "Generar códigos privados y recuperar mediante un autenticador nuevo",
+      "feature": "planned",
+      "steps": [
+        "DISPONIBILIDAD: desarrollo revisado; todavía no ejecutar en la instalación actual. Espera la candidata Windows completa identificada. Conserva tu autenticador y usa una cuenta de laboratorio; no pegues códigos, QR o contraseñas en las observaciones.",
+        "Entra y completa MFA. En la barra lateral izquierda, abajo, debajo de tu nombre, pulsa Mi seguridad. En el centro despliega Códigos de recuperación.",
+        "Escribe Contraseña actual, marca Entiendo que generar códigos reemplaza todos los anteriores y pulsa Generar diez códigos de recuperación. Espera El servidor confirmó la generación. Guarda los diez valores en un medio privado fuera del servidor; puedes usar Descargar mis códigos. Después pulsa Ya los guardé; ocultar códigos.",
+        "Abre una ventana privada del navegador e inicia sesión con esa cuenta. En la pantalla del segundo factor pulsa Perdí mi autenticador. Introduce un código guardado y pulsa Recuperar y configurar un autenticador nuevo.",
+        "Debe aparecer la configuración de un autenticador nuevo, sin dashboard. La sesión anterior deja de servir. Configura y confirma el nuevo factor; sólo después debe abrirse la aplicación. Mi seguridad debe indicar cero códigos antiguos sin usar. Genera y guarda un conjunto nuevo.",
+        "Si se pierde una respuesta al generar, usa Comprobar solicitud original. Un recibo no debe revelar los códigos otra vez. Marca Pass/Not Pass/No probado y describe sólo el paso y mensaje, sin material secreto."
+      ],
+      "expected": "Diez códigos de entrega única y hashes con sal; generación propia con contraseña y sesión MFA; canje revoca sesiones/conjunto anterior y sólo concede enrolamiento. Política45/exención global conservadas. Desarrollo:28 pruebas nuevas C#/HTTP/OpenAPI y76 históricas con PostgreSQL17.11/Edge,26 Node y revisión distinta; no acredita emergencia local ni instalación. Manual docs/PUNTO3-FUNCIONES-PENDIENTES.md."
+    },
+    {
+      "id": "QA-164",
+      "module": "Cliente · información e informes",
+      "title": "Descargar JSON confirmado del inventario actual de un cliente",
+      "feature": "planned",
+      "steps": [
+        "DISPONIBILIDAD: aún planificado para el servidor instalado. Espera una candidata completa validada, con cuenta autorizada a inventory.read y reports.export y otra de sólo lectura sin exportación.",
+        "En la izquierda abre un cliente y su infraestructura/racks. Arriba en la barra del inventario pulsa Información e informes; también puedes bajar a esa sección situada después de los racks. Despliega JSON de inventario.",
+        "Lee la advertencia de notas y metadatos. Marca Entiendo el contenido de esta exportación. Pulsa Preparar JSON actual. Antes de Exportación confirmada por el servidor no debe ofrecer descarga.",
+        "Pulsa Descargar JSON confirmado. Despliega Integridad y datos de origen y conserva revisión/SHA256. El JSON debe contener los ocho conjuntos de inventario, UUID, montajes y conexiones del cliente, sin cuentas/sesiones/factores MFA; no debe modificar el inventario.",
+        "En otra sesión con el lector sin reports.export comprueba que JSON de inventario no aparece. No uses este archivo para restaurar PostgreSQL: la importación y el Full Backup original son recorridos pendientes distintos.",
+        "Si aparece resultado incierto, conserva esta vista y usa Consultar exportación original; el reintento es la misma solicitud. No recargues ni cambies de cliente durante esa consulta: la intención local no persiste al desmontar. Anota Pass/Not Pass/No probado y observaciones, sin adjuntar notas sensibles."
+      ],
+      "expected": "Formato RackClickInventory-v1 por cliente; recibo/SHA256/autorización vigente antes de descargar, idempotencia, rechazo403/404 según ámbito,4MiB sin truncamiento. PG17.11/API/Edge/rollback/reinicio de host y revisión distinta probados en desarrollo. No es importación, JSON originalRC9 ni backup PostgreSQL. Manual docs/PUNTO3-FUNCIONES-PENDIENTES.md."
+    },
+    {
+      "id": "QA-165",
+      "module": "Demo50 · inventario sintético completo",
+      "title": "50 clientes, siete escenarios, perfiles y conexiones",
+      "feature": "planned",
+      "steps": [
+        "CONSULTA LOCAL DISPONIBLE: abre DEMO-50-CLIENTES-01/VER-50-CLIENTES.html con el navegador o extrae RackClick-Demo-50-Clientes-01.zip en una carpeta nueva. En el buscador superior escribe parte de un nombre; en la fila pulsa Detalles o JSON. Este índice no conecta ni importa datos.",
+        "SERVIDOR: caso planificado para una candidata completa que incorpore la demo de forma opcional. No copies JSON, DLL o SQL a la VM actual. Se conservan tus diez clientes originales y tu cuenta/MFA. Espera las instrucciones del punto5.",
+        "En esa candidata, entra con la cuenta indicada en el acceso privado y pulsa Todos los clientes en la barra lateral izquierda. Deben aparecer50clientes sintéticos. Revisa estos siete ejemplos: «01 · Papelería El Roble · Sintético», «11 · Ingeniería Altura · Sintético», «21 · Grupo Camino · Sintético», «29 · Colegio Las Acacias · Sintético», «35 · Automatización Prado · Sintético», «41 · Datos Aurora · Sintético» y «47 · Laboratorio Mosaico · Sintético».",
+        "En cada cliente elige un rack en la izquierda. Arriba del dibujo alterna Frontal y Trasera y revisa puertos/cables. Despliega Gestionar infraestructura y comprueba sitios/edificios/salas. Las áreas de negocio y Muestras de catálogo·QA deben estar diferenciadas; ninguna sede adicional queda vacía.",
+        "En un cliente multisede comprueba los switches de negocio y sus enlaces de laboratorio entre edificios. En una pareja libre compatible selecciona un puerto y luego el otro; espera Guardado por el servidor. Pulsa F5 y comprueba la conexión en otra sesión autorizada.",
+        "Con técnico/administrador de cliente sólo debe verse su ámbito; el lector no guarda cambios y una cuenta sin acceso no obtiene el inventario. No pegues contraseñas, cookies ni factores en observaciones. Elige Pass/Not Pass/No probado y exporta tus resultados cuando quieras."
+      ],
+      "expected": "Demo50 preparada en esquema43:50clientes/66sitios/88edificios/226salas/180racks,1563equipos yobjetos,20665puertos y2207cables.868parejas perfil/revisión verificadas(844operativas+24sinextremosNAconmotivo);10usuariosreales,PG17.11/Edge/reiniciohost/backup+recuperaciónnativa y revisión independiente. No es instalación/HTTPS/reinicioWindows ni QA manual de Wascar. Manual docs/LABORATORIO-50-CLIENTES.md."
+    },
+    {
+      "id": "QA-166",
+      "module": "Windows43 · instalación completa11",
+      "title": "Instalar en VM limpia, acceso privado, HTTPS y reinicio",
+      "feature": "planned",
+      "steps": [
+        "ENSAYO ACTUAL: New11 está instalada en RackClick-W02-D; Wascar ya reinició Windows y el verificador original registró postboot_verified. No reinstales ni reviertas para hacer esta QA. Lee docs/VM11-D-PASOS-QA.md. El caso no se marca Pass automáticamente.",
+        "En el Escritorio de D abre RackClick-VERIFICAR-11-6ca767fa.cmd, acepta la elevación y pulsa Verificar instalacion en la parte inferior del panel. Esperado postboot_verified, servicio automático y salud43. No uses 01-INSTALAR para verificar.",
+        "En ese panel inferior pulsa Acceso privado para consultar las credenciales nuevas y luego Abrir RackClick. La URL actual de D es https://192.168.206.133:5443 y debe abrir con HTTPS confiable. El usuario es Wascar; conserva su autenticador si ya está activado.",
+        "En Mi seguridad comprueba la política45 y el estado de MFA. Prueba cerrar sesión y volver a entrar con el segundo factor. Para canjear códigos usa una cuenta de laboratorio y QA-163; no arriesgues el último administrador ni pegues secretos en observaciones.",
+        "PARA OTRA INSTALACIÓN DESDE CERO: usa una VM Windows Server2025 limpia/noDC, ZIP11 y manual00–03. Crea C:\\RackClick-Instalar, verifica SHA, extrae en carpeta nueva y abre01-INSTALAR. Revisa campos de la red real, modoNew, servicio/cuenta nuevos y marca explícitamente la casilla de confianza CA. No copies DLL/SQL a tu servidor10 ni instales sobre LEAO.",
+        "Guarda Pass/Not Pass/No probado y exporta tu resultado. No atribuir postboot de10 a esta11; no probar Restore con factores MFA como si estuviera resuelto."
+      ],
+      "expected": "D: New11 elevada, servicio SCM automático con cuenta estándar/SID correcto, HTTPS ready43/CA/cortafuegos, backup inicial/programado y reinicioWindows postboot_verified comprobados. Falta tu QA manual y el flujo automático MFA se detuvo al solicitar el segundo factor de Wascar, sin cambiarlo. Restore con factores exige sobre externo aún no integrado; no se ensayó Restore en D."
+    },
+    {
+      "id": "QA-167",
+      "module": "Windows43 · datos opcionales50",
+      "title": "Cargar Demo50 por API en una instalación43 vacía",
+      "feature": "planned",
+      "steps": [
+        "EN D: los50clientes ya están cargados y verificados con el cargador02. No vuelvas a cargar ni borres datos para repetir esta QA. Se limpió el cliente manual anterior por autorización de Wascar; cuentas y MFA se conservaron. Manual docs/CARGADOR-DEMO50-02.md.",
+        "PARA OTRA INSTALACIÓN43 VACÍA: verifica y extrae RackClick-Cargar-Demo50-02.zip, y abre CARGAR-50-CLIENTES.cmd. No necesita PowerShell elevado, Python o SDK. Introduce URL HTTPS exacta/confiable, usuario global y contraseña privada; si usa MFA introduce un TOTP nuevo. Si exige enrolamiento termínalo primero en el navegador.",
+        "Sólo en esa instalación vacía confirma CARGAR 50 CLIENTES SINTETICOS y espera demo50_loaded_verified. Si falla conserva el JSON con método/ruta/estado/código seguros y los datos parciales; no relances a ciegas ni desactives MFA para corregirlo. El cargador02 conserva la cookie del desafío en PowerShell5.1.",
+        "En el navegador, barra izquierda, pulsa Todos los clientes. Deben aparecer50. Abre los siete ejemplos de QA-165, elige un rack en la izquierda y alterna Frontal/Trasera arriba del dibujo. Comprueba cables, bandejas, jerarquía y búsqueda del catálogo.",
+        "Pulsa F5 y comprueba otra sesión autorizada. El usuario, MFA y permisos de la instalación se conservan: los datos no traen cuentas demo ni desactivan MFA. Usa QA-165 para registrar observaciones de modelos/conexiones y exporta tus resultados."
+      ],
+      "expected": "D:50clientes/180racks/1563equipos-objetos/20665puertos/2207conexiones verificados,2553comandos por HTTPS normal, sin seguridad importada. MFA del cargador probado por separado en cuenta sintética bajo el servicio DPAPI real; esa cuenta no puede cargar datos sin permisos globales. No es una transacción global, un restore PostgreSQL ni aceptación manual de todos los modelos."
+    },
+    {
+      "id": "QA-168",
+      "module": "Seguridad SQL · operadores futuros",
+      "title": "Ficha de conexión sin contraseñas y consulta privada local",
+      "feature": "planned",
+      "steps": [
+        "NO DISPONIBLE EN D NI EN LA CANDIDATA11. E13 pasó postboot y en E se ensayó Restore14-r2 con otro servicio, cuenta y material SQL nuevos; getter, ficha, diagnóstico y backup ya tienen prueba automatizada real. Este guion manual sigue planificado para la candidata autorizada, sin marcar Pass de Wascar. No sustituyas scripts ni repitas instalaciones en D.",
+        "En E, para la instancia Restore14-r2 identificada en el registro, abre el panel del servidor como administrador y pulsa «Acceso privado». Selecciona el servicio RackClick-Recovery-cb52d279: URL https://192.168.206.134:5444 y puerto SQL local55442. Comprueba base y usuario sin compartir sus valores. Las contraseñas deben estar ocultas; «Mostrar contrasenas» sólo permite consulta local autorizada.",
+        "Pulsa «Guardar ficha sin contrasenas». Abre el archivo nuevo indicado en la ventana. Debe contener los metadatos de conexión y el aviso de que SQL directo no aplica ámbitos por cliente, sin contraseña SQL o web, conexión completa, ciphertext ni claves. No adjuntes la ventana con secretos revelados.",
+        "Cierra la ventana. Comprueba que el servidor continúa disponible. Conserva sólo observaciones sin valores de credenciales; los ensayos de backup/Restore con secretos vinculados se coordinarán en otra instancia, nunca modificando D.",
+        "En la instalación14-r2 verificada, Acceso privado identifica instancia3 y permite guardar sólo metadatos, con perfil de servidor MFA2 válido. Owner/cluster no se conservan. El backup usa otra identidad SQL de sólo lectura. El lector sólo acepta el ACE administrativo de travesía exacto del contenedor raíz; no se amplían permisos en archivos o subcarpetas. No confundir el postboot13 con el reinicio del Restore14: éste aún no se ha verificado."
+      ],
+      "expected": "Guion manual planificado en la candidata autorizada, no habilitado en D ni marcado como resultado de Wascar. Los operadores14-r2 ya tienen ensayo automatizado real en E: getter, ficha sin contrasenas, diagnóstico saneado y backup bajo la cuenta estándar. El mantenimientoDDL usa Restore nuevo; owner/cluster no se guardan. La aceptación Windows/MFA global sigue separada."
+    },
+    {
+      "id": "QA-169",
+      "module": "Catálogo alemán · instalado en D45",
+      "title": "Buscar FRITZ!Box y DrayTek y comprobar conectores",
+      "feature": "planned",
+      "steps": [
+        "DISPONIBLE EN D45: abrir https://192.168.206.133:5443/, pulsar Ctrl+F5 e iniciar sesión con la cuenta y MFA habituales. D conserva datos y seguridad. La guía automática de laboratorio local no se redirige a D; este caso sigue pendiente de la comprobación manual de Wascar.",
+        "En «Perfil de referencia», escribe Drytek, DrayTek, Fritzbox, Fritz!Box, fritz box y AVM. Debe abrirse una lista corta y desplazable con modelos coincidentes; usa flechas y Enter para elegir. Escape cierra la lista. No se crea nada sólo por escribir.",
+        "Revisa los seis modelos nuevos y pulsa Frontal y Trasera. Comprueba nombres, SKU, color, puertos de red, USB, DSL, teléfonoRJ11/TAE yDC. WiFi/DECT no deben figurar como puertos de cable. Vigor167 debe mostrarP2 a la izquierda yP1 a la derecha.",
+        "Pulsa cada conector en el visor: debe identificar su grupo/ordinal/tipo, no otro puerto. Esta selección es local y no guarda un cable en laDB. Abre Datos/revisión/alcance para leer reservas de tomas laterales/FON.",
+        "En D45, crear sólo objetos de prueba que quieras conservar, conectar extremos compatibles por UUID/tipo y comprobar guardado, recarga y otra sesión. La actualización ya conserva el inventario previo; no repetir el cargador Demo50 ni ejecutar un instalador para habilitar este caso. Anotar observaciones sin sobrescribir resultados anteriores."
+      ],
+      "expected": "Seis modelos exactos y buscador compacto con alias;51extremos,12caras,USB/DSL/telefonía/DC distintos deEthernet. Revisión visual local y fase instalada diferenciadas. No equivale a aprobaciónQA ni persistencia del visor."
+    },
+    {
+      "id": "QA-170",
+      "module": "Racks · comodidad visual",
+      "title": "Soportes, nombres largos y ampliación sin perder conexiones",
+      "feature": "planned",
+      "steps": [
+        "DISPONIBLE EN D45: conservar los nombres/datos actuales y abrir sus racks tras Ctrl+F5. Usar los ejemplos TL-SG108E UN6.0, Zyxel XGS1250-12 y Aruba JL693A cuando existan en el inventario. No renombrar soportes QA para disimular un problema. QA manual de Wascar pendiente.",
+        "En la candidata autorizada, abrir Clientes → cliente sintético → rack que contiene el modelo. El nombre de equipo y los conectores deben predominar. El nombre largo de soporte debe ajustarse, con nombre completo disponible en tooltip/Detalles del modelo.",
+        "Abrir y cerrar «Detalles del modelo» y «Detalles de esta cara» con clic y teclado. Deben conservar revisión/SKU/cotas/identidad y notas completas. Una advertencia de revisión desconocida no se oculta al plegar detalles.",
+        "En un equipo sobre bandeja, pulsar «Ampliar vista» y volver a proporciones. Los cables deben seguir anclados a los mismos puertos; no debe aparecer guardado ni cambiar la ocupación. Probar frontal y trasera.",
+        "Reducir el ancho de la ventana. No debe aparecer barra horizontal de página o tarjeta por un mínimo arbitrario de1000px; los puertos densos conservan desplazamiento local cuando lo requieren sus objetivos24px. La cara sin conectores no lo necesita. Los botones/nombres deben seguir legibles y accesibles.",
+        "En la candidata autorizada con permisos de lectura, comprobar que los detalles y ampliación visual se permiten, mientras editar/eliminar permanece deshabilitado. No confundir los clics locales de presentación con permisos para escribir."
+      ],
+      "expected": "Nombres literales y datos preservados; soporte proporcional con mínimo de panel limitado al espacio, metadatos plegables, objetivos24px y cables alineados al ampliar. El caso sigueplanificado hasta ensayoQA deWascar en candidata instalada."
+    },
+    {
+      "id": "QA-171",
+      "module": "Repetidores de Alemania · instalado en D45",
+      "title": "Buscar repetidores y comprobar sus caras, alimentación y ubicación de sala",
+      "feature": "planned",
+      "steps": [
+        "DISPONIBLE EN D45: abrir https://192.168.206.133:5443/ y pulsar Ctrl+F5; usar cuenta/MFA habituales. El HTML local conserva una comparación sin guardar datos. No repetir la actualización, la migración o el cargador Demo50. QA de Wascar pendiente.",
+        "En Perfil de referencia escribir repetidor, repeter, Repeater, Verstärker, FRITZ Repeater, AVM, TP-Link, devolo y Telekom. La lista debe ser corta, filtrada y desplazable; usar flechas, Enter y Escape. Escribir no crea un objeto.",
+        "Elegir los diez perfiles y alternar Frontal/Trasera. FRITZ!Repeater 600 no tiene LAN. Los seis modelos de enchufe muestran clavija EU de dos pines; los cuatro de sobremesa muestran DC. WiFi/Mesh no aparece como puerto de cable.",
+        "Pulsar los conectores y comprobar grupo, ordinal y selección. Abrir Detalles de esta cara y las reservas. La vista trasera agrupa tomas inferiores o laterales y no certifica su ubicación mecánica. LED y botones decorativos no controlan el equipo.",
+        "Reducir el ancho, pulsar Ampliar vista y volver a vista compacta. No debe aparecer una barra evitable si los objetivos de 24 px caben. Cambiar ES/DE/EN; nombres comerciales y conectores se conservan.",
+        "En D45: Clientes → cliente → administración de estructura → sala → Crear dispositivo final → Perfil de referencia. Elegir un repetidor; debe quedar en sala sin U, rack, padre ni bandeja. Con datos de prueba que quieras conservar, conectar sólo extremos compatibles, guardar y comprobar recarga/otra sesión. Los radios WLAN no se conectan como cable. No ejecutar New/Restore para realizar este caso."
+      ],
+      "expected": "Diez modelos y 23 extremos (13 Ethernet y 10 de alimentación) con IDs y roles conservados, clavija y DC diferenciados, sin Ethernet inventado ni Powerline. El visor permite revisión local; persistencia y permisos requieren candidata instalada. QA de Wascar permanece pendiente."
     }
   ],
   "membersBundle": "efc8bda2405174feced0792048f7c65a2bfdba6665d7220b440589dcdea8ecd7",

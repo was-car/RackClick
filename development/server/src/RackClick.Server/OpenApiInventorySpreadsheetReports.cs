@@ -7,7 +7,7 @@ public static partial class OpenApiDocument
         object text = Text(), uuid = Text("uuid"), nullableId = Obj(("type", "string"), ("format", "uuid"), ("nullable", true));
         object kinds = Obj(("type", "string"), ("enum", new[] { "ports", "connections" }));
         object statuses = Obj(("type", "string"), ("enum", new[] { "all", "free", "reserved", "disabled", "faulty" }));
-        object families = Obj(("type", "string"), ("enum", new[] { "all", "rj45", "sfp", "sfp28", "qsfp", "mgmt", "console", "power", "usb_a", "usb_c" }));
+        object families = Obj(("type", "string"), ("enum", new[] { "all", "rj45", "sfp", "sfp28", "sfp56", "qsfp", "qsfpdd", "mgmt", "console", "idc", "power", "usb_a", "usb_c", "ipc", "fiber", "sfpdd", "cfp2", "sas", "dsl", "telephony", "isdn", "expansion", "power_dc" }));
         schemas["InventorySpreadsheetRequest"] = Shape(["reportKind", "query", "status", "family", "rackId"], ("reportKind", kinds),
             ("query", Obj(("type", "string"), ("maxLength", 200))), ("status", statuses), ("family", families), ("rackId", nullableId));
         schemas["InventorySpreadsheetReport"] = Shape(["reportKind", "query", "status", "family", "rackId", "filename", "contentType", "format", "cellEncoding", "rowCount", "byteLength", "sha256", "contentBase64"],

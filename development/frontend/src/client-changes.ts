@@ -2,11 +2,11 @@ import {ApiError,type RackClickApi} from './api.ts';
 
 export const changeActions=new Set([
  ...['site','building','room'].flatMap(entity=>['create','update','delete'].map(action=>'inventory.'+entity+'.'+action)),
- ...['create','update','assignRoom','delete','duplicate'].map(action=>'inventory.rack.'+action),
- ...['create','createFromCatalog','createFromPrivateTemplate','createFromSharedTemplate','update','move','reorder','delete','editPortGroups'].map(action=>'inventory.device.'+action),
+ ...['create','createHardware','update','assignRoom','delete','duplicate'].map(action=>'inventory.rack.'+action),
+ ...['create','createHardware','createFromCatalog','createFromPrivateTemplate','createFromSharedTemplate','update','move','reorder','delete','editPortGroups'].map(action=>'inventory.device.'+action),
  'inventory.devices.delete','inventory.operations.compensate','inventory.ports.update',...['create','createBatch','update','disconnect','reconnect'].map(action=>'inventory.connections.'+action)
 ]);
-const portTypes=new Set(['rj45','rj45_poe','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c']);
+const portTypes=new Set(['rj45','rj45_poe','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c','sfp56','qsfpdd','idc','ipc','fiber','sfpdd','cfp2','sas','dsl','telephony','isdn','expansion','power_dc']);
 export type ChangePort={id:string;deviceId:string;groupId:string;type:string;gn:number};
 export type ChangeConnection={id:string;fromPortId:string;toPortId:string};
 export type ClientChange={id:string;actor:{id:string;userNameCurrent:string|null};action:string;resourceId:string|null;revisionBefore:number;revisionAfter:number;occurredAt:string;context:{status:'captured'|'notAvailable';beforePorts:ChangePort[];afterPorts:ChangePort[];beforeConnections:ChangeConnection[];afterConnections:ChangeConnection[]}};

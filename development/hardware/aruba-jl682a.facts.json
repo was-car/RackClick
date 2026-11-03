@@ -1,0 +1,26 @@
+{
+  "formatVersion": 1,
+  "model": "JL682A",
+  "url": "https://assets.ext.hpe.com/is/content/hpedam/a50000620enw",
+  "retrieved": "2026-10-30",
+  "pdfSha256": "04ca3edfa5cd2e0be927a5d7899bddf38619e8d2a6740496ab907f776ea4fde9",
+  "facts": {
+    "widthMm": 442.5,
+    "heightMm": 43.9,
+    "depthMm": 221.5,
+    "rackUnits": 1,
+    "frontRj45": 24,
+    "frontSfpSfpPlus": 4,
+    "rearPowerInlets": 1,
+    "poe": false,
+    "fanless": true
+  },
+  "locators": {
+    "ports": "JL682A product specification:24RJ45 and4SFP/SFP+; installation guide figure3(PDFpage6).",
+    "dimensions": "JL682A dimensions:22.15x44.25x4.39cm(DxWxH); installation guide table2(PDFpage41).",
+    "power": "Installation guide PDFpages22/28:internal supply and rear AC connection,no power switch."
+  },
+  "geometry": "Own flat interactive drawing; no manufacturer photograph embedded",
+  "hardwareRevision": null,
+  "releaseDate": null
+}

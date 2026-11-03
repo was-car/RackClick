@@ -1,0 +1,51 @@
+{
+  "version": "fortinet-20261030-v1",
+  "synthetic": false,
+  "profiles": [
+    {
+      "key": "fortinet-fg60f",
+      "kind": "desktop",
+      "sizeU": 0,
+      "widthMm": 216,
+      "heightMm": 38.5,
+      "depthMm": 160,
+      "groups": [
+        {
+          "key": "rear-lan",
+          "face": "rear",
+          "type": "rj45",
+          "count": 5,
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "rear-fortilink",
+          "face": "rear",
+          "type": "rj45",
+          "count": 2,
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "rear-dmz",
+          "face": "rear",
+          "type": "rj45",
+          "count": 1,
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "rear-wan",
+          "face": "rear",
+          "type": "rj45",
+          "count": 2,
+          "powerRole": "unspecified"
+        }
+      ],
+      "identity": {
+        "manufacturer": "Fortinet",
+        "family": "FortiGate 60F Series",
+        "model": "FortiGate 60F",
+        "sku": "FG-60F"
+      },
+      "source": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortigate-fortiwifi-60f-series.pdf"
+    }
+  ]
+}

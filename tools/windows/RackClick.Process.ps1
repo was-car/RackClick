@@ -114,7 +114,8 @@ function ConvertTo-RackClickProcessArgument {
 }
 
 function Start-RackClickOwnedProcess {
-    param([string]$Executable,[string[]]$Arguments=@(),[string]$WorkingDirectory,[hashtable]$Environment=@{},[AllowEmptyString()][string]$InputText='',[string]$LogDirectory,[string]$Label)
+    param([string]$Executable,[string[]]$Arguments=@(),[string]$WorkingDirectory,[hashtable]$Environment=@{},[AllowEmptyString()][string]$InputText='',[string]$LogDirectory,[string]$Label,[switch]$ProtectRequest,[switch]$EphemeralRequest)
+    if($EphemeralRequest-and-not$ProtectRequest){Stop-RackClickProcessError 'process_ephemeral_requires_protection'}
     $Executable=Get-RackClickProcessPath $Executable; $WorkingDirectory=Get-RackClickProcessPath $WorkingDirectory; $LogDirectory=Get-RackClickProcessPath $LogDirectory
     if (-not [IO.File]::Exists($Executable) -or -not [IO.Directory]::Exists($WorkingDirectory) -or -not [IO.Directory]::Exists($LogDirectory) -or $Label -notmatch '^[a-zA-Z0-9_-]{1,48}$') { Stop-RackClickProcessError 'process_input_invalid' }
     Assert-RackClickProcessNoReparse $Executable; Assert-RackClickProcessNoReparse $WorkingDirectory; Assert-RackClickProcessPrivateAcl $LogDirectory
@@ -123,13 +124,23 @@ function Start-RackClickOwnedProcess {
     $private=New-RackClickProcessPrivateDirectory (Join-Path $LogDirectory ($Label+'-'+[guid]::NewGuid().ToString('N')))
     $requestPath=Join-Path $private 'request.json'; $stdoutPath=Join-Path $private 'stdout.log'; $stderrPath=Join-Path $private 'stderr.log'
     $request=@{schemaVersion=1;executable=$Executable;arguments=@($Arguments);workingDirectory=$WorkingDirectory;environment=$Environment;inputText=$InputText}
-    $stream=$null
+    $stream=$null;$bytes=$null
     try {
         $bytes=(New-Object Text.UTF8Encoding($false)).GetBytes(($request | ConvertTo-Json -Depth 8 -Compress))
         if ($bytes.Length -gt 16777216) { Stop-RackClickProcessError 'process_request_too_large' }
+        if ($ProtectRequest) {
+            Add-Type -AssemblyName System.Security
+            try {
+                $entropy=[Text.Encoding]::UTF8.GetBytes('RackClick/Process/request/v1'+"`n"+$requestPath)
+                $cipher=[Security.Cryptography.ProtectedData]::Protect($bytes,$entropy,[Security.Cryptography.DataProtectionScope]::CurrentUser)
+                $envelope=@{schemaVersion=2;kind='RackClickProtectedProcessRequest';ciphertext=[Convert]::ToBase64String($cipher)}
+            } finally {[Array]::Clear($bytes,0,$bytes.Length)}
+            $bytes=[Text.Encoding]::UTF8.GetBytes(($envelope|ConvertTo-Json -Compress))
+            if($bytes.Length-gt16777216){Stop-RackClickProcessError 'process_request_too_large'}
+        }
         $stream=[IO.File]::Open($requestPath,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
         $stream.Write($bytes,0,$bytes.Length); $stream.Flush($true)
-    } finally { if ($null -ne $stream) { $stream.Dispose() } }
+    } finally { if ($null -ne $stream) { $stream.Dispose() };if($ProtectRequest-and$null-ne$bytes){[Array]::Clear($bytes,0,$bytes.Length)} }
     Assert-RackClickProcessPrivateAcl $requestPath
     Initialize-RackClickProcessNative
     $job=[RackClick.OwnedProcessNative]::CreateJobObject([IntPtr]::Zero,$null)
@@ -142,7 +153,10 @@ function Start-RackClickOwnedProcess {
         if (-not [RackClick.OwnedProcessNative]::SetInformationJobObject($job,9,[ref]$limits,[Runtime.InteropServices.Marshal]::SizeOf($limits))) { Stop-RackClickProcessError 'owned_job_limit_failed' }
         $start=New-Object Diagnostics.ProcessStartInfo
         $start.FileName=Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'
-        $start.Arguments=(@('-NoLogo','-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass','-File',(Join-Path $PSScriptRoot 'RackClick.Process.Gate.ps1'),'-RequestPath',$requestPath) | ForEach-Object { ConvertTo-RackClickProcessArgument $_ }) -join ' '
+        $gateArguments=@('-NoLogo','-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass','-File',(Join-Path $PSScriptRoot 'RackClick.Process.Gate.ps1'),'-RequestPath',$requestPath)
+        if($ProtectRequest){$gateArguments+='-ProtectedRequest'}
+        if($EphemeralRequest){$gateArguments+='-EphemeralRequest'}
+        $start.Arguments=($gateArguments | ForEach-Object { ConvertTo-RackClickProcessArgument $_ }) -join ' '
         $start.UseShellExecute=$false; $start.CreateNoWindow=$true; $start.WindowStyle=[Diagnostics.ProcessWindowStyle]::Hidden
         $start.RedirectStandardInput=$true; $start.RedirectStandardOutput=$true; $start.RedirectStandardError=$true
         $process=New-Object Diagnostics.Process; $process.StartInfo=$start
@@ -197,8 +211,20 @@ function Wait-RackClickOwnedProcess {
     if (-not $timedOut) { $code=$Handle.Process.ExitCode }
     Stop-RackClickOwnedProcess $Handle
     $stdout=''; $stderr=''
-    if ([IO.File]::Exists($Handle.StdoutPath)) { $stdout=[IO.File]::ReadAllText($Handle.StdoutPath,[Text.Encoding]::UTF8) }
-    if ([IO.File]::Exists($Handle.StderrPath)) { $stderr=[IO.File]::ReadAllText($Handle.StderrPath,[Text.Encoding]::UTF8) }
+    # Killing a Job can leave a closing writer handle briefly alive after the gate
+    # is signalled. Read a snapshot sharing that writer, instead of failing with a
+    # sharing violation and masking the original timeout/exit result.
+    foreach($entry in @(@('StdoutPath','stdout'),@('StderrPath','stderr'))){
+        $path=$Handle[$entry[0]]
+        if([IO.File]::Exists($path)){
+            $stream=[IO.File]::Open($path,'Open','Read','ReadWrite');$reader=$null
+            try{
+                $reader=New-Object IO.StreamReader($stream,[Text.Encoding]::UTF8)
+                $text=$reader.ReadToEnd()
+                if($entry[1]-ceq'stdout'){$stdout=$text}else{$stderr=$text}
+            }finally{if($null-ne$reader){$reader.Dispose()};$stream.Dispose()}
+        }
+    }
     if ($Handle.GateStderr.IsCompleted -and $Handle.GateStderr.Result.Length -gt 0 -and $code -eq 0) { $code=2 }
     return @{exitCode=$code;stdout=$stdout;stderr=$stderr}
 }

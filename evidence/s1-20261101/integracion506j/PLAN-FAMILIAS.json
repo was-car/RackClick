@@ -1,0 +1,99 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506j-20261101-v1",
+  "targetSchema": 39,
+  "baselineSchema": 38,
+  "baselineDefinitions": 739,
+  "baselineCommercial": 734,
+  "physicalTypes": [
+    "rj45",
+    "sfp",
+    "sfp28",
+    "qsfp",
+    "sfp56",
+    "qsfpdd",
+    "power"
+  ],
+  "authoring": {
+    "passive-panels": [
+      {
+        "id": "nb-c391d0a9345caadb",
+        "manufacturer": "Panduit",
+        "model": "Mini-Com Flush Mount Angled Patch Panel (24 Port, 1RU)"
+      },
+      {
+        "id": "nb-47531f3ce888df83",
+        "manufacturer": "Panduit",
+        "model": "Mini-Com High Density Patch Panel (48 Port, 1RU)"
+      },
+      {
+        "id": "nb-e5e2d32326c01d41",
+        "manufacturer": "Panduit",
+        "model": "Mini-Com Flush Mount Angled Patch Panel (48 Port, 2RU)"
+      },
+      {
+        "id": "nb-e8d124c1106f5ffd",
+        "manufacturer": "Panduit",
+        "model": "Mini-Com Flush Mount Angled Patch Panel (72 Port, 2RU)"
+      },
+      {
+        "id": "nb-b0fab63898dd7024",
+        "manufacturer": "Panduit",
+        "model": "Mini-Com Flush Mount Patch Panel (24 Port, 1RU)"
+      },
+      {
+        "id": "nb-86a48551b44be392",
+        "manufacturer": "Panduit",
+        "model": "Mini-Com Flush Mount Patch Panel (48 Port, 2RU)"
+      }
+    ],
+    "access-points": [
+      {
+        "id": "nb-f2e21430ea7914ec",
+        "manufacturer": "Ubiquiti",
+        "model": "U7 Pro Max"
+      },
+      {
+        "id": "nb-88aa53e158b54b05",
+        "manufacturer": "Ubiquiti",
+        "model": "U7 Pro XG"
+      },
+      {
+        "id": "nb-0b8ba8c517126e6a",
+        "manufacturer": "Ubiquiti",
+        "model": "U7 Pro XGS"
+      },
+      {
+        "id": "nb-f0cd8b333b81d486",
+        "manufacturer": "MikroTik",
+        "model": "cAP ac"
+      },
+      {
+        "id": "nb-c06c7dc6eccf5e90",
+        "manufacturer": "MikroTik",
+        "model": "cAP ax"
+      },
+      {
+        "id": "nb-3ee579cb14778d23",
+        "manufacturer": "MikroTik",
+        "model": "cAP XL ac"
+      },
+      {
+        "id": "nb-bf62e427e934e0d4",
+        "manufacturer": "Grandstream",
+        "model": "GWN7660E"
+      }
+    ]
+  },
+  "selectedBefore": 379,
+  "selectedAfterIfAllAccepted": 392,
+  "models": 13,
+  "plannedModels": 13,
+  "reason": "Two physical families: explicitly populated RJ45 female/female passive panels; compact PoE APs placed on a declared laboratory shelf. All exact configurations remain subject to preflight; never infer module population or ceiling mounting.",
+  "reservedFamilies": [
+    "IDC/110 asymmetric terminations",
+    "empty chassis without chosen modules",
+    "AC/IEC/NEMA roles and glyph extension (ATS preflight only)",
+    "outdoor or wall/ceiling mounting not represented by a fitting shelf"
+  ]
+}

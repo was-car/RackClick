@@ -156,16 +156,20 @@ public sealed partial class InventoryStore
 
     private static readonly string[] ReportPortColumns = ["port_id", "device_id", "device_name", "device_kind", "rack_id", "rack_name", "room_id", "room_name",
         "site_id", "site_name", "building_id", "building_name", "group_id", "group_name", "type", "family", "gn", "label", "status", "face", "poe", "watts", "color", "power_role", "connected", "connection_ids", "peer_port_ids"];
-    private static string[] PortCells(InventoryPortView port)
+    private static string[] PortCells(InventoryPortView port, bool includePhysicalConnector)
     {
         string Id(Guid? id) => id?.ToString("D") ?? "";
         InventoryViewPath? Node(string kind) => port.Path.FirstOrDefault(n => n.Kind == kind);
-        return [Id(port.Id), Id(port.DeviceId), port.DeviceName, port.DeviceKind, Id(port.RackId), Node("rack")?.Name ?? "", Id(port.RoomId), Node("room")?.Name ?? "",
+        string[] cells = [Id(port.Id), Id(port.DeviceId), port.DeviceName, port.DeviceKind, Id(port.RackId), Node("rack")?.Name ?? "", Id(port.RoomId), Node("room")?.Name ?? "",
             Id(Node("site")?.Id), Node("site")?.Name ?? "", Id(Node("building")?.Id), Node("building")?.Name ?? "", Id(port.GroupId), port.GroupName,
             port.Type, port.Family, port.Gn.ToString(CultureInfo.InvariantCulture), port.Label, port.Status, port.Face, port.Poe ? "true" : "false",
             port.Watts?.ToString(CultureInfo.InvariantCulture) ?? "", port.Color ?? "", port.PowerRole, port.Connected ? "true" : "false",
             string.Join(";", port.ConnectionIds.Select(id => id.ToString("D"))), string.Join(";", port.PeerPortIds.Select(id => id.ToString("D")))];
+        return includePhysicalConnector ? [..cells, port.PhysicalConnector ?? ""] : cells;
     }
+
+    private static bool ReportIncludesPhysicalConnector(object[] items) => items.Any(item => item is InventoryPortView port ? port.PhysicalConnector is not null :
+            item is InventoryConnectionView cable && (cable.From.PhysicalConnector is not null || cable.To.PhysicalConnector is not null));
 
     private static byte[] BuildReportCsv(Guid customer, long revision, string kind, object[] items)
     {
@@ -185,16 +189,18 @@ public sealed partial class InventoryStore
             if (output.Length + bytes.Length > ReportMaximumBytes) throw new DomainError(422, "report_too_large");
             output.Write(bytes);
         }
+        bool includePhysicalConnector = ReportIncludesPhysicalConnector(items);
+        string[] columns = includePhysicalConnector ? [..ReportPortColumns, "physical_connector"] : ReportPortColumns;
         string[] prefix = ["customer_id", "source_revision"];
-        if (kind == "ports") Row(prefix.Concat(ReportPortColumns), false);
+        if (kind == "ports") Row(prefix.Concat(columns), false);
         else Row(prefix.Concat(["connection_id", "note", "color", "patch", "cross_rack"])
-            .Concat(ReportPortColumns.Select(c => "from_" + c)).Concat(ReportPortColumns.Select(c => "to_" + c)), false);
+            .Concat(columns.Select(c => "from_" + c)).Concat(columns.Select(c => "to_" + c)), false);
         string[] context = [customer.ToString("D"), revision.ToString(CultureInfo.InvariantCulture)];
         foreach (object item in items)
-            if (item is InventoryPortView port) Row(context.Concat(PortCells(port)), true);
+            if (item is InventoryPortView port) Row(context.Concat(PortCells(port, includePhysicalConnector)), true);
             else if (item is InventoryConnectionView cable) Row(context.Concat([cable.Id.ToString("D"), cable.Note, cable.Color ?? "", cable.Patch,
                     cable.CrossRack.HasValue ? cable.CrossRack.Value ? "true" : "false" : ""])
-                .Concat(PortCells(cable.From)).Concat(PortCells(cable.To)), true);
+                .Concat(PortCells(cable.From, includePhysicalConnector)).Concat(PortCells(cable.To, includePhysicalConnector)), true);
         return output.ToArray();
     }
 }

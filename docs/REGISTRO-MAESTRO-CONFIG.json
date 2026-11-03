@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-10-30",
+  "date": "2026-11-03",
   "purpose": "Integrar pendientes y conversaciones sin duplicar resultados, alterar el ledger o declarar nuevas funciones implementadas.",
   "sources": [
     "docs/PLAN-CIERRE-RACKCLICK.json",
@@ -14,7 +14,80 @@
     "docs/PROTOCOLO-REUNION-EVOLUCION-FUTURA-25-10-2026.md",
     "docs/PUBLICACION-GITHUB-PRIVADA-26-10-2026.md",
     "docs/FUENTES-OFICIALES-DESARROLLO.md",
-    "docs/INSTALACION-DESDE-GITHUB.md"
+    "docs/INSTALACION-DESDE-GITHUB.md",
+    "docs/TANDA-RACKS-PRIMERO-30-10-2026.md",
+    "docs/TANDA-INFORMES-CONTEXTO-30-10-2026.md",
+    "docs/CONTRATO-HARDWARE-MONTAJE-v1.md",
+    "docs/TANDA-HARDWARE-MONTAJE-30-10-2026.md",
+    "docs/QA-HARDWARE-MONTAJE-WASCAR.md",
+    "docs/CONTRATO-REVISIONES-HARDWARE-v1.md",
+    "docs/TANDA-REVISIONES-HARDWARE-30-10-2026.md",
+    "docs/QA-REVISIONES-HARDWARE-WASCAR.md",
+    "docs/CONTRATO-CATALOGO-FUENTE-UNICA-v1.md",
+    "docs/TANDA-CATALOGO-FUENTE-UNICA-30-10-2026.md",
+    "docs/REVISION-CATALOGO-FUENTE-UNICA-30-10-2026.md",
+    "docs/CONTRATO-CATALOGO-SQL17.md",
+    "docs/TANDA-CATALOGO-SQL17-30-10-2026.md",
+    "docs/REVISION-CATALOGO-SQL17-30-10-2026.md",
+    "docs/PRIMER-MODELO-COMERCIAL-STARTECH.md",
+    "docs/QA-PRIMER-MODELO-COMERCIAL-WASCAR.md",
+    "docs/REVISION-PRIMER-MODELO-COMERCIAL-30-10-2026.md",
+    "docs/CARCASAS-PRINCIPALES/README.md",
+    "evidence/s1-20261030/hardware-visual-library/RESULTADOS.md",
+    "docs/CARCASAS-PRINCIPALES/CARTERA-220.md",
+    "evidence/s1-20261030/hardware-visual-200/RESULTADOS.md",
+    "docs/CARCASAS-PRINCIPALES/CARTERA-500.md",
+    "evidence/s1-20261030/hardware-visual-500/RESULTADOS.md",
+    "docs/INTEGRACION-CARCASAS-LOTE01.md",
+    "docs/QA-CARCASAS-LOTE01-WASCAR.md",
+    "evidence/s1-20261030/hardware-shell-lot1/RESULTADOS.md",
+    "docs/INTEGRACION-FOTOS-ORIGINALES-LOTE01.md",
+    "evidence/s1-20261030/hardware-photo-lot1/RESULTADOS.md",
+    "docs/PLAN-LABORATORIO-50-CLIENTES.md",
+    "docs/INTEGRACION-506-GRUPO-B.md",
+    "docs/SELECTOR-CATALOGO-COMPACTO.md",
+    "docs/INTEGRACION-506-GRUPO-C.md",
+    "docs/CONECTORES-SFP56-QSFPDD.md",
+    "docs/INTEGRACION-506-GRUPO-H.md",
+    "docs/INTEGRACION-506-GRUPO-I.md",
+    "docs/INTEGRACION-506-GRUPO-J.md",
+    "docs/METODO-CATALOGO-POR-FAMILIAS.md",
+    "docs/PLANTILLA-FAMILIA-CATALOGO.json",
+    "docs/FAMILIAS-CATALOGO-PENDIENTES.md",
+    "docs/INTEGRACION-506-GRUPO-L.md",
+    "docs/CANDIDATA-CONSOLIDADA43.md",
+    "evidence/s1-20261102/candidata43/RESULTADOS.md",
+    "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+    "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md",
+    "docs/CARGADOR-DEMO50-02.md",
+    "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+    "docs/LABORATORIO-50-CLIENTES.md",
+    "docs/FAMILIAS-CATALOGO-PENDIENTES.json",
+    "evidence/s1-20261102/f01-01-clasificacion/RESULTADOS.md",
+    "evidence/s1-20261102/f01-01-clasificacion/REVISION-INDEPENDIENTE.md",
+    "evidence/s1-20261102/f01-02-tratamiento/RESULTADOS.md",
+    "evidence/s1-20261102/f01-02-tratamiento/REVISION-INDEPENDIENTE.md",
+    "evidence/s1-20261102/f01-03-registro/RESULTADOS.md",
+    "evidence/s1-20261102/f01-03-registro/REVISION-INDEPENDIENTE.md",
+    "docs/CRITERIO-FALSOS-POSITIVOS-SECRETOS.md",
+    "evidence/s1-20261102/f01-04-cierre/RESULTADOS.md",
+    "evidence/s1-20261102/f01-04-cierre/REVISION-INDEPENDIENTE.md",
+    "docs/PASO-004-REVISION-CIERRE-SECRETOS.md",
+    "evidence/s1-20261102/f02-01-sql/RESULTADOS.md",
+    "evidence/s1-20261102/f02-01-sql/REVISION-INDEPENDIENTE.md",
+    "docs/CONTRATO-CONEXION-SQL-CIFRADA-v1.md",
+    "docs/PASO-005-CONEXION-SQL-CIFRADA.md",
+    "evidence/s1-20261102/f02-02-operadores/RESULTADOS.md",
+    "evidence/s1-20261102/f02-02-operadores/REVISION-INDEPENDIENTE.md",
+    "docs/OPERADORES-SQL-CIFRADOS-v2.md",
+    "docs/PASO-006-OPERADORES-SQL.md",
+    "evidence/s1-20261102/f02-03-restauracion/RESULTADOS.md",
+    "evidence/s1-20261102/f02-03-restauracion/REVISION-INDEPENDIENTE.md",
+    "docs/REANUDACION-RESTORE-SQL-PROTEGIDO.md",
+    "docs/PASO-007-REANUDACION-RESTORE-SQL.md",
+    "docs/CATALOGO-ALEMANIA-Y-RACKS-03-11-2026.md",
+    "docs/REPETIDORES-ALEMANIA-03-11-2026.md",
+    "docs/ACTUALIZACION-D45-03-11-2026.md"
   ],
   "latestContext": {
     "F-03": {
@@ -33,11 +106,14 @@
       ]
     },
     "F-07": {
-      "text": "Enrolamiento, login MFA, GUI y gracia45 tienen trabajo acreditado; Wascar probó MFA administrativo en candidata10. Falta el cierre integral del resultado y sus escenarios pendientes, no crear otra pantalla de login.",
+      "text": "Enrolamiento/login/GUI y politica45 existentes; F-07.01-.04 acreditados. D11 tiene proveedor real y prueba HTTPS/DPAPI de cuenta sintetica. Falta cierre integral y escenarios pendientes; no crear otro login. Codigos de recuperacion del punto3 probados en desarrollo43, no canje nativo en D.",
       "closureText": "Cuando se exige MFA o se inicia enrolamiento, el desafío no concede acceso API; confirmar un factor válido emite una única sesión nueva, con negativos de concurrencia y revisión. Respetar la gracia45 y exención global confirmadas, sin bloquear de golpe todas las cuentas nuevas.",
       "evidence": [
         "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
-        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md"
+        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md",
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ]
     },
     "F-10": {
@@ -61,42 +137,192 @@
       ]
     },
     "P-07": {
-      "text": "CSV, XLSX, SVG, HTML imprimible y XLS HTML existen y se probaron por HTTP en el laboratorio de comparación. Falta su cierre GUI/formato/aceptación; PNG y la obligación de PDF nativo se tratan explícitamente, sin confundirlos con impresión HTML.",
+      "text": "CSV, XLSX, SVG, HTML imprimible y XLS HTML existen y se probaron por HTTP en el laboratorio de comparación. Falta su cierre GUI/formato/aceptación; PNG y la obligación de PDF nativo se tratan explícitamente, sin confundirlos con impresión HTML. Imprimible, SVG y XLS HTML tienen ahora propuesta del rack al primer abrir, adopcion explicita posterior y metadatos bajo demanda, probados/revisados en laboratorio. Pendientes/errores/transporte se conservan. Falta integrar y el resto de presentacion/formatos; no repetir esos controles desde cero.",
       "evidence": [
-        "docs/COMPARACION-OFFLINE-RC10-SERVIDOR.md"
+        "docs/COMPARACION-OFFLINE-RC10-SERVIDOR.md",
+        "docs/TANDA-INFORMES-CONTEXTO-30-10-2026.md",
+        "docs/REVISION-INFORMES-CONTEXTO-30-10-2026.md"
       ]
     },
     "W-02": {
-      "text": "New10 en C y postboot ya están acreditados parcialmente. No repetir esa instalación para producir otro recibo; falta la matriz y escenarios restantes, incluida recuperación final y Windows11 como host cuando se ofrezca.",
+      "text": "New11 en D limpio Windows Server2025/noDC, CRT/runtime/PG incluidos, cuenta estandar, servicio/HTTPS y postboot verificados tras reinicio de Wascar. W-02.01/.02 ya acreditados por10; faltan matriz de dependencias/hosts/rechazos. No reinstalar D ni duplicar credito.",
       "evidence": [
-        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md"
+        "evidence/s1-20261102/windows43/RESULTADOS.md",
+        "docs/INSTALADOR11-WINDOWS43.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ]
     },
     "W-03": {
-      "text": "Servicio estándar y arranque automático funcionaron en C. El resultado completo necesita sus negativos y comprobaciones finales de permisos/operación, sin tratarlo como servicio aún inexistente.",
+      "text": "D11 verificada: SCM Running/Auto, SID y cuenta estandar, HTTPS43 y postboot real; custodias e identidades separadas. Faltan negativos/ACL completos y fallos de parada/hijo, no construir otro servicio.",
       "evidence": [
-        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md"
+        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ]
     },
     "R-01": {
-      "text": "Ya hay copias nativas, programación y exportación operativa. Falta cerrar retención/fallos/restaurabilidad y facilitar su administración desde dashboard; no atribuir al botón web una existencia sólo operativa.",
+      "text": "Backup inicial, tarea programada tras postboot y backup posterior a Demo50 completados con resultado0 en D. Faltan retencion configurable, destinos/fallos y restaurabilidad; backup completo no demuestra recuperacion MFA portable.",
       "evidence": [
         "docs/COMPARACION-OFFLINE-RC10-SERVIDOR.md",
-        "evidence/s1-20261029/rc9-demo-original-codex/RESULTADOS.md"
+        "evidence/s1-20261029/rc9-demo-original-codex/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ]
     },
     "E-04": {
-      "text": "Existe manual autónomo10 con carpetas/comandos/formulario/credenciales/reinicio. Debe mantenerse y comprobarse con el paquete final y sus nuevas funciones, no volver a redactar toda la instalación desde cero.",
+      "text": "Manual11 con pasos00-07, acceso privado y guias D/cargador02 disponibles y usados en ensayo. Faltan manual completo del producto, idiomas/capturas y recorridos futuros de recuperacion/importacion/operacion; no empezar otro manual desde cero.",
       "evidence": [
-        "docs/PASOS-COMPLETOS-INSTALADOR10-WASCAR.md",
-        "evidence/s1-20261029/manual-autonomo10-codex/RESULTADOS.md"
+        "docs/INSTALADOR11-WINDOWS43.md",
+        "docs/INSTALADOR11-WINDOWS43.html",
+        "evidence/s1-20261102/windows43/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md",
+        "docs/VM11-D-PASOS-QA.md",
+        "docs/INSTALADOR14-SQL-PROTEGIDO.md"
       ]
     },
     "E-05": {
-      "text": "Los resultados de Wascar y la QA MFA comunicada se conservan. Dar casos pequeños por módulo/candidata; resultados antiguos de otra versión no se convierten en PASS nuevo ni se obliga a repetir lo no afectado.",
+      "text": "D11 y Demo50 estan disponibles. HojaQA11 de14casos,167casos totales, export/import y observaciones preservadas. Wascar expresa satisfaccion general, pero no sustituye resultados por caso/rol/version. Faltan cuentas diferenciadas y QA por modulos; no trasladar PASS historicos.",
       "evidence": [
-        "docs/QA-DATOS-ORIGINALES-MFA10-WASCAR.md",
-        "docs/QA-CASOS-WASCAR.json"
+        "docs/QA-CIERRE-CANDIDATA11.md",
+        "evidence/s1-20261102/qa-cierre11/RESULTADOS.md",
+        "docs/QA-CASOS-WASCAR.json",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "P-11": {
+      "text": "Racks/tarjetas primero, jerarquia y PoE plegables, accesos con foco y exportadores montados ya implementados y probados en laboratorio con datos originales. Revision independiente favorable; falta integrar candidata, QA y la matriz completa de accesibilidad/lector/contraste. No volver a implementar el reordenamiento.",
+      "evidence": [
+        "docs/TANDA-RACKS-PRIMERO-30-10-2026.md",
+        "docs/REVISION-RACKS-PRIMERO-30-10-2026.md"
+      ]
+    },
+    "E-06": {
+      "text": "Demo50 y prueba de diez actores/ambitos ya realizados en laboratorio con umbrales de humo previos. D11 carga50/2553comandos verificada en185.681s y backup posterior completo; MFA/TLS del cargador probado aparte en cuenta sintetica. Faltan carga extendida instalada, memoria/CPU/consultas/picos/recuperacion y aceptacion practica, no crear de nuevo la demo.",
+      "evidence": [
+        "docs/PLAN-LABORATORIO-50-CLIENTES.md",
+        "docs/LABORATORIO-50-CLIENTES.md",
+        "evidence/s1-20261102/demo50/RESULTADOS.md",
+        "evidence/s1-20261102/windows43/demo/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "P-03": {
+      "text": "Exportación JSON actual por cliente con recibo, permisos vigentes, SHA256 y descarga probada en desarrollo43. La intención incierta no persiste al desmontar; importación/merge/originalRC9/backupPG quedan pendientes. No cierre íntegro de P-03.",
+      "evidence": [
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md"
+      ]
+    },
+    "F-04": {
+      "text": "Proveedor, escritor, almacen y composicion productiva ya integrados. D11 usa el SID real del servicio; enrolamiento y verificacion TOTP por HTTPS/DPAPI funcionaron con QA-MFA11. Completar negativos de ACL/otros tokens y cierre del resultado; no recrear el proveedor.",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "F-08": {
+      "text": "Codigos propios y canje a reenrolamiento restringido implementados y revisados en desarrollo43, con revocacion transaccional y entrega unica. Faltan ultimo administrador, custodia operativa, canje en candidata instalada y conciliacion/acreditacion, no otro generador de codigos.",
+      "evidence": [
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md"
+      ]
+    },
+    "F-11": {
+      "text": "El coordinador actual ya gestiona login con desafío 202, enrolamiento, verificación TOTP y canje limitado de códigos. Panel y login MFA se probaron en navegador; D11 confirmó el proveedor Windows real y el flujo TOTP por HTTPS. Falta completar la reautenticación por familia de operación sensible y la persistencia de intenciones inciertas al navegar o recargar; no rehacer el login ni afirmar que la GUI carece de MFA.",
+      "evidence": [
+        "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "F-12": {
+      "text": "Candidata43 y D11 identificadas: servicio/HTTPS/DPAPI reales; TOTP del cargador corregido probado con cuenta sintetica y permiso global denegado. Completar matriz de seguridad/codigos/recuperacion/reauth; no anunciar ausencia de proveedor o deshabilitar lo ya probado por Wascar.",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "W-04": {
+      "text": "D11 tiene origen, CA y firewall limitados verificados; cargador y MFA usaron TLS normal. Faltan otro equipo cliente, cambio casa/trabajo de la candidata, renovacion/caducidad y recuperacion de certificados.",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "W-06": {
+      "text": "D11 contiene Demo50 creada por2553comandos API y contrastada por colecciones/UUID/conexiones. Faltan recorrido instalado con roles y segunda cuenta, reinicio posterior del conjunto y concurrencia/perdida de respuesta. No recrear clientes ni repetir carga.",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "R-04": {
+      "text": "Restore43->43 y15->43 en laboratorio nuevo conserva inventario/UUID y revoca sesiones. D11 New y su backup posterior funcionan. Falta recuperacion integral en otro Windows con MFA/SID/HTTPS/reinicio y RTO; no ensayarla sobre D conservada.",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md",
+        "evidence/s1-20261102/windows43/RESULTADOS.md"
+      ]
+    },
+    "R-06": {
+      "text": "Limpieza local de inventario D explicitamente autorizada y revisada: preview, dryrun, commit, auditoria y seguridad preservada. No equivale a reset completo de instancia, nueva base/roles ni emergencia MFA.",
+      "evidence": [
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "E-01": {
+      "text": "Candidata11/esquema43 identificada e instalada, mas cargador02 separado revisado. Falta integrar los pendientes restantes y ese parche en la futura entrega final unica; no reconstruir por cambios solo documentales ni tocar D.",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "F-01": {
+      "text": "F-01.01/.03 conservan su clasificación/registro técnico. F-01.02/.04 cerrados administrativamente por decisión expresa de Wascar03.11 y enmienda limitadav3: antecedente25.10 indeterminado y salida perdida, sin falso positivo, prueba de revocación ni cambios deD. Reabrir ambos y retirar5/4 si aparece evidencia concreta; no es higiene global ni aceptación de exposiciones futuras.",
+      "evidence": [
+        "docs/F01-RESOLUCION-ANTECEDENTE.md",
+        "evidence/s1-20261102/cierre-bloqueantes-01-07/f01/REVISION-RESOLUCION.md",
+        "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+        "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md",
+        "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
+      ]
+    },
+    "F-02": {
+      "text": "F-02.01–.04 cerrados: postboot13, Restore14-r2 desde backup sintético LEAO hacia E con cuenta/SID/roles/material nuevos,20clientes SQL/API,operadores/ficha/diagnóstico/backup reales y reanudación sin regeneración. Windows no se reinició tras Restore14; ese pendiente sigue en los criterios Windows, sin adopción global. D se conserva y F01 tiene disposición administrativa posterior03.11, separada del cierre técnico.",
+      "evidence": [
+        "docs/IMPLEMENTACION-REV4.md",
+        "docs/RECUPERACION-DESPLIEGUE-WINDOWS-S1.md",
+        "docs/REVISION-INSTALADOR14-06-CODEX.md",
+        "evidence/s1-20261102/f02-01-sql/RESULTADOS.md",
+        "evidence/s1-20261102/f02-01-sql/REVISION-INDEPENDIENTE.md",
+        "docs/CONTRATO-CONEXION-SQL-CIFRADA-v1.md",
+        "evidence/s1-20261102/f02-02-operadores/RESULTADOS.md",
+        "evidence/s1-20261102/f02-02-operadores/REVISION-INDEPENDIENTE.md",
+        "docs/OPERADORES-SQL-CIFRADOS-v2.md",
+        "evidence/s1-20261102/f02-03-restauracion/RESULTADOS.md",
+        "evidence/s1-20261102/f02-03-restauracion/REVISION-INDEPENDIENTE.md",
+        "docs/REANUDACION-RESTORE-SQL-PROTEGIDO.md",
+        "docs/SQL-PROTEGIDO-INSTANCIA3.md",
+        "docs/INSTALADOR12-SQL-PROTEGIDO.md",
+        "docs/CIERRE-BLOQUEANTES-PASOS-01-A-07.md",
+        "evidence/s1-20261102/cierre-bloqueantes-01-07/RESULTADOS.md",
+        "evidence/s1-20261102/vm12-e/RESULTADOS.md",
+        "evidence/s1-20261102/vm12-e/review/DICTAMEN-F02-01.md",
+        "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+        "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
+      ]
+    },
+    "C-HW-07": {
+      "text": "D45 ya contiene seis routers y diez repetidores alemanes, además de mejoras de soportes/nombres/tamaños:884revisiones/877modelos comerciales. Actualización nativa conservó43tablas yMFA; frontassetsHTTP contrastados. QA visual pendiente; esto no acredita losotros resultados ni una instalación limpia/Restore45.",
+      "evidence": [
+        "docs/CATALOGO-ALEMANIA-Y-RACKS-03-11-2026.md",
+        "docs/REPETIDORES-ALEMANIA-03-11-2026.md",
+        "evidence/s1-20261103/repetidores-alemania/RESULTADOS.md",
+        "docs/ACTUALIZACION-D45-03-11-2026.md"
       ]
     }
   },
@@ -108,8 +334,8 @@
       "related": [
         "I-04"
       ],
-      "source": "docs/OBSERVACIONES-DASHBOARD-WASCAR-29-10-2026.md",
-      "state": "pendiente_de_implementacion",
+      "source": "docs/TANDA-RACKS-PRIMERO-30-10-2026.md",
+      "state": "implementado_y_probado_en_laboratorio_pendiente_integracion_y_qa",
       "outcome": "Rack/frontal/trasera visibles al llegar; PoE y datos extensos desplegables sin ocultar errores o cambios pendientes."
     },
     {
@@ -131,8 +357,8 @@
       "related": [
         "P-11"
       ],
-      "source": "docs/REVISION-VIDEO-INTERFAZ-29-10-2026.md",
-      "state": "pendiente_de_presentacion",
+      "source": "docs/TANDA-INFORMES-CONTEXTO-30-10-2026.md",
+      "state": "contexto_y_metadatos_de_tres_exportadores_probados_pendiente_integracion_y_resto_de_formatos",
       "outcome": "Acciones agrupadas por rack/cliente; controles técnicos extensos bajo demanda; formato de cada descarga identificado correctamente."
     },
     {
@@ -141,11 +367,16 @@
       "owner": "E-05",
       "related": [
         "P-01",
-        "E-06"
+        "E-06",
+        "C-HW-05",
+        "I-03",
+        "I-05",
+        "I-06",
+        "R-04"
       ],
-      "source": "docs/QA-DATOS-ORIGINALES-MFA10-WASCAR.md",
-      "state": "carga_actual_hecha_facilidad_repetible_pendiente",
-      "outcome": "Mantener los10clientes originales en C y preparar carga opcional verificable para futuros laboratorios sin reemplazar cuentas ni MFA."
+      "source": "docs/LABORATORIO-50-CLIENTES.md",
+      "state": "demo50_cargada_y_verificada_D11_QA_visual_pendiente",
+      "outcome": "Demo50 y prueba de diez actores/ambitos ya realizados en laboratorio con umbrales de humo previos. D11 carga50/2553comandos verificada en185.681s y backup posterior completo; MFA/TLS del cargador probado aparte en cuenta sintetica. Faltan carga extendida instalada, memoria/CPU/consultas/picos/recuperacion y aceptacion practica, no crear de nuevo la demo."
     },
     {
       "id": "REQ-UX-05",
@@ -159,8 +390,8 @@
         "F-05"
       ],
       "source": "docs/PLAN-PARIDAD-RC10-SERVIDOR.md",
-      "state": "pendiente_de_integracion",
-      "outcome": "Separar intercambio JSON de copia PostgreSQL/secretos. Acceso administrativo, progreso, integridad, destino nuevo y recuperación MFA comprobada; no sobrescribir una base silenciosamente."
+      "state": "exportacion_JSON_actual_probada_importacion_y_backup_pendientes",
+      "outcome": "Separar intercambio JSON de copia PostgreSQL/secretos. Acceso administrativo, progreso, integridad, destino nuevo y recuperación MFA comprobada; no sobrescribir una base silenciosamente. Exportación actual RackClickInventory-v1 por cliente probada PG17.11/API/Edge,4MiB sin truncar, recibo/SHA256, sólo inventario. Importación/merge/originalRC9/backup PostgreSQL y Windows43 siguen pendientes; docs/PUNTO3-FUNCIONES-PENDIENTES.md."
     },
     {
       "id": "REQ-UX-06",
@@ -198,7 +429,7 @@
       ],
       "source": "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md",
       "state": "implementado_parcial_cierre_y_recuperacion_pendientes",
-      "outcome": "Conservar gracia45/exención global/avisos, control servidor y ausencia de secretos ajenos; cerrar recuperación, últimos administradores y reautenticación."
+      "outcome": "Enrolamiento/login/GUI y politica45 existentes; F-07.01-.04 acreditados. D11 tiene proveedor real y prueba HTTPS/DPAPI de cuenta sintetica. Falta cierre integral y escenarios pendientes; no crear otro login. Codigos de recuperacion del punto3 probados en desarrollo43, no canje nativo en D. Conservar politica45 y exencion global confirmadas; recuperacion/emergencia/rotacion y aceptacion pendientes."
     },
     {
       "id": "REQ-UX-09",
@@ -223,6 +454,74 @@
       "source": "docs/QA-CASOS-WASCAR.json",
       "state": "proceso_existente_mantener_por_candidata",
       "outcome": "Ubicación/botón/campo, resultado esperado, rol, disponibilidad y candidata; conservar Pass/NotPass/observaciones y exportación de Wascar."
+    },
+    {
+      "id": "REQ-HW-MOUNT-01",
+      "title": "Montaje explícito y físico antes de ampliar marcas",
+      "owner": "C-HW-02",
+      "related": [
+        "C-HW-04",
+        "C-HW-05",
+        "C-HW-06"
+      ],
+      "source": "Autorización Wascar30.10.2026",
+      "state": "contrato_y_catalogo43_integrados_D11_QA_pendiente",
+      "outcome": "Montajes y contratos probados por familias, incluidos en43 y Demo50 de D. Conservar IDs/puertos/cables. Faltan reservas explicitadas y aceptacion, no repetir bandeja/firewall desde cero."
+    },
+    {
+      "id": "REQ-HW-VISUAL-01",
+      "title": "Carcasa real para modelos principales y genérica para el resto",
+      "owner": "C-HW-04",
+      "related": [
+        "C-HW-01",
+        "C-HW-03",
+        "C-HW-05",
+        "C-HW-06"
+      ],
+      "source": "docs/CARCASAS-PRINCIPALES/README.md",
+      "state": "seleccion506_integrada_y_cargada_D11_QA_visual_pendiente",
+      "outcome": "506/506 seleccionados integrados con868revisiones/861comerciales; tecnica interactiva aprobada conservada. Demo50 disponible en D11; faltan aceptacion visual, reservas/fuentes y mantenimiento. Los dibujados no son fotografias redistribuidas ni todos los modelos del mercado."
+    },
+    {
+      "id": "REQ-CATALOGO-BUSQUEDA-01",
+      "title": "Selección compacta por búsqueda, sin lista larga en el rack",
+      "owner": "C-HW-04",
+      "related": [
+        "C-HW-03",
+        "C-HW-05",
+        "REQ-HW-VISUAL-01"
+      ],
+      "source": "Petición Wascar 01.11.2026; docs/SELECTOR-CATALOGO-COMPACTO.md",
+      "state": "selector868_integrado_D11_QA_pendiente",
+      "outcome": "Buscador compacto por marca/familia/modelo/SKU y alias sofos->Sophos ya integrado. Faltan QA de busqueda/teclado y excepciones de configuracion; no crear una lista larga ni volver a instalar perfiles."
+    },
+    {
+      "id": "REQ-DE-CPE-01",
+      "title": "Routers, repetidores y familias habituales de Alemania",
+      "owner": "C-HW-07",
+      "related": [
+        "C-HW-01",
+        "C-HW-03",
+        "C-HW-04",
+        "C-HW-05"
+      ],
+      "source": "Peticiones de Wascar del 03.11.2026; docs/CATALOGO-ALEMANIA-Y-RACKS-03-11-2026.md; docs/REPETIDORES-ALEMANIA-03-11-2026.md",
+      "state": "dieciseis_modelos_instalados_D45_QA_visual_pendiente",
+      "outcome": "Seis routers FRITZ!/DrayTek y diez repetidores FRITZ!,TP-Link,devolo,Telekom instalados enD45 mediante actualización revisada y continuaciones registradas. Servicio/HTTPS/backup45 verificados;datos/MFA conservados. Falta revisiónvisual deWascar y resto de sondeo; selección506/pesos intactos."
+    },
+    {
+      "id": "REQ-UX-RACK-02",
+      "title": "Proporciones, etiquetas y desplazamiento en soportes",
+      "owner": "P-11",
+      "related": [
+        "C-HW-04",
+        "REQ-HW-VISUAL-01",
+        "REQ-UX-01",
+        "REQ-CATALOGO-BUSQUEDA-01"
+      ],
+      "source": "EjemplosWascar03.11:TPLinkTL-SG108E,ZyxelXGS1250-12,ArubaJL693A; docs/CATALOGO-ALEMANIA-Y-RACKS-03-11-2026.md",
+      "state": "corregido_desarrollo_revision_visual_independiente_candidata_instalada_pendiente",
+      "outcome": "Mínimosporcara/objetivos24px,anchochildrelativoapadreconpisoUIacotado,ampliaciónconrelayout,captionsyrevisionesplegables,nombrescompletosconservados. Faltan aceptaciónvisualyactualizacióncompletaautorizadaenD. Laobservacióndebotonesoffline reutiliza302acciones;noduplicarplanes."
     }
   ],
   "catalogStream": [
@@ -235,38 +534,89 @@
     {
       "id": "C-HW-02",
       "title": "Contrato y normalización de catálogo de fabricantes",
-      "state": "pendiente",
-      "outcome": "Identidad/SKU/revisión, conectores, cara/geometría, montaje, módulos, puertos combo y mapeos rechazados explícitamente."
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/CONTRATO-HARDWARE-MONTAJE-v1.md",
+        "docs/TANDA-HARDWARE-MONTAJE-30-10-2026.md",
+        "docs/CONTRATO-REVISIONES-HARDWARE-v1.md",
+        "docs/CONTRATO-CATALOGO-FUENTE-UNICA-v1.md",
+        "docs/TANDA-CATALOGO-FUENTE-UNICA-30-10-2026.md",
+        "docs/CONTRATO-CATALOGO-SQL17.md",
+        "docs/TANDA-CATALOGO-SQL17-30-10-2026.md",
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
     },
     {
       "id": "C-HW-03",
       "title": "Selección y validación del primer catálogo curado",
-      "state": "propuesto_100_perfiles_no_implementado",
-      "outcome": "Propuesta100perfiles:12Sophos,16Fortinet,12PaloAlto,20Cisco,12Aruba,8Synology,8QNAP,6racks,6UPS/PDU; no es el total del mercado ni cantidad aprobada lista."
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
     },
     {
       "id": "C-HW-04",
       "title": "Selector por marca/familia/modelo y vistas físicas",
-      "state": "pendiente",
-      "outcome": "Reutilizar catálogo/favoritos/plantillas; frontal/trasera y puertos clicables con recursos propios o licencia comprobada."
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
     },
     {
       "id": "C-HW-05",
       "title": "Prueba por modelo y revisión independiente",
-      "state": "pendiente",
-      "outcome": "Comparar con manuales, crear instancias UUID distintas, conservar cables, recargar/otra sesión y probar negativos de ámbito/combo/modular."
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
     },
     {
       "id": "C-HW-06",
       "title": "Publicación y actualización del catálogo",
-      "state": "pendiente",
-      "outcome": "Versión/manifiesto/digest, compatibilidad y rollback sin alterar instancias existentes; incluir en candidata y guía QA."
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "docs/CANDIDATA-CONSOLIDADA43.md",
+        "evidence/s1-20261102/candidata43/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
     },
     {
       "id": "C-HW-07",
       "title": "Ampliación y mantenimiento de cobertura",
-      "state": "planificado_sin_censo_total_acreditado",
-      "outcome": "Ventana objetivo2018–2026 y equipos históricos instalados; fechas desconocidas nulas, nuevos modelos por el mismo proceso, búsqueda/rendimiento medidos."
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
     }
   ],
   "future": [
@@ -341,34 +691,53 @@
   ],
   "nextBatch": [
     {
-      "id": "SIG-01",
-      "title": "Racks primero e informes compactos",
+      "id": "SIG-DE-CPE-01",
+      "title": "Revisión visual de Alemania, repetidores y soportes antes del paso 9",
       "references": [
-        "REQ-UX-01",
-        "REQ-UX-03",
+        "C-HW-07",
         "P-11",
-        "P-07"
+        "REQ-DE-CPE-01",
+        "REQ-UX-RACK-02"
       ],
-      "output": "Cambio GUI acotado, prueba de navegador con datos originales, revisión distinta y guion QA."
+      "output": "Wascar revisa D45 con Ctrl+F5; usar perfiles del catálogo/sala y comprobar soportes sin repetir instalación ni Demo50. Registrar observaciones; retomar9/F-03.02 según priorización. Postboot45/instalación limpia/Restore45 mantienen su criterio propio."
     },
     {
-      "id": "SIG-02",
-      "title": "Contrato del catálogo por fabricante",
+      "id": "SIG-CIERRE-01",
+      "title": "Elegir un paso del inventario numerado de pendientes",
       "references": [
-        "C-HW-02"
+        "E-07",
+        "F-10",
+        "E-05"
       ],
-      "output": "Esquema/mapeos/variantes y selección inicial trazada; sin importar miles de YAML automáticamente."
+      "output": "Conciliar evidencia actual y criterios historicos; usar PLAN-PENDIENTES-NUMERADO.md sin cambiar pesos ni tocar D."
     },
     {
-      "id": "SIG-03",
-      "title": "Cerrar recuperación portable MFA de la instalación",
+      "id": "SIG-RECUPERACION-02",
+      "title": "Cerrar recuperacion MFA portable y local de forma integrada",
       "references": [
         "F-05",
         "F-06",
+        "F-08",
+        "F-09",
         "R-03",
         "R-04"
       ],
-      "output": "Recorrido técnico end-to-end reutilizando componentes existentes; revisar primero el corte seguro y las pruebas necesarias."
+      "output": "Reutilizar componentes revisados; pruebas en otro laboratorio cuando se elija ese paso, no en D."
+    },
+    {
+      "id": "SIG-JSON-03",
+      "title": "Importacion JSON normal con previsualizacion y original",
+      "references": [
+        "P-01",
+        "P-02",
+        "P-03",
+        "P-04",
+        "REQ-UX-05"
+      ],
+      "output": "Completar importacion/merge/round-trip sin confundir cargador fijo de demo con importador general."
     }
-  ]
+  ],
+  "currentSnapshot": {
+    "text": "D fue actualizada en sitio a aplicación45 el03.11.2026, conservando servicio/SID/DB/cuentas/MFA/certificados/URL. HTTPS ready45 y backup real posteriorPASS, Auto/Running. Inventario actual preservado:50clientes,180racks,1561equipos/objetos,20650puertos,2202conexiones;43tablas comparadas idénticas. Catálogo884revisiones/877comerciales, selección506 intacta. Datos previos manuales no se sustituyen por cifras históricas Demo50. Windows no reiniciado para postboot45; QA/login personal posterior y cierre restante pendientes. No volver a migrar o cargar Demo50."
+  }
 }

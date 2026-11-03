@@ -1,0 +1,584 @@
+{
+  "formatVersion": 1,
+  "revision": "german-repeaters-20261103-v1",
+  "models": [
+    {
+      "definition": {
+        "key": "tplink-re605x-eu",
+        "revision": "german-repeaters-20261103-v1",
+        "identity": {
+          "manufacturer": "TP-Link",
+          "family": "WiFi repeater EU",
+          "model": "RE605X EU",
+          "sku": "RE605X(EU)"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.tp-link.com/de/home-networking/range-extender/re605x/#specifications",
+          "assets": []
+        },
+        "kind": "wall",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 74,
+          "height": 124.8,
+          "depth": 46
+        },
+        "color": "#f5f4f1",
+        "slots": [],
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "LAN · 1 GbE",
+            "prefix": "LAN ",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "ac-plug",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "EU plug · 2 pins",
+            "prefix": "POWER ",
+            "powerRole": "inlet",
+            "physicalConnector": "eu-2pin-plug"
+          }
+        ],
+        "passthrough": null,
+        "mounting": {
+          "kind": "wall",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "RE605X(EU)",
+            "quantity": 1,
+            "description": "Unidad y alimentación nominal del modelo; sin montaje de rack ni adaptadores implícitos."
+          }
+        ],
+        "continuities": []
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 320,
+            "height": 350,
+            "plate": {
+              "x": 74.0,
+              "y": 20,
+              "w": 172,
+              "h": 264,
+              "fill": "#f5f4f1",
+              "stroke": "#92999e",
+              "radius": 24
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 19,
+                "y": 20,
+                "w": 22,
+                "h": 228,
+                "fill": "#e7e5df",
+                "radius": 10
+              },
+              {
+                "kind": "rect",
+                "x": 279,
+                "y": 20,
+                "w": 22,
+                "h": 228,
+                "fill": "#e7e5df",
+                "radius": 10
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 76,
+                "text": "TP-Link",
+                "size": 19,
+                "fill": "#40484d",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 103,
+                "text": "RE605X EU",
+                "size": 12,
+                "fill": "#40484d",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 160,
+                "cy": 130.88,
+                "r": 5,
+                "fill": "#2b9c68"
+              },
+              {
+                "kind": "rect",
+                "x": 143,
+                "y": 212.72,
+                "w": 34,
+                "h": 21,
+                "fill": "#e3e1dc",
+                "radius": 5
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 228.72,
+                "text": "+",
+                "size": 14,
+                "fill": "#40484d",
+                "anchor": "middle"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 320,
+            "height": 350,
+            "plate": {
+              "x": 74.0,
+              "y": 20,
+              "w": 172,
+              "h": 264,
+              "fill": "#f5f4f1",
+              "stroke": "#92999e",
+              "radius": 24
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 19,
+                "y": 20,
+                "w": 22,
+                "h": 228,
+                "fill": "#e7e5df",
+                "radius": 10
+              },
+              {
+                "kind": "rect",
+                "x": 279,
+                "y": 20,
+                "w": 22,
+                "h": 228,
+                "fill": "#e7e5df",
+                "radius": 10
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 52,
+                "text": "LAN / POWER",
+                "size": 12,
+                "fill": "#40484d",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 94.0,
+                "y": 72,
+                "w": 132,
+                "h": 2,
+                "fill": "#c1c3bf",
+                "radius": 0
+              },
+              {
+                "kind": "rect",
+                "x": 94.0,
+                "y": 81,
+                "w": 132,
+                "h": 2,
+                "fill": "#c1c3bf",
+                "radius": 0
+              },
+              {
+                "kind": "rect",
+                "x": 94.0,
+                "y": 90,
+                "w": 132,
+                "h": 2,
+                "fill": "#c1c3bf",
+                "radius": 0
+              },
+              {
+                "kind": "rect",
+                "x": 94.0,
+                "y": 99,
+                "w": 132,
+                "h": 2,
+                "fill": "#c1c3bf",
+                "radius": 0
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 144.0,
+                "text": "LAN · 1 GbE",
+                "size": 11,
+                "fill": "#40484d",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 210.0,
+                "text": "EU plug · 2 pins",
+                "size": 11,
+                "fill": "#40484d",
+                "anchor": "middle"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 138.5,
+                "y": 152,
+                "dx": 55,
+                "dy": 0,
+                "w": 43,
+                "h": 34,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "ac-plug",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 136.0,
+                "y": 218,
+                "dx": 60,
+                "dy": 0,
+                "w": 48,
+                "h": 34,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.tp-link.com/de/home-networking/range-extender/re605x/#specifications",
+            "kind": "manufacturer_web",
+            "observed": "Consulta primaria 03.11.2026; identidad, población y límites resumidos en referencia propia. Sin fotos redistribuidas."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": "development/hardware/german-repeaters/tplink-reference.md",
+            "sha256": "ff07ca1cf15d0bd4253603a080ab062b52152f07e1f1d46fda2746c4885cc2df",
+            "view": "front",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          },
+          {
+            "path": "development/hardware/german-repeaters/tplink-reference.md",
+            "sha256": "ff07ca1cf15d0bd4253603a080ab062b52152f07e1f1d46fda2746c4885cc2df",
+            "view": "rear",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          }
+        ],
+        "limits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mecánico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces automáticos.",
+          "Detalle trasero operativo agrupado: no afirma posición mecánica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja implícitos. Cotas nominales no certifican ventilación, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificación eléctrica. DC no certifica diámetro ni polaridad.",
+          "Ficha general EU alemana: revisión de hardware no acreditada, no se fuerza V1/V2/V3. Cotas RE605X no certifican volumen de antenas abiertas."
+        ],
+        "dimensionsBasis": "W/H/D nominales por SKU cuando constan. Devolo: tres cotas null por reserva de ejes, sin prueba de encaje."
+      }
+    },
+    {
+      "definition": {
+        "key": "tplink-re700x-eu",
+        "revision": "german-repeaters-20261103-v1",
+        "identity": {
+          "manufacturer": "TP-Link",
+          "family": "WiFi repeater EU",
+          "model": "RE700X EU",
+          "sku": "RE700X(EU)"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.tp-link.com/de/home-networking/range-extender/re700x/#specifications",
+          "assets": []
+        },
+        "kind": "wall",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 78,
+          "height": 149,
+          "depth": 36
+        },
+        "color": "#f5f4f1",
+        "slots": [],
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "LAN · 1 GbE",
+            "prefix": "LAN ",
+            "powerRole": "unspecified",
+            "interfaceRole": "ethernet"
+          },
+          {
+            "key": "ac-plug",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "EU plug · 2 pins",
+            "prefix": "POWER ",
+            "powerRole": "inlet",
+            "physicalConnector": "eu-2pin-plug"
+          }
+        ],
+        "passthrough": null,
+        "mounting": {
+          "kind": "wall",
+          "target": "room"
+        },
+        "configuration": [
+          {
+            "slot": "base",
+            "partNumber": "RE700X(EU)",
+            "quantity": 1,
+            "description": "Unidad y alimentación nominal del modelo; sin montaje de rack ni adaptadores implícitos."
+          }
+        ],
+        "continuities": []
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 320,
+            "height": 350,
+            "plate": {
+              "x": 76.0,
+              "y": 20,
+              "w": 168,
+              "h": 286,
+              "fill": "#f5f4f1",
+              "stroke": "#92999e",
+              "radius": 24
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 76,
+                "text": "TP-Link",
+                "size": 19,
+                "fill": "#40484d",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 103,
+                "text": "RE700X EU",
+                "size": 12,
+                "fill": "#40484d",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 160,
+                "cy": 140.12,
+                "r": 5,
+                "fill": "#2b9c68"
+              },
+              {
+                "kind": "rect",
+                "x": 143,
+                "y": 228.78,
+                "w": 34,
+                "h": 21,
+                "fill": "#e3e1dc",
+                "radius": 5
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 244.78,
+                "text": "+",
+                "size": 14,
+                "fill": "#40484d",
+                "anchor": "middle"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 320,
+            "height": 350,
+            "plate": {
+              "x": 76.0,
+              "y": 20,
+              "w": 168,
+              "h": 286,
+              "fill": "#f5f4f1",
+              "stroke": "#92999e",
+              "radius": 24
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 52,
+                "text": "LAN / POWER",
+                "size": 12,
+                "fill": "#40484d",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 96.0,
+                "y": 72,
+                "w": 128,
+                "h": 2,
+                "fill": "#c1c3bf",
+                "radius": 0
+              },
+              {
+                "kind": "rect",
+                "x": 96.0,
+                "y": 81,
+                "w": 128,
+                "h": 2,
+                "fill": "#c1c3bf",
+                "radius": 0
+              },
+              {
+                "kind": "rect",
+                "x": 96.0,
+                "y": 90,
+                "w": 128,
+                "h": 2,
+                "fill": "#c1c3bf",
+                "radius": 0
+              },
+              {
+                "kind": "rect",
+                "x": 96.0,
+                "y": 99,
+                "w": 128,
+                "h": 2,
+                "fill": "#c1c3bf",
+                "radius": 0
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 155.0,
+                "text": "LAN · 1 GbE",
+                "size": 11,
+                "fill": "#40484d",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 160,
+                "y": 221.0,
+                "text": "EU plug · 2 pins",
+                "size": 11,
+                "fill": "#40484d",
+                "anchor": "middle"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 138.5,
+                "y": 163,
+                "dx": 55,
+                "dy": 0,
+                "w": 43,
+                "h": 34,
+                "labels": {
+                  "1": "1"
+                }
+              },
+              {
+                "groupKey": "ac-plug",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 136.0,
+                "y": 229,
+                "dx": 60,
+                "dy": 0,
+                "w": 48,
+                "h": 34,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.tp-link.com/de/home-networking/range-extender/re700x/#specifications",
+            "kind": "manufacturer_web",
+            "observed": "Consulta primaria 03.11.2026; identidad, población y límites resumidos en referencia propia. Sin fotos redistribuidas."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": "development/hardware/german-repeaters/tplink-reference.md",
+            "sha256": "ff07ca1cf15d0bd4253603a080ab062b52152f07e1f1d46fda2746c4885cc2df",
+            "view": "front",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          },
+          {
+            "path": "development/hardware/german-repeaters/tplink-reference.md",
+            "sha256": "ff07ca1cf15d0bd4253603a080ab062b52152f07e1f1d46fda2746c4885cc2df",
+            "view": "rear",
+            "match": "own_observation_web_sources_not_a_manufacturer_photo"
+          }
+        ],
+        "limits": [
+          "Vector propio basado en ficha oficial: forma y color orientativos; no foto ni plano mecánico. Botones y LED son inertes.",
+          "Radios WLAN/Mesh no son bocas cableables y no generan continuidad ni enlaces automáticos.",
+          "Detalle trasero operativo agrupado: no afirma posición mecánica de tomas inferiores/laterales. Identidades de puertos independientes.",
+          "Equipo de sala sin U, rack ni bandeja implícitos. Cotas nominales no certifican ventilación, antenas, carga ni encaje.",
+          "Clavija EU de dos pines descriptiva; no es una hembra Schuko ni certificación eléctrica. DC no certifica diámetro ni polaridad.",
+          "Ficha general EU alemana: revisión de hardware no acreditada, no se fuerza V1/V2/V3. Cotas RE605X no certifican volumen de antenas abiertas."
+        ],
+        "dimensionsBasis": "W/H/D nominales por SKU cuando constan. Devolo: tres cotas null por reserva de ejes, sin prueba de encaje."
+      }
+    }
+  ]
+}

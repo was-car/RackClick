@@ -1,6 +1,7 @@
 import { useAdminSelectionGuard } from './AdminSectionNavigation.jsx';
 import { changeMfaAccount, mfaAccountChangeStatus, mfaAccountJournal, mfaChangeRequiresReauthentication, readMfaAccount } from './mfa-account.ts';
 import { mfaAccountError, mfaAccountNotice, mfaAccountWords } from './mfa-account-words.ts';
+import { MfaRecoveryCodesPanel } from './MfaRecoveryCodesPanel.jsx';
 const { useEffect, useRef, useState } = React;
 
 function noticeText(status, w) {
@@ -27,12 +28,13 @@ export function MfaAccountPanel({ api, session, targetUserId, lang = 'en', onRea
  const current = () => scopeRef.current === scope && scope.live && api.actorId === actor;
  const patch = values => { if (current()) setView(old => ({ ...(old.scope === scope ? old : emptyView(scope)), ...values, scope })); };
  const setFields = values => setForm(old => ({ ...(old.scope === scope ? old : { scope, action: null, password: '', ack: false }), ...values, scope }));
+ const [recoveryDirty,setRecoveryDirty]=useState(false);
  const busy = view.phase === 'working' || view.phase === 'loading';
  const pending = view.pending, effectiveAdmin = pending ? pending.scope === 'admin' : admin;
  const selected = pending?.userId || (admin ? targetUserId : actor);
  const effectiveAction = pending?.action || currentForm.action;
  const formId = 'rc-mfa-account-' + actor + '-' + (admin ? targetUserId || 'choose' : 'self');
- useAdminSelectionGuard('mfa', onSelectionGuard, busy || !view.ready || !!pending || !!currentForm.action || !!currentForm.password || currentForm.ack, requestLock);
+ useAdminSelectionGuard('mfa', onSelectionGuard, busy || recoveryDirty || !view.ready || !!pending || !!currentForm.action || !!currentForm.password || currentForm.ack, requestLock);
 
  async function loadStatus(draft = pending) {
   const sequence = ++readSequence.current;
@@ -130,7 +132,7 @@ export function MfaAccountPanel({ api, session, targetUserId, lang = 'en', onRea
   {view.error && <p className="rc-error" role="alert" data-mfa-account-error>{w[view.error] || w.error}</p>}
   {view.outcome && <p role="status" data-mfa-account-result={view.outcome}>{w[view.outcome]}</p>}
   {pending && <div className="ir-warning" data-mfa-account-pending><p>{w.pendingRequest}</p><p>{w.recoverTarget}: <strong>{pending.userId}</strong> · {w[pending.action]}</p><p>{w.requestId}: {pending.requestId}</p><button type="button" disabled={busy} data-mfa-account-check onClick={() => run('check')}>{w.check}</button></div>}
-  <div className="rc-inline-buttons"><button type="button" disabled={busy || !!pending} data-mfa-account-refresh onClick={() => view.ready ? loadStatus(null) : initialize()}>{w.refresh}</button>{!pending && ['enable', 'disable', 'reset'].map(action => <button type="button" data-mfa-action={action} key={action} disabled={busy || !view.ready || !view.status?.available || (effectiveAdmin && selected === actor) || !view.status?.['can' + action[0].toUpperCase() + action.slice(1)]} onClick={() => choose(action)}>{w[action]}</button>)}</div>
+  <div className="rc-inline-buttons"><button type="button" disabled={busy || recoveryDirty || !!pending} data-mfa-account-refresh onClick={() => view.ready ? loadStatus(null) : initialize()}>{w.refresh}</button>{!pending && ['enable', 'disable', 'reset'].map(action => <button type="button" data-mfa-action={action} key={action} disabled={busy || recoveryDirty || !view.ready || !view.status?.available || (effectiveAdmin && selected === actor) || !view.status?.['can' + action[0].toUpperCase() + action.slice(1)]} onClick={() => choose(action)}>{w[action]}</button>)}</div>
   {effectiveAction && <form className="rc-form" data-mfa-account-confirm onSubmit={event => { event.preventDefault(); run('save'); }}>
    <p>{w[effectiveAction + 'Help']}</p>
    {!effectiveAdmin && <label htmlFor={formId + '-password'}>{w.password}<input id={formId + '-password'} name="mfaAccountPassword" data-mfa-password type="password" autoComplete="current-password" maxLength={1024} required disabled={busy} value={currentForm.password} onChange={event => setFields({ password: event.target.value })}/></label>}
@@ -138,6 +140,7 @@ export function MfaAccountPanel({ api, session, targetUserId, lang = 'en', onRea
    <div className="rc-inline-buttons"><button type="submit" data-mfa-account-save disabled={busy || !currentForm.ack || (!pending && !view.status) || (effectiveAdmin && selected === actor) || (!effectiveAdmin && !currentForm.password)}>{pending ? w.retry : w.save}</button>{!pending && <button type="button" disabled={busy} onClick={() => setFields({ action: null, password: '', ack: false })}>{w.cancelForm}</button>}</div>
   </form>}
   {(pending || view.error === 'expired') && <p>{w.signInHelp} <button type="button" disabled={busy} data-mfa-account-reauthenticate onClick={() => onReauthenticate?.({ reason: 'mfa_recovery', userId: actor })}>{w.reauthenticate}</button></p>}
+  {!admin && view.status && !pending && !currentForm.action && <MfaRecoveryCodesPanel api={api} session={session} lang={lang} onDirtyChange={setRecoveryDirty} onReauthenticate={onReauthenticate}/>}
  </section>;
 }
 

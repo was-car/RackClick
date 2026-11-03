@@ -218,6 +218,9 @@ public sealed partial class InventoryStore
         var allDevices = All("devices").ToDictionary(d => SvgId(d));
         var devices = All("devices").Where(d => d.GetProperty("rackId").ValueKind != JsonValueKind.Null && SvgId(d, "rackId") == filter.RackId)
             .OrderBy(d => d.GetProperty("sortOrder").GetInt32()).ThenBy(d => SvgId(d).ToString("D"), StringComparer.Ordinal).ToArray();
+        // This passive SVG format predates nested mounting. Never silently flatten it.
+        if (devices.Any(d => d.TryGetProperty("mountParentId", out var parent) && parent.ValueKind != JsonValueKind.Null))
+            throw new DomainError(422, "report_mounting_unsupported");
         var deviceIds = devices.Select(d => SvgId(d)).ToHashSet();
         var groups = All("portGroups").Where(g => deviceIds.Contains(SvgId(g, "deviceId"))).ToArray();
         var allGroups = All("portGroups").ToDictionary(g => SvgId(g));
@@ -319,7 +322,9 @@ public sealed partial class InventoryStore
             {
                 Guid id = SvgId(p); bool shown = visible.TryGetValue(id, out var point);
                 Row("port", id); A("data-device-id", SvgId(p, "deviceId").ToString("D")); A("data-group-id", SvgId(p, "groupId").ToString("D")); A("data-visible", shown ? "true" : "false");
+                string? physicalConnector = ReadPhysicalConnector(allDevices[SvgId(p, "deviceId")], p);
                 Text("desc", Endpoint(id) + $"\nlabel:{SvgString(p, "label")} type:{SvgString(p, "type")} gn:{p.GetProperty("gn").GetInt32()} status:{SvgString(p, "status")} face:{SvgString(p, "face")} effectiveFace:{SvgFace(allDevices[SvgId(p, "deviceId")], p)} powerRole:{SvgString(p, "powerRole")} PoE:{p.GetProperty("poe").GetBoolean()} watts:{p.GetProperty("watts").GetRawText()} color:{p.GetProperty("color").GetRawText()}\n" +
+                    (physicalConnector is null ? "" : "physicalConnector:" + physicalConnector + "\nPhysical form classification only; cord ends, voltage and pinout unspecified.\n") +
                     (shown ? L("Visible port", "Sichtbarer Port", "Puerto visible") : L("Hidden on this face; same port UUID", "Auf dieser Seite verdeckt; gleiche Port-UUID", "Oculto en esta cara; mismo UUID de puerto")));
                 if (shown)
                 {
@@ -329,9 +334,11 @@ public sealed partial class InventoryStore
                     string color = SvgColor(p, "color", cable.ValueKind != JsonValueKind.Undefined ? SvgColor(cable, "color", "#08794e") : "#457b9d");
                     Label(x, y - 3, allGroups[SvgId(p, "groupId")].GetProperty("prefix").GetString() + p.GetProperty("gn").GetInt32(), 10, width: width);
                     Start("g"); A("transform", $"translate({N(x)} {N(y)}) scale({N(width / 40)})");
-                    string shape = type is "rj45" or "rj45_poe" or "mgmt" ? "M5 6H35V27H27V32H13V27H5Z" : type is "sfp" or "sfp28" or "qsfp" ? "M3 10H37V27H3Z M7 24H33 M10 27V31H30V27" :
-                        type == "usb_a" ? "M3 10H37V30H3Z M8 16H32" : type == "power" ? "M8 6H32L37 12V34H3V12Z" : type == "usb_c" ? "M11 12H29C40 12 40 28 29 28H11C0 28 0 12 11 12Z M10 20H30" : "M5 10H35L31 30H9Z";
+                    string shape = type is "rj45" or "rj45_poe" or "mgmt" ? "M5 6H35V27H27V32H13V27H5Z" : type is "sfp" or "sfp28" or "sfp56" or "qsfp" or "qsfpdd" ? "M3 10H37V27H3Z M7 24H33 M10 27V31H30V27" :
+                        type == "idc" ? "M3 6H37V34H3Z M5 12H35 M5 20H35 M5 28H35" : type == "usb_a" ? "M3 10H37V30H3Z M8 16H32" : type == "power" ? "M8 6H32L37 12V34H3V12Z" : type == "usb_c" ? "M11 12H29C40 12 40 28 29 28H11C0 28 0 12 11 12Z M10 20H30" : "M5 10H35L31 30H9Z";
                     Path(shape, "#d2dae2", color);
+                    if (type == "idc") Label(20, 26, "IDC", 8, "#152b3c", 36);
+                    if (type is "sfp56" or "qsfpdd") Label(20, 23, type == "sfp56" ? "56" : "DD", 8, "#152b3c", 36);
                     if (type is "rj45" or "rj45_poe" or "mgmt") for (int i = 0; i < 8; i++) Path($"M{N(8 + i * 3.2)} 7V15", "none", "#56687a");
                     if (type == "power") Path(role == "inlet" ? "M12 18V25 M28 18V25 M20 12V19" : role == "outlet" ? "M10 18H14V26H10Z M26 18H30V26H26Z M18 10H22V18H18Z" : "M12 20H28 M20 12V28", "none", "#56687a");
                     xml.WriteEndElement();

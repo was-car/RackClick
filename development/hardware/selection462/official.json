@@ -1,0 +1,1791 @@
+{
+  "formatVersion": 1,
+  "models": [
+    {
+      "selectionId": "sophos-xg-135",
+      "manufacturer": "Sophos",
+      "model": "XG 135",
+      "sku": null,
+      "dimensionsMm": {
+        "width": null,
+        "height": null,
+        "depth": null
+      },
+      "mounting": {
+        "kind": "desktop",
+        "rackUnits": null,
+        "capacityU": null
+      },
+      "documentedInterfaces": [
+        {
+          "label": "GbE copper",
+          "connector": "RJ45",
+          "count": 8,
+          "face": null,
+          "role": "ethernet",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF p1 title; p3, lower XG125(w)/135(w) diagram and footnote; p4 rack-mount paragraph; p5 Power Up the Device",
+          "speedsGbps": [
+            1
+          ],
+          "notes": [
+            "Port inventory applies to the grouped Rev.3 model; the illustrated rear is XG135w and is not an exact non-w rear elevation."
+          ]
+        },
+        {
+          "label": "GbE SFP",
+          "connector": "SFP",
+          "count": 1,
+          "face": null,
+          "role": "ethernet",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF p1 title; p3, lower XG125(w)/135(w) diagram and footnote; p4 rack-mount paragraph; p5 Power Up the Device",
+          "speedsGbps": [
+            1
+          ],
+          "notes": [
+            "Port inventory applies to the grouped Rev.3 model; the illustrated rear is XG135w and is not an exact non-w rear elevation."
+          ]
+        },
+        {
+          "label": "COM",
+          "connector": "RJ45",
+          "count": 1,
+          "face": null,
+          "role": "serial_console",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF p1 title; p3, lower XG125(w)/135(w) diagram and footnote; p4 rack-mount paragraph; p5 Power Up the Device",
+          "notes": [
+            "Port inventory applies to the grouped Rev.3 model; the illustrated rear is XG135w and is not an exact non-w rear elevation."
+          ]
+        },
+        {
+          "label": "USB 2.0",
+          "connector": "USB Type-A",
+          "count": 2,
+          "face": null,
+          "role": "usb",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF p1 title; p3, lower XG125(w)/135(w) diagram and footnote; p4 rack-mount paragraph; p5 Power Up the Device",
+          "notes": [
+            "Port inventory applies to the grouped Rev.3 model; the illustrated rear is XG135w and is not an exact non-w rear elevation."
+          ]
+        },
+        {
+          "label": "Micro USB",
+          "connector": "Micro-USB",
+          "count": 1,
+          "face": null,
+          "role": "serial_console",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF p1 title; p3, lower XG125(w)/135(w) diagram and footnote; p4 rack-mount paragraph; p5 Power Up the Device",
+          "notes": [
+            "Port inventory applies to the grouped Rev.3 model; the illustrated rear is XG135w and is not an exact non-w rear elevation."
+          ]
+        },
+        {
+          "label": "HDMI",
+          "connector": "HDMI",
+          "count": 1,
+          "face": null,
+          "role": "video",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF p1 title; p3, lower XG125(w)/135(w) diagram and footnote; p4 rack-mount paragraph; p5 Power Up the Device",
+          "notes": [
+            "Port inventory applies to the grouped Rev.3 model; the illustrated rear is XG135w and is not an exact non-w rear elevation."
+          ]
+        }
+      ],
+      "documentedPower": [
+        {
+          "kind": "external_adapter",
+          "installedCount": null,
+          "documentedAdapterSupplied": 1,
+          "availableDevicePowerConnectors": 2,
+          "secondAdapter": "optional_same_type",
+          "deviceConnector": null,
+          "face": "rear",
+          "voltageVdc": null,
+          "sourceRecord": 0,
+          "locator": "PDF p1 title; p3, lower XG125(w)/135(w) diagram and footnote; p4 rack-mount paragraph; p5 Power Up the Device"
+        }
+      ],
+      "sourceRecords": [
+        {
+          "url": "https://docs.sophos.com/nsg/hardware/quickstart/xg/sophos-quick-start-guide-xg-1xx%28w%29-rev3-xg-106%28w%29-rev1.pdf",
+          "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/baseline35/firewalls/documents/sophos-xg135.pdf",
+          "sha256": "182ae9d9a07c68dabf416d2851b6c26f44ca005ec9887472ac4add77bfef60d1",
+          "locator": "PDF p1 title; p3, lower XG125(w)/135(w) diagram and footnote; p4 rack-mount paragraph; p5 Power Up the Device",
+          "scope": "family",
+          "factPaths": [
+            "manufacturer",
+            "model",
+            "documentedInterfaces.0",
+            "documentedInterfaces.1",
+            "documentedInterfaces.2",
+            "documentedInterfaces.3",
+            "documentedInterfaces.4",
+            "documentedInterfaces.5",
+            "documentedPower.0",
+            "notes.0"
+          ]
+        },
+        {
+          "url": "https://docs.sophos.com/nsg/hardware/operatinginstructions/xg/sophos-operating-instructions-xg-105%28w%29-115%28w%29-125%28w%29-135%28w%29-rev3-106%28w%29-rev1-oina.pdf",
+          "path": ".local/selection462-official11-20261101/sophos-xg135-operating.pdf",
+          "sha256": "1cfca1ea8de2973b26db8beebaef469bb6a7b2ddc9b81cba53a2babfec73d864",
+          "locator": "PDF p2 Designed Use; p3 Operating Elements and Connections; p4 Mounting Instructions; p6 SFP Port; p7 Expansion Modules and Serial Console",
+          "scope": "family",
+          "factPaths": [
+            "mounting.kind",
+            "documentedInterfaces.1",
+            "documentedInterfaces.2",
+            "documentedInterfaces.4",
+            "notes.1",
+            "notes.2"
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "path": "sku",
+          "reason": "The selection and manuals identify the model/revision, not an orderable regional SKU."
+        },
+        {
+          "path": "dimensionsMm",
+          "reason": "Neither consulted Rev.3 quick-start nor operating instructions provides chassis width/height/depth; no dimensions are borrowed from a different revision."
+        },
+        {
+          "path": "mounting.rackUnits",
+          "reason": "Optional rack kit is documented; its occupied U is not specified in the consulted manuals."
+        },
+        {
+          "path": "documentedInterfaces.*.face",
+          "reason": "Exact XG135 non-w rear geometry is unavailable; grouped port inventory is not a verified exact rear face."
+        },
+        {
+          "path": "documentedPower.0.deviceConnector",
+          "reason": "Device DC socket dimensions, polarity and voltage are not specified in the consulted sources."
+        },
+        {
+          "path": "documentedPower.0.voltageVdc",
+          "reason": "No device-side voltage is stated in the consulted manuals; do not substitute the external adapter AC input voltage."
+        },
+        {
+          "path": "documentedPower.0.installedCount",
+          "reason": "The manual lists the supplied adapter and an optional second adapter, not an inspected installed configuration."
+        },
+        {
+          "path": "mounting.capacityU",
+          "reason": "Not a rack cabinet with documented internal U capacity; null is not zero."
+        },
+        {
+          "path": "PoE",
+          "reason": "No PoE power capability or budget is established by the consulted per-model sources; do not derive PoE from an Ethernet-shaped connector."
+        },
+        {
+          "path": "operationalTopology",
+          "reason": "No RackClick endpoints, peer membership, cable routes, internal pass-through circuits, live state or telemetry are created/validated by this documentary preparation."
+        }
+      ],
+      "notes": [
+        "Revision retained: XG135 Rev.3, without w. Quick-start PDF p3 explicitly identifies the rear photograph as XG135w; do not copy its antenna openings or optional fitted expansion module.",
+        "SFP transceivers and expansion modules are not delivered with the appliance. The shared-SFP warning applies to XG105/106/115, not to XG135; do not transfer that topology.",
+        "A stable horizontal surface is allowed; rack or wall mounting requires the optional kit. No occupied rack U is asserted.",
+        "Preparation only: this record does not declare a functional installed profile, verified face geometry, application integration or QA acceptance."
+      ]
+    },
+    {
+      "selectionId": "startech-cabshelf1u",
+      "manufacturer": "StarTech.com",
+      "model": "CABSHELF1U",
+      "sku": "CABSHELF1U",
+      "dimensionsMm": {
+        "width": 443,
+        "height": 45,
+        "depth": 178
+      },
+      "mounting": {
+        "kind": "shelf",
+        "rackUnits": 1,
+        "capacityU": null
+      },
+      "documentedInterfaces": [],
+      "documentedPower": [],
+      "sourceRecords": [
+        {
+          "url": "https://media.startech.com/cms/pdfs/cabshelf1u_datasheet.pdf",
+          "path": ".local/selection462-official11-20261101/cabshelf1u-datasheet.pdf",
+          "sha256": "dd408070ec2ef6e81f7593f6996c08a6abe5ca21f4d0b2438040651be96958db",
+          "locator": "PDF p1 Product ID / description; p2 Physical & Environmental, Performance and Hardware; p3 In-the-Box",
+          "scope": "exact",
+          "factPaths": [
+            "manufacturer",
+            "model",
+            "sku",
+            "dimensionsMm.width",
+            "dimensionsMm.height",
+            "dimensionsMm.depth",
+            "mounting.kind",
+            "mounting.rackUnits",
+            "notes.0",
+            "notes.1"
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "path": "documentedInterfaces",
+          "reason": "Passive shelf: the datasheet documents no data connectors. Empty list is not a measured zero-port claim."
+        },
+        {
+          "path": "documentedPower",
+          "reason": "The shelf datasheet documents no supplied electrical equipment or power connectors; no AC or PoE endpoints are synthesized."
+        },
+        {
+          "path": "mounting.capacityU",
+          "reason": "Not a rack cabinet with documented internal U capacity; null is not zero."
+        },
+        {
+          "path": "PoE",
+          "reason": "No PoE power capability or budget is established by the consulted per-model sources; do not derive PoE from an Ethernet-shaped connector."
+        },
+        {
+          "path": "operationalTopology",
+          "reason": "No RackClick endpoints, peer membership, cable routes, internal pass-through circuits, live state or telemetry are created/validated by this documentary preparation."
+        }
+      ],
+      "notes": [
+        "Manufacturer metric product figures are used: 443mm width, 178mm product length/depth and 45mm height. The nominal rack fit is 19in; do not replace product width with the rack nominal width.",
+        "Front-only fixed cantilever shelf, 15kg stationary capacity. Rack U occupied by the shelf is not a capacityU for a cabinet or a clearance allowance for equipment placed above it.",
+        "Preparation only: this record does not declare a functional installed profile, verified face geometry, application integration or QA acceptance."
+      ]
+    },
+    {
+      "selectionId": "eaton-5px1500irt2ug2",
+      "manufacturer": "Eaton",
+      "model": "5PX1500IRT2UG2",
+      "sku": "5PX1500IRT2UG2",
+      "dimensionsMm": {
+        "width": 438,
+        "height": 85.5,
+        "depth": 448
+      },
+      "mounting": {
+        "kind": "rackEquipment",
+        "rackUnits": 2,
+        "capacityU": null
+      },
+      "documentedInterfaces": [
+        {
+          "label": "USB HID",
+          "connector": "USB",
+          "count": 1,
+          "face": null,
+          "role": "ups_management",
+          "configuration": "documented",
+          "sourceRecord": 0,
+          "locator": "SKU page: product summary; Especificaciones generales / Información adicional; Comunicación; Entrada eléctrica; Salida eléctrica",
+          "notes": [
+            "SKU page documents the interface; exact connector geometry and face are not verified by the representative photographs."
+          ]
+        },
+        {
+          "label": "RS-232",
+          "connector": "serial",
+          "count": 1,
+          "face": null,
+          "role": "ups_management",
+          "configuration": "documented",
+          "sourceRecord": 0,
+          "locator": "SKU page: product summary; Especificaciones generales / Información adicional; Comunicación; Entrada eléctrica; Salida eléctrica",
+          "notes": [
+            "SKU page documents the interface; exact connector geometry and face are not verified by the representative photographs."
+          ]
+        },
+        {
+          "label": "Remote On/Off and Emergency Stop",
+          "connector": "mini_terminal_block",
+          "count": null,
+          "face": null,
+          "role": "remote_control",
+          "configuration": "documented",
+          "sourceRecord": 0,
+          "locator": "SKU page: product summary; Especificaciones generales / Información adicional; Comunicación; Entrada eléctrica; Salida eléctrica",
+          "notes": [
+            "SKU page documents the interface; exact connector geometry and face are not verified by the representative photographs."
+          ]
+        },
+        {
+          "label": "Output relay",
+          "connector": "mini_terminal_block",
+          "count": null,
+          "face": null,
+          "role": "dry_contact",
+          "configuration": "documented",
+          "sourceRecord": 0,
+          "locator": "SKU page: product summary; Especificaciones generales / Información adicional; Comunicación; Entrada eléctrica; Salida eléctrica",
+          "notes": [
+            "SKU page documents the interface; exact connector geometry and face are not verified by the representative photographs."
+          ]
+        },
+        {
+          "label": "Dry contacts",
+          "connector": "DB9",
+          "count": null,
+          "face": null,
+          "role": "dry_contact",
+          "configuration": "documented",
+          "sourceRecord": 0,
+          "locator": "SKU page: product summary; Especificaciones generales / Información adicional; Comunicación; Entrada eléctrica; Salida eléctrica",
+          "notes": [
+            "SKU page documents the interface; exact connector geometry and face are not verified by the representative photographs."
+          ]
+        },
+        {
+          "label": "Optional communication-card slot",
+          "connector": null,
+          "count": 1,
+          "face": null,
+          "role": "expansion_slot",
+          "configuration": "optional_slot_not_populated",
+          "sourceRecord": 0,
+          "locator": "SKU page: product summary; Especificaciones generales / Información adicional; Comunicación; Entrada eléctrica; Salida eléctrica",
+          "notes": [
+            "SKU page documents the interface; exact connector geometry and face are not verified by the representative photographs."
+          ]
+        }
+      ],
+      "documentedPower": [
+        {
+          "kind": "AC_input",
+          "connector": "IEC C14",
+          "count": 1,
+          "face": null,
+          "nominalVoltageVac": 230,
+          "nominalFrequencyHz": [
+            50,
+            60
+          ],
+          "inputVoltageOptionsVac": [
+            200,
+            208,
+            220,
+            230,
+            240
+          ],
+          "sourceRecord": 0,
+          "locator": "SKU page: product summary; Especificaciones generales / Información adicional; Comunicación; Entrada eléctrica; Salida eléctrica"
+        },
+        {
+          "kind": "AC_output",
+          "connector": "IEC C13",
+          "count": 8,
+          "face": null,
+          "nominalVoltageVac": 230,
+          "capacityVa": 1500,
+          "powerWatts": 1500,
+          "topology": "line_interactive",
+          "sourceRecord": 0,
+          "locator": "SKU page: product summary; Especificaciones generales / Información adicional; Comunicación; Entrada eléctrica; Salida eléctrica"
+        }
+      ],
+      "sourceRecords": [
+        {
+          "url": "https://www.eaton.com/es/es-es/skuPage.5PX1500IRT2UG2.html",
+          "path": null,
+          "sha256": null,
+          "locator": "SKU page: product summary; Especificaciones generales / Información adicional; Comunicación; Entrada eléctrica; Salida eléctrica",
+          "scope": "exact",
+          "factPaths": [
+            "manufacturer",
+            "model",
+            "sku",
+            "dimensionsMm.width",
+            "dimensionsMm.height",
+            "dimensionsMm.depth",
+            "mounting.kind",
+            "mounting.rackUnits",
+            "documentedInterfaces.0",
+            "documentedInterfaces.1",
+            "documentedInterfaces.2",
+            "documentedInterfaces.3",
+            "documentedInterfaces.4",
+            "documentedInterfaces.5",
+            "documentedPower.0",
+            "documentedPower.1",
+            "notes.0",
+            "notes.1",
+            "notes.2"
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "path": "sourceRecords.0.path",
+          "reason": "Official page read through browser/web retrieval; local Invoke-WebRequest timed out after 25s. No original HTML snapshot or hash is asserted."
+        },
+        {
+          "path": "documentedInterfaces.*.face",
+          "reason": "The representative photographs do not verify exact face assignment or geometry for this SKU."
+        },
+        {
+          "path": "documentedInterfaces.0.connector",
+          "reason": "USB physical subtype is not specified in the exact SKU text consulted."
+        },
+        {
+          "path": "documentedInterfaces.1.connector",
+          "reason": "RS-232 physical connector subtype is not specified by the selected communication line; do not equate it with Ethernet."
+        },
+        {
+          "path": "documentedInterfaces.5.connector",
+          "reason": "The communication-card slot has no selected/fitted card; no connector type is assigned to an empty optional slot."
+        },
+        {
+          "path": "documentedInterfaces.2.count",
+          "reason": "SKU communication text lists this block/function but does not state a count of physical connectors; contact channel count is not a socket count."
+        },
+        {
+          "path": "documentedInterfaces.3.count",
+          "reason": "SKU communication text lists this block/function but does not state a count of physical connectors; contact channel count is not a socket count."
+        },
+        {
+          "path": "documentedInterfaces.4.count",
+          "reason": "SKU communication text lists this block/function but does not state a count of physical connectors; contact channel count is not a socket count."
+        },
+        {
+          "path": "documentedPower.*.face",
+          "reason": "Electrical counts are textual SKU facts; exact face placement is not established by the representative photographs."
+        },
+        {
+          "path": "mounting.capacityU",
+          "reason": "Not a rack cabinet with documented internal U capacity; null is not zero."
+        },
+        {
+          "path": "PoE",
+          "reason": "No PoE power capability or budget is established by the consulted per-model sources; do not derive PoE from an Ethernet-shaped connector."
+        },
+        {
+          "path": "operationalTopology",
+          "reason": "No RackClick endpoints, peer membership, cable routes, internal pass-through circuits, live state or telemetry are created/validated by this documentary preparation."
+        }
+      ],
+      "notes": [
+        "The exact SKU page states no network card is included; the communication card is optional. Do not create Ethernet ports from the expansion slot.",
+        "Eaton specifies rack/tower installation with a rack kit and tower supports. The normalized kind rackEquipment records the documented2U rack option without declaring the tower option installed.",
+        "Manufacturer explicitly calls the photos representative. Dimensions and electrical facts are sourced from the exact SKU text; photographs do not establish an exact face.",
+        "Preparation only: this record does not declare a functional installed profile, verified face geometry, application integration or QA acceptance."
+      ]
+    },
+    {
+      "selectionId": "palo-alto-pa-5445",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-5445",
+      "sku": null,
+      "dimensionsMm": {
+        "width": 440.4,
+        "height": 87.4,
+        "depth": 571.5
+      },
+      "mounting": {
+        "kind": "rackEquipment",
+        "rackUnits": 2,
+        "capacityU": null
+      },
+      "documentedInterfaces": [
+        {
+          "label": "Ethernet 1-8",
+          "connector": "RJ45",
+          "count": 8,
+          "face": "front",
+          "role": "ethernet",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5400 Series Front Panel: table items1-10; applies to PA5410/5420/5430/5440/5445",
+          "speedsGbps": [
+            0.01,
+            0.1,
+            1,
+            2.5,
+            5,
+            10
+          ]
+        },
+        {
+          "label": "9-20",
+          "connector": "SFP/SFP+",
+          "count": 12,
+          "face": "front",
+          "role": "ethernet",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5400 Series Front Panel: table items1-10; applies to PA5410/5420/5430/5440/5445",
+          "speedsGbps": [
+            1,
+            10
+          ]
+        },
+        {
+          "label": "21-24",
+          "connector": "SFP28",
+          "count": 4,
+          "face": "front",
+          "role": "ethernet",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5400 Series Front Panel: table items1-10; applies to PA5410/5420/5430/5440/5445",
+          "speedsGbps": [
+            1,
+            10,
+            25
+          ]
+        },
+        {
+          "label": "41-44 (25-40 breakout logical interfaces)",
+          "connector": "QSFP+/QSFP28",
+          "count": 4,
+          "face": "front",
+          "role": "ethernet",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5400 Series Front Panel: table items1-10; applies to PA5410/5420/5430/5440/5445",
+          "speedsGbps": [
+            40,
+            100
+          ]
+        },
+        {
+          "label": "HSCI",
+          "connector": "QSFP+",
+          "count": 1,
+          "face": "front",
+          "role": "ha_data_interconnect",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5400 Series Front Panel: table items1-10; applies to PA5410/5420/5430/5440/5445",
+          "speedsGbps": [
+            40
+          ]
+        },
+        {
+          "label": "HA1-A/HA1-B",
+          "connector": "SFP+",
+          "count": 2,
+          "face": "front",
+          "role": "ha_control",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5400 Series Front Panel: table items1-10; applies to PA5410/5420/5430/5440/5445",
+          "speedsGbps": [
+            1,
+            10
+          ]
+        },
+        {
+          "label": "MGT",
+          "connector": "SFP+",
+          "count": 1,
+          "face": "front",
+          "role": "management",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5400 Series Front Panel: table items1-10; applies to PA5410/5420/5430/5440/5445",
+          "speedsGbps": [
+            1,
+            10
+          ]
+        },
+        {
+          "label": "CONSOLE",
+          "connector": "RJ45",
+          "count": 1,
+          "face": "front",
+          "role": "serial_console",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5400 Series Front Panel: table items1-10; applies to PA5410/5420/5430/5440/5445"
+        },
+        {
+          "label": "USB",
+          "connector": "USB",
+          "count": 1,
+          "face": "front",
+          "role": "bootstrap",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5400 Series Front Panel: table items1-10; applies to PA5410/5420/5430/5440/5445"
+        },
+        {
+          "label": "CONSOLE Micro USB",
+          "connector": "Micro-USB",
+          "count": 1,
+          "face": "front",
+          "role": "serial_console",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5400 Series Front Panel: table items1-10; applies to PA5410/5420/5430/5440/5445"
+        }
+      ],
+      "documentedPower": [
+        {
+          "kind": "PSU_configuration",
+          "alternatives": [
+            "AC",
+            "DC"
+          ],
+          "availableSupplyPositions": 2,
+          "minimumSupplies": 1,
+          "installedCount": null,
+          "face": "rear",
+          "acInletConnector": "IEC C14",
+          "dcInletConnector": null,
+          "sourceRecord": 2,
+          "locator": "PA-5400 Series Back Panel: introduction includes PA-5445; items1 and3 PWR1/PWR2"
+        }
+      ],
+      "sourceRecords": [
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-5400-hardware-reference/pa-5400-series-firewall-specifications/pa-5400-series-firewall-physical-specifications",
+          "path": ".local/selection462-official11-20261101/pa5400-physical.html",
+          "sha256": "92db5428cb646e96b7e04e32fbe28b9e13781a5f8c886141c5c83d0066002bf0",
+          "locator": "PA-5400 Series Firewall Physical Specifications: Height, Depth, Width, Rack mount size; rows explicitly listing PA-5445",
+          "scope": "exact",
+          "factPaths": [
+            "manufacturer",
+            "model",
+            "dimensionsMm.width",
+            "dimensionsMm.height",
+            "dimensionsMm.depth",
+            "mounting.kind",
+            "mounting.rackUnits"
+          ]
+        },
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-5400-hardware-reference/pa-5400-series-firewall-overview/pa-5400-series-front-and-back-panel-descriptions/pa-5400-series-front-panel",
+          "path": ".local/selection462-official11-20261101/pa5400-front.html",
+          "sha256": "6e2471e43f95ec7744e354e39cbe46060962f095587d1515ef692cd8d78fe29c",
+          "locator": "PA-5400 Series Front Panel: table items1-10; applies to PA5410/5420/5430/5440/5445",
+          "scope": "family",
+          "factPaths": [
+            "documentedInterfaces.0",
+            "documentedInterfaces.1",
+            "documentedInterfaces.2",
+            "documentedInterfaces.3",
+            "documentedInterfaces.4",
+            "documentedInterfaces.5",
+            "documentedInterfaces.6",
+            "documentedInterfaces.7",
+            "documentedInterfaces.8",
+            "documentedInterfaces.9",
+            "notes.0",
+            "notes.1"
+          ]
+        },
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-5400-hardware-reference/pa-5400-series-firewall-overview/pa-5400-series-front-and-back-panel-descriptions/pa-5400-series-back-panel",
+          "path": ".local/selection462-official11-20261101/pa5400-back.html",
+          "sha256": "e3bd6d1f5cc4ff77552803f06578cc62e99570ee059626dfa7528bbb2392db5b",
+          "locator": "PA-5400 Series Back Panel: introduction includes PA-5445; items1 and3 PWR1/PWR2",
+          "scope": "exact",
+          "factPaths": [
+            "documentedPower.0"
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "path": "sku",
+          "reason": "Orderable AC/DC bundle is unspecified; PA-5445 is the selected model only."
+        },
+        {
+          "path": "documentedPower.0.installedCount",
+          "reason": "The model supports AC/DC supply configurations; the selected reference does not identify an installed PSU set."
+        },
+        {
+          "path": "documentedPower.0.dcInletConnector",
+          "reason": "The consulted back-panel text describes AC inlet type only; no DC connector type is inferred."
+        },
+        {
+          "path": "exactFaceGeometry",
+          "reason": "The hardware-reference front is shared with four other models; no measured exact PA-5445 face or connector coordinates are prepared."
+        },
+        {
+          "path": "mounting.capacityU",
+          "reason": "Not a rack cabinet with documented internal U capacity; null is not zero."
+        },
+        {
+          "path": "PoE",
+          "reason": "No PoE power capability or budget is established by the consulted per-model sources; do not derive PoE from an Ethernet-shaped connector."
+        },
+        {
+          "path": "operationalTopology",
+          "reason": "No RackClick endpoints, peer membership, cable routes, internal pass-through circuits, live state or telemetry are created/validated by this documentary preparation."
+        }
+      ],
+      "notes": [
+        "The four QSFP28 physical cages can break out into sixteen logical interfaces. Port labels25-44 do not imply twenty physical QSFP or SFP connectors.",
+        "HSCI is a direct HA interconnect; RJ45 CONSOLE is serial. No state, telemetry or PoE is inferred from connector appearance.",
+        "Preparation only: this record does not declare a functional installed profile, verified face geometry, application integration or QA acceptance."
+      ]
+    },
+    {
+      "selectionId": "palo-alto-pa-5450",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-5450",
+      "sku": null,
+      "dimensionsMm": {
+        "width": 442,
+        "height": 222.3,
+        "depth": 762
+      },
+      "mounting": {
+        "kind": "rackEquipment",
+        "rackUnits": 5,
+        "capacityU": null
+      },
+      "documentedInterfaces": [
+        {
+          "label": "MPC-A USB",
+          "connector": "USB",
+          "count": 1,
+          "face": "front",
+          "role": "bootstrap",
+          "configuration": "documented_MPC-A_module_not_an_installed_module_inventory",
+          "sourceRecord": 2,
+          "locator": "PA-5400 MPC-A Component Descriptions: items3-8; applies only if MPC-A configuration is selected"
+        },
+        {
+          "label": "MPC-A RJ45 CONSOLE",
+          "connector": "RJ45",
+          "count": 1,
+          "face": "front",
+          "role": "serial_console",
+          "configuration": "documented_MPC-A_module_not_an_installed_module_inventory",
+          "sourceRecord": 2,
+          "locator": "PA-5400 MPC-A Component Descriptions: items3-8; applies only if MPC-A configuration is selected"
+        },
+        {
+          "label": "MPC-A Micro USB CONSOLE",
+          "connector": "Micro-USB",
+          "count": 1,
+          "face": "front",
+          "role": "serial_console",
+          "configuration": "documented_MPC-A_module_not_an_installed_module_inventory",
+          "sourceRecord": 2,
+          "locator": "PA-5400 MPC-A Component Descriptions: items3-8; applies only if MPC-A configuration is selected"
+        },
+        {
+          "label": "MPC-A HSCI-A/HSCI-B",
+          "connector": "QSFP+/QSFP28",
+          "count": 2,
+          "face": "front",
+          "role": "ha_data_interconnect",
+          "configuration": "documented_MPC-A_module_not_an_installed_module_inventory",
+          "sourceRecord": 2,
+          "locator": "PA-5400 MPC-A Component Descriptions: items3-8; applies only if MPC-A configuration is selected"
+        },
+        {
+          "label": "MPC-A LOG1/LOG2",
+          "connector": "SFP/SFP+",
+          "count": 2,
+          "face": "front",
+          "role": "logging",
+          "configuration": "documented_MPC-A_module_not_an_installed_module_inventory",
+          "sourceRecord": 2,
+          "locator": "PA-5400 MPC-A Component Descriptions: items3-8; applies only if MPC-A configuration is selected",
+          "speedsGbps": [
+            1,
+            10
+          ]
+        },
+        {
+          "label": "MPC-A MGTA/MGTB",
+          "connector": "SFP/SFP+",
+          "count": 2,
+          "face": "front",
+          "role": "management",
+          "configuration": "documented_MPC-A_module_not_an_installed_module_inventory",
+          "sourceRecord": 2,
+          "locator": "PA-5400 MPC-A Component Descriptions: items3-8; applies only if MPC-A configuration is selected",
+          "speedsGbps": [
+            1,
+            10
+          ]
+        },
+        {
+          "label": "MPC-A HA1A/HA1B",
+          "connector": "SFP/SFP+",
+          "count": 2,
+          "face": "front",
+          "role": "ha_control",
+          "configuration": "documented_MPC-A_module_not_an_installed_module_inventory",
+          "sourceRecord": 2,
+          "locator": "PA-5400 MPC-A Component Descriptions: items3-8; applies only if MPC-A configuration is selected",
+          "speedsGbps": [
+            1,
+            10
+          ]
+        }
+      ],
+      "documentedPower": [
+        {
+          "kind": "PSU_configuration",
+          "alternatives": [
+            "AC",
+            "DC"
+          ],
+          "availableSupplyPositions": 4,
+          "minimumSupplies": 2,
+          "installedCount": null,
+          "face": "rear",
+          "acCordDeviceEnd": "IEC C19",
+          "deviceInletConnector": null,
+          "sourceRecord": 3,
+          "locator": "PA-5450 Back Panel: item4 Power Supplies; illustrated two AC supplies are an example"
+        }
+      ],
+      "sourceRecords": [
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-5400-hardware-reference/pa-5400-series-firewall-specifications/pa-5400-series-firewall-physical-specifications",
+          "path": ".local/selection462-official11-20261101/pa5400-physical.html",
+          "sha256": "92db5428cb646e96b7e04e32fbe28b9e13781a5f8c886141c5c83d0066002bf0",
+          "locator": "PA-5400 Series Firewall Physical Specifications: PA-5450 rows Height/Depth/Width/Rack mount size",
+          "scope": "exact",
+          "factPaths": [
+            "manufacturer",
+            "model",
+            "dimensionsMm.width",
+            "dimensionsMm.height",
+            "dimensionsMm.depth",
+            "mounting.kind",
+            "mounting.rackUnits",
+            "documentedPower.0.availableSupplyPositions",
+            "notes.2"
+          ]
+        },
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-5400-hardware-reference/pa-5400-series-firewall-overview/pa-5450-front-and-back-panel-descriptions/pa-5450-front-panel",
+          "path": ".local/selection462-official11-20261101/pa5450-front.html",
+          "sha256": "b34fa2c4417956e1ed46a5f746674fa34d44c30cc404549f49ce121b64cc5ddd",
+          "locator": "PA-5450 Front Panel: items1 Networking Cards,2 DPCs,3 Blank Panel,4 mandatory MPC slot7,5 flange",
+          "scope": "exact",
+          "factPaths": [
+            "notes.0"
+          ]
+        },
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-5400-hardware-reference/pa-5400-series-module-and-interface-card-information/pa-5400-series-firewall-management-processor-card-mpc/pa-5400-mpc-a/pa-5400-mpc-a-component-descriptions",
+          "path": ".local/selection462-official11-20261101/pa5400-mpc.html",
+          "sha256": "37dea2a27c7f80e68d5b5b4a3df19ac6d6ac9de37bccad0e46ddcd659e12f821",
+          "locator": "PA-5400 MPC-A Component Descriptions: items3-8; applies only if MPC-A configuration is selected",
+          "scope": "exact",
+          "factPaths": [
+            "documentedInterfaces.0",
+            "documentedInterfaces.1",
+            "documentedInterfaces.2",
+            "documentedInterfaces.3",
+            "documentedInterfaces.4",
+            "documentedInterfaces.5",
+            "documentedInterfaces.6",
+            "notes.1"
+          ]
+        },
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-5400-hardware-reference/pa-5400-series-firewall-overview/pa-5450-front-and-back-panel-descriptions/pa-5450-back-panel",
+          "path": ".local/selection462-official11-20261101/pa5450-back.html",
+          "sha256": "6bbc3be07a0d5c2104103996966365efe9f172035e6757fd24234075b13024f4",
+          "locator": "PA-5450 Back Panel: item4 Power Supplies; illustrated two AC supplies are an example",
+          "scope": "exact",
+          "factPaths": [
+            "documentedPower.0.kind",
+            "documentedPower.0.alternatives",
+            "documentedPower.0.minimumSupplies",
+            "documentedPower.0.installedCount",
+            "documentedPower.0.face",
+            "documentedPower.0.acCordDeviceEnd",
+            "documentedPower.0.deviceInletConnector"
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "path": "sku",
+          "reason": "AC/DC bundle, NC and MPC revision/configuration are not selected by the model identity."
+        },
+        {
+          "path": "installedDataplaneInterfaces",
+          "reason": "NC type, NC quantity and fitted optics are unknown. No ports are copied from the press-kit equipped image."
+        },
+        {
+          "path": "exactFaceGeometry",
+          "reason": "Exact installed modules and their coordinates are not verified."
+        },
+        {
+          "path": "documentedPower.0.installedCount",
+          "reason": "Four available supply positions do not establish four fitted supplies."
+        },
+        {
+          "path": "documentedPower.0.deviceInletConnector",
+          "reason": "The source specifies a C19 cable connector, not an inlet designation; no mating connector is inferred."
+        },
+        {
+          "path": "mounting.capacityU",
+          "reason": "Not a rack cabinet with documented internal U capacity; null is not zero."
+        },
+        {
+          "path": "PoE",
+          "reason": "No PoE power capability or budget is established by the consulted per-model sources; do not derive PoE from an Ethernet-shaped connector."
+        },
+        {
+          "path": "operationalTopology",
+          "reason": "No RackClick endpoints, peer membership, cable routes, internal pass-through circuits, live state or telemetry are created/validated by this documentary preparation."
+        }
+      ],
+      "notes": [
+        "Modular chassis: mandatory NC in slot1; optional second NC in slot2. One NC permits up to five DPCs in slots2-6; two NCs permit four DPCs. Mandatory MPC occupies slot7. No NC dataplane port inventory is instantiated.",
+        "MPC-A interfaces are documented module possibilities, not a claim of an installed MPC-A or installed transceivers. HSCI-A/B form one software HA interface and must be directly connected; do not model this as routed Ethernet.",
+        "Physical-specification table lists four AC/DC supply positions; rear-panel text requires at least two and shows two AC supplies only as an example. The installed count remains unknown.",
+        "Preparation only: this record does not declare a functional installed profile, verified face geometry, application integration or QA acceptance."
+      ]
+    },
+    {
+      "selectionId": "palo-alto-pa-7050",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-7050",
+      "sku": null,
+      "dimensionsMm": {
+        "width": 444.5,
+        "height": 400,
+        "depth": 603.2
+      },
+      "mounting": {
+        "kind": "rackEquipment",
+        "rackUnits": 9,
+        "capacityU": null
+      },
+      "documentedInterfaces": [],
+      "documentedPower": [
+        {
+          "kind": "PSU_configuration",
+          "alternatives": [
+            "AC",
+            "DC"
+          ],
+          "documentedSupplyCount": 4,
+          "installedCount": null,
+          "psuFace": "front",
+          "sourceRecord": 0,
+          "locator": "PA-7000 Series Firewall Physical Specifications: PA-7050 Height, Depth, Width, Rack mount size, Power supply configurations"
+        },
+        {
+          "kind": "AC_configuration_only",
+          "count": 4,
+          "currentA": 20,
+          "face": "rear",
+          "connector": null,
+          "installedVariant": null,
+          "notes": [
+            "One PEM inlet and switch per front PSU; viewed from rear, far-left inlet maps to far-right PSU viewed from front."
+          ],
+          "sourceRecord": 2,
+          "locator": "PA-7050 Back Panel (AC): item2 PEM inlets and one-to-one physical supply mapping"
+        }
+      ],
+      "sourceRecords": [
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-7000-hardware-reference/pa-7000-series-firewall-specifications/pa-7000-series-firewall-physical-specifications",
+          "path": ".local/selection462-official11-20261101/pa7050-physical.html",
+          "sha256": "95a00dbf1e2206a53c9d5648bfcc25373575fc8240271c7f81564cafa9ac152a",
+          "locator": "PA-7000 Series Firewall Physical Specifications: PA-7050 Height, Depth, Width, Rack mount size, Power supply configurations",
+          "scope": "exact",
+          "factPaths": [
+            "manufacturer",
+            "model",
+            "dimensionsMm.width",
+            "dimensionsMm.height",
+            "dimensionsMm.depth",
+            "mounting.kind",
+            "mounting.rackUnits",
+            "documentedPower.0",
+            "notes.0",
+            "notes.1"
+          ]
+        },
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-7000-hardware-reference/pa-7000-series-firewall-overview/pa-7050-front-and-back-panel-descriptions/pa-7050-front-panel-ac",
+          "path": ".local/selection462-official11-20261101/pa7050-front-ac.html",
+          "sha256": "2c750958cddb251ada9f53d157d29b408bed908893a91882007fbc66dfb34e17",
+          "locator": "PA-7050 Front Panel (AC): items2 SMC,4 NPC/DPC,5 log card; illustration is a configured AC chassis",
+          "scope": "exact",
+          "factPaths": [
+            "notes.2",
+            "notes.3"
+          ]
+        },
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-7000-hardware-reference/pa-7000-series-firewall-overview/pa-7050-front-and-back-panel-descriptions/pa-7050-back-panel-ac",
+          "path": ".local/selection462-official11-20261101/pa7050-back-ac.html",
+          "sha256": "a947b0495290b4aa02a22fa1ed45e83e31650008a5b067bd3bd59b82e955a7d4",
+          "locator": "PA-7050 Back Panel (AC): item2 PEM inlets and one-to-one physical supply mapping",
+          "scope": "exact",
+          "factPaths": [
+            "documentedPower.1"
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "path": "sku",
+          "reason": "AC/DC bundle, installed SMC revision, NPC types and log-card selection are unspecified."
+        },
+        {
+          "path": "documentedInterfaces",
+          "reason": "The selected modular chassis has no uniquely determined installed port count/type. SMC/NPC interfaces require their own selected module identity."
+        },
+        {
+          "path": "documentedPower.1.connector",
+          "reason": "Consulted rear-panel text identifies20A AC inlets but does not specify IEC connector type; no type is guessed from the image."
+        },
+        {
+          "path": "documentedPower.0.installedCount",
+          "reason": "Documented four-supply AC/DC alternatives do not identify the actual selected/fitted configuration."
+        },
+        {
+          "path": "documentedPower.1.installedVariant",
+          "reason": "The selection does not choose the AC variant; the rear AC mapping is documented as a conditional possibility only."
+        },
+        {
+          "path": "exactFaceGeometry",
+          "reason": "Press image is an equipped Gen2 reference, not a verified installed card set or flat exact elevation."
+        },
+        {
+          "path": "mounting.capacityU",
+          "reason": "Not a rack cabinet with documented internal U capacity; null is not zero."
+        },
+        {
+          "path": "PoE",
+          "reason": "No PoE power capability or budget is established by the consulted per-model sources; do not derive PoE from an Ethernet-shaped connector."
+        },
+        {
+          "path": "operationalTopology",
+          "reason": "No RackClick endpoints, peer membership, cable routes, internal pass-through circuits, live state or telemetry are created/validated by this documentary preparation."
+        }
+      ],
+      "notes": [
+        "Base chassis dimensions exclude rack ears, front handles and rear DC posts: width444.5mm becomes482.6mm with ears; depth603.2mm becomes647.7mm including front handles/rear DC posts on DC model.",
+        "Base chassis occupies9U. Optional PAN-AIRDUCT configuration occupies14U and is622.3mm high; it is not silently installed in the9U record.",
+        "SMC is mandatory in slot4; up to six NPCs fit slots1/2/3/5/6/7, with at least one NPC for traffic. SMC versus SMC-B and NPC/LPC/LFC choices alter interfaces. No installed interface inventory is inferred from the Gen2 press image.",
+        "An LPC or LFC is required in slot8. DPCs improve processing but have no interfaces; no network endpoints are invented for their slots.",
+        "Preparation only: this record does not declare a functional installed profile, verified face geometry, application integration or QA acceptance."
+      ]
+    },
+    {
+      "selectionId": "palo-alto-pa-5580",
+      "manufacturer": "Palo Alto Networks",
+      "model": "PA-5580",
+      "sku": null,
+      "dimensionsMm": {
+        "width": 439.4,
+        "height": 132.1,
+        "depth": 756.9
+      },
+      "mounting": {
+        "kind": "rackEquipment",
+        "rackUnits": 3,
+        "capacityU": null
+      },
+      "documentedInterfaces": [
+        {
+          "label": "QSFP28",
+          "connector": "QSFP28",
+          "count": 12,
+          "face": "front",
+          "role": "ethernet",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5560, PA-5570, and PA-5580 section: front table items1-10; rear table item2. Front illustration explicitly pictures PA-5570.",
+          "speedsGbps": [
+            40,
+            100
+          ]
+        },
+        {
+          "label": "QSFP-DD",
+          "connector": "QSFP-DD",
+          "count": 8,
+          "face": "front",
+          "role": "ethernet",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5560, PA-5570, and PA-5580 section: front table items1-10; rear table item2. Front illustration explicitly pictures PA-5570.",
+          "speedsGbps": [
+            40,
+            100,
+            400
+          ]
+        },
+        {
+          "label": "SFP28",
+          "connector": "SFP28",
+          "count": 8,
+          "face": "front",
+          "role": "ethernet",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5560, PA-5570, and PA-5580 section: front table items1-10; rear table item2. Front illustration explicitly pictures PA-5570.",
+          "speedsGbps": [
+            10,
+            25
+          ]
+        },
+        {
+          "label": "HSCI",
+          "connector": null,
+          "count": null,
+          "face": "front",
+          "role": "layer1_cluster_interconnect",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5560, PA-5570, and PA-5580 section: front table items1-10; rear table item2. Front illustration explicitly pictures PA-5570.",
+          "speedsGbps": [
+            100,
+            400
+          ]
+        },
+        {
+          "label": "MGT-A/MGT-B",
+          "connector": "SFP+",
+          "count": 2,
+          "face": "front",
+          "role": "management",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5560, PA-5570, and PA-5580 section: front table items1-10; rear table item2. Front illustration explicitly pictures PA-5570.",
+          "speedsGbps": [
+            1,
+            10
+          ]
+        },
+        {
+          "label": "LOG-1/LOG-2",
+          "connector": "SFP+",
+          "count": 2,
+          "face": "front",
+          "role": "logging",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5560, PA-5570, and PA-5580 section: front table items1-10; rear table item2. Front illustration explicitly pictures PA-5570.",
+          "speedsGbps": [
+            10
+          ]
+        },
+        {
+          "label": "CONSOLE",
+          "connector": "RJ45",
+          "count": 1,
+          "face": "front",
+          "role": "serial_console",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5560, PA-5570, and PA-5580 section: front table items1-10; rear table item2. Front illustration explicitly pictures PA-5570."
+        },
+        {
+          "label": "CONSOLE USB-C",
+          "connector": "USB-C",
+          "count": 1,
+          "face": "front",
+          "role": "serial_console",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5560, PA-5570, and PA-5580 section: front table items1-10; rear table item2. Front illustration explicitly pictures PA-5570."
+        },
+        {
+          "label": "USB",
+          "connector": "USB",
+          "count": 1,
+          "face": "front",
+          "role": "bootstrap",
+          "configuration": "fixed",
+          "sourceRecord": 1,
+          "locator": "PA-5560, PA-5570, and PA-5580 section: front table items1-10; rear table item2. Front illustration explicitly pictures PA-5570."
+        }
+      ],
+      "documentedPower": [
+        {
+          "kind": "PSU_configuration",
+          "alternatives": [
+            "AC",
+            "DC"
+          ],
+          "documentedSupplyPositions": 4,
+          "installedCount": null,
+          "minimumSupplies": null,
+          "face": "rear",
+          "connector": null,
+          "notes": [
+            "Required and redundant supply counts depend on high-line AC, low-line AC or DC configuration."
+          ],
+          "sourceRecord": 1,
+          "locator": "PA-5560, PA-5570, and PA-5580 section: front table items1-10; rear table item2. Front illustration explicitly pictures PA-5570."
+        }
+      ],
+      "sourceRecords": [
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-5500-hardware-reference/pa-5500-series-firewall-specifications/pa-5500-series-firewall-physical-specifications",
+          "path": ".local/selection462-official11-20261101/pa5500-physical.html",
+          "sha256": "bc646ec6eea419d82e4b7a66f033ef6d62cc510fde91f803bf3d84f5d9cdee55",
+          "locator": "PA-5500 Series Firewall Physical Specifications: Rack units and dimensions row PA5540/5550/5560/5570/5580",
+          "scope": "exact",
+          "factPaths": [
+            "manufacturer",
+            "model",
+            "dimensionsMm.width",
+            "dimensionsMm.height",
+            "dimensionsMm.depth",
+            "mounting.kind",
+            "mounting.rackUnits"
+          ]
+        },
+        {
+          "url": "https://docs.paloaltonetworks.com/hardware/pa-5500-hardware-reference/pa-5500-series-firewall-overview/pa-5500-series-firewall-components",
+          "path": ".local/selection462-official11-20261101/pa5500-components.html",
+          "sha256": "4fb963f5f785ea156f80eb848a6c58b57e0d98b8e3a3fe66b7c2a1af8c233ca7",
+          "locator": "PA-5560, PA-5570, and PA-5580 section: front table items1-10; rear table item2. Front illustration explicitly pictures PA-5570.",
+          "scope": "family",
+          "factPaths": [
+            "documentedInterfaces.0",
+            "documentedInterfaces.1",
+            "documentedInterfaces.2",
+            "documentedInterfaces.3",
+            "documentedInterfaces.4",
+            "documentedInterfaces.5",
+            "documentedInterfaces.6",
+            "documentedInterfaces.7",
+            "documentedInterfaces.8",
+            "documentedPower.0",
+            "notes.0",
+            "notes.1",
+            "notes.2"
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "path": "sku",
+          "reason": "AC/DC orderable bundle unspecified; no fitted PSU variant is selected."
+        },
+        {
+          "path": "documentedInterfaces.3.count",
+          "reason": "The shared textual table says HSCI ports without a numerical count; the illustration is another model and no geometry is inferred."
+        },
+        {
+          "path": "documentedInterfaces.3.connector",
+          "reason": "No HSCI connector form factor is stated in the consulted textual row."
+        },
+        {
+          "path": "documentedPower.0.minimumSupplies",
+          "reason": "Required count depends on supply variant and input line; no specific configuration is selected."
+        },
+        {
+          "path": "documentedPower.0.installedCount",
+          "reason": "No AC/DC supply selection or physical installed inventory was provided."
+        },
+        {
+          "path": "documentedPower.0.connector",
+          "reason": "Shared component table does not specify the supply connector type; no type is inferred from another PA5500 model."
+        },
+        {
+          "path": "exactFaceGeometry",
+          "reason": "PA5570 shared reference image does not verify exact PA5580 connector coordinates."
+        },
+        {
+          "path": "mounting.capacityU",
+          "reason": "Not a rack cabinet with documented internal U capacity; null is not zero."
+        },
+        {
+          "path": "PoE",
+          "reason": "No PoE power capability or budget is established by the consulted per-model sources; do not derive PoE from an Ethernet-shaped connector."
+        },
+        {
+          "path": "operationalTopology",
+          "reason": "No RackClick endpoints, peer membership, cable routes, internal pass-through circuits, live state or telemetry are created/validated by this documentary preparation."
+        }
+      ],
+      "notes": [
+        "Exact PA5580 is included in the textual component specification; the shared front illustration is PA5570. Preserve that family projection rather than claiming a flat exact PA5580 face.",
+        "Twelve QSFP28 and eight QSFP-DD cages are separate physical types; eight SFP28 cages are not substitutes for them. Breakout interfaces do not add physical sockets.",
+        "HSCI carries a Layer1 clustering link and is not routable/switchable IP. The text consulted does not state HSCI physical count/type; these remain null.",
+        "Preparation only: this record does not declare a functional installed profile, verified face geometry, application integration or QA acceptance."
+      ]
+    },
+    {
+      "selectionId": "raritan-px3-5190r",
+      "manufacturer": "Raritan",
+      "model": "PX3-5190R",
+      "sku": "PX3-5190R",
+      "dimensionsMm": {
+        "width": 440,
+        "height": 44,
+        "depth": 183
+      },
+      "mounting": {
+        "kind": "rackEquipment",
+        "rackUnits": 1,
+        "capacityU": null
+      },
+      "documentedInterfaces": [
+        {
+          "label": "ETH1",
+          "connector": "RJ45",
+          "count": 1,
+          "face": null,
+          "role": "ethernet",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF rev20250625 p1 title and FEATURES; p2 INPUT / OUTPUT / PHYSICAL; p4 CONTROL PANEL and CONTROL PANEL2",
+          "speedsGbps": [
+            0.01,
+            0.1,
+            1
+          ],
+          "notes": [
+            "Networking speeds from p1; physical labels/types from p4 control-panel diagrams. No exact front/rear assignment or pinout is asserted."
+          ]
+        },
+        {
+          "label": "ETH2",
+          "connector": "RJ45",
+          "count": 1,
+          "face": null,
+          "role": "ethernet",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF rev20250625 p1 title and FEATURES; p2 INPUT / OUTPUT / PHYSICAL; p4 CONTROL PANEL and CONTROL PANEL2",
+          "speedsGbps": [
+            0.01,
+            0.1
+          ],
+          "notes": [
+            "Networking speeds from p1; physical labels/types from p4 control-panel diagrams. No exact front/rear assignment or pinout is asserted."
+          ]
+        },
+        {
+          "label": "CONSOLE/MODEM",
+          "connector": "RJ45",
+          "count": 1,
+          "face": null,
+          "role": "serial_console",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF rev20250625 p1 title and FEATURES; p2 INPUT / OUTPUT / PHYSICAL; p4 CONTROL PANEL and CONTROL PANEL2",
+          "notes": [
+            "Networking speeds from p1; physical labels/types from p4 control-panel diagrams. No exact front/rear assignment or pinout is asserted."
+          ]
+        },
+        {
+          "label": "USB-A",
+          "connector": "USB Type-A",
+          "count": 2,
+          "face": null,
+          "role": "usb",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF rev20250625 p1 title and FEATURES; p2 INPUT / OUTPUT / PHYSICAL; p4 CONTROL PANEL and CONTROL PANEL2",
+          "notes": [
+            "Networking speeds from p1; physical labels/types from p4 control-panel diagrams. No exact front/rear assignment or pinout is asserted."
+          ]
+        },
+        {
+          "label": "USB-B",
+          "connector": "USB Type-B",
+          "count": 1,
+          "face": null,
+          "role": "usb",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF rev20250625 p1 title and FEATURES; p2 INPUT / OUTPUT / PHYSICAL; p4 CONTROL PANEL and CONTROL PANEL2",
+          "notes": [
+            "Networking speeds from p1; physical labels/types from p4 control-panel diagrams. No exact front/rear assignment or pinout is asserted."
+          ]
+        },
+        {
+          "label": "SENSOR",
+          "connector": null,
+          "count": 1,
+          "face": null,
+          "role": "environmental_sensor",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF rev20250625 p1 title and FEATURES; p2 INPUT / OUTPUT / PHYSICAL; p4 CONTROL PANEL and CONTROL PANEL2",
+          "notes": [
+            "Networking speeds from p1; physical labels/types from p4 control-panel diagrams. No exact front/rear assignment or pinout is asserted."
+          ]
+        },
+        {
+          "label": "EXPANSION",
+          "connector": null,
+          "count": 1,
+          "face": null,
+          "role": "expansion",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF rev20250625 p1 title and FEATURES; p2 INPUT / OUTPUT / PHYSICAL; p4 CONTROL PANEL and CONTROL PANEL2",
+          "notes": [
+            "Networking speeds from p1; physical labels/types from p4 control-panel diagrams. No exact front/rear assignment or pinout is asserted."
+          ]
+        },
+        {
+          "label": "FEATURE",
+          "connector": null,
+          "count": 1,
+          "face": null,
+          "role": "feature",
+          "configuration": "fixed",
+          "sourceRecord": 0,
+          "locator": "PDF rev20250625 p1 title and FEATURES; p2 INPUT / OUTPUT / PHYSICAL; p4 CONTROL PANEL and CONTROL PANEL2",
+          "notes": [
+            "Networking speeds from p1; physical labels/types from p4 control-panel diagrams. No exact front/rear assignment or pinout is asserted."
+          ]
+        }
+      ],
+      "documentedPower": [
+        {
+          "kind": "AC_input",
+          "connector": "IEC 60309 2P+E 6h 16A (2P3W), IP44",
+          "count": 1,
+          "face": "rear_cord_entry",
+          "currentA": 16,
+          "nominalVoltageVac": 230,
+          "ratedVoltageVac": [
+            200,
+            240
+          ],
+          "frequencyHz": [
+            50,
+            60
+          ],
+          "cordLengthMm": 3000,
+          "sourceRecord": 0,
+          "locator": "PDF rev20250625 p1 title and FEATURES; p2 INPUT / OUTPUT / PHYSICAL; p4 CONTROL PANEL and CONTROL PANEL2"
+        },
+        {
+          "kind": "AC_output",
+          "connector": "IEC C13",
+          "count": 8,
+          "currentPerOutletA": 10,
+          "nominalVoltageVac": 230,
+          "ratedVoltageVac": [
+            200,
+            240
+          ],
+          "face": null,
+          "remoteOutletSwitching": true,
+          "sourceRecord": 0,
+          "locator": "PDF rev20250625 p1 title and FEATURES; p2 INPUT / OUTPUT / PHYSICAL; p4 CONTROL PANEL and CONTROL PANEL2"
+        }
+      ],
+      "sourceRecords": [
+        {
+          "url": "https://cdn.raritan.com/product-selector/pdus/PX3-5190R/PX3-5190R-spec.pdf",
+          "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/official-expansion/documents/raritan-px35190r.pdf",
+          "sha256": "6d7d2add2d3b3acb3b897e097e5be9f810fe0e9360b080a1b255044fa81f3e39",
+          "locator": "PDF rev20250625 p1 title and FEATURES; p2 INPUT / OUTPUT / PHYSICAL; p4 CONTROL PANEL and CONTROL PANEL2",
+          "scope": "exact",
+          "factPaths": [
+            "manufacturer",
+            "model",
+            "sku",
+            "dimensionsMm.width",
+            "dimensionsMm.height",
+            "dimensionsMm.depth",
+            "mounting.kind",
+            "mounting.rackUnits",
+            "documentedInterfaces.0",
+            "documentedInterfaces.1",
+            "documentedInterfaces.2",
+            "documentedInterfaces.3",
+            "documentedInterfaces.4",
+            "documentedInterfaces.5",
+            "documentedInterfaces.6",
+            "documentedInterfaces.7",
+            "documentedPower.0",
+            "documentedPower.1",
+            "notes.0",
+            "notes.1",
+            "notes.2"
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "path": "exactFaceGeometry",
+          "reason": "Exact control-panel drawings exist, but physical panel positioning, outlet coordinates and flat elevations are not transcribed/verified as RackClick geometry."
+        },
+        {
+          "path": "documentedInterfaces.5.connector",
+          "reason": "Sensor transport/pinout is not specified in the consulted per-SKU text; diagram shape is not an electrical connector contract."
+        },
+        {
+          "path": "documentedInterfaces.6.connector",
+          "reason": "Expansion transport/pinout not established from the diagram label."
+        },
+        {
+          "path": "documentedInterfaces.7.connector",
+          "reason": "Feature transport/pinout not established from the diagram label."
+        },
+        {
+          "path": "documentedInterfaces.*.face",
+          "reason": "Per-SKU control-panel drawings identify components without establishing the exact flat front/rear elevations used by RackClick."
+        },
+        {
+          "path": "documentedPower.1.face",
+          "reason": "Outlet type/count is specified, but a verified flat face assignment is not prepared in this lot."
+        },
+        {
+          "path": "mounting.capacityU",
+          "reason": "Not a rack cabinet with documented internal U capacity; null is not zero."
+        },
+        {
+          "path": "PoE",
+          "reason": "No PoE power capability or budget is established by the consulted per-model sources; do not derive PoE from an Ethernet-shaped connector."
+        },
+        {
+          "path": "operationalTopology",
+          "reason": "No RackClick endpoints, peer membership, cable routes, internal pass-through circuits, live state or telemetry are created/validated by this documentary preparation."
+        }
+      ],
+      "notes": [
+        "Exact specification revision20250625. Mounting is RACK-KIT-DPX-1U; the1U value is the documented kit designation and44mm body, not a vertical0U substitution.",
+        "Optional Wi-Fi is not installed by this record. USB daisy chaining and two Ethernet management links do not imply internal network pass-through circuits.",
+        "SENSOR/EXPANSION/FEATURE/CONSOLE apertures are not Ethernet ports merely because of modular-jack appearance. Electrical pinouts and routing are not supplied by this preparation.",
+        "Preparation only: this record does not declare a functional installed profile, verified face geometry, application integration or QA acceptance."
+      ]
+    },
+    {
+      "selectionId": "digitus-dn19-16-u-sw",
+      "manufacturer": "DIGITUS",
+      "model": "DN-19 16-U-SW",
+      "sku": "DN-19 16-U-SW",
+      "dimensionsMm": {
+        "width": 600,
+        "height": 820,
+        "depth": 450
+      },
+      "mounting": {
+        "kind": "rackContainer",
+        "rackUnits": null,
+        "capacityU": 16
+      },
+      "documentedInterfaces": [],
+      "documentedPower": [],
+      "sourceRecords": [
+        {
+          "url": "https://www.assmann.com/product-pdf/4016032257905?PL=en",
+          "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/official-expansion/documents/digitus-dn1916usw.pdf",
+          "sha256": "e04c19b3448b7ba15bf7323192e100352da71c92480fc3f51ff9890a15288c76",
+          "locator": "PDF p1 exact SKU/EAN heading; description820x600x450; Attributes; Net single without Packaging; mounting/cable-entry bullets",
+          "scope": "exact",
+          "factPaths": [
+            "manufacturer",
+            "model",
+            "sku",
+            "dimensionsMm.width",
+            "dimensionsMm.height",
+            "dimensionsMm.depth",
+            "mounting.kind",
+            "mounting.capacityU",
+            "notes.0",
+            "notes.1",
+            "notes.2"
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "path": "mounting.rackUnits",
+          "reason": "This is a cabinet with16U internal capacity; no external occupied rackU is applicable."
+        },
+        {
+          "path": "documentedInterfaces",
+          "reason": "No operational electrical/data interfaces are documented for the passive cabinet; empty list is not a measured port count."
+        },
+        {
+          "path": "documentedPower",
+          "reason": "Fan preparation and earthing points do not specify installed electrical equipment or AC connectors."
+        },
+        {
+          "path": "exactFaceGeometry",
+          "reason": "Source image is perspective; no exact flat front/rear geometry has been produced."
+        },
+        {
+          "path": "PoE",
+          "reason": "No PoE power capability or budget is established by the consulted per-model sources; do not derive PoE from an Ethernet-shaped connector."
+        },
+        {
+          "path": "operationalTopology",
+          "reason": "No RackClick endpoints, peer membership, cable routes, internal pass-through circuits, live state or telemetry are created/validated by this documentary preparation."
+        }
+      ],
+      "notes": [
+        "Exact SKU DN-19 16-U-SW, EAN4016032257905; do not substitute the replacement-door SKU DN-19D-16-U-SW. Metric chassis dimensions use H820/W600/D450mm, not the larger packaging figures.",
+        "19in front/rear rails; equipment mounting depth305-370mm. Wall cabinet; optional feet/casters allow free-standing use but are not declared fitted.",
+        "Roof prepared for a fan module is a mechanical cutout, not an installed fan, AC inlet or network port. Cable-entry openings are not data connectors.",
+        "Preparation only: this record does not declare a functional installed profile, verified face geometry, application integration or QA acceptance."
+      ]
+    },
+    {
+      "selectionId": "rittal-vxit-5306122",
+      "manufacturer": "Rittal",
+      "model": "VX IT 5306.122",
+      "sku": "5306.122",
+      "dimensionsMm": {
+        "width": 800,
+        "height": 2000,
+        "depth": 600
+      },
+      "mounting": {
+        "kind": "rackContainer",
+        "rackUnits": null,
+        "capacityU": 42
+      },
+      "documentedInterfaces": [],
+      "documentedPower": [],
+      "sourceRecords": [
+        {
+          "url": "https://www.rittal.com/pdf-creator/variant/ua-en/5306122",
+          "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/official-expansion/documents/rittal-5306122.pdf",
+          "sha256": "06790d8de34e92f08c49b6f53a2daffa38475ce54015612b81ba868a62f55a5c",
+          "locator": "PDF state30.10.2026 p1 VX5306.122; p3 Dimensions/Units/Mounting position; p5 base; p6 mounting levels, side panels; p7 model number",
+          "scope": "exact",
+          "factPaths": [
+            "manufacturer",
+            "model",
+            "sku",
+            "dimensionsMm.width",
+            "dimensionsMm.height",
+            "dimensionsMm.depth",
+            "mounting.kind",
+            "mounting.capacityU",
+            "notes.0",
+            "notes.1",
+            "notes.2"
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "path": "mounting.rackUnits",
+          "reason": "Floor cabinet:42U capacity does not specify occupation inside another rack."
+        },
+        {
+          "path": "documentedInterfaces",
+          "reason": "Passive enclosure specification gives no installed data interfaces."
+        },
+        {
+          "path": "documentedPower",
+          "reason": "No installed powered equipment or AC connection is specified; accessories remain unselected."
+        },
+        {
+          "path": "exactFaceGeometry",
+          "reason": "Perspective reference and textual features do not establish measured flat face/rail geometry in RackClick."
+        },
+        {
+          "path": "PoE",
+          "reason": "No PoE power capability or budget is established by the consulted per-model sources; do not derive PoE from an Ethernet-shaped connector."
+        },
+        {
+          "path": "operationalTopology",
+          "reason": "No RackClick endpoints, peer membership, cable routes, internal pass-through circuits, live state or telemetry are created/validated by this documentary preparation."
+        }
+      ],
+      "notes": [
+        "Exact5306.122(5306122), not5306.120. Preconfigured with one19in mounting level at the front. A second mounting level and side panels are optional accessories, not silently present.",
+        "W800/H2000/D600mm are enclosure dimensions;42U is installation capacity. Free space to the19in level is150mm front/372mm rear; these are not a universal device depth clearance.",
+        "Roof prepared for a fan mounting plate does not declare a fitted fan or AC inlet. Potential-equalisation provisions do not create operational power endpoints.",
+        "Preparation only: this record does not declare a functional installed profile, verified face geometry, application integration or QA acceptance."
+      ]
+    },
+    {
+      "selectionId": "startech-rk1236bkf",
+      "manufacturer": "StarTech.com",
+      "model": "RK1236BKF",
+      "sku": "RK1236BKF",
+      "dimensionsMm": {
+        "width": 600,
+        "height": 663,
+        "depth": 900
+      },
+      "mounting": {
+        "kind": "rackContainer",
+        "rackUnits": null,
+        "capacityU": 12
+      },
+      "documentedInterfaces": [],
+      "documentedPower": [],
+      "sourceRecords": [
+        {
+          "url": "https://media.startech.com/cms/pdfs/rk1236bkf_datasheet.pdf",
+          "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/official-expansion/documents/startech-rk1236bkf.pdf",
+          "sha256": "83468b30424f4ab4833fe8e69665f0c05610bb517d8f7991953753406272e76b",
+          "locator": "PDF p1 Product ID and description; p2 Features; p3 Physical & Environmental and Hardware; p4 Special Features / In-the-Box",
+          "scope": "exact",
+          "factPaths": [
+            "manufacturer",
+            "model",
+            "sku",
+            "dimensionsMm.width",
+            "dimensionsMm.height",
+            "dimensionsMm.depth",
+            "mounting.kind",
+            "mounting.capacityU",
+            "notes.0",
+            "notes.1",
+            "notes.2"
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "path": "mounting.rackUnits",
+          "reason": "Floor cabinet has12U internal capacity; no occupation inside another rack is asserted."
+        },
+        {
+          "path": "operationalHeightMm",
+          "reason": "Use663mm body height or734mm with casters only after selecting the actual installation configuration; dimensionsMm.height retains the manufacturer Product Height field."
+        },
+        {
+          "path": "documentedInterfaces",
+          "reason": "Passive cabinet specification documents no installed network connectors."
+        },
+        {
+          "path": "documentedPower",
+          "reason": "No installed powered accessory or AC connection is documented."
+        },
+        {
+          "path": "exactFaceGeometry",
+          "reason": "Perspective photograph and feature list do not verify measured flat face geometry."
+        },
+        {
+          "path": "PoE",
+          "reason": "No PoE power capability or budget is established by the consulted per-model sources; do not derive PoE from an Ethernet-shaped connector."
+        },
+        {
+          "path": "operationalTopology",
+          "reason": "No RackClick endpoints, peer membership, cable routes, internal pass-through circuits, live state or telemetry are created/validated by this documentary preparation."
+        }
+      ],
+      "notes": [
+        "Product ID RK1236BKF, not RK1236BKFR. Base product dimensions W600/H663/D900mm; manufacturer separately specifies height with included casters734mm. Wheel installation state is not selected.",
+        "Enclosed4-post19in12U cabinet; mounting depth144-738mm. Internal depth740mm and external depth900mm are distinct figures and are not silently interchanged.",
+        "Glass-window front door and steel-mesh rear door are documented. Ceiling/floor brush entries route cables mechanically and are not Ethernet or power sockets.",
+        "Preparation only: this record does not declare a functional installed profile, verified face geometry, application integration or QA acceptance."
+      ]
+    }
+  ]
+}

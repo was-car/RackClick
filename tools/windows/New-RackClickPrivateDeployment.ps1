@@ -5,9 +5,10 @@
 [CmdletBinding()]
 param([string]$ManifestPath='',[string]$ExpectedManifestSha256='',[string]$ServerPath='',[string]$FrontendPath='',
       [string]$DotNetPath='',[string]$PostgresBinPath='',[string]$DestinationPath='',[int]$PostgresPort=0,[int]$HttpPort=0,
-      [string]$BootstrapUser='',[string]$SystemhausName='')
+      [string]$BootstrapUser='',[string]$SystemhausName='',[switch]$ProtectSqlCredentials,[switch]$MinimizeSqlSecrets)
 $creationInputs=@{manifest=$ManifestPath;manifestHash=$ExpectedManifestSha256;server=$ServerPath;frontend=$FrontendPath;
     dotnet=$DotNetPath;pg=$PostgresBinPath;destination=$DestinationPath;pgPort=$PostgresPort;httpPort=$HttpPort;user=$BootstrapUser;house=$SystemhausName}
+$creationInputs.protectSql=[bool]$ProtectSqlCredentials;$creationInputs.minimizeSql=[bool]$MinimizeSqlSecrets
 . (Join-Path $PSScriptRoot 'RackClick.Deployment.ps1')
 
 function Stop-CreationCheck {
@@ -109,11 +110,11 @@ try {
     $distributionPath=Join-Path $root 'distribution';$instancePath=Join-Path $root 'instance';$httpsPath=Join-Path $root 'https'
     $phase='stage'
     $stage=Invoke-CreationChild 'Stage-ServerDistribution.ps1' @('-ManifestPath',$paths.manifest,'-ExpectedManifestSha256',$creationInputs.manifestHash,'-ServerPath',$paths.server,'-FrontendPath',$paths.frontend,'-DotNetPath',$paths.dotnet,'-PostgresBinPath',$paths.pg,'-DestinationPath',$distributionPath) $root $logs
-    # Profiles14/15 have one additional application DLL; historical9..13 unchanged.
-    $expectedVerified=if ($sourceManifest.schema -in @(14,15)) {28+$sourceManifest.schema} else {27+$sourceManifest.schema}
+    $expectedVerified=Get-StageVerifiedFileCount $sourceManifest.schema
     if ($stage.code -cne 'artifacts_staged' -or $stage.destinationPath -cne $distributionPath -or $stage.verifiedFiles -ne $expectedVerified -or $stage.receiptSha256 -cnotmatch '^[a-f0-9]{64}$') {Stop-CreationCheck 'receipt_invalid'}
     $phase='instance'
-    $created=Invoke-CreationChild 'New-RackClickLabInstance.ps1' @('-StagePath',$distributionPath,'-ExpectedManifestSha256',$creationInputs.manifestHash,'-ExpectedReceiptSha256',$stage.receiptSha256,'-DotNetPath',$paths.dotnet,'-PostgresBinPath',$paths.pg,'-InstancePath',$instancePath,'-PostgresPort',[string]$creationInputs.pgPort,'-PublicOrigin',('http://127.0.0.1:'+[string]$creationInputs.httpPort),'-BootstrapUser',$user,'-SystemhausName',$house,'-DevelopmentLoopbackHttp') $root $logs
+    $sqlProvisionArguments=@();if($creationInputs.protectSql){$sqlProvisionArguments+='-ProtectSqlCredentials'};if($creationInputs.minimizeSql){$sqlProvisionArguments+='-MinimizeSqlSecrets'}
+    $created=Invoke-CreationChild 'New-RackClickLabInstance.ps1' (@('-StagePath',$distributionPath,'-ExpectedManifestSha256',$creationInputs.manifestHash,'-ExpectedReceiptSha256',$stage.receiptSha256,'-DotNetPath',$paths.dotnet,'-PostgresBinPath',$paths.pg,'-InstancePath',$instancePath,'-PostgresPort',[string]$creationInputs.pgPort,'-PublicOrigin',('http://127.0.0.1:'+[string]$creationInputs.httpPort),'-BootstrapUser',$user,'-SystemhausName',$house,'-DevelopmentLoopbackHttp')+$sqlProvisionArguments) $root $logs
     if ($created.code -cne 'instance_initialized' -or $created.instancePath -cne $instancePath -or $created.instanceManifestSha256 -cnotmatch '^[a-f0-9]{64}$') {Stop-CreationCheck 'receipt_invalid'}
     $instance=Read-RackClickInstance $instancePath $created.instanceManifestSha256
     if ($instance.id -cne $created.instanceId -or [IO.File]::Exists((Join-Path $instance.pgData 'postmaster.pid'))) {Stop-CreationCheck 'stopped_identity_invalid'}

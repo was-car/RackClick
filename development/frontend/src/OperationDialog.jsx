@@ -1,3 +1,4 @@
+import { hardwareWords } from './hardware-words.ts';
 import { mutationRemainsUnconfirmed } from './api.ts';
 import { prepareCommand, executeCommand, cancelPendingCommand, readPendingCommand } from './inventory-api.ts';
 import { pendingJournal, pendingRecord } from './pending-journal.ts';
@@ -7,6 +8,12 @@ import { operationStatusWords } from './inventory-operation-status-words.ts';
 import { inventoryOptionLabel } from './inventory-choice-labels.ts';
 const { useState, useEffect, useRef } = React;
 export function inventoryError(error, w) {
+ const hw=w===inventoryWords.de?hardwareWords.de:w===inventoryWords.es?hardwareWords.es:hardwareWords.en;
+ if (error.code === 'mount_support_revision_unavailable') return hw.supportUnavailable;
+ if (error.code === 'mount_children_present') return hw.children;
+ if (error.code === 'mount_slot_occupied') return hw.mountOccupied;
+ if (error.code === 'rack_capacity_exceeded') return hw.capacity;
+ if (['hardware_operation_unsupported','hardware_duplicate_unsupported','hardware_metadata_immutable'].includes(error.code)) return hw.unsupported;
  if (error.code === 'draft_storage_unavailable') return w.storageError;
  if (error.uncertain) return w.uncertain;
  if (error.status === 401 || error.code === 'actor_changed') return w.expired;

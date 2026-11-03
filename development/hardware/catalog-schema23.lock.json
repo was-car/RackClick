@@ -1,0 +1,15 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 23,
+  "sourceSha256": "89801b1c35cbff275ea1bf3505abd033eb229c76a2027fd10b0f29c5a4606aa4",
+  "factsSha256": "3d60b13ec153045ab5c7c3c33723de588875f6f08bcfeecca50315604e10b390",
+  "baseMigrationSha256": "d67794d0a82461d2056cbc384f3913762261629ff878a33b8c835ad80629d877",
+  "definitions": [
+    {
+      "key": "qnap-ts464-8g",
+      "revision": "qnap-20261030-v1",
+      "sha256": "377592d3283f1de0d3c1059908eedc7c9f82ac6aa2a5cbdfd55bf997e64cae90"
+    }
+  ],
+  "state": "curated_development_not_a_release"
+}

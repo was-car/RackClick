@@ -1,0 +1,406 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506l-20261101-v1",
+  "baselineSchema": 41,
+  "foundationSchema": 42,
+  "targetSchema": 43,
+  "baselineDefinitions": 805,
+  "baselineCommercial": 799,
+  "selectedBefore": 444,
+  "models": 62,
+  "selectedAfterIfAllAccepted": 506,
+  "expectedCommercialIfAllAccepted": 861,
+  "authoring": {
+    "mechanical-copper": [
+      {
+        "id": "apc-ar3100",
+        "familyId": "F02",
+        "manufacturer": "APC by Schneider Electric",
+        "model": "AR3100"
+      },
+      {
+        "id": "digitus-dn19-16-u-sw",
+        "familyId": "F02",
+        "manufacturer": "DIGITUS",
+        "model": "DN-19 16-U-SW"
+      },
+      {
+        "id": "rittal-vxit-5306122",
+        "familyId": "F02",
+        "manufacturer": "Rittal",
+        "model": "VX IT 5306.122"
+      },
+      {
+        "id": "startech-rk1236bkf",
+        "familyId": "F02",
+        "manufacturer": "StarTech.com",
+        "model": "RK1236BKF"
+      },
+      {
+        "id": "nb-5bb0012c11525238",
+        "familyId": "F03",
+        "manufacturer": "Vertiv",
+        "model": "SA1-01002"
+      },
+      {
+        "id": "nb-1a5e040822eebdd7",
+        "familyId": "F06",
+        "manufacturer": "Cabeus",
+        "model": "PL-24-Cat-5e-Dual-IDC"
+      },
+      {
+        "id": "nb-1dd7604442a1239d",
+        "familyId": "F07",
+        "manufacturer": "Belden",
+        "model": "RV6PPF1U24BK"
+      },
+      {
+        "id": "nb-f31245615c072a97",
+        "familyId": "F07",
+        "manufacturer": "Belden",
+        "model": "RV6PPF2U48BK"
+      },
+      {
+        "id": "nb-d711e2c300ede120",
+        "familyId": "F07",
+        "manufacturer": "Datwyler",
+        "model": "Patch Panel KS 24x Black"
+      },
+      {
+        "id": "nb-2174af86248be3c0",
+        "familyId": "F07",
+        "manufacturer": "Datwyler",
+        "model": "Patch Panel KU 24x Light Grey"
+      },
+      {
+        "id": "nb-19c462f073983955",
+        "familyId": "F07",
+        "manufacturer": "Datwyler",
+        "model": "Patch Panel MGK 24x Silver"
+      },
+      {
+        "id": "nb-3ad914fbc8c9cb70",
+        "familyId": "F08",
+        "manufacturer": "Cable Matters",
+        "model": "24 Port Keystone Patch Panel"
+      },
+      {
+        "id": "nb-bd9d2291941ee640",
+        "familyId": "F11",
+        "manufacturer": "Ubiquiti",
+        "model": "U7 Outdoor"
+      },
+      {
+        "id": "nb-03c8ee9bbb014c7c",
+        "familyId": "F13",
+        "manufacturer": "Cabeus",
+        "model": "PDU-8P"
+      },
+      {
+        "id": "nb-8311f81875534b26",
+        "familyId": "F14",
+        "manufacturer": "APC",
+        "model": "AP7950B"
+      }
+    ],
+    "storage": [
+      {
+        "id": "nb-be59e710a51d5844",
+        "familyId": "F36",
+        "manufacturer": "NetApp",
+        "model": "AFF A150"
+      },
+      {
+        "id": "nb-fbfb065dfbbbb4ca",
+        "familyId": "F36",
+        "manufacturer": "NetApp",
+        "model": "FAS2720"
+      },
+      {
+        "id": "nb-8551913e785b8dcd",
+        "familyId": "F36",
+        "manufacturer": "Huawei",
+        "model": "Dorado 3000 V6"
+      },
+      {
+        "id": "nb-459e071f45ef28d0",
+        "familyId": "F36",
+        "manufacturer": "NetApp",
+        "model": "AFF C30 Chassis"
+      },
+      {
+        "id": "nb-d201c4c7e7756c85",
+        "familyId": "F36",
+        "manufacturer": "NetApp",
+        "model": "AFF-C60 Chassis"
+      },
+      {
+        "id": "nb-7e63582b264848f9",
+        "familyId": "F37",
+        "manufacturer": "HPE",
+        "model": "MSA 2050 Enclosure"
+      },
+      {
+        "id": "nb-e449413120cc6f09",
+        "familyId": "F37",
+        "manufacturer": "NetApp",
+        "model": "DE460C"
+      },
+      {
+        "id": "nb-f5d67a61fbc01300",
+        "familyId": "F37",
+        "manufacturer": "NetApp",
+        "model": "NS224-T-0-24-CF-C"
+      },
+      {
+        "id": "nb-7e5c43b083d87aa3",
+        "familyId": "F38",
+        "manufacturer": "NetApp",
+        "model": "StorageGRID SG5812"
+      },
+      {
+        "id": "nb-b6192e3e8a90a5fe",
+        "familyId": "F39",
+        "manufacturer": "Dell",
+        "model": "PowerProtect DP4400"
+      },
+      {
+        "id": "nb-b49efa2c795bb352",
+        "familyId": "F39",
+        "manufacturer": "Dell",
+        "model": "PowerScale F710"
+      },
+      {
+        "id": "nb-6a9f15ba9e440e40",
+        "familyId": "F39",
+        "manufacturer": "HPE",
+        "model": "StoreEasy 1460 Gen10"
+      },
+      {
+        "id": "nb-2da2003e6dc8a96f",
+        "familyId": "F40",
+        "manufacturer": "Supermicro",
+        "model": "MicroCloud A+ Server AS 3015MR-H8TNR"
+      },
+      {
+        "id": "nb-bd5913fe938354ff",
+        "familyId": "F40",
+        "manufacturer": "Lenovo",
+        "model": "ThinkSystem SR680a V3"
+      }
+    ],
+    "network": [
+      {
+        "id": "nb-d6dd7311f2ef95bd",
+        "familyId": "F16",
+        "manufacturer": "Ubiquiti",
+        "model": "UniFi SmartPower RPS"
+      },
+      {
+        "id": "nb-385b1e5bac71b7ef",
+        "familyId": "F17",
+        "manufacturer": "Ubiquiti",
+        "model": "Power Distribution Pro"
+      },
+      {
+        "id": "nb-00976b7274a49cd1",
+        "familyId": "F20",
+        "manufacturer": "WTI",
+        "model": "CPM-1600-1-c"
+      },
+      {
+        "id": "nb-712e46e426c32606",
+        "familyId": "F21",
+        "manufacturer": "Avaya",
+        "model": "IP Office 500 V2"
+      },
+      {
+        "id": "nb-b4a7fc7373f9706c",
+        "familyId": "F22",
+        "manufacturer": "DITEK",
+        "model": "DTK-RM12EXTS"
+      },
+      {
+        "id": "nb-346372afd400f875",
+        "familyId": "F22",
+        "manufacturer": "DITEK",
+        "model": "DTK-RM24NETS"
+      },
+      {
+        "id": "nb-800f8ec3e0535314",
+        "familyId": "F22",
+        "manufacturer": "DITEK",
+        "model": "DTK-WM8NETS"
+      },
+      {
+        "id": "nb-af1698f9a4a852f5",
+        "familyId": "F23",
+        "manufacturer": "Ciena",
+        "model": "6500 R2"
+      },
+      {
+        "id": "nb-22691841537ee307",
+        "familyId": "F23",
+        "manufacturer": "Ciena",
+        "model": "6500 R4"
+      },
+      {
+        "id": "nb-125f92d869fe9f59",
+        "familyId": "F24",
+        "manufacturer": "Ciena",
+        "model": "Waveserver Ai"
+      },
+      {
+        "id": "nb-d1adbd24989d63bf",
+        "familyId": "F25",
+        "manufacturer": "Calient",
+        "model": "s320"
+      },
+      {
+        "id": "nb-9dd49be51e6860a8",
+        "familyId": "F26",
+        "manufacturer": "Smartoptics",
+        "model": "DCP-M40-PAM4-ER"
+      },
+      {
+        "id": "nb-6b344ae9fceb207f",
+        "familyId": "F27",
+        "manufacturer": "Ciena",
+        "model": "8110"
+      },
+      {
+        "id": "nb-d669b5e97362251a",
+        "familyId": "F28",
+        "manufacturer": "Ciena",
+        "model": "8140"
+      },
+      {
+        "id": "nb-84908ff0a7aae399",
+        "familyId": "F29",
+        "manufacturer": "Adtran",
+        "model": "NetVanta 4660"
+      },
+      {
+        "id": "nb-f01b85bd214e6930",
+        "familyId": "F29",
+        "manufacturer": "Sophos",
+        "model": "SD-RED 60"
+      },
+      {
+        "id": "nb-cb0da37cc251724e",
+        "familyId": "F30",
+        "manufacturer": "LANCOM",
+        "model": "1790VAW"
+      },
+      {
+        "id": "nb-592d7bf6fa2dc5f9",
+        "familyId": "F30",
+        "manufacturer": "LANCOM",
+        "model": "1781VA"
+      },
+      {
+        "id": "nb-a283ed5b907280be",
+        "familyId": "F30",
+        "manufacturer": "LANCOM",
+        "model": "1783VA-4G"
+      },
+      {
+        "id": "nb-21beeace01ead0ab",
+        "familyId": "F30",
+        "manufacturer": "LANCOM",
+        "model": "1793VAW"
+      },
+      {
+        "id": "nb-2c5c7ea175f64187",
+        "familyId": "F31",
+        "manufacturer": "Zyxel",
+        "model": "P-660HNU-T1"
+      },
+      {
+        "id": "nb-6177840266a34e21",
+        "familyId": "F31",
+        "manufacturer": "TP-Link",
+        "model": "Archer AX1800"
+      },
+      {
+        "id": "nb-6f1403f8ddecb484",
+        "familyId": "F31",
+        "manufacturer": "MikroTik",
+        "model": "Chateau 5G ax"
+      },
+      {
+        "id": "nb-95ffc21479b7db70",
+        "familyId": "F32",
+        "manufacturer": "Nokia",
+        "model": "7750 SR-1"
+      },
+      {
+        "id": "nb-fd5b5a585af75ae9",
+        "familyId": "F32",
+        "manufacturer": "Nokia",
+        "model": "7750 SR-1se 36QSFPDD-800ge"
+      },
+      {
+        "id": "nb-0948d9cade199a0b",
+        "familyId": "F33",
+        "manufacturer": "Telco Systems",
+        "model": "T-Metro 8104"
+      },
+      {
+        "id": "palo-alto-pa-7050",
+        "familyId": "F34",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-7050"
+      },
+      {
+        "id": "nb-61c1119b6a8fb4cf",
+        "familyId": "F34",
+        "manufacturer": "Cisco",
+        "model": "ASR1009-X"
+      },
+      {
+        "id": "nb-26b1060dca08dcdb",
+        "familyId": "F34",
+        "manufacturer": "Cisco",
+        "model": "ASR1013"
+      },
+      {
+        "id": "nb-ee49def444e1ec30",
+        "familyId": "F35",
+        "manufacturer": "Eltex",
+        "model": "MES3510P"
+      },
+      {
+        "id": "nb-a90ded005fd46d23",
+        "familyId": "F35",
+        "manufacturer": "Moxa",
+        "model": "EDS-408A-SS-SC-T"
+      },
+      {
+        "id": "nb-7b2b8f9a08ca79dc",
+        "familyId": "F35",
+        "manufacturer": "Moxa",
+        "model": "EDS-P510"
+      },
+      {
+        "id": "nb-fc3db9baa232b775",
+        "familyId": "F42",
+        "manufacturer": "Adtran",
+        "model": "424"
+      }
+    ]
+  },
+  "state": "development_candidate_pending_persistence_and_independent_review",
+  "reservationsAreNotCompletedProfiles": true,
+  "expectedDefinitions": 868,
+  "expectedCommercialRevisions": 862,
+  "expectedCommercialModels": 861,
+  "selectedPorts": 1673,
+  "supportRevisions": [
+    {
+      "key": "selected-nb-e5030fe747d79fe6",
+      "revision": "selected506l-support-20261101-v1",
+      "modelsAdded": 0
+    }
+  ]
+}

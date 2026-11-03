@@ -1,0 +1,365 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 34,
+  "catalogKey": "rackclick-selected506f",
+  "state": "curated_development_not_a_release",
+  "inputs": {
+    "development/hardware/selected506f/core.json": "086848507ed1f05fa353a0dfe51cbc462713d5cd49d786ed23da630b08ec71f2",
+    "development/hardware/selected506f/edge.json": "c1e617cff9194d50d2aaaeea3ec21b55d3f40bf9432184178b2a109ac0dd7229",
+    "development/hardware/selected-models-506.json": "d9c97a9ca25de5f9739562ab0568b564c9409061742683b0e1fb88dfc5b9bbd2",
+    "development/hardware/selected-profile-links.json": "8dd28502a3eca9bcf66bd504a718d266eceaa1503b8bafccc3bf93428428b6ed",
+    "evidence/s1-20261101/integracion506f/PLAN-50.json": "af24aecb9f0753ca706c26fc0f5fb325b0cdd0f50753ae329218e5500fa74d28",
+    "development/hardware/catalog-schema34.lock.json": "c3feba0f2347213bb65a93acdffd2e5587a0c7d54f096b94397c313585ebfb8c",
+    "development/server/database/033-selected506e-hardware.sql": "041fb68477a9af37d155e54a5e3d7d1c5b8fcfafe1ca2f40dc067d93e90f0eed",
+    "tools/hardware_physical_v2.py": "dbd814fdc36227e1f2ac661df4654791ec5cf61ee9630c3c86081f93f798f4fe",
+    "tools/build_hardware_batch50.py": "9f9d963a86cb29ed339ed9cf4a923dcb9b028e3c420a6972eff54b1993d9f5a7",
+    "tools/build_hardware_catalog.py": "740cb180bd9c4e81fd0903de2691fc1563ce7f327fbfd881e8b72f7e62eb6859",
+    "tools/build_hardware_catalog19.py": "9bcfa374eb5913bcc559a67119dc07d6125f64d233822fd205cb8207a9d4f545",
+    "tools/build_hardware_catalog20.py": "2e081cabf0d89a9b3fecedd3c34bc18063cb2d0fe373ef22ea52090589161298",
+    "tools/build_hardware_catalog21.py": "30790524bea09543a6591ba834e9c14ff1ca7fa7f401617221e20d309f74fd8f",
+    "tools/build_hardware_catalog22.py": "4d2bc78c324e958d6c120cf5f7fa7a579be0a27aabdeb958c99a9d8cd178d323",
+    "tools/build_hardware_catalog23.py": "45c6ca7b32d6a13fc2e64a259ac79d8959ea3a1965e2358862155e1355933b06",
+    "tools/build_hardware_selected506f.py": "7abcafe9c0b3bbed681d19674c1e0ac3ab6958dfbc5883f6d1cc703a5d111085",
+    "development/hardware/batch100/nas.json": "788ff6dcd96d5fb183bc5efbc03348393159ab37b67ec4d9733b037e02b0c7a9",
+    "development/hardware/batch100/network.json": "6c8a22979f2c54b2f68c68fcb59860acb62007a87b423f8cc76dcacfd019a232",
+    "development/hardware/batch100/security.json": "e06204c052536e35ef32ef534dd863975a7928c7b70ca5b0e8a5d46034fe491f",
+    "development/hardware/batch100b/nas.json": "32e1f08b131b52141b68085edb90730e2642dd95304c2c0bfffc79e020563d08",
+    "development/hardware/batch100b/network.json": "01d3ed1327d150a4527f8a4a9397598bd09aa309658e4461da750a1a406e0ebf",
+    "development/hardware/batch100b/security.json": "a03510ca564dea390adc5ce0b03827c8b715a74ad2db50bda97328beb1df2c7d",
+    "development/hardware/batch100c/nas.json": "dc8015b658b3443361a5667cc80abd97b7e8b86d8583aba3faf591749fb7cadf",
+    "development/hardware/batch100c/network.json": "c9946b48a3f5217ba4e5ea6642ab6352dc54bae0ead8c18d8dbd7f1d16df461a",
+    "development/hardware/batch100c/security.json": "bc4948bef0c6fc0b6ba51a099c207962e808f02d5085a445273d9358a4a6609a",
+    "development/hardware/batch50/network.json": "dd07f0c30d57bdb07fa40139623a60ba44e9ce32fc03740186a004068119bfc0",
+    "development/hardware/batch50/qnap.json": "6fbdc49dbdee25e760f91624dceac5f62fa44cff50d71dafc78e282534636378",
+    "development/hardware/batch50/synology.json": "94fecd54e027f99a8827f2f26d2a0bb98a416f8555b6ce49bb026c5fa54de010",
+    "development/hardware/batch50b/network.json": "7825e0c4594782bd27d3edcfdb3ccd647312967391db390770ddee422c69d62e",
+    "development/hardware/batch50b/qnap.json": "6222e030ef8482afcf11547bce8329bf7efab58202c1782de1b9ec91df7bf1c7",
+    "development/hardware/batch50b/synology.json": "4a2af32e452cfc121e2368e2f1319d803638d84928b8744f93d7a3d6dffe80eb",
+    "development/hardware/catalog-aruba-v1.json": "621920f2760f8f7fba899aaa7bb90bc22d244198e252b6f4ef16987922e0c798",
+    "development/hardware/catalog-commercial-v1.json": "d034c999cef12c9427a5390fe23a277f408b3303121c4a67e8c20c1c96580863",
+    "development/hardware/catalog-diskstation-v1.json": "4f00127eb3a882ef5a3e7388c59b18b57ff7dcfe8d03026758c00172e201dc09",
+    "development/hardware/catalog-fortinet-v1.json": "546f47ca440dcea3cb8cf7793f9cc575ec04154fd054777ed0decfbc79e3dec9",
+    "development/hardware/catalog-qnap-v1.json": "89801b1c35cbff275ea1bf3505abd033eb229c76a2027fd10b0f29c5a4606aa4",
+    "development/hardware/catalog-source-v1.json": "896ccb28d6f04f27810230ab603f7365b2730b06d463babf6d68dd97abbcf8f3",
+    "development/hardware/catalog-synology-v1.json": "c0365434769ada6a7a0ffd21b44e9ca7903fd1c1acfc575683f6158926a2155e",
+    "development/hardware/selected506a/aruba.json": "175e934d8996905947c9b6c41eda6507b102ea44fd74ad139a1898b6fcce60b9",
+    "development/hardware/selected506a/ubiquiti.json": "83edafa842cfbcf9b0a81a281e33be00ff42029241f4cde89ce7ee3f0201f16c",
+    "development/hardware/selected506b/access.json": "8d4b3ef30bfd0fb5c020d89b5ab5ca79ea842237f5b70498e4fc1c08a2b4ebed",
+    "development/hardware/selected506b/core.json": "443253eb5570cff6bba469a36ccda85fdf7d1affbe93c1e531d17b1817cc918b",
+    "development/hardware/selected506c/edge.json": "d57e7dc97027ac48f2e4e02a1d05e3b7456d1f5d0e38f19ea2e4375511fbe8c7",
+    "development/hardware/selected506c/firewalls.json": "d4a96e69b46cf37d05e68a87afa9211d83534fe23aa5103d821e09235c23e2b8",
+    "development/hardware/selected506d/core.json": "8fc642c1d13804eafaeecf70da13e095d6f76aeed85da4fed2b7af1b96ad872a",
+    "development/hardware/selected506d/edge.json": "7020925dcc3318fe50afbe90e991945ed05fda0a8397d16bb52c2181ea2e4023",
+    "development/hardware/selected506e/core.json": "f01c77a6bee554bae431c621c3b73050e7ab751f9a38fdb8d9393fa58824f51a",
+    "development/hardware/selected506e/edge.json": "8dc4f98226e12e29efca69134cb9ebf19bc706825bb72352615a80163008be0c"
+  },
+  "files": {
+    "development/server/src/RackClick.Server/Selected506FHardwareProfiles.Generated.cs": "f611943671bd58714fe84fd9059d3e06a96ef73ebf017d6320bd2981d1f1a3e5",
+    "development/frontend/src/hardware-selected506f.generated.json": "929114d4b413752502750ebda988625928feb8e8fb5c2e2ba5348d35bc9af159",
+    "development/server/database/034-selected506f-hardware.sql": "7114b3189380f15fa99c57daaaa0023ab5c38c06321dceb50c79243da85bfa3c"
+  },
+  "selectionIds": [
+    "dell-r350",
+    "hpe-dl360-gen10",
+    "nb-1397e3169b861f26",
+    "nb-149a66cfbe4b740e",
+    "nb-14bfeedc875ce4de",
+    "nb-1949dff7c63dc370",
+    "nb-22f6dc2225b95f69",
+    "nb-302f3fd979788f2e",
+    "nb-31017da140e60303",
+    "nb-33c7e52f1cb00564",
+    "nb-417dcd51ce56234d",
+    "nb-4b73963d18934c09",
+    "nb-4f6f5a063ccdaf07",
+    "nb-58396084a7d0cb50",
+    "nb-5ceaeace0476cada",
+    "nb-665e9fb0c5bbe24e",
+    "nb-6a0159c3c324ded0",
+    "nb-73980deb1c5f24bc",
+    "nb-775999426472421b",
+    "nb-7a4f104d07cdb0f2",
+    "nb-80c45eaf78955607",
+    "nb-87abdfb9366e4dcc",
+    "nb-90d3445d2598509a",
+    "nb-9363a14b01cfb299",
+    "nb-949bb6f1695a8037",
+    "nb-a177f34a640c5260",
+    "nb-b47c684d217e4ade",
+    "nb-b96a0faf83d55061",
+    "nb-c1f158f64ea1ee8a",
+    "nb-c2987ad4b24bf989",
+    "nb-c7a6bbe78d369445",
+    "nb-c7c438542f1254b3",
+    "nb-cb719f76ccc4e4c8",
+    "nb-cbcbd6a95a949d7a",
+    "nb-cd689cba786b2529",
+    "nb-ce11d1eae1be7887",
+    "nb-d0eebb2cb671d40b",
+    "nb-d532953f6aab1767",
+    "nb-d6c7e4ca54f24095",
+    "nb-d9ade587e7147b9a",
+    "nb-e9b61460b1aac8e0",
+    "nb-efc4c57b1d5c811d",
+    "nb-f7f404654aad4d5a",
+    "nb-fb93dfe85c1f7a8b",
+    "nb-fbdb4552eed0ee61",
+    "nb-fce19920137ab0c4",
+    "nb-fe8d278736262b7c",
+    "nb-ff98cf8f1bf55eb7",
+    "palo-alto-pa-415",
+    "palo-alto-pa-445"
+  ],
+  "definitions": [
+    {
+      "key": "selected-dell-r350",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "ce8b12b13c640e9d11c3c7102b7c2faf4240386c335ecd675294a3ee6e295cfa"
+    },
+    {
+      "key": "selected-hpe-dl360-gen10",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "222bd340f72af1dfa302120c54bb3de07a5e0f9848ccb780d00e15d409015818"
+    },
+    {
+      "key": "selected-nb-1397e3169b861f26",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "6e4314832832e9766ba65477305c27d97a6d9d29dc7508c7af996f0c54d5f144"
+    },
+    {
+      "key": "selected-nb-149a66cfbe4b740e",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "239b9d1a7b29831a99b69513bf8ce1d679f27b733057fcf91dd1081a48c0b295"
+    },
+    {
+      "key": "selected-nb-14bfeedc875ce4de",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "8408dcdccd05ed745f1bb7f2ba154411e1c3e403a96ff3401874e0bd59b0925c"
+    },
+    {
+      "key": "selected-nb-1949dff7c63dc370",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "05c268f7fc86e1c07728d71978ff322b55e363691cc0b6ebfaecc39b589b0624"
+    },
+    {
+      "key": "selected-nb-22f6dc2225b95f69",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "318c8f9efca435bf1beb142b9016f2828fb7281f86a033f8cc7a90a9fab527e0"
+    },
+    {
+      "key": "selected-nb-302f3fd979788f2e",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "e203c0fef77e2b7e24374bd14ab78d548745704807b9787854af09b72adaf0ef"
+    },
+    {
+      "key": "selected-nb-31017da140e60303",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "21702a75d65e9d55ba26c55a978c59ddd4ea6304879de1cae0ebf3c81795129f"
+    },
+    {
+      "key": "selected-nb-33c7e52f1cb00564",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "c998b5e7ac2cee02c6a0175a0165a2ce286668a373682c5b836001e50e753154"
+    },
+    {
+      "key": "selected-nb-417dcd51ce56234d",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "e6fb5f35084140ec5ff7650855ab1a9ebec685897ce4876037ba35a24434e757"
+    },
+    {
+      "key": "selected-nb-4b73963d18934c09",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "b11179bcc0684d6035c158345b9d85a18ac9a4caec8c61a8ab9c44d226fe42b3"
+    },
+    {
+      "key": "selected-nb-4f6f5a063ccdaf07",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "0b70bf1f09ed4a56d5f7deae80643d07f7563aa097709ef0dfa440731e8ebce1"
+    },
+    {
+      "key": "selected-nb-58396084a7d0cb50",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "02bd11c8df6da16c06d83faaa3eb8caef88931204fbfac155b2ff330fd221b5a"
+    },
+    {
+      "key": "selected-nb-5ceaeace0476cada",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "322ef9b66463d5dc8320024f713dc0de73742ad82a3be2e4cd5697ffcc9ad71e"
+    },
+    {
+      "key": "selected-nb-665e9fb0c5bbe24e",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "7ca2269bb30cb1f0e6654a1106411c3b3ece086bfd66d643210d4bf0b92370ac"
+    },
+    {
+      "key": "selected-nb-6a0159c3c324ded0",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "5be1a1b510ff02755c043fd5f63b2341f0fab1a5cb774dda6798bec5a3bdb4e0"
+    },
+    {
+      "key": "selected-nb-73980deb1c5f24bc",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "b4fddfd647b6f86f213da055f9798204783b04740cc40fbb4e78e0144a15f52b"
+    },
+    {
+      "key": "selected-nb-775999426472421b",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "4d1c1037c237a47b6366db3d72b812b00b95e7bbdd91656455c76c8867b30a6a"
+    },
+    {
+      "key": "selected-nb-7a4f104d07cdb0f2",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "039cf8e83a6cb29615a830472c671673e1b79148f002da31e852116f27d5d6ef"
+    },
+    {
+      "key": "selected-nb-80c45eaf78955607",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "e110540e84b3ba84ce021993c3e650dd57800e94025e2869c327d4e79d8e24ec"
+    },
+    {
+      "key": "selected-nb-87abdfb9366e4dcc",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "c41666b2fbc5d97a66bd1c9f03bb64a5c37990541631cda166c0ce445167b9cf"
+    },
+    {
+      "key": "selected-nb-90d3445d2598509a",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "402b4bd762c148143bbbb1a289812ec4300c9303b2c27c575907bec8cb38cb7d"
+    },
+    {
+      "key": "selected-nb-9363a14b01cfb299",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "b5329e1113839a864b962ce30abd3679ffa362eb6d954625bbaa8b08f6533e46"
+    },
+    {
+      "key": "selected-nb-949bb6f1695a8037",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "32c7df293f8a8f872eebf6ebd047e315dc63650e1d486dc11ea59651e7b2788d"
+    },
+    {
+      "key": "selected-nb-a177f34a640c5260",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "b6e1728aba4a48b6fef9871d4b2dadd6e40e3c80461230fb431e9abfe9a25318"
+    },
+    {
+      "key": "selected-nb-b47c684d217e4ade",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "70c81484d928c7b7c72f641201fd672013300f5bfa79f158e0219c9e6857ef38"
+    },
+    {
+      "key": "selected-nb-b96a0faf83d55061",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "60d51b1cf7c6496eab480c1f879684e06d99350b8aff5484878493970b5ed063"
+    },
+    {
+      "key": "selected-nb-c1f158f64ea1ee8a",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "9a796bfa44f1405ec150fa29acca30573125ad076d61dd29a6fbfe7ec072285b"
+    },
+    {
+      "key": "selected-nb-c2987ad4b24bf989",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "dd9fe4cf4731fa4a2f2ea297662b983e554c697bdbe5423d41ec0f163b044da0"
+    },
+    {
+      "key": "selected-nb-c7a6bbe78d369445",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "efe81ff95bf52e854c511b49ba66d960cdf933722f5241248e59015a98ab620e"
+    },
+    {
+      "key": "selected-nb-c7c438542f1254b3",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "d0e683ffe4fa873a00b44ff556d77e049884cbb1230107274b5c91536abba03c"
+    },
+    {
+      "key": "selected-nb-cb719f76ccc4e4c8",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "41a6f08f42807298c6a0d30baa0b213c951d5256b0b64e72bed98086f83d04a6"
+    },
+    {
+      "key": "selected-nb-cbcbd6a95a949d7a",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "e9931e5084edb275ac4159d252fa3048867ab87728b5bfd499df7feecc6475c0"
+    },
+    {
+      "key": "selected-nb-cd689cba786b2529",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "acf0ea3eac10314dd8105ee99e3ea13102b916a907cb853f7310fa9df1ba5bbc"
+    },
+    {
+      "key": "selected-nb-ce11d1eae1be7887",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "9ac2bd1c5ba01abe60eb68f7bba9cc585189fecf6410fe7240ed213be7157355"
+    },
+    {
+      "key": "selected-nb-d0eebb2cb671d40b",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "8c4711d62f65bc41ea44d4323754a11cd72bd61b630351dea301e8e74b4ebad4"
+    },
+    {
+      "key": "selected-nb-d532953f6aab1767",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "673033df2ef2c940f92272049f12a13c93fa3f6c776a5ca634eb23d761d6c100"
+    },
+    {
+      "key": "selected-nb-d6c7e4ca54f24095",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "8ddfe2eb286610ddcd68f2cfec1053c4494be577f849c27b6f25c9cff8e10743"
+    },
+    {
+      "key": "selected-nb-d9ade587e7147b9a",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "0094d3048a955e69475a6b28fdc11e82906c3953a6f07400a27ee52b0f870a77"
+    },
+    {
+      "key": "selected-nb-e9b61460b1aac8e0",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "819eb6714945d7bb2c3d224d8aae992ff593d8c055facfcd918b59d9811890e3"
+    },
+    {
+      "key": "selected-nb-efc4c57b1d5c811d",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "0fefa22be15aaac27898f6985726ce2f2ef26f927ed4fc8b8f7a64b2273141fe"
+    },
+    {
+      "key": "selected-nb-f7f404654aad4d5a",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "e1071fe62131836281d3ace0581cd8c0a0fff5a3b73d8e1b2dd50b0b3e85b224"
+    },
+    {
+      "key": "selected-nb-fb93dfe85c1f7a8b",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "648b324deb1d17005880b01e9ec0576538277d4af1da4a63d622a13166f930d6"
+    },
+    {
+      "key": "selected-nb-fbdb4552eed0ee61",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "1495cfa269f4688820d104a4a2000ee722893f271b54d254e18ee3b37edd8ee4"
+    },
+    {
+      "key": "selected-nb-fce19920137ab0c4",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "1600afc05d38538e2da840930163c7b132788ad04e9d91160fa17207f5ce9636"
+    },
+    {
+      "key": "selected-nb-fe8d278736262b7c",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "14b02afea365f07b0030a074e16cb15675df63f7113e996d5e285c224ff0ddff"
+    },
+    {
+      "key": "selected-nb-ff98cf8f1bf55eb7",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "297b6cf0dba2d3fff20a248314d930edcd066285a1528045a48747a071c38855"
+    },
+    {
+      "key": "selected-palo-alto-pa-415",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "833f8ed1bb980bcb5b801702c55aa96abd27c1a0a1f3239f5ebce2977d9ac5e8"
+    },
+    {
+      "key": "selected-palo-alto-pa-445",
+      "revision": "selected506f-20261101-v1",
+      "sha256": "95aea6a021067ddcb77705155161b2efc3b46a3f0d4172a1d83a4aa223141b76"
+    }
+  ]
+}

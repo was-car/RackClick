@@ -1,5 +1,10 @@
 # RackClick — instrucciones de continuidad
 
+## Catálogo por familias · 01.11.2026
+
+Wascar pide agrupar variantes por arquitectura física y conservar un método reutilizable. Seguir docs/METODO-CATALOGO-POR-FAMILIAS.md y docs/FAMILIAS-CATALOGO-PENDIENTES.md; preparar nuevas familias con docs/PLANTILLA-FAMILIA-CATALOGO.json. Reutilizar base y fuentes válidas, fijar diferencias por SKU/población, separar reservas y ejecutar una integración/regresión pertinente por grupo completo, con comprobación de todos sus modelos/caras y revisión independiente. No promover una caja vacía con puertos inventados, radios como bocas, ni IDC como RJ45. La lista de familias no asigna pesos nuevos. Regenerar su cola con C:/Python312/python.exe -B tools/build_hardware_family_queue.py --write y verificar con --check después de actualizar cobertura.
+
+
 Comunícate con Wascar en español claro. Este proyecto continúa trabajo existente; no comenzar otro piloto ni rediseñar la GUI aprobada.
 
 ## Estado vigente: R0 contrastado, S1 autorizado

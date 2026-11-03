@@ -7,16 +7,33 @@ namespace RackClick.Server;
 
 public sealed partial class InventoryStore
 {
+    private static string? PowerSystem(JsonObject port)
+    {
+        if (String(port,"type")!="power_dc") return null;
+        if (port["properties"] is not JsonObject properties) throw new DomainError(422,"properties_invalid");
+        string? Read(string key)
+        {
+            if (!properties.ContainsKey(key) || properties[key] is null) return null;
+            if (properties[key] is not JsonValue scalar || !scalar.TryGetValue<string>(out var value)) throw new DomainError(422,"hardware_metadata_invalid");
+            return FamilyLRules.Feature("powerSystem",value);
+        }
+        return Read("hardwarePowerSystem") ?? Read("declaredPowerSystem") ?? "dc";
+    }
     private static async Task ValidateExistingPower(NpgsqlConnection db, NpgsqlTransaction tx, Actor actor, Guid customer, Guid[] ports, CancellationToken ct)
     {
         await using var cmd = Cmd(db, tx, """
-            SELECT p.type,p.power_role,q.type,q.power_role
+            SELECT p.type,p.power_role,q.type,q.power_role,p.properties::text,q.properties::text
             FROM inventory_connection_endpoint a JOIN inventory_connection_endpoint b ON a.connection_id=b.connection_id AND b.ordinal=1
             JOIN inventory_port p ON p.id=a.port_id JOIN inventory_port q ON q.id=b.port_id
             WHERE a.ordinal=0 AND a.systemhaus_id=@house AND a.customer_id=@customer AND (a.port_id=ANY(@ports) OR b.port_id=ANY(@ports))
             """, ("house", actor.HouseId), ("customer", customer), ("ports", ports));
         await using var rows = await cmd.ExecuteReaderAsync(ct);
-        while (await rows.ReadAsync(ct)) InventoryRules.RequirePowerPair(rows.GetString(0), rows.GetString(1), rows.GetString(2), rows.GetString(3));
+        while (await rows.ReadAsync(ct))
+        {
+            var a=new JsonObject{["type"]=rows.GetString(0),["properties"]=JsonNode.Parse(rows.GetString(4))};
+            var b=new JsonObject{["type"]=rows.GetString(2),["properties"]=JsonNode.Parse(rows.GetString(5))};
+            FamilyLRules.PowerPair(rows.GetString(0),rows.GetString(1),PowerSystem(a),rows.GetString(2),rows.GetString(3),PowerSystem(b));
+        }
     }
     private static async Task<JsonObject[]> Pair(NpgsqlConnection db, NpgsqlTransaction tx, Actor actor, Guid customer,
         Guid first, Guid second, Guid? excluding, CancellationToken ct)
@@ -25,7 +42,12 @@ public sealed partial class InventoryStore
         var a = await Row(db, tx, actor, customer, "inventory_port", first, ct);
         var b = await Row(db, tx, actor, customer, "inventory_port", second, ct);
         if (new[] { a, b }.Any(p => String(p, "status") is "disabled" or "faulty")) throw new DomainError(409, "port_blocked");
-        InventoryRules.RequirePowerPair(String(a, "type"), String(a, "power_role"), String(b, "type"), String(b, "power_role"));
+        FamilyLRules.PowerPair(String(a,"type"),String(a,"power_role"),PowerSystem(a),String(b,"type"),String(b,"power_role"),PowerSystem(b));
+        // The reference profiles name actual connector families. Legacy broad-family behavior remains unchanged.
+        var firstOwner = await Row(db, tx, actor, customer, "inventory_device", Id(a, "device_id"), ct);
+        var secondOwner = await Row(db, tx, actor, customer, "inventory_device", Id(b, "device_id"), ct);
+        InventoryRules.RequireConnectorPair(String(a, "type"), String(b, "type"),
+            firstOwner["hardware_profile_key"] is not null || secondOwner["hardware_profile_key"] is not null);
         await using var occupied = Cmd(db, tx, "SELECT EXISTS(SELECT 1 FROM inventory_connection_endpoint WHERE systemhaus_id=@house AND customer_id=@customer AND port_id=ANY(@ports) AND connection_id IS DISTINCT FROM @excluding::uuid)",
             ("house", actor.HouseId), ("customer", customer), ("ports", new[] { first, second }), ("excluding", excluding));
         if (await occupied.ExecuteScalarAsync(ct) is true) throw new DomainError(409, "port_occupied");

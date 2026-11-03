@@ -10,7 +10,13 @@ internal static class Program
 {
     private const string PlanSha = "cbfe4b43a0148299f6f4c24a21dfcb5e21a8efd5ca2d08d552119ac0cd292bd7";
     private const string SourceSha = "cb52d27990a82d3f2dc12bf731bcbe6c1586575643f301e4b040b250f31374d0";
-    private const string SchemaSha = "a09be30a6b72512a6fc0cc7a1d9419aec6a08f5c6b9ff8a603161c6285d022be";
+    // Closed profiles: preserve the historical15 loader contract and explicitly
+    // admit the reviewed45 source demo. Never accept an arbitrary later schema.
+    private static readonly IReadOnlyDictionary<string, string> SchemaProfiles = new Dictionary<string, string>
+    {
+        [string.Join(',', Enumerable.Range(1, 15))] = "a09be30a6b72512a6fc0cc7a1d9419aec6a08f5c6b9ff8a603161c6285d022be",
+        [string.Join(',', Enumerable.Range(1, 45))] = "50649cc57003f7c7f797e980072a4c52e425875a114d59bee63b7eeddf85b4d5"
+    };
     private static int CommitPhase;
     private sealed record Table(string Name, string Columns);
     private static readonly Table[] Tables = [
@@ -108,8 +114,9 @@ internal static class Program
             """))
         await using (var history = await schema.ExecuteReaderAsync())
         {
-            Require(await history.ReadAsync() && !history.IsDBNull(0) && history.GetString(0) == string.Join(',', Enumerable.Range(1, 15)), "schema15_required");
-            Require(!history.IsDBNull(1) && Convert.ToHexStringLower(SHA256.HashData(Encoding.UTF8.GetBytes(history.GetString(1)))) == SchemaSha,
+            Require(await history.ReadAsync() && !history.IsDBNull(0), "schema_profile_unsupported");
+            Require(SchemaProfiles.TryGetValue(history.GetString(0), out string? expectedSchemaSha), "schema_profile_unsupported");
+            Require(!history.IsDBNull(1) && Convert.ToHexStringLower(SHA256.HashData(Encoding.UTF8.GetBytes(history.GetString(1)))) == expectedSchemaSha,
                 "migration_digest_mismatch");
         }
         Guid house;

@@ -149,6 +149,9 @@ try {
     if ($offlineInstallInputs.mode -ceq 'Restore') {
         $arguments+=@('-RecoveryUser',$user,'-BackupPath',$backupRoot,'-ExpectedBackupManifestSha256',$offlineInstallInputs.backupHash.ToLowerInvariant())
     } else {$arguments+=@('-BootstrapUser',$user,'-SystemhausName',$house)}
+    if((Get-OfflineBundleApplicationProfile $bundle.manifest.applicationManifestSha256).name-cin@('43-sql','45-sql')){
+        $arguments+=@('-ProtectSqlCredentials','-MinimizeSqlSecrets')
+    }
     $result=Invoke-OfflineInstallerChild (Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe') $arguments $root $logs 'deployment'
     if ($result.stderr.Length -ne 0 -or $result.stdout.Length -gt 16384) {Stop-OfflineBundleCheck 'child_output_invalid'}
     try {$created=$result.stdout|ConvertFrom-Json} catch {Stop-OfflineBundleCheck 'child_output_invalid'}

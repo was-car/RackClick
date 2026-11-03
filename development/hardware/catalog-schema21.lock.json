@@ -1,0 +1,15 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 21,
+  "sourceSha256": "c0365434769ada6a7a0ffd21b44e9ca7903fd1c1acfc575683f6158926a2155e",
+  "factsSha256": "3e5fb988c709b8c76fc0dd2f776bf4364ea8ec69e2b6332b7bad32d6b609b7f5",
+  "baseMigrationSha256": "9cbb64c1c4d53f495dfd04ea2eb00453b2abc9d22ebd7d622583243feb2d24b9",
+  "definitions": [
+    {
+      "key": "synology-rs1221plus",
+      "revision": "synology-20261030-v1",
+      "sha256": "ccb452d3199373b294906b54781159294254d0e7b036b6ec61f35e54b417fdc3"
+    }
+  ],
+  "state": "curated_development_not_a_release"
+}

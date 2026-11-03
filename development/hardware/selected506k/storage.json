@@ -1,0 +1,1101 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506k-20261101-v1",
+  "models": [
+    {
+      "definition": {
+        "key": "selected-nb-7dd2b21e61ad99a0",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Terramaster",
+          "model": "F2-424",
+          "family": "Diskless upright desktop NAS,2rearLAN,externalDC inert",
+          "sku": "F2-424"
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 119,
+          "height": 222,
+          "depth": 154
+        },
+        "color": "#292b2c",
+        "slots": [],
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "RearLAN 2.5GbE",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.terra-master.com/ko/pages/f2-424-specification",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 400,
+            "height": 786.0,
+            "plate": {
+              "x": 1.333333,
+              "y": 13.333333,
+              "w": 397.333333,
+              "h": 746.0,
+              "fill": "#292b2c",
+              "stroke": "#666a6c",
+              "radius": 20.0
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 12.0,
+                "y": 24.666667,
+                "w": 376.0,
+                "h": 723.333333,
+                "fill": "#252728",
+                "stroke": "#44484a",
+                "radius": 16.0
+              },
+              {
+                "kind": "rect",
+                "x": 52.0,
+                "y": 759.333333,
+                "w": 48.0,
+                "h": 8.0,
+                "fill": "#15191b"
+              },
+              {
+                "kind": "rect",
+                "x": 304.0,
+                "y": 759.333333,
+                "w": 48.0,
+                "h": 8.0,
+                "fill": "#15191b"
+              },
+              {
+                "kind": "rect",
+                "x": 46.0,
+                "y": 43.333333,
+                "w": 140.8,
+                "h": 669.333333,
+                "fill": "#070b0d",
+                "radius": 2.666667
+              },
+              {
+                "kind": "rect",
+                "x": 48.0,
+                "y": 46.666667,
+                "w": 136.8,
+                "h": 662.666667,
+                "fill": "#333637",
+                "stroke": "#4b5052",
+                "radius": 2.0
+              },
+              {
+                "kind": "line",
+                "x1": 51.333333,
+                "y1": 707.333333,
+                "x2": 181.466667,
+                "y2": 707.333333,
+                "stroke": "#1b2022",
+                "width": 1.333333
+              },
+              {
+                "kind": "rect",
+                "x": 189.2,
+                "y": 43.333333,
+                "w": 140.8,
+                "h": 669.333333,
+                "fill": "#070b0d",
+                "radius": 2.666667
+              },
+              {
+                "kind": "rect",
+                "x": 191.2,
+                "y": 46.666667,
+                "w": 136.8,
+                "h": 662.666667,
+                "fill": "#333637",
+                "stroke": "#4b5052",
+                "radius": 2.0
+              },
+              {
+                "kind": "line",
+                "x1": 194.533333,
+                "y1": 707.333333,
+                "x2": 324.666667,
+                "y2": 707.333333,
+                "stroke": "#1b2022",
+                "width": 1.333333
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 462.52,
+                "r": 1.666667,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 474.52,
+                "r": 1.666667,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 486.52,
+                "r": 1.666667,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 498.52,
+                "r": 1.666667,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "text",
+                "x": 360.0,
+                "y": 701.24,
+                "text": "TERRA",
+                "size": 5.333333,
+                "fill": "#7e8587",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 778.0,
+                "text": "F2-424 · diskless · DC/USB/HDMI inert · geometry_unverified",
+                "size": 4.666667,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 400,
+            "height": 786.0,
+            "plate": {
+              "x": 1.333333,
+              "y": 13.333333,
+              "w": 397.333333,
+              "h": 746.0,
+              "fill": "#292b2c",
+              "stroke": "#666a6c",
+              "radius": 20.0
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 12.0,
+                "y": 24.666667,
+                "w": 376.0,
+                "h": 723.333333,
+                "fill": "#252728",
+                "stroke": "#44484a",
+                "radius": 16.0
+              },
+              {
+                "kind": "rect",
+                "x": 52.0,
+                "y": 759.333333,
+                "w": 48.0,
+                "h": 8.0,
+                "fill": "#15191b"
+              },
+              {
+                "kind": "rect",
+                "x": 304.0,
+                "y": 759.333333,
+                "w": 48.0,
+                "h": 8.0,
+                "fill": "#15191b"
+              },
+              {
+                "kind": "circle",
+                "cx": 48.0,
+                "cy": 65.553333,
+                "r": 8.0,
+                "fill": "#11191d"
+              },
+              {
+                "kind": "text",
+                "x": 48.0,
+                "y": 68.22,
+                "text": "I",
+                "size": 6.666667,
+                "fill": "#aeb9b6",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 43.333333,
+                "y": 179.04,
+                "w": 9.333333,
+                "h": 33.333333,
+                "fill": "#121a20",
+                "stroke": "#b8bfb9"
+              },
+              {
+                "kind": "text",
+                "x": 37.333333,
+                "y": 199.04,
+                "text": "HDMI",
+                "size": 4.666667,
+                "fill": "#b9c5c4",
+                "anchor": "end"
+              },
+              {
+                "kind": "fan",
+                "cx": 248.0,
+                "cy": 410.3,
+                "r": 120.0
+              },
+              {
+                "kind": "rect",
+                "x": 40.0,
+                "y": 298.4,
+                "w": 8.0,
+                "h": 34.0,
+                "fill": "#0b1924",
+                "stroke": "#4e7c9e"
+              },
+              {
+                "kind": "rect",
+                "x": 61.333333,
+                "y": 298.4,
+                "w": 8.0,
+                "h": 34.0,
+                "fill": "#0b1924",
+                "stroke": "#4e7c9e"
+              },
+              {
+                "kind": "text",
+                "x": 48.0,
+                "y": 292.4,
+                "text": "USB A/C · inert",
+                "size": 5.333333,
+                "fill": "#a6b4ba",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 31.333333,
+                "y": 447.886667,
+                "text": "2.5GbE",
+                "size": 5.333333,
+                "fill": "#bdc5c1",
+                "anchor": "end"
+              },
+              {
+                "kind": "text",
+                "x": 31.333333,
+                "y": 567.246667,
+                "text": "2.5GbE",
+                "size": 5.333333,
+                "fill": "#bdc5c1",
+                "anchor": "end"
+              },
+              {
+                "kind": "rect",
+                "x": 36.666667,
+                "y": 668.193333,
+                "w": 22.666667,
+                "h": 22.666667,
+                "fill": "#929e9f"
+              },
+              {
+                "kind": "circle",
+                "cx": 48.0,
+                "cy": 678.86,
+                "r": 7.333333,
+                "fill": "#0c171e"
+              },
+              {
+                "kind": "circle",
+                "cx": 48.0,
+                "cy": 678.86,
+                "r": 2.666667,
+                "fill": "#7d8a8c"
+              },
+              {
+                "kind": "text",
+                "x": 64.0,
+                "y": 681.526667,
+                "text": "DC IN · inert",
+                "size": 5.333333,
+                "fill": "#bac2c1",
+                "anchor": "start"
+              },
+              {
+                "kind": "circle",
+                "cx": 80.0,
+                "cy": 36.0,
+                "r": 4.0,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "circle",
+                "cx": 80.0,
+                "cy": 740.666667,
+                "r": 4.0,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "circle",
+                "cx": 192.0,
+                "cy": 36.0,
+                "r": 4.0,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "circle",
+                "cx": 192.0,
+                "cy": 740.666667,
+                "r": 4.0,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "circle",
+                "cx": 328.0,
+                "cy": 36.0,
+                "r": 4.0,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "circle",
+                "cx": 328.0,
+                "cy": 740.666667,
+                "r": 4.0,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 778.0,
+                "text": "F2-424 · diskless · DC/USB/HDMI inert · geometry_unverified",
+                "size": 4.666667,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 37.333333,
+                "y": 425.22,
+                "dx": 20.666667,
+                "dy": 50.0,
+                "w": 38.0,
+                "h": 42.0,
+                "labels": {
+                  "1": "LAN 1"
+                }
+              },
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    2
+                  ]
+                ],
+                "x": 37.333333,
+                "y": 544.58,
+                "dx": 20.666667,
+                "dy": 50.0,
+                "w": 38.0,
+                "h": 42.0,
+                "labels": {
+                  "2": "LAN 2"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.terra-master.com/ko/pages/f2-424-specification",
+            "kind": "manufacturer-documentation",
+            "observed": "F2-424 H222W119D154,dual2.5GE,external40Wadapter",
+            "sha256": "a5f30dd2f98e835516cf3e5e3d4cc070a494f2f878951e22ed394e960bb8e514",
+            "bytes": 857490
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Terramaster/F2-424.yaml",
+            "kind": "community-yaml",
+            "sha256": "7ddc8d7930c2031b248d429298a97962c85b2fa45bddd3f38a9e0fb9466671a6",
+            "observed": "Original selected manufacturer/model identity only. Primary configuration supersedes undocumented IR population; historical IR unchanged."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-7dd2b21e61ad99a0/front-b4311e5469c8.png",
+            "sha256": "b4311e5469c831c081536ccfeb20e5b9d5046bca9cb6165b847f4b5c78412496",
+            "view": "front",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-7dd2b21e61ad99a0/rear-0026a4ffd865.png",
+            "sha256": "0026a4ffd8654284f23149838ef6ad4dca799f151e85dc906907105f1491202e",
+            "view": "rear",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          }
+        ],
+        "dimensionsBasis": "F2-424; F2-424 H222W119D154,dual2.5GE,external40Wadapter; nominal W119 H222 D154mm. Desktopupright;2rear2.5GE;external40WDCinert,noAC. Needsnewsynthetic7U440x280x500support,notrotated.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "Desktopupright;2rear2.5GE;external40WDCinert,noAC. Needsnewsynthetic7U440x280x500support,notrotated.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "Diskless desktop upright, no rackears assumed and no drive or M.2 populated. Bayhandles are inert. Two real rearRJ45 only; externalDC adapter is not a built-inAC inlet.",
+          "geometry_unverified: body proportions use manufacturer nominal dimensions; cached family front/rear do not authenticate revision or exact pixel/mechanical positions. DC plug standard/electrical mating not authenticated.",
+          "Network labels indicate documented port capability only; no negotiation, operational rate, PoE or telemetry is simulated."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-4de91d17b80dbbff",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Terramaster",
+          "model": "F6-424 Max",
+          "family": "Diskless upright desktop NAS,2rearLAN,externalDC inert",
+          "sku": "F6-424 Max"
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 240,
+          "height": 154,
+          "depth": 220
+        },
+        "color": "#292b2c",
+        "slots": [],
+        "groups": [
+          {
+            "key": "lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "RearLAN 10GbE",
+            "prefix": "LAN ",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.terra-master.com/en-gb/products/f6-424-max",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 400,
+            "height": 280.8,
+            "plate": {
+              "x": 0.8,
+              "y": 8.0,
+              "w": 398.4,
+              "h": 256.8,
+              "fill": "#292b2c",
+              "stroke": "#666a6c",
+              "radius": 12.0
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 7.2,
+                "y": 14.8,
+                "w": 385.6,
+                "h": 243.2,
+                "fill": "#252728",
+                "stroke": "#44484a",
+                "radius": 9.6
+              },
+              {
+                "kind": "rect",
+                "x": 52.0,
+                "y": 264.8,
+                "w": 48.0,
+                "h": 4.8,
+                "fill": "#15191b"
+              },
+              {
+                "kind": "rect",
+                "x": 304.0,
+                "y": 264.8,
+                "w": 48.0,
+                "h": 4.8,
+                "fill": "#15191b"
+              },
+              {
+                "kind": "rect",
+                "x": 46.8,
+                "y": 26.0,
+                "w": 43.733333,
+                "h": 210.8,
+                "fill": "#070b0d",
+                "radius": 1.6
+              },
+              {
+                "kind": "rect",
+                "x": 48.0,
+                "y": 28.0,
+                "w": 41.333333,
+                "h": 206.8,
+                "fill": "#333637",
+                "stroke": "#4b5052",
+                "radius": 1.2
+              },
+              {
+                "kind": "line",
+                "x1": 50.0,
+                "y1": 233.6,
+                "x2": 87.333333,
+                "y2": 233.6,
+                "stroke": "#1b2022",
+                "width": 0.8
+              },
+              {
+                "kind": "rect",
+                "x": 94.533333,
+                "y": 26.0,
+                "w": 43.733333,
+                "h": 210.8,
+                "fill": "#070b0d",
+                "radius": 1.6
+              },
+              {
+                "kind": "rect",
+                "x": 95.733333,
+                "y": 28.0,
+                "w": 41.333333,
+                "h": 206.8,
+                "fill": "#333637",
+                "stroke": "#4b5052",
+                "radius": 1.2
+              },
+              {
+                "kind": "line",
+                "x1": 97.733333,
+                "y1": 233.6,
+                "x2": 135.066667,
+                "y2": 233.6,
+                "stroke": "#1b2022",
+                "width": 0.8
+              },
+              {
+                "kind": "rect",
+                "x": 142.266667,
+                "y": 26.0,
+                "w": 43.733333,
+                "h": 210.8,
+                "fill": "#070b0d",
+                "radius": 1.6
+              },
+              {
+                "kind": "rect",
+                "x": 143.466667,
+                "y": 28.0,
+                "w": 41.333333,
+                "h": 206.8,
+                "fill": "#333637",
+                "stroke": "#4b5052",
+                "radius": 1.2
+              },
+              {
+                "kind": "line",
+                "x1": 145.466667,
+                "y1": 233.6,
+                "x2": 182.8,
+                "y2": 233.6,
+                "stroke": "#1b2022",
+                "width": 0.8
+              },
+              {
+                "kind": "rect",
+                "x": 190.0,
+                "y": 26.0,
+                "w": 43.733333,
+                "h": 210.8,
+                "fill": "#070b0d",
+                "radius": 1.6
+              },
+              {
+                "kind": "rect",
+                "x": 191.2,
+                "y": 28.0,
+                "w": 41.333333,
+                "h": 206.8,
+                "fill": "#333637",
+                "stroke": "#4b5052",
+                "radius": 1.2
+              },
+              {
+                "kind": "line",
+                "x1": 193.2,
+                "y1": 233.6,
+                "x2": 230.533333,
+                "y2": 233.6,
+                "stroke": "#1b2022",
+                "width": 0.8
+              },
+              {
+                "kind": "rect",
+                "x": 237.733333,
+                "y": 26.0,
+                "w": 43.733333,
+                "h": 210.8,
+                "fill": "#070b0d",
+                "radius": 1.6
+              },
+              {
+                "kind": "rect",
+                "x": 238.933333,
+                "y": 28.0,
+                "w": 41.333333,
+                "h": 206.8,
+                "fill": "#333637",
+                "stroke": "#4b5052",
+                "radius": 1.2
+              },
+              {
+                "kind": "line",
+                "x1": 240.933333,
+                "y1": 233.6,
+                "x2": 278.266667,
+                "y2": 233.6,
+                "stroke": "#1b2022",
+                "width": 0.8
+              },
+              {
+                "kind": "rect",
+                "x": 285.466667,
+                "y": 26.0,
+                "w": 43.733333,
+                "h": 210.8,
+                "fill": "#070b0d",
+                "radius": 1.6
+              },
+              {
+                "kind": "rect",
+                "x": 286.666667,
+                "y": 28.0,
+                "w": 41.333333,
+                "h": 206.8,
+                "fill": "#333637",
+                "stroke": "#4b5052",
+                "radius": 1.2
+              },
+              {
+                "kind": "line",
+                "x1": 288.666667,
+                "y1": 233.6,
+                "x2": 326.0,
+                "y2": 233.6,
+                "stroke": "#1b2022",
+                "width": 0.8
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 159.216,
+                "r": 1.0,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 166.416,
+                "r": 1.0,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 173.616,
+                "r": 1.0,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 180.816,
+                "r": 1.0,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 188.016,
+                "r": 1.0,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 195.216,
+                "r": 1.0,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 202.416,
+                "r": 1.0,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "circle",
+                "cx": 360.0,
+                "cy": 209.616,
+                "r": 1.0,
+                "fill": "#4d6a34"
+              },
+              {
+                "kind": "text",
+                "x": 360.0,
+                "y": 241.392,
+                "text": "TERRA",
+                "size": 3.2,
+                "fill": "#7e8587",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 276.0,
+                "text": "F6-424 Max · diskless · DC/USB/HDMI inert · geometry_unverified",
+                "size": 2.8,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 400,
+            "height": 280.8,
+            "plate": {
+              "x": 0.8,
+              "y": 8.0,
+              "w": 398.4,
+              "h": 256.8,
+              "fill": "#292b2c",
+              "stroke": "#666a6c",
+              "radius": 12.0
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 7.2,
+                "y": 14.8,
+                "w": 385.6,
+                "h": 243.2,
+                "fill": "#252728",
+                "stroke": "#44484a",
+                "radius": 9.6
+              },
+              {
+                "kind": "rect",
+                "x": 52.0,
+                "y": 264.8,
+                "w": 48.0,
+                "h": 4.8,
+                "fill": "#15191b"
+              },
+              {
+                "kind": "rect",
+                "x": 304.0,
+                "y": 264.8,
+                "w": 48.0,
+                "h": 4.8,
+                "fill": "#15191b"
+              },
+              {
+                "kind": "circle",
+                "cx": 48.0,
+                "cy": 25.976,
+                "r": 4.8,
+                "fill": "#11191d"
+              },
+              {
+                "kind": "text",
+                "x": 48.0,
+                "y": 27.576,
+                "text": "I",
+                "size": 4.0,
+                "fill": "#aeb9b6",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 45.2,
+                "y": 61.632,
+                "w": 5.6,
+                "h": 20.0,
+                "fill": "#121a20",
+                "stroke": "#b8bfb9"
+              },
+              {
+                "kind": "text",
+                "x": 41.6,
+                "y": 73.632,
+                "text": "HDMI",
+                "size": 2.8,
+                "fill": "#b9c5c4",
+                "anchor": "end"
+              },
+              {
+                "kind": "fan",
+                "cx": 140.0,
+                "cy": 112.992,
+                "r": 78.0
+              },
+              {
+                "kind": "fan",
+                "cx": 304.0,
+                "cy": 112.992,
+                "r": 78.0
+              },
+              {
+                "kind": "rect",
+                "x": 43.2,
+                "y": 172.056,
+                "w": 4.8,
+                "h": 19.2,
+                "fill": "#0a2133",
+                "stroke": "#487a9c"
+              },
+              {
+                "kind": "rect",
+                "x": 56.8,
+                "y": 172.056,
+                "w": 4.8,
+                "h": 19.2,
+                "fill": "#0a2133",
+                "stroke": "#487a9c"
+              },
+              {
+                "kind": "rect",
+                "x": 44.8,
+                "y": 210.576,
+                "w": 4.4,
+                "h": 11.2,
+                "fill": "#111a21",
+                "stroke": "#b1bcb9"
+              },
+              {
+                "kind": "text",
+                "x": 55.2,
+                "y": 217.776,
+                "text": "USB-C",
+                "size": 3.2,
+                "fill": "#a1b0b9",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 38.0,
+                "y": 106.048,
+                "text": "10GbE",
+                "size": 3.2,
+                "fill": "#bdc5c1",
+                "anchor": "end"
+              },
+              {
+                "kind": "text",
+                "x": 38.0,
+                "y": 144.568,
+                "text": "10GbE",
+                "size": 3.2,
+                "fill": "#bdc5c1",
+                "anchor": "end"
+              },
+              {
+                "kind": "rect",
+                "x": 41.2,
+                "y": 227.288,
+                "w": 13.6,
+                "h": 13.6,
+                "fill": "#929e9f"
+              },
+              {
+                "kind": "circle",
+                "cx": 48.0,
+                "cy": 233.688,
+                "r": 4.4,
+                "fill": "#0c171e"
+              },
+              {
+                "kind": "circle",
+                "cx": 48.0,
+                "cy": 233.688,
+                "r": 1.6,
+                "fill": "#7d8a8c"
+              },
+              {
+                "kind": "text",
+                "x": 57.6,
+                "y": 235.288,
+                "text": "DC IN · inert",
+                "size": 3.2,
+                "fill": "#bac2c1",
+                "anchor": "start"
+              },
+              {
+                "kind": "circle",
+                "cx": 80.0,
+                "cy": 21.6,
+                "r": 2.4,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "circle",
+                "cx": 80.0,
+                "cy": 253.6,
+                "r": 2.4,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "circle",
+                "cx": 192.0,
+                "cy": 21.6,
+                "r": 2.4,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "circle",
+                "cx": 192.0,
+                "cy": 253.6,
+                "r": 2.4,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "circle",
+                "cx": 328.0,
+                "cy": 21.6,
+                "r": 2.4,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "circle",
+                "cx": 328.0,
+                "cy": 253.6,
+                "r": 2.4,
+                "fill": "#151e23"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 276.0,
+                "text": "F6-424 Max · diskless · DC/USB/HDMI inert · geometry_unverified",
+                "size": 2.8,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 41.0,
+                "y": 92.448,
+                "dx": 12.4,
+                "dy": 30.0,
+                "w": 24,
+                "h": 25.2,
+                "labels": {
+                  "1": "LAN 1"
+                }
+              },
+              {
+                "groupKey": "lan",
+                "rows": [
+                  [
+                    2
+                  ]
+                ],
+                "x": 41.0,
+                "y": 130.968,
+                "dx": 12.4,
+                "dy": 30.0,
+                "w": 24,
+                "h": 25.2,
+                "labels": {
+                  "2": "LAN 2"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.terra-master.com/en-gb/products/f6-424-max",
+            "kind": "manufacturer-documentation",
+            "observed": "F6-424Max H154W240D220,dual10GE,external150Wadapter",
+            "sha256": "1cc6494641f8a5029a497438536c9a71e6035468c36d7172835f4313e49de8c0",
+            "bytes": 1138433
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Terramaster/F6-424 Max.yaml",
+            "kind": "community-yaml",
+            "sha256": "99a3a117f364b8fc8b3b3af978c69b346f649ca5c8257bc25e8fb8f53a91bf4a",
+            "observed": "Original selected manufacturer/model identity only. Primary configuration supersedes undocumented IR population; historical IR unchanged."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-4de91d17b80dbbff/front-01b3bd27adeb.png",
+            "sha256": "01b3bd27adeb2833d70a2a99937023c82be662063838eb2b28aa358a6e55a2a9",
+            "view": "front",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-4de91d17b80dbbff/rear-7e8711be57a7.png",
+            "sha256": "7e8711be57a7de8333890ea4c084b261808ad3c4eff6bb40d1754001731476fb",
+            "view": "rear",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          }
+        ],
+        "dimensionsBasis": "F6-424 Max; F6-424Max H154W240D220,dual10GE,external150Wadapter; nominal W240 H154 D220mm. Desktopupright;2rear10GE;external150WDCinert,noAC. Fits5U190high;olderPDFD222vsweb220declared.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "Desktopupright;2rear10GE;external150WDCinert,noAC. Fits5U190high;olderPDFD222vsweb220declared.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "Diskless desktop upright, no rackears assumed and no drive or M.2 populated. Bayhandles are inert. Two real rearRJ45 only; externalDC adapter is not a built-inAC inlet.",
+          "geometry_unverified: body proportions use manufacturer nominal dimensions; cached family front/rear do not authenticate revision or exact pixel/mechanical positions. DC plug standard/electrical mating not authenticated.",
+          "Network labels indicate documented port capability only; no negotiation, operational rate, PoE or telemetry is simulated."
+        ]
+      }
+    }
+  ]
+}

@@ -3,3 +3,202 @@
 .rc-admin-layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:20px;align-items:start}.rc-admin-section-navigation{position:sticky;top:18px;background:var(--ir-panel);border:1px solid var(--ir-border);border-radius:8px;padding:14px;min-width:0}.rc-admin-section-navigation h2{font-size:16px;margin:0 0 12px}.rc-admin-section-navigation summary{cursor:pointer;font-size:13px;font-weight:600;padding:9px 0}.rc-admin-section-navigation details>div{border-left:1px solid var(--ir-border);margin-left:5px;padding-left:9px}.rc-admin-section-navigation button{display:block;width:100%;text-align:left;margin:3px 0;border:1px solid transparent;border-radius:5px;background:transparent;color:var(--ir-muted);padding:9px 7px;font:inherit;font-size:12px;overflow-wrap:anywhere}.rc-admin-section-navigation button:hover{background:var(--ir-raised)}.rc-admin-section-navigation button[aria-current=location]{color:var(--ir-accent);background:var(--ir-tint);border-color:var(--ir-border)}.rc-admin-section-navigation p{font-size:12px;line-height:1.6;color:var(--ir-muted);margin:14px 0 0}.rc-admin-panels{min-width:0}.rc-admin-section{min-width:0;scroll-margin-top:18px;border-radius:6px}.rc-admin-section:focus{outline:2px solid var(--ir-accent);outline-offset:4px}.rc-admin-section-navigation :focus-visible{outline:2px solid var(--ir-accent);outline-offset:2px}.rc-admin-panels [hidden]{display:none!important}@media(max-width:1100px){.rc-admin-layout{grid-template-columns:minmax(0,1fr)}.rc-admin-section-navigation{position:static}.rc-admin-section-navigation details>div{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:3px 8px}}
 .rc-admin-panels .rc-form{min-width:0;grid-template-columns:minmax(0,1fr)}.rc-admin-panels .rc-form label{min-width:0;overflow-wrap:anywhere}.rc-admin-panels select{width:100%;max-width:100%;min-width:0}.rc-admin-panels input{max-width:100%;min-width:0}
 @media(max-width:700px){.rc-admin-section,.rc-admin-section-navigation{scroll-margin-top:64px}}
+.rc-hierarchy-disclosure,.rc-poe-disclosure{border:1px solid var(--border);border-radius:8px;margin-block:12px;min-width:0}
+.rc-hierarchy-disclosure>summary,.rc-poe-disclosure>summary{cursor:pointer;padding:12px;font-weight:600;overflow-wrap:anywhere}
+.rc-hierarchy-disclosure>summary:focus-visible,.rc-poe-disclosure>summary:focus-visible{outline:2px solid var(--accent,#34d399);outline-offset:2px}
+.rc-poe-disclosure>summary>span+span{display:block;margin-top:6px;font-size:12px;font-weight:400}
+.rc-hierarchy-disclosure>.rc-hierarchy{padding:12px}
+.rc-secondary-tools{margin-block:20px;padding-block:12px;border-top:1px solid var(--border);min-width:0;scroll-margin-top:12px}
+.rc-secondary-heading{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.rc-secondary-heading h2{margin:0}
+[data-primary-inventory],[data-hierarchy-details]{scroll-margin-top:12px}
+.rc-report-technical{margin-block:12px;border:1px solid var(--border);border-radius:6px;min-width:0;overflow-wrap:anywhere}
+.rc-report-technical>summary{cursor:pointer;min-height:44px;box-sizing:border-box;padding:10px;font-weight:600}
+.rc-report-technical>summary:focus-visible{outline:2px solid var(--accent,#34d399);outline-offset:2px}
+.rc-report-technical>p{padding-inline:10px}
+.rc-report-context-use{max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:start}
+/* Reference hardware: original RC9 colours, controls and port primitives. */
+.rc-mounted-stack{position:relative;padding:12px 16px 28px 6px;background:var(--bg,#111827);border:7px solid #26313e;border-radius:5px}
+.rc-mounted-export{min-width:620px}
+.rc-mount-row{display:grid;grid-template-columns:28px minmax(0,1fr);align-items:stretch;margin-bottom:8px}
+.rc-mount-row>.ir-units{display:flex;flex-direction:column;justify-content:space-around;color:#94a3b8;font-size:12px}
+.rc-mount-device{min-width:0;background:#18232f;border:1px solid #4b6075;border-radius:4px;overflow:hidden}
+.rc-mount-device.selected{outline:2px solid #38bdf8}
+.rc-mount-device.dim{opacity:.45}
+.rc-mount-device .ir-device-head{min-height:42px;gap:8px;padding:4px 10px;position:relative;z-index:3}
+.rc-mount-device .ir-device-head>span{font-size:11px;white-space:nowrap;color:#b7c6d7}
+.rc-mount-device .ir-device-name{display:flex;flex-direction:column;align-items:start;flex:1;min-width:0;overflow-wrap:anywhere}
+.rc-mount-device small{font-size:11px}
+.rc-hardware-face{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(180deg,#394957,#202d39);border-top:1px solid #6b7c88;min-height:84px;position:relative}
+.rc-hardware-face-desktop{background:linear-gradient(180deg,#e0e5eb,#a8b4c3);color:#17212d;border-radius:3px}
+.rc-hardware-face-shelf{min-height:24px;padding:3px 15px;background:#303d48}
+.rc-hardware-mark{font-size:32px;opacity:.7;width:32px;flex-shrink:0}
+.rc-hardware-ports{display:flex;flex-wrap:wrap;gap:5px;min-width:0}
+.rc-hardware-port{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3px!important;min-width:31px;max-width:48px;min-height:55px;background:#111b26!important;color:#e2e8f0!important;border:1px solid #8192a1!important;border-radius:3px}
+.rc-hardware-port.selected{outline:3px solid #38bdf8}
+.rc-hardware-port svg{width:30px;height:30px;fill:#0d151e;stroke:var(--port-color);stroke-width:1.5}
+.rc-hardware-port span,.rc-hardware-port small{font:10px monospace;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rc-hardware-port:focus-visible{outline:3px solid #facc15}
+.rc-mount-caption{padding:4px 12px;margin:0;color:#a8bacd;font-size:11px;overflow-wrap:anywhere}
+.rc-shelf-floor{display:flex;justify-content:space-around;width:100%;color:#121c26}
+.rc-shelf-bay{border:8px solid #3b4b58;border-top:0;padding:8px 15px 12px;background:repeating-linear-gradient(90deg,#17212b,#17212b 12px,#25323d 13px,#25323d 15px);min-height:125px}
+.rc-shelf-bay>.rc-mount-caption{display:block}
+.rc-shelf-bay .rc-mount-child{margin:5px auto;box-shadow:0 6px 8px #0008}
+.rc-mount-wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;overflow:visible}
+.rc-mount-wires path{pointer-events:stroke;cursor:pointer;filter:drop-shadow(0 1px 2px #000)}
+[data-hardware-creation] select,[data-hardware-creation] input{max-width:100%;min-width:0;width:100%}
+[data-hardware-preview]{border:1px solid #485767;padding:12px;border-radius:5px;overflow-wrap:anywhere}
+
+.rc-hardware-face.rc-shell-specific{display:block;padding:0;background:#121315;min-height:0}
+[data-mounted-rack] .ir-export{min-width:0!important}
+.rc-shell-scroll{max-width:100%;overflow-x:auto;padding:5px 0;scrollbar-width:thin}
+.rc-shell-scroll:focus-visible{outline:2px solid #facc15;outline-offset:-2px}
+/* Flat model face. Only socket bounds take clicks and anchor RC9 cables. */
+.rc-startech-front{display:block;min-width:840px;width:100%;height:auto;background:#17181b}
+.rc-front-number{fill:#eeeef0;font:13px Arial,sans-serif}
+.rc-front-user-label{fill:#ededee;font:7px Arial,sans-serif;pointer-events:none}
+.rc-front-socket{width:100%;height:100%}
+.rc-front-socket .rc-shell-port{width:100%;height:100%;min-width:0;min-height:0;max-width:none;padding:0!important;border:0!important;border-radius:0;background:#2d2f34!important;box-shadow:none!important}
+.rc-front-socket .rc-shell-port svg{display:block;width:100%;height:100%;stroke:none}
+.rc-front-socket .rc-shell-port span,.rc-front-socket .rc-shell-port small{display:none}
+.rc-front-socket .rc-shell-port[data-port-color=custom]::before{content:'';position:absolute;bottom:1px;left:1px;width:5px;height:5px;border-radius:50%;background:var(--port-color);border:1px solid #fff}
+.rc-front-socket .rc-shell-port[data-port-connected=true]::after{content:'';position:absolute;top:1px;right:1px;width:4px;height:4px;border-radius:50%;background:#34d399}
+.rc-front-socket .rc-shell-port[data-port-status=reserved]{outline:2px dashed #fbbf24;outline-offset:-2px}
+.rc-front-socket .rc-shell-port[data-port-status=disabled],.rc-front-socket .rc-shell-port[data-port-status=faulty]{outline:2px solid #fb7185;outline-offset:-2px}
+.rc-front-socket .rc-shell-port.selected,.rc-front-socket .rc-shell-port:hover{outline:2px solid #38bdf8;outline-offset:-2px}
+.rc-front-socket .rc-shell-port:focus-visible{outline:2px solid #facc15;outline-offset:-2px}
+
+[data-hardware-creation] select{min-width:0;max-width:100%;width:100%}
+
+/* Exact JL682A face: two rows of copper, separate SFP bays and real rear inlet. */
+.rc-aruba-face{display:block;min-width:1088px;width:100%;height:auto;background:#161e28}
+.rc-aruba-label{fill:#d7e2ee;font:8px Arial,sans-serif;pointer-events:none}
+.rc-aruba-socket{width:100%;height:100%}
+.rc-aruba-socket .rc-shell-port{width:100%;height:100%;min-width:0;min-height:0;max-width:none;padding:0!important;border:0!important;border-radius:0;background:#aab0b6!important;box-shadow:none!important}
+.rc-aruba-socket .rc-shell-port svg{display:block;width:100%;height:100%;stroke:none}
+.rc-aruba-socket .rc-shell-port span,.rc-aruba-socket .rc-shell-port small{display:none}
+.rc-aruba-socket .rc-shell-port[data-port-color=custom]::before{content:'';position:absolute;bottom:1px;left:1px;width:5px;height:5px;border-radius:50%;background:var(--port-color);border:1px solid #fff}
+.rc-aruba-socket .rc-shell-port[data-port-connected=true]::after{content:'';position:absolute;top:1px;right:1px;width:4px;height:4px;border-radius:50%;background:#34d399}
+.rc-aruba-socket .rc-shell-port[data-port-status=reserved]{outline:2px dashed #fbbf24;outline-offset:-2px}
+.rc-aruba-socket .rc-shell-port[data-port-status=disabled],.rc-aruba-socket .rc-shell-port[data-port-status=faulty]{outline:2px solid #fb7185;outline-offset:-2px}
+.rc-aruba-socket .rc-shell-port.selected,.rc-aruba-socket .rc-shell-port:hover{outline:2px solid #38bdf8;outline-offset:-2px}
+.rc-aruba-socket .rc-shell-port:focus-visible{outline:2px solid #facc15;outline-offset:-2px}
+
+/* Exact FG-60F: front indicators and ten rear Ethernet sockets on a shelf. */
+.rc-fortinet-face{display:block;min-width:540px;width:100%;height:auto;background:#161e28}
+.rc-fortinet-print{fill:#313940;font:11px Arial,sans-serif;pointer-events:none}
+.rc-fortinet-led-label{fill:#41484e;font:7px Arial,sans-serif}
+.rc-fortinet-label{fill:#d7e2ee;font:10px Arial,sans-serif;pointer-events:none}
+.rc-fortinet-socket{width:100%;height:100%}
+.rc-fortinet-socket .rc-shell-port{width:100%;height:100%;min-width:0;min-height:0;max-width:none;padding:0!important;border:0!important;border-radius:0;background:#b8bdc2!important;box-shadow:none!important}
+.rc-fortinet-socket .rc-shell-port svg{display:block;width:100%;height:100%;stroke:none}
+.rc-fortinet-socket .rc-shell-port span,.rc-fortinet-socket .rc-shell-port small{display:none}
+.rc-fortinet-socket .rc-shell-port[data-port-color=custom]::before{content:'';position:absolute;bottom:1px;left:1px;width:5px;height:5px;border-radius:50%;background:var(--port-color);border:1px solid #fff}
+.rc-fortinet-socket .rc-shell-port[data-port-connected=true]::after{content:'';position:absolute;top:1px;right:1px;width:4px;height:4px;border-radius:50%;background:#34d399}
+.rc-fortinet-socket .rc-shell-port[data-port-status=reserved]{outline:2px dashed #fbbf24;outline-offset:-2px}
+.rc-fortinet-socket .rc-shell-port[data-port-status=disabled],.rc-fortinet-socket .rc-shell-port[data-port-status=faulty]{outline:2px solid #fb7185;outline-offset:-2px}
+.rc-fortinet-socket .rc-shell-port.selected,.rc-fortinet-socket .rc-shell-port:hover{outline:2px solid #38bdf8;outline-offset:-2px}
+.rc-fortinet-socket .rc-shell-port:focus-visible{outline:2px solid #facc15;outline-offset:-2px}
+
+/* Exact RS1221+ (not RP+): eight front trays, rear LAN and single AC area. */
+.rc-synology-face{display:block;min-width:840px;width:100%;height:auto;background:#161e28}
+.rc-synology-print-front{fill:#b5c1ca;font:8px Arial,sans-serif;pointer-events:none}
+.rc-synology-print-rear{fill:#384650;font:10px Arial,sans-serif;pointer-events:none}
+.rc-synology-label{fill:#d7e2ee;font:10px Arial,sans-serif;pointer-events:none}
+.rc-synology-socket{width:100%;height:100%}
+.rc-synology-socket .rc-shell-port{width:100%;height:100%;min-width:0;min-height:0;max-width:none;padding:0!important;border:0!important;border-radius:0;background:#a8b3b8!important;box-shadow:none!important}
+.rc-synology-socket .rc-shell-port svg{display:block;width:100%;height:100%;stroke:none}
+.rc-synology-socket .rc-shell-port span,.rc-synology-socket .rc-shell-port small{display:none}
+.rc-synology-socket .rc-shell-port[data-port-color=custom]::before{content:'';position:absolute;bottom:1px;left:1px;width:5px;height:5px;border-radius:50%;background:var(--port-color);border:1px solid #fff}
+.rc-synology-socket .rc-shell-port[data-port-connected=true]::after{content:'';position:absolute;top:1px;right:1px;width:4px;height:4px;border-radius:50%;background:#34d399}
+.rc-synology-socket .rc-shell-port[data-port-status=reserved]{outline:2px dashed #fbbf24;outline-offset:-2px}
+.rc-synology-socket .rc-shell-port[data-port-status=disabled],.rc-synology-socket .rc-shell-port[data-port-status=faulty]{outline:2px solid #fb7185;outline-offset:-2px}
+.rc-synology-socket .rc-shell-port.selected,.rc-synology-socket .rc-shell-port:hover{outline:2px solid #38bdf8;outline-offset:-2px}
+.rc-synology-socket .rc-shell-port:focus-visible{outline:2px solid #facc15;outline-offset:-2px}
+
+/* Exact desktop DS423+: upright body on a known shelf, no flattened rack face. */
+.rc-diskstation-face{display:block;width:100%;min-width:440px;max-width:460px;height:auto;margin:0 auto;background:#161e28}
+.rc-diskstation-print{fill:#9ba8b3;font:4px Arial,sans-serif;pointer-events:none}
+.rc-diskstation-label{fill:#d7e2ee;font:6px Arial,sans-serif;pointer-events:none}
+.rc-diskstation-socket{width:100%;height:100%}
+.rc-diskstation-socket .rc-shell-port{width:100%;height:100%;min-width:0;min-height:0;max-width:none;padding:0!important;border:0!important;border-radius:0;background:#9caab4!important;box-shadow:none!important}
+.rc-diskstation-socket .rc-shell-port svg{display:block;width:100%;height:100%;stroke:none}
+.rc-diskstation-socket .rc-shell-port span,.rc-diskstation-socket .rc-shell-port small{display:none}
+.rc-diskstation-socket .rc-shell-port[data-port-color=custom]::before{content:'';position:absolute;bottom:1px;left:1px;width:5px;height:5px;border-radius:50%;background:var(--port-color);border:1px solid #fff}
+.rc-diskstation-socket .rc-shell-port[data-port-connected=true]::after{content:'';position:absolute;top:1px;right:1px;width:4px;height:4px;border-radius:50%;background:#34d399}
+.rc-diskstation-socket .rc-shell-port[data-port-status=reserved]{outline:2px dashed #fbbf24;outline-offset:-2px}
+.rc-diskstation-socket .rc-shell-port[data-port-status=disabled],.rc-diskstation-socket .rc-shell-port[data-port-status=faulty]{outline:2px solid #fb7185;outline-offset:-2px}
+.rc-diskstation-socket .rc-shell-port.selected,.rc-diskstation-socket .rc-shell-port:hover{outline:2px solid #38bdf8;outline-offset:-2px}
+.rc-diskstation-socket .rc-shell-port:focus-visible{outline:2px solid #facc15;outline-offset:-2px}
+
+.rc-qnap-face{display:block;width:100%;min-width:400px;max-width:420px;height:auto;margin:0 auto;background:#161e28}
+.rc-qnap-print{fill:#9ba8b3;font:4px Arial,sans-serif;pointer-events:none}
+.rc-qnap-label{fill:#d7e2ee;font:6px Arial,sans-serif;pointer-events:none}
+.rc-qnap-socket{width:100%;height:100%}
+.rc-qnap-socket .rc-shell-port{width:100%;height:100%;min-width:0;min-height:0;max-width:none;padding:0!important;border:0!important;border-radius:0;background:#9caab4!important;box-shadow:none!important}
+.rc-qnap-socket .rc-shell-port svg{display:block;width:100%;height:100%;stroke:none}
+.rc-qnap-socket .rc-shell-port span,.rc-qnap-socket .rc-shell-port small{display:none}
+.rc-qnap-socket .rc-shell-port[data-port-color=custom]::before{content:'';position:absolute;bottom:1px;left:1px;width:5px;height:5px;border-radius:50%;background:var(--port-color);border:1px solid #fff}
+.rc-qnap-socket .rc-shell-port[data-port-connected=true]::after{content:'';position:absolute;top:1px;right:1px;width:4px;height:4px;border-radius:50%;background:#34d399}
+.rc-qnap-socket .rc-shell-port[data-port-status=reserved]{outline:2px dashed #fbbf24;outline-offset:-2px}
+.rc-qnap-socket .rc-shell-port[data-port-status=disabled],.rc-qnap-socket .rc-shell-port[data-port-status=faulty]{outline:2px solid #fb7185;outline-offset:-2px}
+.rc-qnap-socket .rc-shell-port.selected,.rc-qnap-socket .rc-shell-port:hover{outline:2px solid #38bdf8;outline-offset:-2px}
+.rc-qnap-socket .rc-shell-port:focus-visible{outline:2px solid #facc15;outline-offset:-2px}
+
+.rc-qnap-front-print{fill:#6f654f;font:4px Arial,sans-serif;pointer-events:none}
+.rc-qnap-print{fill:#48545e;font:5px Arial,sans-serif;pointer-events:none}
+
+.rc-batch50-face{display:block;width:100%;height:auto;margin:0 auto;background:#161e28}
+.rc-batch50-print{fill:#9ba8b3;font:4px Arial,sans-serif;pointer-events:none}
+.rc-batch50-label{fill:#d7e2ee;font:6px Arial,sans-serif;pointer-events:none}
+.rc-batch50-socket{width:100%;height:100%}
+.rc-batch50-socket .rc-shell-port{width:100%;height:100%;min-width:0;min-height:0;max-width:none;padding:0!important;border:0!important;border-radius:0;background:#9caab4!important;box-shadow:none!important}
+.rc-batch50-socket .rc-shell-port svg{display:block;width:100%;height:100%;stroke:none}
+.rc-batch50-socket .rc-shell-port span,.rc-batch50-socket .rc-shell-port small{display:none}
+.rc-batch50-socket .rc-shell-port[data-port-color=custom]::before{content:'';position:absolute;bottom:1px;left:1px;width:5px;height:5px;border-radius:50%;background:var(--port-color);border:1px solid #fff}
+.rc-batch50-socket .rc-shell-port[data-port-connected=true]::after{content:'';position:absolute;top:1px;right:1px;width:4px;height:4px;border-radius:50%;background:#34d399}
+.rc-batch50-socket .rc-shell-port[data-port-status=reserved]{outline:2px dashed #fbbf24;outline-offset:-2px}
+.rc-batch50-socket .rc-shell-port[data-port-status=disabled],.rc-batch50-socket .rc-shell-port[data-port-status=faulty]{outline:2px solid #fb7185;outline-offset:-2px}
+.rc-batch50-socket .rc-shell-port.selected,.rc-batch50-socket .rc-shell-port:hover{outline:2px solid #38bdf8;outline-offset:-2px}
+.rc-batch50-socket .rc-shell-port:focus-visible{outline:2px solid #facc15;outline-offset:-2px}
+
+
+.rc-batch50-number{fill:#a6b4c0;font-family:Arial,sans-serif;pointer-events:none}.rc-batch50-labels{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11px;color:#d7e2ee;padding:4px}.rc-batch50-labels span{overflow-wrap:anywhere;max-width:240px}
+
+/* Compact hardware catalogue: only the popup scrolls, never the rack page. */
+.rc-hardware-picker { position:relative; min-width:0; }
+.rc-hardware-search-row { display:flex; gap:4px; }
+.rc-hardware-search-row input { min-width:0; flex:1; }
+.rc-hardware-search-row button { flex:0 0 38px; }
+.rc-hardware-picker > small { display:block; margin:5px 0; overflow-wrap:anywhere; }
+.rc-hardware-picker [data-hardware-selected] { overflow-wrap:anywhere; margin:8px 0; }
+.rc-hardware-popup { position:absolute; top:64px; inset-inline:0; z-index:12; background:#fff; color:#18212b; border:1px solid #64748b; border-radius:5px; box-shadow:0 4px 12px #0003; }
+.rc-hardware-popup > p { margin:4px 8px; font-size:12px; }
+.rc-hardware-popup ul { list-style:none; margin:0; padding:0; max-height:min(240px,40vh); overflow-y:auto; overscroll-behavior:contain; }
+.rc-hardware-popup [role=option] { padding:8px 10px; min-height:44px; cursor:pointer; overflow-wrap:anywhere; border-top:1px solid #e2e8f0; }
+.rc-hardware-popup [role=option] small { display:block; }
+.rc-hardware-popup [role=option]:hover,.rc-hardware-popup [aria-selected=true] { background:#dbeafe; color:#102a43; }
+[data-hardware-creation] details { min-width:0; overflow-wrap:anywhere; }
+[data-hardware-creation] summary { cursor:pointer; padding:7px 0; }
+
+/* Children keep their measured width relative to the support, with usable controls. */
+.rc-mount-child .ir-device-head{flex-wrap:wrap}
+.rc-mount-child .ir-device-name{flex:1 1 100px}
+
+.rc-mount-view-toggle{margin:4px 10px;max-width:calc(100% - 20px);white-space:normal;font-size:12px}
+
+/* Compact display labels; full user names and recorded revisions stay in details. */
+.rc-mount-device .ir-device-name b{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rc-mounted-parent{display:flex;flex-wrap:wrap;gap:5px;align-items:baseline;min-width:0}
+.rc-parent-name{flex:1 1 6ch;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rc-mounted-parent>span:not(.rc-parent-name){flex-shrink:0}
+.rc-face-details,.rc-model-details{min-width:0;border-top:1px solid #3b4b58}
+.rc-face-details>summary,.rc-model-details>summary{cursor:pointer;font-size:11px;padding:8px 12px;overflow-wrap:anywhere}
+.rc-face-details>summary:focus-visible,.rc-model-details>summary:focus-visible{outline:2px solid #facc15;outline-offset:-2px}
+
+/* Mounted controls keep contrast even when the legacy theme has no --ir-panel. */
+.rc-mount-device .ir-device-head button{background:var(--ir-panel,#223747);color:var(--ir-text,#e2e8f0);border-color:#5d7183}
+.rc-mount-device .ir-device-head .ir-device-name{background:transparent;border:0;text-align:start;padding:2px}
+
+.rc-face-details{color:#d5e1ea;background:#17212b}
+.rc-face-details>summary,.rc-model-details>summary{font-size:12px}

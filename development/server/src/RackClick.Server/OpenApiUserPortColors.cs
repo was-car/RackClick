@@ -8,8 +8,8 @@ public static partial class OpenApiDocument
         object revision = Obj(("type", "integer"), ("format", "int64"), ("minimum", 0), ("maximum", UserPortColors.MaximumRevision));
         object kind = Obj(("type", "string"), ("enum", new[] { "userPortColors" }));
         object hex = Obj(("type", "string"), ("pattern", "^#[0-9a-f]{6}$"));
-        string[] types = ["rj45", "rj45_poe", "sfp", "sfp28", "qsfp", "mgmt", "console", "power", "usb_a", "usb_c"];
-        schemas["UserPortColorsMap"] = Obj(("type", "object"), ("minProperties", 0), ("maxProperties", 10),
+        string[] types = ["rj45", "rj45_poe", "sfp", "sfp28", "sfp56", "qsfp", "qsfpdd", "mgmt", "console", "idc", "power", "usb_a", "usb_c", "ipc", "fiber", "sfpdd", "cfp2", "sas", "dsl", "telephony", "isdn", "expansion", "power_dc"];
+        schemas["UserPortColorsMap"] = Obj(("type", "object"), ("minProperties", 0), ("maxProperties", 23),
             ("properties", types.ToDictionary(type => type, _ => hex)), ("additionalProperties", false));
         schemas["UserPortColorsSet"] = Shape(["colors"], ("colors", Ref("UserPortColorsMap")));
         schemas["UserPortColorChange"] = Shape(["colors", "changed"], ("colors", Ref("UserPortColorsMap")), ("changed", boolean));
@@ -52,7 +52,7 @@ public static partial class OpenApiDocument
         }
         paths["/api/v1/me/port-colors"] = Obj(
             ("get", Endpoint("readUserPortColors", false, false, "UserPortColorsSnapshot", "Never inserts. Absent row is revision0/colors{}. Returns overrides only, never defaults.")),
-            ("post", Endpoint("setUserPortColors", true, false, "UserPortColorResult", "Exact body {colors:{...}} replaces the entire map, 0..10 allowed type keys. Empty resets all; omitted type resets that type; rj45_poe is distinct. Exact lower-case RGB values are preserved. Key order is canonicalized for digest/comparison. Current revision required for each new intent; no-op journals/audits once without increment, including empty revision0 and maximum revision. Settings/receipt/audit commit atomically. Exact replay returns immutable original receipt.")));
+            ("post", Endpoint("setUserPortColors", true, false, "UserPortColorResult", "Exact body {colors:{...}} replaces the entire map, 0..23 allowed type keys. Empty resets all; omitted type resets that type; rj45_poe is distinct. Exact lower-case RGB values are preserved. Key order is canonicalized for digest/comparison. Current revision required for each new intent; no-op journals/audits once without increment, including empty revision0 and maximum revision. Settings/receipt/audit commit atomically. Exact replay returns immutable original receipt.")));
         paths["/api/v1/me/port-colors/operations/{requestId}"] = Obj(
             ("get", Endpoint("readUserPortColorOperation", false, true, "UserPortColorStatus", "Owner-bound notRecorded/committed/cancelled. notRecorded is neither success nor a fence. Outer revision is current; committed operation is the historical receipt, otherwise null.")));
         paths["/api/v1/me/port-colors/operations/{requestId}/cancel"] = Obj(

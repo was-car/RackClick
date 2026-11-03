@@ -1,0 +1,68 @@
+import {chooseHardware} from './browser-hardware-picker-support.mjs';
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {runScenario,infrastructure,snapshot,saved,submit,normalize} from './browser-quince-support.mjs';
+
+await runScenario(async({first,session,checks,fixture:f,out,shot})=>{
+ await infrastructure(first);await first.click(`[data-rack-id="${f.rack}"] .rc-rack-open`);
+ const ids=[],key='startech-c6panelutp241uft',version='startech-20261030-v1';
+ for(const name of ['Panel real A Ω','Panel real B']){
+  await first.click('[data-add-hardware]');await chooseHardware(first,key,version);
+  await first.field('[data-hardware-name]',name);await first.field('[data-hardware-rack]',f.rack);await submit(first);await saved(first);
+  ids.push((await snapshot(first)).devices.find(d=>d.name===name).id);
+ }
+ let p=await snapshot(first);const ports=p.ports.filter(x=>ids.includes(x.deviceId));assert.equal(ports.length,96);
+ const port=(did,face,gn)=>ports.find(p=>p.deviceId===did&&p.face===face&&p.gn===gn).id;
+ const row=`[data-devid="${ids[0]}"]`,screen=row+' .rc-shell-scroll';
+ assert.deepEqual(await first.evaluate(`(()=>{const r=document.querySelector('${row}');return [...r.querySelectorAll('[data-shell-block]')].map(b=>[...b.querySelectorAll('[data-vport]')].map(p=>p.getAttribute('data-vport')))})()`),Array.from({length:4},(_,i)=>Array.from({length:6},(_,j)=>port(ids[0],'front',i*6+j+1))));
+ assert.equal(await first.evaluate(`document.querySelector('${row} [data-shell-mode]').dataset.shellMode`),'specific');
+ const portIds=await first.evaluate(`([...document.querySelectorAll('${row} [data-vport]')]).map(b=>b.dataset.vport)`);
+ assert.deepEqual(portIds,Array.from({length:24},(_,i)=>port(ids[0],'front',i+1)));
+ assert.equal(await first.evaluate(`!!document.querySelector('${row} img,${row} iframe')`),false);
+ checks.push('Exact revision renders four blocks of six original UUID controls; no images, frames or new connectors');
+ await first.click(`[data-vport="${port(ids[0],'front',1)}"]`);await first.click(`[data-vport="${port(ids[1],'front',1)}"]`);await saved(first);
+ await first.evaluate(`document.querySelector('${row}').scrollIntoView({block:'center'})`);await shot(first,'shell-front-desktop.png');
+ // Native keyboard activation on an unchanged HTML button, not a synthetic .click().
+ await first.send('Page.bringToFront');await first.send('Emulation.setFocusEmulationEnabled',{enabled:true});
+ await first.evaluate(`(()=>{window.__shellKeys=[];const b=document.querySelector('[data-vport="${port(ids[0],'front',2)}"]');for(const type of ['keydown','keyup','click'])b.addEventListener(type,e=>window.__shellKeys.push({type:e.type,key:e.key,trusted:e.isTrusted,prevented:e.defaultPrevented}));b.focus()})()`);
+ const keyboardBefore=await first.evaluate(`({focus:document.hasFocus(),active:document.activeElement?.dataset?.vport,disabled:document.activeElement?.disabled})`);
+ await first.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',text:'\r',windowsVirtualKeyCode:13,nativeVirtualKeyCode:13});
+ await first.send('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13,nativeVirtualKeyCode:13});
+ await writeFile(path.join(out,'keyboard-diagnostic.json'),JSON.stringify({before:keyboardBefore,after:await first.evaluate(`({active:document.activeElement?.dataset?.vport,events:window.__shellKeys,pressed:document.querySelector('[data-vport="${port(ids[0],'front',2)}"]').getAttribute('aria-pressed'),alert:document.querySelector('[role=alert]')?.textContent})`)}));
+ await first.wait(`document.querySelector('[data-vport="${port(ids[0],'front',2)}"]').getAttribute('aria-pressed')==='true'`,'keyboard selection');
+ await first.click('.ir-connect-hint button');
+ const beforeFace=normalize(await snapshot(first));await first.click('[data-face="rear"]');
+ assert.equal(await first.evaluate(`document.querySelector('${row} [data-shell-mode]').dataset.shellMode`),'specific');
+ assert.equal(await first.evaluate(`document.querySelector('${row} [data-shell-caption]').textContent.includes('parejas lógicas')`),true);
+ assert.deepEqual(await first.evaluate(`([...document.querySelectorAll('${row} [data-vport]')]).map(b=>b.dataset.vport)`),Array.from({length:24},(_,i)=>port(ids[0],'rear',24-i)));
+ assert.deepEqual(normalize(await snapshot(first)),beforeFace);
+ await first.click(`[data-vport="${port(ids[0],'rear',1)}"]`);await first.click(`[data-vport="${port(ids[1],'rear',1)}"]`);await saved(first);
+ await first.evaluate(`document.querySelector('${row}').scrollIntoView({block:'center'})`);await shot(first,'shell-rear-specific.png');
+ checks.push('Front and specific rear connect separate cables by UUID; keyboard Enter selects; changing face alone does not write');
+ await first.click('[data-face="front"]');
+ const beforeMobile=normalize(await snapshot(first));
+ const cable=beforeMobile.connections.find(c=>[c.fromPortId,c.toPortId].includes(port(ids[0],'front',1)));
+ const wireAligned=`(()=>{const wire=document.querySelector('[data-wire="${cable.id}"]'),button=document.querySelector('[data-vport="${cable.fromPortId}"]');if(!wire||!button)return false;const p=wire.getPointAtLength(0),q=new DOMPoint(p.x,p.y).matrixTransform(wire.getScreenCTM()),r=button.getBoundingClientRect();return Math.hypot(q.x-r.x-r.width/2,q.y-r.y-r.height/2)<1.1})()`;
+ await first.send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false});
+ await first.wait(wireAligned,'wire geometry before scroll');
+ await first.evaluate(`(()=>{const s=document.querySelector('${screen}');s.scrollLeft=s.scrollWidth;s.scrollIntoView({block:'center'})})()`);
+ await first.wait(wireAligned,'wire follows horizontal scroll');
+ const box=await first.evaluate(`(()=>{const s=document.querySelector('${screen}'),b=document.querySelector('[data-vport="${port(ids[0],'front',24)}"]'),r=b.getBoundingClientRect(),v=s.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2,width:r.width,height:r.height,inside:r.left>=v.left&&r.right<=v.right+1,scroll:s.scrollWidth>s.clientWidth,right:v.right}})()`);
+ assert.ok(box.scroll&&box.inside&&box.width>=24&&box.height>=24&&box.right<=392);
+ for(const type of ['mousePressed','mouseReleased'])await first.send('Input.dispatchMouseEvent',{type,x:box.x,y:box.y,button:'left',clickCount:1});
+ assert.equal(await first.evaluate(`document.querySelector('[data-vport="${port(ids[0],'front',24)}"]').getAttribute('aria-pressed')`),'true');
+ await shot(first,'shell-front-mobile-scroll.png');await first.click('.ir-connect-hint button');
+ assert.deepEqual(normalize(await snapshot(first)),beforeMobile);
+ await first.send('Emulation.clearDeviceMetricsOverride',{});
+ await first.click(`[data-hardware-edit="${ids[0]}"]`);await first.field('dialog [name=name]','Panel <img src=x> Ω');await first.field('dialog [name=notes]','Nombre conservado, puertos reales');await submit(first);await saved(first);
+ p=await snapshot(first);assert.equal(p.connections.length,2);assert.deepEqual(p.ports.filter(x=>ids.includes(x.deviceId)),ports);
+ assert.equal(await first.evaluate(`!!document.querySelector('${row} img')`),false);
+ const expected=normalize(p);await first.send('Page.reload',{ignoreCache:true});await first.wait(`!!document.querySelector('[data-customer-id="${f.customer}"]')`,'reload');await infrastructure(first);assert.deepEqual(normalize(await snapshot(first)),expected);
+ const second=await session('hardware-second');await infrastructure(second);assert.deepEqual(normalize(await snapshot(second)),expected);await second.click(`[data-rack-id="${f.rack}"] .rc-rack-open`);
+ assert.equal(await second.evaluate(`document.querySelector('${row} [data-shell-mode]').dataset.shellMode`),'specific');
+ const reader=await session('hardware-reader');await infrastructure(reader);assert.deepEqual(normalize(await snapshot(reader)),expected);await reader.click(`[data-rack-id="${f.rack}"] .rc-rack-open`);
+ assert.equal(await reader.evaluate(`document.querySelector('[data-hardware-edit="${ids[0]}"]').disabled`),true);
+ checks.push('390px horizontal scroll and actual pointer reach port24; text escaped; rename/reload/second session/read-only preserve all96ports and2cables');
+ await writeFile(path.join(out,'expected-project.json'),JSON.stringify(expected,null,2)+'\n');
+});

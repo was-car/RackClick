@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "revision": "RC-CIERRE-20261025-v1",
+  "revision": "RC-CIERRE-20261103-v3",
   "measurement_kind": "remaining_work_closure_not_product_progress",
   "progress": null,
   "global_product_percentage": null,
   "snapshot": "Inventario fechado del pendiente; no reinicia el trabajo ya construido.",
   "basis": "Cierre de 100 puntos del trabajo restante desde 25.10.2026; no porcentaje global del producto.",
-  "closure_points": 7.630952380952381,
+  "closure_points": 14.755952380952381,
   "total_closure_points": 100,
   "historical_map": "evidence/s1-20261025/plan-cierre-medible/MAPA-ENTREGA-ANTERIOR.json",
   "historical_78_retired": true,
@@ -20,37 +20,37 @@
       "id": "F",
       "name": "Fundamento, seguridad y MFA",
       "weight": 25,
-      "closure_points": 1.0,
+      "closure_points": 7.625,
       "children": [
         {
           "id": "F-01",
           "name": "Clasificar hallazgos de secretos y tratar sólo credenciales reales",
-          "pending_kind": "implementación",
+          "pending_kind": "archivado administrativamente con incertidumbre residual",
           "weight_points": "5/2",
-          "closed_points": 0.0,
+          "closed_points": 2.5,
           "checkpoints": [
             {
               "id": "F-01.01",
               "name": "Clasificar candidatos e indeterminados privados con trazabilidad por ruta/commit y sin publicar valores.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
               "id": "F-01.02",
-              "name": "Si una credencial es real, coordinar revocación/rotación con la instancia afectada; corregir exposición y volver a verificar cambios/artefactos relevantes.",
-              "status": "pending",
+              "name": "Si una credencial es real, coordinar revocación/rotación con la instancia afectada; corregir exposición y volver a verificar cambios/artefactos relevantes. Para el antecedente run-1 del25.10.2026 sin salida conservada, se admite sólo el archivo administrativo expreso documentado, con incertidumbre y reapertura obligatoria; no clasifica como falso positivo ni prueba revocación.",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
               "id": "F-01.03",
               "name": "Registrar falsos positivos y criterio específico sin supresiones amplias; reescritura de historial no está autorizada por defecto.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
               "id": "F-01.04",
               "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             }
           ]
@@ -58,32 +58,32 @@
         {
           "id": "F-02",
           "name": "Cifrar configuración SQL y recuperar sus secretos en otra instancia",
-          "pending_kind": "implementación",
+          "pending_kind": "cerrado técnicamente con revisión independiente",
           "weight_points": "5/2",
-          "closed_points": 0.0,
+          "closed_points": 2.5,
           "checkpoints": [
             {
               "id": "F-02.01",
               "name": "Diseñar e integrar protección compatible con cuenta/instancia reales y canal mínimo de lectura para el servicio; conservar separación owner/migración/runtime.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
               "id": "F-02.02",
               "name": "Actualizar operadores/fichas de acceso, diagnóstico y backup para no filtrar la clave ni depender de copiar un secreto ligado al host antiguo.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
               "id": "F-02.03",
               "name": "Ensayar reanudación y Restore en destino nuevo con identidad/roles/claves nuevos; error explícito ante clave ausente/incorrecta.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
               "id": "F-02.04",
               "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             }
           ]
@@ -118,9 +118,9 @@
         {
           "id": "F-04",
           "name": "Implementar proveedor TOTP Windows bajo la identidad real del servicio",
-          "pending_kind": "implementación",
+          "pending_kind": "Proveedor real integrado en candidata10; F-04.03 cerrado, ACL/otros tokens y cierre total pendientes",
           "weight_points": "5/2",
-          "closed_points": 0.0,
+          "closed_points": 0.625,
           "checkpoints": [
             {
               "id": "F-04.01",
@@ -137,7 +137,7 @@
             {
               "id": "F-04.03",
               "name": "Conectar proveedor real al producto sólo tras D2; rechazar claves/versiones ausentes sin regeneración silenciosa ni password-only.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
@@ -222,10 +222,10 @@
         },
         {
           "id": "F-07",
-          "name": "Completar enrolamiento restringido en el primer login",
-          "pending_kind": "backend MFA-L1 revisado técnicamente; proveedor real/UI/recuperación y cierre completo pendientes",
+          "name": "Completar enrolamiento restringido cuando MFA sea exigible",
+          "pending_kind": "F-07.01 a .04 cerrados técnicamente en laboratorio; candidata, custodia real integrada y cierre .05 pendientes",
           "weight_points": "5/2",
-          "closed_points": 1.0,
+          "closed_points": 2.0,
           "checkpoints": [
             {
               "id": "F-07.01",
@@ -236,7 +236,7 @@
             {
               "id": "F-07.02",
               "name": "Presentar secreto/QR sólo al usuario durante proceso, sin URL/log/auditoría/historial; confirmar primer TOTP antes de activar factor.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
@@ -247,8 +247,8 @@
             },
             {
               "id": "F-07.04",
-              "name": "Alta nueva marca configure-first-login como indicó D3; probar código erróneo/caducado/repetido, reintento/respuesta perdida y dos confirmaciones concurrentes.",
-              "status": "pending",
+              "name": "Alta nueva conserva45días desdecreación y cuenta existente desdeactivación persistida; administrador globalSystemhaus exento; el servidor exige enrolamiento al vencer o al activar/exigirMFA; probar código erróneo/caducado/repetido, reintento/respuesta perdida y dos confirmaciones concurrentes.",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
@@ -1456,7 +1456,7 @@
       "id": "W",
       "name": "Instalación y operación Windows",
       "weight": 15,
-      "closure_points": 3.0,
+      "closure_points": 3.5,
       "children": [
         {
           "id": "W-01",
@@ -1500,9 +1500,9 @@
         {
           "id": "W-02",
           "name": "Instalar desde cero en Windows limpio y declarar la matriz soportada",
-          "pending_kind": "Ensayo Restore C cerrado con observaciones; matriz general pendiente",
+          "pending_kind": "New10 en C verificado tras reinicio; W-02.01/.02 cerrados, matriz restante pendiente",
           "weight_points": "5/2",
-          "closed_points": 0.5,
+          "closed_points": 1.0,
           "checkpoints": [
             {
               "id": "W-02.01",
@@ -1513,7 +1513,7 @@
             {
               "id": "W-02.02",
               "name": "Ejecutar la entrega completa sin SDK/Node/Python previos; comprobar detección/instalación de runtime, PostgreSQL17 y CRT, incluido reinicio requerido.",
-              "status": "in_progress",
+              "status": "done",
               "weight_points": "1/2"
             },
             {

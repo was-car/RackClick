@@ -271,6 +271,11 @@ class Lab:
         self.sql(database, f'GRANT USAGE ON SCHEMA public TO {database.runtime}; '
                            f'GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA public TO {database.runtime}; '
                            f'REVOKE CREATE ON SCHEMA public FROM PUBLIC;')
+        # Global definition tables are read-only, unlike the customer's inventory.
+        # The list is closed and internal; old schema fixtures have none of these.
+        for table in ('hardware_definition', 'hardware_mount_slot', 'hardware_group_template', 'hardware_passthrough', 'hardware_connector_template', 'hardware_profile_extension', 'hardware_group_extension'):
+            if self.sql(database, f"SELECT to_regclass('public.{table}') IS NOT NULL") == 't':
+                self.sql(database, f'REVOKE ALL ON {table} FROM {database.runtime}; GRANT SELECT ON {table} TO {database.runtime};')
 
     def start_server(self, database, dll=None, frontend=None):
         server = Server(self, database, dll=dll, frontend=frontend)

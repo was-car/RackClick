@@ -1,0 +1,33 @@
+{
+  "formatVersion": 1,
+  "state": "authoring_reference_IR_not_product_profiles",
+  "counts": {
+    "models": 462,
+    "parts": 3,
+    "exactCommunityYaml": 451,
+    "officialRecords": 11,
+    "geometryComplete": 0,
+    "promotedProfiles": 0,
+    "existingCommercialProfiles": 406,
+    "existingSelectedCoverage": 44,
+    "selectedProfilesStillPending": 462,
+    "archiveSha256": "1821fe01392d088608cf7ab955085ad140a3826bcf91b944d70b99c0dc10e510"
+  },
+  "files": {
+    "development/hardware/selection462/plan.json": "c54d65162b6d28201a89237ad6fcab8f074a29a0329c851e9948f3a9aa5c558b",
+    "development/hardware/selection462/source-matches.json": "56466c9b3bd1af5758deaddcec548b88006f3d104fdbd88b7b140e41bc240bfb",
+    "development/hardware/selection462/part-01.json": "b16ee58c32f0659c809efd7ce40583f884ac20acbc7f4d8435c202a534c2b723",
+    "development/hardware/selection462/part-02.json": "33db0e3972c5bec82bda0576139f5fa5a8db945c2d068642cc6724e07e597496",
+    "development/hardware/selection462/part-03.json": "035c78ffb189f95a3793451e865d5032af3a58cda826a100bb88296411b4d2cf"
+  },
+  "inputs": {
+    "development/hardware/selected-models-506.json": "d9c97a9ca25de5f9739562ab0568b564c9409061742683b0e1fb88dfc5b9bbd2",
+    "development/hardware/selection462/coverage-baseline.json": "881d9399e27971e150a7242025b4cdb93ac586306edc2cb74b3d112538325214",
+    "evidence/s1-20261101/seleccion-462/contrato/BASELINE-406.json": "b193d1b9f26ca5c2dbe02fcb027596b95ef5dbb8354338af6e4fdcd508cd67f4",
+    ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/REFERENCIAS.json": "05e9617b34c49da95bc0e47c6717c8860453ec30d753b0eb14f3da093710c899",
+    "tools/build_selected_hardware.py": "cc66a69a374a2204d0f63d81a9ff2ff377262d5afb7ea8d6b2ccedcfd2ba6046",
+    "docs/CATALOGO-HARDWARE-REFERENCIA/MODELOS-COMUNIDAD.json": "e8f6c1438317b60929e9e3a2e338ce594bf2f205413166b6d293d74894c409ba",
+    "docs/CATALOGO-HARDWARE-REFERENCIA/MODELOS-RACKS.json": "a7802fed33f59dc3de72e2300604046a3fa5521ac363c7ddd18c61ba64e32c3a",
+    "development/hardware/selection462/official.json": "f1195887737d37d061e0a0f78bb4e8dfdb883521125712e9f753b4ce3c45c7b1"
+  }
+}

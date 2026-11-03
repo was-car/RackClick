@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "model": "RS1221+",
+  "url": "https://global.download.synology.com/download/Document/Hardware/HIG/RackStation/21-year/RS1221%2B/enu/Syno_HIG_RS1221%2B_enu.pdf",
+  "retrieved": "2026-10-30",
+  "pdfSha256": "c3ec15e0d3e6de3dc883048969ed0ac5131dce319d13982ac2392de3d069deef",
+  "facts": {
+    "widthMm": 482,
+    "heightMm": 88,
+    "depthMm": 306.6,
+    "dimensionsIncludeServerEars": true,
+    "withoutEarsMm": {
+      "width": 430.5,
+      "height": 88,
+      "depth": 297.6
+    },
+    "rackUnits": 2,
+    "rearRj45": 4,
+    "rearPowerInlets": 1,
+    "acVoltageMin": 100,
+    "acVoltageMax": 240,
+    "acFrequencyHz": [
+      50,
+      60
+    ],
+    "redundantPower": false,
+    "poe": false
+  },
+  "nonConnectableReferences": {
+    "usb": 2,
+    "esata": 1,
+    "pcieSlot": 1,
+    "manufacturingConsole": 1,
+    "driveBays": 8,
+    "fans": 2
+  },
+  "scope": "Base RS1221+ only, not RS1221RP+. Four Ethernet ports and one AC inlet. Optional PCIe network cards, USB/eSATA, manufacturing console, drive bays and fans are not inventory ports. No inserted NIC is assumed.",
+  "locators": {
+    "ports": "Official HIG RS1221+ pages4-5:AtAGlance LAN4-LAN1 left-to-right;PowerPort14,Console15 manufacturingonly.",
+    "dimensions": "Official HIG RS1221+ page9 HardwareSpecification H88xW482xD306.6mm with server ears; without ears88x430.5x297.6mm.",
+    "power": "Official HIG RS1221+ page9 EnvironmentalRequirement:100-240VAC,50/60Hz;PowerPort14 onpage4."
+  },
+  "geometry": "Own flat interactive drawing; original photographs and HIG figures are private references only",
+  "hardwareRevision": null,
+  "releaseDate": null
+}

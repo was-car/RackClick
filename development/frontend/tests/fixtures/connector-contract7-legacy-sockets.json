@@ -1,0 +1,301 @@
+{
+  "recordedBeforeChange": true,
+  "sourceSha256": "163dd1f6f79e3e0dbde0bf1fee5bccf7ef050f71a29fecc9976a867a658b7759",
+  "sockets": {
+    "rj45": {
+      "type": "svg",
+      "props": {
+        "viewBox": "0 0 40 40",
+        "aria-hidden": "true"
+      },
+      "children": [
+        {
+          "type": "rect",
+          "props": {
+            "x": "1",
+            "y": "2",
+            "width": "38",
+            "height": "36",
+            "fill": "#aebcc7",
+            "stroke": "#516574"
+          },
+          "children": []
+        },
+        {
+          "type": "path",
+          "props": {
+            "d": "M4 7h32v21h-8v7H12v-7H4Z",
+            "fill": "#111c26"
+          },
+          "children": []
+        },
+        [
+          {
+            "type": "path",
+            "props": {
+              "key": 0,
+              "d": "M7 7v8",
+              "stroke": "#c8b67d"
+            },
+            "children": []
+          },
+          {
+            "type": "path",
+            "props": {
+              "key": 1,
+              "d": "M10.7 7v8",
+              "stroke": "#c8b67d"
+            },
+            "children": []
+          },
+          {
+            "type": "path",
+            "props": {
+              "key": 2,
+              "d": "M14.4 7v8",
+              "stroke": "#c8b67d"
+            },
+            "children": []
+          },
+          {
+            "type": "path",
+            "props": {
+              "key": 3,
+              "d": "M18.1 7v8",
+              "stroke": "#c8b67d"
+            },
+            "children": []
+          },
+          {
+            "type": "path",
+            "props": {
+              "key": 4,
+              "d": "M21.8 7v8",
+              "stroke": "#c8b67d"
+            },
+            "children": []
+          },
+          {
+            "type": "path",
+            "props": {
+              "key": 5,
+              "d": "M25.5 7v8",
+              "stroke": "#c8b67d"
+            },
+            "children": []
+          },
+          {
+            "type": "path",
+            "props": {
+              "key": 6,
+              "d": "M29.200000000000003 7v8",
+              "stroke": "#c8b67d"
+            },
+            "children": []
+          },
+          {
+            "type": "path",
+            "props": {
+              "key": 7,
+              "d": "M32.900000000000006 7v8",
+              "stroke": "#c8b67d"
+            },
+            "children": []
+          }
+        ]
+      ]
+    },
+    "sfp": {
+      "type": "svg",
+      "props": {
+        "viewBox": "0 0 40 40",
+        "aria-hidden": "true"
+      },
+      "children": [
+        {
+          "type": "rect",
+          "props": {
+            "x": "2",
+            "y": "5",
+            "width": "36",
+            "height": "30",
+            "fill": "#b7c1c9",
+            "stroke": "#596b78"
+          },
+          "children": []
+        },
+        {
+          "type": "rect",
+          "props": {
+            "x": "5",
+            "y": "8",
+            "width": "30",
+            "height": "24",
+            "fill": "#101923"
+          },
+          "children": []
+        },
+        {
+          "type": "path",
+          "props": {
+            "d": "M8 31h24",
+            "stroke": "#8d9da8"
+          },
+          "children": []
+        }
+      ]
+    },
+    "sfp28": {
+      "type": "svg",
+      "props": {
+        "data-hardware-connector": "sfp28",
+        "viewBox": "0 0 40 40",
+        "aria-hidden": "true"
+      },
+      "children": [
+        {
+          "type": "rect",
+          "props": {
+            "x": "2",
+            "y": "5",
+            "width": "36",
+            "height": "30",
+            "fill": "#b7c1c9",
+            "stroke": "#596b78"
+          },
+          "children": []
+        },
+        {
+          "type": "rect",
+          "props": {
+            "x": "5",
+            "y": "8",
+            "width": "30",
+            "height": "24",
+            "fill": "#101923"
+          },
+          "children": []
+        },
+        {
+          "type": "path",
+          "props": {
+            "d": "M8 31h24",
+            "stroke": "#8d9da8"
+          },
+          "children": []
+        },
+        {
+          "type": "text",
+          "props": {
+            "x": "20",
+            "y": "23",
+            "textAnchor": "middle",
+            "fontSize": "9",
+            "fill": "#bce5f6"
+          },
+          "children": [
+            "28"
+          ]
+        }
+      ]
+    },
+    "qsfp": {
+      "type": "svg",
+      "props": {
+        "data-hardware-connector": "qsfp",
+        "viewBox": "0 0 64 40",
+        "aria-hidden": "true"
+      },
+      "children": [
+        {
+          "type": "rect",
+          "props": {
+            "x": "1",
+            "y": "7",
+            "width": "62",
+            "height": "28",
+            "rx": "2",
+            "fill": "#b7c1c9",
+            "stroke": "#596b78"
+          },
+          "children": []
+        },
+        {
+          "type": "rect",
+          "props": {
+            "x": "5",
+            "y": "10",
+            "width": "54",
+            "height": "21",
+            "fill": "#101923"
+          },
+          "children": []
+        },
+        {
+          "type": "path",
+          "props": {
+            "d": "M8 30h48M18 32v5h28v-5",
+            "fill": "none",
+            "stroke": "#8d9da8"
+          },
+          "children": []
+        },
+        {
+          "type": "text",
+          "props": {
+            "x": "32",
+            "y": "24",
+            "textAnchor": "middle",
+            "fontSize": "8",
+            "fill": "#cbd5e1"
+          },
+          "children": [
+            "QSFP"
+          ]
+        }
+      ]
+    },
+    "power": {
+      "type": "svg",
+      "props": {
+        "viewBox": "0 0 40 40",
+        "aria-hidden": "true"
+      },
+      "children": [
+        {
+          "type": "path",
+          "props": {
+            "d": "M7 5h26l4 6v25H3V11Z",
+            "fill": "#17202a",
+            "stroke": "#83939f"
+          },
+          "children": []
+        },
+        {
+          "type": "rect",
+          "props": {
+            "x": "7",
+            "y": "9",
+            "width": "26",
+            "height": "22",
+            "fill": "#0b121a"
+          },
+          "children": []
+        },
+        {
+          "type": "text",
+          "props": {
+            "x": "20",
+            "y": "24",
+            "textAnchor": "middle",
+            "fontSize": "9",
+            "fill": "#9caeba"
+          },
+          "children": [
+            "AC"
+          ]
+        }
+      ]
+    }
+  }
+}

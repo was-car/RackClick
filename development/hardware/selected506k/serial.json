@@ -1,0 +1,2360 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506k-20261101-v1",
+  "models": [
+    {
+      "definition": {
+        "key": "selected-nb-908a100c3ca29495",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Digi",
+          "model": "PortServer TS 16",
+          "sku": "70001743",
+          "family": "Curated serial console / 70001743 / no optional interfaces"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 427,
+          "height": 40.6,
+          "depth": 167.6
+        },
+        "color": "#383b3a",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-serial",
+            "type": "console",
+            "count": 16,
+            "face": "front",
+            "name": "Serial ten-contact modular",
+            "prefix": "Serial ",
+            "powerRole": "unspecified",
+            "physicalConnector": "serial-10p10c"
+          },
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "front",
+            "name": "Ethernet 10/100",
+            "prefix": "NET ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC inlet; shape unverified",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://ftp1.digi.com/support/documentation/prd_ts_portserverts816.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1200,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 125,
+              "fill": "#383b3a",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Digi / 70001743",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "text",
+                "x": 54,
+                "y": 72,
+                "text": "PortServer TS/16",
+                "size": 13,
+                "fill": "#d1d6d9"
+              },
+              {
+                "kind": "text",
+                "x": 162,
+                "y": 65,
+                "text": "ETHERNET",
+                "size": 10,
+                "fill": "#d1d6d9"
+              },
+              {
+                "kind": "text",
+                "x": 250,
+                "y": 136,
+                "text": "SERIAL 10P10C / not Ethernet",
+                "size": 11,
+                "fill": "#d1d6d9"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 170,
+                "y": 80,
+                "dx": 32,
+                "dy": 43,
+                "w": 37,
+                "h": 34
+              },
+              {
+                "groupKey": "front-serial",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                ],
+                "x": 250,
+                "y": 80,
+                "dx": 52,
+                "dy": 43,
+                "w": 45,
+                "h": 34
+              }
+            ]
+          },
+          "rear": {
+            "width": 1200,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 125,
+              "fill": "#383b3a",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Digi / 70001743",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "text",
+                "x": 45,
+                "y": 138,
+                "text": "Rear schematic / connector position and shell geometry unverified",
+                "size": 11,
+                "fill": "#d1d6d9"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 990,
+                "y": 70,
+                "dx": 32,
+                "dy": 43,
+                "w": 45,
+                "h": 48
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://ftp1.digi.com/support/documentation/prd_ts_portserverts816.pdf",
+            "kind": "manufacturer",
+            "observed": "91000912 F1/915; pp2-3; rack/Enterprise column, exact 70001743 ordering row",
+            "sha256": "82fd77214eebe6339eb5f23161deb341f21aabec75ca81b2d87c13aa22955137",
+            "bytes": 318121
+          },
+          {
+            "url": "https://docs.digi.com/resources/documentation/digidocs/pdfs/90000253.pdf",
+            "kind": "manufacturer",
+            "observed": "90000253 revJ; physical ten-pin RJ45 family terminology; no electrical simulation",
+            "sha256": "beddde5f7a005a3f7d2c66a960602d2dd19e5bb362a21d2c3a65246bc815beb4",
+            "bytes": 1967579
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-908a100c3ca29495/front-f3d6cdb222ec.jpg",
+            "sha256": "f3d6cdb222ec026c062a5118d06c2c8a0bd92e7a6d09484a544b2289fc8bb387",
+            "view": "front",
+            "match": "community_model_assignment_revision_unverified"
+          },
+          {
+            "path": ".local/selected506k-serial-preflight/digi-ts816.pdf",
+            "sha256": "82fd77214eebe6339eb5f23161deb341f21aabec75ca81b2d87c13aa22955137",
+            "view": "rear",
+            "match": "primary_family_specification_geometry_unverified_not_exact_face_photo"
+          }
+        ],
+        "limits": [
+          "Own schematic from inspected source references. Hardware revision and perspective flattened; no vendor photo is an operational background. Only registered UUID sockets connect. Lights, USB, AUI/DA15, reset and buttons are inert; no live remote management, pinout or serial protocol simulation.",
+          "Serial ports use console type, not Ethernet. A serial modular socket does not establish Ethernet compatibility or Cisco pinout. Local console is separate only where manufacturer lists it; LAN/serial share neither group nor UUID.",
+          "Body dimensions are nominal W/H/D, not rack rail, load, clearance, thermal or electrical certification. PhysicalConnector is descriptive only; unknown is not inferred from a neighboring model. External cords may have different ends.",
+          "digi-ts816:p2 Rack/Enterprise column. exact descriptor schema decision; rear geometry and C14 not manufacturer-verified",
+          "Exact SKU70001743 Rack RS232 International. Ten-contact family modular serial connectors are called RJ45 by manufacturer: serial-10p10c explicitly, never 8P8C Ethernet. Rear AC count supported; C14 is only community data, so descriptor remains unknown and rear position/geometry unverified."
+        ],
+        "dimensionsBasis": "digi-ts816:p2 Rack/Enterprise column; preserve metric nominal axes W/H/D, no undocumented rotation; exact revision limits above."
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-21d28e7d5a06429b",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Lantronix",
+          "model": "ETS16PR",
+          "sku": "ETS16PR",
+          "family": "Curated serial console / ETS16PR / no optional interfaces"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 431.8,
+          "height": 44.5,
+          "depth": 304.8
+        },
+        "color": "#dddeda",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-serial",
+            "type": "console",
+            "count": 16,
+            "face": "front",
+            "name": "RS232 serial; port 1 doubles console",
+            "prefix": "Serial ",
+            "powerRole": "unspecified",
+            "physicalConnector": "serial-8p8c"
+          },
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "front",
+            "name": "10/100 Ethernet",
+            "prefix": "NET ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC inlet; shape unverified",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://lantronix.com/wp-content/uploads/pdf/ETS_IG.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1200,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 125,
+              "fill": "#dddeda",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Lantronix / ETS16PR",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 3,
+                "y": 40,
+                "w": 26,
+                "h": 100,
+                "fill": "#087da7"
+              },
+              {
+                "kind": "text",
+                "x": 762,
+                "y": 67,
+                "text": "LANTRONIX",
+                "size": 16,
+                "fill": "#087da7"
+              },
+              {
+                "kind": "rect",
+                "x": 865,
+                "y": 86,
+                "w": 132,
+                "h": 34,
+                "fill": "#394048",
+                "stroke": "#a9afb2"
+              },
+              {
+                "kind": "text",
+                "x": 872,
+                "y": 79,
+                "text": "AUI (inert)",
+                "size": 9,
+                "fill": "#3c5867"
+              },
+              {
+                "kind": "rect",
+                "x": 1122,
+                "y": 72,
+                "w": 20,
+                "h": 46,
+                "fill": "#303c43",
+                "stroke": "#83939a"
+              },
+              {
+                "kind": "rect",
+                "x": 70,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 111,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 152,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 193,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 234,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 275,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 316,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 357,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 398,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 439,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 480,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 521,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 562,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 603,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 644,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 685,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-serial",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                ],
+                "x": 68,
+                "y": 77,
+                "dx": 41,
+                "dy": 81,
+                "w": 35,
+                "h": 31
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 1025,
+                "y": 86,
+                "dx": 32,
+                "dy": 43,
+                "w": 38,
+                "h": 34
+              }
+            ]
+          },
+          "rear": {
+            "width": 1200,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 125,
+              "fill": "#dddeda",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Lantronix / ETS16PR",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "text",
+                "x": 45,
+                "y": 138,
+                "text": "Rear schematic / connector position and shell geometry unverified",
+                "size": 11,
+                "fill": "#d1d6d9"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 975,
+                "y": 70,
+                "dx": 32,
+                "dy": 43,
+                "w": 45,
+                "h": 48
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://lantronix.com/wp-content/uploads/pdf/ETS_IG.pdf",
+            "kind": "manufacturer",
+            "observed": "900-401 revA April2005; pp11-12 descriptions and p60 power",
+            "sha256": "776d82174cadfaf3c653317877ec670617e608a41bb476c0cbbc481930b57369",
+            "bytes": 622146
+          },
+          {
+            "url": "https://theipv6company.com/html/Productos/Lantronix/DataSheets/ds_etsr.pdf",
+            "kind": "manufacturer-authored-provider-mirror",
+            "observed": "910-274; physical dimensions separately for ETS16PR/ETS32PR; older revision lists BNC absent from original reference",
+            "sha256": "1664f106be5a6e003db808d56a96d3fa1e57a882c8683dcfff987a1fa27d8c12",
+            "bytes": 124917
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-21d28e7d5a06429b/front-5927fce6ce66.png",
+            "sha256": "5927fce6ce6625f31ca2ea8e902727c416f56cc20ce524cf0f1aa3207158d6ae",
+            "view": "front",
+            "match": "community_model_assignment_revision_unverified"
+          },
+          {
+            "path": ".local/selected506k-serial-preflight/lantronix-ets-guide.pdf",
+            "sha256": "776d82174cadfaf3c653317877ec670617e608a41bb476c0cbbc481930b57369",
+            "view": "rear",
+            "match": "primary_family_specification_geometry_unverified_not_exact_face_photo"
+          }
+        ],
+        "limits": [
+          "Own schematic from inspected source references. Hardware revision and perspective flattened; no vendor photo is an operational background. Only registered UUID sockets connect. Lights, USB, AUI/DA15, reset and buttons are inert; no live remote management, pinout or serial protocol simulation.",
+          "Serial ports use console type, not Ethernet. A serial modular socket does not establish Ethernet compatibility or Cisco pinout. Local console is separate only where manufacturer lists it; LAN/serial share neither group nor UUID.",
+          "Body dimensions are nominal W/H/D, not rack rail, load, clearance, thermal or electrical certification. PhysicalConnector is descriptive only; unknown is not inferred from a neighboring model. External cords may have different ends.",
+          "lantronix-ets-brochure:p2 ETS16PR. brochure older revision lists BNC; use only nominal dimensions; rear geometry and C14 not manufacturer-verified",
+          "Port1 also supplies the local console: no extra 17th/33rd port. Primary guide/photo has inert AUI DA15; older brochure BNC revision is unresolved, so no fake BNC/DB9/extra Ethernet. AC internal, exact inlet shape/rear position unverified; no C14 descriptor asserted. Nominal ETS32PR89mm/2U kept."
+        ],
+        "dimensionsBasis": "lantronix-ets-brochure:p2 ETS16PR; preserve metric nominal axes W/H/D, no undocumented rotation; exact revision limits above."
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-b924dbf6777c2eb2",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Lantronix",
+          "model": "ETS32PR",
+          "sku": "ETS32PR",
+          "family": "Curated serial console / ETS32PR / no optional interfaces"
+        },
+        "kind": "rack",
+        "rackUnits": 2,
+        "dimensionsMm": {
+          "width": 431.8,
+          "height": 89,
+          "depth": 304.8
+        },
+        "color": "#dddeda",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-serial",
+            "type": "console",
+            "count": 32,
+            "face": "front",
+            "name": "RS232 serial; port 1 doubles console",
+            "prefix": "Serial ",
+            "powerRole": "unspecified",
+            "physicalConnector": "serial-8p8c"
+          },
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 1,
+            "face": "front",
+            "name": "10/100 Ethernet",
+            "prefix": "NET ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC inlet; shape unverified",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://lantronix.com/wp-content/uploads/pdf/ETS_IG.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1200,
+            "height": 240,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 185,
+              "fill": "#dddeda",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Lantronix / ETS32PR",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 186,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 186,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 3,
+                "y": 40,
+                "w": 26,
+                "h": 160,
+                "fill": "#087da7"
+              },
+              {
+                "kind": "text",
+                "x": 762,
+                "y": 67,
+                "text": "LANTRONIX",
+                "size": 16,
+                "fill": "#087da7"
+              },
+              {
+                "kind": "rect",
+                "x": 865,
+                "y": 146,
+                "w": 132,
+                "h": 34,
+                "fill": "#394048",
+                "stroke": "#a9afb2"
+              },
+              {
+                "kind": "text",
+                "x": 872,
+                "y": 139,
+                "text": "AUI (inert)",
+                "size": 9,
+                "fill": "#3c5867"
+              },
+              {
+                "kind": "rect",
+                "x": 1122,
+                "y": 132,
+                "w": 20,
+                "h": 46,
+                "fill": "#303c43",
+                "stroke": "#83939a"
+              },
+              {
+                "kind": "rect",
+                "x": 70,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 111,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 152,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 193,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 234,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 275,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 316,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 357,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 398,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 439,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 480,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 521,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 562,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 603,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 644,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              },
+              {
+                "kind": "rect",
+                "x": 685,
+                "y": 40,
+                "w": 30,
+                "h": 25,
+                "fill": "#8d9294"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-serial",
+                "rows": [
+                  [
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                ],
+                "x": 68,
+                "y": 77,
+                "dx": 41,
+                "dy": 81,
+                "w": 35,
+                "h": 31
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 1025,
+                "y": 146,
+                "dx": 32,
+                "dy": 43,
+                "w": 38,
+                "h": 34
+              }
+            ]
+          },
+          "rear": {
+            "width": 1200,
+            "height": 240,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 185,
+              "fill": "#dddeda",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Lantronix / ETS32PR",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 186,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 186,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "text",
+                "x": 45,
+                "y": 138,
+                "text": "Rear schematic / connector position and shell geometry unverified",
+                "size": 11,
+                "fill": "#d1d6d9"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 975,
+                "y": 70,
+                "dx": 32,
+                "dy": 43,
+                "w": 45,
+                "h": 48
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://lantronix.com/wp-content/uploads/pdf/ETS_IG.pdf",
+            "kind": "manufacturer",
+            "observed": "900-401 revA April2005; pp11-12 descriptions and p60 power",
+            "sha256": "776d82174cadfaf3c653317877ec670617e608a41bb476c0cbbc481930b57369",
+            "bytes": 622146
+          },
+          {
+            "url": "https://theipv6company.com/html/Productos/Lantronix/DataSheets/ds_etsr.pdf",
+            "kind": "manufacturer-authored-provider-mirror",
+            "observed": "910-274; physical dimensions separately for ETS16PR/ETS32PR; older revision lists BNC absent from original reference",
+            "sha256": "1664f106be5a6e003db808d56a96d3fa1e57a882c8683dcfff987a1fa27d8c12",
+            "bytes": 124917
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-b924dbf6777c2eb2/front-260b46507855.png",
+            "sha256": "260b46507855792198777458e2d1604bbb428c6a417cb02720336c9cf3e9a93d",
+            "view": "front",
+            "match": "community_model_assignment_revision_unverified"
+          },
+          {
+            "path": ".local/selected506k-serial-preflight/lantronix-ets-guide.pdf",
+            "sha256": "776d82174cadfaf3c653317877ec670617e608a41bb476c0cbbc481930b57369",
+            "view": "rear",
+            "match": "primary_family_specification_geometry_unverified_not_exact_face_photo"
+          }
+        ],
+        "limits": [
+          "Own schematic from inspected source references. Hardware revision and perspective flattened; no vendor photo is an operational background. Only registered UUID sockets connect. Lights, USB, AUI/DA15, reset and buttons are inert; no live remote management, pinout or serial protocol simulation.",
+          "Serial ports use console type, not Ethernet. A serial modular socket does not establish Ethernet compatibility or Cisco pinout. Local console is separate only where manufacturer lists it; LAN/serial share neither group nor UUID.",
+          "Body dimensions are nominal W/H/D, not rack rail, load, clearance, thermal or electrical certification. PhysicalConnector is descriptive only; unknown is not inferred from a neighboring model. External cords may have different ends.",
+          "lantronix-ets-brochure:p2 ETS32PR. 89mm nominal; do not normalize to88.9; brochure older revision lists BNC; use only nominal dimensions; rear geometry and C14 not manufacturer-verified",
+          "Port1 also supplies the local console: no extra 17th/33rd port. Primary guide/photo has inert AUI DA15; older brochure BNC revision is unresolved, so no fake BNC/DB9/extra Ethernet. AC internal, exact inlet shape/rear position unverified; no C14 descriptor asserted. Nominal ETS32PR89mm/2U kept."
+        ],
+        "dimensionsBasis": "lantronix-ets-brochure:p2 ETS32PR; preserve metric nominal axes W/H/D, no undocumented rotation; exact revision limits above."
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-a966d159c428b1d4",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Opengear",
+          "model": "CM8116",
+          "sku": "CM8116",
+          "family": "Curated serial console / CM8116 / no optional interfaces"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 440,
+          "height": 44,
+          "depth": 235
+        },
+        "color": "#c20b32",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-serial",
+            "type": "console",
+            "count": 16,
+            "face": "rear",
+            "name": "Managed serial ports",
+            "prefix": "Serial ",
+            "powerRole": "unspecified",
+            "physicalConnector": "serial-8p8c"
+          },
+          {
+            "key": "local-console",
+            "type": "console",
+            "count": 1,
+            "face": "rear",
+            "name": "Local console, separate from serial bank",
+            "prefix": "Local ",
+            "powerRole": "unspecified",
+            "physicalConnector": "serial-8p8c"
+          },
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "Ethernet management",
+            "prefix": "NET ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "front-ac",
+            "type": "power",
+            "count": 2,
+            "face": "front",
+            "name": "AC inputs",
+            "prefix": "AC ",
+            "powerRole": "inlet",
+            "physicalConnector": "iec-c14"
+          }
+        ],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://resources.opengear.com/cm/datasheets/cm8100/cm8100-datasheet.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1200,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 125,
+              "fill": "#c20b32",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Opengear / CM8116",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "text",
+                "x": 274,
+                "y": 126,
+                "text": "Dual AC / no live telemetry",
+                "size": 10,
+                "fill": "#d1d6d9"
+              },
+              {
+                "kind": "rect",
+                "x": 808,
+                "y": 58,
+                "w": 367,
+                "h": 94,
+                "fill": "#292624",
+                "radius": 4
+              },
+              {
+                "kind": "rect",
+                "x": 36,
+                "y": 30,
+                "w": 1125,
+                "h": 25,
+                "fill": "#323333"
+              },
+              {
+                "kind": "vent",
+                "x": 42,
+                "y": 33,
+                "w": 1020,
+                "h": 19,
+                "count": 65
+              },
+              {
+                "kind": "text",
+                "x": 825,
+                "y": 102,
+                "text": "OPEN GEAR",
+                "size": 17,
+                "fill": "#f0f1f2"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-ac",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 1050,
+                "y": 69,
+                "dx": 65,
+                "dy": 43,
+                "w": 49,
+                "h": 54
+              }
+            ]
+          },
+          "rear": {
+            "width": 1200,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 125,
+              "fill": "#c20b32",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Opengear / CM8116",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 942,
+                "y": 29,
+                "w": 250,
+                "h": 96,
+                "fill": "#292624"
+              },
+              {
+                "kind": "text",
+                "x": 1120,
+                "y": 139,
+                "text": "OPEN GEAR",
+                "size": 10,
+                "fill": "#d1d6d9"
+              },
+              {
+                "kind": "text",
+                "x": 58,
+                "y": 153,
+                "text": "SERIAL",
+                "size": 10,
+                "fill": "#d1d6d9"
+              },
+              {
+                "kind": "rect",
+                "x": 936,
+                "y": 72,
+                "w": 25,
+                "h": 46,
+                "fill": "#53707d"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-serial",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7,
+                    9,
+                    11,
+                    13,
+                    15
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8,
+                    10,
+                    12,
+                    14,
+                    16
+                  ]
+                ],
+                "x": 55,
+                "y": 62,
+                "dx": 57,
+                "dy": 43,
+                "w": 40,
+                "h": 30
+              },
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "x": 1070,
+                "y": 62,
+                "dx": 42,
+                "dy": 43,
+                "w": 37,
+                "h": 32
+              },
+              {
+                "groupKey": "local-console",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 990,
+                "y": 85,
+                "dx": 32,
+                "dy": 43,
+                "w": 37,
+                "h": 32
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://resources.opengear.com/cm/datasheets/cm8100/cm8100-datasheet.pdf",
+            "kind": "manufacturer",
+            "observed": "CM8116/CM8148 classic, not CM8100-10G; exact configuration and W/H/D",
+            "sha256": "d7f4343cd64976bfbc01540ab13968a4d9aeb4c25a850391b78b236db9a2a3c6",
+            "bytes": 423350
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-a966d159c428b1d4/front-3c0684c14109.png",
+            "sha256": "3c0684c141095694d4b7c36f4df7fd6666e0afffd2cf8932b9d6dab755951ace",
+            "view": "front",
+            "match": "community_model_assignment_revision_unverified"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-a966d159c428b1d4/rear-d6789585fe3a.png",
+            "sha256": "d6789585fe3a0313eee36af8f52357e8f0ff2d3bda8c6958d373f30893730c6a",
+            "view": "rear",
+            "match": "community_model_assignment_revision_unverified"
+          }
+        ],
+        "limits": [
+          "Own schematic from inspected source references. Hardware revision and perspective flattened; no vendor photo is an operational background. Only registered UUID sockets connect. Lights, USB, AUI/DA15, reset and buttons are inert; no live remote management, pinout or serial protocol simulation.",
+          "Serial ports use console type, not Ethernet. A serial modular socket does not establish Ethernet compatibility or Cisco pinout. Local console is separate only where manufacturer lists it; LAN/serial share neither group nor UUID.",
+          "Body dimensions are nominal W/H/D, not rack rail, load, clearance, thermal or electrical certification. PhysicalConnector is descriptive only; unknown is not inferred from a neighboring model. External cords may have different ends.",
+          "opengear-cm8100:p2. reference physical revision unknown; can reverse mount",
+          "Exact non10G AC model: front dual C14, rear serial/local console/2GbE. Not DDC or CM8100-10G. Shared front image is not independent model verification; USB remains inert."
+        ],
+        "dimensionsBasis": "opengear-cm8100:p2; preserve metric nominal axes W/H/D, no undocumented rotation; exact revision limits above."
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-08b0ee66b1eb36c8",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Opengear",
+          "model": "CM8148",
+          "sku": "CM8148",
+          "family": "Curated serial console / CM8148 / no optional interfaces"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 440,
+          "height": 44,
+          "depth": 235
+        },
+        "color": "#c20b32",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-serial",
+            "type": "console",
+            "count": 48,
+            "face": "rear",
+            "name": "Managed serial ports",
+            "prefix": "Serial ",
+            "powerRole": "unspecified",
+            "physicalConnector": "serial-8p8c"
+          },
+          {
+            "key": "local-console",
+            "type": "console",
+            "count": 1,
+            "face": "rear",
+            "name": "Local console, separate from serial bank",
+            "prefix": "Local ",
+            "powerRole": "unspecified",
+            "physicalConnector": "serial-8p8c"
+          },
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "Ethernet management",
+            "prefix": "NET ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "front-ac",
+            "type": "power",
+            "count": 2,
+            "face": "front",
+            "name": "AC inputs",
+            "prefix": "AC ",
+            "powerRole": "inlet",
+            "physicalConnector": "iec-c14"
+          }
+        ],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://resources.opengear.com/cm/datasheets/cm8100/cm8100-datasheet.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1200,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 125,
+              "fill": "#c20b32",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Opengear / CM8148",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "text",
+                "x": 274,
+                "y": 126,
+                "text": "Dual AC / no live telemetry",
+                "size": 10,
+                "fill": "#d1d6d9"
+              },
+              {
+                "kind": "rect",
+                "x": 808,
+                "y": 58,
+                "w": 367,
+                "h": 94,
+                "fill": "#292624",
+                "radius": 4
+              },
+              {
+                "kind": "rect",
+                "x": 36,
+                "y": 30,
+                "w": 1125,
+                "h": 25,
+                "fill": "#323333"
+              },
+              {
+                "kind": "vent",
+                "x": 42,
+                "y": 33,
+                "w": 1020,
+                "h": 19,
+                "count": 65
+              },
+              {
+                "kind": "text",
+                "x": 825,
+                "y": 102,
+                "text": "OPEN GEAR",
+                "size": 17,
+                "fill": "#f0f1f2"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-ac",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 1050,
+                "y": 69,
+                "dx": 65,
+                "dy": 43,
+                "w": 49,
+                "h": 54
+              }
+            ]
+          },
+          "rear": {
+            "width": 1200,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 125,
+              "fill": "#c20b32",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Opengear / CM8148",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 942,
+                "y": 29,
+                "w": 250,
+                "h": 96,
+                "fill": "#292624"
+              },
+              {
+                "kind": "text",
+                "x": 1120,
+                "y": 139,
+                "text": "OPEN GEAR",
+                "size": 10,
+                "fill": "#d1d6d9"
+              },
+              {
+                "kind": "text",
+                "x": 58,
+                "y": 153,
+                "text": "SERIAL",
+                "size": 10,
+                "fill": "#d1d6d9"
+              },
+              {
+                "kind": "rect",
+                "x": 936,
+                "y": 72,
+                "w": 25,
+                "h": 46,
+                "fill": "#53707d"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-serial",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7,
+                    9,
+                    11,
+                    13,
+                    15,
+                    17,
+                    19,
+                    21,
+                    23,
+                    25,
+                    27,
+                    29,
+                    31,
+                    33,
+                    35,
+                    37,
+                    39,
+                    41,
+                    43,
+                    45,
+                    47
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8,
+                    10,
+                    12,
+                    14,
+                    16,
+                    18,
+                    20,
+                    22,
+                    24,
+                    26,
+                    28,
+                    30,
+                    32,
+                    34,
+                    36,
+                    38,
+                    40,
+                    42,
+                    44,
+                    46,
+                    48
+                  ]
+                ],
+                "x": 55,
+                "y": 62,
+                "dx": 33,
+                "dy": 43,
+                "w": 29,
+                "h": 30
+              },
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "x": 1070,
+                "y": 62,
+                "dx": 42,
+                "dy": 43,
+                "w": 37,
+                "h": 32
+              },
+              {
+                "groupKey": "local-console",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 990,
+                "y": 85,
+                "dx": 32,
+                "dy": 43,
+                "w": 37,
+                "h": 32
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://resources.opengear.com/cm/datasheets/cm8100/cm8100-datasheet.pdf",
+            "kind": "manufacturer",
+            "observed": "CM8116/CM8148 classic, not CM8100-10G; exact configuration and W/H/D",
+            "sha256": "d7f4343cd64976bfbc01540ab13968a4d9aeb4c25a850391b78b236db9a2a3c6",
+            "bytes": 423350
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-08b0ee66b1eb36c8/front-3c0684c14109.png",
+            "sha256": "3c0684c141095694d4b7c36f4df7fd6666e0afffd2cf8932b9d6dab755951ace",
+            "view": "front",
+            "match": "community_model_assignment_revision_unverified"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-08b0ee66b1eb36c8/rear-3639ca375232.png",
+            "sha256": "3639ca375232642019e01a5b0c23ac9f8a5ff65d83a21889195c8edbe753c942",
+            "view": "rear",
+            "match": "community_model_assignment_revision_unverified"
+          }
+        ],
+        "limits": [
+          "Own schematic from inspected source references. Hardware revision and perspective flattened; no vendor photo is an operational background. Only registered UUID sockets connect. Lights, USB, AUI/DA15, reset and buttons are inert; no live remote management, pinout or serial protocol simulation.",
+          "Serial ports use console type, not Ethernet. A serial modular socket does not establish Ethernet compatibility or Cisco pinout. Local console is separate only where manufacturer lists it; LAN/serial share neither group nor UUID.",
+          "Body dimensions are nominal W/H/D, not rack rail, load, clearance, thermal or electrical certification. PhysicalConnector is descriptive only; unknown is not inferred from a neighboring model. External cords may have different ends.",
+          "opengear-cm8100:p2. reference physical revision unknown; front asset shared withCM8116; can reverse mount",
+          "Exact non10G AC model: front dual C14, rear serial/local console/2GbE. Not DDC or CM8100-10G. Shared front image is not independent model verification; USB remains inert."
+        ],
+        "dimensionsBasis": "opengear-cm8100:p2; preserve metric nominal axes W/H/D, no undocumented rotation; exact revision limits above."
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-dbdce8efed0e65d8",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Opengear",
+          "model": "CM7132-2-DAC",
+          "sku": "CM7132-2-DAC",
+          "family": "Curated serial console / CM7132-2-DAC / no optional interfaces"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 440,
+          "height": 45,
+          "depth": 175
+        },
+        "color": "#30353a",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-serial",
+            "type": "console",
+            "count": 32,
+            "face": "rear",
+            "name": "Managed serial ports",
+            "prefix": "Serial ",
+            "powerRole": "unspecified",
+            "physicalConnector": "serial-8p8c"
+          },
+          {
+            "key": "local-console",
+            "type": "console",
+            "count": 1,
+            "face": "front",
+            "name": "Local console, separate from serial bank",
+            "prefix": "Local ",
+            "powerRole": "unspecified",
+            "physicalConnector": "serial-8p8c"
+          },
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "Ethernet management",
+            "prefix": "NET ",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 2,
+            "face": "rear",
+            "name": "AC inputs",
+            "prefix": "AC ",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://opengear.com/wp-content/uploads/2022/03/DS_CM7100_EN_GP_011121.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1200,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 125,
+              "fill": "#30353a",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Opengear / CM7132-2-DAC",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "text",
+                "x": 260,
+                "y": 110,
+                "text": "Opengear CM7100",
+                "size": 23,
+                "fill": "#d1d6d9"
+              },
+              {
+                "kind": "rect",
+                "x": 190,
+                "y": 74,
+                "w": 24,
+                "h": 17,
+                "fill": "#8296a0"
+              },
+              {
+                "kind": "rect",
+                "x": 222,
+                "y": 74,
+                "w": 24,
+                "h": 17,
+                "fill": "#8296a0"
+              },
+              {
+                "kind": "text",
+                "x": 45,
+                "y": 143,
+                "text": "Family front projection / exact revision unverified",
+                "size": 10,
+                "fill": "#d1d6d9"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "local-console",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 130,
+                "y": 74,
+                "dx": 32,
+                "dy": 43,
+                "w": 37,
+                "h": 32
+              }
+            ]
+          },
+          "rear": {
+            "width": 1200,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 27,
+              "w": 1196,
+              "h": 125,
+              "fill": "#30353a",
+              "stroke": "#687579",
+              "radius": 5
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 22,
+                "text": "Opengear / CM7132-2-DAC",
+                "size": 12,
+                "fill": "#bbc6cc"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 45,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 10,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "rect",
+                "x": 1170,
+                "y": 126,
+                "w": 20,
+                "h": 10,
+                "fill": "#151a1e"
+              },
+              {
+                "kind": "text",
+                "x": 248,
+                "y": 154,
+                "text": "SERIAL 1–32",
+                "size": 10,
+                "fill": "#d1d6d9"
+              },
+              {
+                "kind": "text",
+                "x": 80,
+                "y": 148,
+                "text": "AC A / B",
+                "size": 9,
+                "fill": "#d1d6d9"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-serial",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7,
+                    9,
+                    11,
+                    13,
+                    15,
+                    17,
+                    19,
+                    21,
+                    23,
+                    25,
+                    27,
+                    29,
+                    31
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8,
+                    10,
+                    12,
+                    14,
+                    16,
+                    18,
+                    20,
+                    22,
+                    24,
+                    26,
+                    28,
+                    30,
+                    32
+                  ]
+                ],
+                "x": 230,
+                "y": 62,
+                "dx": 48,
+                "dy": 43,
+                "w": 40,
+                "h": 30
+              },
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 1050,
+                "y": 89,
+                "dx": 42,
+                "dy": 43,
+                "w": 37,
+                "h": 32
+              },
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 80,
+                "y": 61,
+                "dx": 65,
+                "dy": 43,
+                "w": 49,
+                "h": 54
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://opengear.com/wp-content/uploads/2022/03/DS_CM7100_EN_GP_011121.pdf",
+            "kind": "manufacturer",
+            "observed": "011121; p1 specifications and p2 CM7132-2-DAC ordering; metric/imperial discrepancy retained",
+            "sha256": "b44841878ac7b8e875c970427ec36001eae9b40c1947ff1018cf4eb2f6482dae",
+            "bytes": 224281
+          },
+          {
+            "url": "https://ftp.opengear.com/download/documentation/manual/previous%20versions/Opengear%20User%20Manual%204.20.pdf",
+            "kind": "manufacturer-manual-web-read",
+            "observed": "Sections2.2–2.3 locate CM7100IEC and Ethernet at rear; read by preflight reviewer via primary web text, no local PDF hash asserted."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-dbdce8efed0e65d8/front-908f07b15dae.png",
+            "sha256": "908f07b15dae451229cfba3014f425ad5ddcc79f0c87a1edb8807273887500a6",
+            "view": "rear",
+            "match": "community_model_assignment_revision_unverified_reassigned_rear_from_primary_manual"
+          },
+          {
+            "path": ".local/selected506k-serial-preflight/opengear-cm7100.pdf",
+            "sha256": "b44841878ac7b8e875c970427ec36001eae9b40c1947ff1018cf4eb2f6482dae",
+            "view": "front",
+            "match": "primary_family_specification_geometry_unverified_not_exact_face_photo"
+          }
+        ],
+        "limits": [
+          "Own schematic from inspected source references. Hardware revision and perspective flattened; no vendor photo is an operational background. Only registered UUID sockets connect. Lights, USB, AUI/DA15, reset and buttons are inert; no live remote management, pinout or serial protocol simulation.",
+          "Serial ports use console type, not Ethernet. A serial modular socket does not establish Ethernet compatibility or Cisco pinout. Local console is separate only where manufacturer lists it; LAN/serial share neither group nor UUID.",
+          "Body dimensions are nominal W/H/D, not rack rail, load, clearance, thermal or electrical certification. PhysicalConnector is descriptive only; unknown is not inferred from a neighboring model. External cords may have different ends.",
+          "opengear-cm7100:p1 metric, imperial discrepancy retained. metric440x175x45 differs from imperial431.8x175.26x44.45; no certified fit claim; community asset mislabeledfront must be assignedrear with provenance; front picture is family reference",
+          "Primary manual4.20 sections2.2–2.3 locates AC and Ethernet at rear; community front image reassigned rear, preserving original hash. Front localconsole/USB is family-derived, exact geometry unverified. Primary metric440×45×175 differs imperial; kept metric, no mechanical certification. Two IEC inputs documented but C14 exact form community-only, descriptor remains unknown."
+        ],
+        "dimensionsBasis": "opengear-cm7100:p1 metric, imperial discrepancy retained; preserve metric nominal axes W/H/D, no undocumented rotation; exact revision limits above."
+      }
+    }
+  ]
+}

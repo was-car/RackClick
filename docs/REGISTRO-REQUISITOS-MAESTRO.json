@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "date": "2026-10-30",
+  "date": "2026-11-03",
   "role": "Entrada única de planificación. El ledger conserva la contabilidad; las decisiones confirmadas más recientes rigen la ejecución.",
-  "sourceBaseline": "RC-CIERRE-20261029-v2",
-  "sourceFrozenFingerprint": "ae686f21994f3af247456f0dcc56108c16c0a229f7500d86bd20ddb41f78cdf3",
+  "sourceBaseline": "RC-CIERRE-20261103-v3",
+  "sourceFrozenFingerprint": "9ef507b41abc2c8cab58e38bf345c4a4f30dd48a8a156b0d1d4ebd7ea45be974",
   "metric": {
     "kind": "remaining_work_closure_not_global_product_percentage",
-    "closedPointsExact": "1639/168",
-    "closedPoints": 9.755952380952381,
+    "closedPointsExact": "2479/168",
+    "closedPoints": 14.755952380952381,
     "totalPoints": 100,
     "globalProductPercentage": null,
     "sourceTasks": 53,
     "scoredSourceTasks": 50,
     "checkpoints": 280,
-    "doneCheckpoints": 23,
+    "doneCheckpoints": 31,
     "newWeightAllocated": 0
   },
   "inputs": [
     {
       "file": "docs/REGISTRO-MAESTRO-CONFIG.json",
-      "sha256": "52cde984a6e410dd2219d38d197f3ff97482a71d3b721fd805063a817ed18f15"
+      "sha256": "da74d0ebf85c9745654735941fcf1933469b131d8119b4c60643d83b3d279823"
     },
     {
       "file": "docs/PLAN-CIERRE-RACKCLICK.json",
-      "sha256": "f2653b6a3fac5bbae3f2dd613f92c66a4004b8ce8192e6eb1b06f4493783fa3d"
+      "sha256": "7082b53d7615bbbbaed533f977e9e8174fe0cb9f87f040beddf78b117231c93e"
     },
     {
       "file": "evidence/s1-20261029/comparacion-rc10-servidor/PLAN-ACCIONES.json",
@@ -68,6 +68,298 @@
     {
       "file": "docs/INSTALACION-DESDE-GITHUB.md",
       "sha256": "16f0942063d5ffcb75a41c56d074e4ee83f353f93894064b47c289c4bf098be9"
+    },
+    {
+      "file": "docs/TANDA-RACKS-PRIMERO-30-10-2026.md",
+      "sha256": "afeb0a8e850166ac1b68f5a81f8a288f7e4a924fe0f0ec17329f8a950c2d131a"
+    },
+    {
+      "file": "docs/TANDA-INFORMES-CONTEXTO-30-10-2026.md",
+      "sha256": "f6835778a3233183d9e386f7f7eee6b5d17ed14c4822c932321774a54bf47a73"
+    },
+    {
+      "file": "docs/CONTRATO-HARDWARE-MONTAJE-v1.md",
+      "sha256": "25d84f09b7b220aae627274880799f4fb0954e4bb25ab858f8b82bb27781a569"
+    },
+    {
+      "file": "docs/TANDA-HARDWARE-MONTAJE-30-10-2026.md",
+      "sha256": "36190fcb60fea241e7c21a41ebf919b06867aec39b49346d908ef4aa57d27261"
+    },
+    {
+      "file": "docs/QA-HARDWARE-MONTAJE-WASCAR.md",
+      "sha256": "5ac7fe0f9936359df464f8fae0950477541151af8732208b95c72dd04f9a6380"
+    },
+    {
+      "file": "docs/CONTRATO-REVISIONES-HARDWARE-v1.md",
+      "sha256": "3e04445b56557f331c8b933998b5666335eb27d784fe53a97d8026cf2b4877db"
+    },
+    {
+      "file": "docs/TANDA-REVISIONES-HARDWARE-30-10-2026.md",
+      "sha256": "a8223da83346d9f91339750bd719b9ccf962c2edd254ba5b573e5b6b32be8532"
+    },
+    {
+      "file": "docs/QA-REVISIONES-HARDWARE-WASCAR.md",
+      "sha256": "528fbbc0fadbfa1ae14299fc59d4ac4bbc54f389656dd74a10e781c5bd984fa6"
+    },
+    {
+      "file": "docs/CONTRATO-CATALOGO-FUENTE-UNICA-v1.md",
+      "sha256": "20053edbe5410c8b3145120b162bca6a8c172bf1cd8b41b07b549d1710113261"
+    },
+    {
+      "file": "docs/TANDA-CATALOGO-FUENTE-UNICA-30-10-2026.md",
+      "sha256": "ed0800831d51e8c529fb26f42679c6c6b3ed3a951ffa3a187eeb0136636bfe3a"
+    },
+    {
+      "file": "docs/REVISION-CATALOGO-FUENTE-UNICA-30-10-2026.md",
+      "sha256": "853ba88a7e2e0a50a7300fb68e5218e8f30cb6be9379913703aaf8c46950183a"
+    },
+    {
+      "file": "docs/CONTRATO-CATALOGO-SQL17.md",
+      "sha256": "fc984581b0c8d33576ad1618c7bbcb92c36e7b73a351b7a4abcf5d16128690b5"
+    },
+    {
+      "file": "docs/TANDA-CATALOGO-SQL17-30-10-2026.md",
+      "sha256": "72a7c6a7a034801edf68b019129b5dcdb86e66e3200eeef69c121c58ce38effb"
+    },
+    {
+      "file": "docs/REVISION-CATALOGO-SQL17-30-10-2026.md",
+      "sha256": "414b0dfd0bad5492100a1ef72f5ffb5487e6bd60fd733f52074054f07fbc8a8a"
+    },
+    {
+      "file": "docs/PRIMER-MODELO-COMERCIAL-STARTECH.md",
+      "sha256": "5153fc6c78b1439ac6d4a726386362dd304725d4ac25e9fdb76f2c74755e8193"
+    },
+    {
+      "file": "docs/QA-PRIMER-MODELO-COMERCIAL-WASCAR.md",
+      "sha256": "fba5c0706225f90a27301d8632b917edb1f6b2223cd04b3ab62e65147f62320d"
+    },
+    {
+      "file": "docs/REVISION-PRIMER-MODELO-COMERCIAL-30-10-2026.md",
+      "sha256": "52ce1c712c05f1feb15c619115bcf5131f8fb04c74e8c68ee796a46235ae1fac"
+    },
+    {
+      "file": "docs/CARCASAS-PRINCIPALES/README.md",
+      "sha256": "172a3bbe87a5005b5141d76db8e4e760f888a4754dedaea706a2e23f9e08116f"
+    },
+    {
+      "file": "evidence/s1-20261030/hardware-visual-library/RESULTADOS.md",
+      "sha256": "a978adbd98c2b355060d1d6e520fe9b08328cfb19dce9d1d470c0cce36f079e1"
+    },
+    {
+      "file": "docs/CARCASAS-PRINCIPALES/CARTERA-220.md",
+      "sha256": "464dbdd058f65af712d762f642034d5eaa7d45cabf65b42610f6d3e118034c77"
+    },
+    {
+      "file": "evidence/s1-20261030/hardware-visual-200/RESULTADOS.md",
+      "sha256": "e6f24e5586bac358945d656ba0d203ab6e1410c76f6b6d85cd5d7af1e2fe47e7"
+    },
+    {
+      "file": "docs/CARCASAS-PRINCIPALES/CARTERA-500.md",
+      "sha256": "14548c5801e401f3ba2008611e3375b1413ab08e90334e25a749d84a9a14fc93"
+    },
+    {
+      "file": "evidence/s1-20261030/hardware-visual-500/RESULTADOS.md",
+      "sha256": "bc52ad7713b8d876bd2fb92b3ada9e54b29a390e5b322a2dc09bd82aabd98738"
+    },
+    {
+      "file": "docs/INTEGRACION-CARCASAS-LOTE01.md",
+      "sha256": "b8e35e1fe54bd1c242bfcb6aab7d769b26e2c9c826f6f917d1614cc91a778eea"
+    },
+    {
+      "file": "docs/QA-CARCASAS-LOTE01-WASCAR.md",
+      "sha256": "19a3676d0f7dec9aaa02f18944946b4f8c3ed68db8d6ef404480f2fbbd32c64d"
+    },
+    {
+      "file": "evidence/s1-20261030/hardware-shell-lot1/RESULTADOS.md",
+      "sha256": "33866c7bd2d77390cd742e51ec7dde2816341f36b72254f496e816b69a659439"
+    },
+    {
+      "file": "docs/INTEGRACION-FOTOS-ORIGINALES-LOTE01.md",
+      "sha256": "3529f737ee9a6edff507ed1eda36b549b1103950a00b2553f1b0171dee052265"
+    },
+    {
+      "file": "evidence/s1-20261030/hardware-photo-lot1/RESULTADOS.md",
+      "sha256": "ca9e18fbd4e22272a5611f5795b75dd1fff0d862e139d31b1d46e4afcd23f857"
+    },
+    {
+      "file": "docs/PLAN-LABORATORIO-50-CLIENTES.md",
+      "sha256": "27537c9fdb78ac34208679addd128c92cafc6ab776935e9492209fbcf18fe9af"
+    },
+    {
+      "file": "docs/INTEGRACION-506-GRUPO-B.md",
+      "sha256": "b2ea6e35dfbdfdd0f317e1b93d5ab2763356eaf7e44c1a6509d239ee5507b651"
+    },
+    {
+      "file": "docs/SELECTOR-CATALOGO-COMPACTO.md",
+      "sha256": "c94548e2dcacc7467dbd7805c097e03d70a3430d67677c744ea705d557d44de0"
+    },
+    {
+      "file": "docs/INTEGRACION-506-GRUPO-C.md",
+      "sha256": "99fe69beab3b23c0bdf4e4807cf9318e778f291dd95b484dd398262903c04dee"
+    },
+    {
+      "file": "docs/CONECTORES-SFP56-QSFPDD.md",
+      "sha256": "333a8ce9016888d9fdce4fbd06d092f1f460cf96718ad8f10dbff76f00f72f7f"
+    },
+    {
+      "file": "docs/INTEGRACION-506-GRUPO-H.md",
+      "sha256": "707f675f3290d100f68864ae1025ac384250f1ea5bd25c6e07e5c8a20fb923e4"
+    },
+    {
+      "file": "docs/INTEGRACION-506-GRUPO-I.md",
+      "sha256": "4a99b6d8c07c5ff5bb5da53fd086aca94201bc17c545669ffb335337045aedac"
+    },
+    {
+      "file": "docs/INTEGRACION-506-GRUPO-J.md",
+      "sha256": "dc2f2c6156039d2db966e41d876996be0b1fae0d6bee6e3e75f2643e0481feaa"
+    },
+    {
+      "file": "docs/METODO-CATALOGO-POR-FAMILIAS.md",
+      "sha256": "b8782b0366c70553f9b2b992e35c7ae61d913a695f676c8367780d34f23551dc"
+    },
+    {
+      "file": "docs/PLANTILLA-FAMILIA-CATALOGO.json",
+      "sha256": "92ece50c0865f4673136b5dfca066f6a4abd2dc6a3b1dc5c10370b176e8e334e"
+    },
+    {
+      "file": "docs/FAMILIAS-CATALOGO-PENDIENTES.md",
+      "sha256": "0150efc256941398a6d1bdd7d8c8807730602eeb37718460499761aa89c91e7a"
+    },
+    {
+      "file": "docs/INTEGRACION-506-GRUPO-L.md",
+      "sha256": "d83f7e0d37f8c8bda428049dc50ef74958570304c4e31ec77b3443dabb2df393"
+    },
+    {
+      "file": "docs/CANDIDATA-CONSOLIDADA43.md",
+      "sha256": "44b27728666feecc200bb8535b06462614d18b09ff98be115117e05812e8d2b8"
+    },
+    {
+      "file": "evidence/s1-20261102/candidata43/RESULTADOS.md",
+      "sha256": "7cea1bedf2cd19ce044f28d6b26d8d493457fe095e8aaf144a5596835cda9568"
+    },
+    {
+      "file": "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+      "sha256": "8b2bcd656359069f28f9489bfc9a7aef4dfb9150c628014aa48812c8150cbeea"
+    },
+    {
+      "file": "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md",
+      "sha256": "ab0770954f367e4352dab9f907d021d22ebd553a38e0b86f9c56b38f9d51c1e4"
+    },
+    {
+      "file": "docs/CARGADOR-DEMO50-02.md",
+      "sha256": "b5f0f268db93b48173ecb88455c18e453ff705d098bded0a49afb6fd76224013"
+    },
+    {
+      "file": "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+      "sha256": "5b2497394924925ba790f42f96d8176ea150323f0297b53157861c52dd294ab7"
+    },
+    {
+      "file": "docs/LABORATORIO-50-CLIENTES.md",
+      "sha256": "5a7ffb55b78c3cc674462352000e1c3d9b27dd4c2b285207ae91abef030b6f80"
+    },
+    {
+      "file": "docs/FAMILIAS-CATALOGO-PENDIENTES.json",
+      "sha256": "40f2b93ec7fb782ac2fe4039c537d8422bbac7c3c4b62cec2c292937f321e3a2"
+    },
+    {
+      "file": "evidence/s1-20261102/f01-01-clasificacion/RESULTADOS.md",
+      "sha256": "547bee93dbbd208a3e74450a44edccd6a51e81e12d29ddd43bbd156a010860d1"
+    },
+    {
+      "file": "evidence/s1-20261102/f01-01-clasificacion/REVISION-INDEPENDIENTE.md",
+      "sha256": "edef5a35fdaf31d640f7519f7cc8f4a84d76bf95f95b8440bc87830f53c76289"
+    },
+    {
+      "file": "evidence/s1-20261102/f01-02-tratamiento/RESULTADOS.md",
+      "sha256": "57ef06701053577723867af3fccd842f441b170c16b38dd54d6c65fbc8d7a7cf"
+    },
+    {
+      "file": "evidence/s1-20261102/f01-02-tratamiento/REVISION-INDEPENDIENTE.md",
+      "sha256": "90232e86817e52976f6638a7107c549e5fdce9f92703649b2118ca4ccab59001"
+    },
+    {
+      "file": "evidence/s1-20261102/f01-03-registro/RESULTADOS.md",
+      "sha256": "a5d7c51c3024212a196ff5938aa0465b68370a9ce7deb3c061a6620b88667073"
+    },
+    {
+      "file": "evidence/s1-20261102/f01-03-registro/REVISION-INDEPENDIENTE.md",
+      "sha256": "4fc354aed929faedcc213bbae3d15977b8c1b02f58df6ec361c13a90e7d1d6f9"
+    },
+    {
+      "file": "docs/CRITERIO-FALSOS-POSITIVOS-SECRETOS.md",
+      "sha256": "ffa60389b6d70badc4223b603a46653bece3df4a46da0fcbaa899b73c83e4853"
+    },
+    {
+      "file": "evidence/s1-20261102/f01-04-cierre/RESULTADOS.md",
+      "sha256": "2d75110702dad7a099c7314c75c907e73194b4d3446a20f67c9bee030bfb20a0"
+    },
+    {
+      "file": "evidence/s1-20261102/f01-04-cierre/REVISION-INDEPENDIENTE.md",
+      "sha256": "4871cd3c3b90ea3c3446f4df3484df4e957c4a4d30e96160bdee0a88fee253ba"
+    },
+    {
+      "file": "docs/PASO-004-REVISION-CIERRE-SECRETOS.md",
+      "sha256": "beb6c1cd3c31ad568e20a3d66f5f37149b23d9a48da5323b6e6edd9eca61cd69"
+    },
+    {
+      "file": "evidence/s1-20261102/f02-01-sql/RESULTADOS.md",
+      "sha256": "319a85b05e25e9e3a51827d453543cf9a729f583ad59b02e4becbc425222f227"
+    },
+    {
+      "file": "evidence/s1-20261102/f02-01-sql/REVISION-INDEPENDIENTE.md",
+      "sha256": "26810877cc92032cc6776bb6c00c6ca63f72dfa08b5d63095966af72d30cffe6"
+    },
+    {
+      "file": "docs/CONTRATO-CONEXION-SQL-CIFRADA-v1.md",
+      "sha256": "d0b1aac99c66ec5349e1547437e565d4014742e1e35f89e5d42050592ecd9357"
+    },
+    {
+      "file": "docs/PASO-005-CONEXION-SQL-CIFRADA.md",
+      "sha256": "784d377f5c4e77bff2d6684b022a303868c678aec5157ae2128ea85a8238edcd"
+    },
+    {
+      "file": "evidence/s1-20261102/f02-02-operadores/RESULTADOS.md",
+      "sha256": "1fcacbf7a241cd0faa8af585eed4dea2dc7a6359e6213aef10aaa2ccd210506f"
+    },
+    {
+      "file": "evidence/s1-20261102/f02-02-operadores/REVISION-INDEPENDIENTE.md",
+      "sha256": "4ad331aa7d90fc500536b2fbdf49e6114ad03e384ff360c6a29a8b3a2cfc314d"
+    },
+    {
+      "file": "docs/OPERADORES-SQL-CIFRADOS-v2.md",
+      "sha256": "e1c2729c3786bf93a54f45b8a4a8548d289f6be4f86cccf44413cc56285211ad"
+    },
+    {
+      "file": "docs/PASO-006-OPERADORES-SQL.md",
+      "sha256": "411638021428d64221569652a2a2f8c3f955ab2ff07da26a8001abddbf2672ed"
+    },
+    {
+      "file": "evidence/s1-20261102/f02-03-restauracion/RESULTADOS.md",
+      "sha256": "6c56885a41fcd9e33e4cfabe093ada3807f4cd91a2369756fe42fd2f1b34ea15"
+    },
+    {
+      "file": "evidence/s1-20261102/f02-03-restauracion/REVISION-INDEPENDIENTE.md",
+      "sha256": "5cdd720c9abd4b3ed88b4be2818980ec6be347d736a2176a77601f78b591576c"
+    },
+    {
+      "file": "docs/REANUDACION-RESTORE-SQL-PROTEGIDO.md",
+      "sha256": "ed4de27c67871b6e88d7e971032c85f9d05e39c987cc3e4ab0da17b99c158f4b"
+    },
+    {
+      "file": "docs/PASO-007-REANUDACION-RESTORE-SQL.md",
+      "sha256": "1318981b8c9401411c24e235e6a7596119ce66ee29d3d6851e991a4df2873d70"
+    },
+    {
+      "file": "docs/CATALOGO-ALEMANIA-Y-RACKS-03-11-2026.md",
+      "sha256": "bfc931ab5eb1bf0727afb76a7ff3d52c51f58d58ffffe5ab7983bf858b5e4eaf"
+    },
+    {
+      "file": "docs/REPETIDORES-ALEMANIA-03-11-2026.md",
+      "sha256": "c04dbf9c82fb9bb51baacdc689210386ca1533b96be5531421272d87fcb0450b"
+    },
+    {
+      "file": "docs/ACTUALIZACION-D45-03-11-2026.md",
+      "sha256": "856608bbce7a6c403d28c55d67d63b7bcb9859fdc0c929148052992f30c5af71"
     }
   ],
   "baseResults": [
@@ -77,50 +369,88 @@
       "title": "Clasificar hallazgos de secretos y tratar sólo credenciales reales",
       "ledgerTitle": "Clasificar hallazgos de secretos y tratar sólo credenciales reales",
       "classification": "resultado_base",
-      "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Escáner Gitleaks/hook fijados y revisados; no falta instalar otro escáner. El barrido guardó coincidencias, no un historial limpio.",
-      "contextIsCurrentOverride": false,
+      "state": "cerrado_acreditado",
+      "currentContext": "F-01.01/.03 conservan su clasificación/registro técnico. F-01.02/.04 cerrados administrativamente por decisión expresa de Wascar03.11 y enmienda limitadav3: antecedente25.10 indeterminado y salida perdida, sin falso positivo, prueba de revocación ni cambios deD. Reabrir ambos y retirar5/4 si aparece evidencia concreta; no es higiene global ni aceptación de exposiciones futuras.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/IMPLEMENTACION-REV4.md",
-        "evidence/s1-20261021/rev4-fundamento/CIERRE.md"
+        "docs/F01-RESOLUCION-ANTECEDENTE.md",
+        "evidence/s1-20261102/cierre-bloqueantes-01-07/f01/REVISION-RESOLUCION.md",
+        "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+        "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md",
+        "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
       ],
-      "closureCriterion": "Cada candidato/indeterminado tiene clasificación y resolución verificables; credenciales reales expuestas revocadas/rotadas de forma coordinada; comprobación focal de fuentes/paquete sin exposición.",
-      "ledgerClosureCriterion": "Cada candidato/indeterminado tiene clasificación y resolución verificables; credenciales reales expuestas revocadas/rotadas de forma coordinada; comprobación focal de fuentes/paquete sin exposición.",
+      "closureCriterion": "Cada candidato/indeterminado tiene clasificación y resolución verificables; credenciales reales expuestas revocadas/rotadas de forma coordinada; comprobación focal de fuentes/paquete sin exposición. Excepción limitada al antecedente run-1 del25.10.2026 sin salida conservada: archivo administrativo expreso del titular con clasificación indeterminada y reapertura obligatoria si aparece evidencia concreta. No equivale a falso positivo, ausencia de exposición o revocación demostrada.",
+      "ledgerClosureCriterion": "Cada candidato/indeterminado tiene clasificación y resolución verificables; credenciales reales expuestas revocadas/rotadas de forma coordinada; comprobación focal de fuentes/paquete sin exposición. Excepción limitada al antecedente run-1 del25.10.2026 sin salida conservada: archivo administrativo expreso del titular con clasificación indeterminada y reapertura obligatoria si aparece evidencia concreta. No equivale a falso positivo, ausencia de exposición o revocación demostrada.",
       "dependencies": [],
       "weightPoints": "5/2",
-      "closedPoints": "0",
-      "completedCheckpoints": 0,
+      "closedPoints": "5/2",
+      "completedCheckpoints": 4,
       "totalCheckpoints": 4,
       "checkpoints": [
         {
           "id": "F-01.01",
           "text": "Clasificar candidatos e indeterminados privados con trazabilidad por ruta/commit y sin publicar valores.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f01-01-clasificacion/RESULTADOS.md",
+            "evidence/s1-20261102/f01-01-clasificacion/REVISION-INDEPENDIENTE.md"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f01-01-clasificacion/REVISION-INDEPENDIENTE.md"
+          ]
         },
         {
           "id": "F-01.02",
-          "text": "Si una credencial es real, coordinar revocación/rotación con la instancia afectada; corregir exposición y volver a verificar cambios/artefactos relevantes.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "text": "Si una credencial es real, coordinar revocación/rotación con la instancia afectada; corregir exposición y volver a verificar cambios/artefactos relevantes. Para el antecedente run-1 del25.10.2026 sin salida conservada, se admite sólo el archivo administrativo expreso documentado, con incertidumbre y reapertura obligatoria; no clasifica como falso positivo ni prueba revocación.",
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f01-02-tratamiento/RESULTADOS.md",
+            "evidence/s1-20261102/f01-02-tratamiento/REVISION-INDEPENDIENTE.md",
+            "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f01-02-tratamiento/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
+          ],
+          "closure_method": "administrative_disposition",
+          "residual_uncertainty": true,
+          "reopen_on_concrete_evidence": true
         },
         {
           "id": "F-01.03",
           "text": "Registrar falsos positivos y criterio específico sin supresiones amplias; reescritura de historial no está autorizada por defecto.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f01-03-registro/RESULTADOS.md",
+            "evidence/s1-20261102/f01-03-registro/REVISION-INDEPENDIENTE.md"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f01-03-registro/REVISION-INDEPENDIENTE.md"
+          ]
         },
         {
           "id": "F-01.04",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f01-04-cierre/RESULTADOS.md",
+            "evidence/s1-20261102/f01-04-cierre/REVISION-INDEPENDIENTE.md",
+            "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md"
+          ],
           "weight_points": "5/8",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261102/f01-04-cierre/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
+          ],
+          "closure_method": "independent_review_of_administrative_disposition",
+          "residual_uncertainty": true,
+          "reopen_on_concrete_evidence": true
         }
       ],
       "ledgerAlignmentRequired": [],
@@ -133,13 +463,30 @@
       "title": "Cifrar configuración SQL y recuperar sus secretos en otra instancia",
       "ledgerTitle": "Cifrar configuración SQL y recuperar sus secretos en otra instancia",
       "classification": "resultado_base",
-      "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Connection string runtime permanece en archivo privado protegido por ACL y texto plano. DPAPI de otros secretos del instalador no acredita cifrado de ésta.",
-      "contextIsCurrentOverride": false,
+      "state": "cerrado_acreditado",
+      "currentContext": "F-02.01–.04 cerrados: postboot13, Restore14-r2 desde backup sintético LEAO hacia E con cuenta/SID/roles/material nuevos,20clientes SQL/API,operadores/ficha/diagnóstico/backup reales y reanudación sin regeneración. Windows no se reinició tras Restore14; ese pendiente sigue en los criterios Windows, sin adopción global. D se conserva y F01 tiene disposición administrativa posterior03.11, separada del cierre técnico.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
         "docs/IMPLEMENTACION-REV4.md",
         "docs/RECUPERACION-DESPLIEGUE-WINDOWS-S1.md",
-        "docs/REVISION-INSTALADOR14-06-CODEX.md"
+        "docs/REVISION-INSTALADOR14-06-CODEX.md",
+        "evidence/s1-20261102/f02-01-sql/RESULTADOS.md",
+        "evidence/s1-20261102/f02-01-sql/REVISION-INDEPENDIENTE.md",
+        "docs/CONTRATO-CONEXION-SQL-CIFRADA-v1.md",
+        "evidence/s1-20261102/f02-02-operadores/RESULTADOS.md",
+        "evidence/s1-20261102/f02-02-operadores/REVISION-INDEPENDIENTE.md",
+        "docs/OPERADORES-SQL-CIFRADOS-v2.md",
+        "evidence/s1-20261102/f02-03-restauracion/RESULTADOS.md",
+        "evidence/s1-20261102/f02-03-restauracion/REVISION-INDEPENDIENTE.md",
+        "docs/REANUDACION-RESTORE-SQL-PROTEGIDO.md",
+        "docs/SQL-PROTEGIDO-INSTANCIA3.md",
+        "docs/INSTALADOR12-SQL-PROTEGIDO.md",
+        "docs/CIERRE-BLOQUEANTES-PASOS-01-A-07.md",
+        "evidence/s1-20261102/cierre-bloqueantes-01-07/RESULTADOS.md",
+        "evidence/s1-20261102/vm12-e/RESULTADOS.md",
+        "evidence/s1-20261102/vm12-e/review/DICTAMEN-F02-01.md",
+        "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+        "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
       ],
       "closureCriterion": "El secreto SQL no queda en claro en el archivo entregado/configuración recuperable; servicio estándar arranca y Restore nuevo funciona mediante procedimiento documentado, sin secretos en logs/paquetes.",
       "ledgerClosureCriterion": "El secreto SQL no queda en claro en el archivo entregado/configuración recuperable; servicio estándar arranca y Restore nuevo funciona mediante procedimiento documentado, sin secretos en logs/paquetes.",
@@ -147,39 +494,75 @@
         "Coordinación C4/C5: cuenta de servicio y procedimiento de recuperación"
       ],
       "weightPoints": "5/2",
-      "closedPoints": "0",
-      "completedCheckpoints": 0,
+      "closedPoints": "5/2",
+      "completedCheckpoints": 4,
       "totalCheckpoints": 4,
       "checkpoints": [
         {
           "id": "F-02.01",
           "text": "Diseñar e integrar protección compatible con cuenta/instancia reales y canal mínimo de lectura para el servicio; conservar separación owner/migración/runtime.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f02-01-sql/RESULTADOS.md",
+            "evidence/s1-20261102/f02-01-sql/REVISION-INDEPENDIENTE.md",
+            "docs/CONTRATO-CONEXION-SQL-CIFRADA-v1.md",
+            "evidence/s1-20261102/vm12-e/RESULTADOS.md",
+            "evidence/s1-20261102/vm12-e/service-observed13.json",
+            "evidence/s1-20261102/vm12-e/source-next-actual.json"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f02-01-sql/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261102/vm12-e/review/DICTAMEN-F02-01.md"
+          ]
         },
         {
           "id": "F-02.02",
           "text": "Actualizar operadores/fichas de acceso, diagnóstico y backup para no filtrar la clave ni depender de copiar un secreto ligado al host antiguo.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f02-02-operadores/RESULTADOS.md",
+            "evidence/s1-20261102/f02-02-operadores/REVISION-INDEPENDIENTE.md",
+            "docs/OPERADORES-SQL-CIFRADOS-v2.md",
+            "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+            "evidence/s1-20261103/e13-postboot-restore14/restore14-observed.json"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f02-02-operadores/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-02.md"
+          ]
         },
         {
           "id": "F-02.03",
           "text": "Ensayar reanudación y Restore en destino nuevo con identidad/roles/claves nuevos; error explícito ante clave ausente/incorrecta.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261102/f02-03-restauracion/RESULTADOS.md",
+            "evidence/s1-20261102/f02-03-restauracion/REVISION-INDEPENDIENTE.md",
+            "docs/REANUDACION-RESTORE-SQL-PROTEGIDO.md",
+            "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+            "evidence/s1-20261103/e13-postboot-restore14/resume14-reconciled.json"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261102/f02-03-restauracion/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
+          ]
         },
         {
           "id": "F-02.04",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+            "evidence/s1-20261103/e13-postboot-restore14/resume14-reconciled.json"
+          ],
           "weight_points": "5/8",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
+          ]
         }
       ],
       "ledgerAlignmentRequired": [],
@@ -243,14 +626,11 @@
       "ledgerTitle": "Implementar proveedor TOTP Windows bajo la identidad real del servicio",
       "classification": "resultado_base",
       "state": "parcial_acreditado",
-      "currentContext": "En C Windows Server2025 limpia, candidata10 instala almacén dedicado e inicia proveedor Windows DPAPI bajo cuenta estándar SCM. Enrolamiento y nuevo login TOTP por HTTPS verificados antes y después del reinicio. Negativos de pérdida de clave/versión y arranque cerrado conciliados con las fuentes actuales. No se cierra la recuperación portable ni todos los negativos de ACL/otros tokens.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "Proveedor, escritor, almacen y composicion productiva ya integrados. D11 usa el SID real del servicio; enrolamiento y verificacion TOTP por HTTPS/DPAPI funcionaron con QA-MFA11. Completar negativos de ACL/otros tokens y cierre del resultado; no recrear el proveedor.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "development/server/src/RackClick.Server/Program.cs",
-        "development/server/src/RackClick.Server/MfaStore.cs",
-        "development/server/src/RackClick.Server/MfaSecretCipher.cs",
-        "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-        "docs/REVISION-D2-CODEX.md"
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Servicio real lee/descifra y verifica factores; otra cuenta no lee, servicio no escribe ni modifica ACL, management no se amplía; negativos y revisión independiente registrados.",
       "ledgerClosureCriterion": "Servicio real lee/descifra y verifica factores; otra cuenta no lee, servicio no escribe ni modifica ACL, management no se amplía; negativos y revisión independiente registrados.",
@@ -437,11 +817,14 @@
       "ledgerTitle": "Completar enrolamiento restringido cuando MFA sea exigible",
       "classification": "resultado_base",
       "state": "parcial_acreditado",
-      "currentContext": "Enrolamiento, login MFA, GUI y gracia45 tienen trabajo acreditado; Wascar probó MFA administrativo en candidata10. Falta el cierre integral del resultado y sus escenarios pendientes, no crear otra pantalla de login.",
+      "currentContext": "Enrolamiento/login/GUI y politica45 existentes; F-07.01-.04 acreditados. D11 tiene proveedor real y prueba HTTPS/DPAPI de cuenta sintetica. Falta cierre integral y escenarios pendientes; no crear otro login. Codigos de recuperacion del punto3 probados en desarrollo43, no canje nativo en D.",
       "contextIsCurrentOverride": true,
       "contextEvidence": [
         "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
-        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md"
+        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md",
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Cuando se exige MFA o se inicia enrolamiento, el desafío no concede acceso API; confirmar un factor válido emite una única sesión nueva, con negativos de concurrencia y revisión. Respetar la gracia45 y exención global confirmadas, sin bloquear de golpe todas las cuentas nuevas.",
       "ledgerClosureCriterion": "Usuario nuevo completa primer factor y obtiene única sesión nueva sólo al confirmar; desafío/enrolamiento incompleto no acceden a /me, clientes ni mutaciones; negativos concurrentes y revisión independiente.",
@@ -533,13 +916,11 @@
       "ledgerTitle": "Implementar códigos de recuperación y reenrolamiento restringido",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Tabla app_mfa_recovery_code existe; generación/entrega/consumo y transición posterior no demostrados como flujo de producto.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "Codigos propios y canje a reenrolamiento restringido implementados y revisados en desarrollo43, con revocacion transaccional y entrega unica. Faltan ultimo administrador, custodia operativa, canje en candidata instalada y conciliacion/acreditacion, no otro generador de codigos.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "development/server/database/014-mfa.sql",
-        "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-        "docs/REVISION-D2-CODEX.md",
-        "docs/PLAN-MFA-Y-FRENTES-C1-C5.md"
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md"
       ],
       "closureCriterion": "Cada código sirve una sola vez incluso en concurrencia; recuperación no abre API antes del estado autorizado; reenrolamiento y revocación/auditoría sin secretos probados por revisor distinto.",
       "ledgerClosureCriterion": "Cada código sirve una sola vez incluso en concurrencia; recuperación no abre API antes del estado autorizado; reenrolamiento y revocación/auditoría sin secretos probados por revisor distinto.",
@@ -741,12 +1122,12 @@
       "ledgerTitle": "Integrar segundo paso y todos los formularios de reautenticación",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "RackClickApi.login sigue password→csrf→me; no gestiona202 como desafío. La GUI RC9 vigente no ofrece MFA.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "El coordinador actual ya gestiona login con desafío 202, enrolamiento, verificación TOTP y canje limitado de códigos. Panel y login MFA se probaron en navegador; D11 confirmó el proveedor Windows real y el flujo TOTP por HTTPS. Falta completar la reautenticación por familia de operación sensible y la persistencia de intenciones inciertas al navegar o recargar; no rehacer el login ni afirmar que la GUI carece de MFA.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "development/frontend/src/api.ts",
-        "docs/AUTENTICACION-MFA-S1.md",
-        "docs/PLAN-MFA-Y-FRENTES-C1-C5.md"
+        "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Login y cada familia de reauth completan factor para mismo actor, conservan borrador y recuperan respuesta sin duplicar; navegador/ENDEES revisados antes de habilitar QA.",
       "ledgerClosureCriterion": "Login y cada familia de reauth completan factor para mismo actor, conservan borrador y recuperan respuesta sin duplicar; navegador/ENDEES revisados antes de habilitar QA.",
@@ -809,25 +1190,11 @@
       "ledgerTitle": "Acreditar MFA y fundamento sobre la candidata completa por HTTP/HTTPS",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "HTTP y GUI MFA/gracia45 revisados en laboratorio15; Browser8etapasPASS y Quality378PASS/1Dockeromitida. Proveedor sintético de DI separado, no custodia productiva final/HTTPS de la candidata. F-12.03/.04/.05 pendientes.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "Candidata43 y D11 identificadas: servicio/HTTPS/DPAPI reales; TOTP del cargador corregido probado con cuenta sintetica y permiso global denegado. Completar matriz de seguridad/codigos/recuperacion/reauth; no anunciar ausencia de proveedor o deshabilitar lo ya probado por Wascar.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "evidence/s1-20261023/distribucion14-decision/CIERRE.md",
-        "docs/REVISION-M3-CORRECCIONES-CODEX.md",
-        "docs/REVISION-D14-05-CODEX.md",
-        "docs/REVISION-INSTALADOR14-06-CODEX.md",
-        "docs/MAPA-ENTREGA.json",
-        "docs/REVISION-MFA-L1-CODEX-25-10-2026.md",
-        "docs/MENSAJE-PARA-CLAUDE-MFA-L1-HTTP-25-10-2026.md",
-        "evidence/s1-20261025/mfa-l1-revision-codex/CIERRE.md",
-        "evidence/s1-20261025/mfa-l1-revision-codex/REVISION-SEGURIDAD.md",
-        "docs/REVISION-MFA-L1-RONDA2-CODEX-25-10-2026.md",
-        "evidence/s1-20261025/mfa-l1-ronda2-codex/CIERRE.md",
-        "evidence/s1-20261025/mfa-l1-ronda2-codex/REVISION-SEGURIDAD.md",
-        "evidence/s1-20261025/mfa-l1-ronda2-codex/RESULTADO-REGRESION-ORIGINAL.json",
-        "evidence/s1-20261025/mfa-l1-ronda2-codex/RESULTADO-RUNTIME-Y-CLI.json",
-        "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
-        "evidence/s1-20261029/mfa-dashboard-codex/RESULTADOS.md"
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Evidencia identifica bytes/esquema/proveedor/entorno y demuestra flujos positivos/negativos MFA completos más controles afectados; ninguna omisión pasa por éxito, sin anunciar QA/producción por pruebas del almacén.",
       "ledgerClosureCriterion": "Evidencia identifica bytes/esquema/proveedor/entorno y demuestra flujos positivos/negativos MFA completos más controles afectados; ninguna omisión pasa por éxito, sin anunciar QA/producción por pruebas del almacén.",
@@ -2023,14 +2390,11 @@
       "ledgerTitle": "Exportar JSON actual y original exacto como funciones distintas",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "implementacion: GETproject es consultaSQL, no exportRC9. Original/mapeos archivados por herramienta lab; no rutas/UI exportJSON/original localizadas en producto. R3 histórico es distinto.; integracion: Sin flujo producto actual/original identificado.; prueba: Preservación original y reportes exactos no prueban exportJSONnormal.; revision: Sin revisión de ese flujo.; qa: No disponible como exportJSONnormal.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "Exportación JSON actual por cliente con recibo, permisos vigentes, SHA256 y descarga probada en desarrollo43. La intención incierta no persiste al desmontar; importación/merge/originalRC9/backupPG quedan pendientes. No cierre íntegro de P-03.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/CONTRATO-SERVIDOR-v0.1.md",
-        "docs/MAPA-RC9-R3.md",
-        "tools/windows/rc9_restore.py",
-        "development/server/src/RackClick.Server/Program.cs",
-        "development/frontend/src/InventoryPanel.jsx"
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md"
       ],
       "closureCriterion": "Actual refleja commits vigentes y original conserva hash; funciones separadas respetan permisos, prueba/revisión/QA por versión.",
       "ledgerClosureCriterion": "Actual refleja commits vigentes y original conserva hash; funciones separadas respetan permisos, prueba/revisión/QA por versión.",
@@ -2328,10 +2692,12 @@
       "ledgerTitle": "Cerrar formatos existentes y resolver obligación PDF",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "CSV, XLSX, SVG, HTML imprimible y XLS HTML existen y se probaron por HTTP en el laboratorio de comparación. Falta su cierre GUI/formato/aceptación; PNG y la obligación de PDF nativo se tratan explícitamente, sin confundirlos con impresión HTML.",
+      "currentContext": "CSV, XLSX, SVG, HTML imprimible y XLS HTML existen y se probaron por HTTP en el laboratorio de comparación. Falta su cierre GUI/formato/aceptación; PNG y la obligación de PDF nativo se tratan explícitamente, sin confundirlos con impresión HTML. Imprimible, SVG y XLS HTML tienen ahora propuesta del rack al primer abrir, adopcion explicita posterior y metadatos bajo demanda, probados/revisados en laboratorio. Pendientes/errores/transporte se conservan. Falta integrar y el resto de presentacion/formatos; no repetir esos controles desde cero.",
       "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/COMPARACION-OFFLINE-RC10-SERVIDOR.md"
+        "docs/COMPARACION-OFFLINE-RC10-SERVIDOR.md",
+        "docs/TANDA-INFORMES-CONTEXTO-30-10-2026.md",
+        "docs/REVISION-INFORMES-CONTEXTO-30-10-2026.md"
       ],
       "closureCriterion": "Todos formatos prometidos tienen salida/lector/impresión y permisos verificados; PDF tiene decisión y evidencia; diferencias aceptadas, no eliminadas por plan ambiguo.",
       "ledgerClosureCriterion": "Todos formatos prometidos tienen salida/lector/impresión y permisos verificados; PDF tiene decisión y evidencia; diferencias aceptadas, no eliminadas por plan ambiguo.",
@@ -2635,14 +3001,11 @@
       "ledgerTitle": "Completar teclado, lector, contraste y paridad visual funcional",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "implementacion: GUIRC9/Click-Click/SVG, ARIA/foco y status persistente848/849 existen; no auditoría integral.; integracion: 849 históricoWindows/QA11; nuevaGUI posterior debe integrarse.; prueba: Edge/AX/teclado390px/DOM acotados; voz Narrador/NVDA no acreditada. Falta flujo completo front/rear/tooltips/inspector/contraste.; revision: DOM localizadas, no certificación ni aceptaciónvisualtotal.; qa: QA78 sin lector habitual debe Bloqueado, nunca Pass automático.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "Racks/tarjetas primero, jerarquia y PoE plegables, accesos con foco y exportadores montados ya implementados y probados en laboratorio con datos originales. Revision independiente favorable; falta integrar candidata, QA y la matriz completa de accesibilidad/lector/contraste. No volver a implementar el reordenamiento.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/ACCESIBILIDAD-RELACIONES-GRUPOS-S1.md",
-        "docs/INTEGRACION-AVISO-GRUPOS-WINDOWS-QA-S1.md",
-        "docs/IMPLEMENTACION-REV4.md",
-        "evidence/s1-20261018/tanda-849/CIERRE.md",
-        "evidence/s1-20261018/sesenta-tandas-850-909/CIERRE.md"
+        "docs/TANDA-RACKS-PRIMERO-30-10-2026.md",
+        "docs/REVISION-RACKS-PRIMERO-30-10-2026.md"
       ],
       "closureCriterion": "Matriz completa con resultados reales por versión, problemas resueltos/límites aceptados, conservando GUI/Click-Click. Voz no inferida de AX; QA de Wascar.",
       "ledgerClosureCriterion": "Matriz completa con resultados reales por versión, problemas resueltos/límites aceptados, conservando GUI/Click-Click. Voz no inferida de AX; QA de Wascar.",
@@ -2797,10 +3160,13 @@
       "ledgerTitle": "Instalar desde cero en Windows limpio y declarar la matriz soportada",
       "classification": "resultado_base",
       "state": "parcial_acreditado",
-      "currentContext": "New10 en C y postboot ya están acreditados parcialmente. No repetir esa instalación para producir otro recibo; falta la matriz y escenarios restantes, incluida recuperación final y Windows11 como host cuando se ofrezca.",
+      "currentContext": "New11 en D limpio Windows Server2025/noDC, CRT/runtime/PG incluidos, cuenta estandar, servicio/HTTPS y postboot verificados tras reinicio de Wascar. W-02.01/.02 ya acreditados por10; faltan matriz de dependencias/hosts/rechazos. No reinstalar D ni duplicar credito.",
       "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md"
+        "evidence/s1-20261102/windows43/RESULTADOS.md",
+        "docs/INSTALADOR11-WINDOWS43.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Recorrido nuevo de instalación completo en los hosts declarados, con versiones y resultados reales; ausencia de soporte no probado indicada explícitamente.",
       "ledgerClosureCriterion": "Recorrido nuevo de instalación completo en los hosts declarados, con versiones y resultados reales; ausencia de soporte no probado indicada explícitamente.",
@@ -2882,10 +3248,12 @@
       "ledgerTitle": "Cuenta mínima, servicio Windows y arranque automático reales",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Servicio estándar y arranque automático funcionaron en C. El resultado completo necesita sus negativos y comprobaciones finales de permisos/operación, sin tratarlo como servicio aún inexistente.",
+      "currentContext": "D11 verificada: SCM Running/Auto, SID y cuenta estandar, HTTPS43 y postboot real; custodias e identidades separadas. Faltan negativos/ACL completos y fallos de parada/hijo, no construir otro servicio.",
       "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md"
+        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Servicio y PostgreSQL funcionan bajo identidad mínima tras reinicio real; logs/estados y acceso privado son verificables.",
       "ledgerClosureCriterion": "Servicio y PostgreSQL funcionan bajo identidad mínima tras reinicio real; logs/estados y acceso privado son verificables.",
@@ -2947,12 +3315,11 @@
       "ledgerTitle": "HTTPS, certificados, red y acceso casa/trabajo en la edición final",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Cambio de red fue confirmado en la instalación histórica y existen herramientas automáticas. No se traslada esa aceptación automáticamente al payload14 nuevo.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "D11 tiene origen, CA y firewall limitados verificados; cargador y MFA usaron TLS normal. Faltan otro equipo cliente, cambio casa/trabajo de la candidata, renovacion/caducidad y recuperacion de certificados.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/RACKCLICK-CASA-Y-TRABAJO.html",
-        "docs/CONTINUIDAD-CODEX.md",
-        "docs/CONTRATO-SERVIDOR-v0.1.md"
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Acceso LAN confiable y cambio de red con datos conservados; renovación y errores documentados, sin exponer claves privadas.",
       "ledgerClosureCriterion": "Acceso LAN confiable y cambio de red con datos conservados; renovación y errores documentados, sin exponer claves privadas.",
@@ -3087,11 +3454,11 @@
       "ledgerTitle": "Recorrido completo de persistencia y concurrencia del servidor instalado",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Hay pruebas reales por bloques y New/Restore privados. Falta el recorrido integral sobre la candidata final instalada con dos sesiones y reinicio.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "D11 contiene Demo50 creada por2553comandos API y contrastada por colecciones/UUID/conexiones. Faltan recorrido instalado con roles y segunda cuenta, reinicio posterior del conjunto y concurrencia/perdida de respuesta. No recrear clientes ni repetir carga.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/ACEPTACION.md",
-        "docs/REVISION-INSTALADOR14-06-CODEX.md"
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "S-55 reproducido completo y conflictos/recuperación coherentes sobre build/DB/host identificados.",
       "ledgerClosureCriterion": "S-55 reproducido completo y conflictos/recuperación coherentes sobre build/DB/host identificados.",
@@ -3154,11 +3521,13 @@
       "ledgerTitle": "Backup programado local y retención comprobada",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Ya hay copias nativas, programación y exportación operativa. Falta cerrar retención/fallos/restaurabilidad y facilitar su administración desde dashboard; no atribuir al botón web una existencia sólo operativa.",
+      "currentContext": "Backup inicial, tarea programada tras postboot y backup posterior a Demo50 completados con resultado0 en D. Faltan retencion configurable, destinos/fallos y restaurabilidad; backup completo no demuestra recuperacion MFA portable.",
       "contextIsCurrentOverride": true,
       "contextEvidence": [
         "docs/COMPARACION-OFFLINE-RC10-SERVIDOR.md",
-        "evidence/s1-20261029/rc9-demo-original-codex/RESULTADOS.md"
+        "evidence/s1-20261029/rc9-demo-original-codex/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Ejecución programada real, política de retención y fallos comprobados; sólo copias completas verificadas quedan elegibles.",
       "ledgerClosureCriterion": "Ejecución programada real, política de retención y fallos comprobados; sólo copias completas verificadas quedan elegibles.",
@@ -3353,12 +3722,12 @@
       "ledgerTitle": "Recuperación completa en otro Windows y activación controlada",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Restore13→14/14→14 y revocación de desafíos/sesiones están probados en laboratorios; New/Restore offline14 producen recibos reales. Falta recuperación integral del host instalado.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "Restore43->43 y15->43 en laboratorio nuevo conserva inventario/UUID y revoca sesiones. D11 New y su backup posterior funcionan. Falta recuperacion integral en otro Windows con MFA/SID/HTTPS/reinicio y RTO; no ensayarla sobre D conservada.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/REVISION-D14-05-CODEX.md",
-        "docs/REVISION-INSTALADOR14-06-CODEX.md",
-        "docs/RECUPERACION-DESPLIEGUE-WINDOWS-S1.md"
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md",
+        "evidence/s1-20261102/windows43/RESULTADOS.md"
       ],
       "closureCriterion": "Servicio recuperado completo y operativo en otro host con identidad nueva, integridad y revocación comprobadas; origen conservado.",
       "ledgerClosureCriterion": "Servicio recuperado completo y operativo en otro host con identidad nueva, integridad y revocación comprobadas; origen conservado.",
@@ -3487,12 +3856,10 @@
       "ledgerTitle": "Reset y recuperación administrativa delimitados",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Hay herramientas de reset/archivo y recuperación administrativa. MFA/emergencia está en F-08/F-09; no es necesario rehacerlas en este bloque.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "Limpieza local de inventario D explicitamente autorizada y revisada: preview, dryrun, commit, auditoria y seguridad preservada. No equivale a reset completo de instancia, nueva base/roles ni emergencia MFA.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/RECUPERAR-ADMINISTRADOR-S1.md",
-        "docs/ACEPTACION.md",
-        "docs/REVISION-D14-05-CODEX.md"
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Reset acotado y recuperación de acceso operativos y documentados; cancelar no modifica datos ni deja acceso omitido.",
       "ledgerClosureCriterion": "Reset acotado y recuperación de acceso operativos y documentados; cancelar no modifica datos ni deja acceso omitido.",
@@ -3554,12 +3921,11 @@
       "ledgerTitle": "Candidata final única con fuentes y componentes compatibles",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Hay candidataM3 limpia03, C2 revisado aparte y instalador06 interno. No hay una única entrega final que integre todo el alcance.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "Candidata11/esquema43 identificada e instalada, mas cargador02 separado revisado. Falta integrar los pendientes restantes y ese parche en la futura entrega final unica; no reconstruir por cambios solo documentales ni tocar D.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/REVISION-INSTALADOR14-06-CODEX.md",
-        "docs/REVISION-D14-05-CODEX.md",
-        "docs/CONTRATO-SERVIDOR-v0.1.md"
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Una sola candidata completa trazable y coherente, sin depender de archivos de entregas anteriores ni aceptar una mezcla no revisada.",
       "ledgerClosureCriterion": "Una sola candidata completa trazable y coherente, sin depender de archivos de entregas anteriores ni aceptar una mezcla no revisada.",
@@ -3754,11 +4120,16 @@
       "ledgerTitle": "Manual autónomo de instalación, uso y operación",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Existe manual autónomo10 con carpetas/comandos/formulario/credenciales/reinicio. Debe mantenerse y comprobarse con el paquete final y sus nuevas funciones, no volver a redactar toda la instalación desde cero.",
+      "currentContext": "Manual11 con pasos00-07, acceso privado y guias D/cargador02 disponibles y usados en ensayo. Faltan manual completo del producto, idiomas/capturas y recorridos futuros de recuperacion/importacion/operacion; no empezar otro manual desde cero.",
       "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/PASOS-COMPLETOS-INSTALADOR10-WASCAR.md",
-        "evidence/s1-20261029/manual-autonomo10-codex/RESULTADOS.md"
+        "docs/INSTALADOR11-WINDOWS43.md",
+        "docs/INSTALADOR11-WINDOWS43.html",
+        "evidence/s1-20261102/windows43/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md",
+        "docs/VM11-D-PASOS-QA.md",
+        "docs/INSTALADOR14-SQL-PROTEGIDO.md"
       ],
       "closureCriterion": "El recorrido completo funciona siguiendo sólo manual+paquete final, sin pedir archivos antiguos ni instrucciones ocultas.",
       "ledgerClosureCriterion": "El recorrido completo funciona siguiendo sólo manual+paquete final, sin pedir archivos antiguos ni instrucciones ocultas.",
@@ -3827,11 +4198,14 @@
       "ledgerTitle": "QA manual por módulos sobre candidata identificada",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Los resultados de Wascar y la QA MFA comunicada se conservan. Dar casos pequeños por módulo/candidata; resultados antiguos de otra versión no se convierten en PASS nuevo ni se obliga a repetir lo no afectado.",
+      "currentContext": "D11 y Demo50 estan disponibles. HojaQA11 de14casos,167casos totales, export/import y observaciones preservadas. Wascar expresa satisfaccion general, pero no sustituye resultados por caso/rol/version. Faltan cuentas diferenciadas y QA por modulos; no trasladar PASS historicos.",
       "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/QA-DATOS-ORIGINALES-MFA10-WASCAR.md",
-        "docs/QA-CASOS-WASCAR.json"
+        "docs/QA-CIERRE-CANDIDATA11.md",
+        "evidence/s1-20261102/qa-cierre11/RESULTADOS.md",
+        "docs/QA-CASOS-WASCAR.json",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Casos críticos y recorridos pactados tienen resultados atribuibles; ningún resultado del usuario sobrescrito ni aprobado por el desarrollador.",
       "ledgerClosureCriterion": "Casos críticos y recorridos pactados tienen resultados atribuibles; ningún resultado del usuario sobrescrito ni aprobado por el desarrollador.",
@@ -3893,12 +4267,15 @@
       "ledgerTitle": "Medir carga real de diez usuarios y demo completa",
       "classification": "resultado_base",
       "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "No hay resultado final de rendimiento identificado para diez usuarios y demo68racks en el host candidato. No se ha demostrado un cuello de botella concreto.",
-      "contextIsCurrentOverride": false,
+      "currentContext": "Demo50 y prueba de diez actores/ambitos ya realizados en laboratorio con umbrales de humo previos. D11 carga50/2553comandos verificada en185.681s y backup posterior completo; MFA/TLS del cargador probado aparte en cuenta sintetica. Faltan carga extendida instalada, memoria/CPU/consultas/picos/recuperacion y aceptacion practica, no crear de nuevo la demo.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/ACEPTACION.md",
-        "docs/IMPLEMENTACION-REV4.md",
-        "docs/CIERRE-RESTANTE.md"
+        "docs/PLAN-LABORATORIO-50-CLIENTES.md",
+        "docs/LABORATORIO-50-CLIENTES.md",
+        "evidence/s1-20261102/demo50/RESULTADOS.md",
+        "evidence/s1-20261102/windows43/demo/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
       ],
       "closureCriterion": "Informe reproducibleS-48 demuestra datos consistentes y comportamiento aceptable con carga declarada; regresiones medidas resueltas.",
       "ledgerClosureCriterion": "Informe reproducibleS-48 demuestra datos consistentes y comportamiento aceptable con carga declarada; regresiones medidas resueltas.",
@@ -10745,8 +11122,8 @@
       "related": [
         "I-04"
       ],
-      "source": "docs/OBSERVACIONES-DASHBOARD-WASCAR-29-10-2026.md",
-      "state": "pendiente_de_implementacion",
+      "source": "docs/TANDA-RACKS-PRIMERO-30-10-2026.md",
+      "state": "implementado_y_probado_en_laboratorio_pendiente_integracion_y_qa",
       "outcome": "Rack/frontal/trasera visibles al llegar; PoE y datos extensos desplegables sin ocultar errores o cambios pendientes.",
       "classification": "peticion_usuario_trazada",
       "addsClosureWeight": false
@@ -10772,8 +11149,8 @@
       "related": [
         "P-11"
       ],
-      "source": "docs/REVISION-VIDEO-INTERFAZ-29-10-2026.md",
-      "state": "pendiente_de_presentacion",
+      "source": "docs/TANDA-INFORMES-CONTEXTO-30-10-2026.md",
+      "state": "contexto_y_metadatos_de_tres_exportadores_probados_pendiente_integracion_y_resto_de_formatos",
       "outcome": "Acciones agrupadas por rack/cliente; controles técnicos extensos bajo demanda; formato de cada descarga identificado correctamente.",
       "classification": "peticion_usuario_trazada",
       "addsClosureWeight": false
@@ -10784,11 +11161,16 @@
       "owner": "E-05",
       "related": [
         "P-01",
-        "E-06"
+        "E-06",
+        "C-HW-05",
+        "I-03",
+        "I-05",
+        "I-06",
+        "R-04"
       ],
-      "source": "docs/QA-DATOS-ORIGINALES-MFA10-WASCAR.md",
-      "state": "carga_actual_hecha_facilidad_repetible_pendiente",
-      "outcome": "Mantener los10clientes originales en C y preparar carga opcional verificable para futuros laboratorios sin reemplazar cuentas ni MFA.",
+      "source": "docs/LABORATORIO-50-CLIENTES.md",
+      "state": "demo50_cargada_y_verificada_D11_QA_visual_pendiente",
+      "outcome": "Demo50 y prueba de diez actores/ambitos ya realizados en laboratorio con umbrales de humo previos. D11 carga50/2553comandos verificada en185.681s y backup posterior completo; MFA/TLS del cargador probado aparte en cuenta sintetica. Faltan carga extendida instalada, memoria/CPU/consultas/picos/recuperacion y aceptacion practica, no crear de nuevo la demo.",
       "classification": "peticion_usuario_trazada",
       "addsClosureWeight": false
     },
@@ -10804,8 +11186,8 @@
         "F-05"
       ],
       "source": "docs/PLAN-PARIDAD-RC10-SERVIDOR.md",
-      "state": "pendiente_de_integracion",
-      "outcome": "Separar intercambio JSON de copia PostgreSQL/secretos. Acceso administrativo, progreso, integridad, destino nuevo y recuperación MFA comprobada; no sobrescribir una base silenciosamente.",
+      "state": "exportacion_JSON_actual_probada_importacion_y_backup_pendientes",
+      "outcome": "Separar intercambio JSON de copia PostgreSQL/secretos. Acceso administrativo, progreso, integridad, destino nuevo y recuperación MFA comprobada; no sobrescribir una base silenciosamente. Exportación actual RackClickInventory-v1 por cliente probada PG17.11/API/Edge,4MiB sin truncar, recibo/SHA256, sólo inventario. Importación/merge/originalRC9/backup PostgreSQL y Windows43 siguen pendientes; docs/PUNTO3-FUNCIONES-PENDIENTES.md.",
       "classification": "peticion_usuario_trazada",
       "addsClosureWeight": false
     },
@@ -10849,7 +11231,7 @@
       ],
       "source": "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md",
       "state": "implementado_parcial_cierre_y_recuperacion_pendientes",
-      "outcome": "Conservar gracia45/exención global/avisos, control servidor y ausencia de secretos ajenos; cerrar recuperación, últimos administradores y reautenticación.",
+      "outcome": "Enrolamiento/login/GUI y politica45 existentes; F-07.01-.04 acreditados. D11 tiene proveedor real y prueba HTTPS/DPAPI de cuenta sintetica. Falta cierre integral y escenarios pendientes; no crear otro login. Codigos de recuperacion del punto3 probados en desarrollo43, no canje nativo en D. Conservar politica45 y exencion global confirmadas; recuperacion/emergencia/rotacion y aceptacion pendientes.",
       "classification": "peticion_usuario_trazada",
       "addsClosureWeight": false
     },
@@ -10882,6 +11264,84 @@
       "addsClosureWeight": false
     },
     {
+      "id": "REQ-HW-MOUNT-01",
+      "title": "Montaje explícito y físico antes de ampliar marcas",
+      "owner": "C-HW-02",
+      "related": [
+        "C-HW-04",
+        "C-HW-05",
+        "C-HW-06"
+      ],
+      "source": "Autorización Wascar30.10.2026",
+      "state": "contrato_y_catalogo43_integrados_D11_QA_pendiente",
+      "outcome": "Montajes y contratos probados por familias, incluidos en43 y Demo50 de D. Conservar IDs/puertos/cables. Faltan reservas explicitadas y aceptacion, no repetir bandeja/firewall desde cero.",
+      "classification": "peticion_usuario_trazada",
+      "addsClosureWeight": false
+    },
+    {
+      "id": "REQ-HW-VISUAL-01",
+      "title": "Carcasa real para modelos principales y genérica para el resto",
+      "owner": "C-HW-04",
+      "related": [
+        "C-HW-01",
+        "C-HW-03",
+        "C-HW-05",
+        "C-HW-06"
+      ],
+      "source": "docs/CARCASAS-PRINCIPALES/README.md",
+      "state": "seleccion506_integrada_y_cargada_D11_QA_visual_pendiente",
+      "outcome": "506/506 seleccionados integrados con868revisiones/861comerciales; tecnica interactiva aprobada conservada. Demo50 disponible en D11; faltan aceptacion visual, reservas/fuentes y mantenimiento. Los dibujados no son fotografias redistribuidas ni todos los modelos del mercado.",
+      "classification": "peticion_usuario_trazada",
+      "addsClosureWeight": false
+    },
+    {
+      "id": "REQ-CATALOGO-BUSQUEDA-01",
+      "title": "Selección compacta por búsqueda, sin lista larga en el rack",
+      "owner": "C-HW-04",
+      "related": [
+        "C-HW-03",
+        "C-HW-05",
+        "REQ-HW-VISUAL-01"
+      ],
+      "source": "Petición Wascar 01.11.2026; docs/SELECTOR-CATALOGO-COMPACTO.md",
+      "state": "selector868_integrado_D11_QA_pendiente",
+      "outcome": "Buscador compacto por marca/familia/modelo/SKU y alias sofos->Sophos ya integrado. Faltan QA de busqueda/teclado y excepciones de configuracion; no crear una lista larga ni volver a instalar perfiles.",
+      "classification": "peticion_usuario_trazada",
+      "addsClosureWeight": false
+    },
+    {
+      "id": "REQ-DE-CPE-01",
+      "title": "Routers, repetidores y familias habituales de Alemania",
+      "owner": "C-HW-07",
+      "related": [
+        "C-HW-01",
+        "C-HW-03",
+        "C-HW-04",
+        "C-HW-05"
+      ],
+      "source": "Peticiones de Wascar del 03.11.2026; docs/CATALOGO-ALEMANIA-Y-RACKS-03-11-2026.md; docs/REPETIDORES-ALEMANIA-03-11-2026.md",
+      "state": "dieciseis_modelos_instalados_D45_QA_visual_pendiente",
+      "outcome": "Seis routers FRITZ!/DrayTek y diez repetidores FRITZ!,TP-Link,devolo,Telekom instalados enD45 mediante actualización revisada y continuaciones registradas. Servicio/HTTPS/backup45 verificados;datos/MFA conservados. Falta revisiónvisual deWascar y resto de sondeo; selección506/pesos intactos.",
+      "classification": "peticion_usuario_trazada",
+      "addsClosureWeight": false
+    },
+    {
+      "id": "REQ-UX-RACK-02",
+      "title": "Proporciones, etiquetas y desplazamiento en soportes",
+      "owner": "P-11",
+      "related": [
+        "C-HW-04",
+        "REQ-HW-VISUAL-01",
+        "REQ-UX-01",
+        "REQ-CATALOGO-BUSQUEDA-01"
+      ],
+      "source": "EjemplosWascar03.11:TPLinkTL-SG108E,ZyxelXGS1250-12,ArubaJL693A; docs/CATALOGO-ALEMANIA-Y-RACKS-03-11-2026.md",
+      "state": "corregido_desarrollo_revision_visual_independiente_candidata_instalada_pendiente",
+      "outcome": "Mínimosporcara/objetivos24px,anchochildrelativoapadreconpisoUIacotado,ampliaciónconrelayout,captionsyrevisionesplegables,nombrescompletosconservados. Faltan aceptaciónvisualyactualizacióncompletaautorizadaenD. Laobservacióndebotonesoffline reutiliza302acciones;noduplicarplanes.",
+      "classification": "peticion_usuario_trazada",
+      "addsClosureWeight": false
+    },
+    {
       "id": "C-HW-01",
       "title": "Inventario de fabricantes, modelos y fuentes",
       "state": "investigacion_entregada_no_plantillas_integradas",
@@ -10893,8 +11353,22 @@
     {
       "id": "C-HW-02",
       "title": "Contrato y normalización de catálogo de fabricantes",
-      "state": "pendiente",
-      "outcome": "Identidad/SKU/revisión, conectores, cara/geometría, montaje, módulos, puertos combo y mapeos rechazados explícitamente.",
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/CONTRATO-HARDWARE-MONTAJE-v1.md",
+        "docs/TANDA-HARDWARE-MONTAJE-30-10-2026.md",
+        "docs/CONTRATO-REVISIONES-HARDWARE-v1.md",
+        "docs/CONTRATO-CATALOGO-FUENTE-UNICA-v1.md",
+        "docs/TANDA-CATALOGO-FUENTE-UNICA-30-10-2026.md",
+        "docs/CONTRATO-CATALOGO-SQL17.md",
+        "docs/TANDA-CATALOGO-SQL17-30-10-2026.md",
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ],
       "classification": "ampliacion_catalogo",
       "addsClosureWeight": false,
       "source": "docs/ALCANCE-CATALOGO-FABRICANTES.md"
@@ -10902,8 +11376,15 @@
     {
       "id": "C-HW-03",
       "title": "Selección y validación del primer catálogo curado",
-      "state": "propuesto_100_perfiles_no_implementado",
-      "outcome": "Propuesta100perfiles:12Sophos,16Fortinet,12PaloAlto,20Cisco,12Aruba,8Synology,8QNAP,6racks,6UPS/PDU; no es el total del mercado ni cantidad aprobada lista.",
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ],
       "classification": "ampliacion_catalogo",
       "addsClosureWeight": false,
       "source": "docs/ALCANCE-CATALOGO-FABRICANTES.md"
@@ -10911,8 +11392,15 @@
     {
       "id": "C-HW-04",
       "title": "Selector por marca/familia/modelo y vistas físicas",
-      "state": "pendiente",
-      "outcome": "Reutilizar catálogo/favoritos/plantillas; frontal/trasera y puertos clicables con recursos propios o licencia comprobada.",
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ],
       "classification": "ampliacion_catalogo",
       "addsClosureWeight": false,
       "source": "docs/ALCANCE-CATALOGO-FABRICANTES.md"
@@ -10920,8 +11408,15 @@
     {
       "id": "C-HW-05",
       "title": "Prueba por modelo y revisión independiente",
-      "state": "pendiente",
-      "outcome": "Comparar con manuales, crear instancias UUID distintas, conservar cables, recargar/otra sesión y probar negativos de ámbito/combo/modular.",
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ],
       "classification": "ampliacion_catalogo",
       "addsClosureWeight": false,
       "source": "docs/ALCANCE-CATALOGO-FABRICANTES.md"
@@ -10929,8 +11424,17 @@
     {
       "id": "C-HW-06",
       "title": "Publicación y actualización del catálogo",
-      "state": "pendiente",
-      "outcome": "Versión/manifiesto/digest, compatibilidad y rollback sin alterar instancias existentes; incluir en candidata y guía QA.",
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "docs/CANDIDATA-CONSOLIDADA43.md",
+        "evidence/s1-20261102/candidata43/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ],
       "classification": "ampliacion_catalogo",
       "addsClosureWeight": false,
       "source": "docs/ALCANCE-CATALOGO-FABRICANTES.md"
@@ -10938,8 +11442,15 @@
     {
       "id": "C-HW-07",
       "title": "Ampliación y mantenimiento de cobertura",
-      "state": "planificado_sin_censo_total_acreditado",
-      "outcome": "Ventana objetivo2018–2026 y equipos históricos instalados; fechas desconocidas nulas, nuevos modelos por el mismo proceso, búsqueda/rendimiento medidos.",
+      "state": "seleccion506_instalada_D11_y_demo50_verificada_cierre_QA_reservas_pendiente",
+      "outcome": "506/506 seleccionados integrados en43,868revisiones/861comerciales. New11/postboot y Demo50 verificados en D. Conservar modelos/contratos/selector; cerrar QA, reservas explicitadas, derechos/versionado y mantenimiento sin ampliar otra vez la seleccion.",
+      "evidence": [
+        "docs/SEGUIMIENTO-506-L-02-11-2026.md",
+        "docs/INTEGRACION-506-GRUPO-L.md",
+        "evidence/s1-20261102/integracion506l/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ],
       "classification": "ampliacion_catalogo",
       "addsClosureWeight": false,
       "source": "docs/ALCANCE-CATALOGO-FABRICANTES.md"
@@ -11031,34 +11542,50 @@
   ],
   "nextBatch": [
     {
-      "id": "SIG-01",
-      "title": "Racks primero e informes compactos",
+      "id": "SIG-DE-CPE-01",
+      "title": "Revisión visual de Alemania, repetidores y soportes antes del paso 9",
       "references": [
-        "REQ-UX-01",
-        "REQ-UX-03",
+        "C-HW-07",
         "P-11",
-        "P-07"
+        "REQ-DE-CPE-01",
+        "REQ-UX-RACK-02"
       ],
-      "output": "Cambio GUI acotado, prueba de navegador con datos originales, revisión distinta y guion QA."
+      "output": "Wascar revisa D45 con Ctrl+F5; usar perfiles del catálogo/sala y comprobar soportes sin repetir instalación ni Demo50. Registrar observaciones; retomar9/F-03.02 según priorización. Postboot45/instalación limpia/Restore45 mantienen su criterio propio."
     },
     {
-      "id": "SIG-02",
-      "title": "Contrato del catálogo por fabricante",
+      "id": "SIG-CIERRE-01",
+      "title": "Elegir un paso del inventario numerado de pendientes",
       "references": [
-        "C-HW-02"
+        "E-07",
+        "F-10",
+        "E-05"
       ],
-      "output": "Esquema/mapeos/variantes y selección inicial trazada; sin importar miles de YAML automáticamente."
+      "output": "Conciliar evidencia actual y criterios historicos; usar PLAN-PENDIENTES-NUMERADO.md sin cambiar pesos ni tocar D."
     },
     {
-      "id": "SIG-03",
-      "title": "Cerrar recuperación portable MFA de la instalación",
+      "id": "SIG-RECUPERACION-02",
+      "title": "Cerrar recuperacion MFA portable y local de forma integrada",
       "references": [
         "F-05",
         "F-06",
+        "F-08",
+        "F-09",
         "R-03",
         "R-04"
       ],
-      "output": "Recorrido técnico end-to-end reutilizando componentes existentes; revisar primero el corte seguro y las pruebas necesarias."
+      "output": "Reutilizar componentes revisados; pruebas en otro laboratorio cuando se elija ese paso, no en D."
+    },
+    {
+      "id": "SIG-JSON-03",
+      "title": "Importacion JSON normal con previsualizacion y original",
+      "references": [
+        "P-01",
+        "P-02",
+        "P-03",
+        "P-04",
+        "REQ-UX-05"
+      ],
+      "output": "Completar importacion/merge/round-trip sin confundir cargador fijo de demo con importador general."
     }
   ],
   "rules": [

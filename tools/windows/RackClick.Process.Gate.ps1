@@ -1,18 +1,37 @@
 #requires -Version 5.1
-param([string]$RequestPath='')
+param([string]$RequestPath='', [switch]$ProtectedRequest,[switch]$EphemeralRequest)
 Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop'
 # Crucially: no request read, executable start or helper import before the gate opens.
 if ([Console]::In.Read() -ne 71) { exit 2 }
 . (Join-Path $PSScriptRoot 'RackClick.Process.ps1')
-$process=$null; $outStream=$null; $errStream=$null; $code=2; $private=$null
+$process=$null; $outStream=$null; $errStream=$null; $code=2; $private=$null;$bytes=$null
 try {
     $RequestPath=Get-RackClickProcessPath $RequestPath
     Assert-RackClickProcessPrivateAcl $RequestPath
     $private=[IO.Path]::GetDirectoryName($RequestPath)
     Assert-RackClickProcessPrivateAcl $private
     if ([IO.Path]::GetFileName($RequestPath) -cne 'request.json' -or (Get-Item -LiteralPath $RequestPath).Length -gt 16777216) { Stop-RackClickProcessError 'gate_request_invalid' }
-    $request=[IO.File]::ReadAllText($RequestPath) | ConvertFrom-Json
+    if($EphemeralRequest){
+        if(-not$ProtectedRequest){Stop-RackClickProcessError 'gate_request_invalid'}
+        $requestStream=New-Object IO.FileStream($RequestPath,[IO.FileMode]::Open,[IO.FileAccess]::Read,([IO.FileShare]::Read-bor[IO.FileShare]::Delete),4096,[IO.FileOptions]::DeleteOnClose)
+        $requestReader=$null
+        try{$requestReader=New-Object IO.StreamReader($requestStream,(New-Object Text.UTF8Encoding($false,$true)));$request=$requestReader.ReadToEnd()|ConvertFrom-Json}
+        finally{if($null-ne$requestReader){$requestReader.Dispose()};$requestStream.Dispose()}
+    }else{$request=[IO.File]::ReadAllText($RequestPath) | ConvertFrom-Json}
+    if($ProtectedRequest){
+        if((($request.PSObject.Properties.Name|Sort-Object)-join ',')-cne'ciphertext,kind,schemaVersion'-or
+           $request.schemaVersion-isnot[int]-or$request.schemaVersion-ne2-or$request.kind-cne'RackClickProtectedProcessRequest'-or
+           $request.ciphertext-isnot[string]-or$request.ciphertext.Length-gt16777216){Stop-RackClickProcessError 'gate_request_invalid'}
+        Add-Type -AssemblyName System.Security
+        $plain=$null
+        try{
+            $entropy=[Text.Encoding]::UTF8.GetBytes('RackClick/Process/request/v1'+"`n"+$RequestPath)
+            $plain=[Security.Cryptography.ProtectedData]::Unprotect([Convert]::FromBase64String($request.ciphertext),$entropy,[Security.Cryptography.DataProtectionScope]::CurrentUser)
+            if($plain.Length-gt16777216){Stop-RackClickProcessError 'gate_request_invalid'}
+            $request=(New-Object Text.UTF8Encoding($false,$true)).GetString($plain)|ConvertFrom-Json
+        }finally{if($null-ne$plain){[Array]::Clear($plain,0,$plain.Length)}}
+    }
     if ($request.schemaVersion -ne 1) { Stop-RackClickProcessError 'gate_request_invalid' }
     $executable=Get-RackClickProcessPath $request.executable
     $working=Get-RackClickProcessPath $request.workingDirectory
@@ -39,8 +58,9 @@ try {
     $process.WaitForExit(); $copyOut.GetAwaiter().GetResult(); $copyErr.GetAwaiter().GetResult()
     $outStream.Flush($true); $errStream.Flush($true); $code=$process.ExitCode
 } catch {
-    if ($null -ne $private) { try { [IO.File]::WriteAllText((Join-Path $private 'gate-error.log'),$_.Exception.ToString(),(New-Object Text.UTF8Encoding($false))) } catch {} }
+    if ($null -ne $private) { try { $failureText=if($ProtectedRequest){'protected_process_failed'}else{$_.Exception.ToString()};[IO.File]::WriteAllText((Join-Path $private 'gate-error.log'),$failureText,(New-Object Text.UTF8Encoding($false))) } catch {} }
 } finally {
+    if($ProtectedRequest-and$null-ne$bytes){[Array]::Clear($bytes,0,$bytes.Length)}
     if ($null -ne $outStream) { $outStream.Dispose() }
     if ($null -ne $errStream) { $errStream.Dispose() }
     if ($null -ne $process) { $process.Dispose() }

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "kind": "planning_template_not_compiler_input_not_installer",
+  "purpose": "Preparar una familia nueva o aplazada sin copiar la configuración de otro SKU.",
+  "familyId": "REEMPLAZAR",
+  "architecture": "REEMPLAZAR: active-fixed / passive-coupler / access-point / modular / power / enclosure",
+  "baseline": {
+    "schema": null,
+    "definitions": null,
+    "commercial": null,
+    "selectionCoverageReceipt": "docs/COBERTURA-MODELOS-ELEGIDOS.json"
+  },
+  "commonSources": [],
+  "commonGeometry": null,
+  "models": [
+    {
+      "selectionId": "REEMPLAZAR_o_nuevo_ID_explicito",
+      "manufacturer": "REEMPLAZAR",
+      "model": "REEMPLAZAR",
+      "baseSku": "REEMPLAZAR",
+      "configurationRevision": "REEMPLAZAR",
+      "populationIncludedByVendor": null,
+      "chosenPopulation": [],
+      "dimensionsAndOrientation": null,
+      "dimensionsBasis": {
+        "baseDimensionsMm": null,
+        "moduleDimensionsMm": null,
+        "configurationEnvelopeMm": null,
+        "measuredAssemblyOrConservativeCalculation": null,
+        "excludedClearances": []
+      },
+      "mountAndFit": null,
+      "physicalGroups": [],
+      "inertInterfaces": [],
+      "continuityDeclaration": null,
+      "deltaFromFamilyBase": {},
+      "claimSources": [],
+      "referenceScopeByFace": {},
+      "limits": [],
+      "state": "not_authored_not_counted",
+      "blockingQuestion": null,
+      "nextRequiredEvidence": null
+    }
+  ],
+  "ownership": {
+    "authoringFiles": [],
+    "compilerAndWiringFiles": [],
+    "coordinatorFiles": [],
+    "independentReviewer": null
+  },
+  "verification": {
+    "specificNegatives": [],
+    "allModelsAndFaces": false,
+    "oneFinalBuild": false,
+    "postgresqlUpgradeAndFresh": false,
+    "guiSaveReloadSecondSession": false,
+    "independentReview": false,
+    "zipHashesAndLinks": false,
+    "installedQaAvailable": false
+  },
+  "reservedMembers": [],
+  "notImplied": [
+    "vendor_population_from_empty_bays",
+    "wireless_radios_as_cable_sockets",
+    "IDC_or_serial_as_RJ45",
+    "electrical_transfer_or_IEC_compatibility_from_power_role",
+    "QA_acceptance_from_build_success",
+    "new_global_percentage_from_research_or_plan"
+  ]
+}

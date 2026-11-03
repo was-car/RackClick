@@ -1,0 +1,474 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506f-20261101-v1",
+  "targetSchema": 34,
+  "baseSchema": 33,
+  "baselineDefinitions": 628,
+  "baselineCommercial": 623,
+  "baseCovered": 268,
+  "supportedTypes": [
+    "rj45",
+    "sfp",
+    "sfp28",
+    "qsfp",
+    "power"
+  ],
+  "authoring": {
+    "core": [
+      {
+        "id": "dell-r350",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R350",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-ce11d1eae1be7887",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R640",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-1949dff7c63dc370",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R6515",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-fb93dfe85c1f7a8b",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R7515",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-33c7e52f1cb00564",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R7525",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-7a4f104d07cdb0f2",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R540",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-fbdb4552eed0ee61",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R620",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-302f3fd979788f2e",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R630",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-73980deb1c5f24bc",
+        "manufacturer": "Dell",
+        "model": "PowerEdge R720",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "hpe-dl360-gen10",
+        "manufacturer": "HPE",
+        "model": "ProLiant DL360 Gen10",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-c1f158f64ea1ee8a",
+        "manufacturer": "HPE",
+        "model": "ProLiant DL360 Gen11",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-149a66cfbe4b740e",
+        "manufacturer": "HPE",
+        "model": "ProLiant DL380 Gen10",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-14bfeedc875ce4de",
+        "manufacturer": "HPE",
+        "model": "ProLiant DL380 Gen11",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-ff98cf8f1bf55eb7",
+        "manufacturer": "HPE",
+        "model": "ProLiant DL385 Gen10 Plus v2",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-c7c438542f1254b3",
+        "manufacturer": "HPE",
+        "model": "ProLiant DL360 Gen10 Plus",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-b47c684d217e4ade",
+        "manufacturer": "HPE",
+        "model": "ProLiant DL360 Gen9",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-1397e3169b861f26",
+        "manufacturer": "HPE",
+        "model": "ProLiant DL20 Gen11",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-87abdfb9366e4dcc",
+        "manufacturer": "Lenovo",
+        "model": "ThinkSystem SR250 V2",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-5ceaeace0476cada",
+        "manufacturer": "Lenovo",
+        "model": "ThinkSystem SR630 V2",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-e9b61460b1aac8e0",
+        "manufacturer": "Lenovo",
+        "model": "ThinkSystem SR630 V3",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-d6c7e4ca54f24095",
+        "manufacturer": "Lenovo",
+        "model": "ThinkSystem SR645",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-efc4c57b1d5c811d",
+        "manufacturer": "Lenovo",
+        "model": "ThinkSystem SR650",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-58396084a7d0cb50",
+        "manufacturer": "Supermicro",
+        "model": "SuperServer 5019D-FN8TP",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-cb719f76ccc4e4c8",
+        "manufacturer": "Supermicro",
+        "model": "SuperServer 1027R-WRF",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-d532953f6aab1767",
+        "manufacturer": "Supermicro",
+        "model": "SuperServer 6029P-TR",
+        "category": "server",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      }
+    ],
+    "edge": [
+      {
+        "id": "nb-80c45eaf78955607",
+        "manufacturer": "Eltex",
+        "model": "MES2308P",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-cd689cba786b2529",
+        "manufacturer": "Eltex",
+        "model": "MES2324P",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-d9ade587e7147b9a",
+        "manufacturer": "F5",
+        "model": "BIG-IP i5600",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-c7a6bbe78d369445",
+        "manufacturer": "Alcatel-Lucent",
+        "model": "OS6400-24",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-a177f34a640c5260",
+        "manufacturer": "Alcatel-Lucent",
+        "model": "OS6860-24",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-22f6dc2225b95f69",
+        "manufacturer": "Alcatel-Lucent",
+        "model": "OS6860-48",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-775999426472421b",
+        "manufacturer": "Avaya",
+        "model": "ERS 3526T-PWR+",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-cbcbd6a95a949d7a",
+        "manufacturer": "D-Link",
+        "model": "DXS-3400-24TC",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-90d3445d2598509a",
+        "manufacturer": "D-Link",
+        "model": "DGS-1520-52",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-b96a0faf83d55061",
+        "manufacturer": "D-Link",
+        "model": "DES-1005P",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-f7f404654aad4d5a",
+        "manufacturer": "Edgecore",
+        "model": "AS4625-54T-O-AC-F",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-6a0159c3c324ded0",
+        "manufacturer": "Edgecore",
+        "model": "AS7326-56X-O-AC-F",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-949bb6f1695a8037",
+        "manufacturer": "Huawei",
+        "model": "AR6140-S",
+        "category": "router",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-d0eebb2cb671d40b",
+        "manufacturer": "Nvidia",
+        "model": "SN2201",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-c2987ad4b24bf989",
+        "manufacturer": "Grandstream",
+        "model": "GWN7831",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-665e9fb0c5bbe24e",
+        "manufacturer": "SMC Networks",
+        "model": "SMCGS8P-SMART",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-417dcd51ce56234d",
+        "manufacturer": "Zyxel",
+        "model": "GS1100-16",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-fce19920137ab0c4",
+        "manufacturer": "ZTE",
+        "model": "ZXR10-5950-28PD-L",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-4b73963d18934c09",
+        "manufacturer": "ZTE",
+        "model": "ZXR10-5950-28TD-L",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-31017da140e60303",
+        "manufacturer": "UfiSpace",
+        "model": "S9600-32X",
+        "category": "switch",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-9363a14b01cfb299",
+        "manufacturer": "Netgate",
+        "model": "8300 Security Gateway",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-4f6f5a063ccdaf07",
+        "manufacturer": "OPNsense",
+        "model": "DEC2770",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "nb-fe8d278736262b7c",
+        "manufacturer": "F5",
+        "model": "BIG-IP i2600",
+        "category": "other",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "palo-alto-pa-415",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-415",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      },
+      {
+        "id": "palo-alto-pa-445",
+        "manufacturer": "Palo Alto Networks",
+        "model": "PA-445",
+        "category": "firewall",
+        "status": "pendiente_de_perfil_correspondiente",
+        "profileKey": "",
+        "profileRevision": ""
+      }
+    ]
+  },
+  "notRelease": true,
+  "sourceSelectionSha256": "d9c97a9ca25de5f9739562ab0568b564c9409061742683b0e1fb88dfc5b9bbd2"
+}

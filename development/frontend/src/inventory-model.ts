@@ -1,8 +1,11 @@
+import {knownDesktopHardwareKey,knownShelfHardwareKey,recordedMountFits,hardwareProfile} from './hardware-mounting.ts';
+import {recordedConnectorDescriptor,recordedGroupClassification} from './hardware-connector-classification.mjs';
+import {extendedRecordedMountValid} from './hardware-mounting-l.ts';
 export type Site = { id: string; name: string; properties: Record<string, any> };
 export type Building = Site & { siteId: string };
 export type Room = Site & { buildingId: string };
-export type Rack = Site & { roomId: string | null; location: string; sizeU: number };
-export type Device = Site & { kind: 'rackEquipment' | 'dose' | 'endDevice'; rackId: string | null; roomId: string | null; sizeU: number | null; sortOrder: number; poeBudget: number | null };
+export type Rack = Site & { roomId: string | null; location: string; sizeU: number; hardwareProfileKey?:string|null; hardwareProfileVersion?:string|null };
+export type Device = Site & { kind: 'rackEquipment' | 'dose' | 'endDevice'; rackId: string | null; roomId: string | null; sizeU: number | null; sortOrder: number; poeBudget: number | null; hardwareProfileKey?: string | null; mountParentId?: string | null; mountSlotKey?: string | null };
 export type PortGroup = { id: string; deviceId: string; type: string; name: string; prefix: string; sortOrder: number };
 export type Port = { id: string; deviceId: string; groupId: string; type: string; gn: number; sortOrder: number; label: string; status: string; poe: boolean; watts: number | null; color: string | null; face: string; powerRole: string; properties: Record<string, any> };
 export type Connection = { id: string; fromPortId: string; toPortId: string; note: string; color: string | null; patch: string; properties: Record<string, any> };
@@ -15,7 +18,16 @@ export function validProject(value: any, customerId: string): value is Project {
  if (!['sites','buildings','rooms','racks','devices'].every(key => value[key].every(named))) return false;
  if (!value.buildings.every((x: any) => has('sites',x.siteId)) || !value.rooms.every((x: any) => has('buildings',x.buildingId))) return false;
  if (!value.racks.every((x: any) => (x.roomId === null || has('rooms',x.roomId)) && Number.isInteger(x.sizeU) && x.sizeU > 0)) return false;
- if (!value.devices.every((x: any) => x.kind === 'rackEquipment' ? has('racks',x.rackId) && x.roomId === null && Number.isInteger(x.sizeU) && x.sizeU > 0 : ['dose','endDevice'].includes(x.kind) && has('rooms',x.roomId) && x.rackId === null && x.sizeU === null)) return false;
+ if (!value.devices.every((x: any) => x.kind === 'rackEquipment' ? has('racks',x.rackId) && x.roomId === null && Number.isInteger(x.sizeU) && (x.mountParentId || hardwareProfile(x.hardwareProfileKey,x.properties?.hardwareProfileVersion)?.kind==='vertical0U' ? x.sizeU === 0 : x.sizeU > 0) : ['dose','endDevice'].includes(x.kind) && has('rooms',x.roomId) && x.rackId === null && x.sizeU === null)) return false;
+ const mountSlots = new Set();
+ if (!value.devices.every((d: any) => {
+  const extended=extendedRecordedMountValid(d,value.devices,hardwareProfile);
+  if(extended!==null){if(!extended)return false;const key=d.rackId+':'+(d.mountParentId||'')+':'+d.mountSlotKey;if(d.kind==='rackEquipment'&&mountSlots.has(key))return false;if(d.kind==='rackEquipment')mountSlots.add(key);return true;}
+  if (!d.mountParentId) return !d.mountSlotKey;
+  const parent = value.devices.find((p: any) => p.id === d.mountParentId), key=d.mountParentId+':'+d.mountSlotKey;
+  if (d.kind !== 'rackEquipment' || !parent || parent.mountParentId || parent.rackId !== d.rackId || !knownShelfHardwareKey(parent.hardwareProfileKey) || !knownDesktopHardwareKey(d.hardwareProfileKey) || d.mountSlotKey !== 'main' || mountSlots.has(key) || !recordedMountFits(d,parent)) return false;
+  mountSlots.add(key); return true;
+ })) return false;
  if (!value.portGroups.every((x: any) => has('devices',x.deviceId) && typeof x.type === 'string')) return false;
  if (!value.ports.every((x: any) => has('devices',x.deviceId) && value.portGroups.some((g: any) => g.id === x.groupId && g.deviceId === x.deviceId) && Number.isInteger(x.gn) && x.gn > 0 && typeof x.type === 'string')) return false;
  const occupied = new Set();
@@ -26,13 +38,21 @@ export function roomPath(project: Project, roomId: string | null): string[] {
  const room = project.rooms.find(x => x.id === roomId), building = project.buildings.find(x => x.id === room?.buildingId), site = project.sites.find(x => x.id === building?.siteId);
  return [site?.name, building?.name, room?.name].filter((x): x is string => !!x);
 }
+function recordedDimensions(properties: any) {
+ const value=properties?.physicalDimensionsMm;
+ return value && ['width','height','depth'].every(key=>typeof value[key]==='number'&&Number.isFinite(value[key])&&value[key]>0)
+  ? {width:value.width,height:value.height,depth:value.depth} : null;
+}
 // Projection only. DTO identities and relationships are never inferred from names or gn.
 export function projectToRc9(snapshot: Project, customerName: string) {
  const groups = new Map(snapshot.portGroups.map(x => [x.id, x]));
  const devices = new Map(snapshot.devices.map(d => [d.id, {
   id: d.id, name: d.name, kind: d.kind, rackId: d.rackId, roomId: d.roomId, u: d.sizeU,
+   hardwareProfileVersion: typeof d.properties?.hardwareProfileVersion==='string'?d.properties.hardwareProfileVersion:null, physicalDimensionsMm:recordedDimensions(d.properties),
+   hardwareIdentity:d.properties?.hardwareIdentity&&['manufacturer','family','model','sku'].every(k=>typeof d.properties.hardwareIdentity[k]==='string')?{...d.properties.hardwareIdentity}:null,
+  hardwareProfileKey: d.hardwareProfileKey ?? null, mountParentId: d.mountParentId ?? null, mountSlotKey: d.mountSlotKey ?? null,
   preset: d.properties?.preset || '', icon: d.properties?.icon || '▥', color: d.properties?.color || '#457b9d', notes: { ...(d.properties?.notes || {}) }, poeBudget: d.poeBudget,
-  ports: ordered(snapshot.ports.filter(p => p.deviceId === d.id)).map(p => ({ id: p.id, groupId: p.groupId, type: p.type, gn: p.gn, label: p.label, status: p.status, poe: p.poe, watts: p.watts === null ? undefined : p.watts, portColor: p.color, rackclickFace: p.face === 'auto' ? undefined : p.face, rackclickPowerRole: p.powerRole, groupName: groups.get(p.groupId)?.name, groupPrefix: groups.get(p.groupId)?.prefix || '' }))
+  ports: ordered(snapshot.ports.filter(p => p.deviceId === d.id)).map(p => ({ id: p.id, groupId: p.groupId, type: p.type, gn: p.gn, label: p.label, status: p.status, poe: p.poe, watts: p.watts === null ? undefined : p.watts, portColor: p.color, rackclickFace: p.face === 'auto' ? undefined : p.face, rackclickPowerRole: p.powerRole, rackclickPhysicalConnector:recordedConnectorDescriptor(d,p,hardwareProfile),rackclickPhysicalFace:recordedGroupClassification(d,p,hardwareProfile,'physicalFace'),rackclickInterfaceRole:recordedGroupClassification(d,p,hardwareProfile,'interfaceRole'),rackclickSignalRole:recordedGroupClassification(d,p,hardwareProfile,'signalRole'),rackclickPowerSystem:recordedGroupClassification(d,p,hardwareProfile,'powerSystem'), rackclickHardwareGroupKey:typeof p.properties?.hardwareGroupKey==='string'?p.properties.hardwareGroupKey:null, groupName: groups.get(p.groupId)?.name, groupPrefix: groups.get(p.groupId)?.prefix || '' }))
  }]));
  const ports = new Map(snapshot.ports.map(p => [p.id, p])), rackNames = new Map(snapshot.racks.map(r => [r.id, r.name]));
  const serverEndpoints: Record<string, string> = {};
@@ -49,7 +69,7 @@ export function projectToRc9(snapshot: Project, customerName: string) {
   return { id: c.id, fd: fd.id, td: td.id, fp: fp.id, tp: tp.id, fn: fd.name, tn: td.name, fpn: fp.gn, tpn: tp.gn, fpt2: fp.type, tpt2: tp.type, rackFrom: fd.rackId, rackTo: td.rackId, note: c.note, color: c.color, patchStatus: c.patch };
  });
  return { name: customerName, customerId: snapshot.customerId, revision: snapshot.revision, serverEndpoints, devices, connections,
-  racks: snapshot.racks.map(r => ({ id: r.id, name: r.name, size: r.sizeU, location: r.location, roomId: r.roomId, rackclickLocation: { client: customerName, site: roomPath(snapshot, r.roomId)[0] || '', building: roomPath(snapshot, r.roomId)[1] || '', room: roomPath(snapshot, r.roomId)[2] || '' }, devs: ordered(snapshot.devices.filter(d => d.rackId === r.id && d.kind === 'rackEquipment')).map(d => devices.get(d.id)!), conns: connections.filter(c => c.rackFrom === r.id && c.rackTo === r.id) })),
+  racks: snapshot.racks.map(r => ({ id: r.id, name: r.name, ...(r.hardwareProfileKey?{hardwareProfileKey:r.hardwareProfileKey,hardwareProfileVersion:r.properties?.hardwareProfileVersion}:{}), size: r.sizeU, location: r.location, roomId: r.roomId, rackclickLocation: { client: customerName, site: roomPath(snapshot, r.roomId)[0] || '', building: roomPath(snapshot, r.roomId)[1] || '', room: roomPath(snapshot, r.roomId)[2] || '' }, devs: ordered(snapshot.devices.filter(d => d.rackId === r.id && d.kind === 'rackEquipment')).map(d => devices.get(d.id)!), conns: connections.filter(c => c.rackFrom === r.id && c.rackTo === r.id) })),
   crossConns: connections.filter(c => !c.rackFrom || c.rackFrom !== c.rackTo)
  };
 }

@@ -1,0 +1,4322 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506j-20261101-v1",
+  "models": [
+    {
+      "definition": {
+        "key": "selected-nb-f2e21430ea7914ec",
+        "revision": "selected506j-20261101-v1",
+        "identity": {
+          "manufacturer": "Ubiquiti",
+          "family": "U7 Pro Max / flat laboratory tray / PoE only",
+          "model": "U7 Pro Max",
+          "sku": "U7-Pro-Max"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://techspecs.ui.com/unifi/wifi/u7-pro-max",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 206,
+          "height": 46,
+          "depth": 206
+        },
+        "color": "#f7f9fb",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-ethernet",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "Ethernet / PoE capability only",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 108.421053,
+                "fill": "#f8f9fa",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 44.27193,
+                "fill": "#8ab4f2",
+                "stroke": "#8ab4f2"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 41.862573,
+                "fill": "#f1f3f5",
+                "stroke": "#dce2e7"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 168.43275,
+                "text": "U",
+                "size": 24.093567,
+                "fill": "#b5bec7",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "Ubiquiti / U7 Pro Max / top housing",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 206 x 46 x 206 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 108.421053,
+                "fill": "#eef1f3",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 103.60234,
+                "fill": "#eef1f3",
+                "stroke": "#b9c3c9"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 98.181287,
+                "fill": "#eef1f3",
+                "stroke": "#b9c3c9"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 92.760233,
+                "fill": "#eef1f3",
+                "stroke": "#b9c3c9"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 144.94152,
+                "text": "U7-Pro-Max",
+                "size": 7,
+                "fill": "#89969e",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 187.350877,
+                "y": 150.964913,
+                "w": 25.298247,
+                "h": 13.251463,
+                "fill": "#e3e7eb",
+                "stroke": "#88939b",
+                "radius": 0.60234
+              },
+              {
+                "kind": "rect",
+                "x": 148.80117,
+                "y": 206.681287,
+                "w": 106.011697,
+                "h": 43.97076,
+                "fill": "#d0d8dd",
+                "stroke": "#9aabb7",
+                "radius": 3.614037
+              },
+              {
+                "kind": "rect",
+                "x": 160.847953,
+                "y": 215.716373,
+                "w": 57.222223,
+                "h": 2.409357,
+                "fill": "#8a959d",
+                "stroke": "#8a959d",
+                "radius": 0.0
+              },
+              {
+                "kind": "circle",
+                "cx": 157.836257,
+                "cy": 233.18421,
+                "r": 1.807017,
+                "fill": "#c4cdd3",
+                "stroke": "#657886"
+              },
+              {
+                "kind": "text",
+                "x": 157.836257,
+                "y": 241.01462,
+                "text": "RESET inert",
+                "size": 7,
+                "fill": "#314b59",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 221.08187,
+                "y": 215.716373,
+                "w": 32.526317,
+                "h": 29.51462,
+                "fill": "#acb7bf",
+                "stroke": "#637784",
+                "radius": 0.30117
+              },
+              {
+                "kind": "rect",
+                "x": 221.08187,
+                "y": 229.570177,
+                "w": 32.526317,
+                "h": 1.505847,
+                "fill": "#8aa8be",
+                "stroke": "#8aa8be",
+                "radius": 0.0
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "Ubiquiti / U7 Pro Max / service underside",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 206 x 46 x 206 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ethernet",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 222.28655,
+                "y": 217.222223,
+                "dx": 10.842107,
+                "dy": 18.070177,
+                "w": 30.11696,
+                "h": 26.502923,
+                "labels": {
+                  "1": "1 / PoE+ IN"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://techspecs.ui.com/unifi/wifi/u7-pro-max",
+            "kind": "manufacturer_specification",
+            "observed": "ExactSKU U7-Pro-Max TechSpecs Dimensions/NetworkingInterface/PowerMethod: diameter206mm/thickness46mm, oneRJ45 1/2.5GbE, PoE+ input. Manufacturerwall/ceilingmount distinctfromdeclaredlaboratorytrayorientation. Cached file .local/selected506j-ap-20261101/u7-pro-max.html",
+            "sha256": "84a6747575f77d99ed225f972b67ca9ca5a6cca126da4117a35b067ca25c5af3",
+            "bytes": 660133
+          },
+          {
+            "url": "https://cdn.ecomm.ui.com/products/350070a0-ae43-431b-b052-8e849c3b0a75/6b92ded5-f8b3-4578-bdc1-46f86c15d5b8.png",
+            "kind": "manufacturer_specification",
+            "observed": "TechSpecsofficialmarketingimage20 rearresetand2.5GbEPoE+port, inspected; obliqueprojectiononly."
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/U7-Pro-Max.yaml",
+            "kind": "community_reference_snapshot",
+            "observed": "PinnedNetBox19470a551058fc9207f036371beefc41b197202e originalidentity/referenceonly; primaryhardwarefactsandcuratedPoEorientation overrideYAMLradios/DC/PoElabel."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/community-expansion/assets/nb-f2e21430ea7914ec/front-70d21b01f181.png",
+            "sha256": "70d21b01f181c6d3bb7d9b799ff85a2c4460aea7eaaa466d9eed310b8cc41c75",
+            "view": "front",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          },
+          {
+            "path": ".local/selected506j-ap-20261101/u7max-view20.png",
+            "sha256": "109509252e94b9baaaf4757218670a276dce90bb934cfcb90740609e7dd2520f",
+            "view": "rear",
+            "match": "exact_manufacturer_oblique_rear_service_projection"
+          }
+        ],
+        "limits": [
+          "Originalflatvectorauthoring withpairedreferencesinspected; photographsare notoperationalbackgrounds. Nativebodycolor/shape andservicepocketsprojectedfromreferences; exacthardware revisionunverified. NoMAC/serial/QR/credentials copied.",
+          "Declaredkinddesktop/rackUnits0 islabtrayconfigurationauthorizedbycoordinator. Hardwarefactorymount isceiling/wall; profiledoesnotcertifytraymount. Bodylyingflat usesdiameter→width/depth andthickness→height; thisaxisnormalizationisexplicit, notsilentrotationorrack1Uclaim. Frontview=topcover,rearview=serviceunderside.",
+          "PrimarybodyW206/H46/D206mm fitslaboratorytrayinterior440x65x300. Thisisbodyenvelopecomparisononly; cableexit,connectoraccess,recess/ventilation,retention andphysicalinstallationclearance needlabreview. Noceilingsupport/rail/antennaaccessory assumed.",
+          "Only1rearphysicalRJ45 Ethernet endpoints, 1/2.5GbE. RadiowirelessinterfacesfromYAML areinertfeatures, notconnectableWLANnodes. NoAC/PSUinlet/powergroupcreated; curatedpowerpath isPoEonly. PoEcapabilitydescriptive: PoE+ input. Noenabledoutput,budget,load,delivery,negotiation,liveLED/radiostateorfirmware simulated. Source: https://techspecs.ui.com/unifi/wifi/u7-pro-max.",
+          "Buttons/reset/mode,DCjackifpresent,LEDs,ventgrilles,mounttracks/Kensington andradios areinertdecorations. BluefrontLEDreferencecolor isstaticillustration, notpowered/linkstatus. GroupKey+ordinal identifyphysicalport; nofakeextraEthernetfor management.",
+          "Reargeometry isflatserviceprojectionfromobliquereference, notassertedexactconnectorviewangle. Whitefrontvsdarkrear U7XG/XGS retained, nofamilyrearreplacement. Fullshell/trackgeometryunverifiedwherephotocloseupdoesnotcoverwholeunit. Noorientation-dependentcablesimulation.",
+          "Exactmanufacturerrearimage20 inspected: single2.5GbEPoE+connector atRIGHTsideofrecess; flatserviceprojectionretainsrightlocation. Sideimage19 confirms46mm thickness. Image21networkmarketingdiagramnot usedasreargeometryreference."
+        ],
+        "dimensionsBasis": "ExactSKU Dimensions/NetworkingInterface/PowerMethod fields; Bodyflat horizontallyonlaboratorytray; circular diameter mapsW/D, thickness mapsH explicitly; front/rear=topcover/serviceunderside projections, not rackfaces orceilingmountcertification"
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-88aa53e158b54b05",
+        "revision": "selected506j-20261101-v1",
+        "identity": {
+          "manufacturer": "Ubiquiti",
+          "family": "U7 Pro XG / flat laboratory tray / PoE only",
+          "model": "U7 Pro XG",
+          "sku": "U7-Pro-XG"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://techspecs.ui.com/unifi/wifi/u7-pro-xg",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 206,
+          "height": 32.5,
+          "depth": 206
+        },
+        "color": "#f7f9fb",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-ethernet",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "Ethernet / PoE capability only",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 108.421053,
+                "fill": "#f8f9fa",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 44.27193,
+                "fill": "#8ab4f2",
+                "stroke": "#8ab4f2"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 41.862573,
+                "fill": "#f1f3f5",
+                "stroke": "#dce2e7"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 168.43275,
+                "text": "U",
+                "size": 24.093567,
+                "fill": "#b5bec7",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "Ubiquiti / U7 Pro XG / top housing",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 206 x 32.5 x 206 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 108.421053,
+                "fill": "#343638",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 103.60234,
+                "fill": "#343638",
+                "stroke": "#56595b"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 98.181287,
+                "fill": "#343638",
+                "stroke": "#56595b"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 92.760233,
+                "fill": "#343638",
+                "stroke": "#56595b"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 144.94152,
+                "text": "U7-Pro-XG",
+                "size": 7,
+                "fill": "#adb5bc",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 187.350877,
+                "y": 150.964913,
+                "w": 25.298247,
+                "h": 13.251463,
+                "fill": "#414649",
+                "stroke": "#88939b",
+                "radius": 0.60234
+              },
+              {
+                "kind": "rect",
+                "x": 163.85965,
+                "y": 202.163743,
+                "w": 72.280703,
+                "h": 49.994153,
+                "fill": "#1e2224",
+                "stroke": "#4c555c",
+                "radius": 3.614037
+              },
+              {
+                "kind": "rect",
+                "x": 188.856727,
+                "y": 251.856727,
+                "w": 22.28655,
+                "h": 11.143273,
+                "fill": "#3f4449",
+                "stroke": "#858e95",
+                "radius": 0.90351
+              },
+              {
+                "kind": "circle",
+                "cx": 223.19006,
+                "cy": 217.523393,
+                "r": 1.505847,
+                "fill": "#252a2d",
+                "stroke": "#8b979f"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 248.24269,
+                "text": "10G / PoE+ IN",
+                "size": 7,
+                "fill": "#b5c1c9",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 183.736843,
+                "y": 211.5,
+                "w": 32.526317,
+                "h": 29.51462,
+                "fill": "#acb7bf",
+                "stroke": "#637784",
+                "radius": 0.30117
+              },
+              {
+                "kind": "rect",
+                "x": 183.736843,
+                "y": 225.3538,
+                "w": 32.526317,
+                "h": 1.505847,
+                "fill": "#8296b0",
+                "stroke": "#8296b0",
+                "radius": 0.0
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "Ubiquiti / U7 Pro XG / service underside",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 206 x 32.5 x 206 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ethernet",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 184.94152,
+                "y": 213.005847,
+                "dx": 10.842107,
+                "dy": 18.070177,
+                "w": 30.11696,
+                "h": 26.502923,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://techspecs.ui.com/unifi/wifi/u7-pro-xg",
+            "kind": "manufacturer_specification",
+            "observed": "ExactSKU U7-Pro-XG TechSpecs Dimensions/NetworkingInterface/PowerMethod: diameter206mm/thickness32.5mm, oneRJ45 10GbE, PoE+ input. Manufacturerwall/ceilingmount distinctfromdeclaredlaboratorytrayorientation. Cached file .local/selected506j-ap-20261101/u7-pro-xg.html",
+            "sha256": "8cce8819bab10071c62f65c62553faf401454ff7c6fcb38900c6ff59392fc81f",
+            "bytes": 671908
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/U7-Pro-XG.yaml",
+            "kind": "community_reference_snapshot",
+            "observed": "PinnedNetBox19470a551058fc9207f036371beefc41b197202e originalidentity/referenceonly; primaryhardwarefactsandcuratedPoEorientation overrideYAMLradios/DC/PoElabel."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-88aa53e158b54b05/front-b035c2137409.png",
+            "sha256": "b035c213740962e0e9b1f358a78033de9304bab069def04faac30889af7f003f",
+            "view": "front",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-88aa53e158b54b05/rear-02ddf26e20bf.png",
+            "sha256": "02ddf26e20bfa01d0cd8b92249087eca46627d6a5ff003fcd6fde807515281a3",
+            "view": "rear",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          }
+        ],
+        "limits": [
+          "Originalflatvectorauthoring withpairedreferencesinspected; photographsare notoperationalbackgrounds. Nativebodycolor/shape andservicepocketsprojectedfromreferences; exacthardware revisionunverified. NoMAC/serial/QR/credentials copied.",
+          "Declaredkinddesktop/rackUnits0 islabtrayconfigurationauthorizedbycoordinator. Hardwarefactorymount isceiling/wall; profiledoesnotcertifytraymount. Bodylyingflat usesdiameter→width/depth andthickness→height; thisaxisnormalizationisexplicit, notsilentrotationorrack1Uclaim. Frontview=topcover,rearview=serviceunderside.",
+          "PrimarybodyW206/H32.5/D206mm fitslaboratorytrayinterior440x65x300. Thisisbodyenvelopecomparisononly; cableexit,connectoraccess,recess/ventilation,retention andphysicalinstallationclearance needlabreview. Noceilingsupport/rail/antennaaccessory assumed.",
+          "Only1rearphysicalRJ45 Ethernet endpoints, 10GbE. RadiowirelessinterfacesfromYAML areinertfeatures, notconnectableWLANnodes. NoAC/PSUinlet/powergroupcreated; curatedpowerpath isPoEonly. PoEcapabilitydescriptive: PoE+ input. Noenabledoutput,budget,load,delivery,negotiation,liveLED/radiostateorfirmware simulated. Source: https://techspecs.ui.com/unifi/wifi/u7-pro-xg.",
+          "Buttons/reset/mode,DCjackifpresent,LEDs,ventgrilles,mounttracks/Kensington andradios areinertdecorations. BluefrontLEDreferencecolor isstaticillustration, notpowered/linkstatus. GroupKey+ordinal identifyphysicalport; nofakeextraEthernetfor management.",
+          "Reargeometry isflatserviceprojectionfromobliquereference, notassertedexactconnectorviewangle. Whitefrontvsdarkrear U7XG/XGS retained, nofamilyrearreplacement. Fullshell/trackgeometryunverifiedwherephotocloseupdoesnotcoverwholeunit. Noorientation-dependentcablesimulation."
+        ],
+        "dimensionsBasis": "ExactSKU Dimensions/NetworkingInterface/PowerMethod fields; Bodyflat horizontallyonlaboratorytray; circular diameter mapsW/D, thickness mapsH explicitly; front/rear=topcover/serviceunderside projections, not rackfaces orceilingmountcertification"
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-0b8ba8c517126e6a",
+        "revision": "selected506j-20261101-v1",
+        "identity": {
+          "manufacturer": "Ubiquiti",
+          "family": "U7 Pro XGS / flat laboratory tray / PoE only",
+          "model": "U7 Pro XGS",
+          "sku": "U7-Pro-XGS"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://techspecs.ui.com/unifi/wifi/u7-pro-xgs",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 215,
+          "height": 32.5,
+          "depth": 215
+        },
+        "color": "#f7f9fb",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-ethernet",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "Ethernet / PoE capability only",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 113.157893,
+                "fill": "#f8f9fa",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 46.20614,
+                "fill": "#8ab4f2",
+                "stroke": "#8ab4f2"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 43.69152,
+                "fill": "#f1f3f5",
+                "stroke": "#dce2e7"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 168.80117,
+                "text": "U",
+                "size": 25.1462,
+                "fill": "#b5bec7",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "Ubiquiti / U7 Pro XGS / top housing",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 215 x 32.5 x 215 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 113.157893,
+                "fill": "#343638",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 108.128653,
+                "fill": "#343638",
+                "stroke": "#56595b"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 102.47076,
+                "fill": "#343638",
+                "stroke": "#56595b"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 96.812867,
+                "fill": "#343638",
+                "stroke": "#56595b"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 144.283627,
+                "text": "U7-Pro-XGS",
+                "size": 7,
+                "fill": "#adb5bc",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 186.798247,
+                "y": 150.570177,
+                "w": 26.40351,
+                "h": 13.83041,
+                "fill": "#414649",
+                "stroke": "#88939b",
+                "radius": 0.628653
+              },
+              {
+                "kind": "rect",
+                "x": 162.280703,
+                "y": 204.005847,
+                "w": 75.438597,
+                "h": 52.178363,
+                "fill": "#1e2224",
+                "stroke": "#4c555c",
+                "radius": 3.77193
+              },
+              {
+                "kind": "rect",
+                "x": 188.369883,
+                "y": 255.869883,
+                "w": 23.260233,
+                "h": 11.630117,
+                "fill": "#3f4449",
+                "stroke": "#858e95",
+                "radius": 0.942983
+              },
+              {
+                "kind": "circle",
+                "cx": 224.203217,
+                "cy": 220.03655,
+                "r": 1.571637,
+                "fill": "#252a2d",
+                "stroke": "#8b979f"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 252.097953,
+                "text": "10G / PoE++ IN",
+                "size": 7,
+                "fill": "#b5c1c9",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 183.026317,
+                "y": 213.75,
+                "w": 33.94737,
+                "h": 30.804093,
+                "fill": "#acb7bf",
+                "stroke": "#637784",
+                "radius": 0.314327
+              },
+              {
+                "kind": "rect",
+                "x": 183.026317,
+                "y": 228.209063,
+                "w": 33.94737,
+                "h": 1.571637,
+                "fill": "#8296b0",
+                "stroke": "#8296b0",
+                "radius": 0.0
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "Ubiquiti / U7 Pro XGS / service underside",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 215 x 32.5 x 215 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ethernet",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 184.283627,
+                "y": 215.321637,
+                "dx": 11.31579,
+                "dy": 18.85965,
+                "w": 31.43275,
+                "h": 27.66082,
+                "labels": {
+                  "1": "1"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://techspecs.ui.com/unifi/wifi/u7-pro-xgs",
+            "kind": "manufacturer_specification",
+            "observed": "ExactSKU U7-Pro-XGS TechSpecs Dimensions/NetworkingInterface/PowerMethod: diameter215mm/thickness32.5mm, oneRJ45 10GbE, PoE++ input. Manufacturerwall/ceilingmount distinctfromdeclaredlaboratorytrayorientation. Cached file .local/selected506j-ap-20261101/u7-pro-xgs.html",
+            "sha256": "b62de59d30f5ce90dbf850cf1c9aca3e51d09ec6c9d6c1787b794986e976e919",
+            "bytes": 674435
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Ubiquiti/U7-Pro-XGS.yaml",
+            "kind": "community_reference_snapshot",
+            "observed": "PinnedNetBox19470a551058fc9207f036371beefc41b197202e originalidentity/referenceonly; primaryhardwarefactsandcuratedPoEorientation overrideYAMLradios/DC/PoElabel."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-0b8ba8c517126e6a/front-93d9d49b0693.png",
+            "sha256": "93d9d49b0693c5a4a19588392443f6b7139ae87ac0cfb5c8958faea47c218576",
+            "view": "front",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-0b8ba8c517126e6a/rear-e68b5a9645eb.png",
+            "sha256": "e68b5a9645ebc7e05cecc94fce215d9e09dc517d8b75a6f68b04e46d60438751",
+            "view": "rear",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          }
+        ],
+        "limits": [
+          "Originalflatvectorauthoring withpairedreferencesinspected; photographsare notoperationalbackgrounds. Nativebodycolor/shape andservicepocketsprojectedfromreferences; exacthardware revisionunverified. NoMAC/serial/QR/credentials copied.",
+          "Declaredkinddesktop/rackUnits0 islabtrayconfigurationauthorizedbycoordinator. Hardwarefactorymount isceiling/wall; profiledoesnotcertifytraymount. Bodylyingflat usesdiameter→width/depth andthickness→height; thisaxisnormalizationisexplicit, notsilentrotationorrack1Uclaim. Frontview=topcover,rearview=serviceunderside.",
+          "PrimarybodyW215/H32.5/D215mm fitslaboratorytrayinterior440x65x300. Thisisbodyenvelopecomparisononly; cableexit,connectoraccess,recess/ventilation,retention andphysicalinstallationclearance needlabreview. Noceilingsupport/rail/antennaaccessory assumed.",
+          "Only1rearphysicalRJ45 Ethernet endpoints, 10GbE. RadiowirelessinterfacesfromYAML areinertfeatures, notconnectableWLANnodes. NoAC/PSUinlet/powergroupcreated; curatedpowerpath isPoEonly. PoEcapabilitydescriptive: PoE++ input. Noenabledoutput,budget,load,delivery,negotiation,liveLED/radiostateorfirmware simulated. Source: https://techspecs.ui.com/unifi/wifi/u7-pro-xgs.",
+          "Buttons/reset/mode,DCjackifpresent,LEDs,ventgrilles,mounttracks/Kensington andradios areinertdecorations. BluefrontLEDreferencecolor isstaticillustration, notpowered/linkstatus. GroupKey+ordinal identifyphysicalport; nofakeextraEthernetfor management.",
+          "Reargeometry isflatserviceprojectionfromobliquereference, notassertedexactconnectorviewangle. Whitefrontvsdarkrear U7XG/XGS retained, nofamilyrearreplacement. Fullshell/trackgeometryunverifiedwherephotocloseupdoesnotcoverwholeunit. Noorientation-dependentcablesimulation."
+        ],
+        "dimensionsBasis": "ExactSKU Dimensions/NetworkingInterface/PowerMethod fields; Bodyflat horizontallyonlaboratorytray; circular diameter mapsW/D, thickness mapsH explicitly; front/rear=topcover/serviceunderside projections, not rackfaces orceilingmountcertification"
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-f0cd8b333b81d486",
+        "revision": "selected506j-20261101-v1",
+        "identity": {
+          "manufacturer": "MikroTik",
+          "family": "cAP ac / flat laboratory tray / PoE only / circular case",
+          "model": "cAP ac",
+          "sku": "RBcAPGi-5acD2nD"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://mikrotik.com/product/cap_ac",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 136,
+          "height": 30,
+          "depth": 136
+        },
+        "color": "#f7f9fb",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-ethernet",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "Ethernet / PoE capability only / ETH1 in, ETH2 passive out",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 71.578947,
+                "fill": "#f8f9fa",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "circle",
+                "cx": 238.17544,
+                "cy": 160.0,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 237.74905,
+                "cy": 165.689753,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 236.47941,
+                "cy": 171.252407,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 234.394883,
+                "cy": 176.563703,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 231.542027,
+                "cy": 181.50499,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 227.984577,
+                "cy": 185.965893,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 223.801997,
+                "cy": 189.84676,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 219.08772,
+                "cy": 193.0609,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 213.947053,
+                "cy": 195.536513,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 208.494833,
+                "cy": 197.2183,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 202.852853,
+                "cy": 198.068693,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 197.147147,
+                "cy": 198.068693,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 191.505167,
+                "cy": 197.2183,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 186.052947,
+                "cy": 195.536513,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 180.91228,
+                "cy": 193.0609,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 176.198003,
+                "cy": 189.84676,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 172.015423,
+                "cy": 185.965893,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 168.457973,
+                "cy": 181.50499,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 165.605117,
+                "cy": 176.563703,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 163.52059,
+                "cy": 171.252407,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 162.25095,
+                "cy": 165.689753,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 161.82456,
+                "cy": 160.0,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 162.25095,
+                "cy": 154.310247,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 163.52059,
+                "cy": 148.747593,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 165.605117,
+                "cy": 143.436297,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 168.457973,
+                "cy": 138.49501,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 172.015423,
+                "cy": 134.034107,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 176.198003,
+                "cy": 130.15324,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 180.91228,
+                "cy": 126.9391,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 186.052947,
+                "cy": 124.463487,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 191.505167,
+                "cy": 122.7817,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 197.147147,
+                "cy": 121.931307,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 202.852853,
+                "cy": 121.931307,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 208.494833,
+                "cy": 122.7817,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 213.947053,
+                "cy": 124.463487,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 219.08772,
+                "cy": 126.9391,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 223.801997,
+                "cy": 130.15324,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 227.984577,
+                "cy": 134.034107,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 231.542027,
+                "cy": 138.49501,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 234.394883,
+                "cy": 143.436297,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 236.47941,
+                "cy": 148.747593,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 237.74905,
+                "cy": 154.310247,
+                "r": 0.79532,
+                "fill": "#acb7bf",
+                "stroke": "#acb7bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 33.40351,
+                "fill": "#f5f7f9",
+                "stroke": "#d4dce2"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 4.97076,
+                "fill": "#eef1f4",
+                "stroke": "#788994"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 3.976607,
+                "fill": "#f8f9fa",
+                "stroke": "#e2e8ec"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "MikroTik / cAP ac / top housing",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 136 x 30 x 136 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 71.578947,
+                "fill": "#f5f7f8",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 67.005847,
+                "fill": "#f5f7f8",
+                "stroke": "#d8e0e5"
+              },
+              {
+                "kind": "rect",
+                "x": 153.274853,
+                "y": 185.847953,
+                "w": 93.450293,
+                "h": 36.783627,
+                "fill": "#e3e9ed",
+                "stroke": "#c2ced6",
+                "radius": 1.590643
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 169,
+                "text": "MikroTik / cAP ac",
+                "size": 7,
+                "fill": "#96a4ad",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 180,
+                "text": "Product label / revision unverified",
+                "size": 7,
+                "fill": "#9aa7af",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 162.619883,
+                "y": 195.192983,
+                "w": 48.31579,
+                "h": 19.48538,
+                "fill": "#acb7bf",
+                "stroke": "#637784",
+                "radius": 0.19883
+              },
+              {
+                "kind": "rect",
+                "x": 162.619883,
+                "y": 192.409357,
+                "w": 48.31579,
+                "h": 0.994153,
+                "fill": "#9bb3c3",
+                "stroke": "#9bb3c3",
+                "radius": 0.0
+              },
+              {
+                "kind": "text",
+                "x": 145,
+                "y": 245.578947,
+                "text": "PoE IN",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 255,
+                "y": 245.578947,
+                "text": "PoE OUT capability",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 222.467837,
+                "y": 198.17544,
+                "w": 5.16959,
+                "h": 13.91813,
+                "fill": "#c7d3db",
+                "stroke": "#8fa2af",
+                "radius": 1.391813
+              },
+              {
+                "kind": "text",
+                "x": 330,
+                "y": 196,
+                "text": "MODE inert",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 236.783627,
+                "y": 198.17544,
+                "w": 5.16959,
+                "h": 13.91813,
+                "fill": "#c7d3db",
+                "stroke": "#8fa2af",
+                "radius": 1.391813
+              },
+              {
+                "kind": "text",
+                "x": 330,
+                "y": 210,
+                "text": "RESET inert",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "MikroTik / cAP ac / service underside",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 136 x 30 x 136 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ethernet",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 161.356723,
+                "y": 192.935671,
+                "dx": 26.842107,
+                "dy": 0.0,
+                "w": 24,
+                "h": 24,
+                "labels": {
+                  "1": "ETH1",
+                  "2": "ETH2"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://mikrotik.com/product/cap_ac",
+            "kind": "manufacturer_specification",
+            "observed": "ExactSKU RBcAPGi-5acD2nD dimensions andnumber2Ethernet1GbE; roundcase136diameter/30thickness chosen; square145x145x30 alternativeunused. ETH1 802.3af/at input; ETH2 passivePoE outputcapability only. Passiveoutputcapabilitynotenabledpowerstate. Cached file .local/selected506j-ap-20261101/cap-ac.html",
+            "sha256": "91553a65e04f44b5d50a8953e29f4dbb5cbc14b72c7988c1febf750eaf492b46",
+            "bytes": 372159
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/RBcAPGi-5acD2nD.yaml",
+            "kind": "community_reference_snapshot",
+            "observed": "PinnedNetBox19470a551058fc9207f036371beefc41b197202e originalidentity/referenceonly; primaryhardwarefactsandcuratedPoEorientation overrideYAMLradios/DC/PoElabel."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-f0cd8b333b81d486/front-8242ad6e4d65.jpg",
+            "sha256": "8242ad6e4d65a143cf33f3ae44df0978d69dd78839200a6a73c28dfc1251ea18",
+            "view": "front",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-f0cd8b333b81d486/rear-67d5359bf5c5.jpg",
+            "sha256": "67d5359bf5c55ba99006af846dd8b3b8031b2b74a33db32acfd9d98b9af71102",
+            "view": "rear",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          }
+        ],
+        "limits": [
+          "Originalflatvectorauthoring withpairedreferencesinspected; photographsare notoperationalbackgrounds. Nativebodycolor/shape andservicepocketsprojectedfromreferences; exacthardware revisionunverified. NoMAC/serial/QR/credentials copied.",
+          "Declaredkinddesktop/rackUnits0 islabtrayconfigurationauthorizedbycoordinator. Hardwarefactorymount isceiling/wall; profiledoesnotcertifytraymount. Bodylyingflat usesdiameter→width/depth andthickness→height; thisaxisnormalizationisexplicit, notsilentrotationorrack1Uclaim. Frontview=topcover,rearview=serviceunderside.",
+          "PrimarybodyW136/H30/D136mm fitslaboratorytrayinterior440x65x300. Thisisbodyenvelopecomparisononly; cableexit,connectoraccess,recess/ventilation,retention andphysicalinstallationclearance needlabreview. Noceilingsupport/rail/antennaaccessory assumed.",
+          "Only2rearphysicalRJ45 Ethernet endpoints, 1GbE. RadiowirelessinterfacesfromYAML areinertfeatures, notconnectableWLANnodes. NoAC/PSUinlet/powergroupcreated; curatedpowerpath isPoEonly. PoEcapabilitydescriptive: ETH1 802.3af/at input; ETH2 passivePoE outputcapability only. Noenabledoutput,budget,load,delivery,negotiation,liveLED/radiostateorfirmware simulated. Source: https://mikrotik.com/product/cap_ac.",
+          "Buttons/reset/mode,DCjackifpresent,LEDs,ventgrilles,mounttracks/Kensington andradios areinertdecorations. BluefrontLEDreferencecolor isstaticillustration, notpowered/linkstatus. GroupKey+ordinal identifyphysicalport; nofakeextraEthernetfor management.",
+          "Reargeometry isflatserviceprojectionfromobliquereference, notassertedexactconnectorviewangle. Whitefrontvsdarkrear U7XG/XGS retained, nofamilyrearreplacement. Fullshell/trackgeometryunverifiedwherephotocloseupdoesnotcoverwholeunit. Noorientation-dependentcablesimulation.",
+          "Primary802.3af/atinputchosenonETH1 supersedesIRpassive24-onlylabel. ETH2passivePoEout isdescriptivecapability, notlivePSEorautomaticforwarding. Noelectriccircuit/loop/PoEbudgetmodeled.",
+          "CuratedCIRCULAR136mmcase; manufactureralsosuppliessquare145x145x30case, notusedorinterchangedinthisprofile."
+        ],
+        "dimensionsBasis": "Roundcase dimensions and Ethernet/PoE tables; Bodyflat horizontallyonlaboratorytray; circular diameter mapsW/D, thickness mapsH explicitly; front/rear=topcover/serviceunderside projections, not rackfaces orceilingmountcertification"
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-c06c7dc6eccf5e90",
+        "revision": "selected506j-20261101-v1",
+        "identity": {
+          "manufacturer": "MikroTik",
+          "family": "cAP ax / flat laboratory tray / PoE only",
+          "model": "cAP ax",
+          "sku": "cAPGi-5HaxD2HaxD"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://cdn.mikrotik.com/web-assets/product_files/cAPax_240151.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 228,
+          "height": 48,
+          "depth": 228
+        },
+        "color": "#f7f9fb",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-ethernet",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "Ethernet / PoE capability only / ETH1 in, ETH2 passive out",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 120.0,
+                "fill": "#f8f9fa",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "line",
+                "x1": 267.666667,
+                "y1": 160.0,
+                "x2": 297.333333,
+                "y2": 160.0,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 267.08777,
+                "y1": 168.832273,
+                "x2": 296.500633,
+                "y2": 172.70455,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 265.36098,
+                "y1": 177.513423,
+                "x2": 294.01678,
+                "y2": 185.19172,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 262.51585,
+                "y1": 185.894913,
+                "x2": 289.924273,
+                "y2": 197.247853,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 258.601053,
+                "y1": 193.833333,
+                "x2": 284.29314,
+                "y2": 208.666667,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 253.683577,
+                "y1": 201.192857,
+                "x2": 277.219727,
+                "y2": 219.25278,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 247.84756,
+                "y1": 207.84756,
+                "x2": 268.82506,
+                "y2": 228.82506,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 241.192857,
+                "y1": 213.683577,
+                "x2": 259.25278,
+                "y2": 237.219727,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 233.833333,
+                "y1": 218.601053,
+                "x2": 248.666667,
+                "y2": 244.29314,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 225.894913,
+                "y1": 222.51585,
+                "x2": 237.247853,
+                "y2": 249.924273,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 217.513423,
+                "y1": 225.36098,
+                "x2": 225.19172,
+                "y2": 254.01678,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 208.832273,
+                "y1": 227.08777,
+                "x2": 212.70455,
+                "y2": 256.500633,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 200.0,
+                "y1": 227.666667,
+                "x2": 200.0,
+                "y2": 257.333333,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 191.167727,
+                "y1": 227.08777,
+                "x2": 187.29545,
+                "y2": 256.500633,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 182.486577,
+                "y1": 225.36098,
+                "x2": 174.80828,
+                "y2": 254.01678,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 174.105087,
+                "y1": 222.51585,
+                "x2": 162.752147,
+                "y2": 249.924273,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 166.166667,
+                "y1": 218.601053,
+                "x2": 151.333333,
+                "y2": 244.29314,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 158.807143,
+                "y1": 213.683577,
+                "x2": 140.74722,
+                "y2": 237.219727,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 152.15244,
+                "y1": 207.84756,
+                "x2": 131.17494,
+                "y2": 228.82506,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 146.316423,
+                "y1": 201.192857,
+                "x2": 122.780273,
+                "y2": 219.25278,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 141.398947,
+                "y1": 193.833333,
+                "x2": 115.70686,
+                "y2": 208.666667,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 137.48415,
+                "y1": 185.894913,
+                "x2": 110.075727,
+                "y2": 197.247853,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 134.63902,
+                "y1": 177.513423,
+                "x2": 105.98322,
+                "y2": 185.19172,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 132.91223,
+                "y1": 168.832273,
+                "x2": 103.499367,
+                "y2": 172.70455,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 132.333333,
+                "y1": 160.0,
+                "x2": 102.666667,
+                "y2": 160.0,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 132.91223,
+                "y1": 151.167727,
+                "x2": 103.499367,
+                "y2": 147.29545,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 134.63902,
+                "y1": 142.486577,
+                "x2": 105.98322,
+                "y2": 134.80828,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 137.48415,
+                "y1": 134.105087,
+                "x2": 110.075727,
+                "y2": 122.752147,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 141.398947,
+                "y1": 126.166667,
+                "x2": 115.70686,
+                "y2": 111.333333,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 146.316423,
+                "y1": 118.807143,
+                "x2": 122.780273,
+                "y2": 100.74722,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 152.15244,
+                "y1": 112.15244,
+                "x2": 131.17494,
+                "y2": 91.17494,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 158.807143,
+                "y1": 106.316423,
+                "x2": 140.74722,
+                "y2": 82.780273,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 166.166667,
+                "y1": 101.398947,
+                "x2": 151.333333,
+                "y2": 75.70686,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 174.105087,
+                "y1": 97.48415,
+                "x2": 162.752147,
+                "y2": 70.075727,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 182.486577,
+                "y1": 94.63902,
+                "x2": 174.80828,
+                "y2": 65.98322,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 191.167727,
+                "y1": 92.91223,
+                "x2": 187.29545,
+                "y2": 63.499367,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 200.0,
+                "y1": 92.333333,
+                "x2": 200.0,
+                "y2": 62.666667,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 208.832273,
+                "y1": 92.91223,
+                "x2": 212.70455,
+                "y2": 63.499367,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 217.513423,
+                "y1": 94.63902,
+                "x2": 225.19172,
+                "y2": 65.98322,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 225.894913,
+                "y1": 97.48415,
+                "x2": 237.247853,
+                "y2": 70.075727,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 233.833333,
+                "y1": 101.398947,
+                "x2": 248.666667,
+                "y2": 75.70686,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 241.192857,
+                "y1": 106.316423,
+                "x2": 259.25278,
+                "y2": 82.780273,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 247.84756,
+                "y1": 112.15244,
+                "x2": 268.82506,
+                "y2": 91.17494,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 253.683577,
+                "y1": 118.807143,
+                "x2": 277.219727,
+                "y2": 100.74722,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 258.601053,
+                "y1": 126.166667,
+                "x2": 284.29314,
+                "y2": 111.333333,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 262.51585,
+                "y1": 134.105087,
+                "x2": 289.924273,
+                "y2": 122.752147,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 265.36098,
+                "y1": 142.486577,
+                "x2": 294.01678,
+                "y2": 134.80828,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "line",
+                "x1": 267.08777,
+                "y1": 151.167727,
+                "x2": 296.500633,
+                "y2": 147.29545,
+                "stroke": "#aab4bc",
+                "width": 2.666667
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 67.333333,
+                "fill": "#f6f8f9",
+                "stroke": "#d3dce2"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 8.0,
+                "fill": "#edf1f4",
+                "stroke": "#71818e"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 6.333333,
+                "fill": "#f9fafb",
+                "stroke": "#e0e6eb"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "MikroTik / cAP ax / top housing",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 228 x 48 x 228 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 120.0,
+                "fill": "#f5f7f8",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 112.333333,
+                "fill": "#f5f7f8",
+                "stroke": "#d8e0e5"
+              },
+              {
+                "kind": "rect",
+                "x": 121.666667,
+                "y": 203.333333,
+                "w": 156.666667,
+                "h": 61.666667,
+                "fill": "#e3e9ed",
+                "stroke": "#c2ced6",
+                "radius": 2.666667
+              },
+              {
+                "kind": "rect",
+                "x": 116.666667,
+                "y": 105.0,
+                "w": 13.333333,
+                "h": 92.0,
+                "fill": "#d4dde4",
+                "stroke": "#b6c4ce",
+                "radius": 1.333333
+              },
+              {
+                "kind": "rect",
+                "x": 270.0,
+                "y": 105.0,
+                "w": 13.333333,
+                "h": 92.0,
+                "fill": "#d4dde4",
+                "stroke": "#b6c4ce",
+                "radius": 1.333333
+              },
+              {
+                "kind": "rect",
+                "x": 116.666667,
+                "y": 115.0,
+                "w": 13.333333,
+                "h": 10.0,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.333333
+              },
+              {
+                "kind": "rect",
+                "x": 270.0,
+                "y": 115.0,
+                "w": 13.333333,
+                "h": 10.0,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.333333
+              },
+              {
+                "kind": "rect",
+                "x": 116.666667,
+                "y": 145.0,
+                "w": 13.333333,
+                "h": 10.0,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.333333
+              },
+              {
+                "kind": "rect",
+                "x": 270.0,
+                "y": 145.0,
+                "w": 13.333333,
+                "h": 10.0,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.333333
+              },
+              {
+                "kind": "rect",
+                "x": 116.666667,
+                "y": 175.0,
+                "w": 13.333333,
+                "h": 10.0,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.333333
+              },
+              {
+                "kind": "rect",
+                "x": 270.0,
+                "y": 175.0,
+                "w": 13.333333,
+                "h": 10.0,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.333333
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 185.0,
+                "text": "MikroTik / cAP ax",
+                "size": 7,
+                "fill": "#96a4ad",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 195.0,
+                "text": "Product label / revision unverified",
+                "size": 7,
+                "fill": "#9aa7af",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 137.333333,
+                "y": 219.0,
+                "w": 81.0,
+                "h": 32.666667,
+                "fill": "#acb7bf",
+                "stroke": "#637784",
+                "radius": 0.333333
+              },
+              {
+                "kind": "rect",
+                "x": 137.333333,
+                "y": 214.333333,
+                "w": 81.0,
+                "h": 1.666667,
+                "fill": "#9bb3c3",
+                "stroke": "#9bb3c3",
+                "radius": 0.0
+              },
+              {
+                "kind": "text",
+                "x": 145,
+                "y": 294.0,
+                "text": "PoE IN",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 255,
+                "y": 294.0,
+                "text": "PoE OUT capability",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 238.0,
+                "y": 224.0,
+                "w": 9.0,
+                "h": 23.333333,
+                "fill": "#c4d1d9",
+                "stroke": "#778c9b",
+                "radius": 2.333333
+              },
+              {
+                "kind": "text",
+                "x": 330,
+                "y": 210,
+                "text": "RESET inert",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 264.0,
+                "cy": 235.0,
+                "r": 5.333333,
+                "fill": "#18252e",
+                "stroke": "#8c9da9"
+              },
+              {
+                "kind": "text",
+                "x": 330,
+                "y": 238,
+                "text": "DC inert",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "MikroTik / cAP ax / service underside",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 228 x 48 x 228 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ethernet",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 138.666667,
+                "y": 220.666667,
+                "dx": 45.0,
+                "dy": 0.0,
+                "w": 33.333333,
+                "h": 29.333333,
+                "labels": {
+                  "1": "ETH1",
+                  "2": "ETH2"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://cdn.mikrotik.com/web-assets/product_files/cAPax_240151.pdf",
+            "kind": "manufacturer_specification",
+            "observed": "ExactSKU cAPGi-5HaxD2HaxD dimensions andnumber2Ethernet1GbE; circularbody diameter228/thickness48. ETH1 802.3af/at input; ETH2 passivePoE outputcapability only; DCjackinert. Passiveoutputcapabilitynotenabledpowerstate. Cached file .local/selected506j-ap-20261101/cap-ax.pdf",
+            "sha256": "1731592cadd2ec21c3a684e00e9be98916e97a14e9a4fbea9b21b667be6331fb",
+            "bytes": 1354081
+          },
+          {
+            "url": "https://mikrotik.com/product/cap_ax",
+            "kind": "manufacturer_specification",
+            "observed": "Powering:NumberDCinputs2(DCjack,PoE-IN),18-57V;Ethernet2×1G;ETH1af/atinput andETH2passiveout. IRdc-terminal correctedbyactualbarreljackphoto; jackinertinthisPoE-onlyconfiguration. Cached file .local/selected506j-ap-20261101/cap-ax.html",
+            "sha256": "8a0047046e24a11eb77dbbc102fac1cf52a78e7db5b4d4d03e34bd4d1ac9f326",
+            "bytes": 381813
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/cAPGi-5HaxD2HaxD.yaml",
+            "kind": "community_reference_snapshot",
+            "observed": "PinnedNetBox19470a551058fc9207f036371beefc41b197202e originalidentity/referenceonly; primaryhardwarefactsandcuratedPoEorientation overrideYAMLradios/DC/PoElabel."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-c06c7dc6eccf5e90/front-8d88861f8526.jpg",
+            "sha256": "8d88861f85261369f98d35f6ddb7af6ec416fb8ed0ce889e16e36db13a0cef35",
+            "view": "front",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-c06c7dc6eccf5e90/rear-67499c0892c3.jpg",
+            "sha256": "67499c0892c312305fbf5ac222eb47be3a46fe5bf80974c86a671953cb89365f",
+            "view": "rear",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          }
+        ],
+        "limits": [
+          "Originalflatvectorauthoring withpairedreferencesinspected; photographsare notoperationalbackgrounds. Nativebodycolor/shape andservicepocketsprojectedfromreferences; exacthardware revisionunverified. NoMAC/serial/QR/credentials copied.",
+          "Declaredkinddesktop/rackUnits0 islabtrayconfigurationauthorizedbycoordinator. Hardwarefactorymount isceiling/wall; profiledoesnotcertifytraymount. Bodylyingflat usesdiameter→width/depth andthickness→height; thisaxisnormalizationisexplicit, notsilentrotationorrack1Uclaim. Frontview=topcover,rearview=serviceunderside.",
+          "PrimarybodyW228/H48/D228mm fitslaboratorytrayinterior440x65x300. Thisisbodyenvelopecomparisononly; cableexit,connectoraccess,recess/ventilation,retention andphysicalinstallationclearance needlabreview. Noceilingsupport/rail/antennaaccessory assumed.",
+          "Only2rearphysicalRJ45 Ethernet endpoints, 1GbE. RadiowirelessinterfacesfromYAML areinertfeatures, notconnectableWLANnodes. NoAC/PSUinlet/powergroupcreated; curatedpowerpath isPoEonly. PoEcapabilitydescriptive: ETH1 802.3af/at input; ETH2 passivePoE outputcapability only; DCjackinert. Noenabledoutput,budget,load,delivery,negotiation,liveLED/radiostateorfirmware simulated. Source: https://cdn.mikrotik.com/web-assets/product_files/cAPax_240151.pdf.",
+          "Buttons/reset/mode,DCjackifpresent,LEDs,ventgrilles,mounttracks/Kensington andradios areinertdecorations. BluefrontLEDreferencecolor isstaticillustration, notpowered/linkstatus. GroupKey+ordinal identifyphysicalport; nofakeextraEthernetfor management.",
+          "Reargeometry isflatserviceprojectionfromobliquereference, notassertedexactconnectorviewangle. Whitefrontvsdarkrear U7XG/XGS retained, nofamilyrearreplacement. Fullshell/trackgeometryunverifiedwherephotocloseupdoesnotcoverwholeunit. Noorientation-dependentcablesimulation.",
+          "Primary802.3af/atinputchosenonETH1 supersedesIRpassive24-onlylabel. ETH2passivePoEout isdescriptivecapability, notlivePSEorautomaticforwarding. Noelectriccircuit/loop/PoEbudgetmodeled.",
+          "18-57VbarrelDCjackseeninexactrearphotoisINERT; primarycallsDCjack, whileIRdc-terminalcategoryisnotcopied. Includedadapter/injector notmaterialized asadditionalAC/endpoints."
+        ],
+        "dimensionsBasis": "PDFp3 specifications diameter228/thickness48/2Ethernet and power; Bodyflat horizontallyonlaboratorytray; circular diameter mapsW/D, thickness mapsH explicitly; front/rear=topcover/serviceunderside projections, not rackfaces orceilingmountcertification"
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-3ee579cb14778d23",
+        "revision": "selected506j-20261101-v1",
+        "identity": {
+          "manufacturer": "MikroTik",
+          "family": "cAP XL ac / flat laboratory tray / PoE only",
+          "model": "cAP XL ac",
+          "sku": "RBcAPGi-5acD2nD-XL"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://mikrotik.com/product/cap_xl_ac",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 191,
+          "height": 42,
+          "depth": 191
+        },
+        "color": "#f7f9fb",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-ethernet",
+            "type": "rj45",
+            "count": 2,
+            "face": "rear",
+            "name": "Ethernet / PoE capability only / ETH1 in, ETH2 passive out",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 100.526317,
+                "fill": "#f8f9fa",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "line",
+                "x1": 255.289473,
+                "y1": 160.0,
+                "x2": 274.557017,
+                "y2": 160.0,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 254.671937,
+                "y1": 168.24047,
+                "x2": 273.724277,
+                "y2": 171.112147,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 252.833117,
+                "y1": 176.29686,
+                "x2": 271.24466,
+                "y2": 181.976067,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 249.814093,
+                "y1": 183.989203,
+                "x2": 267.173553,
+                "y2": 192.349077,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 245.682307,
+                "y1": 191.14567,
+                "x2": 261.6019,
+                "y2": 201.999463,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 240.530053,
+                "y1": 197.606393,
+                "x2": 254.65416,
+                "y2": 210.71165,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 234.472423,
+                "y1": 203.22705,
+                "x2": 246.48554,
+                "y2": 218.291023,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 227.644737,
+                "y1": 207.88209,
+                "x2": 237.27851,
+                "y2": 224.56827,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 220.199513,
+                "y1": 211.46752,
+                "x2": 227.238737,
+                "y2": 229.40317,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 212.303067,
+                "y1": 213.90325,
+                "x2": 216.590497,
+                "y2": 232.687717,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 204.131787,
+                "y1": 215.134873,
+                "x2": 205.571653,
+                "y2": 234.34854,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 195.868213,
+                "y1": 215.134873,
+                "x2": 194.428347,
+                "y2": 234.34854,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 187.696933,
+                "y1": 213.90325,
+                "x2": 183.409503,
+                "y2": 232.687717,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 179.800487,
+                "y1": 211.46752,
+                "x2": 172.761263,
+                "y2": 229.40317,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 172.355263,
+                "y1": 207.88209,
+                "x2": 162.72149,
+                "y2": 224.56827,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 165.527577,
+                "y1": 203.22705,
+                "x2": 153.51446,
+                "y2": 218.291023,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 159.469947,
+                "y1": 197.606393,
+                "x2": 145.34584,
+                "y2": 210.71165,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 154.317693,
+                "y1": 191.14567,
+                "x2": 138.3981,
+                "y2": 201.999463,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 150.185907,
+                "y1": 183.989203,
+                "x2": 132.826447,
+                "y2": 192.349077,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 147.166883,
+                "y1": 176.29686,
+                "x2": 128.75534,
+                "y2": 181.976067,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 145.328063,
+                "y1": 168.24047,
+                "x2": 126.275723,
+                "y2": 171.112147,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 144.710527,
+                "y1": 160.0,
+                "x2": 125.442983,
+                "y2": 160.0,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 145.328063,
+                "y1": 151.75953,
+                "x2": 126.275723,
+                "y2": 148.887853,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 147.166883,
+                "y1": 143.70314,
+                "x2": 128.75534,
+                "y2": 138.023933,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 150.185907,
+                "y1": 136.010797,
+                "x2": 132.826447,
+                "y2": 127.650923,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 154.317693,
+                "y1": 128.85433,
+                "x2": 138.3981,
+                "y2": 118.000537,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 159.469947,
+                "y1": 122.393607,
+                "x2": 145.34584,
+                "y2": 109.28835,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 165.527577,
+                "y1": 116.77295,
+                "x2": 153.51446,
+                "y2": 101.708977,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 172.355263,
+                "y1": 112.11791,
+                "x2": 162.72149,
+                "y2": 95.43173,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 179.800487,
+                "y1": 108.53248,
+                "x2": 172.761263,
+                "y2": 90.59683,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 187.696933,
+                "y1": 106.09675,
+                "x2": 183.409503,
+                "y2": 87.312283,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 195.868213,
+                "y1": 104.865127,
+                "x2": 194.428347,
+                "y2": 85.65146,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 204.131787,
+                "y1": 104.865127,
+                "x2": 205.571653,
+                "y2": 85.65146,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 212.303067,
+                "y1": 106.09675,
+                "x2": 216.590497,
+                "y2": 87.312283,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 220.199513,
+                "y1": 108.53248,
+                "x2": 227.238737,
+                "y2": 90.59683,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 227.644737,
+                "y1": 112.11791,
+                "x2": 237.27851,
+                "y2": 95.43173,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 234.472423,
+                "y1": 116.77295,
+                "x2": 246.48554,
+                "y2": 101.708977,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 240.530053,
+                "y1": 122.393607,
+                "x2": 254.65416,
+                "y2": 109.28835,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 245.682307,
+                "y1": 128.85433,
+                "x2": 261.6019,
+                "y2": 118.000537,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 249.814093,
+                "y1": 136.010797,
+                "x2": 267.173553,
+                "y2": 127.650923,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 252.833117,
+                "y1": 143.70314,
+                "x2": 271.24466,
+                "y2": 138.023933,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "line",
+                "x1": 254.671937,
+                "y1": 151.75953,
+                "x2": 273.724277,
+                "y2": 148.887853,
+                "stroke": "#aab4bc",
+                "width": 2.233917
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 54.730993,
+                "fill": "#f6f8f9",
+                "stroke": "#d3dce2"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 6.701753,
+                "fill": "#edf1f4",
+                "stroke": "#71818e"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 5.305557,
+                "fill": "#f9fafb",
+                "stroke": "#e0e6eb"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "MikroTik / cAP XL ac / top housing",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 191 x 42 x 191 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 100.526317,
+                "fill": "#f5f7f8",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 94.1038,
+                "fill": "#f5f7f8",
+                "stroke": "#d8e0e5"
+              },
+              {
+                "kind": "rect",
+                "x": 134.378653,
+                "y": 196.30117,
+                "w": 131.24269,
+                "h": 51.659357,
+                "fill": "#e3e9ed",
+                "stroke": "#c2ced6",
+                "radius": 2.233917
+              },
+              {
+                "kind": "rect",
+                "x": 130.19006,
+                "y": 113.92544,
+                "w": 11.16959,
+                "h": 77.070177,
+                "fill": "#d4dde4",
+                "stroke": "#b6c4ce",
+                "radius": 1.11696
+              },
+              {
+                "kind": "rect",
+                "x": 258.64035,
+                "y": 113.92544,
+                "w": 11.16959,
+                "h": 77.070177,
+                "fill": "#d4dde4",
+                "stroke": "#b6c4ce",
+                "radius": 1.11696
+              },
+              {
+                "kind": "rect",
+                "x": 130.19006,
+                "y": 122.30263,
+                "w": 11.16959,
+                "h": 8.377193,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.27924
+              },
+              {
+                "kind": "rect",
+                "x": 258.64035,
+                "y": 122.30263,
+                "w": 11.16959,
+                "h": 8.377193,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.27924
+              },
+              {
+                "kind": "rect",
+                "x": 130.19006,
+                "y": 147.43421,
+                "w": 11.16959,
+                "h": 8.377193,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.27924
+              },
+              {
+                "kind": "rect",
+                "x": 258.64035,
+                "y": 147.43421,
+                "w": 11.16959,
+                "h": 8.377193,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.27924
+              },
+              {
+                "kind": "rect",
+                "x": 130.19006,
+                "y": 172.56579,
+                "w": 11.16959,
+                "h": 8.377193,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.27924
+              },
+              {
+                "kind": "rect",
+                "x": 258.64035,
+                "y": 172.56579,
+                "w": 11.16959,
+                "h": 8.377193,
+                "fill": "#71838e",
+                "stroke": "#71838e",
+                "radius": 0.27924
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 180.942983,
+                "text": "MikroTik / cAP XL ac",
+                "size": 7,
+                "fill": "#96a4ad",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 189.320177,
+                "text": "Product label / revision unverified",
+                "size": 7,
+                "fill": "#9aa7af",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 147.502923,
+                "y": 209.42544,
+                "w": 67.855263,
+                "h": 27.365497,
+                "fill": "#acb7bf",
+                "stroke": "#637784",
+                "radius": 0.27924
+              },
+              {
+                "kind": "rect",
+                "x": 147.502923,
+                "y": 205.516083,
+                "w": 67.855263,
+                "h": 1.3962,
+                "fill": "#9bb3c3",
+                "stroke": "#9bb3c3",
+                "radius": 0.0
+              },
+              {
+                "kind": "text",
+                "x": 145,
+                "y": 274.526316,
+                "text": "PoE IN",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 255,
+                "y": 274.526316,
+                "text": "PoE OUT capability",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 231.554093,
+                "y": 213.614037,
+                "w": 7.260233,
+                "h": 19.546783,
+                "fill": "#c7d3db",
+                "stroke": "#8fa2af",
+                "radius": 1.95468
+              },
+              {
+                "kind": "text",
+                "x": 330,
+                "y": 196,
+                "text": "MODE inert",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 251.659357,
+                "y": 213.614037,
+                "w": 7.260233,
+                "h": 19.546783,
+                "fill": "#c7d3db",
+                "stroke": "#8fa2af",
+                "radius": 1.95468
+              },
+              {
+                "kind": "text",
+                "x": 330,
+                "y": 210,
+                "text": "RESET inert",
+                "size": 7,
+                "fill": "#304b5b",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "MikroTik / cAP XL ac / service underside",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 191 x 42 x 191 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ethernet",
+                "rows": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "x": 148.619883,
+                "y": 210.821637,
+                "dx": 37.69737,
+                "dy": 0.0,
+                "w": 27.923977,
+                "h": 24.5731,
+                "labels": {
+                  "1": "ETH1",
+                  "2": "ETH2"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://mikrotik.com/product/cap_xl_ac",
+            "kind": "manufacturer_specification",
+            "observed": "ExactSKU RBcAPGi-5acD2nD-XL dimensions andnumber2Ethernet1GbE; circularbody diameter191/thickness42. ETH1 802.3af/at input; ETH2 passivePoE outputcapability only. Passiveoutputcapabilitynotenabledpowerstate. Cached file .local/selected506j-ap-20261101/cap-xl-ac.html",
+            "sha256": "9c76dc57acf27aab31b1e5b0a754cb21d40a357bf80cd7a44304d39540b8ad57",
+            "bytes": 381439
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/MikroTik/RBcAPGi-5acD2nD-XL.yaml",
+            "kind": "community_reference_snapshot",
+            "observed": "PinnedNetBox19470a551058fc9207f036371beefc41b197202e originalidentity/referenceonly; primaryhardwarefactsandcuratedPoEorientation overrideYAMLradios/DC/PoElabel."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-3ee579cb14778d23/front-10efa05b93ce.jpg",
+            "sha256": "10efa05b93cea8d5b11316eb3e6246f5e2ae55ad9ae5b73da6d44ed56129528c",
+            "view": "front",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-3ee579cb14778d23/rear-c5f0f5bf0210.jpg",
+            "sha256": "c5f0f5bf02108ce83cad24741e2cc36365f6347654545d819f8aec78b8a59cee",
+            "view": "rear",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          }
+        ],
+        "limits": [
+          "Originalflatvectorauthoring withpairedreferencesinspected; photographsare notoperationalbackgrounds. Nativebodycolor/shape andservicepocketsprojectedfromreferences; exacthardware revisionunverified. NoMAC/serial/QR/credentials copied.",
+          "Declaredkinddesktop/rackUnits0 islabtrayconfigurationauthorizedbycoordinator. Hardwarefactorymount isceiling/wall; profiledoesnotcertifytraymount. Bodylyingflat usesdiameter→width/depth andthickness→height; thisaxisnormalizationisexplicit, notsilentrotationorrack1Uclaim. Frontview=topcover,rearview=serviceunderside.",
+          "PrimarybodyW191/H42/D191mm fitslaboratorytrayinterior440x65x300. Thisisbodyenvelopecomparisononly; cableexit,connectoraccess,recess/ventilation,retention andphysicalinstallationclearance needlabreview. Noceilingsupport/rail/antennaaccessory assumed.",
+          "Only2rearphysicalRJ45 Ethernet endpoints, 1GbE. RadiowirelessinterfacesfromYAML areinertfeatures, notconnectableWLANnodes. NoAC/PSUinlet/powergroupcreated; curatedpowerpath isPoEonly. PoEcapabilitydescriptive: ETH1 802.3af/at input; ETH2 passivePoE outputcapability only. Noenabledoutput,budget,load,delivery,negotiation,liveLED/radiostateorfirmware simulated. Source: https://mikrotik.com/product/cap_xl_ac.",
+          "Buttons/reset/mode,DCjackifpresent,LEDs,ventgrilles,mounttracks/Kensington andradios areinertdecorations. BluefrontLEDreferencecolor isstaticillustration, notpowered/linkstatus. GroupKey+ordinal identifyphysicalport; nofakeextraEthernetfor management.",
+          "Reargeometry isflatserviceprojectionfromobliquereference, notassertedexactconnectorviewangle. Whitefrontvsdarkrear U7XG/XGS retained, nofamilyrearreplacement. Fullshell/trackgeometryunverifiedwherephotocloseupdoesnotcoverwholeunit. Noorientation-dependentcablesimulation.",
+          "Primary802.3af/atinputchosenonETH1 supersedesIRpassive24-onlylabel. ETH2passivePoEout isdescriptivecapability, notlivePSEorautomaticforwarding. Noelectriccircuit/loop/PoEbudgetmodeled.",
+          "18-57VDCprintednearrearETH1 refersPoEpowering; primarylistsoneDCinput(PoE-IN), noadditionalbarreljackinvented."
+        ],
+        "dimensionsBasis": "Roundcase dimensions and Ethernet/PoE tables; Bodyflat horizontallyonlaboratorytray; circular diameter mapsW/D, thickness mapsH explicitly; front/rear=topcover/serviceunderside projections, not rackfaces orceilingmountcertification"
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-bf62e427e934e0d4",
+        "revision": "selected506j-20261101-v1",
+        "identity": {
+          "manufacturer": "Grandstream",
+          "family": "GWN7660E / flat laboratory tray / PoE only",
+          "model": "GWN7660E",
+          "sku": "GWN7660E"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.grandstream.com/hubfs/Product_Documentation/GWN7660E/Datasheet_GWN7660E_English.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 180.4,
+          "height": 40.8,
+          "depth": 180.4
+        },
+        "color": "#f7f9fb",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-ethernet",
+            "type": "rj45",
+            "count": 1,
+            "face": "rear",
+            "name": "Ethernet / PoE capability only",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 94.94737,
+                "fill": "#f8f9fa",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 48.528653,
+                "fill": "#d6dde3",
+                "stroke": "#a8b5bf"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 46.682457,
+                "fill": "#eff3f6",
+                "stroke": "#bac7d0"
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 160.791227,
+                "text": "GRANDSTREAM",
+                "size": 8.176023,
+                "fill": "#97a6b0",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 190.24152,
+                "y": 181.6269,
+                "w": 19.51696,
+                "h": 5.80234,
+                "fill": "#abb6be",
+                "stroke": "#abb6be",
+                "radius": 2.373683
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 185.846783,
+                "text": "Wi-Fi 6",
+                "size": 7,
+                "fill": "#f4f6f8",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 112.262573,
+                "r": 1.318713,
+                "fill": "#80badc",
+                "stroke": "#80badc"
+              },
+              {
+                "kind": "circle",
+                "cx": 241.341823,
+                "cy": 183.868713,
+                "r": 1.318713,
+                "fill": "#80badc",
+                "stroke": "#80badc"
+              },
+              {
+                "kind": "circle",
+                "cx": 158.658177,
+                "cy": 183.868713,
+                "r": 1.318713,
+                "fill": "#80badc",
+                "stroke": "#80badc"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "Grandstream / GWN7660E / top housing",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 180.4 x 40.8 x 180.4 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 400,
+            "height": 320,
+            "plate": {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 400.0,
+              "h": 320.0,
+              "fill": "#edf0f3",
+              "stroke": "#edf0f3",
+              "radius": 0.0
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 94.94737,
+                "fill": "#f4f7f9",
+                "stroke": "#c1cbd1"
+              },
+              {
+                "kind": "line",
+                "x1": 282.815203,
+                "y1": 160.0,
+                "x2": 289.14503,
+                "y2": 160.0,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 282.416427,
+                "y1": 168.11731,
+                "x2": 288.71577,
+                "y2": 168.73774,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 281.223933,
+                "y1": 176.156443,
+                "x2": 287.432133,
+                "y2": 177.391333,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 279.24921,
+                "y1": 184.039983,
+                "x2": 285.306473,
+                "y2": 185.877437,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 276.511273,
+                "y1": 191.692007,
+                "x2": 282.359267,
+                "y2": 194.114327,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 273.03649,
+                "y1": 199.038817,
+                "x2": 278.618897,
+                "y2": 202.022677,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 268.858327,
+                "y1": 206.009663,
+                "x2": 274.121383,
+                "y2": 209.526323,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 264.01702,
+                "y1": 212.53741,
+                "x2": 268.91004,
+                "y2": 216.553007,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 258.559193,
+                "y1": 218.559193,
+                "x2": 263.035053,
+                "y2": 223.035053,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 141.440807,
+                "y1": 218.559193,
+                "x2": 136.964947,
+                "y2": 223.035053,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 135.98298,
+                "y1": 212.53741,
+                "x2": 131.08996,
+                "y2": 216.553007,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 131.141673,
+                "y1": 206.009663,
+                "x2": 125.878617,
+                "y2": 209.526323,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 126.96351,
+                "y1": 199.038817,
+                "x2": 121.381103,
+                "y2": 202.022677,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 123.488727,
+                "y1": 191.692007,
+                "x2": 117.640733,
+                "y2": 194.114327,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 120.75079,
+                "y1": 184.039983,
+                "x2": 114.693527,
+                "y2": 185.877437,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 118.776067,
+                "y1": 176.156443,
+                "x2": 112.567867,
+                "y2": 177.391333,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 117.583573,
+                "y1": 168.11731,
+                "x2": 111.28423,
+                "y2": 168.73774,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 117.184797,
+                "y1": 160.0,
+                "x2": 110.85497,
+                "y2": 160.0,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 117.583573,
+                "y1": 151.88269,
+                "x2": 111.28423,
+                "y2": 151.26226,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 118.776067,
+                "y1": 143.843557,
+                "x2": 112.567867,
+                "y2": 142.608667,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 120.75079,
+                "y1": 135.960017,
+                "x2": 114.693527,
+                "y2": 134.122563,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 123.488727,
+                "y1": 128.307993,
+                "x2": 117.640733,
+                "y2": 125.885673,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 126.96351,
+                "y1": 120.961183,
+                "x2": 121.381103,
+                "y2": 117.977323,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 131.141673,
+                "y1": 113.990337,
+                "x2": 125.878617,
+                "y2": 110.473677,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 135.98298,
+                "y1": 107.46259,
+                "x2": 131.08996,
+                "y2": 103.446993,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 141.440807,
+                "y1": 101.440807,
+                "x2": 136.964947,
+                "y2": 96.964947,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 147.46259,
+                "y1": 95.98298,
+                "x2": 143.446993,
+                "y2": 91.08996,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 153.990337,
+                "y1": 91.141673,
+                "x2": 150.473677,
+                "y2": 85.878617,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 160.961183,
+                "y1": 86.96351,
+                "x2": 157.977323,
+                "y2": 81.381103,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 168.307993,
+                "y1": 83.488727,
+                "x2": 165.885673,
+                "y2": 77.640733,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 175.960017,
+                "y1": 80.75079,
+                "x2": 174.122563,
+                "y2": 74.693527,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 183.843557,
+                "y1": 78.776067,
+                "x2": 182.608667,
+                "y2": 72.567867,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 191.88269,
+                "y1": 77.583573,
+                "x2": 191.26226,
+                "y2": 71.28423,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 200.0,
+                "y1": 77.184797,
+                "x2": 200.0,
+                "y2": 70.85497,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 208.11731,
+                "y1": 77.583573,
+                "x2": 208.73774,
+                "y2": 71.28423,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 216.156443,
+                "y1": 78.776067,
+                "x2": 217.391333,
+                "y2": 72.567867,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 224.039983,
+                "y1": 80.75079,
+                "x2": 225.877437,
+                "y2": 74.693527,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 231.692007,
+                "y1": 83.488727,
+                "x2": 234.114327,
+                "y2": 77.640733,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 239.038817,
+                "y1": 86.96351,
+                "x2": 242.022677,
+                "y2": 81.381103,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 246.009663,
+                "y1": 91.141673,
+                "x2": 249.526323,
+                "y2": 85.878617,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 252.53741,
+                "y1": 95.98298,
+                "x2": 256.553007,
+                "y2": 91.08996,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 258.559193,
+                "y1": 101.440807,
+                "x2": 263.035053,
+                "y2": 96.964947,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 264.01702,
+                "y1": 107.46259,
+                "x2": 268.91004,
+                "y2": 103.446993,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 268.858327,
+                "y1": 113.990337,
+                "x2": 274.121383,
+                "y2": 110.473677,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 273.03649,
+                "y1": 120.961183,
+                "x2": 278.618897,
+                "y2": 117.977323,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 276.511273,
+                "y1": 128.307993,
+                "x2": 282.359267,
+                "y2": 125.885673,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 279.24921,
+                "y1": 135.960017,
+                "x2": 285.306473,
+                "y2": 134.122563,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 281.223933,
+                "y1": 143.843557,
+                "x2": 287.432133,
+                "y2": 142.608667,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "line",
+                "x1": 282.416427,
+                "y1": 151.88269,
+                "x2": 288.71577,
+                "y2": 151.26226,
+                "stroke": "#9eafb9",
+                "width": 1.318713
+              },
+              {
+                "kind": "circle",
+                "cx": 200.0,
+                "cy": 160.0,
+                "r": 75.43041,
+                "fill": "#f4f7f9",
+                "stroke": "#c2d0d9"
+              },
+              {
+                "kind": "line",
+                "x1": 175.827583,
+                "y1": 107.251463,
+                "x2": 194.725147,
+                "y2": 107.251463,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 107.251463,
+                "x2": 224.172417,
+                "y2": 107.251463,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 169.864007,
+                "y1": 110.416373,
+                "x2": 194.725147,
+                "y2": 110.416373,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 110.416373,
+                "x2": 230.135993,
+                "y2": 110.416373,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 165.185963,
+                "y1": 113.581287,
+                "x2": 194.725147,
+                "y2": 113.581287,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 113.581287,
+                "x2": 234.814037,
+                "y2": 113.581287,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 161.324133,
+                "y1": 116.7462,
+                "x2": 194.725147,
+                "y2": 116.7462,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 116.7462,
+                "x2": 238.675867,
+                "y2": 116.7462,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 158.052473,
+                "y1": 119.91111,
+                "x2": 194.725147,
+                "y2": 119.91111,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 119.91111,
+                "x2": 241.947527,
+                "y2": 119.91111,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 155.24138,
+                "y1": 123.076023,
+                "x2": 194.725147,
+                "y2": 123.076023,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 123.076023,
+                "x2": 244.75862,
+                "y2": 123.076023,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 152.80848,
+                "y1": 126.240937,
+                "x2": 194.725147,
+                "y2": 126.240937,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 126.240937,
+                "x2": 247.19152,
+                "y2": 126.240937,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 150.69775,
+                "y1": 129.405847,
+                "x2": 194.725147,
+                "y2": 129.405847,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 129.405847,
+                "x2": 249.30225,
+                "y2": 129.405847,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 148.869277,
+                "y1": 132.57076,
+                "x2": 194.725147,
+                "y2": 132.57076,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 132.57076,
+                "x2": 251.130723,
+                "y2": 132.57076,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 147.293677,
+                "y1": 135.735673,
+                "x2": 194.725147,
+                "y2": 135.735673,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 135.735673,
+                "x2": 252.706323,
+                "y2": 135.735673,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 145.948833,
+                "y1": 138.900583,
+                "x2": 194.725147,
+                "y2": 138.900583,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 138.900583,
+                "x2": 254.051167,
+                "y2": 138.900583,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 144.81787,
+                "y1": 142.065497,
+                "x2": 194.725147,
+                "y2": 142.065497,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 142.065497,
+                "x2": 255.18213,
+                "y2": 142.065497,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 143.887853,
+                "y1": 145.23041,
+                "x2": 194.725147,
+                "y2": 145.23041,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 145.23041,
+                "x2": 256.112147,
+                "y2": 145.23041,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 143.14892,
+                "y1": 148.39532,
+                "x2": 194.725147,
+                "y2": 148.39532,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 148.39532,
+                "x2": 256.85108,
+                "y2": 148.39532,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 142.59369,
+                "y1": 151.560233,
+                "x2": 194.725147,
+                "y2": 151.560233,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 151.560233,
+                "x2": 257.40631,
+                "y2": 151.560233,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 142.216873,
+                "y1": 154.725147,
+                "x2": 194.725147,
+                "y2": 154.725147,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 154.725147,
+                "x2": 257.783127,
+                "y2": 154.725147,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 142.014983,
+                "y1": 157.89006,
+                "x2": 194.725147,
+                "y2": 157.89006,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 157.89006,
+                "x2": 257.985017,
+                "y2": 157.89006,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 141.9862,
+                "y1": 161.05497,
+                "x2": 194.725147,
+                "y2": 161.05497,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "line",
+                "x1": 205.274853,
+                "y1": 161.05497,
+                "x2": 258.0138,
+                "y2": 161.05497,
+                "stroke": "#a3b2bc",
+                "width": 0.791227
+              },
+              {
+                "kind": "rect",
+                "x": 168.350877,
+                "y": 176.352047,
+                "w": 63.298247,
+                "h": 19.780703,
+                "fill": "#e6edf2",
+                "stroke": "#c0cdd6",
+                "radius": 0.0
+              },
+              {
+                "kind": "rect",
+                "x": 154.372513,
+                "y": 203.517543,
+                "w": 91.782457,
+                "h": 38.24269,
+                "fill": "#e5edf2",
+                "stroke": "#b3c4cf",
+                "radius": 1.318713
+              },
+              {
+                "kind": "circle",
+                "cx": 165.71345,
+                "cy": 224.61696,
+                "r": 1.318713,
+                "fill": "#8198a7",
+                "stroke": "#8198a7"
+              },
+              {
+                "kind": "text",
+                "x": 165.71345,
+                "y": 232.001753,
+                "text": "RESET inert",
+                "size": 7,
+                "fill": "#2c495c",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 194.98889,
+                "y": 87.47076,
+                "w": 10.022223,
+                "h": 2.10994,
+                "fill": "#728795",
+                "stroke": "#728795",
+                "radius": 0.527487
+              },
+              {
+                "kind": "text",
+                "x": 200.0,
+                "y": 95.910527,
+                "text": "LOCK inert",
+                "size": 7,
+                "fill": "#2c495c",
+                "anchor": "middle"
+              },
+              {
+                "kind": "rect",
+                "x": 185.757893,
+                "y": 208.528653,
+                "w": 28.48421,
+                "h": 25.846783,
+                "fill": "#acb7bf",
+                "stroke": "#637784",
+                "radius": 0.263743
+              },
+              {
+                "kind": "rect",
+                "x": 185.757893,
+                "y": 220.66082,
+                "w": 28.48421,
+                "h": 1.318713,
+                "fill": "#86a8c1",
+                "stroke": "#86a8c1",
+                "radius": 0.0
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 14.666667,
+                "text": "Grandstream / GWN7660E / service underside",
+                "size": 9,
+                "fill": "#304756",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 8.666667,
+                "y": 316,
+                "text": "Laboratory tray orientation / body 180.4 x 40.8 x 180.4 mm",
+                "size": 8,
+                "fill": "#607a8c",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ethernet",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 186.812867,
+                "y": 209.452049,
+                "dx": 9.494737,
+                "dy": 15.82456,
+                "w": 26.37427,
+                "h": 24,
+                "labels": {
+                  "1": "NET / PoE IN"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.grandstream.com/hubfs/Product_Documentation/GWN7660E/Datasheet_GWN7660E_English.pdf",
+            "kind": "manufacturer_specification",
+            "observed": "ExactGWN7660E officialPDFp2 networkinterfaces1RJ10/100/1000,802.3af/atPoE,resetpinhole/Kensington; unitdimensions180.4x180.4x40.8markedTBDinthisdocument, notpackage228.5x220x79. Cached file .local/selected506j-ap-20261101/gwn7660e.pdf",
+            "sha256": "cd7694d318b328bbc56d7a8207a08b43ac8b4eeb8544d01862eb0701c5927fbf",
+            "bytes": 666340
+          },
+          {
+            "url": "https://www.grandstream.com/products/networking-solutions/indoor-wifi-access-points/product/gwn7660e",
+            "kind": "manufacturer_specification",
+            "observed": "Currentofficialproductcomparison exactGWN7660E Dimensions180.4x180.4x40.8withoutTBD andoneRJ45, confirmsolderPDFsamevalues. NotGWN7660(twoRJ) orGWN7660ELR."
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Grandstream/gwn7660e.yaml",
+            "kind": "community_reference_snapshot",
+            "observed": "PinnedNetBox19470a551058fc9207f036371beefc41b197202e originalidentity/referenceonly; primaryhardwarefactsandcuratedPoEorientation overrideYAMLradios/DC/PoElabel."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-bf62e427e934e0d4/front-4c3f51a5ed1a.png",
+            "sha256": "4c3f51a5ed1a79814a0180f2777192de55b10d2d0c93cf5209a639b02214a667",
+            "view": "front",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-bf62e427e934e0d4/rear-4f76f0273a23.webp",
+            "sha256": "4f76f0273a23913f922b3e0b3dc359d5096f728a46187dbe8b88c74a31e2fd03",
+            "view": "rear",
+            "match": "pinned_community_model_assignment_unverified_revision"
+          }
+        ],
+        "limits": [
+          "Originalflatvectorauthoring withpairedreferencesinspected; photographsare notoperationalbackgrounds. Nativebodycolor/shape andservicepocketsprojectedfromreferences; exacthardware revisionunverified. NoMAC/serial/QR/credentials copied.",
+          "Declaredkinddesktop/rackUnits0 islabtrayconfigurationauthorizedbycoordinator. Hardwarefactorymount isceiling/wall; profiledoesnotcertifytraymount. Bodylyingflat usesdiameter→width/depth andthickness→height; thisaxisnormalizationisexplicit, notsilentrotationorrack1Uclaim. Frontview=topcover,rearview=serviceunderside.",
+          "PrimarybodyW180.4/H40.8/D180.4mm fitslaboratorytrayinterior440x65x300. Thisisbodyenvelopecomparisononly; cableexit,connectoraccess,recess/ventilation,retention andphysicalinstallationclearance needlabreview. Noceilingsupport/rail/antennaaccessory assumed.",
+          "Only1rearphysicalRJ45 Ethernet endpoints, 1GbE. RadiowirelessinterfacesfromYAML areinertfeatures, notconnectableWLANnodes. NoAC/PSUinlet/powergroupcreated; curatedpowerpath isPoEonly. PoEcapabilitydescriptive: 802.3af/at input. Noenabledoutput,budget,load,delivery,negotiation,liveLED/radiostateorfirmware simulated. Source: https://www.grandstream.com/hubfs/Product_Documentation/GWN7660E/Datasheet_GWN7660E_English.pdf.",
+          "Buttons/reset/mode,DCjackifpresent,LEDs,ventgrilles,mounttracks/Kensington andradios areinertdecorations. BluefrontLEDreferencecolor isstaticillustration, notpowered/linkstatus. GroupKey+ordinal identifyphysicalport; nofakeextraEthernetfor management.",
+          "Reargeometry isflatserviceprojectionfromobliquereference, notassertedexactconnectorviewangle. Whitefrontvsdarkrear U7XG/XGS retained, nofamilyrearreplacement. Fullshell/trackgeometryunverifiedwherephotocloseupdoesnotcoverwholeunit. Noorientation-dependentcablesimulation.",
+          "OlderPDF/technicaltableunitdimensionsmarkedTBD; currentofficialproductpageconfirmssame180.4x180.4x40.8withoutTBD. Preserveversionlimit, neverborrowdimensions/2EthernetfromGWN7660neighbour. OnlyoneNET/PoEjackshowninrearphoto."
+        ],
+        "dimensionsBasis": "PDFp2 exactGWN7660E 1Ethernet/PoE/UnitDimensions; olderTBDsamevaluesconfirmedcurrentproductpage; Bodyflat horizontallyonlaboratorytray; circular diameter mapsW/D, thickness mapsH explicitly; front/rear=topcover/serviceunderside projections, not rackfaces orceilingmountcertification"
+      }
+    }
+  ]
+}

@@ -2,7 +2,7 @@ namespace RackClick.Domain;
 
 public static class InventoryRules
 {
-    public static readonly string[] PortTypes = ["rj45", "rj45_poe", "sfp", "sfp28", "qsfp", "mgmt", "console", "power", "usb_a", "usb_c"];
+    public static readonly string[] PortTypes = ["rj45", "rj45_poe", "sfp", "sfp28", "sfp56", "qsfp", "qsfpdd", "mgmt", "console", "idc", "power", "usb_a", "usb_c", "ipc", "fiber", "sfpdd", "cfp2", "sas", "dsl", "telephony", "isdn", "expansion", "power_dc"];
     public static string PortType(string? value) => value is not null && PortTypes.Contains(value, StringComparer.Ordinal)
         ? value : throw new DomainError(422, "port_type_invalid");
     public static string Family(string value) => PortType(value) == "rj45_poe" ? "rj45" : value;
@@ -14,6 +14,14 @@ public static class InventoryRules
         ? value : throw new DomainError(422, "power_role_invalid");
     public static string Patch(string? value) => value is "none" or "planned" or "progress" or "done" or "tested"
         ? value : throw new DomainError(422, "patch_status_invalid");
+    // New physical families are exact even on manual/template devices.
+    // Preserve the historical broad legacy policy for every older family.
+    public static void RequireConnectorPair(string firstType, string secondType, bool hardwareBound = false)
+    {
+        string first = Family(firstType), second = Family(secondType);
+        if ((hardwareBound || FamilyLRules.ExtraTypes.Contains(first, StringComparer.Ordinal) || FamilyLRules.ExtraTypes.Contains(second, StringComparer.Ordinal) || first is "sfp56" or "qsfpdd" or "idc" || second is "sfp56" or "qsfpdd" or "idc") && first != second)
+            throw new DomainError(409, "connection_incompatible");
+    }
     public static void RequirePowerPair(string firstType, string firstRole, string secondType, string secondRole)
     {
         if ((firstType == "power") != (secondType == "power") ||

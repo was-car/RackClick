@@ -1,0 +1,6299 @@
+{
+  "formatVersion": 1,
+  "revision": "batch50b-20261031-v1",
+  "models": [
+    {
+      "definition": {
+        "key": "tplink-tl-sg105-v8-0",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "TP-Link",
+          "family": "Unmanaged Desktop",
+          "model": "TL-SG105 (UN) v8.0",
+          "sku": "TL-SG105(UN) v8.0"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://static.tp-link.com/upload/product-overview/2023/202306/20230619/TL-SG105%28UN%298.0%26TL-SG108%28UN%299.0%26TL-SG116%28UN%291.20.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 99.8,
+          "height": 25,
+          "depth": 98
+        },
+        "color": "#43565b",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 5,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 650.0,
+            "height": 143.0,
+            "plate": {
+              "x": 1.3,
+              "y": 1.3,
+              "w": 647.4,
+              "h": 126.75,
+              "fill": "#43565b",
+              "stroke": "#69737b",
+              "radius": 3.9
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 11.7,
+                "y": 17.55,
+                "text": "tp-link",
+                "size": 12.35,
+                "fill": "#e1eeed",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 503.75,
+                "y": 17.55,
+                "text": "TL-SG105",
+                "size": 9.75,
+                "fill": "#e1eeed",
+                "anchor": "start"
+              },
+              {
+                "kind": "circle",
+                "cx": 625.95,
+                "cy": 113.75,
+                "r": 3.25,
+                "fill": "#758b67",
+                "stroke": "#71808c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ]
+                ],
+                "x": 22.75,
+                "y": 45.5,
+                "dx": 110.5,
+                "dy": 24.7,
+                "w": 94.25,
+                "h": 53.3
+              }
+            ]
+          },
+          "rear": {
+            "width": 650.0,
+            "height": 143.0,
+            "plate": {
+              "x": 1.3,
+              "y": 1.3,
+              "w": 647.4,
+              "h": 126.75,
+              "fill": "#43565b",
+              "stroke": "#69737b",
+              "radius": 3.9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 26.0,
+                "y": 35.75,
+                "w": 5.2,
+                "h": 15.6,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0.0
+              },
+              {
+                "kind": "circle",
+                "cx": 578.5,
+                "cy": 78.65,
+                "r": 8.45,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 551.2,
+                "y": 101.4,
+                "text": "DC IN",
+                "size": 6.5,
+                "fill": "#e1eeed",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 442.0,
+                "y": 78.65,
+                "w": 17.55,
+                "h": 6.5,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0.0
+              },
+              {
+                "kind": "text",
+                "x": 416.0,
+                "y": 98.15,
+                "text": "LOOP PREVENTION",
+                "size": 5.2,
+                "fill": "#e1eeed",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://static.tp-link.com/upload/product-overview/2023/202306/20230619/TL-SG105%28UN%298.0%26TL-SG108%28UN%299.0%26TL-SG116%28UN%291.20.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "8f2d30faf277e29d4f7bd72e7b2e8be5967dc4abfbd62806832bface331aaa95",
+            "bytes": 2849519
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/tpl-small/guide-page-1.png",
+            "sha256": "d9905f0746c23567ccf30c8265c9049b65dca1abcf63a45449f8ae0f669e9da8",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/tp-link-tl-sg105.rear.jpg",
+            "sha256": "66fca95f16c5e171380446a264df84be7e1a99a38c492bc62c7f9d1654792f76",
+            "view": "rear",
+            "match": "community_family_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Rear DC/lock geometry uses an unversioned TL-SG105 reference as family support, not an exact v8.0 rear photo. Loop-prevention control is decorative, not an implemented switch function.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "tplink-tl-sg108-v9-0",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "TP-Link",
+          "family": "Unmanaged Desktop",
+          "model": "TL-SG108 (UN) v9.0",
+          "sku": "TL-SG108(UN) v9.0"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://static.tp-link.com/upload/product-overview/2023/202306/20230619/TL-SG105%28UN%298.0%26TL-SG108%28UN%299.0%26TL-SG116%28UN%291.20.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 158,
+          "height": 25,
+          "depth": 101
+        },
+        "color": "#43565b",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 8,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#43565b",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 27,
+                "text": "tp-link",
+                "size": 19,
+                "fill": "#e1eeed",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 775,
+                "y": 27,
+                "text": "TL-SG108",
+                "size": 15,
+                "fill": "#e1eeed",
+                "anchor": "start"
+              },
+              {
+                "kind": "circle",
+                "cx": 963,
+                "cy": 135,
+                "r": 5,
+                "fill": "#758b67",
+                "stroke": "#71808c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                ],
+                "x": 40,
+                "y": 60,
+                "dx": 111,
+                "dy": 38,
+                "w": 98,
+                "h": 56
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#43565b",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 40,
+                "y": 55,
+                "w": 8,
+                "h": 24,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 890,
+                "cy": 99.00000000000001,
+                "r": 13,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 848,
+                "y": 134.0,
+                "text": "DC IN",
+                "size": 10,
+                "fill": "#e1eeed",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 680,
+                "y": 99.00000000000001,
+                "w": 27,
+                "h": 10,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "text",
+                "x": 640,
+                "y": 129.0,
+                "text": "LOOP PREVENTION",
+                "size": 8,
+                "fill": "#e1eeed",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://static.tp-link.com/upload/product-overview/2023/202306/20230619/TL-SG105%28UN%298.0%26TL-SG108%28UN%299.0%26TL-SG116%28UN%291.20.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "8f2d30faf277e29d4f7bd72e7b2e8be5967dc4abfbd62806832bface331aaa95",
+            "bytes": 2849519
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/tpl-small/guide-page-1.png",
+            "sha256": "d9905f0746c23567ccf30c8265c9049b65dca1abcf63a45449f8ae0f669e9da8",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/tp-link-tl-sg105.rear.jpg",
+            "sha256": "66fca95f16c5e171380446a264df84be7e1a99a38c492bc62c7f9d1654792f76",
+            "view": "rear",
+            "match": "community_family_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Rear DC/lock geometry uses an unversioned TL-SG105 reference as family support, not an exact v9.0 rear photo. Loop-prevention control is decorative, not an implemented switch function.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "tplink-tl-sg116-v1-20",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "TP-Link",
+          "family": "Unmanaged Desktop",
+          "model": "TL-SG116 (UN) v1.20",
+          "sku": "TL-SG116(UN) v1.20"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://static.tp-link.com/upload/product-overview/2023/202306/20230619/TL-SG105%28UN%298.0%26TL-SG108%28UN%299.0%26TL-SG116%28UN%291.20.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 286,
+          "height": 25.4,
+          "depth": 111.7
+        },
+        "color": "#43565b",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 16,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 140,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 115,
+              "fill": "#43565b",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 27,
+                "text": "tp-link",
+                "size": 19,
+                "fill": "#e1eeed",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 775,
+                "y": 27,
+                "text": "TL-SG116",
+                "size": 15,
+                "fill": "#e1eeed",
+                "anchor": "start"
+              },
+              {
+                "kind": "circle",
+                "cx": 963,
+                "cy": 95,
+                "r": 5,
+                "fill": "#758b67",
+                "stroke": "#71808c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                ],
+                "x": 65,
+                "y": 48,
+                "dx": 54,
+                "dy": 38,
+                "w": 47,
+                "h": 34
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 140,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 115,
+              "fill": "#43565b",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 40,
+                "y": 55,
+                "w": 8,
+                "h": 24,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 890,
+                "cy": 77.0,
+                "r": 13,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 848,
+                "y": 112.0,
+                "text": "DC IN",
+                "size": 10,
+                "fill": "#e1eeed",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://static.tp-link.com/upload/product-overview/2023/202306/20230619/TL-SG105%28UN%298.0%26TL-SG108%28UN%299.0%26TL-SG116%28UN%291.20.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "8f2d30faf277e29d4f7bd72e7b2e8be5967dc4abfbd62806832bface331aaa95",
+            "bytes": 2849519
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/tpl-small/guide-page-1.png",
+            "sha256": "d9905f0746c23567ccf30c8265c9049b65dca1abcf63a45449f8ae0f669e9da8",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/tp-link-tl-sg105.rear.jpg",
+            "sha256": "66fca95f16c5e171380446a264df84be7e1a99a38c492bc62c7f9d1654792f76",
+            "view": "rear",
+            "match": "community_family_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Rear DC/lock geometry uses an unversioned TL-SG105 reference as family support, not an exact v1.20 rear photo. Loop-prevention control is decorative, not an implemented switch function.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "tplink-tl-sg1016d-v13-0",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "TP-Link",
+          "family": "Unmanaged Rackmount",
+          "model": "TL-SG1016D (UN) v13.0",
+          "sku": "TL-SG1016D(UN) v13.0"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://static.tp-link.com/upload/product-overview/2026/202603/20260317/TL-SG1016D%28UN%29%2013.0%20%26%20TL-SG1024D%28UN%29%2011.0_Datasheet.pdf",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 294,
+          "height": 44,
+          "depth": 140
+        },
+        "color": "#424b4c",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 16,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC inlet",
+            "prefix": "AC",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#424b4c",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 31,
+                "text": "tp-link",
+                "size": 20,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 149,
+                "text": "TL-SG1016D",
+                "size": 12,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              },
+              {
+                "kind": "circle",
+                "cx": 190,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 190,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 207,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 207,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 224,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 224,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 241,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 241,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 258,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 258,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 275,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 275,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 292,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 292,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 309,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 309,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 326,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 326,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 343,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 343,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 360,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 360,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 377,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 377,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "rect",
+                "x": 955,
+                "y": 120,
+                "w": 14,
+                "h": 9,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "text",
+                "x": 922,
+                "y": 147,
+                "text": "DIP",
+                "size": 8,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8
+                  ]
+                ],
+                "x": 510,
+                "y": 66,
+                "dx": 43,
+                "dy": 44,
+                "w": 37,
+                "h": 32
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    9,
+                    11,
+                    13,
+                    15
+                  ],
+                  [
+                    10,
+                    12,
+                    14,
+                    16
+                  ]
+                ],
+                "x": 710,
+                "y": 66,
+                "dx": 43,
+                "dy": 44,
+                "w": 37,
+                "h": 32
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#4c5558",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "vent",
+                "x": 70,
+                "y": 45,
+                "w": 590,
+                "h": 73,
+                "count": 48
+              },
+              {
+                "kind": "circle",
+                "cx": 765,
+                "cy": 93,
+                "r": 5,
+                "fill": "#9b9fa2",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 700,
+                "y": 150,
+                "text": "100-240V AC",
+                "size": 10,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 850,
+                "y": 60,
+                "dx": 48,
+                "dy": 38,
+                "w": 73,
+                "h": 61,
+                "labels": {
+                  "1": "AC IN"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://static.tp-link.com/upload/product-overview/2026/202603/20260317/TL-SG1016D%28UN%29%2013.0%20%26%20TL-SG1024D%28UN%29%2011.0_Datasheet.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "7b2e650d6cf9e349c98e65e024c4299c95caad4e22172a820a4f24d7483a7727",
+            "bytes": 252152
+          },
+          {
+            "url": "https://static.tp-link.com/7106507326_TL-SG_Installation%20Guide.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Rendered pages10/11, rear AC locations for1016/1024/1016D/1024D; older family guide used only for chassis geometry.",
+            "sha256": "62e515011ab3f4d8cc0c2db2d72999ff2e17de2db5396fa85c327d2a4e9e0144",
+            "bytes": 2831427
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/tpl-short/guide-page-1.png",
+            "sha256": "c36f3e6a5c0a6e83530e916a0398393e487db5c1efedead5b99bc7bc408e028f",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/tpl-rack-guide/guide-page-11.png",
+            "sha256": "0c3fb4156cb4ed8b33b52812e8af3bf897188cf3e13aaa52257211a74490de8a",
+            "view": "rear",
+            "match": "manufacturer_family_revision_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Rear is the manufacturer installation-guide family geometry from an earlier revision; exact current power source/count is confirmed in the pinned datasheet. No new-revision rear photo is asserted.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "tplink-tl-sg1024d-v11-0",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "TP-Link",
+          "family": "Unmanaged Rackmount",
+          "model": "TL-SG1024D (UN) v11.0",
+          "sku": "TL-SG1024D(UN) v11.0"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://static.tp-link.com/upload/product-overview/2026/202603/20260317/TL-SG1016D%28UN%29%2013.0%20%26%20TL-SG1024D%28UN%29%2011.0_Datasheet.pdf",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 294,
+          "height": 44,
+          "depth": 140
+        },
+        "color": "#424b4c",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 24,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC inlet",
+            "prefix": "AC",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#424b4c",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 31,
+                "text": "tp-link",
+                "size": 20,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 149,
+                "text": "TL-SG1024D",
+                "size": 12,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              },
+              {
+                "kind": "circle",
+                "cx": 190,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 190,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 207,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 207,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 224,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 224,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 241,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 241,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 258,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 258,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 275,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 275,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 292,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 292,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 309,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 309,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 326,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 326,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 343,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 343,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 360,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 360,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 377,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 377,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 394,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 394,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 411,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 411,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 428,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 428,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 445,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 445,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "rect",
+                "x": 955,
+                "y": 120,
+                "w": 14,
+                "h": 9,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "text",
+                "x": 922,
+                "y": 147,
+                "text": "DIP",
+                "size": 8,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8
+                  ]
+                ],
+                "x": 365,
+                "y": 66,
+                "dx": 43,
+                "dy": 44,
+                "w": 37,
+                "h": 32
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    9,
+                    11,
+                    13,
+                    15
+                  ],
+                  [
+                    10,
+                    12,
+                    14,
+                    16
+                  ]
+                ],
+                "x": 555,
+                "y": 66,
+                "dx": 43,
+                "dy": 44,
+                "w": 37,
+                "h": 32
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    17,
+                    19,
+                    21,
+                    23
+                  ],
+                  [
+                    18,
+                    20,
+                    22,
+                    24
+                  ]
+                ],
+                "x": 745,
+                "y": 66,
+                "dx": 43,
+                "dy": 44,
+                "w": 37,
+                "h": 32
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#4c5558",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "vent",
+                "x": 70,
+                "y": 45,
+                "w": 590,
+                "h": 73,
+                "count": 48
+              },
+              {
+                "kind": "circle",
+                "cx": 765,
+                "cy": 93,
+                "r": 5,
+                "fill": "#9b9fa2",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 700,
+                "y": 150,
+                "text": "100-240V AC",
+                "size": 10,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 850,
+                "y": 60,
+                "dx": 48,
+                "dy": 38,
+                "w": 73,
+                "h": 61,
+                "labels": {
+                  "1": "AC IN"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://static.tp-link.com/upload/product-overview/2026/202603/20260317/TL-SG1016D%28UN%29%2013.0%20%26%20TL-SG1024D%28UN%29%2011.0_Datasheet.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "7b2e650d6cf9e349c98e65e024c4299c95caad4e22172a820a4f24d7483a7727",
+            "bytes": 252152
+          },
+          {
+            "url": "https://static.tp-link.com/7106507326_TL-SG_Installation%20Guide.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Rendered pages10/11, rear AC locations for1016/1024/1016D/1024D; older family guide used only for chassis geometry.",
+            "sha256": "62e515011ab3f4d8cc0c2db2d72999ff2e17de2db5396fa85c327d2a4e9e0144",
+            "bytes": 2831427
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/tpl-short/guide-page-1.png",
+            "sha256": "c36f3e6a5c0a6e83530e916a0398393e487db5c1efedead5b99bc7bc408e028f",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/tpl-rack-guide/guide-page-11.png",
+            "sha256": "0c3fb4156cb4ed8b33b52812e8af3bf897188cf3e13aaa52257211a74490de8a",
+            "view": "rear",
+            "match": "manufacturer_family_revision_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Rear is the manufacturer installation-guide family geometry from an earlier revision; exact current power source/count is confirmed in the pinned datasheet. No new-revision rear photo is asserted.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "tplink-tl-sg1016-v13-0",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "TP-Link",
+          "family": "Unmanaged Rackmount",
+          "model": "TL-SG1016 (UN) v13.0",
+          "sku": "TL-SG1016(UN) v13.0"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://static.tp-link.com/upload/product-overview/2021/202108/20210820/TL-SG1016%28UN%29%2013.0%20%26%20TL-SG1024%28UN%29%2014.0.pdf",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 440,
+          "height": 44,
+          "depth": 180
+        },
+        "color": "#424b4c",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 16,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC inlet",
+            "prefix": "AC",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#424b4c",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 31,
+                "text": "tp-link",
+                "size": 20,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 149,
+                "text": "TL-SG1016",
+                "size": 12,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              },
+              {
+                "kind": "circle",
+                "cx": 190,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 190,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 207,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 207,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 224,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 224,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 241,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 241,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 258,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 258,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 275,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 275,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 292,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 292,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 309,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 309,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 326,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 326,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 343,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 343,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 360,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 360,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 377,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 377,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8
+                  ]
+                ],
+                "x": 510,
+                "y": 66,
+                "dx": 43,
+                "dy": 44,
+                "w": 37,
+                "h": 32
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    9,
+                    11,
+                    13,
+                    15
+                  ],
+                  [
+                    10,
+                    12,
+                    14,
+                    16
+                  ]
+                ],
+                "x": 710,
+                "y": 66,
+                "dx": 43,
+                "dy": 44,
+                "w": 37,
+                "h": 32
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#4c5558",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "vent",
+                "x": 70,
+                "y": 45,
+                "w": 470,
+                "h": 73,
+                "count": 48
+              },
+              {
+                "kind": "circle",
+                "cx": 820,
+                "cy": 93,
+                "r": 5,
+                "fill": "#9b9fa2",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 700,
+                "y": 150,
+                "text": "100-240V AC",
+                "size": 10,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 710,
+                "y": 60,
+                "dx": 48,
+                "dy": 38,
+                "w": 73,
+                "h": 61,
+                "labels": {
+                  "1": "AC IN"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://static.tp-link.com/upload/product-overview/2021/202108/20210820/TL-SG1016%28UN%29%2013.0%20%26%20TL-SG1024%28UN%29%2014.0.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "c9c865ea90bda479c89ba40fd4196634c666cfbe81aa6656ce7c3cf70a98c8b8",
+            "bytes": 261069
+          },
+          {
+            "url": "https://static.tp-link.com/7106507326_TL-SG_Installation%20Guide.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Rendered pages10/11, rear AC locations for1016/1024/1016D/1024D; older family guide used only for chassis geometry.",
+            "sha256": "62e515011ab3f4d8cc0c2db2d72999ff2e17de2db5396fa85c327d2a4e9e0144",
+            "bytes": 2831427
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/tpl-rack/guide-page-1.png",
+            "sha256": "f5af3754d0550e7cbaaa15a90b40b6e80ad40e77acac4112cbce1bf44f630cbe",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/tpl-rack-guide/guide-page-11.png",
+            "sha256": "0c3fb4156cb4ed8b33b52812e8af3bf897188cf3e13aaa52257211a74490de8a",
+            "view": "rear",
+            "match": "manufacturer_family_revision_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Rear is the manufacturer installation-guide family geometry from an earlier revision; exact current power source/count is confirmed in the pinned datasheet. No new-revision rear photo is asserted.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "tplink-tl-sg1024-v14-0",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "TP-Link",
+          "family": "Unmanaged Rackmount",
+          "model": "TL-SG1024 (UN) v14.0",
+          "sku": "TL-SG1024(UN) v14.0"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://static.tp-link.com/upload/product-overview/2021/202108/20210820/TL-SG1016%28UN%29%2013.0%20%26%20TL-SG1024%28UN%29%2014.0.pdf",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 440,
+          "height": 44,
+          "depth": 180
+        },
+        "color": "#424b4c",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 24,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC inlet",
+            "prefix": "AC",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#424b4c",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 31,
+                "text": "tp-link",
+                "size": 20,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 149,
+                "text": "TL-SG1024",
+                "size": 12,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              },
+              {
+                "kind": "circle",
+                "cx": 190,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 190,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 207,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 207,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 224,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 224,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 241,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 241,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 258,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 258,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 275,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 275,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 292,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 292,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 309,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 309,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 326,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 326,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 343,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 343,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 360,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 360,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 377,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 377,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 394,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 394,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 411,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 411,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 428,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 428,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 445,
+                "cy": 70,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 445,
+                "cy": 87,
+                "r": 2.5,
+                "fill": "#7f9b6d",
+                "stroke": "#71808c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8
+                  ]
+                ],
+                "x": 365,
+                "y": 66,
+                "dx": 43,
+                "dy": 44,
+                "w": 37,
+                "h": 32
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    9,
+                    11,
+                    13,
+                    15
+                  ],
+                  [
+                    10,
+                    12,
+                    14,
+                    16
+                  ]
+                ],
+                "x": 555,
+                "y": 66,
+                "dx": 43,
+                "dy": 44,
+                "w": 37,
+                "h": 32
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    17,
+                    19,
+                    21,
+                    23
+                  ],
+                  [
+                    18,
+                    20,
+                    22,
+                    24
+                  ]
+                ],
+                "x": 745,
+                "y": 66,
+                "dx": 43,
+                "dy": 44,
+                "w": 37,
+                "h": 32
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#4c5558",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "vent",
+                "x": 70,
+                "y": 45,
+                "w": 470,
+                "h": 73,
+                "count": 48
+              },
+              {
+                "kind": "circle",
+                "cx": 820,
+                "cy": 93,
+                "r": 5,
+                "fill": "#9b9fa2",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 700,
+                "y": 150,
+                "text": "100-240V AC",
+                "size": 10,
+                "fill": "#dde8e7",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 710,
+                "y": 60,
+                "dx": 48,
+                "dy": 38,
+                "w": 73,
+                "h": 61,
+                "labels": {
+                  "1": "AC IN"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://static.tp-link.com/upload/product-overview/2021/202108/20210820/TL-SG1016%28UN%29%2013.0%20%26%20TL-SG1024%28UN%29%2014.0.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "c9c865ea90bda479c89ba40fd4196634c666cfbe81aa6656ce7c3cf70a98c8b8",
+            "bytes": 261069
+          },
+          {
+            "url": "https://static.tp-link.com/7106507326_TL-SG_Installation%20Guide.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Rendered pages10/11, rear AC locations for1016/1024/1016D/1024D; older family guide used only for chassis geometry.",
+            "sha256": "62e515011ab3f4d8cc0c2db2d72999ff2e17de2db5396fa85c327d2a4e9e0144",
+            "bytes": 2831427
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/tpl-rack/guide-page-1.png",
+            "sha256": "f5af3754d0550e7cbaaa15a90b40b6e80ad40e77acac4112cbce1bf44f630cbe",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/tpl-rack-guide/guide-page-10.png",
+            "sha256": "29f63a0126e930140c5d5aa174646e8d866b540e68a57feef0df81ce89a8ee5c",
+            "view": "rear",
+            "match": "manufacturer_family_revision_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Rear is the manufacturer installation-guide family geometry from an earlier revision; exact current power source/count is confirmed in the pinned datasheet. No new-revision rear photo is asserted.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "netgear-gs105-v5",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "NETGEAR",
+          "family": "Gigabit Unmanaged",
+          "model": "GS105v5",
+          "sku": "GS105v5"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.downloads.netgear.com/files/GDC/GS116v3/GS105v5_GS108v4_GS116v3_DS.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 94,
+          "height": 27,
+          "depth": 100
+        },
+        "color": "#253d66",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 5,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 650.0,
+            "height": 143.0,
+            "plate": {
+              "x": 1.3,
+              "y": 1.3,
+              "w": 647.4,
+              "h": 126.75,
+              "fill": "#253d66",
+              "stroke": "#69737b",
+              "radius": 3.9
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 11.7,
+                "y": 17.55,
+                "text": "NETGEAR",
+                "size": 12.35,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 549.25,
+                "y": 17.55,
+                "text": "GS105",
+                "size": 9.75,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 16.25,
+                "y": 112.45,
+                "w": 6.5,
+                "h": 3.9,
+                "fill": "#7c9069",
+                "stroke": "#71808c",
+                "radius": 0.0
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ]
+                ],
+                "x": 71.5,
+                "y": 45.5,
+                "dx": 105.95,
+                "dy": 24.7,
+                "w": 92.3,
+                "h": 55.25
+              }
+            ]
+          },
+          "rear": {
+            "width": 650.0,
+            "height": 143.0,
+            "plate": {
+              "x": 1.3,
+              "y": 1.3,
+              "w": 647.4,
+              "h": 126.75,
+              "fill": "#253d66",
+              "stroke": "#69737b",
+              "radius": 3.9
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 42.25,
+                "y": 39.0,
+                "w": 4.55,
+                "h": 13.65,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0.0
+              },
+              {
+                "kind": "circle",
+                "cx": 568.75,
+                "cy": 78.65,
+                "r": 7.8,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 541.45,
+                "y": 99.45,
+                "text": "DC IN",
+                "size": 6.5,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS116v3/GS105v5_GS108v4_GS116v3_DS.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "c6caba9218f146f33214ae837b4b7bcd2b41a8d7eafed3bb205edd9b55fb72fd",
+            "bytes": 437403
+          },
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS105V5/GS105v5_GS108v4_IG_EN.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Rendered and inspected front panel and available power illustration.",
+            "sha256": "cd37c0705008a062d94773abcfd307faab4f5bd6453cdf61a6f8cb21d3f3b4d3",
+            "bytes": 645421
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/netgear105108-guide/guide-page-1.png",
+            "sha256": "b695d9ba6086b1a7c1904191f0ab5e886a4bbaf871e1081dd79534115d25693d",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/netgear-gs105.rear.png",
+            "sha256": "6da44aa33c1210853f891f852acfdc12571a342216a14e5260e702db43ef8f4c",
+            "view": "rear",
+            "match": "community_family_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Rear DC geometry is based on an unversioned NetBox GS105 family drawing, not an exact rear photo of this hardware revision.",
+          "Pinned2025 datasheet lists94x100x27mm; older installation literature gives100.8x94x25.9mm. Nominal datasheet dimensions retained explicitly; not mechanical certification.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "netgear-gs108-v4",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "NETGEAR",
+          "family": "Gigabit Unmanaged",
+          "model": "GS108v4",
+          "sku": "GS108v4"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.downloads.netgear.com/files/GDC/GS116v3/GS105v5_GS108v4_GS116v3_DS.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 158,
+          "height": 27,
+          "depth": 102
+        },
+        "color": "#253d66",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 8,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#253d66",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 27,
+                "text": "NETGEAR",
+                "size": 19,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 845,
+                "y": 27,
+                "text": "GS108",
+                "size": 15,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 133,
+                "w": 10,
+                "h": 6,
+                "fill": "#7c9069",
+                "stroke": "#71808c",
+                "radius": 0
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                ],
+                "x": 95,
+                "y": 61,
+                "dx": 108,
+                "dy": 38,
+                "w": 95,
+                "h": 57
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#253d66",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 65,
+                "y": 60,
+                "w": 7,
+                "h": 21,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 875,
+                "cy": 99.00000000000001,
+                "r": 12,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 833,
+                "y": 131.0,
+                "text": "DC IN",
+                "size": 10,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS116v3/GS105v5_GS108v4_GS116v3_DS.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "c6caba9218f146f33214ae837b4b7bcd2b41a8d7eafed3bb205edd9b55fb72fd",
+            "bytes": 437403
+          },
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS105V5/GS105v5_GS108v4_IG_EN.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Rendered and inspected front panel and available power illustration.",
+            "sha256": "cd37c0705008a062d94773abcfd307faab4f5bd6453cdf61a6f8cb21d3f3b4d3",
+            "bytes": 645421
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/netgear105108-guide/guide-page-1.png",
+            "sha256": "b695d9ba6086b1a7c1904191f0ab5e886a4bbaf871e1081dd79534115d25693d",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/netgear-gs105.rear.png",
+            "sha256": "6da44aa33c1210853f891f852acfdc12571a342216a14e5260e702db43ef8f4c",
+            "view": "rear",
+            "match": "community_family_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Rear DC geometry is based on an unversioned NetBox GS105 family drawing, not an exact rear photo of this hardware revision.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "netgear-gs116-v3",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "NETGEAR",
+          "family": "Gigabit Unmanaged",
+          "model": "GS116v3",
+          "sku": "GS116v3"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.downloads.netgear.com/files/GDC/GS116v3/GS105v5_GS108v4_GS116v3_DS.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 286,
+          "height": 27,
+          "depth": 102
+        },
+        "color": "#929397",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 16,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 140,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 115,
+              "fill": "#929397",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 27,
+                "text": "NETGEAR",
+                "size": 19,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 845,
+                "y": 27,
+                "text": "GS116",
+                "size": 15,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 93,
+                "w": 10,
+                "h": 6,
+                "fill": "#7c9069",
+                "stroke": "#71808c",
+                "radius": 0
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                ],
+                "x": 90,
+                "y": 51,
+                "dx": 54,
+                "dy": 38,
+                "w": 47,
+                "h": 34
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 140,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 115,
+              "fill": "#929397",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 65,
+                "y": 60,
+                "w": 7,
+                "h": 21,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 875,
+                "cy": 77.0,
+                "r": 12,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 833,
+                "y": 109.0,
+                "text": "DC IN",
+                "size": 10,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "vent",
+                "x": 230,
+                "y": 45,
+                "w": 495,
+                "h": 47,
+                "count": 48
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS116v3/GS105v5_GS108v4_GS116v3_DS.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "c6caba9218f146f33214ae837b4b7bcd2b41a8d7eafed3bb205edd9b55fb72fd",
+            "bytes": 437403
+          },
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS116v3/GS116v3_IG_EN.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Rendered and inspected front panel and available power illustration.",
+            "sha256": "35c644da940c269978dcccffae99e72114848912a995d87afa55f8c1df0ea152",
+            "bytes": 951176
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/netgear116-guide/guide-page-1.png",
+            "sha256": "e0bf8e601100e42c8ae8b71a4206226a5f15ffebe9a3548b406b5413b481f066",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/netgear116-guide/guide-page-1.png",
+            "sha256": "e0bf8e601100e42c8ae8b71a4206226a5f15ffebe9a3548b406b5413b481f066",
+            "view": "rear",
+            "match": "manufacturer_exact_model_figure"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "netgear-gs308-v3",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "NETGEAR",
+          "family": "Gigabit Unmanaged",
+          "model": "GS308v3",
+          "sku": "GS308v3"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.downloads.netgear.com/files/GDC/GS316v3/Gigabit_Unmanaged_Essentials_Switch_DS.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 158,
+          "height": 29,
+          "depth": 101
+        },
+        "color": "#303133",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 8,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#303133",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 27,
+                "text": "NETGEAR",
+                "size": 19,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 845,
+                "y": 27,
+                "text": "GS308",
+                "size": 15,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 133,
+                "w": 10,
+                "h": 6,
+                "fill": "#7c9069",
+                "stroke": "#71808c",
+                "radius": 0
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                ],
+                "x": 95,
+                "y": 61,
+                "dx": 108,
+                "dy": 38,
+                "w": 95,
+                "h": 57
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#303133",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 65,
+                "y": 60,
+                "w": 7,
+                "h": 21,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 875,
+                "cy": 99.00000000000001,
+                "r": 12,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 833,
+                "y": 131.0,
+                "text": "DC IN",
+                "size": 10,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 660,
+                "y": 90,
+                "w": 22,
+                "h": 10,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "text",
+                "x": 645,
+                "y": 123,
+                "text": "ON/OFF",
+                "size": 9,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS316v3/Gigabit_Unmanaged_Essentials_Switch_DS.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "529ded90f967d597e26a81e03585c503685ac0f276838b3841772bdc9decefd0",
+            "bytes": 673347
+          },
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS308v3/GS305v3_GS308v3_IG_EN.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Rendered and inspected front panel and available power illustration.",
+            "sha256": "f1d97364067f8a0562541c03d2b115f2c0393075b6ed907ab85c3f2d02aaee4f",
+            "bytes": 803919
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/netgear308-guide/guide-page-1.png",
+            "sha256": "bacb35e4448df60445b82274bca2032feea34b0778eab147787e176c31741863",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/netgear-gs105.rear.png",
+            "sha256": "6da44aa33c1210853f891f852acfdc12571a342216a14e5260e702db43ef8f4c",
+            "view": "rear",
+            "match": "community_family_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Rear DC geometry is based on an unversioned NetBox GS105 family drawing, not an exact rear photo of this hardware revision.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "netgear-gs316-v3",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "NETGEAR",
+          "family": "Gigabit Unmanaged",
+          "model": "GS316v3",
+          "sku": "GS316v3"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.downloads.netgear.com/files/GDC/GS316v3/Gigabit_Unmanaged_Essentials_Switch_DS.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 286,
+          "height": 27,
+          "depth": 102
+        },
+        "color": "#303133",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 16,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 140,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 115,
+              "fill": "#303133",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 27,
+                "text": "NETGEAR",
+                "size": 19,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 845,
+                "y": 27,
+                "text": "GS316",
+                "size": 15,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 93,
+                "w": 10,
+                "h": 6,
+                "fill": "#7c9069",
+                "stroke": "#71808c",
+                "radius": 0
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                ],
+                "x": 90,
+                "y": 51,
+                "dx": 54,
+                "dy": 38,
+                "w": 47,
+                "h": 34
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 140,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 115,
+              "fill": "#303133",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 65,
+                "y": 60,
+                "w": 7,
+                "h": 21,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 875,
+                "cy": 77.0,
+                "r": 12,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 833,
+                "y": 109.0,
+                "text": "DC IN",
+                "size": 10,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "vent",
+                "x": 230,
+                "y": 45,
+                "w": 495,
+                "h": 47,
+                "count": 48
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS316v3/Gigabit_Unmanaged_Essentials_Switch_DS.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "529ded90f967d597e26a81e03585c503685ac0f276838b3841772bdc9decefd0",
+            "bytes": 673347
+          },
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS316v3/GS316v3_IG_EN.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Rendered and inspected front panel and available power illustration.",
+            "sha256": "dcc84becc55c1986f0459a014d7ee637f67f6a6efbe0eec7bc529deafe58304d",
+            "bytes": 974913
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/netgear316-guide/guide-page-1.png",
+            "sha256": "9bb7244c4823a67f1d0c8cc0619510c933d5baf1c16a73e5aafe16ebd2a4b3ca",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/netgear316-guide/guide-page-1.png",
+            "sha256": "9bb7244c4823a67f1d0c8cc0619510c933d5baf1c16a73e5aafe16ebd2a4b3ca",
+            "view": "rear",
+            "match": "manufacturer_exact_model_figure"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "netgear-gs324-v2",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "NETGEAR",
+          "family": "Gigabit Unmanaged",
+          "model": "GS324v2",
+          "sku": "GS324v2"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.downloads.netgear.com/files/GDC/GS316v3/Gigabit_Unmanaged_Essentials_Switch_DS.pdf",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 252,
+          "height": 44,
+          "depth": 180
+        },
+        "color": "#303133",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 24,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC inlet",
+            "prefix": "AC",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#303133",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 27,
+                "text": "NETGEAR",
+                "size": 19,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 845,
+                "y": 27,
+                "text": "GS324",
+                "size": 15,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 133,
+                "w": 10,
+                "h": 6,
+                "fill": "#7c9069",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 50,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 50,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 50,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 65,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 65,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 65,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 80,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 80,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 80,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 95,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 95,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 95,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 110,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 110,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 110,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 125,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 125,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 125,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 140,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 140,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 140,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 155,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 155,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 155,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 170,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 170,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 170,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 185,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 185,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 185,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 200,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 200,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 200,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 215,
+                "cy": 55,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 215,
+                "cy": 74,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 215,
+                "cy": 93,
+                "r": 2.5,
+                "fill": "#87a16e",
+                "stroke": "#71808c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7,
+                    9,
+                    11
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8,
+                    10,
+                    12
+                  ]
+                ],
+                "x": 290,
+                "y": 60,
+                "dx": 50,
+                "dy": 47,
+                "w": 44,
+                "h": 34
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    13,
+                    15,
+                    17,
+                    19,
+                    21,
+                    23
+                  ],
+                  [
+                    14,
+                    16,
+                    18,
+                    20,
+                    22,
+                    24
+                  ]
+                ],
+                "x": 640,
+                "y": 60,
+                "dx": 50,
+                "dy": 47,
+                "w": 44,
+                "h": 34
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#303133",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 65,
+                "y": 60,
+                "w": 7,
+                "h": 21,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "text",
+                "x": 810,
+                "y": 147,
+                "text": "100-240V AC",
+                "size": 10,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 850,
+                "y": 62,
+                "dx": 48,
+                "dy": 38,
+                "w": 75,
+                "h": 59,
+                "labels": {
+                  "1": "AC IN"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS316v3/Gigabit_Unmanaged_Essentials_Switch_DS.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "529ded90f967d597e26a81e03585c503685ac0f276838b3841772bdc9decefd0",
+            "bytes": 673347
+          },
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS324v2/GS324v2_IG_EN.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Rendered and inspected front panel and available power illustration.",
+            "sha256": "2edbcd455ac469d8a701a7187ae6b3388fc1708115ceee32b97882e0299987db",
+            "bytes": 736069
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/netgear324-guide/guide-page-1.png",
+            "sha256": "f2738c9beac881bfc3d64c65b32dab62c80f2c441d53a42eb5244d98e9684089",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/gs348-images/GS348_21Mar17_back.png",
+            "sha256": "f08fd48faef51fae6cfd27665518a000b7ef24f835c80b3ed2185dbcc9eb5063",
+            "view": "rear",
+            "match": "manufacturer_family_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Rear AC position uses inspected same-family GS348 manufacturer photo; no exact GS324v2 rear image was downloaded.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "netgear-gs348",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "NETGEAR",
+          "family": "Gigabit Unmanaged",
+          "model": "GS348",
+          "sku": "GS348"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.downloads.netgear.com/files/GDC/GS316v3/Gigabit_Unmanaged_Essentials_Switch_DS.pdf",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 440,
+          "height": 43.3,
+          "depth": 204
+        },
+        "color": "#27251f",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 48,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC inlet",
+            "prefix": "AC",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#27251f",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 27,
+                "text": "NETGEAR",
+                "size": 19,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 845,
+                "y": 27,
+                "text": "GS348",
+                "size": 15,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 25,
+                "y": 133,
+                "w": 10,
+                "h": 6,
+                "fill": "#7c9069",
+                "stroke": "#71808c",
+                "radius": 0
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7,
+                    9,
+                    11
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8,
+                    10,
+                    12
+                  ]
+                ],
+                "x": 110,
+                "y": 60,
+                "dx": 30,
+                "dy": 47,
+                "w": 27,
+                "h": 34
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    13,
+                    15,
+                    17,
+                    19,
+                    21,
+                    23
+                  ],
+                  [
+                    14,
+                    16,
+                    18,
+                    20,
+                    22,
+                    24
+                  ]
+                ],
+                "x": 325,
+                "y": 60,
+                "dx": 30,
+                "dy": 47,
+                "w": 27,
+                "h": 34
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    25,
+                    27,
+                    29,
+                    31,
+                    33,
+                    35
+                  ],
+                  [
+                    26,
+                    28,
+                    30,
+                    32,
+                    34,
+                    36
+                  ]
+                ],
+                "x": 540,
+                "y": 60,
+                "dx": 30,
+                "dy": 47,
+                "w": 27,
+                "h": 34
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    37,
+                    39,
+                    41,
+                    43,
+                    45,
+                    47
+                  ],
+                  [
+                    38,
+                    40,
+                    42,
+                    44,
+                    46,
+                    48
+                  ]
+                ],
+                "x": 755,
+                "y": 60,
+                "dx": 30,
+                "dy": 47,
+                "w": 27,
+                "h": 34
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#27251f",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 65,
+                "y": 60,
+                "w": 7,
+                "h": 21,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "text",
+                "x": 810,
+                "y": 147,
+                "text": "100-240V AC",
+                "size": 10,
+                "fill": "#e1e4e6",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 850,
+                "y": 62,
+                "dx": 48,
+                "dy": 38,
+                "w": 75,
+                "h": 59,
+                "labels": {
+                  "1": "AC IN"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.downloads.netgear.com/files/GDC/GS316v3/Gigabit_Unmanaged_Essentials_Switch_DS.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "529ded90f967d597e26a81e03585c503685ac0f276838b3841772bdc9decefd0",
+            "bytes": 673347
+          },
+          {
+            "url": "https://www.downloads.netgear.com/files/GS348_IG.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Rendered and inspected front panel and available power illustration.",
+            "sha256": "e758bc7d47b1c206eec5a6e25ee1e0c304a8287a356fd414178fa5f814b469b2",
+            "bytes": 913091
+          },
+          {
+            "url": "https://downloads1.netgear.com/files/netgear/images/GS348-High-Res-Images.zip",
+            "kind": "manufacturer_document",
+            "observed": "Manufacturer high-resolution photo archive; only front/back TIFF rendered to PNG for inspection, member hashes retained.",
+            "sha256": "4a0f433d9512d29ba5fbb195c8fdf58d5632811a0beb997000b04d4eabb5c9a1",
+            "bytes": 17132373
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/gs348-images/GS348_21Mar17_front.png",
+            "sha256": "2e91505832d5e7a5472ad8fa97b1a27f4820284bbfb80eea14cc7f8d583a8c5c",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/gs348-images/GS348_21Mar17_back.png",
+            "sha256": "f08fd48faef51fae6cfd27665518a000b7ef24f835c80b3ed2185dbcc9eb5063",
+            "view": "rear",
+            "match": "manufacturer_exact_model_figure"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "GS348 geometry/dimensions follow2017 installation guide and dated manufacturer photo pack. Essentials family datasheet reports440x202x43mm instead of440x204x43.3mm; variants/rounding not silently mixed.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "dlink-dgs-105-e1",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "D-Link",
+          "family": "Gigabit Unmanaged E1",
+          "model": "DGS-105 E1",
+          "sku": "DGS-105/E1"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www2.dlink.com/uk/en/-/media/business_products/dgs/dgs-105/datasheet/dgs_105_108_e1_datasheet_en.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 90.9,
+          "height": 22.4,
+          "depth": 85
+        },
+        "color": "#373432",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 5,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 650.0,
+            "height": 117.0,
+            "plate": {
+              "x": 1.3,
+              "y": 1.3,
+              "w": 647.4,
+              "h": 100.75,
+              "fill": "#373432",
+              "stroke": "#69737b",
+              "radius": 3.9
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 11.7,
+                "y": 94.9,
+                "text": "D-Link DGS-105",
+                "size": 11.7,
+                "fill": "#b8b8b6",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ]
+                ],
+                "x": 29.25,
+                "y": 27.95,
+                "dx": 110.5,
+                "dy": 24.7,
+                "w": 96.2,
+                "h": 42.9
+              }
+            ]
+          },
+          "rear": {
+            "width": 650.0,
+            "height": 117.0,
+            "plate": {
+              "x": 1.3,
+              "y": 1.3,
+              "w": 647.4,
+              "h": 100.75,
+              "fill": "#373432",
+              "stroke": "#69737b",
+              "radius": 3.9
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 19.5,
+                "y": 94.25,
+                "text": "DC input on right side",
+                "size": 5.85,
+                "fill": "#b8b8b6",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www2.dlink.com/uk/en/-/media/business_products/dgs/dgs-105/datasheet/dgs_105_108_e1_datasheet_en.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "4fc3e9fa9b27fbe1004e41454ecaf63fc144d0ce838fc64e4e8da68435422f6e",
+            "bytes": 492971
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/dlink-small/guide-page-1.png",
+            "sha256": "23c504f516b36b226f7fce8a96e3b5e199c518fda0f9cad1314ce6d8e69cad63",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/dlink-small/guide-page-1.png",
+            "sha256": "23c504f516b36b226f7fce8a96e3b5e199c518fda0f9cad1314ce6d8e69cad63",
+            "view": "rear",
+            "match": "manufacturer_side_view_only"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "E1 DC input and status lamp are on the right side in the manufacturer perspective. Rear shell is a conservative plain representation; no exact rear image inspected. Side connector is inert and is not relocated as an electrical AC endpoint.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "dlink-dgs-108-e1",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "D-Link",
+          "family": "Gigabit Unmanaged E1",
+          "model": "DGS-108 E1",
+          "sku": "DGS-108/E1"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www2.dlink.com/uk/en/-/media/business_products/dgs/dgs-105/datasheet/dgs_105_108_e1_datasheet_en.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 138.65,
+          "height": 22.4,
+          "depth": 85
+        },
+        "color": "#373432",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 8,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#373432",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 146,
+                "text": "D-Link DGS-108",
+                "size": 18,
+                "fill": "#b8b8b6",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                ],
+                "x": 45,
+                "y": 43,
+                "dx": 108,
+                "dy": 38,
+                "w": 93,
+                "h": 66
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#373432",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 145,
+                "text": "DC input on right side",
+                "size": 9,
+                "fill": "#b8b8b6",
+                "anchor": "start"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www2.dlink.com/uk/en/-/media/business_products/dgs/dgs-105/datasheet/dgs_105_108_e1_datasheet_en.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "4fc3e9fa9b27fbe1004e41454ecaf63fc144d0ce838fc64e4e8da68435422f6e",
+            "bytes": 492971
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/dlink-small/guide-page-1.png",
+            "sha256": "23c504f516b36b226f7fce8a96e3b5e199c518fda0f9cad1314ce6d8e69cad63",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/dlink-small/guide-page-1.png",
+            "sha256": "23c504f516b36b226f7fce8a96e3b5e199c518fda0f9cad1314ce6d8e69cad63",
+            "view": "rear",
+            "match": "manufacturer_side_view_only"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "E1 DC input and status lamp are on the right side in the manufacturer perspective. Rear shell is a conservative plain representation; no exact rear image inspected. Side connector is inert and is not relocated as an electrical AC endpoint.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "dlink-dgs-1016d-j1",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "D-Link",
+          "family": "Gigabit Unmanaged J1",
+          "model": "DGS-1016D J1",
+          "sku": "DGS-1016D/J1"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www2.dlink.com/en/-/media/product-pages/dgs/1024d/dgs1016d1024dj1datasheetv101ww.pdf",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 280,
+          "height": 44,
+          "depth": 126
+        },
+        "color": "#353331",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 16,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC inlet",
+            "prefix": "AC",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#353331",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 31,
+                "text": "D-Link",
+                "size": 21,
+                "fill": "#d7d7d3",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 147,
+                "text": "DGS-1016D",
+                "size": 11,
+                "fill": "#d7d7d3",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 452,
+                "y": 107,
+                "w": 29,
+                "h": 10,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 150,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 150,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 150,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 167,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 167,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 167,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 184,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 184,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 184,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 201,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 201,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 201,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 218,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 218,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 218,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 235,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 235,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 235,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 252,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 252,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 252,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 269,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 269,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 269,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8
+                  ]
+                ],
+                "x": 510,
+                "y": 62,
+                "dx": 44,
+                "dy": 46,
+                "w": 38,
+                "h": 34
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    9,
+                    11,
+                    13,
+                    15
+                  ],
+                  [
+                    10,
+                    12,
+                    14,
+                    16
+                  ]
+                ],
+                "x": 715,
+                "y": 62,
+                "dx": 44,
+                "dy": 46,
+                "w": 38,
+                "h": 34
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#353331",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 55,
+                "y": 80,
+                "w": 18,
+                "h": 7,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 500,
+                "cy": 93,
+                "r": 8,
+                "fill": "#b6b7b4",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 450,
+                "y": 71,
+                "text": "SWITCH GND",
+                "size": 10,
+                "fill": "#d7d7d3",
+                "anchor": "start"
+              },
+              {
+                "kind": "circle",
+                "cx": 847,
+                "cy": 140,
+                "r": 4,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 745,
+                "y": 151,
+                "text": "100-240V AC",
+                "size": 9,
+                "fill": "#d7d7d3",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 805,
+                "y": 62,
+                "dx": 48,
+                "dy": 38,
+                "w": 83,
+                "h": 62,
+                "labels": {
+                  "1": "AC IN"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www2.dlink.com/en/-/media/product-pages/dgs/1024d/dgs1016d1024dj1datasheetv101ww.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "255c616948f7790a5720412e7e13bba4a73ad61ec3fb8bbc354856d7360b2780",
+            "bytes": 449131
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/dlink-d/guide-page-1.png",
+            "sha256": "a14b10e61a326a592a850c9fb3f718b3867477a95ec8cd595f454a2932582eac",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/dgs1016d-j1-rear.png",
+            "sha256": "09baf3e7f3d5f5fade30c6374440f0f71a9aac7d7e48c8a0ac91b6ca4e2bf714",
+            "view": "rear",
+            "match": "manufacturer_exact_model_photo"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Pinned J1v1.01 datasheet dimensions280x126x44mm take precedence over inconsistent current HTML280x180x44mm.",
+          "Rear16D manufacturer photograph has0.35A marking matching J1datasheet;24D uses this family geometry, not a separately inspected24D rear photo. DIP controls are decorative.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "dlink-dgs-1024d-j1",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "D-Link",
+          "family": "Gigabit Unmanaged J1",
+          "model": "DGS-1024D J1",
+          "sku": "DGS-1024D/J1"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www2.dlink.com/en/-/media/product-pages/dgs/1024d/dgs1016d1024dj1datasheetv101ww.pdf",
+          "assets": []
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 280,
+          "height": 44,
+          "depth": 126
+        },
+        "color": "#353331",
+        "slots": [],
+        "groups": [
+          {
+            "key": "front-lan",
+            "type": "rj45",
+            "count": 24,
+            "face": "front",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          },
+          {
+            "key": "rear-ac",
+            "type": "power",
+            "count": 1,
+            "face": "rear",
+            "name": "AC inlet",
+            "prefix": "AC",
+            "powerRole": "inlet"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#353331",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 31,
+                "text": "D-Link",
+                "size": 21,
+                "fill": "#d7d7d3",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 18,
+                "y": 147,
+                "text": "DGS-1024D",
+                "size": 11,
+                "fill": "#d7d7d3",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 292,
+                "y": 107,
+                "w": 29,
+                "h": 10,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 150,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 150,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 150,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 167,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 167,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 167,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 184,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 184,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 184,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 201,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 201,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 201,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 218,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 218,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 218,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 235,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 235,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 235,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 252,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 252,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 252,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 269,
+                "cy": 59,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 269,
+                "cy": 77,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 269,
+                "cy": 95,
+                "r": 2.5,
+                "fill": "#789259",
+                "stroke": "#71808c"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    1,
+                    3,
+                    5,
+                    7
+                  ],
+                  [
+                    2,
+                    4,
+                    6,
+                    8
+                  ]
+                ],
+                "x": 350,
+                "y": 62,
+                "dx": 44,
+                "dy": 46,
+                "w": 38,
+                "h": 34
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    9,
+                    11,
+                    13,
+                    15
+                  ],
+                  [
+                    10,
+                    12,
+                    14,
+                    16
+                  ]
+                ],
+                "x": 555,
+                "y": 62,
+                "dx": 44,
+                "dy": 46,
+                "w": 38,
+                "h": 34
+              },
+              {
+                "groupKey": "front-lan",
+                "rows": [
+                  [
+                    17,
+                    19,
+                    21,
+                    23
+                  ],
+                  [
+                    18,
+                    20,
+                    22,
+                    24
+                  ]
+                ],
+                "x": 760,
+                "y": 62,
+                "dx": 44,
+                "dy": 46,
+                "w": 38,
+                "h": 34
+              }
+            ]
+          },
+          "rear": {
+            "width": 1000,
+            "height": 180,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 155,
+              "fill": "#353331",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 55,
+                "y": 80,
+                "w": 18,
+                "h": 7,
+                "fill": "#1b242c",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 500,
+                "cy": 93,
+                "r": 8,
+                "fill": "#b6b7b4",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 450,
+                "y": 71,
+                "text": "SWITCH GND",
+                "size": 10,
+                "fill": "#d7d7d3",
+                "anchor": "start"
+              },
+              {
+                "kind": "circle",
+                "cx": 847,
+                "cy": 140,
+                "r": 4,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 745,
+                "y": 151,
+                "text": "100-240V AC",
+                "size": 9,
+                "fill": "#d7d7d3",
+                "anchor": "start"
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-ac",
+                "rows": [
+                  [
+                    1
+                  ]
+                ],
+                "x": 805,
+                "y": 62,
+                "dx": 48,
+                "dy": 38,
+                "w": 83,
+                "h": 62,
+                "labels": {
+                  "1": "AC IN"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www2.dlink.com/en/-/media/product-pages/dgs/1024d/dgs1016d1024dj1datasheetv101ww.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "255c616948f7790a5720412e7e13bba4a73ad61ec3fb8bbc354856d7360b2780",
+            "bytes": 449131
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/dlink-d/guide-page-1.png",
+            "sha256": "a14b10e61a326a592a850c9fb3f718b3867477a95ec8cd595f454a2932582eac",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/dgs1016d-j1-rear.png",
+            "sha256": "09baf3e7f3d5f5fade30c6374440f0f71a9aac7d7e48c8a0ac91b6ca4e2bf714",
+            "view": "rear",
+            "match": "manufacturer_family_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "Pinned J1v1.01 datasheet dimensions280x126x44mm take precedence over inconsistent current HTML280x180x44mm.",
+          "Rear16D manufacturer photograph has0.35A marking matching J1datasheet;24D uses this family geometry, not a separately inspected24D rear photo. DIP controls are decorative.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "dlink-dgs-1016a-b1",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "D-Link",
+          "family": "Gigabit Unmanaged B1",
+          "model": "DGS-1016A B1",
+          "sku": "DGS-1016A/B1"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www2.dlink.com/en/-/media/business_products/dgs/dgs-1016a/datasheet/dgs1016a1024ab1datasheetv100ww.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 231,
+          "height": 46,
+          "depth": 158
+        },
+        "color": "#343231",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 16,
+            "face": "rear",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 200,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 175,
+              "fill": "#343231",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 53,
+                "text": "D-Link",
+                "size": 26,
+                "fill": "#b0b0ac",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 35,
+                "y": 145,
+                "text": "DGS-1016A",
+                "size": 12,
+                "fill": "#a9aaa6",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 18,
+                "y": 23,
+                "w": 961,
+                "h": 7,
+                "fill": "#484541",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 280,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 280,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 324,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 324,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 368,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 368,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 412,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 412,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 456,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 456,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 500,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 500,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 544,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 544,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 588,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 588,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 200,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 175,
+              "fill": "#343231",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 920,
+                "cy": 126,
+                "r": 12,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 883,
+                "y": 157,
+                "text": "12V DC",
+                "size": 10,
+                "fill": "#a9aaa6",
+                "anchor": "start"
+              },
+              {
+                "kind": "vent",
+                "x": 20,
+                "y": 24,
+                "w": 950,
+                "h": 9,
+                "count": 30
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    15,
+                    13,
+                    11,
+                    9
+                  ],
+                  [
+                    16,
+                    14,
+                    12,
+                    10
+                  ]
+                ],
+                "x": 220,
+                "y": 68,
+                "dx": 57,
+                "dy": 48,
+                "w": 50,
+                "h": 37
+              },
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    7,
+                    5,
+                    3,
+                    1
+                  ],
+                  [
+                    8,
+                    6,
+                    4,
+                    2
+                  ]
+                ],
+                "x": 485,
+                "y": 68,
+                "dx": 57,
+                "dy": 48,
+                "w": 50,
+                "h": 37
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www2.dlink.com/en/-/media/business_products/dgs/dgs-1016a/datasheet/dgs1016a1024ab1datasheetv100ww.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "3452d695209f678aa6cf111460c49f47a52b476d5376d951207bc525869bfb9c",
+            "bytes": 923583
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/dlink-a/guide-page-1.png",
+            "sha256": "5b56429e485400de5a88f3a4d6f16819b0db632aa883390b4d8c6364f58809d3",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/dgs1016a-rear.png",
+            "sha256": "f95c60c75818ec40340644d8e014c4e0437200d4df80cf4956e5efe0f0e5c996",
+            "view": "rear",
+            "match": "manufacturer_model_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "B1 plastic chassis only, not later metal/AC regional variants. Numbering checked in manufacturer rear photos: odd upper/even lower, descending left to right in rear view. No internal AC input.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    },
+    {
+      "definition": {
+        "key": "dlink-dgs-1024a-b1",
+        "revision": "batch50b-20261031-v1",
+        "identity": {
+          "manufacturer": "D-Link",
+          "family": "Gigabit Unmanaged B1",
+          "model": "DGS-1024A B1",
+          "sku": "DGS-1024A/B1"
+        },
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www2.dlink.com/en/-/media/business_products/dgs/dgs-1016a/datasheet/dgs1016a1024ab1datasheetv100ww.pdf",
+          "assets": []
+        },
+        "kind": "desktop",
+        "rackUnits": 0,
+        "dimensionsMm": {
+          "width": 257,
+          "height": 46,
+          "depth": 178
+        },
+        "color": "#343231",
+        "slots": [],
+        "groups": [
+          {
+            "key": "rear-lan",
+            "type": "rj45",
+            "count": 24,
+            "face": "rear",
+            "name": "LAN 1GbE",
+            "prefix": "",
+            "powerRole": "unspecified"
+          }
+        ],
+        "passthrough": null
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 200,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 175,
+              "fill": "#343231",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "text",
+                "x": 30,
+                "y": 53,
+                "text": "D-Link",
+                "size": 26,
+                "fill": "#b0b0ac",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 35,
+                "y": 145,
+                "text": "DGS-1024A",
+                "size": 12,
+                "fill": "#a9aaa6",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 18,
+                "y": 23,
+                "w": 961,
+                "h": 7,
+                "fill": "#484541",
+                "stroke": "#71808c",
+                "radius": 0
+              },
+              {
+                "kind": "circle",
+                "cx": 280,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 280,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 324,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 324,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 368,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 368,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 412,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 412,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 456,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 456,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 500,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 500,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 544,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 544,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 588,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 588,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 632,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 632,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 676,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 676,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 720,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 720,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 764,
+                "cy": 80,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "circle",
+                "cx": 764,
+                "cy": 105,
+                "r": 3,
+                "fill": "#749052",
+                "stroke": "#71808c"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 200,
+            "plate": {
+              "x": 2,
+              "y": 2,
+              "w": 996,
+              "h": 175,
+              "fill": "#343231",
+              "stroke": "#69737b",
+              "radius": 6
+            },
+            "decorations": [
+              {
+                "kind": "circle",
+                "cx": 920,
+                "cy": 126,
+                "r": 12,
+                "fill": "#1b242c",
+                "stroke": "#71808c"
+              },
+              {
+                "kind": "text",
+                "x": 883,
+                "y": 157,
+                "text": "12V DC",
+                "size": 10,
+                "fill": "#a9aaa6",
+                "anchor": "start"
+              },
+              {
+                "kind": "vent",
+                "x": 20,
+                "y": 24,
+                "w": 950,
+                "h": 9,
+                "count": 30
+              }
+            ],
+            "banks": [
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    23,
+                    21,
+                    19,
+                    17
+                  ],
+                  [
+                    24,
+                    22,
+                    20,
+                    18
+                  ]
+                ],
+                "x": 65,
+                "y": 68,
+                "dx": 57,
+                "dy": 48,
+                "w": 50,
+                "h": 37
+              },
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    15,
+                    13,
+                    11,
+                    9
+                  ],
+                  [
+                    16,
+                    14,
+                    12,
+                    10
+                  ]
+                ],
+                "x": 315,
+                "y": 68,
+                "dx": 57,
+                "dy": 48,
+                "w": 50,
+                "h": 37
+              },
+              {
+                "groupKey": "rear-lan",
+                "rows": [
+                  [
+                    7,
+                    5,
+                    3,
+                    1
+                  ],
+                  [
+                    8,
+                    6,
+                    4,
+                    2
+                  ]
+                ],
+                "x": 565,
+                "y": 68,
+                "dx": 57,
+                "dy": 48,
+                "w": 50,
+                "h": 37
+              }
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www2.dlink.com/en/-/media/business_products/dgs/dgs-1016a/datasheet/dgs1016a1024ab1datasheetv100ww.pdf",
+            "kind": "manufacturer_document",
+            "observed": "Downloaded official document; rendered front/dimensions/ports and cited rear figures inspected. Exact revision specified in identity or limits.",
+            "sha256": "3452d695209f678aa6cf111460c49f47a52b476d5376d951207bc525869bfb9c",
+            "bytes": 923583
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/dlink-a/guide-page-1.png",
+            "sha256": "5b56429e485400de5a88f3a4d6f16819b0db632aa883390b4d8c6364f58809d3",
+            "view": "front",
+            "match": "manufacturer_exact_model_figure"
+          },
+          {
+            "path": ".local/batch50b-network-396235643e414ca19c7e2b8d6c2141d9/images/dgs1024a-rear.jpg",
+            "sha256": "e1d20ad3d9b2a40385c951d8f6ec1c1f77856c06bb4ce9cb5be702969c65aec3",
+            "view": "rear",
+            "match": "manufacturer_model_reference"
+          }
+        ],
+        "limits": [
+          "Own flat schematic; indicators/buttons are decorative, no live telemetry.",
+          "Auxiliary USB/console/DC are non-connectable; external adapters and optical transceivers are not instantiated.",
+          "Dimensions are nominal; mounting clearances/load/ventilation require manufacturer instructions.",
+          "B1 plastic chassis only, not later metal/AC regional variants. Numbering checked in manufacturer rear photos: odd upper/even lower, descending left to right in rear view. No internal AC input.",
+          "No PoE, no SFP/optics, no combo interfaces. The fixed copper endpoints are Ethernet, never console."
+        ],
+        "dimensionsBasis": "Width x height x depth in mm from cited exact-model manufacturer table."
+      }
+    }
+  ]
+}

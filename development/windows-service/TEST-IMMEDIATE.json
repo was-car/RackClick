@@ -1,0 +1,15 @@
+{
+  "platform": "Windows",
+  "scmInstalled": false,
+  "postgresExecuted": false,
+  "fixturePath": "C:\\RackClick_SVR\\.local\\rackclick-service-nq3mdgjt",
+  "cases": [
+    {
+      "case": "immediate_stop_no_hang_five_iterations",
+      "passed": true
+    }
+  ],
+  "limits": [
+    "SCM start/stop under real standard service account not executed"
+  ]
+}

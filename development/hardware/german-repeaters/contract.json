@@ -1,0 +1,19 @@
+{
+  "formatVersion": 1,
+  "revision": "german-repeaters-20261103-v1",
+  "targetSchema": 45,
+  "previousDefinitions": 874,
+  "models": 10,
+  "newMountKind": "tabletop",
+  "typeDescriptors": {
+    "power": [
+      "eu-2pin-plug"
+    ]
+  },
+  "expectedPorts": 23,
+  "reserved": [
+    "No segunda generación Telekom ni revisión TP-Link inventada.",
+    "Devolo: dimensiones sin ejes inequívocos permanecen null.",
+    "No antenas como bocas ni enlaces Mesh implícitos."
+  ]
+}

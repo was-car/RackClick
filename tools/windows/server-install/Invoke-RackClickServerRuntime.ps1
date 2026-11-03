@@ -144,7 +144,7 @@ function Test-LauncherReadyBody {
     param($Body,[int]$ExpectedSchema)
     # The expected version comes from the externally authenticated, locked Stage.
     # A version supported by some other Stage is not readiness for this instance.
-    return $ExpectedSchema -in @(9,10,11,12,13,14,15) -and $Body -is [pscustomobject] -and
+    return $ExpectedSchema -in @(9,10,11,12,13,14,15,43,45) -and $Body -is [pscustomobject] -and
         $null -ne $Body.PSObject.Properties['status'] -and $Body.status -ceq 'ready' -and
         $null -ne $Body.PSObject.Properties['schemaVersion'] -and $Body.schemaVersion -is [int] -and $Body.schemaVersion -eq $ExpectedSchema
 }
@@ -246,7 +246,9 @@ try {
         if ([string]$key -like 'PG*' -or [string]$key -like 'ASPNETCORE_*' -or [string]$key -like 'DOTNET_*' -or [string]$key -like 'Kestrel__*' -or [string]$key -like 'Kestrel:*' -or [string]$key -like 'ConnectionStrings__*' -or [string]$key -like 'ConnectionStrings:*' -or [string]$key -like 'Bootstrap__*' -or [string]$key -like 'Bootstrap:*' -or [string]$key -like 'RackClick__*' -or [string]$key -like 'RackClick:*' -or [string]$key -in @('URLS','HTTP_PORTS','HTTPS_PORTS','PublicOrigin','DevelopmentLoopbackHttp')) { $appEnvironment[[string]$key]=$null }
     }
     $appEnvironment.ASPNETCORE_ENVIRONMENT=if ($null -eq $tls) { 'Development' } else { 'Production' }; $appEnvironment.ASPNETCORE_URLS=('https://'+$profile.origin.bind+':'+[string]$profile.origin.port)
-    $appEnvironment.ConnectionStrings__RackClick=$instance.runtimeConnectionString
+    foreach($key in @([Environment]::GetEnvironmentVariables().Keys)){if([string]$key-match'^(?i:SqlSecret)(?::|__|$)'){$appEnvironment[[string]$key]=$null}}
+    $sqlDefinition=if($instance.ContainsKey('sqlSecret')){$instance.sqlSecret}else{$null}
+    Set-SqlRuntimeEnvironment -Environment $appEnvironment -Definition $sqlDefinition -LegacyConnection $instance.runtimeConnectionString
     $appEnvironment.PublicOrigin=$effectiveOrigin; $appEnvironment.DevelopmentLoopbackHttp=if ($null -eq $tls) { 'true' } else { 'false' }
     if ($null -ne $tls) { $appEnvironment.Kestrel__Certificates__Default__Path=$tls.pfxPath; $appEnvironment.Kestrel__Certificates__Default__Password=$tls.password }
     if ($null -ne $control) { $appEnvironment.RackClick__ShutdownPipe=$control.pipe; $appEnvironment.RackClick__ShutdownToken=$control.token }

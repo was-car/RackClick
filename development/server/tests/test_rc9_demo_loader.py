@@ -1,6 +1,6 @@
 """Real PG17 tests for the pinned original-data loader; never an installed DB.
 
-Run with --publication <approved schema15 server folder>, --loader <tool DLL>
+Run with --publication <approved schema15 or45 server folder>, --loader <tool DLL>
 and --plan <canonical demo-plan.json>. No tools are installed or existing bases
 reused. Logs/credentials remain in the new private .local/labs directory.
 """
@@ -136,6 +136,16 @@ class Rc9DemoLoaderTests(unittest.TestCase):
     def test_migration_digest_mismatch_rejected(self):
         self.lab.sql(self.db, "UPDATE schema_migration SET digest=repeat('0',64) WHERE version=15")
         self.assertEqual(self.invoke()['code'], 'migration_digest_mismatch')
+        self.assert_untouched()
+
+    def test_unknown_schema_rejected_before_inventory_write(self):
+        self.lab.sql(self.db, "INSERT INTO schema_migration(version,digest) VALUES(999,repeat('0',64))")
+        self.assertEqual(self.invoke()['code'], 'schema_profile_unsupported')
+        self.assert_untouched()
+
+    def test_gap_in_schema_history_rejected_before_inventory_write(self):
+        self.lab.sql(self.db, "DELETE FROM schema_migration WHERE version=14")
+        self.assertEqual(self.invoke()['code'], 'schema_profile_unsupported')
         self.assert_untouched()
 
     def test_audit_failure_rolls_back_data_revision_and_receipt(self):

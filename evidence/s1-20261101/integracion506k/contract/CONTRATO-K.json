@@ -1,0 +1,121 @@
+{
+  "formatVersion": 1,
+  "state": "root_decisions_before_implementation_snapshot",
+  "baselineSchema": 39,
+  "baselineDefinitions": 752,
+  "rawHardwareTypes": [
+    "rj45",
+    "sfp",
+    "sfp28",
+    "sfp56",
+    "qsfp",
+    "qsfpdd",
+    "power",
+    "console",
+    "idc"
+  ],
+  "physicalConnector": {
+    "optional": true,
+    "unknown": null,
+    "groupField": "physicalConnector",
+    "csharpProperty": "Group.PhysicalConnector",
+    "portProperty": "properties.hardwarePhysicalConnector",
+    "meaning": "physical_form_classification_only",
+    "mutableByPortsUpdate": false,
+    "allowedByRawType": {
+      "power": [
+        "iec-c13",
+        "iec-c14",
+        "iec-c19",
+        "iec-c20",
+        "nema-5-15p",
+        "nema-5-15r",
+        "nema-5-20p",
+        "nema-5-20r",
+        "nema-l5-30p",
+        "nema-l5-30r",
+        "nema-l6-20p",
+        "nema-l6-20r",
+        "nema-l6-30p",
+        "nema-l6-30r",
+        "iec60309-16a-2p-e-plug",
+        "iec60309-16a-2p-e-connector",
+        "iec60309-32a-2p-e-plug"
+      ],
+      "console": [
+        "serial-8p8c",
+        "serial-10p10c",
+        "serial-de9",
+        "serial-rj12"
+      ],
+      "idc": [
+        "idc-110",
+        "idc-dual-110-krone"
+      ]
+    },
+    "notes": [
+      "Power enum union comes from the power author preflight of28 candidates, not an electrical compatibility table.",
+      "NEMA5-20R/T-slot5-15/20R is one socket, never two endpoints.",
+      "IEC60309 tokens deliberately do not assert6h/IP44/voltage when not verified for each exact SKU. Preserve those per-model facts/unknowns in evidence.",
+      "Dual110/Krone accepts both tools; never rename a Krone-only terminal110."
+    ]
+  },
+  "powerLinks": {
+    "policy": "existing_RequirePowerPair_roles_and_raw_type_only",
+    "cordEnds": "unspecified",
+    "physicalConnectorRestrictsPairing": false,
+    "doesNotCertify": [
+      "IEC mating",
+      "voltage",
+      "current",
+      "protection",
+      "pinout",
+      "adapters",
+      "switching",
+      "redundancy",
+      "circuits"
+    ],
+    "legacyWithoutDescriptor": "unchanged",
+    "requiredPositiveCase": {
+      "fromRole": "outlet",
+      "fromDescriptor": "iec-c19",
+      "toRole": "inlet",
+      "toDescriptor": "iec-c14",
+      "expected": "allowed_generic_power_cord"
+    }
+  },
+  "continuity": {
+    "mapping": "one-to-one",
+    "tracingAvailable": false,
+    "allowedExtraPair": [
+      "rj45_front",
+      "idc_rear"
+    ],
+    "count": "sameCount_and_sameOrdinal",
+    "externalIdcLinks": "idc_to_idc_only"
+  },
+  "authoring": {
+    "api": "validate_model(row, expected_revision)",
+    "returns": "original_input_without_mutation",
+    "oldHelpers": "immutable",
+    "groupsMayBeEmptyForMechanicalProfiles": true,
+    "shelfRequiresVerifiedChildSlot": true,
+    "rackAccessoryWithoutChildSupport": {
+      "kind": "rack",
+      "groups": [],
+      "slots": [],
+      "providesChildMounting": false,
+      "selectedShelfAccessory": "nominal1U and verified physical body dimensions; no usable bay is inferred"
+    }
+  },
+  "pendingRootDecisions": [
+    "Exact source names and ownership after snapshot.",
+    "F2-424 desktopH222 needs a real sufficient parent; no existing190mm bay fits. Decide separate declared support profile or reserve."
+  ],
+  "reserved": [
+    "AP7950B vertical0U",
+    "VertivSA1-01002 sharedU",
+    "CabeusPDU-8P missing exact primary dimensions",
+    "Cabeus IDC exact body dimensions unresolved"
+  ]
+}

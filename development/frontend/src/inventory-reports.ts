@@ -1,3 +1,4 @@
+import {validConnectorDescriptor} from './hardware-connector-classification.mjs';
 import {ApiError,allows,type RackClickApi,type Session} from './api.ts';
 export type ReportFilter={reportKind:'ports'|'connections';query:string;status:string;family:string;rackId:string|null};
 export type ReportRequest=Readonly<{actorId:string;customerId:string;revision:number;requestId:string;body:string}>;
@@ -7,7 +8,7 @@ const invalid=():never=>{throw new ApiError(200,'response_invalid',true)};
 export function reportAllowed(api:RackClickApi,session:Session,customerId:string){return api.actorId===session.user.id&&allows(session,'inventory.read',customerId)&&allows(session,'reports.export',customerId)}
 export function prepareReport(api:RackClickApi,actorId:string,customerId:string,revision:number,filter:ReportFilter):ReportRequest{
  if(api.actorId!==actorId||!reportUuid(actorId))throw new ApiError(409,'actor_changed');
- if(!reportUuid(customerId)||!Number.isSafeInteger(revision)||revision<1||!keys(filter,'reportKind,query,status,family,rackId')||!['ports','connections'].includes(filter.reportKind)||typeof filter.query!=='string'||Array.from(filter.query).length>200||!['all','free','reserved','disabled','faulty'].includes(filter.status)||!['all','rj45','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c'].includes(filter.family)||filter.reportKind==='connections'&&(filter.status!=='all'||filter.family!=='all')||filter.rackId!==null&&!reportUuid(filter.rackId))throw new ApiError(422,'request_invalid');
+ if(!reportUuid(customerId)||!Number.isSafeInteger(revision)||revision<1||!keys(filter,'reportKind,query,status,family,rackId')||!['ports','connections'].includes(filter.reportKind)||typeof filter.query!=='string'||Array.from(filter.query).length>200||!['all','free','reserved','disabled','faulty'].includes(filter.status)||!['all','rj45','sfp','sfp28','qsfp','mgmt','console','power','usb_a','usb_c','sfp56','qsfpdd','idc','ipc','fiber','sfpdd','cfp2','sas','dsl','telephony','isdn','expansion','power_dc'].includes(filter.family)||filter.reportKind==='connections'&&(filter.status!=='all'||filter.family!=='all')||filter.rackId!==null&&!reportUuid(filter.rackId))throw new ApiError(422,'request_invalid');
  return Object.freeze({actorId,customerId,revision,requestId:crypto.randomUUID(),body:JSON.stringify(filter)});
 }
 export function parseReportCsv(text:string):string[][]{
@@ -26,6 +27,25 @@ export function parseReportCsv(text:string):string[][]{
 }
 export const portReportColumns='customer_id,source_revision,port_id,device_id,device_name,device_kind,rack_id,rack_name,room_id,room_name,site_id,site_name,building_id,building_name,group_id,group_name,type,family,gn,label,status,face,poe,watts,color,power_role,connected,connection_ids,peer_port_ids'.split(',');
 export const connectionReportColumns=['customer_id','source_revision','connection_id','note','color','patch','cross_rack',...portReportColumns.slice(2).map(k=>'from_'+k),...portReportColumns.slice(2).map(k=>'to_'+k)];
+export function reportColumns(kind:string,physical=false){
+ const ports=physical?[...portReportColumns,'physical_connector']:portReportColumns;
+ return kind==='ports'?ports:['customer_id','source_revision','connection_id','note','color','patch','cross_rack',...ports.slice(2).map(k=>'from_'+k),...ports.slice(2).map(k=>'to_'+k)];
+}
+// Exactly two closed layouts. Legacy data keeps its original header and bytes.
+export function validReportColumns(kind:string,rows:string[][]):boolean{
+ if(!rows.length||!['ports','connections'].includes(kind))return false;
+ const header=rows[0],same=(a:string[])=>JSON.stringify(a)===JSON.stringify(header);
+ if(rows.some(row=>row.length!==header.length))return false;
+ if(same(reportColumns(kind)))return true;
+ if(!same(reportColumns(kind,true)))return false;
+ const pairs=kind==='ports'?[['type','physical_connector']]:[['from_type','from_physical_connector'],['to_type','to_physical_connector']];
+ let present=false;
+ for(const row of rows.slice(1))for(const [type,key] of pairs){
+  const value=row[header.indexOf(key)];if(value!==''){if(!validConnectorDescriptor(row[header.indexOf(type)],value))return false;present=true;}
+ }
+ return present;
+}
+
 export const encodeReportValue=(value:string)=>value.startsWith("'")||/^[\t\r\n]/.test(value)||/^\p{White_Space}*[=+@-]/u.test(value)?"'"+value:value;
 export const decodeReportValue=(value:string)=>value.startsWith("'")?value.slice(1):value;
 export async function validateReportResult(data:any,operation:ReportRequest){
@@ -36,8 +56,7 @@ export async function validateReportResult(data:any,operation:ReportRequest){
  const sha=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes!)),n=>n.toString(16).padStart(2,'0')).join('');if(sha!==r.sha256)invalid();
  let text:string;try{text=new TextDecoder('utf-8',{fatal:true}).decode(bytes!);}catch{invalid();}
  const rows=parseReportCsv(text!);if(rows.length!==r.rowCount+1||!rows[0].length||rows.some((row,i)=>row.length!==rows[0].length||i>0&&row.some(cell=>encodeReportValue(decodeReportValue(cell))!==cell)))invalid();
- const columns=f.reportKind==='ports'?portReportColumns:connectionReportColumns;
- if(JSON.stringify(rows[0])!==JSON.stringify(columns))invalid();
+ if(!validReportColumns(f.reportKind,rows.map((row,index)=>index?row.map(decodeReportValue):row)))invalid();
  const ids=new Set();for(const row of rows.slice(1)){const decoded=row.map(decodeReportValue),id=decoded[2];if(decoded[0]!==operation.customerId||decoded[1]!==String(operation.revision)||!reportUuid(id)||ids.has(id))invalid();ids.add(id);}
  return {result:data,bytes:bytes!,rows};
 }

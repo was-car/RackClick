@@ -64,7 +64,7 @@ public sealed class UserPortColors(NpgsqlDataSource source)
             && properties.All(p => keys.Contains(p.Name, StringComparer.Ordinal));
     }
     private static readonly HashSet<string> AllowedTypes = new(StringComparer.Ordinal)
-        { "rj45", "rj45_poe", "sfp", "sfp28", "qsfp", "mgmt", "console", "power", "usb_a", "usb_c" };
+        { "rj45", "rj45_poe", "sfp", "sfp28", "sfp56", "qsfp", "qsfpdd", "mgmt", "console", "idc", "power", "usb_a", "usb_c", "ipc", "fiber", "sfpdd", "cfp2", "sas", "dsl", "telephony", "isdn", "expansion", "power_dc" };
     private static SortedDictionary<string, string> ParseColors(JsonElement input)
     {
         if (input.ValueKind != JsonValueKind.Object) throw new DomainError(422, "request_invalid");

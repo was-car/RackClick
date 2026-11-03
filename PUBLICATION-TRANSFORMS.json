@@ -1,18 +1,12 @@
 {
-  "date": "2026-10-30",
-  "scope": "private source selection from reviewed edition 10",
-  "originalWorkspaceEdited": false,
+  "date": "2026-11-03",
+  "scope": "private schema45 source selection",
+  "originalWorkspaceEdited": true,
   "transforms": [
     {
-      "path": "development/server/tests/RackClick.Quality.Tests/RecoveryChallengeTests.cs",
-      "sourceSha256": "d1bb6d2f0509ceffaab6480171e7457a24afd305927d19919f20fe23ceed15ba",
-      "exportedSha256": "7d20bac5ec16c15d6da08fe6c5f4098773ce0e4e78dd8d1611afac9f60ae326e",
-      "change": "Fixed fixture password replaced with local runtime CSPRNG; no product source change"
-    },
-    {
-      "path": "development/server/tests/RackClick.Quality.Tests/MfaHttpTests.cs",
-      "sourceSha256": "6131b00cbe9394a15e76f0f53e08dccbd51b93add7da76337cddc40b1d747ada",
-      "exportedSha256": "69233cfa84ec6313b17aadb7d4e4be8309faa10275e90990b8d343179301878d",
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaActiveKeyTests.cs",
+      "sourceSha256": "8ecd5956bb49cf9718220a611909c7fa0756738a89292f144fbaee84266ec521",
+      "exportedSha256": "da220cb451caf174bb3474a6b7e897897a5a27f8091927ce79340ca4ff2bbccb",
       "change": "Fixed fixture password replaced with local runtime CSPRNG; no product source change"
     },
     {
@@ -22,15 +16,15 @@
       "change": "Fixed fixture password replaced with local runtime CSPRNG; no product source change"
     },
     {
-      "path": "development/server/tests/RackClick.Quality.Tests/MfaStoreTests.cs",
-      "sourceSha256": "5a58b1ed5be2a61339fdd5094cc791d62b42320308b8f90309243b512b2666a0",
-      "exportedSha256": "7a7eb77c4ba77e5b0bbf6ef975ab28381012761b8ae93acb7d9498f51f8c333f",
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaHttpTests.cs",
+      "sourceSha256": "6131b00cbe9394a15e76f0f53e08dccbd51b93add7da76337cddc40b1d747ada",
+      "exportedSha256": "69233cfa84ec6313b17aadb7d4e4be8309faa10275e90990b8d343179301878d",
       "change": "Fixed fixture password replaced with local runtime CSPRNG; no product source change"
     },
     {
-      "path": "development/server/tests/RackClick.Quality.Tests/MfaActiveKeyTests.cs",
-      "sourceSha256": "8ecd5956bb49cf9718220a611909c7fa0756738a89292f144fbaee84266ec521",
-      "exportedSha256": "da220cb451caf174bb3474a6b7e897897a5a27f8091927ce79340ca4ff2bbccb",
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaStoreTests.cs",
+      "sourceSha256": "5a58b1ed5be2a61339fdd5094cc791d62b42320308b8f90309243b512b2666a0",
+      "exportedSha256": "7a7eb77c4ba77e5b0bbf6ef975ab28381012761b8ae93acb7d9498f51f8c333f",
       "change": "Fixed fixture password replaced with local runtime CSPRNG; no product source change"
     },
     {
@@ -38,21 +32,29 @@
       "sourceSha256": "419d4d626fd2bd7ab49682fa1404d2525492a80202f69085dc8a009101dbe8b9",
       "exportedSha256": "9599a6414c6e310b4d89f37ceb5e4e823c2feaa35dc54df44e2b79943930b56f",
       "change": "Fixed fixture password replaced with local runtime CSPRNG; no product source change"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/RecoveryChallengeTests.cs",
+      "sourceSha256": "d1bb6d2f0509ceffaab6480171e7457a24afd305927d19919f20fe23ceed15ba",
+      "exportedSha256": "7d20bac5ec16c15d6da08fe6c5f4098773ce0e4e78dd8d1611afac9f60ae326e",
+      "change": "Fixed fixture password replaced with local runtime CSPRNG; no product source change"
     }
   ],
   "previousPublicationSuperseded": true,
-  "productCodeMatchesFrozenSource": true,
-  "testPortabilityChanges": [
-    {
-      "path": "development/frontend/tests/inventory-reports.test.mjs",
-      "exportedSha256": "c0ee5ce0f307c09f275f72ef42078f76c1c8282a457402e89b89d7d75e2602b8",
-      "reason": "Closed ten-capability contract including templates.publish; existing assertions retained"
-    },
-    {
-      "path": "development/frontend/tests/user-category-colors1089.test.mjs",
-      "exportedSha256": "0299e3ab8c34743d4d8f96d6e46385b83e513398ad7e3505f70ae26342a511ea",
-      "reason": "Pinned own historical reference replaces dependency on private Git executable/history; same evolution assertion"
-    }
+  "byteIntegrity": "source files retain exact bytes with existing -text attributes",
+  "retainedHistoricalFiles": "Previously tracked auxiliaries are retained; missing private fixtures are not manufactured.",
+  "frozenInputFilesVerified": 413,
+  "productSourceManifest": "BASELINE-SOURCES.json",
+  "sourceIdentityOnly": true,
+  "helperChanges": [
+    "tools/rc9-demo-load/Program.cs: closed schema15/45 profiles; no change to installed server"
   ],
-  "byteIntegrity": "development/tools/reference use -text attributes; canonical catalog JSON restored to pinned LF bytes"
+  "testCoverageChanges": [
+    "development/server/tests/test_rc9_demo_loader.py: unknown schema and incomplete history negatives",
+    "development/frontend/tests/connector-l-render.test.mjs: historical L plus exact German connector additions",
+    "evidence/s1-20261101/integracion506k/contract/CONTRATO-K.json: own required fixture restored",
+    "Five Quality test classes reconcile closed historical projections/schema counts; no product change"
+  ],
+  "fixtureTransformOriginalsEdited": false,
+  "workspaceChanges": "Documentation, local source-demo loader and historical test alignment; no installed server operation or product runtime modification"
 }

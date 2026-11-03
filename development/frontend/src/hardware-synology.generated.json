@@ -1,0 +1,37 @@
+{
+  "version": "synology-20261030-v1",
+  "synthetic": false,
+  "profiles": [
+    {
+      "key": "synology-rs1221plus",
+      "kind": "rack",
+      "sizeU": 2,
+      "widthMm": 482,
+      "heightMm": 88,
+      "depthMm": 306.6,
+      "groups": [
+        {
+          "key": "rear-lan",
+          "face": "rear",
+          "type": "rj45",
+          "count": 4,
+          "powerRole": "unspecified"
+        },
+        {
+          "key": "rear-power",
+          "face": "rear",
+          "type": "power",
+          "count": 1,
+          "powerRole": "inlet"
+        }
+      ],
+      "identity": {
+        "manufacturer": "Synology",
+        "family": "RackStation",
+        "model": "RS1221+",
+        "sku": "RS1221+"
+      },
+      "source": "https://global.download.synology.com/download/Document/Hardware/HIG/RackStation/21-year/RS1221%2B/enu/Syno_HIG_RS1221%2B_enu.pdf"
+    }
+  ]
+}

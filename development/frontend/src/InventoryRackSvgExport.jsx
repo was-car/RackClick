@@ -1,8 +1,10 @@
+import {ReportTechnicalDetails} from './ReportTechnicalDetails.jsx';
+import {reportUiWords} from './report-ui-words.ts';
 import {prepareRackSvg,sendRackSvg,recoverRackSvg,downloadRackSvg,rackSvgAllowed} from './inventory-rack-svg.ts';
 import {rackSvgWords} from './inventory-rack-svg-words.ts';
 import {roomPath} from './inventory-model.ts';
 const {useState,useEffect,useRef}=React;
-export function InventoryRackSvgExport({api,session,project,lang,onRefresh,blocked=false,authorityLost=false}){
+export function InventoryRackSvgExport({api,session,project,lang,onRefresh,blocked=false,authorityLost=false,activeRackId=null,activeRackFace='front'}){
  const w=rackSvgWords[lang],actor=session.user.id,allowed=!authorityLost&&rackSvgAllowed(api,session,project.customerId);
  const [expanded,setExpanded]=useState(false),[rackId,setRackId]=useState(''),[face,setFace]=useState('front'),[language,setLanguage]=useState(lang);
  const [pending,setPending]=useState(null),[confirmed,setConfirmed]=useState(null),[busy,setBusy]=useState(false),[error,setError]=useState(null),[status,setStatus]=useState(null);
@@ -14,6 +16,10 @@ export function InventoryRackSvgExport({api,session,project,lang,onRefresh,block
  useEffect(()=>{if(!pending){setConfirmed(null);setStatus(null)}},[project.revision]);
  useEffect(()=>{if(!pending)return;const warn=e=>{e.preventDefault();e.returnValue=''};window.addEventListener('beforeunload',warn);return()=>window.removeEventListener('beforeunload',warn)},[pending]);
  const locked=busy||!!pending,validScope=project.racks.some(r=>r.id===rackId);
+ const contextInitialized=useRef(false),contextRack=project.racks.find(r=>r.id===activeRackId),ui=reportUiWords[lang]||reportUiWords.en;
+ const contextFace=activeRackFace==='rear'?'rear':'front';
+ function useOpenRack(){if(locked||!contextRack)return;setRackId(contextRack.id);setFace(contextFace);}
+ function togglePanel(){if(locked)return;if(!expanded&&!contextInitialized.current){contextInitialized.current=true;if(!rackId&&contextRack)useOpenRack()}setExpanded(value=>!value)}
  async function run(mode){
   if(inFlight.current||!current()||blocked||!pending&&!validScope)return;
   let operation;try{operation=pending||prepareRackSvg(api,actor,project.customerId,project.revision,{rackId,face,language})}catch(e){setError(e);return}
@@ -29,13 +35,15 @@ export function InventoryRackSvgExport({api,session,project,lang,onRefresh,block
   catch(e){if(current()&&!job.controller.signal.aborted&&inFlight.current===job){setError(e);setConfirmed(null);setStatus(null)}}finally{if(inFlight.current===job){inFlight.current=null;if(current())setBusy(false)}}
  }
  if(!allowed)return null;
- return <section className="ir-location" data-inventory-rack-svg style={{minWidth:0,maxWidth:'100%',overflowWrap:'anywhere'}}><button type="button" data-rack-svg-toggle disabled={locked} aria-expanded={expanded} onClick={()=>setExpanded(v=>!v)}>{w.title}</button>{expanded&&<div style={{minWidth:0}}>
+ return <section className="ir-location" data-inventory-rack-svg style={{minWidth:0,maxWidth:'100%',overflowWrap:'anywhere'}}><button type="button" data-rack-svg-toggle disabled={locked} aria-expanded={expanded} onClick={togglePanel}>{w.title}</button>{expanded&&<div style={{minWidth:0}}>
  <p>{w.scope}</p><label style={{display:'block',minWidth:0}}>{w.rack}<select data-rack-svg-rack disabled={locked} value={rackId} onChange={e=>setRackId(e.target.value)} style={{width:'100%',minWidth:0,maxWidth:'100%'}}><option value="">{w.choose}</option>{project.racks.map(r=><option key={r.id} value={r.id}>{[roomPath(project,r.roomId).join(' / '),r.name,r.location].filter(Boolean).join(' / ')} · {r.id}</option>)}</select></label>
+ {contextRack&&(rackId!==contextRack.id||face!==contextFace)&&<button type="button" className="rc-report-context-use" data-use-open-rack="rack-svg" disabled={locked} onClick={useOpenRack}>{ui.useRackFace}: {contextRack.name}</button>}
  <div className="rc-inline-buttons" style={{minWidth:0}}><label style={{minWidth:0,maxWidth:'100%'}}>{w.face}<select data-rack-svg-face disabled={locked} value={face} onChange={e=>setFace(e.target.value)} style={{maxWidth:'100%'}}>{['front','rear'].map(f=><option key={f} value={f}>{w[f]}</option>)}</select></label><label style={{minWidth:0,maxWidth:'100%'}}>{w.language}<select data-rack-svg-language disabled={locked} value={language} onChange={e=>setLanguage(e.target.value)} style={{maxWidth:'100%'}}><option value="en">English</option><option value="de">Deutsch</option><option value="es">Español</option></select></label></div>
- {!project.racks.length&&<p>{w.empty}</p>}<p>{w.revision}: {pending?.revision||confirmed?.result.revision||project.revision}</p>
+ {!project.racks.length&&<p>{w.empty}</p>}
  {!pending&&<button type="button" data-rack-svg-generate disabled={busy||blocked||!validScope} onClick={()=>run('send')}>{busy?w.generating:w.generate}</button>}
- {pending&&<><p role="status" data-rack-svg-pending>{w.pending}</p><p>{w.request}: <span data-rack-svg-request>{pending.requestId}</span></p><button type="button" data-rack-svg-check disabled={busy||blocked} onClick={()=>run('check')}>{w.check}</button><button type="button" data-rack-svg-retry disabled={busy||blocked} onClick={()=>run('send')}>{w.retry}</button></>}
- {confirmed&&<><p>{w.rows}: {confirmed.result.report.rowCount} · SHA256: {confirmed.result.report.sha256}</p><button type="button" data-rack-svg-download disabled={busy||blocked} onClick={download}>{w.download}</button></>}
- {status&&<p role="status" data-rack-svg-status={status}>{w[status]}</p>}{error&&<div role="alert" data-rack-svg-error><p>{error.status===412?w.stale:error.code==='report_too_large'?w.large:error.code==='report_text_invalid'?w.invalidXml:w.error}</p>{error.status===412&&!pending&&<button type="button" data-rack-svg-refresh disabled={busy||blocked} onClick={()=>onRefresh()}>{w.refresh}</button>}</div>}
+ {pending&&<><p role="status" data-rack-svg-pending>{w.pending}</p><button type="button" data-rack-svg-check disabled={busy||blocked} onClick={()=>run('check')}>{w.check}</button><button type="button" data-rack-svg-retry disabled={busy||blocked} onClick={()=>run('send')}>{w.retry}</button></>}
+ {confirmed&&<><p>{w.rows}: {confirmed.result.report.rowCount}</p><button type="button" data-rack-svg-download disabled={busy||blocked} onClick={download}>{w.download}</button></>}
+ {status&&<p role="status" data-rack-svg-status={status}>{w[status]}</p>}{error&&<div role="alert" data-rack-svg-error><p>{error.code==='report_mounting_unsupported'?reportUiWords[lang].mountingUnsupported:error.status===412?w.stale:error.code==='report_too_large'?w.large:error.code==='report_text_invalid'?w.invalidXml:w.error}</p>{error.status===412&&!pending&&<button type="button" data-rack-svg-refresh disabled={busy||blocked} onClick={()=>onRefresh()}>{w.refresh}</button>}</div>}
+ <ReportTechnicalDetails kind="rack-svg" lang={lang}><p>{w.revision}: {pending?.revision||confirmed?.result.revision||project.revision}</p>{pending&&<p>{w.request}: <span data-rack-svg-request>{pending.requestId}</span></p>}{confirmed&&<p>SHA256: {confirmed.result.report.sha256}</p>}</ReportTechnicalDetails>
  <small>{w.limits} {w.memory}</small></div>}</section>;
 }

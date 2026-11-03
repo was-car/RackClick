@@ -1,0 +1,93 @@
+# RackClick · instalación Windows43 · edición11
+
+02.11.2026. Candidata local para ensayo, con catálogo506, códigos de recuperación MFA y exportación JSON del punto3. Los50 clientes son opcionales y se cargan después de instalar. No es una actualización sobre el servidor10 ni una adopción final. Los resultados reales y límites se registran en `evidence/s1-20261102/windows43/RESULTADOS.md`.
+
+## 00 · Antes de empezar
+
+Usa una VM Windows Server2025 x64 **con experiencia de escritorio y sin rol de controlador de dominio**. El instalador rechaza un DC. Para el laboratorio se propone2vCPU/8GiB RAM/60GiB de disco; es una configuración orientativa, no una capacidad certificada. Deja espacio para programa, datos y varias copias. Los clientes sólo necesitan navegador.
+
+Wascar administra encendido/apagado/snapshots desde VMware. Conserva un snapshot limpio y los discos de cualquier instalación anterior. No borres cuentas, carpetas, certificados ni bases manualmente para reintentar. Si ya hay un servidor, usa otra VM limpia para este ensayo.
+
+Se incluyen runtime.NET10.0.12, PostgreSQL17.11 privado, VisualC++14.51.36247.0, servicio Windows y operadores. **No instales SDK, Node, Python, PostgreSQL global ni HeidiSQL como requisito.** No se exige ActiveDirectory. El asistente genera contraseñas nuevas localmente: no hay una contraseña compartida dentro del ZIP.
+
+## 01 · Copiar, verificar y extraer
+
+1. En la VM crea la carpeta `C:\RackClick-Instalar` desde el Explorador: abre **Este equipo → Disco local(C:) → Nuevo → Carpeta** y escribe `RackClick-Instalar`.
+2. Copia allí `RackClick-Windows-Completo-11.zip` y su archivo `.sha256`, conservando también el hash entregado por Codex separado del ZIP.
+3. Pulsa **Inicio**, escribe **Windows PowerShell**, haz clic derecho en el resultado y elige **Ejecutar como administrador**. Acepta **Sí** en el aviso de Windows.
+4. Pega este bloque. Compara la huella que muestra con la entregada; el archivo lateral debe proceder de esa entrega, no de un ZIP recibido de otra persona.
+
+```powershell
+$zipRackClick = 'C:\RackClick-Instalar\RackClick-Windows-Completo-11.zip'
+Get-FileHash -LiteralPath $zipRackClick -Algorithm SHA256
+```
+
+5. Si coincide, extrae a una carpeta nueva con este bloque. Si ya existe `Extraido11`, detente y conserva su contenido; no sobrescribas una extracción utilizada.
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $zipRackClick = 'C:\RackClick-Instalar\RackClick-Windows-Completo-11.zip'
+    $destinoRackClick = 'C:\RackClick-Instalar\Extraido11'
+    if (Test-Path -LiteralPath $destinoRackClick) { throw 'La carpeta ya existe; no sobrescribir.' }
+    Expand-Archive -LiteralPath $zipRackClick -DestinationPath $destinoRackClick
+}
+```
+
+## 02 · Abrir el asistente e instalar New
+
+1. En el Explorador abre `C:\RackClick-Instalar\Extraido11\RackClick-Windows-Completo-11`.
+2. Haz doble clic en **01-INSTALAR.cmd**. Se usa el envoltorio verificado del instalador existente; acepta la elevación y elige **Conservar anteriores e instalar** si aparece ese resumen. Este acceso no autoriza borrar instalaciones.
+3. En el centro de la ventana, revisa **IP de escucha** y **Nombre DNS o IP para el navegador**. Deben ser la dirección actual de la tarjeta de la VM o un nombre DNS que resuelva a ella. RackClick no cambia la configuración IP/DNS de Windows. No copies una dirección de otro laboratorio.
+4. Mantén **Puerto HTTPS:5443** y **Puerto PostgreSQL local:55441** si están libres. La base escucha sólo localmente. En **Red autorizada** escribe tu subred real, por ejemplo `192.168.178.0/24` si esa es tu red. No uses ese ejemplo en una red diferente.
+5. Escribe el nombre del **Systemhaus** y el usuario administrador de aplicación deseado, por ejemplo `Wascar`. La cuenta de aplicación es distinta de la cuenta Windows del servicio.
+6. En VM limpia: **Servicio Windows:RackClick**, **Cuenta Windows estándar:RackClickSvc**, **Modo:New**. Deja vacíos los campos de backup. No crees esa cuenta a mano: el asistente la crea, asigna derechos y genera su contraseña privada.
+7. Mantén marcada **Autorizar confianza de la CA local en ESTE servidor**. En otros equipos sólo se importa la CA pública; nunca su clave privada.
+8. Abajo a la izquierda pulsa **Revisar e instalar**, comprueba el resumen y confirma. Se crearán instancia, base/roles separados, almacén MFA privado, HTTPS, servicio y backup programado.
+9. Espera al resultado. Si VisualC++ requiere reinicio, reinicia desde **Inicio → Encendido → Reiniciar** y sigue el aviso del asistente. No sustituyas DLL de System32.
+10. El final esperado previo al reinicio es **HTTPS y backup comprobados; falta verificar arranque automático**, estado `awaiting_reboot`. Un mensaje de progreso no demuestra éxito. Ante error conserva el ZIP de informe del Escritorio y no repitas sobre el mismo destino.
+
+## 03 · Reinicio y primera entrada
+
+1. Reinicia Windows desde Inicio. Después de volver al Escritorio abre **RackClick-VERIFICAR-11-xxxxxxxx.cmd**, creado por esta instalación. No vuelvas a ejecutar01-INSTALAR para verificar.
+2. En el panel inferior pulsa **Verificar instalacion**. Esperado: `postboot_verified`, servicio automático activo, salud43 y backup programado comprobado.
+3. Pulsa **Acceso privado** para ver usuario y contraseña de aplicación. Es un archivo local protegido; no envíes su contenido ni lo subas a GitHub.
+4. Pulsa **Abrir RackClick** y entra. El navegador debe usar HTTPS sin omitir errores de certificado. En otros equipos importa la CA pública del servidor y abre la misma URL por su nombre/IP.
+5. En **Mi seguridad** prueba activar MFA, confirmar TOTP, cerrar sesión y entrar otra vez. Guarda los códigos de recuperación propios de un solo uso en un medio privado, separado del servidor. No pruebes perdiendo el último factor sin conservar una salida de recuperación.
+6. La política es45días para usuarios/técnicos/administradores de cliente; cuentas existentes desde activación de política y nuevas desde creación. Sólo el administrador global del Systemhaus está exento. Desactivar no reinicia el plazo.
+
+## 04 · Datos sintéticos opcionales
+
+La carpeta **DATOS-DEMO50** permite inspeccionar los50 clientes en `VER-50-CLIENTES.html`. Sus JSON contienen inventario sin cuentas ni factores. Son datos ficticios y no una copia de seguridad PostgreSQL.
+
+El acceso **02-CARGAR-50-CLIENTES.cmd** ejecuta un cargador separado que solicita URL, usuario, contraseña privada y TOTP si la cuenta lo requiere. Sólo acepta un servidor43 **sin clientes**, pide confirmación y crea el inventario mediante comandos autorizados del servidor. Conserva la seguridad de la instalación. No lo ejecutes sobre tu servidor actual con clientes. No necesita Python ni SDK.
+
+Al terminar correctamente deben aparecer50 clientes. Hay180racks,1.563equipos/objetos,20.665puertos y2.207conexiones en el conjunto de referencia; se validan las referencias y los868pares perfil/revisión. Los UUID son nuevos en el destino. Si se interrumpe, no hay una transacción global de50 clientes: los comandos ya confirmados permanecen. Conserva el resultado y no relances a ciegas ni borres datos a mano. El cargador no se ejecuta automáticamente al instalar.
+
+## 05 · Copias y Restore
+
+El servicio mantiene PostgreSQL privado y una tarea de backup. Conserva las copias y sus manifiestos/hash fuera del disco de la VM. La copia SQL contiene seguridad y no debe compartirse como demo.
+
+Para ensayar Restore usa **otra VM/instancia nueva**. En el asistente elige **Restore**, selecciona la carpeta del backup nativo con `manifest.json` y `data.dump`, y pega el SHA256 del manifiesto obtenido de tu copia confiable. Usa nombres de servicio/cuenta y puertos disponibles; nunca sobrescribe la DB origen. Se admiten orígenes13/14/15/43 hacia43 y se migran en la base nueva. Un JSON RC9 o el JSON de un cliente no sirve en esos campos.
+
+**Límite pendiente:** si la copia contiene cualquier factor MFA, el recorrido se detiene con `recovery_mfa_envelope_required`. La importación operativa del sobre/rotación/emergencia aún no está integrada en el asistente. No borres factores ni generes claves nuevas para simular una recuperación. Conservar los códigos personales no sustituye el sobre de custodia del servidor. Este límite impide presentar la candidata como recuperación productiva completa.
+
+## 06 · Trabajo entre casa y oficina
+
+Usa la carpeta **MANTENIMIENTO-IP** y su acceso `CAMBIAR-IP-RACKCLICK.cmd` cuando la IP del servidor cambie. Sólo para la instalación de esta edición: comprueba nombres/URL propuestos y conserva su informe. No modifica la IP de Windows; actualiza los vínculos de RackClick, HTTPS y firewall. No uses las herramientas de la edición10 sobre11 ni cambies JSON/DLL manualmente.
+
+## 07 · Registro para Wascar
+
+| Paso | Esperado | PASS / NOT PASS / observación |
+|---|---|---|
+| Hash/extracción | ZIP de la entrega y carpeta nueva | |
+| Instalación New | `awaiting_reboot` después de HTTPS/backup | |
+| Reinicio | `postboot_verified`, esquema43 | |
+| Acceso privado/login | Credenciales nuevas disponibles | |
+| MFA | Activación, siguiente login y códigos propios | |
+| Catálogo | Buscar Sophos/Fortinet/Aruba sin lista infinita | |
+| Demo opcional | 50clientes, cables y persistencia tras recarga | |
+| Exportación cliente | JSON desde el panel con permiso | |
+| Backup/Restore sin factores | Nueva base, sesiones revocadas | |
+
+Las pruebas de laboratorio del coordinador y del revisor están separadas de estas respuestas. La aceptación final sigue siendo tuya. No se atribuye un reinicio real ni un ensayo de instalación elevada a una simple comprobación de ZIP. La revisión de derechos de redistribución continúa abierta: entrega local de desarrollo, sin publicación de binarios.

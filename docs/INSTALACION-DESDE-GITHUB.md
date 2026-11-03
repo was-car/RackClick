@@ -1,113 +1,103 @@
-# Instalar y probar desde GitHub privado
+# Compilar y probar RackClick desde el repositorio privado
 
-30.10.2026. Esta guía permite compilar las fuentes y abrir un laboratorio con los **10 clientes sintéticos originales**. Cada arranque crea una base independiente y contraseñas nuevas. No toca tu servidor instalado ni restaura cuentas o factores MFA ajenos.
+**[English](GETTING-STARTED.en.md) · [Deutsch](GETTING-STARTED.de.md) · [Español](INSTALACION-DESDE-GITHUB.md)**
 
-## Elegir el recorrido
+Actualizado el 3 de noviembre de 2026 · esquema de fuentes **45**.
 
-- **Probar las fuentes en este Windows:** seguir los pasos 1–7. Funciona en el navegador del mismo equipo, mientras la consola permanece abierta.
-- **Instalar un servicio Windows con HTTPS para otros equipos:** usar la candidata nativa y su [manual completo de edición 10](PASOS-COMPLETOS-INSTALADOR10-WASCAR.md). Ese ZIP se conserva en la entrega privada local de Wascar; no está alojado en GitHub mientras se cierran sus condiciones de redistribución. Esta guía de fuentes no sustituye ese instalador.
+Este recorrido crea un **laboratorio local de desarrollo nuevo**, con el inventario sintético original de diez clientes. No modifica un servidor RackClick instalado. Cada arranque crea otra base y credenciales aleatorias; los laboratorios anteriores se conservan en disco. No reabre ni exporta cambios de un laboratorio anterior.
 
-No se anuncia una versión final adoptada. La demostración local desactiva explícitamente el proveedor MFA y usa HTTP sólo en `127.0.0.1`; no sirve para exponerla a una red. El código publicado sí incluye panel, enrolamiento, verificación y custodia MFA de la candidata 10.
+La demo usa **HTTP sólo en loopback** y desactiva explícitamente el proveedor MFA. No la expongas a la red. Instalación como servicio Windows, HTTPS, backups programados y MFA real son otro recorrido. Los instaladores binarios no se distribuyen por este repositorio mientras se revisan sus condiciones de redistribución; instalación limpia New/Restore y comprobación tras reiniciar del paquete nativo más reciente siguen pendientes.
 
 ## 1. Requisitos
 
-- Windows x64; Windows Server 2025 con escritorio es el entorno nativo ensayado. El laboratorio necesita una sesión normal, **sin ejecutar como administrador**.
-- [Git para Windows](https://git-scm.com/downloads/win) y acceso autorizado a `was-car/RackClick`.
-- [Python 3.12 o posterior](https://www.python.org/downloads/windows/), con el lanzador `py`. No instalar paquetes Python: el auxiliar usa la biblioteca estándar.
-- Acceso HTTPS a los proveedores oficiales, NuGet y npm durante la preparación.
-- Redistribuible [Visual C++ x64 oficial de Microsoft](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) para los binarios Windows de PostgreSQL. La candidata nativa se ensayó con 14.51.36247.0; la revisión general de redistribución sigue abierta. Instálalo desde Microsoft, acepta su licencia y reinicia si lo pide. El repositorio no transporta ese ejecutable.
-- Espacio para SDK, PostgreSQL, Node, paquetes y un clúster nuevo en cada ejecución. No se precisa una base PostgreSQL ni usuarios Windows preexistentes.
+- Windows x64 y una sesión normal, **sin PowerShell elevada como administrador**.
+- [Git para Windows](https://git-scm.com/downloads/win), acceso autorizado a `was-car/RackClick` y [Python 3.12 o posterior](https://www.python.org/downloads/windows/) con lanzador `py`. No se necesitan paquetes Python.
+- Acceso HTTPS a los proveedores oficiales, NuGet y npm; espacio para herramientas, paquetes y un clúster PostgreSQL nuevo por ejecución.
+- Redistribuible [Visual C++ x64 oficial de Microsoft](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170), necesario para los binarios PostgreSQL de Windows. Instálalo desde Microsoft bajo su licencia y reinicia si lo solicita. El entorno nativo se ensayó con 14.51.36247.0; ese ejecutable no se incluye aquí.
+- No se necesita una base PostgreSQL ni una cuenta de servicio Windows preexistentes.
 
-Versiones fijadas: SDK **10.0.401**, runtime **10.0.12**, PostgreSQL **17.11**, Node **24.21.0**, npm **11.19.0**, esbuild **0.25.10**, Npgsql **10.0.3**, Otp.NET **1.4.1**, esquema **15**. Los JSON y locks del repositorio son la referencia. No editar `global.json` para hacerlo coincidir con otro SDK instalado.
+Versiones fijadas: **SDK .NET 10.0.401**, runtime **10.0.12**, **PostgreSQL 17.11**, **Node 24.21.0**, **npm 11.19.0**, **esbuild 0.25.10**, **Npgsql 10.0.3** y **Otp.NET 1.4.1**. Los locks del repositorio son la referencia. No edites `global.json` para ajustarlo a otro SDK instalado.
 
 ## 2. Abrir PowerShell y descargar
 
-Pulsa **Inicio**, escribe **Windows PowerShell** y abre la aplicación con un clic normal. No selecciones «Ejecutar como administrador» para este laboratorio.
-
-Elige una carpeta nueva, por ejemplo `C:\Trabajo\RackClick`. En PowerShell:
+Abre Inicio, escribe **Windows PowerShell** y ábrela con un clic normal. Elige una carpeta nueva; este ejemplo usa `C:\Work\RackClick`:
 
 ```powershell
-New-Item -ItemType Directory -Path 'C:\Trabajo' -Force | Out-Null
-Set-Location -LiteralPath 'C:\Trabajo'
+New-Item -ItemType Directory -Path 'C:\Work' -Force | Out-Null
+Set-Location -LiteralPath 'C:\Work'
 git clone https://github.com/was-car/RackClick.git RackClick
-if ($LASTEXITCODE -ne 0) { throw 'La descarga no termino correctamente.' }
-Set-Location -LiteralPath 'C:\Trabajo\RackClick'
+if ($LASTEXITCODE -ne 0) { throw 'La descarga fallo.' }
+Set-Location -LiteralPath 'C:\Work\RackClick'
 py -3 --version
 ```
 
-Si Git solicita acceso, inicia sesión en GitHub con una cuenta autorizada. No pongas tokens en la URL ni en archivos del proyecto. Si `RackClick` ya existe, elige otro nombre y ajusta los pasos; no borres la carpeta existente.
+Inicia sesión mediante GitHub si lo solicita. No escribas tokens en la URL ni en archivos del proyecto. Si la carpeta ya existe, elige otro nombre y ajusta los comandos; no la borres.
 
 ## 3. Preparar herramientas oficiales
 
-En esa misma PowerShell, dentro de `C:\Trabajo\RackClick`:
+En la misma consola, desde la raíz del repositorio:
 
 ```powershell
 & .\tools\windows\Initialize-Toolchain.ps1 -Component @('dotnet','postgresql','node')
 ```
 
-Si la política local impide cargar el script, usa sólo en esta consola:
+Si la política de ejecución bloquea el script, aplica lo siguiente **sólo a esta consola** y repite el comando:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-& .\tools\windows\Initialize-Toolchain.ps1 -Component @('dotnet','postgresql','node')
 ```
 
-El script descarga las versiones fijadas de los proveedores oficiales, comprueba hashes y extrae en `.local`. No crea bases, servicios ni reglas de cortafuegos. Si detecta una carpeta parcial o un hash distinto, se detiene: conserva el diagnóstico y no cambies los pins para evitar el error.
+El auxiliar descarga archivos oficiales fijados, comprueba sus hashes y extrae en `.local`. No crea bases, servicios ni reglas de cortafuegos. Una carpeta parcial o un hash distinto es motivo para detenerse y conservar el diagnóstico, sin cambiar pins.
 
 ## 4. Compilar
 
 ```powershell
 py -3 -B .\tools\start_demo.py --build-only
-if ($LASTEXITCODE -ne 0) { throw 'La compilacion no termino correctamente.' }
+if ($LASTEXITCODE -ne 0) { throw 'La compilacion fallo.' }
 ```
 
-Se restauran dependencias con locks, se publica el servidor sin apphost, se compila el cargador y se construye el frontend RC9 con npm ci. El ZIP RC9 de `reference/` es una entrada de fuentes, no el instalador del servidor. Los registros y binlogs quedan privados en `.local\source-demo\logs`; no los subas a GitHub ni los envíes completos sin revisarlos.
+Se restauran dependencias con locks, se publica el servidor sin apphost, se compila el cargador de inventario y se construye el frontend RC9 con `npm ci`. El ZIP de `reference/` es la referencia offline adoptada para compilar, no un instalador Windows. Los registros y binlogs quedan privados en `.local\source-demo\logs`; no los subas sin revisión.
 
-El mensaje final debe decir **«Compilacion lista»**. El auxiliar conserva hashes de las salidas y rechaza arrancar si cambian después.
+Espera **«Compilacion lista»**. Se registran hashes de las salidas; cambiar o añadir archivos de salida hace fallar la validación al arrancar.
 
 ## 5. Comprobación automática breve
 
 ```powershell
 py -3 -B .\tools\start_demo.py --smoke
-if ($LASTEXITCODE -ne 0) { throw 'La comprobacion no paso.' }
+if ($LASTEXITCODE -ne 0) { throw 'La comprobacion fallo.' }
 ```
 
-El resultado debe indicar `success: true`, `customers: 10`, `ports: 5408`, `frontend: served` y `mfaEnabled: false`. La prueba crea su propio laboratorio, inicia sesión, comprueba los datos y detiene sus procesos. Los archivos quedan conservados bajo `.local\labs`.
+Debe indicar `success: true`, `customers: 10`, `ports: 5408`, `frontend: served` y `mfaEnabled: false`. Crea su propio laboratorio, inicia sesión, comprueba datos y detiene sus procesos. Los archivos quedan bajo `.local\labs`.
 
-## 6. Abrir la interfaz con todos los ejemplos
+## 6. Abrir la interfaz
 
 ```powershell
 py -3 -B .\tools\start_demo.py
 ```
 
-Espera al resultado correcto. La consola muestra una dirección como `http://127.0.0.1:puerto` y la ruta de **ACCESO-PRIVADO.json**. Abre el archivo de esa ejecución con el Explorador y el Bloc de notas: contiene la dirección, el usuario `demo-admin` y su contraseña aleatoria. No publiques ni copies su contenido en tickets.
+La consola muestra una URL como `http://127.0.0.1:puerto` y la ruta de **ACCESO-PRIVADO.json**. Abre localmente en Bloc de notas el archivo de esa ejecución: contiene la URL, el usuario `demo-admin` y su contraseña aleatoria. No publiques su contenido.
 
-Abre la dirección indicada en Edge o Chrome del mismo Windows. Inicia sesión y entra en **Clientes**: deben aparecer los 10 clientes. Selecciona uno y recorre sitios, edificios, salas y racks. Cambia una nota sintética, guarda, recarga y comprueba que se conserva durante esta ejecución. Los permisos se siguen comprobando en el servidor.
+Abre la URL indicada en Edge o Chrome del mismo Windows. Tras entrar, abre Clientes: deben aparecer diez. Recorre sitios, edificios, salas y racks. Cambia una nota sintética, guarda y recarga para comprobar la persistencia durante esta ejecución.
 
-Contenido original: 10 clientes, 15 sitios, 25 edificios, 68 salas, 68 racks, 311 equipos, 633 grupos de puertos, 5408 puertos, 623 conexiones y 1246 extremos. Es un inventario de prueba; **no es un dump PostgreSQL ni un full backup de seguridad**.
+El ejemplo contiene 10 clientes, 15 sitios, 25 edificios, 68 salas, 68 racks, 311 equipos, 633 grupos de puertos, 5408 puertos, 623 conexiones y 1246 extremos. Es **sólo inventario**, no un dump PostgreSQL, cuentas instaladas, sesiones, factores MFA ni un full backup de recuperación.
 
-## 7. Terminar y recuperar el trabajo
+## 7. Terminar
 
-Vuelve a PowerShell y pulsa **Ctrl+C** una vez. Espera el mensaje de procesos detenidos. Sólo se detienen el servidor y PostgreSQL creados por esta ejecución. No se borran sus archivos ni otras bases.
+Vuelve a PowerShell y pulsa **Ctrl+C** una vez. Espera el mensaje de procesos detenidos. Sólo se detienen el servidor y PostgreSQL creados por esta ejecución. Los archivos y las demás bases se conservan.
 
-Cada nueva ejecución crea **otro laboratorio desde el ejemplo original**. Este auxiliar no ofrece reapertura de una base anterior ni exportación de sus cambios: conserva sus archivos para inspección. Para QA duradero, servicio automático, HTTPS, backup/restore y MFA real usa el recorrido nativo de edición 10. No confundir el ejemplo JSON con una copia de recuperación.
+Para un despliegue Windows persistente utiliza su paquete nativo revisado por separado y su guía de operador correspondiente. El auxiliar de demostración no es una herramienta de backup/restore ni de activación MFA.
 
-## MFA: alcance real
-
-El panel y login MFA de la candidata 10 se probaron en Windows y Wascar confirmó su cuenta administrativa. Se mantiene la política confirmada: 45 días de gracia para cuentas ordinarias y exención del administrador global; no se sustituyen ámbitos por nombres de rol. Quedan recuperación portable, códigos/emergencia, rotación y aceptación completa.
-
-La activación real exige un almacén nuevo fuera de PostgreSQL, con clave protegida DPAPI, ACL e identidad del servicio correctas. Las claves y sus sobres no se incluyen en este repositorio. No actives MFA copiando configuraciones de otro equipo ni mediante el auxiliar demo. El manual nativo identifica las comprobaciones de cuenta, arranque y custodia.
-
-## Problemas frecuentes
+## 8. Problemas frecuentes y alcance MFA
 
 | Resultado | Acción |
 |---|---|
-| Git muestra 404 o pide acceso | Verificar la cuenta autorizada: el repositorio es privado. |
-| Falta `py` | Instalar Python oficial con lanzador; reabrir la consola. |
-| SDK no encontrado | Ejecutar el paso 3 desde este clon; mantener `global.json`. |
-| Error al arrancar PostgreSQL | Revisar requisito Visual C++, reinicio y el log privado del laboratorio. No usar otra base para salir del paso. |
-| Compilación o hash de salida inválido | Leer el log privado y repetir el paso 4 tras corregir la causa. |
-| Dirección deja de responder | La consola debe seguir abierta; el puerto cambia con cada ejecución. |
-| Se necesita probar desde otro PC | Usar el instalador nativo con HTTPS; no abrir el puerto de esta demo. |
+| GitHub muestra 404 o solicita acceso | Comprueba la cuenta autorizada; el repositorio es privado. |
+| Falta `py` | Instala Python oficial con lanzador y reabre PowerShell. |
+| Falta el SDK | Prepara las herramientas fijadas de este clon y conserva `global.json`. |
+| PostgreSQL no arranca | Revisa Visual C++, reinicio solicitado y log privado del laboratorio. No utilices otra base para eludirlo. |
+| Falla compilación o hash de salida | Lee el log privado, corrige la causa y repite el paso 4. |
+| La URL deja de responder | Mantén la consola abierta; cada ejecución usa otro puerto. |
 
-Registrar código, comando y resultado observado. No declarar Pass sólo porque compiló. El comando heredado `npm run test:build` aún apunta a un archivo ausente; no forma parte de este recorrido verificado. Los tests unitarios de adaptadores se ejecutan desde `Build-Frontend.ps1`.
+Enrolamiento/login MFA y dashboard nativos se probaron por separado. Política: 45 días de gracia para cuentas ordinarias, técnicos y administradores de clientes; cuentas existentes desde activación de política y nuevas desde creación. Sólo están exentos los administradores globales del Systemhaus con ambas capacidades globales de administración. Quitar un factor no reinicia el plazo. Recuperación portable, emergencia, rotación de claves y aceptación final siguen pendientes.
+
+MFA real necesita un almacén protegido separado de PostgreSQL, configuración DPAPI/ACL correcta e identidad del servicio. Las claves y sobres de recuperación no se incluyen en GitHub. No copies configuraciones de otro equipo ni actives MFA mediante esta demo.

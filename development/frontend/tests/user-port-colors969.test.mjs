@@ -12,8 +12,8 @@ const response=(data,n=data.revision)=>new Response(JSON.stringify(data),{header
 const draft=(colors={rj45:'#112233'},rev=0)=>preparePortColors(actor,snapshot(rev),colors);
 const receipt=(d,changed=true)=>({kind:'userPortColors',ownerId:d.actorId,revision:d.revision+(changed?1:0),requestId:d.requestId,operationId:id(3),result:{colors:{...d.colors},changed}});
 const outcome=(d,state='committed',revision=9)=>({state,ownerId:d.actorId,revision,requestId:d.requestId,operation:state==='committed'?receipt(d):null});
-test('RC9 exact ten defaults; overrides are closed lowercase hex maps and never synthetic type identities',()=>{
- assert.deepEqual(defaultPortColors,{rj45:'#3b82f6',rj45_poe:'#3b82f6',sfp:'#a855f7',sfp28:'#ef4444',qsfp:'#10b981',mgmt:'#f59e0b',console:'#6b7280',power:'#ef4444',usb_a:'#9ca3af',usb_c:'#9ca3af'});
+test('RC9 ten defaults plus thirteen additional connector types; overrides are closed lowercase hex maps and never synthetic type identities',()=>{
+ assert.deepEqual(defaultPortColors,{rj45:'#3b82f6',rj45_poe:'#3b82f6',sfp:'#a855f7',sfp28:'#ef4444',qsfp:'#10b981',mgmt:'#f59e0b',console:'#6b7280',power:'#ef4444',usb_a:'#9ca3af',usb_c:'#9ca3af',sfp56:'#06b6d4',qsfpdd:'#f97316',idc:'#a3b86c',ipc:'#b39d6b',fiber:'#62b6ad',sfpdd:'#57a4d2',cfp2:'#9673c4',sas:'#c39c70',dsl:'#d5ad69',telephony:'#bd8fb5',isdn:'#a9a0d5',expansion:'#b89287',power_dc:'#e49f66'});
  for(const v of [{},defaultPortColors,{rj45:'#aabbcc'}])assert.ok(validPortColors(v));
  for(const v of [null,[],{RJ45:'#112233'},{rj45:'#AABBCC'},{rj45:'red'},{rj45:'#fff'},{rj45:null},{__unknown:'#112233'},JSON.parse('{"__proto__":"#112233"}')])assert.equal(validPortColors(v),false);
  assert.ok(samePortColors({rj45:'#112233',sfp:'#334455'},{sfp:'#334455',rj45:'#112233'}));assert.equal(samePortColors({},{rj45:'#3b82f6'}),false);

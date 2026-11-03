@@ -1,0 +1,6222 @@
+{
+  "formatVersion": 1,
+  "revision": "selected506k-20261101-v1",
+  "models": [
+    {
+      "definition": {
+        "key": "selected-nb-9b748f4aeb7c8a2d",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Commscope",
+          "model": "CPP-UDDM-M-1U-24",
+          "family": "EMPTY mechanical rack accessory,0ports/0modules,nochild support",
+          "sku": "760207274"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 482.6,
+          "height": 43.7,
+          "depth": 119.38
+        },
+        "color": "#252728",
+        "slots": [],
+        "groups": [],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.commscope.com/product-type/frames-panels-cassettes-modules/copper-panels-modules-cassettes/copper-panels/item760207274/",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#202324",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 51,
+                "y": 43,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 55,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 58,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 55,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 86,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 89,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 86,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 117,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 120,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 117,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 148,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 151,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 148,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 179,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 182,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 179,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 210,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 213,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 210,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 276,
+                "y": 43,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 280,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 283,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 280,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 311,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 314,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 311,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 342,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 345,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 342,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 373,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 376,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 373,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 404,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 407,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 404,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 435,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 438,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 435,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 501,
+                "y": 43,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 505,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 508,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 505,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 536,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 539,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 536,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 567,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 570,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 567,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 598,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 601,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 598,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 629,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 632,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 629,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 660,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 663,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 660,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 726,
+                "y": 43,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 730,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 733,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 730,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 761,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 764,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 761,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 792,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 795,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 792,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 823,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 826,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 823,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 854,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 857,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 854,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 885,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 888,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 885,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "text",
+                "x": 970,
+                "y": 31,
+                "text": "COMMSCOPE",
+                "size": 7,
+                "fill": "#d3d8d6",
+                "anchor": "end"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "760207274 · UNLOADED · 24 apertures · 0connectors",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#202324",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 56,
+                "y": 48,
+                "w": 890,
+                "h": 22,
+                "fill": "#15191b",
+                "stroke": "#696e71"
+              },
+              {
+                "kind": "line",
+                "x1": 65,
+                "y1": 65,
+                "x2": 934,
+                "y2": 65,
+                "stroke": "#686e71",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 65,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 101,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 137,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 173,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 209,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 245,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 281,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 317,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 353,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 389,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 425,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 461,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 497,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 533,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 569,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 605,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 641,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 677,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 713,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 749,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 785,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 821,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 857,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 893,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 929,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "760207274 · UNLOADED · 24 apertures · 0connectors · rear geometry_unverified",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.commscope.com/product-type/frames-panels-cassettes-modules/copper-panels-modules-cassettes/copper-panels/item760207274/",
+            "kind": "manufacturer-documentation",
+            "observed": "CPP-UDDM-M-1U-24 emptyNACat widths/height/depth",
+            "sha256": "abb049c333cfd293b9a9b37951526e35d76789a1820f7acc3926be4c6c026000",
+            "bytes": 335730
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Commscope/CPP-UDDM-M-1U-24.yaml",
+            "kind": "community-yaml",
+            "sha256": "755cffed23fa7dbb21c0a17ea7380db676471c64260c07490139ceeb4c33ab79",
+            "observed": "Original selected manufacturer/model identity only. Primary configuration supersedes undocumented IR population; historical IR unchanged."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-9b748f4aeb7c8a2d/front-60be1d6482fe.png",
+            "sha256": "60be1d6482fecdebde573fce526806f488e0b7175cc15b6c5cad3da8bdb62528",
+            "view": "front",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-9b748f4aeb7c8a2d/rear-069ead1e684e.png",
+            "sha256": "069ead1e684e98cc239fecfed176a23fdaa7d9601b9c922b3c9b8bf60b3c221a",
+            "view": "rear",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          }
+        ],
+        "dimensionsBasis": "760207274; CPP-UDDM-M-1U-24 emptyNACat widths/height/depth; nominal W482.6 H43.7 D119.38mm. EMPTY M-series panel; 24apertures, no jacks. Sourcealso says113.3withmanagement; use119.38fullnominaldepth.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "EMPTY M-series panel; 24apertures, no jacks. Sourcealso says113.3withmanagement; use119.38fullnominaldepth.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "EMPTY mechanical rack accessory:0groups,0connectors,0modules,slots[]. Apertures, cassette capacities, rubberentries and screw holes are inert, not cable targets.",
+          "No declared child-mounting volume or usable bay. The physical shelf/enclosure is not a RackClick support shelf and cannot host child equipment in this profile.",
+          "Rear geometry_unverified unless an explicit cached rear is present; neutral geometry does not invent connectors, fans, handles or installed modules."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-75ff355641be29f1",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Commscope",
+          "model": "CPPA-UDDM-M-2U-48",
+          "family": "EMPTY mechanical rack accessory,0ports/0modules,nochild support",
+          "sku": "760207308"
+        },
+        "kind": "rack",
+        "rackUnits": 2,
+        "dimensionsMm": {
+          "width": 482.6,
+          "height": 88.9,
+          "depth": 210.82
+        },
+        "color": "#252728",
+        "slots": [],
+        "groups": [],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.commscope.com/globalassets/digizuite/141999-p360-760207308-external.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 260,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 200,
+              "fill": "#202324",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 29,
+                "y": 25,
+                "w": 440,
+                "h": 190,
+                "fill": "#161a1d"
+              },
+              {
+                "kind": "rect",
+                "x": 531,
+                "y": 25,
+                "w": 439,
+                "h": 190,
+                "fill": "#34383b"
+              },
+              {
+                "kind": "rect",
+                "x": 469,
+                "y": 24,
+                "w": 62,
+                "h": 192,
+                "fill": "#51585d"
+              },
+              {
+                "kind": "rect",
+                "x": 51,
+                "y": 40,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 55,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 58,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 55,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 86,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 89,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 86,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 117,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 120,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 117,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 148,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 151,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 148,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 179,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 182,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 179,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 210,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 213,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 210,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 276,
+                "y": 40,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 280,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 283,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 280,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 311,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 314,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 311,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 342,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 345,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 342,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 373,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 376,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 373,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 404,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 407,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 404,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 435,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 438,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 435,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 501,
+                "y": 40,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 505,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 508,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 505,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 536,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 539,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 536,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 567,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 570,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 567,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 598,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 601,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 598,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 629,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 632,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 629,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 660,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 663,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 660,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 726,
+                "y": 40,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 730,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 733,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 730,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 761,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 764,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 761,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 792,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 795,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 792,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 823,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 826,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 823,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 854,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 857,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 854,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 885,
+                "y": 45,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 888,
+                "y": 49,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 885,
+                "y": 90,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 51,
+                "y": 140,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 55,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 58,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 55,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 86,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 89,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 86,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 117,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 120,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 117,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 148,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 151,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 148,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 179,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 182,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 179,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 210,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 213,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 210,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 276,
+                "y": 140,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 280,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 283,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 280,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 311,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 314,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 311,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 342,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 345,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 342,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 373,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 376,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 373,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 404,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 407,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 404,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 435,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 438,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 435,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 501,
+                "y": 140,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 505,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 508,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 505,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 536,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 539,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 536,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 567,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 570,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 567,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 598,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 601,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 598,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 629,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 632,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 629,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 660,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 663,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 660,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 726,
+                "y": 140,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 730,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 733,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 730,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 761,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 764,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 761,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 792,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 795,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 792,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 823,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 826,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 823,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 854,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 857,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 854,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 885,
+                "y": 145,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 888,
+                "y": 149,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 885,
+                "y": 190,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "text",
+                "x": 970,
+                "y": 31,
+                "text": "COMMSCOPE",
+                "size": 7,
+                "fill": "#d3d8d6",
+                "anchor": "end"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 248,
+                "text": "760207308 · UNLOADED · 48 apertures · 0connectors",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 205,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 205,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 205,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 205,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 260,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 200,
+              "fill": "#202324",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 29,
+                "y": 25,
+                "w": 440,
+                "h": 190,
+                "fill": "#161a1d"
+              },
+              {
+                "kind": "rect",
+                "x": 531,
+                "y": 25,
+                "w": 439,
+                "h": 190,
+                "fill": "#34383b"
+              },
+              {
+                "kind": "rect",
+                "x": 469,
+                "y": 24,
+                "w": 62,
+                "h": 192,
+                "fill": "#51585d"
+              },
+              {
+                "kind": "rect",
+                "x": 56,
+                "y": 48,
+                "w": 890,
+                "h": 22,
+                "fill": "#15191b",
+                "stroke": "#696e71"
+              },
+              {
+                "kind": "line",
+                "x1": 65,
+                "y1": 65,
+                "x2": 934,
+                "y2": 65,
+                "stroke": "#686e71",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 65,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 101,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 137,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 173,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 209,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 245,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 281,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 317,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 353,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 389,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 425,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 461,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 497,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 533,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 569,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 605,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 641,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 677,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 713,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 749,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 785,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 821,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 857,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 893,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 929,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 248,
+                "text": "760207308 · UNLOADED · 48 apertures · 0connectors · rear geometry_unverified",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 205,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 205,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 205,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 205,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.commscope.com/globalassets/digizuite/141999-p360-760207308-external.pdf",
+            "kind": "manufacturer-documentation",
+            "observed": "CPPA-UDDM-M-2U-48 88.9x482.6x210.82mm; primary content consulted via web, raw download failed; no downloadedPDF SHA asserted."
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Commscope/CPPA-UDDM-M-2U-48.yaml",
+            "kind": "community-yaml",
+            "sha256": "f5560e5202f3f4c8c862cf628f79d88190d05b522694c9347433bf615ae370d6",
+            "observed": "Original selected manufacturer/model identity only. Primary configuration supersedes undocumented IR population; historical IR unchanged."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-75ff355641be29f1/front-c567fc8ce092.png",
+            "sha256": "c567fc8ce0920d5d18cb216be61965674fd1183dcb3cff2ac8ce5fa7501ea2ed",
+            "view": "front",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-75ff355641be29f1/rear-0d6e1268a2e0.png",
+            "sha256": "0d6e1268a2e0547d610898a56d49ef8a8e7c7b6afea5ec29fd9cff297b9812fc",
+            "view": "rear",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          }
+        ],
+        "dimensionsBasis": "760207308; CPPA-UDDM-M-2U-48 88.9x482.6x210.82mm; primary content consulted via web, raw download failed; no downloadedPDF SHA asserted.; nominal W482.6 H88.9 D210.82mm. EMPTY M-series angled48apertures; no jacks or IDC.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "EMPTY M-series angled48apertures; no jacks or IDC.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "EMPTY mechanical rack accessory:0groups,0connectors,0modules,slots[]. Apertures, cassette capacities, rubberentries and screw holes are inert, not cable targets.",
+          "No declared child-mounting volume or usable bay. The physical shelf/enclosure is not a RackClick support shelf and cannot host child equipment in this profile.",
+          "Rear geometry_unverified unless an explicit cached rear is present; neutral geometry does not invent connectors, fans, handles or installed modules."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-682f01a7e3775f50",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Commscope",
+          "model": "CPP-SDDM-SL-1U-24",
+          "family": "EMPTY mechanical rack accessory,0ports/0modules,nochild support",
+          "sku": "760237046"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 482.6,
+          "height": 44.45,
+          "depth": 119.38
+        },
+        "color": "#252728",
+        "slots": [],
+        "groups": [],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.commscope.com/product-type/frames-panels-cassettes-modules/copper-panels-modules-cassettes/copper-panels/item760237046/",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#202324",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 51,
+                "y": 43,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 55,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 58,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 55,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 86,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 89,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 86,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 117,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 120,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 117,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 148,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 151,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 148,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 179,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 182,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 179,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 210,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 213,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 210,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 276,
+                "y": 43,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 280,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 283,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 280,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 311,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 314,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 311,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 342,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 345,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 342,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 373,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 376,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 373,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 404,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 407,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 404,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 435,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 438,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 435,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 501,
+                "y": 43,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 505,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 508,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 505,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 536,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 539,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 536,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 567,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 570,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 567,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 598,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 601,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 598,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 629,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 632,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 629,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 660,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 663,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 660,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 726,
+                "y": 43,
+                "w": 195,
+                "h": 48,
+                "fill": "#101314",
+                "stroke": "#737979"
+              },
+              {
+                "kind": "rect",
+                "x": 730,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 733,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 730,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 761,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 764,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 761,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 792,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 795,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 792,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 823,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 826,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 823,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 854,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 857,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 854,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "rect",
+                "x": 885,
+                "y": 48,
+                "w": 27,
+                "h": 34,
+                "fill": "#080b0d",
+                "stroke": "#626a6c"
+              },
+              {
+                "kind": "rect",
+                "x": 888,
+                "y": 52,
+                "w": 21,
+                "h": 26,
+                "fill": "#0f1519"
+              },
+              {
+                "kind": "rect",
+                "x": 885,
+                "y": 93,
+                "w": 27,
+                "h": 8,
+                "fill": "#d6dbd6"
+              },
+              {
+                "kind": "text",
+                "x": 970,
+                "y": 31,
+                "text": "COMMSCOPE",
+                "size": 7,
+                "fill": "#d3d8d6",
+                "anchor": "end"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "760237046 · UNLOADED · 24 apertures · 0connectors",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#202324",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 56,
+                "y": 48,
+                "w": 890,
+                "h": 22,
+                "fill": "#15191b",
+                "stroke": "#696e71"
+              },
+              {
+                "kind": "line",
+                "x1": 65,
+                "y1": 65,
+                "x2": 934,
+                "y2": 65,
+                "stroke": "#686e71",
+                "width": 2
+              },
+              {
+                "kind": "rect",
+                "x": 65,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 101,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 137,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 173,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 209,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 245,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 281,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 317,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 353,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 389,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 425,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 461,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 497,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 533,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 569,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 605,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 641,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 677,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 713,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 749,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 785,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 821,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 857,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 893,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "rect",
+                "x": 929,
+                "y": 63,
+                "w": 5,
+                "h": 18,
+                "fill": "#292e30"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "760237046 · UNLOADED · 24 apertures · 0connectors · rear geometry_unverified",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.commscope.com/product-type/frames-panels-cassettes-modules/copper-panels-modules-cassettes/copper-panels/item760237046/",
+            "kind": "manufacturer-documentation",
+            "observed": "CPP-SDDM-SL-1U-24 unloaded44.45x482.6x119.38mm",
+            "sha256": "5f6bf5655fb65b530cf6f0f2d27fa0591044731be7ccf167cc16f90cbc038cf3",
+            "bytes": 331813
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Commscope/CPP-SDDM-SL-1U-24.yaml",
+            "kind": "community-yaml",
+            "sha256": "2bb0af509d37cfa719d649823bc48c92fdba8331560284874c4a2f0f2a3ba5e1",
+            "observed": "Original selected manufacturer/model identity only. Primary configuration supersedes undocumented IR population; historical IR unchanged."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-682f01a7e3775f50/front-4d395077eec1.png",
+            "sha256": "4d395077eec1ad5d50202b727525c03d1999c96cf5347c1ac012fb19e7c99b38",
+            "view": "front",
+            "match": "community_unverified_populated_other_configuration_shape_only_new_profile_EMPTY"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-682f01a7e3775f50/front-4d395077eec1.png",
+            "sha256": "4d395077eec1ad5d50202b727525c03d1999c96cf5347c1ac012fb19e7c99b38",
+            "view": "rear",
+            "match": "same_front_or_angle_reference_NO_rear_image_geometry_unverified"
+          }
+        ],
+        "dimensionsBasis": "760237046; CPP-SDDM-SL-1U-24 unloaded44.45x482.6x119.38mm; nominal W482.6 H44.45 D119.38mm. EMPTY SL/SLX shielded24apertures; no jacks or IDC.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "EMPTY SL/SLX shielded24apertures; no jacks or IDC.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "EMPTY mechanical rack accessory:0groups,0connectors,0modules,slots[]. Apertures, cassette capacities, rubberentries and screw holes are inert, not cable targets.",
+          "No declared child-mounting volume or usable bay. The physical shelf/enclosure is not a RackClick support shelf and cannot host child equipment in this profile.",
+          "Rear geometry_unverified unless an explicit cached rear is present; neutral geometry does not invent connectors, fans, handles or installed modules.",
+          "Cached front shows installedjacks, while primary SL/SLX base excludes informationoutlets. New source intentionally draws empty apertures; no copper/IDC endpoints are inherited from IR."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-bdf6ab2dce05aee0",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Panduit",
+          "model": "Opticom Rack Mount Enclosure, Black, 1 RU, 3 FAP/Cassette Slots",
+          "family": "EMPTY mechanical rack accessory,0ports/0modules,nochild support",
+          "sku": "FRME1U"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 441.5,
+          "height": 44,
+          "depth": 361
+        },
+        "color": "#252728",
+        "slots": [],
+        "groups": [],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.panduit.com/content/dam/panduit/en/products/media/6/96/096/9096/111579096.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#1f2223",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 31,
+                "y": 27,
+                "w": 937,
+                "h": 86,
+                "fill": "#282c2c",
+                "stroke": "#737977"
+              },
+              {
+                "kind": "line",
+                "x1": 43,
+                "y1": 108,
+                "x2": 956,
+                "y2": 108,
+                "stroke": "#111516",
+                "width": 2
+              },
+              {
+                "kind": "circle",
+                "cx": 500,
+                "cy": 70.0,
+                "r": 8,
+                "fill": "#111719"
+              },
+              {
+                "kind": "circle",
+                "cx": 500,
+                "cy": 70.0,
+                "r": 3,
+                "fill": "#9da4a2"
+              },
+              {
+                "kind": "rect",
+                "x": 805,
+                "y": 59.0,
+                "w": 95,
+                "h": 21,
+                "fill": "#d7dbd5",
+                "stroke": "#9fa5a1"
+              },
+              {
+                "kind": "text",
+                "x": 55,
+                "y": 43,
+                "text": "PANDUIT OPTICOM",
+                "size": 8,
+                "fill": "#d4d7d3",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "FRME1U · EMPTY · 0optical ports/0modules",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#1f2223",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 40,
+                "y": 30,
+                "w": 920,
+                "h": 80,
+                "fill": "#242829",
+                "stroke": "#464d4f"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "FRME1U · EMPTY · 0optical ports/0modules · rear geometry_unverified",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.panduit.com/content/dam/panduit/en/products/media/6/96/096/9096/111579096.pdf",
+            "kind": "manufacturer-documentation",
+            "observed": "FRME1U/2U FBSP1192024 empty enclosure dimensions",
+            "sha256": "f0be3007f4118f8afd39799cc62650be092d2c4ea7c20c17ce47631cb8c11ddd",
+            "bytes": 401815
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/FRME1U.yaml",
+            "kind": "community-yaml",
+            "sha256": "10c635df1e15c91e89ac046d664f969cc8ac0b72eb343ee0a9e37538a35dec99",
+            "observed": "Original selected manufacturer/model identity only. Primary configuration supersedes undocumented IR population; historical IR unchanged."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/community-expansion/assets/nb-bdf6ab2dce05aee0/front-ddf2440ed470.png",
+            "sha256": "ddf2440ed4708c5cf52846b4e881edeedcc1d201b012a3e011e75ee1286a5c74",
+            "view": "front",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          },
+          {
+            "path": ".local/selected506k-passive-20261101/frme-page1.png",
+            "sha256": "fb5a1bcce9a6145981d8225788e767c1847c721ddc46bb5da86e5b9f14b6ed0c",
+            "view": "rear",
+            "match": "manufacturer_enclosure_drawing_NO_rear_elevation_geometry_unverified"
+          }
+        ],
+        "dimensionsBasis": "FRME1U; FRME1U/2U FBSP1192024 empty enclosure dimensions; nominal W441.5 H44 D361mm. Emptyfiberbox3FAPpositions, no LC/SC/MPO/cassettes. Cotasbody; universal19/23bracketsincluded.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "Emptyfiberbox3FAPpositions, no LC/SC/MPO/cassettes. Cotasbody; universal19/23bracketsincluded.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "EMPTY mechanical rack accessory:0groups,0connectors,0modules,slots[]. Apertures, cassette capacities, rubberentries and screw holes are inert, not cable targets.",
+          "No declared child-mounting volume or usable bay. The physical shelf/enclosure is not a RackClick support shelf and cannot host child equipment in this profile.",
+          "Rear geometry_unverified unless an explicit cached rear is present; neutral geometry does not invent connectors, fans, handles or installed modules.",
+          "W441.5 is actual body width; universal19/23in mounting brackets are included perFBSP119-WW-ENG. FAP/cassette slots are empty capacities, not ports or childslots."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-29ce493b266db9c3",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Panduit",
+          "model": "Opticom Rack Mount Enclosure, Black, 2 RU, 6 FAP/Cassette Slots",
+          "family": "EMPTY mechanical rack accessory,0ports/0modules,nochild support",
+          "sku": "FRME2U"
+        },
+        "kind": "rack",
+        "rackUnits": 2,
+        "dimensionsMm": {
+          "width": 441.5,
+          "height": 88,
+          "depth": 361
+        },
+        "color": "#252728",
+        "slots": [],
+        "groups": [],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.panduit.com/content/dam/panduit/en/products/media/6/96/096/9096/111579096.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 260,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 200,
+              "fill": "#1f2223",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 31,
+                "y": 27,
+                "w": 937,
+                "h": 186,
+                "fill": "#282c2c",
+                "stroke": "#737977"
+              },
+              {
+                "kind": "line",
+                "x1": 43,
+                "y1": 208,
+                "x2": 956,
+                "y2": 208,
+                "stroke": "#111516",
+                "width": 2
+              },
+              {
+                "kind": "circle",
+                "cx": 500,
+                "cy": 120.0,
+                "r": 8,
+                "fill": "#111719"
+              },
+              {
+                "kind": "circle",
+                "cx": 500,
+                "cy": 120.0,
+                "r": 3,
+                "fill": "#9da4a2"
+              },
+              {
+                "kind": "rect",
+                "x": 805,
+                "y": 109.0,
+                "w": 95,
+                "h": 21,
+                "fill": "#d7dbd5",
+                "stroke": "#9fa5a1"
+              },
+              {
+                "kind": "text",
+                "x": 55,
+                "y": 43,
+                "text": "PANDUIT OPTICOM",
+                "size": 8,
+                "fill": "#d4d7d3",
+                "anchor": "start"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 248,
+                "text": "FRME2U · EMPTY · 0optical ports/0modules",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 205,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 205,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 205,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 205,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 260,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 200,
+              "fill": "#1f2223",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 40,
+                "y": 30,
+                "w": 920,
+                "h": 180,
+                "fill": "#242829",
+                "stroke": "#464d4f"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 248,
+                "text": "FRME2U · EMPTY · 0optical ports/0modules · rear geometry_unverified",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 205,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 205,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 205,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 205,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.panduit.com/content/dam/panduit/en/products/media/6/96/096/9096/111579096.pdf",
+            "kind": "manufacturer-documentation",
+            "observed": "FRME1U/2U FBSP1192024 empty enclosure dimensions",
+            "sha256": "f0be3007f4118f8afd39799cc62650be092d2c4ea7c20c17ce47631cb8c11ddd",
+            "bytes": 401815
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Panduit/FRME2U.yaml",
+            "kind": "community-yaml",
+            "sha256": "969fcc577af8297330467372ea02f0a870f9abff7c640fa310259b96df90da0c",
+            "observed": "Original selected manufacturer/model identity only. Primary configuration supersedes undocumented IR population; historical IR unchanged."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/community-expansion/assets/nb-29ce493b266db9c3/front-b4bc5e3d0e86.png",
+            "sha256": "b4bc5e3d0e86f23565bc3d09ba500e3dd01f5a6f5fca12ebe05541478886fc73",
+            "view": "front",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          },
+          {
+            "path": ".local/selected506k-passive-20261101/frme-page1.png",
+            "sha256": "fb5a1bcce9a6145981d8225788e767c1847c721ddc46bb5da86e5b9f14b6ed0c",
+            "view": "rear",
+            "match": "manufacturer_enclosure_drawing_NO_rear_elevation_geometry_unverified"
+          }
+        ],
+        "dimensionsBasis": "FRME2U; FRME1U/2U FBSP1192024 empty enclosure dimensions; nominal W441.5 H88 D361mm. Emptyfiberbox6FAPpositions, no LC/SC/MPO/cassettes. Cotasbody; universal19/23bracketsincluded.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "Emptyfiberbox6FAPpositions, no LC/SC/MPO/cassettes. Cotasbody; universal19/23bracketsincluded.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "EMPTY mechanical rack accessory:0groups,0connectors,0modules,slots[]. Apertures, cassette capacities, rubberentries and screw holes are inert, not cable targets.",
+          "No declared child-mounting volume or usable bay. The physical shelf/enclosure is not a RackClick support shelf and cannot host child equipment in this profile.",
+          "Rear geometry_unverified unless an explicit cached rear is present; neutral geometry does not invent connectors, fans, handles or installed modules.",
+          "W441.5 is actual body width; universal19/23in mounting brackets are included perFBSP119-WW-ENG. FAP/cassette slots are empty capacities, not ports or childslots."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-a6a79509854ba38b",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Commscope",
+          "model": "360G2-1U-MOD-SD",
+          "family": "EMPTY mechanical rack accessory,0ports/0modules,nochild support",
+          "sku": "760193771"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 482.6,
+          "height": 44.45,
+          "depth": 457.2
+        },
+        "color": "#252728",
+        "slots": [],
+        "groups": [],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.commscope.com/globalassets/digizuite/137698-p360-760193771-external.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#8b8e8e",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 32,
+                "y": 31,
+                "w": 936,
+                "h": 79,
+                "fill": "#9c9f9f",
+                "stroke": "#404849"
+              },
+              {
+                "kind": "rect",
+                "x": 48,
+                "y": 37,
+                "w": 902,
+                "h": 66,
+                "fill": "#777f80",
+                "stroke": "#bcc3c0"
+              },
+              {
+                "kind": "line",
+                "x1": 48,
+                "y1": 44,
+                "x2": 949,
+                "y2": 44,
+                "stroke": "#d1d6d4",
+                "width": 1
+              },
+              {
+                "kind": "text",
+                "x": 64,
+                "y": 54,
+                "text": "SYSTIMAX 360",
+                "size": 9,
+                "fill": "#1c2427",
+                "anchor": "start"
+              },
+              {
+                "kind": "rect",
+                "x": 897,
+                "y": 75,
+                "w": 48,
+                "h": 12,
+                "fill": "#c9cec7"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "760193771 · EMPTY · 0optical ports/0modules",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#8b8e8e",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 31,
+                "y": 30,
+                "w": 939,
+                "h": 80,
+                "fill": "#222829",
+                "stroke": "#626b6e"
+              },
+              {
+                "kind": "circle",
+                "cx": 98,
+                "cy": 60,
+                "r": 16,
+                "fill": "#0f1518"
+              },
+              {
+                "kind": "circle",
+                "cx": 158,
+                "cy": 75,
+                "r": 25,
+                "fill": "#0f1518"
+              },
+              {
+                "kind": "circle",
+                "cx": 217,
+                "cy": 75,
+                "r": 25,
+                "fill": "#0f1518"
+              },
+              {
+                "kind": "circle",
+                "cx": 275,
+                "cy": 60,
+                "r": 16,
+                "fill": "#0f1518"
+              },
+              {
+                "kind": "circle",
+                "cx": 500,
+                "cy": 73,
+                "r": 33,
+                "fill": "#0f1518"
+              },
+              {
+                "kind": "circle",
+                "cx": 714,
+                "cy": 60,
+                "r": 16,
+                "fill": "#0f1518"
+              },
+              {
+                "kind": "circle",
+                "cx": 775,
+                "cy": 75,
+                "r": 25,
+                "fill": "#0f1518"
+              },
+              {
+                "kind": "circle",
+                "cx": 836,
+                "cy": 75,
+                "r": 25,
+                "fill": "#0f1518"
+              },
+              {
+                "kind": "circle",
+                "cx": 893,
+                "cy": 60,
+                "r": 16,
+                "fill": "#0f1518"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "760193771 · EMPTY · 0optical ports/0modules · rear geometry_unverified",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.commscope.com/globalassets/digizuite/137698-p360-760193771-external.pdf",
+            "kind": "manufacturer-documentation",
+            "observed": "360G2-1U-MOD-SD unloaded0ports44.45x482.6x457.2mm; primary content consulted via web, raw download failed; no downloadedPDF SHA asserted."
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Commscope/360G2-1U-MOD-SD.yaml",
+            "kind": "community-yaml",
+            "sha256": "d28951887c9c55c9102524d305a61c4c8ef48ddff91d5805ba63b8cd4d83cf32",
+            "observed": "Original selected manufacturer/model identity only. Primary configuration supersedes undocumented IR population; historical IR unchanged."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-a6a79509854ba38b/front-97645a72e2dc.jpg",
+            "sha256": "97645a72e2dce7dd96f6826709f6c0162fb7ff5262c810f50264310708fef572",
+            "view": "front",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-a6a79509854ba38b/rear-a3fb9128c8b0.jpg",
+            "sha256": "a3fb9128c8b067c0e3d487910edc10d73bc9be657be6f93b6a9a2440daabf605",
+            "view": "rear",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          }
+        ],
+        "dimensionsBasis": "760193771; 360G2-1U-MOD-SD unloaded0ports44.45x482.6x457.2mm; primary content consulted via web, raw download failed; no downloadedPDF SHA asserted.; nominal W482.6 H44.45 D457.2mm. Unloaded4cassettepositions; modularfaceplate included, no fiber interfaces.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "Unloaded4cassettepositions; modularfaceplate included, no fiber interfaces.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "EMPTY mechanical rack accessory:0groups,0connectors,0modules,slots[]. Apertures, cassette capacities, rubberentries and screw holes are inert, not cable targets.",
+          "No declared child-mounting volume or usable bay. The physical shelf/enclosure is not a RackClick support shelf and cannot host child equipment in this profile.",
+          "Rear geometry_unverified unless an explicit cached rear is present; neutral geometry does not invent connectors, fans, handles or installed modules."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-78fb5e27dc863dbc",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "Commscope",
+          "model": "SD-4U",
+          "family": "EMPTY mechanical rack accessory,0ports/0modules,nochild support",
+          "sku": "760231464"
+        },
+        "kind": "rack",
+        "rackUnits": 4,
+        "dimensionsMm": {
+          "width": 482.6,
+          "height": 177.8,
+          "depth": 485.14
+        },
+        "color": "#252728",
+        "slots": [],
+        "groups": [],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.commscope.com/product-type/frames-panels-cassettes-modules/fiber-panels-modules-cassettes/fiber-panels/item760231464/",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 460,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 400,
+              "fill": "#1f2223",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 35,
+                "y": 30,
+                "w": 930,
+                "h": 380,
+                "fill": "#282d2f",
+                "stroke": "#50595d"
+              },
+              {
+                "kind": "line",
+                "x1": 35,
+                "y1": 408,
+                "x2": 965,
+                "y2": 408,
+                "stroke": "#131a1c",
+                "width": 1
+              },
+              {
+                "kind": "text",
+                "x": 500,
+                "y": 223.0,
+                "text": "COMMSCOPE SD-4U · UNLOADED",
+                "size": 12,
+                "fill": "#b1bbb9",
+                "anchor": "middle"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 448,
+                "text": "760231464 · EMPTY · 0optical ports/0modules · geometry_unverified",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 405,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 405,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 405,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 405,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 460,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 400,
+              "fill": "#1f2223",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 35,
+                "y": 30,
+                "w": 930,
+                "h": 380,
+                "fill": "#282d2f",
+                "stroke": "#50595d"
+              },
+              {
+                "kind": "line",
+                "x1": 35,
+                "y1": 408,
+                "x2": 965,
+                "y2": 408,
+                "stroke": "#131a1c",
+                "width": 1
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 448,
+                "text": "760231464 · EMPTY · 0optical ports/0modules · rear geometry_unverified",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 405,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 405,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 405,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 405,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.commscope.com/product-type/frames-panels-cassettes-modules/fiber-panels-modules-cassettes/fiber-panels/item760231464/",
+            "kind": "manufacturer-documentation",
+            "observed": "SD4U unloaded0ports177.8x482.6x485.14mm",
+            "sha256": "9d0576bb164bbbc6847a0d127bce30cdfeeb79b90827687aa90d2fe82309d3cc",
+            "bytes": 311672
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/Commscope/SD-4U.yaml",
+            "kind": "community-yaml",
+            "sha256": "47f0ac03767921c932e0e710249cfbc658032e2bed2eb4698a213bd2e195adec",
+            "observed": "Original selected manufacturer/model identity only. Primary configuration supersedes undocumented IR population; historical IR unchanged."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-78fb5e27dc863dbc/front-ca4486ae3a2a.jpg",
+            "sha256": "ca4486ae3a2a09394888fbce8614b28a42a6a52a976e852907950b56aa645a6f",
+            "view": "front",
+            "match": "community_unverified_top_or_oblique_only_NO_authenticated_front_elevation"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-78fb5e27dc863dbc/front-ca4486ae3a2a.jpg",
+            "sha256": "ca4486ae3a2a09394888fbce8614b28a42a6a52a976e852907950b56aa645a6f",
+            "view": "rear",
+            "match": "same_front_or_angle_reference_NO_rear_image_geometry_unverified"
+          }
+        ],
+        "dimensionsBasis": "760231464; SD4U unloaded0ports177.8x482.6x485.14mm; nominal W482.6 H177.8 D485.14mm. SD4Uunloaded12LGXpositions; no adapters/cassettes. Cachedanglefronttagnotauthenticated.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "SD4Uunloaded12LGXpositions; no adapters/cassettes. Cachedanglefronttagnotauthenticated.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "EMPTY mechanical rack accessory:0groups,0connectors,0modules,slots[]. Apertures, cassette capacities, rubberentries and screw holes are inert, not cable targets.",
+          "No declared child-mounting volume or usable bay. The physical shelf/enclosure is not a RackClick support shelf and cannot host child equipment in this profile.",
+          "Rear geometry_unverified unless an explicit cached rear is present; neutral geometry does not invent connectors, fans, handles or installed modules.",
+          "Both front and rear geometry_unverified: cached image appears top/oblique rather than authenticated front. Closed neutral body only, with no guessed knobs, cableentries or installedfiber."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-93773a73e59631e4",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "FS",
+          "model": "FHD-1UFMT-N",
+          "family": "EMPTY mechanical rack accessory,0ports/0modules,nochild support",
+          "sku": "FHD-1UFMT-N"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 482.6,
+          "height": 44,
+          "depth": 283.6
+        },
+        "color": "#252728",
+        "slots": [],
+        "groups": [],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://resource.fs.com/mall/resource/fhd-1ufmt-n-fiber-enclosure-datasheet.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#1f2223",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 48,
+                "y": 40,
+                "w": 208,
+                "h": 51,
+                "fill": "#080c10",
+                "stroke": "#5b6263"
+              },
+              {
+                "kind": "rect",
+                "x": 55,
+                "y": 44,
+                "w": 194,
+                "h": 43,
+                "fill": "#13191e"
+              },
+              {
+                "kind": "circle",
+                "cx": 51,
+                "cy": 44,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 51,
+                "cy": 87,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 252,
+                "cy": 44,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 252,
+                "cy": 87,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "rect",
+                "x": 274,
+                "y": 40,
+                "w": 208,
+                "h": 51,
+                "fill": "#080c10",
+                "stroke": "#5b6263"
+              },
+              {
+                "kind": "rect",
+                "x": 281,
+                "y": 44,
+                "w": 194,
+                "h": 43,
+                "fill": "#13191e"
+              },
+              {
+                "kind": "circle",
+                "cx": 277,
+                "cy": 44,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 277,
+                "cy": 87,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 478,
+                "cy": 44,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 478,
+                "cy": 87,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "rect",
+                "x": 500,
+                "y": 40,
+                "w": 208,
+                "h": 51,
+                "fill": "#080c10",
+                "stroke": "#5b6263"
+              },
+              {
+                "kind": "rect",
+                "x": 507,
+                "y": 44,
+                "w": 194,
+                "h": 43,
+                "fill": "#13191e"
+              },
+              {
+                "kind": "circle",
+                "cx": 503,
+                "cy": 44,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 503,
+                "cy": 87,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 704,
+                "cy": 44,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 704,
+                "cy": 87,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "rect",
+                "x": 726,
+                "y": 40,
+                "w": 208,
+                "h": 51,
+                "fill": "#080c10",
+                "stroke": "#5b6263"
+              },
+              {
+                "kind": "rect",
+                "x": 733,
+                "y": 44,
+                "w": 194,
+                "h": 43,
+                "fill": "#13191e"
+              },
+              {
+                "kind": "circle",
+                "cx": 729,
+                "cy": 44,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 729,
+                "cy": 87,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 930,
+                "cy": 44,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "circle",
+                "cx": 930,
+                "cy": 87,
+                "r": 2,
+                "fill": "#b4bbb8"
+              },
+              {
+                "kind": "text",
+                "x": 963,
+                "y": 109,
+                "text": "FS",
+                "size": 9,
+                "fill": "#dadee0",
+                "anchor": "end"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "FHD-1UFMT-N · EMPTY · 0optical ports/0modules",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#1f2223",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 40,
+                "y": 31,
+                "w": 920,
+                "h": 80,
+                "fill": "#252a2d",
+                "stroke": "#4f575d"
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "FHD-1UFMT-N · EMPTY · 0optical ports/0modules · rear geometry_unverified",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://resource.fs.com/mall/resource/fhd-1ufmt-n-fiber-enclosure-datasheet.pdf",
+            "kind": "manufacturer-documentation",
+            "observed": "FHD-1UFMT-N latestfixed/unloaded fourbays H44W482.6D283.6",
+            "sha256": "43d446b6afa74a455f76631630aa806b5cf4b79d705a51e021c248ac67684e12",
+            "bytes": 1664473
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/FS/FHD-1UFMT-N.yaml",
+            "kind": "community-yaml",
+            "sha256": "c911c9997d6e04fabc894ec8c47e0fc02ab6d17e986e9b981b3b1840f0a665e4",
+            "observed": "Original selected manufacturer/model identity only. Primary configuration supersedes undocumented IR population; historical IR unchanged."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-93773a73e59631e4/front-2f3f0afb7b04.png",
+            "sha256": "2f3f0afb7b04a49694ab3f166223cecfddf1c623a12ea9e46a40069878c7d378",
+            "view": "front",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-93773a73e59631e4/front-2f3f0afb7b04.png",
+            "sha256": "2f3f0afb7b04a49694ab3f166223cecfddf1c623a12ea9e46a40069878c7d378",
+            "view": "rear",
+            "match": "same_front_or_angle_reference_NO_rear_image_geometry_unverified"
+          }
+        ],
+        "dimensionsBasis": "FHD-1UFMT-N; FHD-1UFMT-N latestfixed/unloaded fourbays H44W482.6D283.6; nominal W482.6 H44 D283.6mm. Currentmanufacturerfixedunloaded4bays; older2016W430D289.1notmixed. No fiber ports.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "Currentmanufacturerfixedunloaded4bays; older2016W430D289.1notmixed. No fiber ports.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "EMPTY mechanical rack accessory:0groups,0connectors,0modules,slots[]. Apertures, cassette capacities, rubberentries and screw holes are inert, not cable targets.",
+          "No declared child-mounting volume or usable bay. The physical shelf/enclosure is not a RackClick support shelf and cannot host child equipment in this profile.",
+          "Rear geometry_unverified unless an explicit cached rear is present; neutral geometry does not invent connectors, fans, handles or installed modules.",
+          "Current original PDF W482.6/H44/D283.6 selected. Older2016 samePN W430/D289.1 and productnumber34684 are not mixed; originalIR identity/product#96427 retained only as historicalselector."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-startech-cabshelf1u",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "StarTech.com",
+          "model": "CABSHELF1U",
+          "family": "EMPTY mechanical rack accessory,0ports/0modules,nochild support",
+          "sku": "CABSHELF1U"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 443,
+          "height": 45,
+          "depth": 178
+        },
+        "color": "#252728",
+        "slots": [],
+        "groups": [],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://media.startech.com/cms/pdfs/cabshelf1u_datasheet.pdf",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#202427",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 35,
+                "y": 32,
+                "w": 930,
+                "h": 15,
+                "fill": "#30373a",
+                "stroke": "#60696c"
+              },
+              {
+                "kind": "rect",
+                "x": 35,
+                "y": 94,
+                "w": 930,
+                "h": 14,
+                "fill": "#10191e"
+              },
+              {
+                "kind": "line",
+                "x1": 35,
+                "y1": 48,
+                "x2": 35,
+                "y2": 94,
+                "stroke": "#525b5d",
+                "width": 3
+              },
+              {
+                "kind": "line",
+                "x1": 965,
+                "y1": 48,
+                "x2": 965,
+                "y2": 94,
+                "stroke": "#525b5d",
+                "width": 3
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "CABSHELF1U · mechanical accessory only · NO childslot",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#202427",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 35,
+                "y": 32,
+                "w": 930,
+                "h": 15,
+                "fill": "#30373a",
+                "stroke": "#60696c"
+              },
+              {
+                "kind": "rect",
+                "x": 35,
+                "y": 94,
+                "w": 930,
+                "h": 14,
+                "fill": "#10191e"
+              },
+              {
+                "kind": "line",
+                "x1": 35,
+                "y1": 48,
+                "x2": 35,
+                "y2": 94,
+                "stroke": "#525b5d",
+                "width": 3
+              },
+              {
+                "kind": "line",
+                "x1": 965,
+                "y1": 48,
+                "x2": 965,
+                "y2": 94,
+                "stroke": "#525b5d",
+                "width": 3
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "CABSHELF1U · mechanical accessory only · NO childslot · rear geometry_unverified",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://media.startech.com/cms/pdfs/cabshelf1u_datasheet.pdf",
+            "kind": "manufacturer-datasheet",
+            "observed": "PDF p1 Product ID / description; p2 Physical & Environmental, Performance and Hardware; p3 In-the-Box; nominal1U bodyW443/H45/D178mm; no usable freeheight.",
+            "sha256": "dd408070ec2ef6e81f7593f6996c08a6abe5ca21f4d0b2438040651be96958db",
+            "bytes": 46383
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/baseline35/passive-infra/startech-cabshelf1u/asset-87b641bd67c7.jpg",
+            "sha256": "87b641bd67c73122f07a50c18ddb3bdfb80ea0d915c0746cd211a184d936e20b",
+            "view": "front",
+            "match": "manufacturer_angle_only_geometry_unverified_elevation_not_certified"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/baseline35/passive-infra/startech-cabshelf1u/asset-56a95b365eca.jpg",
+            "sha256": "56a95b365eca28229dce829698efd38707a32cdd11e73c42fb066ebc421118af",
+            "view": "front",
+            "match": "manufacturer_angle_only_geometry_unverified_elevation_not_certified"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/baseline220/baseline35/passive-infra/startech-cabshelf1u/asset-87b641bd67c7.jpg",
+            "sha256": "87b641bd67c73122f07a50c18ddb3bdfb80ea0d915c0746cd211a184d936e20b",
+            "view": "rear",
+            "match": "same_front_or_angle_reference_NO_rear_image_geometry_unverified"
+          }
+        ],
+        "dimensionsBasis": "CABSHELF1U; PDF p1 Product ID / description; p2 Physical & Environmental, Performance and Hardware; p3 In-the-Box; nominal1U bodyW443/H45/D178mm; no usable freeheight.; nominal W443 H45 D178mm. Mechanicalaccessoryonly,nochildslot; no invented usableheight. Manufacturer H45retained,nominal1U.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "Mechanicalaccessoryonly,nochildslot; no invented usableheight. Manufacturer H45retained,nominal1U.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "EMPTY mechanical rack accessory:0groups,0connectors,0modules,slots[]. Apertures, cassette capacities, rubberentries and screw holes are inert, not cable targets.",
+          "No declared child-mounting volume or usable bay. The physical shelf/enclosure is not a RackClick support shelf and cannot host child equipment in this profile.",
+          "Rear geometry_unverified unless an explicit cached rear is present; neutral geometry does not invent connectors, fans, handles or installed modules.",
+          "H45mm is retained from manufacturer metric specification despite nominal1U. No rounding down to44.45mm and no certified freeheight/adjacentU fit asserted. 15kg stationary capacity is documentation, not enforced load engineering."
+        ]
+      }
+    },
+    {
+      "definition": {
+        "key": "selected-nb-edde85c1a3ba283d",
+        "revision": "selected506k-20261101-v1",
+        "identity": {
+          "manufacturer": "EFB Elektronik",
+          "model": "691651ATS8",
+          "family": "EMPTY mechanical rack accessory,0ports/0modules,nochild support",
+          "sku": "691651ATS.8"
+        },
+        "kind": "rack",
+        "rackUnits": 1,
+        "dimensionsMm": {
+          "width": 482.6,
+          "height": 44,
+          "depth": 550
+        },
+        "color": "#252728",
+        "slots": [],
+        "groups": [],
+        "passthrough": null,
+        "provenance": {
+          "kind": "manufacturer-specification",
+          "source": "https://www.efb-elektronik.de/en/19-1u-pull-out-shelf-md-550..650-mm-max.-load-30-kg-cd-800-ral9005/691651ats.8",
+          "assets": []
+        }
+      },
+      "visual": {
+        "faces": {
+          "front": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#202427",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 35,
+                "y": 34,
+                "w": 929,
+                "h": 60,
+                "fill": "#22292d",
+                "stroke": "#555f64"
+              },
+              {
+                "kind": "rect",
+                "x": 405,
+                "y": 48,
+                "w": 190,
+                "h": 20,
+                "fill": "#9aa4a5",
+                "stroke": "#171f23"
+              },
+              {
+                "kind": "rect",
+                "x": 419,
+                "y": 53,
+                "w": 162,
+                "h": 11,
+                "fill": "#182126"
+              },
+              {
+                "kind": "line",
+                "x1": 35,
+                "y1": 104,
+                "x2": 964,
+                "y2": 104,
+                "stroke": "#11191e",
+                "width": 3
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "691651ATS.8 · mechanical accessory only · NO childslot",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          },
+          "rear": {
+            "width": 1000,
+            "height": 160,
+            "plate": {
+              "x": 2,
+              "y": 20,
+              "w": 996,
+              "h": 100,
+              "fill": "#202427",
+              "stroke": "#666a6c",
+              "radius": 3
+            },
+            "decorations": [
+              {
+                "kind": "rect",
+                "x": 35,
+                "y": 34,
+                "w": 929,
+                "h": 60,
+                "fill": "#22292d",
+                "stroke": "#555f64"
+              },
+              {
+                "kind": "line",
+                "x1": 35,
+                "y1": 104,
+                "x2": 964,
+                "y2": 104,
+                "stroke": "#11191e",
+                "width": 3
+              },
+              {
+                "kind": "text",
+                "x": 500.0,
+                "y": 148,
+                "text": "691651ATS.8 · mechanical accessory only · NO childslot · rear geometry_unverified",
+                "size": 7,
+                "fill": "#6b7d88",
+                "anchor": "middle"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 13,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 35,
+                "r": 1.5,
+                "fill": "#6b7375"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 4,
+                "fill": "#111314"
+              },
+              {
+                "kind": "circle",
+                "cx": 983,
+                "cy": 105,
+                "r": 1.5,
+                "fill": "#6b7375"
+              }
+            ],
+            "banks": []
+          }
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "url": "https://www.efb-elektronik.de/en/19-1u-pull-out-shelf-md-550..650-mm-max.-load-30-kg-cd-800-ral9005/691651ats.8",
+            "kind": "manufacturer-documentation",
+            "observed": "691651ATS.8 shelfouterdimensions decksize notheightclearance",
+            "sha256": "30c9c933bba81f8b323c633b76b6703ae6ac01813ac50f73dc42fffe9c931814",
+            "bytes": 741986
+          },
+          {
+            "url": "https://github.com/netbox-community/devicetype-library/blob/19470a551058fc9207f036371beefc41b197202e/device-types/EFB Elektronik/691651ATS8.yaml",
+            "kind": "community-yaml",
+            "sha256": "ffc0fdfd904cf374e6ccf6c59278a0c146732118329945022fecb0244e523942",
+            "observed": "Original selected manufacturer/model identity only. Primary configuration supersedes undocumented IR population; historical IR unchanged."
+          }
+        ],
+        "referenceAssets": [
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-edde85c1a3ba283d/front-54c85f18c3fc.png",
+            "sha256": "54c85f18c3fcb7ff9519082025afea8c7bbfae9b7f0c5847318f9ca75f86d4a7",
+            "view": "front",
+            "match": "community_unverified_revision_shape_only_not_population_certification"
+          },
+          {
+            "path": ".local/hardware-visual-500-fe06c3650ef34f5385fdfe813ffcbf7f/community-expansion/assets/nb-edde85c1a3ba283d/front-54c85f18c3fc.png",
+            "sha256": "54c85f18c3fcb7ff9519082025afea8c7bbfae9b7f0c5847318f9ca75f86d4a7",
+            "view": "rear",
+            "match": "same_front_or_angle_reference_NO_rear_image_geometry_unverified"
+          }
+        ],
+        "dimensionsBasis": "691651ATS.8; 691651ATS.8 shelfouterdimensions decksize notheightclearance; nominal W482.6 H44 D550mm. Mechanicalaccessoryonly,nochildslot; usabledeck414x550 but clearheightnotcertified,rails550-650mm.",
+        "limits": [
+          "Own flat vector carcass; no operational photograph or copiedlogo. Cached community images do not authenticate manufacturing revision, population, exact dimensions or installed options.",
+          "Mechanicalaccessoryonly,nochildslot; usabledeck414x550 but clearheightnotcertified,rails550-650mm.",
+          "No power, PoE budget, live LED state, protocol, pinout, throughput certification, hidden internal endpoint or optional module inferred. USB/HDMI/DC and physical blanking details remain inert.",
+          "EMPTY mechanical rack accessory:0groups,0connectors,0modules,slots[]. Apertures, cassette capacities, rubberentries and screw holes are inert, not cable targets.",
+          "No declared child-mounting volume or usable bay. The physical shelf/enclosure is not a RackClick support shelf and cannot host child equipment in this profile.",
+          "Rear geometry_unverified unless an explicit cached rear is present; neutral geometry does not invent connectors, fans, handles or installed modules.",
+          "IR model691651ATS8 retained. Primary ordernumber691651ATS.8 uses a dot; deck414×550/rails550–650,30kg. No freevertical child volume certified."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "formatVersion": 1,
+  "targetSchema": 23,
+  "catalogKey": "rackclick-qnap-01",
+  "state": "curated_development_not_a_release",
+  "inputs": {
+    "development/hardware/catalog-qnap-v1.json": "89801b1c35cbff275ea1bf3505abd033eb229c76a2027fd10b0f29c5a4606aa4",
+    "development/hardware/qnap-ts464-8g.facts.json": "3d60b13ec153045ab5c7c3c33723de588875f6f08bcfeecca50315604e10b390",
+    "development/hardware/catalog-schema23.lock.json": "4ff50e83a98583224fef7297684dad79e9c3a8921e8cc50d9839592912d216d7",
+    "development/server/database/022-diskstation-hardware.sql": "d67794d0a82461d2056cbc384f3913762261629ff878a33b8c835ad80629d877"
+  },
+  "files": {
+    "development/server/src/RackClick.Server/QnapHardwareProfiles.Generated.cs": "72d52b9628c0e3f5def5ae2dfe3f656f37d379a65d0e8bc6c43982e96db31086",
+    "development/frontend/src/hardware-qnap.generated.json": "8d51b2d66c8f1fd4fc2c6df7530dd2fcbd502bb54bbe669c4d98cc6a13e04b50",
+    "development/server/database/023-qnap-hardware.sql": "d7d2a1466813da72cff26051ae29c84f9f980b9f6479743d7ed420ce3d897694"
+  },
+  "definitions": [
+    {
+      "key": "qnap-ts464-8g",
+      "revision": "qnap-20261030-v1",
+      "sha256": "377592d3283f1de0d3c1059908eedc7c9f82ac6aa2a5cbdfd55bf997e64cae90"
+    }
+  ]
+}

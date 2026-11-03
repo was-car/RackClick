@@ -5,10 +5,11 @@
 [CmdletBinding()]
 param([string]$ManifestPath='',[string]$ExpectedManifestSha256='',[string]$ServerPath='',[string]$FrontendPath='',
       [string]$DotNetPath='',[string]$PostgresBinPath='',[string]$DestinationPath='',[int]$PostgresPort=0,[int]$HttpPort=0,
-      [string]$RecoveryUser='',[string]$BackupPath='',[string]$ExpectedBackupManifestSha256='')
+      [string]$RecoveryUser='',[string]$BackupPath='',[string]$ExpectedBackupManifestSha256='',[switch]$ProtectSqlCredentials,[switch]$MinimizeSqlSecrets)
 $restoreDeploymentInputs=@{manifest=$ManifestPath;manifestHash=$ExpectedManifestSha256;server=$ServerPath;frontend=$FrontendPath;
     dotnet=$DotNetPath;pg=$PostgresBinPath;destination=$DestinationPath;pgPort=$PostgresPort;httpPort=$HttpPort;
     user=$RecoveryUser;backup=$BackupPath;backupHash=$ExpectedBackupManifestSha256}
+$restoreDeploymentInputs.protectSql=[bool]$ProtectSqlCredentials;$restoreDeploymentInputs.minimizeSql=[bool]$MinimizeSqlSecrets
 . (Join-Path $PSScriptRoot 'RackClick.Deployment.ps1')
 . (Join-Path $PSScriptRoot 'New-RackClickRecoveredInstance.ps1')
 
@@ -86,11 +87,11 @@ try {
     $distributionPath=Join-Path $root 'distribution';$instancePath=Join-Path $root 'instance';$httpsPath=Join-Path $root 'https'
     $phase='stage'
     $stage=Invoke-RestoreDeploymentChild 'Stage-ServerDistribution.ps1' @('-ManifestPath',$paths.manifest,'-ExpectedManifestSha256',$restoreDeploymentInputs.manifestHash,'-ServerPath',$paths.server,'-FrontendPath',$paths.frontend,'-DotNetPath',$paths.dotnet,'-PostgresBinPath',$paths.pg,'-DestinationPath',$distributionPath) $root $logs
-    # 14 tiene 24 archivos de servidor (lista explícita); 9–13 siguen con 9+esquema. Total = servidor + 18 de frontend.
-    $expectedVerified=if ($sourceManifest.schema -in @(14,15)) {28+$sourceManifest.schema} else {27+$sourceManifest.schema}
+    $expectedVerified=Get-StageVerifiedFileCount $sourceManifest.schema
     if ($stage.code -cne 'artifacts_staged' -or $stage.destinationPath -cne $distributionPath -or $stage.verifiedFiles -ne $expectedVerified -or $stage.receiptSha256 -cnotmatch '^[a-f0-9]{64}$') {Stop-RecoveryCheck 'receipt_invalid'}
     $phase='instance'
-    $created=Invoke-RestoreDeploymentChild 'New-RackClickRecoveredInstance.ps1' @('-StagePath',$distributionPath,'-ExpectedManifestSha256',$restoreDeploymentInputs.manifestHash,'-ExpectedReceiptSha256',$stage.receiptSha256,'-DotNetPath',$paths.dotnet,'-PostgresBinPath',$paths.pg,'-InstancePath',$instancePath,'-PostgresPort',[string]$restoreDeploymentInputs.pgPort,'-PublicOrigin',('http://127.0.0.1:'+[string]$restoreDeploymentInputs.httpPort),'-RecoveryUser',$user,'-BackupPath',$paths.backup,'-ExpectedBackupManifestSha256',$restoreDeploymentInputs.backupHash,'-DevelopmentLoopbackHttp') $root $logs
+    $sqlProvisionArguments=@();if($restoreDeploymentInputs.protectSql){$sqlProvisionArguments+='-ProtectSqlCredentials'};if($restoreDeploymentInputs.minimizeSql){$sqlProvisionArguments+='-MinimizeSqlSecrets'}
+    $created=Invoke-RestoreDeploymentChild 'New-RackClickRecoveredInstance.ps1' (@('-StagePath',$distributionPath,'-ExpectedManifestSha256',$restoreDeploymentInputs.manifestHash,'-ExpectedReceiptSha256',$stage.receiptSha256,'-DotNetPath',$paths.dotnet,'-PostgresBinPath',$paths.pg,'-InstancePath',$instancePath,'-PostgresPort',[string]$restoreDeploymentInputs.pgPort,'-PublicOrigin',('http://127.0.0.1:'+[string]$restoreDeploymentInputs.httpPort),'-RecoveryUser',$user,'-BackupPath',$paths.backup,'-ExpectedBackupManifestSha256',$restoreDeploymentInputs.backupHash,'-DevelopmentLoopbackHttp')+$sqlProvisionArguments) $root $logs
     if ($created.code -cne 'instance_initialized' -or $created.instanceManifestSha256 -cnotmatch '^[a-f0-9]{64}$' -or
         $created.sourceBackupManifestSha256 -cne $restoreDeploymentInputs.backupHash.ToLowerInvariant() -or
         $created.recoveryAuditEventId -cnotmatch '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$') {Stop-RecoveryCheck 'receipt_invalid'}
