@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 1,
+  "planVersion": "2026-11-04-v1.23",
+  "date": "2026-11-04",
+  "numberingRule": "Numeros estables. Al cerrar un paso se conserva su numero. Ampliaciones se anexan con motivo/version; no renumerar ni asignar pesos.",
+  "vmRule": "D45 se conserva: servicio/SID/DB/HTTPS/MFA y datos existentes intactos. La lista no ejecuta ni autoriza operaciones destructivas, reinstalación o recarga de Demo50; los ensayos futuros usan su laboratorio asignado.",
+  "stableStepIds": [
+    "F-01.01",
+    "F-01.02",
+    "F-01.03",
+    "F-01.04",
+    "F-02.01",
+    "F-02.02",
+    "F-02.03",
+    "F-02.04",
+    "F-03.02",
+    "F-03.03",
+    "F-04.01",
+    "F-04.02",
+    "F-04.04",
+    "F-05.01",
+    "F-05.02",
+    "F-05.03",
+    "F-05.04",
+    "F-05.05",
+    "F-06.01",
+    "F-06.02",
+    "F-06.03",
+    "F-06.04",
+    "F-07.05",
+    "F-08.01",
+    "F-08.02",
+    "F-08.03",
+    "F-08.04",
+    "F-08.05",
+    "F-09.01",
+    "F-09.02",
+    "F-09.03",
+    "F-09.04",
+    "F-09.05",
+    "F-10.01",
+    "F-10.02",
+    "F-10.03",
+    "F-10.04",
+    "F-10.05",
+    "F-11.01",
+    "F-11.02",
+    "F-11.03",
+    "F-11.04",
+    "F-11.05",
+    "F-12.01",
+    "F-12.02",
+    "F-12.03",
+    "F-12.04",
+    "F-12.05",
+    "I-01.05",
+    "I-01.06",
+    "I-01.07",
+    "I-02.01",
+    "I-02.02",
+    "I-02.03",
+    "I-02.04",
+    "I-02.05",
+    "I-02.06",
+    "I-03.01",
+    "I-03.02",
+    "I-03.03",
+    "I-03.04",
+    "I-03.05",
+    "I-03.06",
+    "I-04.06",
+    "I-04.07",
+    "I-05.01",
+    "I-05.02",
+    "I-05.03",
+    "I-05.04",
+    "I-05.05",
+    "I-05.06",
+    "I-06.01",
+    "I-06.03",
+    "I-06.04",
+    "I-06.05",
+    "I-06.06",
+    "I-07.01",
+    "I-07.02",
+    "I-07.03",
+    "I-07.04",
+    "A-01.01",
+    "A-01.02",
+    "A-01.03",
+    "A-01.04",
+    "A-01.05",
+    "A-02.01",
+    "A-02.02",
+    "A-02.03",
+    "A-02.04",
+    "A-02.05",
+    "A-03.01",
+    "A-03.02",
+    "A-03.03",
+    "A-03.04",
+    "A-03.05",
+    "A-04.01",
+    "A-04.02",
+    "A-04.03",
+    "A-04.04",
+    "A-04.05",
+    "P-01.01",
+    "P-01.02",
+    "P-01.03",
+    "P-01.04",
+    "P-01.05",
+    "P-01.06",
+    "P-01.07",
+    "P-02.01",
+    "P-02.02",
+    "P-02.03",
+    "P-02.04",
+    "P-02.05",
+    "P-02.06",
+    "P-03.01",
+    "P-03.02",
+    "P-03.03",
+    "P-03.04",
+    "P-03.05",
+    "P-03.06",
+    "P-04.01",
+    "P-04.02",
+    "P-04.03",
+    "P-04.04",
+    "P-04.05",
+    "P-04.06",
+    "P-05.01",
+    "P-05.02",
+    "P-05.03",
+    "P-05.04",
+    "P-05.05",
+    "P-05.06",
+    "P-06.01",
+    "P-06.02",
+    "P-06.03",
+    "P-06.04",
+    "P-06.05",
+    "P-06.06",
+    "P-07.01",
+    "P-07.02",
+    "P-07.03",
+    "P-07.04",
+    "P-07.05",
+    "P-07.06",
+    "P-08.01",
+    "P-08.02",
+    "P-08.03",
+    "P-08.04",
+    "P-08.05",
+    "P-08.06",
+    "P-09.01",
+    "P-09.02",
+    "P-09.03",
+    "P-09.04",
+    "P-09.05",
+    "P-09.06",
+    "P-10.01",
+    "P-10.02",
+    "P-10.03",
+    "P-10.04",
+    "P-10.05",
+    "P-10.06",
+    "P-11.01",
+    "P-11.02",
+    "P-11.03",
+    "P-11.04",
+    "P-11.05",
+    "P-11.06",
+    "W-02.03",
+    "W-02.04",
+    "W-02.05",
+    "W-03.01",
+    "W-03.02",
+    "W-03.03",
+    "W-03.04",
+    "W-03.05",
+    "W-04.01",
+    "W-04.02",
+    "W-04.03",
+    "W-04.04",
+    "W-04.05",
+    "W-04.06",
+    "W-05.01",
+    "W-05.02",
+    "W-05.03",
+    "W-05.04",
+    "W-05.05",
+    "W-06.01",
+    "W-06.02",
+    "W-06.03",
+    "W-06.04",
+    "W-06.05",
+    "R-01.01",
+    "R-01.02",
+    "R-01.03",
+    "R-01.04",
+    "R-01.05",
+    "R-02.01",
+    "R-02.02",
+    "R-02.03",
+    "R-02.04",
+    "R-02.05",
+    "R-03.01",
+    "R-03.02",
+    "R-03.03",
+    "R-03.04",
+    "R-03.05",
+    "R-04.01",
+    "R-04.02",
+    "R-04.03",
+    "R-04.04",
+    "R-04.05",
+    "R-05.01",
+    "R-05.02",
+    "R-05.03",
+    "R-05.04",
+    "R-05.05",
+    "R-06.01",
+    "R-06.02",
+    "R-06.03",
+    "R-06.04",
+    "R-06.05",
+    "E-01.01",
+    "E-01.02",
+    "E-01.03",
+    "E-01.04",
+    "E-01.05",
+    "E-02.01",
+    "E-02.02",
+    "E-02.03",
+    "E-02.04",
+    "E-02.05",
+    "E-03.01",
+    "E-03.02",
+    "E-03.03",
+    "E-03.04",
+    "E-03.05",
+    "E-04.01",
+    "E-04.02",
+    "E-04.03",
+    "E-04.04",
+    "E-04.05",
+    "E-04.06",
+    "E-05.01",
+    "E-05.02",
+    "E-05.03",
+    "E-05.04",
+    "E-05.05",
+    "E-06.01",
+    "E-06.02",
+    "E-06.03",
+    "E-06.04",
+    "E-06.05",
+    "E-07.01",
+    "E-07.02",
+    "E-07.03",
+    "E-07.04",
+    "E-07.05",
+    "C-HW-01",
+    "C-HW-02",
+    "C-HW-03",
+    "C-HW-04",
+    "C-HW-05",
+    "C-HW-06",
+    "C-HW-07",
+    "FUT-01",
+    "FUT-02",
+    "FUT-03",
+    "OPS-01"
+  ],
+  "overrides": {
+    "F-03.02": {
+      "action": "Especificación D2 conciliada y revisada: recuperación restringida, KDF/AAD y protocolo disco/DB. Operadores e integración se verifican en sus pasos F-04..F-09/R-04, sin repetir codec/proveedor ni modificar D.",
+      "technicalStage": "Cerrado documentalmente con revisión independiente",
+      "evidence": [
+        "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
+        "evidence/s1-20261103/f03-02-condiciones/REVISION-INDEPENDIENTE.md",
+        "evidence/s1-20261103/f03-02-condiciones/RESULTADOS.md"
+      ]
+    },
+    "F-04.01": {
+      "action": "Cierre técnico conservado e integración del writer en candidata16/app45 completada con revisión independiente; misma DLLRelease en16casos y New/RestoreSQL45/43→45 de laboratorio. Falta ensayo nativo/aceptación de16; no repetir el proveedor ni modificar D.",
+      "technicalStage": "Cerrado técnicamente e integrado en candidata16; aceptación nativa pendiente",
+      "evidence": [
+        "docs/PASO-011-ALMACEN-MFA.md",
+        "evidence/s1-20261103/f04-01-almacen/RESULTADOS.md",
+        "evidence/s1-20261103/f04-01-almacen/REVISION-INDEPENDIENTE.md",
+        "docs/INTEGRACION-PENDIENTES-08-18-CANDIDATA16.md",
+        "evidence/s1-20261104/f04-integracion16/RESULTADOS.md",
+        "evidence/s1-20261104/f04-integracion16/review/DICTAMEN.md",
+        "evidence/s1-20261104/f04-integracion16/package/ENTREGA.json",
+        "evidence/s1-20261104/f04-integracion16/PUBLICACION-EN-PRUEBAS.json",
+        "evidence/s1-20261104/f04-integracion16/HTTP-WRITER-RELEASE-R2.json",
+        "evidence/s1-20261104/f04-integracion16/NEW-RESTORE45.json"
+      ]
+    },
+    "F-04.02": {
+      "action": "Completado en E con dos tokens reales: sólo lectura propia/común, ajenos/management y modificación denegados; padres/herencia/reparse e invariancia revisados. Reutilizar evidencia; conservar D. Sigue 13/F-04.04.",
+      "technicalStage": "Cerrado técnicamente con revisión independiente; 504 comprobaciones correctas",
+      "evidence": [
+        "docs/PASO-012-PERMISOS-MFA.md",
+        "evidence/s1-20261103/f04-02-permisos/ejecucion/RESULTADOS.md",
+        "evidence/s1-20261103/f04-02-permisos/ejecucion/review/DICTAMEN-F0402.md",
+        "evidence/s1-20261103/f04-02-permisos/ejecucion/RESULTADO-CONSOLIDADO.json"
+      ]
+    },
+    "F-05.01": {
+      "action": "Validación del codec RCKEY existente conciliada y revisada: perfil fijo/tamaños/UTF8 antes de KDF y cabeceraAAD completa. Sin nuevo codec o suite; D conservada. Seguir15/F-05.02; recuperación integrada permanece pendiente.",
+      "technicalStage": "Cerrado técnicamente con revisión independiente; evidencia histórica reutilizada",
+      "evidence": [
+        "docs/PASO-014-VALIDACION-SOBRE-MFA.md",
+        "evidence/s1-20261103/f05-01-sobre/RESULTADOS.md",
+        "evidence/s1-20261103/f05-01-sobre/review/DICTAMEN-F0501.md",
+        "evidence/s1-20261103/f05-01-sobre/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261103/f05-01-sobre/CONCILIACION-EVIDENCIA.json"
+      ]
+    },
+    "F-05.02": {
+      "action": "Medición Windows histórica conciliada con unidad correcta y decisión explícita de conservar600000; revisión favorable. Casos completos de57-62ms, no KDF aislado ni medida universal/deD. Sigue16/F-05.03; no repetir benchmark sin hueco demostrado.",
+      "technicalStage": "Cerrado con revisión independiente; coste observado y perfil ratificado",
+      "evidence": [
+        "docs/PASO-015-COSTE-PBKDF2-MFA.md",
+        "evidence/s1-20261103/f05-02-coste/RESULTADOS.md",
+        "evidence/s1-20261103/f05-02-coste/review/DICTAMEN-F0502.md",
+        "evidence/s1-20261103/f05-02-coste/DECISION-PARAMETRO.md",
+        "evidence/s1-20261103/f05-02-coste/MEDICION-CONCILIADA.json"
+      ]
+    },
+    "F-05.03": {
+      "action": "Negativos RCKEY existentes conciliados y revisados:contraseña/alteración/truncado/extra/versiones/algoritmos/coste/tamaño. Sin nueva suite o cambios de producto; D conservada. Sigue17/F-05.04, recuperación portable real todavía pendiente.",
+      "technicalStage": "Cerrado técnicamente con revisión independiente; evidencia histórica reutilizada",
+      "evidence": [
+        "docs/PASO-016-NEGATIVOS-SOBRE-MFA.md",
+        "evidence/s1-20261103/f05-03-negativos/RESULTADOS.md",
+        "evidence/s1-20261103/f05-03-negativos/review/DICTAMEN-F0503.md",
+        "evidence/s1-20261103/f05-03-negativos/MATRIZ-NEGATIVOS.md",
+        "evidence/s1-20261103/f05-03-negativos/NEGATIVOS-CONCILIADOS.json"
+      ]
+    },
+    "F-05.04": {
+      "action": "Recuperación portable LEAO→WindowsServerE comprobada con dos factores/AAD y token estándar real; negativos y limpieza revisados. Sólo ensayo offline, sin adoptar DB/host. D conservada. Sigue18/F-05.05; no repetir el codec o importar material de usuario.",
+      "technicalStage": "Cerrado técnicamente con revisión independiente; portabilidad real offline",
+      "evidence": [
+        "docs/PASO-017-RECUPERACION-PORTABLE-MFA.md",
+        "evidence/s1-20261103/f05-04-portable/RESULTADOS.md",
+        "evidence/s1-20261103/f05-04-portable/review/DICTAMEN-F0504.md",
+        "evidence/s1-20261103/f05-04-portable/review/COMPROBACION-F0504.json",
+        "evidence/s1-20261103/f05-04-portable/ejecucion/POSTFLIGHT.json",
+        "evidence/s1-20261103/f05-04-portable/ejecucion/06-service-token.json"
+      ]
+    },
+    "F-08.01": {
+      "action": "Conciliar generacion y entrega unica de diez codigos propios ya implementadas; verificar su custodia/uso en candidata instalada. No crear otro generador.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md"
+      ]
+    },
+    "F-08.02": {
+      "action": "Conservar el canje ya implementado: password+codigo solo habilita nuevo enrolamiento, sin API hasta confirmar factor. Completar integracion y QA instaladas.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md"
+      ]
+    },
+    "F-08.03": {
+      "action": "Reutilizar las pruebas transaccionales/replay/rollback de codigos ya existentes; completar el recorrido nativo pendiente y acreditar su cobertura.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md"
+      ]
+    },
+    "F-10.01": {
+      "action": "Conciliar API/panel MFA existentes con activacion/desactivacion/reset, revision, auditoria y ultimo administrador; corregir solo huecos comprobados.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md"
+      ]
+    },
+    "F-10.02": {
+      "action": "Contrastar revocacion, concesiones, cambios concurrentes y rollback sobre la politica45 existente; reutilizar los recorridos ya probados.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md"
+      ]
+    },
+    "F-10.03": {
+      "action": "Conciliar formalmente el criterio historico: cuentas nuevas cuentan45dias desde creacion; existentes desde activacion de politica. No reiniciar el plazo al desactivar.",
+      "technicalStage": "Conciliar criterio historico",
+      "evidence": [
+        "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md"
+      ]
+    },
+    "F-10.04": {
+      "action": "Conciliar y verificar politica vigente:45dias para usuarios/tecnicos/admin de cliente; exencion solo del global Systemhaus con ambas capacidades. No imponer MFA inmediato universal.",
+      "technicalStage": "Conciliar criterio historico",
+      "evidence": [
+        "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md"
+      ]
+    },
+    "F-11.01": {
+      "action": "Conciliar el coordinador de login/enrolamiento/verificacion/codigos ya integrado; cerrar la combinacion final sin entregar Session antes del factor exigible.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "F-12.01": {
+      "action": "Fijar la candidata final reutilizando43/11 y la separacion ya existente entre proveedor sintetico y real. Custodia D2 confirmada: no reabrir esa decision.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "F-12.03": {
+      "action": "Completar la matriz HTTPS/MFA final reutilizando pruebas reales de D11 y de la cuenta sintetica; no trasladar cobertura por parecido de DLL.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "F-12.05": {
+      "action": "Conciliar guiones y revision de la candidata actual: MFA ya fue integrado/probado en D; no tratarlo como inexistente ni volver a deshabilitarlo para este plan.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "P-03.01": {
+      "action": "Completar contrato de cliente/rack/backup reutilizando el exportador actual por cliente; conservar UUID y revision sin rehacer lo ya construido.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md"
+      ]
+    },
+    "P-03.02": {
+      "action": "Conciliar/acreditar la exportacion actual por cliente ya implementada desde snapshot autorizado; cerrar QA y formatos restantes sin duplicarla.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md"
+      ]
+    },
+    "P-03.04": {
+      "action": "Completar la matriz de autorizacion/recibo/auditoria y persistencia de intencion tras navegar/recargar; parte ya probada se conserva.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md"
+      ]
+    },
+    "P-03.05": {
+      "action": "Completar original byteidentico, round-trip y QA/tamanos/reinicio pendientes reutilizando las pruebas del JSON actual; no confundirlo con Full Backup.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+        "evidence/s1-20261102/punto3/RESULTADOS.md"
+      ]
+    },
+    "W-03.01": {
+      "action": "Conciliar cuenta estandar/SID/SCM y separacion SQL ya comprobados en D11; completar matriz ACL/negativos sin reinstalar D.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "W-03.03": {
+      "action": "Acreditar readiness43 y arranque automatico ya comprobados, y completar persistencia posterior del inventario/tareas en laboratorio separado. El texto readiness14 es historico.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "W-03.04": {
+      "action": "Completar verificacion y manual del acceso privado por instancia, reutilizando el acceso nativo existente; no introducir otra contrasena compartida.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "W-04.01": {
+      "action": "Conciliar origen/SAN/puertos/subred ya verificados en D11; completar escenarios de la matriz final sin cambiar su red.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "W-04.03": {
+      "action": "Completar los negativos de firewall/PGlocal/CSRF/Origin/cookies reutilizando HTTPS y cookie MFA nativos ya comprobados.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "W-06.01": {
+      "action": "Reutilizar Demo50 ya creada/verificada para la prueba instalada de edicion y persistencia; no volver a generar o cargar los clientes en D.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "R-01.01": {
+      "action": "Conciliar backup/tarea real despues de postboot y despues de Demo50, ambos completados; completar los negativos pendientes sin otro backup rutinario.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "R-01.04": {
+      "action": "Aprovechar medidas y backup de Demo50; completar duracion/tamano/RPO/RTO requeridos sin convertir objetivos en garantias.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "E-01.01": {
+      "action": "Preparar la futura candidata final con los pendientes resueltos y cargador02 integrado, reutilizando procedencia y bytes revisados. No reconstruir por esta lista documental.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "E-01.02": {
+      "action": "Preparar la futura candidata final con los pendientes resueltos y cargador02 integrado, reutilizando procedencia y bytes revisados. No reconstruir por esta lista documental.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "E-04.01": {
+      "action": "Completar el manual de producto partiendo del manual11 y pasos D/cargador02 existentes; conservar carpetas/botones y no empezar de cero.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "E-05.01": {
+      "action": "Completar QA por modulo/rol/version reutilizando catalogo167 y hoja11 de14casos. Conservar resultados y repetir solo casos afectados; satisfaccion general no rellena Pass individuales.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "E-05.02": {
+      "action": "Completar QA por modulo/rol/version reutilizando catalogo167 y hoja11 de14casos. Conservar resultados y repetir solo casos afectados; satisfaccion general no rellena Pass individuales.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "E-05.04": {
+      "action": "Completar QA por modulo/rol/version reutilizando catalogo167 y hoja11 de14casos. Conservar resultados y repetir solo casos afectados; satisfaccion general no rellena Pass individuales.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "E-06.01": {
+      "action": "Reutilizar Demo50 instalada y el ensayo de diez actores ya realizado; completar sesiones/roles para la carga extendida cuando se elija, en entorno separado.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/demo50/RESULTADOS.md",
+        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+      ]
+    },
+    "E-06.02": {
+      "action": "Completar carga extendida instalada, consultas/CPU/memoria/picos y recuperacion usando el ensayo local y umbrales de humo previos como antecedente; no venderlos como SLA.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/demo50/RESULTADOS.md"
+      ]
+    },
+    "E-06.03": {
+      "action": "Completar carga extendida instalada, consultas/CPU/memoria/picos y recuperacion usando el ensayo local y umbrales de humo previos como antecedente; no venderlos como SLA.",
+      "technicalStage": "Conciliar evidencia existente",
+      "evidence": [
+        "evidence/s1-20261102/demo50/RESULTADOS.md"
+      ]
+    },
+    "F-01.01": {
+      "action": "Clasificación terminada: 92 históricos resueltos con trazabilidad privada y revisión independiente; 90 metadatos working corroborados. No repetir como nueva implementación ni afirmar higiene global.",
+      "technicalStage": "Cerrado con revisión independiente",
+      "evidence": [
+        "evidence/s1-20261102/f01-01-clasificacion/RESULTADOS.md",
+        "evidence/s1-20261102/f01-01-clasificacion/REVISION-INDEPENDIENTE.md"
+      ]
+    },
+    "F-01.02": {
+      "action": "F-01.01/.03 conservan su clasificación/registro técnico. F-01.02/.04 cerrados administrativamente por decisión expresa de Wascar03.11 y enmienda limitadav3: antecedente25.10 indeterminado y salida perdida, sin falso positivo, prueba de revocación ni cambios deD. Reabrir ambos y retirar5/4 si aparece evidencia concreta; no es higiene global ni aceptación de exposiciones futuras.",
+      "technicalStage": "Cerrado administrativamente con incertidumbre y reapertura; no prueba de revocación",
+      "evidence": [
+        "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+        "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md",
+        "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
+      ]
+    },
+    "F-01.03": {
+      "action": "Registro contextual de falsos positivos terminado y revisado: criterios de prueba específicos y vínculos a la versión exacta, sin supresiones ni cambios de escáner/historial. No incluye las observaciones desconocidas del paso 2.",
+      "technicalStage": "Cerrado con revisión independiente",
+      "evidence": [
+        "evidence/s1-20261102/f01-03-registro/RESULTADOS.md",
+        "evidence/s1-20261102/f01-03-registro/REVISION-INDEPENDIENTE.md",
+        "docs/CRITERIO-FALSOS-POSITIVOS-SECRETOS.md"
+      ]
+    },
+    "F-01.04": {
+      "action": "F-01.01/.03 conservan su clasificación/registro técnico. F-01.02/.04 cerrados administrativamente por decisión expresa de Wascar03.11 y enmienda limitadav3: antecedente25.10 indeterminado y salida perdida, sin falso positivo, prueba de revocación ni cambios deD. Reabrir ambos y retirar5/4 si aparece evidencia concreta; no es higiene global ni aceptación de exposiciones futuras.",
+      "technicalStage": "Cerrado administrativamente con incertidumbre y reapertura; no prueba de revocación",
+      "evidence": [
+        "docs/DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md",
+        "evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md",
+        "evidence/s1-20261103/f01-archivo-administrativo/review/REVISION-ARCHIVO-ADMINISTRATIVO.md"
+      ]
+    },
+    "F-02.01": {
+      "action": "F-02.01–.04 cerrados: postboot13, Restore14-r2 desde backup sintético LEAO hacia E con cuenta/SID/roles/material nuevos,20clientes SQL/API,operadores/ficha/diagnóstico/backup reales y reanudación sin regeneración. Windows no se reinició tras Restore14; ese pendiente sigue en los criterios Windows, sin adopción global. D se conserva y F01 tiene disposición administrativa posterior03.11, separada del cierre técnico.",
+      "technicalStage": "Cerrado técnicamente con revisión independiente; no repetir ensayos invariantes",
+      "evidence": [
+        "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+        "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
+      ]
+    },
+    "F-02.02": {
+      "action": "F-02.01–.04 cerrados: postboot13, Restore14-r2 desde backup sintético LEAO hacia E con cuenta/SID/roles/material nuevos,20clientes SQL/API,operadores/ficha/diagnóstico/backup reales y reanudación sin regeneración. Windows no se reinició tras Restore14; ese pendiente sigue en los criterios Windows, sin adopción global. D se conserva y F01 tiene disposición administrativa posterior03.11, separada del cierre técnico.",
+      "technicalStage": "Cerrado técnicamente con revisión independiente; no repetir ensayos invariantes",
+      "evidence": [
+        "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+        "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-02.md"
+      ]
+    },
+    "F-02.03": {
+      "action": "F-02.01–.04 cerrados: postboot13, Restore14-r2 desde backup sintético LEAO hacia E con cuenta/SID/roles/material nuevos,20clientes SQL/API,operadores/ficha/diagnóstico/backup reales y reanudación sin regeneración. Windows no se reinició tras Restore14; ese pendiente sigue en los criterios Windows, sin adopción global. D se conserva y F01 tiene disposición administrativa posterior03.11, separada del cierre técnico.",
+      "technicalStage": "Cerrado técnicamente con revisión independiente; no repetir ensayos invariantes",
+      "evidence": [
+        "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+        "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
+      ]
+    },
+    "F-02.04": {
+      "action": "F-02.01–.04 cerrados: postboot13, Restore14-r2 desde backup sintético LEAO hacia E con cuenta/SID/roles/material nuevos,20clientes SQL/API,operadores/ficha/diagnóstico/backup reales y reanudación sin regeneración. Windows no se reinició tras Restore14; ese pendiente sigue en los criterios Windows, sin adopción global. D se conserva y F01 tiene disposición administrativa posterior03.11, separada del cierre técnico.",
+      "technicalStage": "Cerrado técnicamente con revisión independiente; no repetir ensayos invariantes",
+      "evidence": [
+        "evidence/s1-20261103/e13-postboot-restore14/RESULTADOS.md",
+        "evidence/s1-20261103/e13-postboot-restore14/review/DICTAMEN-F02-03-04.md"
+      ]
+    },
+    "F-03.03": {
+      "action": "Límites de amenaza DPAPI LocalMachine registrados y revisados: administrador/SYSTEM y servicio comprometido fuera del aislamiento; custodia/ACL y recuperación conservan sus criterios propios. F-03 completado sólo como decisión documental, sin operar D.",
+      "technicalStage": "Cerrado documentalmente con revisión independiente",
+      "evidence": [
+        "docs/D2-LIMITES-AMENAZA-F03-03.md",
+        "evidence/s1-20261103/f03-03-amenazas/REVISION-INDEPENDIENTE.md",
+        "evidence/s1-20261103/f03-03-amenazas/RESULTADOS.md"
+      ]
+    },
+    "F-04.04": {
+      "action": "Cierre técnico conservado e integración del writer en candidata16/app45 completada con revisión independiente; misma DLLRelease en16casos y New/RestoreSQL45/43→45 de laboratorio. Falta ensayo nativo/aceptación de16; no repetir el proveedor ni modificar D.",
+      "technicalStage": "Cerrado técnicamente e integrado en candidata16; aceptación nativa pendiente",
+      "evidence": [
+        "docs/PASO-013-CIERRE-PROVEEDOR-MFA.md",
+        "evidence/s1-20261103/f04-04-cierre/RESULTADOS.md",
+        "evidence/s1-20261103/f04-04-cierre/review/DICTAMEN-F0404.md",
+        "evidence/s1-20261103/f04-04-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261103/f04-04-cierre/CONCILIACION-EVIDENCIA.json",
+        "evidence/s1-20261103/f04-04-cierre/CONTRASTE-NUCLEO.json",
+        "docs/INTEGRACION-PENDIENTES-08-18-CANDIDATA16.md",
+        "evidence/s1-20261104/f04-integracion16/RESULTADOS.md",
+        "evidence/s1-20261104/f04-integracion16/review/DICTAMEN.md",
+        "evidence/s1-20261104/f04-integracion16/package/ENTREGA.json",
+        "evidence/s1-20261104/f04-integracion16/PUBLICACION-EN-PRUEBAS.json",
+        "evidence/s1-20261104/f04-integracion16/HTTP-WRITER-RELEASE-R2.json",
+        "evidence/s1-20261104/f04-integracion16/NEW-RESTORE45.json"
+      ]
+    },
+    "F-05.05": {
+      "action": "Cierre técnico F05 revisado: DBaplicación45 dump/restore y proveedorWindows/material recuperado con Program/TestServer,8/8casos. No operador/instalador/adopción. Reutilizar evidencia; sigue19/F-06.01, D/E conservados.",
+      "technicalStage": "Cerrado técnicamente con revisión independiente; integración de componentes en laboratorio",
+      "evidence": [
+        "docs/PASO-018-CIERRE-RECUPERACION-PORTABLE-MFA.md",
+        "evidence/s1-20261103/f05-05-cierre/RESULTADOS.md",
+        "evidence/s1-20261103/f05-05-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261103/f05-05-cierre/review/DICTAMEN-F0505.md",
+        "evidence/s1-20261103/f05-05-cierre/review/COMPROBACION-F0505.json",
+        "evidence/s1-20261103/f05-05-cierre/COORDINACION-PG-R3.json",
+        "evidence/s1-20261103/f05-05-cierre/implementacion/HARNESS-FREEZE6-PREVIO-PG.json",
+        "evidence/s1-20261103/f05-05-cierre/implementacion/RESUMEN-SANITIZADO-CORRIDA3.json"
+      ]
+    }
+  },
+  "additionalActions": {
+    "C-HW-01": {
+      "title": "Cerrar procedencia/licencias del catalogo seleccionado",
+      "action": "Revisar fuentes y decisiones de reutilizacion de los506 existentes; no integrar las12008definiciones investigadas por defecto.",
+      "acceptance": "Fuentes, versiones y limites publicados en inventario, enlazados a E-03; sin asumir permiso sobre fotografias.",
+      "scope": "Catalogo",
+      "responsibleBaseResult": "E-03",
+      "addsClosureWeight": false
+    },
+    "C-HW-02": {
+      "title": "Cerrar contrato fisico y variantes pendientes de aceptacion",
+      "action": "Reutilizar contrato43/montajes/IDs existentes; revisar reservas de BOM, poblacion, dimensiones y conectores sin inventar puertos.",
+      "acceptance": "Contrato y reservas contrastados, compatibilidad documentada y revision distinta; no se repite la autoria de506.",
+      "scope": "Catalogo",
+      "responsibleBaseResult": "I-03",
+      "addsClosureWeight": false
+    },
+    "C-HW-03": {
+      "title": "Aceptar la seleccion506 que ya esta integrada",
+      "action": "Conciliar censo506/506,868revisiones y861comerciales, excluyendo variantes auxiliares y no aplicables del conteo.",
+      "acceptance": "Lista seleccionada trazable y aceptada; no se exige incorporar modelos fuera de esa seleccion.",
+      "scope": "Catalogo",
+      "responsibleBaseResult": "I-04",
+      "addsClosureWeight": false
+    },
+    "C-HW-04": {
+      "title": "Cerrar QA del selector y de las caras interactivas",
+      "action": "Probar busqueda/alias/teclado, seleccion de revision/montaje, frontal/trasera y conexiones sobre los perfiles existentes.",
+      "acceptance": "QA y reservas registradas sin lista larga, perdida de identidad ni foto pegada que anule puertos.",
+      "scope": "Catalogo",
+      "responsibleBaseResult": "P-08",
+      "addsClosureWeight": false
+    },
+    "C-HW-05": {
+      "title": "Cerrar cobertura y reservas del catalogo por familias",
+      "action": "Reutilizar pruebas por grupo y Demo50; elegir muestras/variantes y defectos pendientes de QA sin ejecutar una nueva prueba rutinaria por cada modelo.",
+      "acceptance": "Cobertura/NA/reservas explicitas y revision independiente; no afirmar conexion manual de todas las bocas.",
+      "scope": "Catalogo",
+      "responsibleBaseResult": "E-05",
+      "addsClosureWeight": false
+    },
+    "C-HW-06": {
+      "title": "Incluir el catalogo validado en la entrega final mantenible",
+      "action": "Conservar la instalacion43/11 ya demostrada; completar compatibilidad/versionado/update/rollback y derechos del paquete final.",
+      "acceptance": "Candidata final trazable y compatible, sin actualizar D por esta tarea documental.",
+      "scope": "Catalogo",
+      "responsibleBaseResult": "E-01",
+      "addsClosureWeight": false
+    },
+    "C-HW-07": {
+      "title": "Dejar definido mantenimiento y ampliaciones futuras",
+      "action": "Documentar como revisar nuevas familias/SKU y corregir fuentes; ampliar mas alla de506 solo como lote nuevo acordado.",
+      "acceptance": "Metodo reutilizable, cola y criterio de soporte actualizados; los506 no vuelven a contarse como pendientes.",
+      "scope": "Catalogo",
+      "responsibleBaseResult": "E-04",
+      "addsClosureWeight": false
+    },
+    "FUT-01": {
+      "title": "Diseno posterior de descubrimiento SNMP/LLDP/API",
+      "action": "Evaluar protocolos/proveedores/colectores, credenciales minimas, modelos observados y aprobacion antes de cambiar documentacion.",
+      "acceptance": "Propuesta con compatibilidad/licencias/seguridad, pilotos autorizados y limites del cableado pasivo; no escanear la red por esta lista.",
+      "scope": "Posterior",
+      "responsibleBaseResult": "FUT-01",
+      "addsClosureWeight": false
+    },
+    "FUT-02": {
+      "title": "Paquetes de trabajo de campo offline S5",
+      "action": "Definir export por cliente/revision/capacidad, trabajo offline y retorno con conflicto/merge, idempotencia y atomicidad sin secretos de sesion.",
+      "acceptance": "Contrato y pruebas de retorno aprobados en lote posterior; no confundir con importacion JSON ordinaria.",
+      "scope": "Posterior",
+      "responsibleBaseResult": "FUT-02",
+      "addsClosureWeight": false
+    },
+    "FUT-03": {
+      "title": "Federacion real AD/OIDC y grupos externos",
+      "action": "Definir proveedores, vinculacion de cuentas, grupos, revocacion y fallback cuando se incorpore esta ampliacion.",
+      "acceptance": "Decision/contrato y pruebas de identidad en alcance posterior; apariencia tipoEntra no implica forest/GPO.",
+      "scope": "Posterior",
+      "responsibleBaseResult": "FUT-03",
+      "addsClosureWeight": false
+    },
+    "OPS-01": {
+      "title": "Actualizar el repositorio privado con una seleccion revisada",
+      "action": "Preparar fuentes aceptadas, inventario sintetico sin seguridad y manuales en clon separado; revisar secretos/licencias y actualizar solo el repositorio privado autorizado.",
+      "acceptance": "Publicacion privada verificable, sin arbol concurrente/credenciales/dumps ni binarios pendientes de redistribucion; no suma puntos por publicar.",
+      "scope": "Mantenimiento",
+      "responsibleBaseResult": "E-01",
+      "addsClosureWeight": false
+    }
+  },
+  "recommendedTasks": [
+    "E-07",
+    "F-10",
+    "F-05",
+    "F-06",
+    "F-08",
+    "F-09",
+    "R-03",
+    "R-04",
+    "P-01",
+    "P-02",
+    "P-04",
+    "E-05"
+  ],
+  "sources": [
+    "docs/PLAN-CIERRE-RACKCLICK.json",
+    "docs/REGISTRO-REQUISITOS-MAESTRO.json",
+    "docs/FAMILIAS-CATALOGO-PENDIENTES.json",
+    "evidence/s1-20261102/vm11-d/RESULTADOS.md",
+    "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md",
+    "evidence/s1-20261102/punto3/RESULTADOS.md",
+    "evidence/s1-20261102/windows43/RESULTADOS.md",
+    "evidence/s1-20261102/demo50/RESULTADOS.md",
+    "docs/PASO-017-RECUPERACION-PORTABLE-MFA.md",
+    "docs/PASO-018-CIERRE-RECUPERACION-PORTABLE-MFA.md"
+  ]
+}

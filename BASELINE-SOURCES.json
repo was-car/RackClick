@@ -1,7 +1,7 @@
 {
-  "date": "2026-11-03",
-  "baseline": "schema45 source snapshot used by the reviewed in-place development update",
-  "nativeCandidateServerSha256": "12e0bbe28d795494becd8185b7353e50c1c4a137b7d1c5777606e6691b16a549",
+  "date": "2026-11-09",
+  "baseline": "schema45 source snapshot of internally reviewed candidate16; native clean installation and operational MFA recovery pending",
+  "nativeCandidateServerSha256": "c05742f9079705c6cd97a1f97f89133183fc72e554dac0b2d52678c548921c2f",
   "sourceIdentityOnly": true,
   "binaryReproductionNotClaimed": true,
   "files": [
@@ -1603,7 +1603,7 @@
     },
     {
       "path": "development/server/src/RackClick.Server/WindowsMfaKeyStoreWriter.cs",
-      "sha256": "ebbac2efc8603d5dbecf057ba645706f5ae98d5375b8597555979add95b09041"
+      "sha256": "76e6dfc3364cb43260ef95e02bb88816702b21dc8f0230946645878d7c894d55"
     },
     {
       "path": "development/server/src/RackClick.Server/WindowsSqlSecret.cs",

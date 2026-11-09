@@ -139,7 +139,7 @@ try{$null=Invoke-Demo50Import -Origin 'http://127.0.0.1:@@PORT@@' -PlanPath '@@P
  if($_.Exception.Message-cne'demo_confirmation_rejected'){Get-Demo50FailureReport $_.Exception|ConvertTo-Json -Depth 5 -Compress;exit 9}
  'EXPECTED_CONFIRMATION_REJECTION'
 }finally{$secret.Dispose()}
-""".replace('@@PORT@@',str(server.server_address[1])).replace('@@PLAN@@',str(ROOT/'.local/demo50-replay-01.json')).replace('@@PIN@@',PIN)
+""".replace('@@PORT@@',str(server.server_address[1])).replace('@@PLAN@@',str(ROOT/'development/examples/demo50-replay43.json')).replace('@@PIN@@',PIN)
             result=ps(code)
             self.assertNotIn(challenge,result.stdout+result.stderr)
             self.assertNotIn(session,result.stdout+result.stderr)

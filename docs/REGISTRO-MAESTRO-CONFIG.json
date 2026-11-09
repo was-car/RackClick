@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "purpose": "Integrar pendientes y conversaciones sin duplicar resultados, alterar el ledger o declarar nuevas funciones implementadas.",
   "sources": [
     "docs/PLAN-CIERRE-RACKCLICK.json",
@@ -87,22 +87,69 @@
     "docs/PASO-007-REANUDACION-RESTORE-SQL.md",
     "docs/CATALOGO-ALEMANIA-Y-RACKS-03-11-2026.md",
     "docs/REPETIDORES-ALEMANIA-03-11-2026.md",
-    "docs/ACTUALIZACION-D45-03-11-2026.md"
+    "docs/ACTUALIZACION-D45-03-11-2026.md",
+    "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
+    "docs/D2-LIMITES-AMENAZA-F03-03.md",
+    "docs/PASO-017-RECUPERACION-PORTABLE-MFA.md",
+    "docs/PASO-018-CIERRE-RECUPERACION-PORTABLE-MFA.md"
   ],
   "latestContext": {
     "F-03": {
-      "text": "La custodia y recuperación fueron confirmadas por Wascar el25.10. No pedirlas de nuevo; falta completar su concreción y comprobación técnica.",
+      "text": "Custodia/ubicación confirmadas25.10; F-03.02 concreta recuperación/KDF/publicación y F-03.03 registra límites LocalMachine frente a administrador/SYSTEM/servicio comprometido, con revisiones independientes. F-03 completa sólo la decisión documental. Política45 intacta; F-04..F-09/R-04 conservan sus pruebas/integraciones, sin nueva aceptación operativa o producción. D45 no operada.",
       "evidence": [
-        "docs/DECISIONES-MFA-CONFIRMADAS-25-10-2026.md"
+        "docs/DECISIONES-MFA-CONFIRMADAS-25-10-2026.md",
+        "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
+        "evidence/s1-20261103/f03-02-condiciones/REVISION-INDEPENDIENTE.md",
+        "evidence/s1-20261103/f03-02-condiciones/RESULTADOS.md",
+        "docs/D2-LIMITES-AMENAZA-F03-03.md",
+        "evidence/s1-20261103/f03-03-amenazas/REVISION-INDEPENDIENTE.md",
+        "evidence/s1-20261103/f03-03-amenazas/RESULTADOS.md"
       ]
     },
     "F-05": {
-      "title": "Integrar y cerrar la recuperación portable de claves MFA",
-      "text": "Existen codec, payload, lector/escritor y exportación/recuperación por componentes L2d–L2g revisados. Falta el recorrido completo de recuperación de la instalación y coherencia con sus backups; no reimplementar el codec desde cero.",
+      "text": "04.11: candidata16 repite creación segura y DB/TOTP sobre su DLLRelease exacta; New/RestoreSQL43→45/45→45 en laboratorio pasa sin factores. Guardiacontinúa rechazando cualquier factor sin sobre; no es implementación del operador portable. Se conserva el contexto del cierre técnico anterior: F-05.01/.02/.03 concilian codec/perfil600000/negativos existentes; .04 comprueba portabilidad Windows y token estándar real con dos factores/AAD, sin repetirla. F-05.05 añade DBaplicación45 nueva, pg_dump/pg_restore custom transacciónúnica, igualdad de todas las filas públicas antes de RecoveryAdministrator y roles nuevos restringidos. ProveedorWindows real sobre material recuperado y Program/WebApplicationFactory: dos logins con factores conservados versiones1retirada/7activa, desafío sinAPI, TOTP/sesión/CSRF/API, replay/TOTPincorrecto y autoridad de backup revocada. Ocho casos pasan en WindowsPG17.11, sin omitidas, revisión independiente; sólo nuevo test/runner, sin cambios de producto. Gates de material/versiones/AAD previos son del fixture, no operador productivo. FuenteDebug F0401cd3cc/45 fijada; TestServer en memoria con identidad/confianzaWindowsLAB explícita y direcciones de cliente sintéticas para conservar limiter. F-05.04 sigue acreditando otroWindows/SIDreal, no se atribuye esa medición al TestServer. Origen invariable; tres clusters propios detenidos. Dos intentos fallidos de fixture preservados (ruta266/Win32206;contentroot/aserciónCrypto); no se ocultan ni son defectos del producto. F-05 checklist técnica completa, pero implementación operativa, candidata integrada y aceptación permanecen pendientes: no CLI/instalador, fence/journal/marcadorDBD2, exportaciónconcurrente, rotación/pérdida, HTTPS/servicio/reinicio/cutover/R04 o custodia/adopción nuevas. D/E sin operaciones.",
       "evidence": [
+        "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
+        "docs/REVISION-D2-CODEX.md",
+        "docs/AUTENTICACION-MFA-S1.md",
+        "docs/REVISION-D14-05-CODEX.md",
         "docs/REVISION-MFA-L2D-CODEX-26-10-2026.md",
-        "docs/REVISION-MFA-L2F-CODEX-26-10-2026.md",
-        "docs/REVISION-MFA-L2G-CORRECCION-CODEX-26-10-2026.md"
+        "docs/REVISION-MFA-L2E-CODEX-26-10-2026.md",
+        "evidence/s1-20261103/f05-01-sobre/RESULTADOS.md",
+        "evidence/s1-20261103/f05-01-sobre/review/DICTAMEN-F0501.md",
+        "evidence/s1-20261103/f05-01-sobre/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261103/f05-01-sobre/CONCILIACION-EVIDENCIA.json",
+        "evidence/s1-20261103/f05-02-coste/RESULTADOS.md",
+        "evidence/s1-20261103/f05-02-coste/review/DICTAMEN-F0502.md",
+        "evidence/s1-20261103/f05-02-coste/DECISION-PARAMETRO.md",
+        "evidence/s1-20261103/f05-02-coste/MEDICION-CONCILIADA.json",
+        "evidence/s1-20261103/f05-03-negativos/RESULTADOS.md",
+        "evidence/s1-20261103/f05-03-negativos/review/DICTAMEN-F0503.md",
+        "evidence/s1-20261103/f05-03-negativos/MATRIZ-NEGATIVOS.md",
+        "evidence/s1-20261103/f05-03-negativos/NEGATIVOS-CONCILIADOS.json",
+        "docs/PASO-016-NEGATIVOS-SOBRE-MFA.md",
+        "docs/PASO-017-RECUPERACION-PORTABLE-MFA.md",
+        "evidence/s1-20261103/f05-04-portable/RESULTADOS.md",
+        "evidence/s1-20261103/f05-04-portable/review/DICTAMEN-F0504.md",
+        "evidence/s1-20261103/f05-04-portable/review/COMPROBACION-F0504.json",
+        "evidence/s1-20261103/f05-04-portable/ejecucion/POSTFLIGHT.json",
+        "evidence/s1-20261103/f05-04-portable/ejecucion/06-service-token.json",
+        "docs/F05-RECUPERACION-INTEGRADA-PENDIENTE.md",
+        "docs/PASO-018-CIERRE-RECUPERACION-PORTABLE-MFA.md",
+        "evidence/s1-20261103/f05-05-cierre/RESULTADOS.md",
+        "evidence/s1-20261103/f05-05-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261103/f05-05-cierre/review/DICTAMEN-F0505.md",
+        "evidence/s1-20261103/f05-05-cierre/review/COMPROBACION-F0505.json",
+        "evidence/s1-20261103/f05-05-cierre/COORDINACION-PG-R3.json",
+        "evidence/s1-20261103/f05-05-cierre/implementacion/HARNESS-FREEZE6-PREVIO-PG.json",
+        "evidence/s1-20261103/f05-05-cierre/implementacion/RESUMEN-SANITIZADO-CORRIDA3.json",
+        "docs/INTEGRACION-PENDIENTES-08-18-CANDIDATA16.md",
+        "evidence/s1-20261104/f04-integracion16/RESULTADOS.md",
+        "evidence/s1-20261104/f04-integracion16/review/DICTAMEN.md",
+        "evidence/s1-20261104/f04-integracion16/package/ENTREGA.json",
+        "evidence/s1-20261104/f04-integracion16/PUBLICACION-EN-PRUEBAS.json",
+        "evidence/s1-20261104/f04-integracion16/HTTP-WRITER-RELEASE-R2.json",
+        "evidence/s1-20261104/f04-integracion16/NEW-RESTORE45.json"
       ]
     },
     "F-07": {
@@ -218,10 +265,33 @@
       ]
     },
     "F-04": {
-      "text": "Proveedor, escritor, almacen y composicion productiva ya integrados. D11 usa el SID real del servicio; enrolamiento y verificacion TOTP por HTTPS/DPAPI funcionaron con QA-MFA11. Completar negativos de ACL/otros tokens y cierre del resultado; no recrear el proveedor.",
+      "text": "Criterios técnicos F04 conservados; writer76e6 integrado en candidata completa16/app45 con DLLReleasec057 y frontend/SQL/dependencias/servicio preservados. Bundle2018/payload117 y cadena de pins verificados; 16casos de creación+DB/TOTP sobre la DLL exacta y New/RestoreSQL45/43→45 reales en laboratorio. Propagación45 cerrada de SetupMfa/readiness/recibo y matrizRestore, sin retirar guardiaMFA. Integración de candidata acreditada con revisión independiente04.11; no instalación elevada, SCM/HTTPS/reinicio, formato mínimo3 o adopción de16. target_acceptance sigue pendiente; D/E sin cambios. Se conservan las pruebas previas de SID real/504derechos de E y núcleo del proveedor; no se atribuyen como nuevas en16.",
       "evidence": [
-        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
-        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+        "development/server/src/RackClick.Server/Program.cs",
+        "development/server/src/RackClick.Server/MfaStore.cs",
+        "development/server/src/RackClick.Server/MfaSecretCipher.cs",
+        "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
+        "docs/REVISION-D2-CODEX.md",
+        "evidence/s1-20261103/f04-01-almacen/RESULTADOS.md",
+        "evidence/s1-20261103/f04-01-almacen/REVISION-INDEPENDIENTE.md",
+        "evidence/s1-20261103/f04-02-permisos/RESULTADOS.md",
+        "evidence/s1-20261103/f04-02-permisos/review/DICTAMEN-PREVIO-SONDA.md",
+        "evidence/s1-20261103/f04-02-permisos/ejecucion/RESULTADOS.md",
+        "evidence/s1-20261103/f04-02-permisos/ejecucion/review/DICTAMEN-F0402.md",
+        "evidence/s1-20261103/f04-02-permisos/ejecucion/RESULTADO-CONSOLIDADO.json",
+        "evidence/s1-20261103/f04-04-cierre/RESULTADOS.md",
+        "evidence/s1-20261103/f04-04-cierre/review/DICTAMEN-F0404.md",
+        "evidence/s1-20261103/f04-04-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261103/f04-04-cierre/CONCILIACION-EVIDENCIA.json",
+        "evidence/s1-20261103/f04-04-cierre/CONTRASTE-NUCLEO.json",
+        "docs/PASO-013-CIERRE-PROVEEDOR-MFA.md",
+        "docs/INTEGRACION-PENDIENTES-08-18-CANDIDATA16.md",
+        "evidence/s1-20261104/f04-integracion16/RESULTADOS.md",
+        "evidence/s1-20261104/f04-integracion16/review/DICTAMEN.md",
+        "evidence/s1-20261104/f04-integracion16/package/ENTREGA.json",
+        "evidence/s1-20261104/f04-integracion16/PUBLICACION-EN-PRUEBAS.json",
+        "evidence/s1-20261104/f04-integracion16/HTTP-WRITER-RELEASE-R2.json",
+        "evidence/s1-20261104/f04-integracion16/NEW-RESTORE45.json"
       ]
     },
     "F-08": {
@@ -699,7 +769,7 @@
         "REQ-DE-CPE-01",
         "REQ-UX-RACK-02"
       ],
-      "output": "Wascar revisa D45 con Ctrl+F5; usar perfiles del catálogo/sala y comprobar soportes sin repetir instalación ni Demo50. Registrar observaciones; retomar9/F-03.02 según priorización. Postboot45/instalación limpia/Restore45 mantienen su criterio propio."
+      "output": "Wascar revisa D45 con Ctrl+F5; usar perfiles del catálogo/sala y comprobar soportes sin repetir instalación ni Demo50. Registrar observaciones. Los pasos9/10 están cerrados documentalmente; paso11 cerrado en fuentes. Postboot45/instalación limpia/Restore45 mantienen su criterio propio."
     },
     {
       "id": "SIG-CIERRE-01",
@@ -709,7 +779,7 @@
         "F-10",
         "E-05"
       ],
-      "output": "Conciliar evidencia actual y criterios historicos; usar PLAN-PENDIENTES-NUMERADO.md sin cambiar pesos ni tocar D."
+      "output": "Siguiente19/F-06.01: especificar/conciliar fases de rotación y coherencia disco–DB con D2, reutilizando el cierre técnico F05 y sin repetir codecs/portabilidad/login. F05operator/candidata/aceptación, F06/F09/R04 conservan sus pendientes. D/E intactos."
     },
     {
       "id": "SIG-RECUPERACION-02",
@@ -722,7 +792,7 @@
         "R-03",
         "R-04"
       ],
-      "output": "Reutilizar componentes revisados; pruebas en otro laboratorio cuando se elija ese paso, no en D."
+      "output": "F04 writer ya integrado en candidata16 completa y revisado, aceptación nativa pendiente. Completar coordinador D2/vínculo backup-material/CLI/RestoreMFA con fence-journal-marcador y cortes, reutilizando componentes/DBTOTP comprobados. No quitar guardia recovery_mfa_envelope_required o tocar D."
     },
     {
       "id": "SIG-JSON-03",

@@ -3,11 +3,11 @@
   "measurement_kind": "remaining_work_closure_not_product_progress",
   "global_product_percentage": null,
   "historical_78_retired": true,
-  "closure_points": 14.755952380952381,
+  "closure_points": 19.13095238095238,
   "total_closure_points": 100,
   "tasks": 53,
   "scored_tasks": 50,
-  "completed_tasks": 3,
+  "completed_tasks": 5,
   "checkpoints": 280,
   "criteria_covered": 55,
   "areas": [
@@ -15,7 +15,7 @@
       "id": "F",
       "name": "Fundamento, seguridad y MFA",
       "assigned": 25,
-      "closed": 7.625
+      "closed": 12.0
     },
     {
       "id": "I",

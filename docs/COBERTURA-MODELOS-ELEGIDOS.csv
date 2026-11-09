@@ -1,0 +1,507 @@
+﻿id,manufacturer,model,category,status,profileKey,profileRevision
+sophos-xg-135,Sophos,XG 135,firewall,perfil_en_desarrollo,selected-sophos-xg-135,selected506c-20261101-v1
+sophos-xgs-116,Sophos,XGS 116,firewall,perfil_en_desarrollo,selected-sophos-xgs-116,selected506c-20261101-v1
+sophos-xgs-138,Sophos,XGS 138,firewall,perfil_en_desarrollo,selected-sophos-xgs-138,selected506c-20261101-v1
+sophos-xgs-2100,Sophos,XGS 2100,firewall,perfil_en_desarrollo,sophos-xgs2100-gen1,batch100-20261031-v1
+fortinet-fortigate-60f,Fortinet,FortiGate 60F,firewall,perfil_en_desarrollo,fortinet-fg60f,fortinet-20261030-v1
+fortinet-fortigate-80f,Fortinet,FortiGate 80F,firewall,perfil_en_desarrollo,selected-fortinet-fortigate-80f,selected506c-20261101-v1
+fortinet-fortigate-100f,Fortinet,FortiGate 100F,firewall,perfil_en_desarrollo,selected-fortinet-fortigate-100f,selected506c-20261101-v1
+fortinet-fortigate-200f,Fortinet,FortiGate 200F,firewall,perfil_en_desarrollo,fortinet-fg200f,batch100-20261031-v1
+palo-alto-pa-440,Palo Alto Networks,PA-440,firewall,perfil_en_desarrollo,paloalto-pa440,batch100-20261031-v1
+palo-alto-pa-850,Palo Alto Networks,PA-850,firewall,perfil_en_desarrollo,paloalto-pa850,batch100-20261031-v1
+palo-alto-pa-1410,Palo Alto Networks,PA-1410,firewall,perfil_en_desarrollo,selected-palo-alto-pa-1410,selected506e-20261101-v1
+palo-alto-pa-3220,Palo Alto Networks,PA-3220,firewall,perfil_en_desarrollo,selected-palo-alto-pa-3220,selected506e-20261101-v1
+cisco-c9200l-24t-4g,Cisco,C9200L-24T-4G,switch,perfil_en_desarrollo,selected-cisco-c9200l-24t-4g,selected506e-20261101-v1
+cisco-c9200l-48p-4g,Cisco,C9200L-48P-4G,switch,perfil_en_desarrollo,selected-cisco-c9200l-48p-4g,selected506e-20261101-v1
+cisco-isr4331,Cisco,ISR4331,router,perfil_en_desarrollo,selected-cisco-isr4331,selected506c-20261101-v1
+aruba-jl675a,HPE Aruba Networking,JL675A,switch,perfil_en_desarrollo,selected-aruba-jl675a,selected506a-20261101-v1
+aruba-jl682a,HPE Aruba Networking,JL682A,switch,perfil_en_desarrollo,aruba-jl682a,aruba-20261030-v1
+aruba-r9y04a,HPE Aruba Networking,R9Y04A,switch,perfil_en_desarrollo,selected-aruba-r9y04a,selected506a-20261101-v1
+synology-ds923plus,Synology,DS923+,nas,perfil_en_desarrollo,synology-ds923plus,batch50-20261030-v1
+synology-ds925plus,Synology,DS925+,nas,perfil_en_desarrollo,synology-ds925plus,batch50-20261030-v1
+synology-rs1221plus,Synology,RS1221+,nas,perfil_en_desarrollo,synology-rs1221plus,synology-20261030-v1
+qnap-ts464,QNAP,TS-464,nas,perfil_en_desarrollo,qnap-ts464-8g,qnap-20261030-v1
+qnap-ts873a-8g,QNAP,TS-873A-8G,nas,perfil_en_desarrollo,qnap-ts-873a-8g,batch50-20261030-v1
+qnap-ts464eu-8g,QNAP,TS-464eU-8G,nas,perfil_en_desarrollo,qnap-ts-464eu-8g,batch100b-20261031-v1
+startech-c6panelutp241uft,StarTech.com,C6PANELUTP241UFT,patch-panel,perfil_en_desarrollo,startech-c6panelutp241uft,startech-20261030-v1
+startech-cabshelf1u,StarTech.com,CABSHELF1U,shelf,perfil_en_desarrollo,selected-startech-cabshelf1u,selected506k-20261101-v1
+apc-ar3100,APC by Schneider Electric,AR3100,rack,perfil_en_desarrollo,selected-apc-ar3100,selected506l-20261101-v1
+apc-smt1500rmi2u,APC by Schneider Electric,SMT1500RMI2U,ups,perfil_en_desarrollo,selected-apc-smt1500rmi2u,selected506k-20261101-v1
+eaton-5px1500irt2ug2,Eaton,5PX1500IRT2UG2,ups,perfil_en_desarrollo,selected-eaton-5px1500irt2ug2,selected506k-20261101-v1
+mikrotik-rb5009,MikroTik,RB5009UG+S+IN,router,perfil_en_desarrollo,mikrotik-rb5009ug-splus-in,batch100-20261031-v1
+mikrotik-ccr2004,MikroTik,CCR2004-16G-2S+,router,perfil_en_desarrollo,mikrotik-ccr2004-16g-2splus,batch100-20261031-v1
+ubiquiti-udm-pro,Ubiquiti,UDM-Pro,router,perfil_en_desarrollo,selected-ubiquiti-udm-pro,selected506c-20261101-v1
+ubiquiti-usw-24-poe,Ubiquiti,USW-24-POE,switch,perfil_en_desarrollo,selected-ubiquiti-usw-24-poe,selected506e-20261101-v1
+dell-r350,Dell,PowerEdge R350,server,perfil_en_desarrollo,selected-dell-r350,selected506f-20261101-v1
+hpe-dl360-gen10,HPE,ProLiant DL360 Gen10,server,perfil_en_desarrollo,selected-hpe-dl360-gen10,selected506f-20261101-v1
+palo-alto-pa-410,Palo Alto Networks,PA-410,firewall,perfil_en_desarrollo,paloalto-pa410,batch100-20261031-v1
+palo-alto-pa-415,Palo Alto Networks,PA-415,firewall,perfil_en_desarrollo,selected-palo-alto-pa-415,selected506f-20261101-v1
+palo-alto-pa-445,Palo Alto Networks,PA-445,firewall,perfil_en_desarrollo,selected-palo-alto-pa-445,selected506f-20261101-v1
+palo-alto-pa-450,Palo Alto Networks,PA-450,firewall,perfil_en_desarrollo,paloalto-pa450,batch100-20261031-v1
+palo-alto-pa-460,Palo Alto Networks,PA-460,firewall,perfil_en_desarrollo,paloalto-pa460,batch100-20261031-v1
+palo-alto-pa-3410,Palo Alto Networks,PA-3410,firewall,perfil_en_desarrollo,selected-palo-alto-pa-3410,selected506d-20261101-v1
+palo-alto-pa-3420,Palo Alto Networks,PA-3420,firewall,perfil_en_desarrollo,selected-palo-alto-pa-3420,selected506d-20261101-v1
+palo-alto-pa-3430,Palo Alto Networks,PA-3430,firewall,perfil_en_desarrollo,selected-palo-alto-pa-3430,selected506d-20261101-v1
+palo-alto-pa-3440,Palo Alto Networks,PA-3440,firewall,perfil_en_desarrollo,selected-palo-alto-pa-3440,selected506d-20261101-v1
+palo-alto-pa-5260,Palo Alto Networks,PA-5260,firewall,perfil_en_desarrollo,selected-palo-alto-pa-5260,selected506d-20261101-v1
+palo-alto-pa-5410,Palo Alto Networks,PA-5410,firewall,perfil_en_desarrollo,selected-palo-alto-pa-5410,selected506d-20261101-v1
+palo-alto-pa-5420,Palo Alto Networks,PA-5420,firewall,perfil_en_desarrollo,selected-palo-alto-pa-5420,selected506d-20261101-v1
+palo-alto-pa-5430,Palo Alto Networks,PA-5430,firewall,perfil_en_desarrollo,selected-palo-alto-pa-5430,selected506d-20261101-v1
+palo-alto-pa-5440,Palo Alto Networks,PA-5440,firewall,perfil_en_desarrollo,selected-palo-alto-pa-5440,selected506d-20261101-v1
+palo-alto-pa-5445,Palo Alto Networks,PA-5445,firewall,perfil_en_desarrollo,selected-palo-alto-pa-5445,selected506g-20261101-v1
+palo-alto-pa-5450,Palo Alto Networks,PA-5450,firewall,perfil_en_desarrollo,selected-palo-alto-pa-5450,selected506g-20261101-v1
+palo-alto-pa-7050,Palo Alto Networks,PA-7050,firewall,perfil_en_desarrollo,selected-palo-alto-pa-7050,selected506l-20261101-v1
+palo-alto-pa-1420,Palo Alto Networks,PA-1420,firewall,perfil_en_desarrollo,selected-palo-alto-pa-1420,selected506e-20261101-v1
+palo-alto-pa-3260,Palo Alto Networks,PA-3260,firewall,perfil_en_desarrollo,selected-palo-alto-pa-3260,selected506d-20261101-v1
+palo-alto-pa-5580,Palo Alto Networks,PA-5580,firewall,perfil_en_desarrollo,selected-palo-alto-pa-5580,selected506i-20261101-v1
+nb-56d658406c3821e4,Cisco,Catalyst 1300-24P-4X,switch,perfil_en_desarrollo,selected-nb-56d658406c3821e4,selected506e-20261101-v1
+nb-be67a5901b5f1fb8,Cisco,Catalyst 1300-48P-4X,switch,perfil_en_desarrollo,selected-nb-be67a5901b5f1fb8,selected506b-20261101-v1
+nb-c6ac814fdd7b9934,Cisco,Catalyst 9200L-24P-4G,switch,perfil_en_desarrollo,selected-nb-c6ac814fdd7b9934,selected506e-20261101-v1
+nb-59ffa19030bec2db,Cisco,Catalyst 9200L-48T-4G,switch,perfil_en_desarrollo,selected-nb-59ffa19030bec2db,selected506e-20261101-v1
+nb-8ab74e30b670198e,Cisco,Catalyst C9200CX-12P-2X2G,switch,perfil_en_desarrollo,selected-nb-8ab74e30b670198e,selected506b-20261101-v1
+nb-5e6bc5b25105aac2,Cisco,Catalyst 9300-24P,switch,perfil_en_desarrollo,selected-nb-5e6bc5b25105aac2,selected506e-20261101-v1
+nb-9d22e570931da32f,Cisco,Catalyst 9300-48T,switch,perfil_en_desarrollo,selected-nb-9d22e570931da32f,selected506e-20261101-v1
+nb-703a133fe021a249,Cisco,Catalyst 9300L-48P-4X,switch,perfil_en_desarrollo,selected-nb-703a133fe021a249,selected506e-20261101-v1
+nb-8f68dd201f3c0c5e,Cisco,Catalyst 9300X-24Y,switch,perfil_en_desarrollo,selected-nb-8f68dd201f3c0c5e,selected506d-20261101-v1
+nb-77e3ae7a8fab715b,Cisco,Catalyst 9500-24Y4C,switch,perfil_en_desarrollo,selected-nb-77e3ae7a8fab715b,selected506d-20261101-v1
+nb-b93fdf2565924f3e,Cisco,Catalyst 9500-48Y4C,switch,perfil_en_desarrollo,selected-nb-b93fdf2565924f3e,selected506d-20261101-v1
+nb-553b794d5e1846af,Cisco,Meraki MS120-24P,switch,perfil_en_desarrollo,selected-nb-553b794d5e1846af,selected506b-20261101-v1
+nb-3a0dec7f06699680,Cisco,Meraki MS125-48FP,switch,perfil_en_desarrollo,selected-nb-3a0dec7f06699680,selected506e-20261101-v1
+nb-e83c62d66ebe38fa,Cisco,Meraki MS225-48FP,switch,perfil_en_desarrollo,selected-nb-e83c62d66ebe38fa,selected506d-20261101-v1
+nb-6ba786cfed3ab9a5,Cisco,Meraki MS350-24P,switch,perfil_en_desarrollo,selected-nb-6ba786cfed3ab9a5,selected506d-20261101-v1
+nb-c3a2a8dfb0d28694,Cisco,Nexus 93180YC-FX,switch,perfil_en_desarrollo,selected-nb-c3a2a8dfb0d28694,selected506d-20261101-v1
+nb-4c713694453b3ee3,Cisco,Nexus 93108TC-FX3,switch,perfil_en_desarrollo,selected-nb-4c713694453b3ee3,selected506d-20261101-v1
+nb-5cfeedda20abb6ba,Cisco,Nexus 9336C-FX2,switch,perfil_en_desarrollo,selected-nb-5cfeedda20abb6ba,selected506d-20261101-v1
+nb-028e1d1cc36b14e6,Cisco,Nexus 9504,switch,perfil_en_desarrollo,selected-nb-028e1d1cc36b14e6,selected506g-20261101-v1
+nb-74505fc219eccc33,Cisco,ISR4321,router,perfil_en_desarrollo,selected-nb-74505fc219eccc33,selected506c-20261101-v1
+nb-c0a3827bad315c40,Cisco,ISR4351,router,perfil_en_desarrollo,selected-nb-c0a3827bad315c40,selected506c-20261101-v1
+nb-16082636813a2c65,Cisco,Catalyst 8300-1N1S-4T2X,router,perfil_en_desarrollo,selected-nb-16082636813a2c65,selected506c-20261101-v1
+nb-ed10b6f53c36d127,Cisco,ASR1001-X,router,perfil_en_desarrollo,selected-nb-ed10b6f53c36d127,selected506c-20261101-v1
+nb-f05a32f1a3f1d292,Cisco,Firepower 2110,firewall,perfil_en_desarrollo,selected-nb-f05a32f1a3f1d292,selected506e-20261101-v1
+nb-823b267b5cd72e2c,Cisco,FPR3110-NGFW-K9,firewall,perfil_en_desarrollo,selected-nb-823b267b5cd72e2c,selected506e-20261101-v1
+nb-44d618c14f1ee6e3,Cisco,FPR4112-NGFW-K9,firewall,perfil_en_desarrollo,selected-nb-44d618c14f1ee6e3,selected506e-20261101-v1
+nb-90ee2ca04fd0e2d5,HPE,Aruba 6000-24G-POE4-4SFP,switch,perfil_en_desarrollo,selected-nb-90ee2ca04fd0e2d5,selected506a-20261101-v1
+nb-f505dfd941515251,HPE,Aruba 6000-48G-4SFP,switch,perfil_en_desarrollo,selected-nb-f505dfd941515251,selected506a-20261101-v1
+nb-f6915d5d3881b84d,HPE,Aruba 6100-24G-4SFP+,switch,perfil_en_desarrollo,selected-nb-f6915d5d3881b84d,selected506a-20261101-v1
+nb-adf2142c84f07df9,HPE,Aruba 6100-48G-4SFP+,switch,perfil_en_desarrollo,selected-nb-adf2142c84f07df9,selected506a-20261101-v1
+nb-b332648f50e7f0ed,HPE,Aruba 6200F-24G-4SFP+,switch,perfil_en_desarrollo,selected-nb-b332648f50e7f0ed,selected506b-20261101-v1
+nb-fedc94752959d1f9,HPE,Aruba 6200F-48G-4SFP+,switch,perfil_en_desarrollo,selected-nb-fedc94752959d1f9,selected506b-20261101-v1
+nb-086e891acea2817b,HPE,Aruba 6300F-24G-4SFP56,switch,perfil_en_desarrollo,selected-nb-086e891acea2817b,selected506h-20261101-v1
+nb-51dcd09a4e5de9b0,HPE,Aruba 6300F-48G-POE4-4SFP56,switch,perfil_en_desarrollo,selected-nb-51dcd09a4e5de9b0,selected506h-20261101-v1
+nb-460527db3780ce3d,HPE,Aruba 6300M-24G-4SFP56,switch,perfil_en_desarrollo,selected-nb-460527db3780ce3d,selected506h-20261101-v1
+nb-75df9fe3366f5eba,HPE,Aruba 6300M-48SR10-POE8-4QSFP28,switch,perfil_en_desarrollo,selected-nb-75df9fe3366f5eba,selected506g-20261101-v1
+nb-6de5e10b8660c81a,HPE,Aruba 8325-32C Front-to-Back,switch,perfil_en_desarrollo,selected-nb-6de5e10b8660c81a,selected506e-20261101-v1
+nb-75adec80da5ff093,HPE,Aruba 8360-48Y6C Front-to-Back,switch,perfil_en_desarrollo,selected-nb-75adec80da5ff093,selected506e-20261101-v1
+nb-5a8fa3b1908ef3b0,HPE,Aruba 2930F-24G-4SFP+,switch,perfil_en_desarrollo,aruba-jl253a,batch100b-20261031-v1
+nb-4b362a024923dd51,HPE,Aruba 2930F-48G-PoE+-4SFP,switch,perfil_en_desarrollo,selected-nb-4b362a024923dd51,selected506b-20261101-v1
+nb-1f54926bad83fb98,HPE,Aruba 2530-24G,switch,perfil_en_desarrollo,aruba-j9776a,batch100b-20261031-v1
+nb-0228f0e0bca0aab5,HPE,Aruba 2540-48G-4SFP+,switch,perfil_en_desarrollo,aruba-jl355a,batch100b-20261031-v1
+nb-9e1720811fc797a6,Fortinet,FortiGate 50G,firewall,perfil_en_desarrollo,selected-nb-9e1720811fc797a6,selected506c-20261101-v1
+nb-6686146b0b725562,Fortinet,FortiGate 60E,firewall,perfil_en_desarrollo,fortinet-fg60e,batch100-20261031-v1
+nb-8db15759990d4860,Fortinet,FortiGate 100E,firewall,perfil_en_desarrollo,selected-nb-8db15759990d4860,selected506c-20261101-v1
+nb-1e82877e2cea9014,Fortinet,FortiGate 120G,firewall,perfil_en_desarrollo,fortinet-fg120g,batch100-20261031-v1
+nb-908ff89d52fbb695,Fortinet,FortiGate 200D,firewall,perfil_en_desarrollo,selected-nb-908ff89d52fbb695,selected506c-20261101-v1
+nb-84fd5cab1c90f21e,Fortinet,FortiGate 400E,firewall,perfil_en_desarrollo,fortinet-fg400e,batch100-20261031-v1
+nb-083677535cff6791,Fortinet,FortiGate 400F,firewall,perfil_en_desarrollo,selected-nb-083677535cff6791,selected506c-20261101-v1
+nb-56498b6a7c56d483,Fortinet,FortiGate 600F,firewall,perfil_en_desarrollo,fortinet-fg600f,batch100-20261031-v1
+nb-e5b040471a978eae,Fortinet,FortiGate 1000F,firewall,perfil_en_desarrollo,selected-nb-e5b040471a978eae,selected506d-20261101-v1
+nb-f48a3b395614b14f,Fortinet,FortiGate 2600F,firewall,perfil_en_desarrollo,selected-nb-f48a3b395614b14f,selected506d-20261101-v1
+nb-78642bb08e8fc74c,Fortinet,FortiGate 3001F,firewall,perfil_en_desarrollo,selected-nb-78642bb08e8fc74c,selected506d-20261101-v1
+nb-015e42f0df73715b,Fortinet,FortiGate 3701F,firewall,perfil_en_desarrollo,selected-nb-015e42f0df73715b,selected506i-20261101-v1
+nb-920e5812c8fd4f87,Fortinet,FortiGate 80D,firewall,perfil_en_desarrollo,selected-nb-920e5812c8fd4f87,selected506c-20261101-v1
+nb-dfed66cafdc81794,Fortinet,FortiGate 140E-POE,firewall,perfil_en_desarrollo,selected-nb-dfed66cafdc81794,selected506c-20261101-v1
+nb-02ff57a586c2aafd,Sophos,XGS 107,firewall,perfil_en_desarrollo,sophos-xgs107-gen1,batch50-20261030-v1
+nb-9b7461820cabfd63,Sophos,XGS 126,firewall,perfil_en_desarrollo,selected-nb-9b7461820cabfd63,selected506c-20261101-v1
+nb-60535d6487d8c516,Sophos,XGS 136,firewall,perfil_en_desarrollo,selected-nb-60535d6487d8c516,selected506c-20261101-v1
+nb-0cd3ea127c2ba95f,Sophos,XGS 4300,firewall,perfil_en_desarrollo,sophos-xgs4300-gen1,batch100-20261031-v1
+nb-72873d5b8a0b96c9,Juniper,EX2300-24T,switch,perfil_en_desarrollo,juniper-ex2300-24t,batch100c-20261031-v1
+nb-d4d0d201f9d0e748,Juniper,EX2300-48P,switch,perfil_en_desarrollo,selected-nb-d4d0d201f9d0e748,selected506b-20261101-v1
+nb-9960b794c01f49b4,Juniper,EX3400-48P,switch,perfil_en_desarrollo,selected-nb-9960b794c01f49b4,selected506d-20261101-v1
+nb-f6e0bb626755510b,Juniper,EX4100-48P,switch,perfil_en_desarrollo,selected-nb-f6e0bb626755510b,selected506d-20261101-v1
+nb-68e3c1e22fd81ed1,Juniper,EX4400-48F,switch,perfil_en_desarrollo,selected-nb-68e3c1e22fd81ed1,selected506d-20261101-v1
+nb-56979e7752a9d231,Juniper,QFX5120-48Y-AFI2,switch,perfil_en_desarrollo,selected-nb-56979e7752a9d231,selected506d-20261101-v1
+nb-f0537901a8b1edc9,Juniper,QFX5100-48S-6Q,switch,perfil_en_desarrollo,selected-nb-f0537901a8b1edc9,selected506d-20261101-v1
+nb-56ae91b8f6b2852d,Juniper,MX204,router,perfil_en_desarrollo,selected-nb-56ae91b8f6b2852d,selected506d-20261101-v1
+nb-f80e0cda0a334724,Juniper,SRX345,firewall,perfil_en_desarrollo,juniper-srx345-sys-jb,batch100c-20261031-v1
+nb-ec11fe6fea97c18d,Juniper,SRX380,firewall,perfil_en_desarrollo,selected-nb-ec11fe6fea97c18d,selected506e-20261101-v1
+nb-c97c123a9fc99169,MikroTik,CCR2004-1G-12S+2XS,router,perfil_en_desarrollo,mikrotik-ccr2004-1g-12splus2xs,batch100-20261031-v1
+nb-4eb82851961f61b1,MikroTik,CCR2116-12G-4S+,router,perfil_en_desarrollo,mikrotik-ccr2116-12g-4splus,batch100-20261031-v1
+nb-d827296bb530c875,MikroTik,CCR2216-1G-12XS-2XQ,router,perfil_en_desarrollo,selected-nb-d827296bb530c875,selected506d-20261101-v1
+nb-8daa73dfc2be1ec5,MikroTik,CRS309-1G-8S+IN,switch,perfil_en_desarrollo,selected-nb-8daa73dfc2be1ec5,selected506e-20261101-v1
+nb-f390c56e840a7483,MikroTik,CRS317-1G-16S+RM,switch,perfil_en_desarrollo,selected-nb-f390c56e840a7483,selected506e-20261101-v1
+nb-b789b2ec357d683f,MikroTik,CRS326-24G-2S+RM,switch,perfil_en_desarrollo,selected-nb-b789b2ec357d683f,selected506b-20261101-v1
+nb-00de5627d2ff4666,MikroTik,CRS328-24P-4S+RM,switch,perfil_en_desarrollo,selected-nb-00de5627d2ff4666,selected506e-20261101-v1
+nb-026eafe7e1684a8c,MikroTik,RB4011iGS+RM,router,perfil_en_desarrollo,selected-nb-026eafe7e1684a8c,selected506c-20261101-v1
+nb-5f2f318828e8a714,Ubiquiti,UniFi Cloud Gateway Ultra,router,perfil_en_desarrollo,selected-nb-5f2f318828e8a714,selected506c-20261101-v1
+nb-67a1252a6921143c,Ubiquiti,UniFi Dream Machine Pro Special Edition,router,perfil_en_desarrollo,selected-nb-67a1252a6921143c,selected506c-20261101-v1
+nb-1dda3b7e93aeec53,Ubiquiti,UniFi Dream Machine Pro Max,router,perfil_en_desarrollo,selected-nb-1dda3b7e93aeec53,selected506c-20261101-v1
+nb-eaa7b5f1797fad5b,Ubiquiti,UniFi Switch Pro Max 24 PoE,switch,perfil_en_desarrollo,selected-nb-eaa7b5f1797fad5b,selected506a-20261101-v1
+nb-f83ce1b7723518c4,Ubiquiti,UniFi Switch Pro Max 48 PoE,switch,perfil_en_desarrollo,selected-nb-f83ce1b7723518c4,selected506a-20261101-v1
+nb-17bc3210897c1128,Ubiquiti,UniFi Switch Aggregation,switch,perfil_en_desarrollo,ubiquiti-usw-aggregation,batch100c-20261031-v1
+nb-0c303ce9bca6c601,Ubiquiti,UniFi Switch Enterprise 24 PoE,switch,perfil_en_desarrollo,selected-nb-0c303ce9bca6c601,selected506a-20261101-v1
+nb-91b2bc4ecae870e8,Ubiquiti,UNAS Pro,nas,perfil_en_desarrollo,selected-nb-91b2bc4ecae870e8,selected506c-20261101-v1
+nb-f2e21430ea7914ec,Ubiquiti,U7 Pro Max,ap,perfil_en_desarrollo,selected-nb-f2e21430ea7914ec,selected506j-20261101-v1
+nb-bd9d2291941ee640,Ubiquiti,U7 Outdoor,ap,perfil_en_desarrollo,selected-nb-bd9d2291941ee640,selected506l-20261101-v1
+nb-835098cd70ea8623,Synology,DS920+,nas,perfil_en_desarrollo,synology-ds920plus,batch50-20261030-v1
+nb-5a7762f3d43d50a1,Synology,FS6400,nas,perfil_en_desarrollo,selected-nb-5a7762f3d43d50a1,selected506c-20261101-v1
+nb-0f1a40512477bddd,Synology,RS1221RP+,nas,perfil_en_desarrollo,synology-rs1221rpplus,batch50b-20261031-v1
+nb-c1018c274ea7cca7,Synology,RS3621xs+,nas,perfil_en_desarrollo,synology-rs3621xsplus,batch50b-20261031-v1
+nb-8fc891fcbbe1c157,Synology,RS819,nas,perfil_en_desarrollo,synology-rs819,batch50-20261030-v1
+nb-3c48ca91bd3e9e90,Synology,DS918+,nas,perfil_en_desarrollo,selected-nb-3c48ca91bd3e9e90,selected506c-20261101-v1
+nb-41ebe669d5a4de72,QNAP,TS-1232PXU-RP,nas,perfil_en_desarrollo,qnap-ts-1232pxu-rp-4g,batch100b-20261031-v1
+nb-15e2a5226a792094,QNAP,TS-432PXU,nas,perfil_en_desarrollo,qnap-ts-432pxu-2g,batch100b-20261031-v1
+nb-bf41539b419069e8,QNAP,TS-432PXU-RP,nas,perfil_en_desarrollo,qnap-ts-432pxu-rp-2g,batch100b-20261031-v1
+nb-912e151ce17b6f2c,QNAP,TS-832PXU-RP,nas,perfil_en_desarrollo,qnap-ts-832pxu-rp-4g,batch100b-20261031-v1
+nb-7a9733566074ec15,QNAP,TS-883XU-RP,nas,perfil_en_desarrollo,selected-nb-7a9733566074ec15,selected506c-20261101-v1
+nb-ce11d1eae1be7887,Dell,PowerEdge R640,server,perfil_en_desarrollo,selected-nb-ce11d1eae1be7887,selected506f-20261101-v1
+nb-1949dff7c63dc370,Dell,PowerEdge R6515,server,perfil_en_desarrollo,selected-nb-1949dff7c63dc370,selected506f-20261101-v1
+nb-672799eaa4f759d6,Dell,PowerEdge R7715,server,perfil_en_desarrollo,selected-nb-672799eaa4f759d6,selected506g-20261101-v1
+nb-fb93dfe85c1f7a8b,Dell,PowerEdge R7515,server,perfil_en_desarrollo,selected-nb-fb93dfe85c1f7a8b,selected506f-20261101-v1
+nb-33c7e52f1cb00564,Dell,PowerEdge R7525,server,perfil_en_desarrollo,selected-nb-33c7e52f1cb00564,selected506f-20261101-v1
+nb-c263db2c3b4a2925,Dell,PowerEdge R760xd2,server,perfil_en_desarrollo,selected-nb-c263db2c3b4a2925,selected506g-20261101-v1
+nb-ecabe45d7f7fcc48,Dell,PowerEdge R7615,server,perfil_en_desarrollo,selected-nb-ecabe45d7f7fcc48,selected506g-20261101-v1
+nb-948fad2f13709dc9,Dell,PowerEdge R7725,server,perfil_en_desarrollo,selected-nb-948fad2f13709dc9,selected506g-20261101-v1
+nb-c1f158f64ea1ee8a,HPE,ProLiant DL360 Gen11,server,perfil_en_desarrollo,selected-nb-c1f158f64ea1ee8a,selected506f-20261101-v1
+nb-149a66cfbe4b740e,HPE,ProLiant DL380 Gen10,server,perfil_en_desarrollo,selected-nb-149a66cfbe4b740e,selected506f-20261101-v1
+nb-14bfeedc875ce4de,HPE,ProLiant DL380 Gen11,server,perfil_en_desarrollo,selected-nb-14bfeedc875ce4de,selected506f-20261101-v1
+nb-ff98cf8f1bf55eb7,HPE,ProLiant DL385 Gen10 Plus v2,server,perfil_en_desarrollo,selected-nb-ff98cf8f1bf55eb7,selected506f-20261101-v1
+nb-9127f2021330b9a8,HPE,ProLiant ML350 Gen10,server,perfil_en_desarrollo,selected-nb-9127f2021330b9a8,selected506g-20261101-v1
+nb-eda39086bd9e9cda,HPE,ProLiant DL345 Gen11,server,perfil_en_desarrollo,selected-nb-eda39086bd9e9cda,selected506g-20261101-v1
+nb-87abdfb9366e4dcc,Lenovo,ThinkSystem SR250 V2,server,perfil_en_desarrollo,selected-nb-87abdfb9366e4dcc,selected506f-20261101-v1
+nb-5ceaeace0476cada,Lenovo,ThinkSystem SR630 V2,server,perfil_en_desarrollo,selected-nb-5ceaeace0476cada,selected506f-20261101-v1
+nb-e9b61460b1aac8e0,Lenovo,ThinkSystem SR630 V3,server,perfil_en_desarrollo,selected-nb-e9b61460b1aac8e0,selected506f-20261101-v1
+nb-d6c7e4ca54f24095,Lenovo,ThinkSystem SR645,server,perfil_en_desarrollo,selected-nb-d6c7e4ca54f24095,selected506f-20261101-v1
+nb-7b7fd92e11204896,Supermicro,AS-1124US-TNRP,server,perfil_en_desarrollo,selected-nb-7b7fd92e11204896,selected506g-20261101-v1
+nb-15047e48f0df3f18,Supermicro,AS-2115HS-TNR,server,perfil_en_desarrollo,selected-nb-15047e48f0df3f18,selected506g-20261101-v1
+nb-58396084a7d0cb50,Supermicro,SuperServer 5019D-FN8TP,server,perfil_en_desarrollo,selected-nb-58396084a7d0cb50,selected506f-20261101-v1
+nb-35d87f3fc5c78828,Supermicro,Storage SuperServer SSG-610P-ACR12N4H,server,perfil_en_desarrollo,selected-nb-35d87f3fc5c78828,selected506g-20261101-v1
+nb-e195af6788f9b56c,APC,SMT3000RMI2UC,ups,perfil_en_desarrollo,selected-nb-e195af6788f9b56c,selected506k-20261101-v1
+nb-1157b9a10bc8e5f4,APC,SMX3000RMLV2U,ups,perfil_en_desarrollo,selected-nb-1157b9a10bc8e5f4,selected506k-20261101-v1
+nb-f9fc50287eafd86c,APC,Smart-UPS SRT5KRMXLT,ups,perfil_en_desarrollo,selected-nb-f9fc50287eafd86c,selected506k-20261101-v1
+nb-c91a00ac9965db90,APC,SMT2200RM2U,ups,perfil_en_desarrollo,selected-nb-c91a00ac9965db90,selected506k-20261101-v1
+nb-8311f81875534b26,APC,AP7950B,pdu,perfil_en_desarrollo,selected-nb-8311f81875534b26,selected506l-20261101-v1
+nb-15a85a8a3b05a92f,APC,AP6031A,pdu,perfil_en_desarrollo,selected-nb-15a85a8a3b05a92f,selected506k-20261101-v1
+nb-19ed1459663d3e17,Eaton,5PX1500iRT,ups,perfil_en_desarrollo,selected-nb-19ed1459663d3e17,selected506k-20261101-v1
+nb-f5d26f8fec76743c,Eaton,9PX3000iRT2U,ups,perfil_en_desarrollo,selected-nb-f5d26f8fec76743c,selected506k-20261101-v1
+nb-d3866e263332a4fc,Eaton,9PX3000iRT3U,ups,perfil_en_desarrollo,selected-nb-d3866e263332a4fc,selected506k-20261101-v1
+nb-d9eff11e7e0c11f7,Panduit,"Cat 6 Punchdown Patch Panel, 24 Ports, 1 RU, Black",patch-panel,perfil_en_desarrollo,selected-nb-d9eff11e7e0c11f7,selected506k-20261101-v1
+nb-4b2e4c72b9d36b73,Panduit,"Cat 6A Punchdown Patch Panel, 48 Ports, 2 RU, Black",patch-panel,perfil_en_desarrollo,selected-nb-4b2e4c72b9d36b73,selected506k-20261101-v1
+nb-c391d0a9345caadb,Panduit,"Mini-Com Flush Mount Angled Patch Panel (24 Port, 1RU)",patch-panel,perfil_en_desarrollo,selected-nb-c391d0a9345caadb,selected506j-20261101-v1
+nb-47531f3ce888df83,Panduit,"Mini-Com High Density Patch Panel (48 Port, 1RU)",patch-panel,perfil_en_desarrollo,selected-nb-47531f3ce888df83,selected506j-20261101-v1
+nb-bdf6ab2dce05aee0,Panduit,"Opticom Rack Mount Enclosure, Black, 1 RU, 3 FAP/Cassette Slots",other,perfil_en_desarrollo,selected-nb-bdf6ab2dce05aee0,selected506k-20261101-v1
+nb-29ce493b266db9c3,Panduit,"Opticom Rack Mount Enclosure, Black, 2 RU, 6 FAP/Cassette Slots",other,perfil_en_desarrollo,selected-nb-29ce493b266db9c3,selected506k-20261101-v1
+nb-229917b69a037991,WatchGuard,Firebox T25,firewall,perfil_en_desarrollo,selected-nb-229917b69a037991,selected506c-20261101-v1
+nb-6c1be13449ccaccb,WatchGuard,Firebox T45,firewall,perfil_en_desarrollo,selected-nb-6c1be13449ccaccb,selected506c-20261101-v1
+nb-afb6728ab77880b7,WatchGuard,M270,firewall,perfil_en_desarrollo,watchguard-firebox-m270,batch100c-20261031-v1
+nb-c5937f7093956ec3,Check Point,SG7000,firewall,perfil_en_desarrollo,selected-nb-c5937f7093956ec3,selected506g-20261101-v1
+nb-79c9c5a3726513c9,Check Point,SG16000,firewall,perfil_en_desarrollo,selected-nb-79c9c5a3726513c9,selected506g-20261101-v1
+nb-7e1c09817aeccd5f,Netgear,GS308EP,switch,perfil_en_desarrollo,selected-nb-7e1c09817aeccd5f,selected506b-20261101-v1
+nb-858c4b2d8df65bb9,Netgear,S3300-28X-PoE+,switch,perfil_en_desarrollo,selected-nb-858c4b2d8df65bb9,selected506e-20261101-v1
+nb-7d81ebcda392315d,Netgear,S3300-52X,switch,perfil_en_desarrollo,selected-nb-7d81ebcda392315d,selected506e-20261101-v1
+nb-0e0d436b707c6222,D-Link,DGS-3130-54PS,switch,perfil_en_desarrollo,selected-nb-0e0d436b707c6222,selected506b-20261101-v1
+nb-cbcbd6a95a949d7a,D-Link,DXS-3400-24TC,switch,perfil_en_desarrollo,selected-nb-cbcbd6a95a949d7a,selected506f-20261101-v1
+nb-2f1c864cfa97acee,TP-Link,SG3218XP-M2 V1,switch,perfil_en_desarrollo,selected-nb-2f1c864cfa97acee,selected506b-20261101-v1
+nb-9e6429de560eb723,TP-Link,TL-SG105E,switch,perfil_en_desarrollo,selected-nb-9e6429de560eb723,selected506c-20261101-v1
+nb-a02305d3072dc01b,Arista,CCS-720XP-24Y6-2F,switch,perfil_en_desarrollo,selected-nb-a02305d3072dc01b,selected506d-20261101-v1
+nb-1629a1d59aad162f,Arista,CCS-720DP-48ZS-2F,switch,perfil_en_desarrollo,selected-nb-1629a1d59aad162f,selected506b-20261101-v1
+nb-40628e190c9e9ada,Arista,DCS-7050SX3-48YC8-F,switch,perfil_en_desarrollo,selected-nb-40628e190c9e9ada,selected506d-20261101-v1
+nb-f0851cec3521e33f,Arista,DCS-7060CX2-32S-F,switch,perfil_en_desarrollo,selected-nb-f0851cec3521e33f,selected506d-20261101-v1
+nb-8a9952b05c0840d1,Arista,DCS-7280SR3-48YC8-F,switch,perfil_en_desarrollo,selected-nb-8a9952b05c0840d1,selected506d-20261101-v1
+nb-1e541b78ab2e12a9,Arista,DCS-7160-48YC6-F,switch,perfil_en_desarrollo,selected-nb-1e541b78ab2e12a9,selected506d-20261101-v1
+nb-be59e710a51d5844,NetApp,AFF A150,storage,perfil_en_desarrollo,selected-nb-be59e710a51d5844,selected506l-20261101-v1
+nb-fbfb065dfbbbb4ca,NetApp,FAS2720,storage,perfil_en_desarrollo,selected-nb-fbfb065dfbbbb4ca,selected506l-20261101-v1
+nb-7e5c43b083d87aa3,NetApp,StorageGRID SG5812,storage,perfil_en_desarrollo,selected-nb-7e5c43b083d87aa3,selected506l-20261101-v1
+nb-949bb6f1695a8037,Huawei,AR6140-S,router,perfil_en_desarrollo,selected-nb-949bb6f1695a8037,selected506f-20261101-v1
+nb-d45ace2059d491dd,Huawei,CloudEngine S5732-H48UM4Y2CZ-V2,switch,perfil_en_desarrollo,selected-nb-d45ace2059d491dd,selected506g-20261101-v1
+nb-a864e7299035e225,Huawei,S6730-H24X4Y4C,switch,perfil_en_desarrollo,selected-nb-a864e7299035e225,selected506d-20261101-v1
+nb-b3dc322f7f5ffa4d,Extreme Networks,4220-24P-4X,switch,perfil_en_desarrollo,selected-nb-b3dc322f7f5ffa4d,selected506b-20261101-v1
+nb-dc6cdf07e279b4a0,Extreme Networks,5320-48P-8XE,switch,perfil_en_desarrollo,selected-nb-dc6cdf07e279b4a0,selected506b-20261101-v1
+nb-b00080f2380582f6,Extreme Networks,X440-G2-24p-10GE4,switch,perfil_en_desarrollo,selected-nb-b00080f2380582f6,selected506e-20261101-v1
+nb-4d5610318b7474da,Extreme Networks,X590-24x-1q-2c,switch,perfil_en_desarrollo,selected-nb-4d5610318b7474da,selected506d-20261101-v1
+nb-6d4a191cda45f6d1,Extreme Networks,X695-48Y-8C,switch,perfil_en_desarrollo,selected-nb-6d4a191cda45f6d1,selected506d-20261101-v1
+sonicwall-tz370w,SonicWall,TZ370W,firewall,perfil_en_desarrollo,selected-sonicwall-tz370w,selected506g-20261101-v1
+sonicwall-nsa2700,SonicWall,NSa 2700,firewall,perfil_en_desarrollo,sonicwall-nsa2700,batch100b-20261031-v1
+raritan-px3-5190r,Raritan,PX3-5190R,pdu,perfil_en_desarrollo,selected-raritan-px3-5190r,selected506k-20261101-v1
+digitus-dn19-16-u-sw,DIGITUS,DN-19 16-U-SW,rack,perfil_en_desarrollo,selected-digitus-dn19-16-u-sw,selected506l-20261101-v1
+rittal-vxit-5306122,Rittal,VX IT 5306.122,rack,perfil_en_desarrollo,selected-rittal-vxit-5306122,selected506l-20261101-v1
+startech-rk1236bkf,StarTech.com,RK1236BKF,rack,perfil_en_desarrollo,selected-startech-rk1236bkf,selected506l-20261101-v1
+nb-fc3db9baa232b775,Adtran,424,other,perfil_en_desarrollo,selected-nb-fc3db9baa232b775,selected506l-20261101-v1
+nb-84908ff0a7aae399,Adtran,NetVanta 4660,router,perfil_en_desarrollo,selected-nb-84908ff0a7aae399,selected506l-20261101-v1
+nb-c7a6bbe78d369445,Alcatel-Lucent,OS6400-24,switch,perfil_en_desarrollo,selected-nb-c7a6bbe78d369445,selected506f-20261101-v1
+nb-a177f34a640c5260,Alcatel-Lucent,OS6860-24,switch,perfil_en_desarrollo,selected-nb-a177f34a640c5260,selected506f-20261101-v1
+nb-22f6dc2225b95f69,Alcatel-Lucent,OS6860-48,switch,perfil_en_desarrollo,selected-nb-22f6dc2225b95f69,selected506f-20261101-v1
+nb-32bb124abaaa021b,ASUS,RS300-E11-RS4,server,perfil_en_desarrollo,selected-nb-32bb124abaaa021b,selected506g-20261101-v1
+nb-775999426472421b,Avaya,ERS 3526T-PWR+,switch,perfil_en_desarrollo,selected-nb-775999426472421b,selected506f-20261101-v1
+nb-712e46e426c32606,Avaya,IP Office 500 V2,other,perfil_en_desarrollo,selected-nb-712e46e426c32606,selected506l-20261101-v1
+nb-765b000f7862b2a5,Barracuda,F400C-F20,firewall,perfil_en_desarrollo,selected-nb-765b000f7862b2a5,selected506g-20261101-v1
+nb-7a6f331eb573b567,Barracuda,F380,firewall,perfil_en_desarrollo,selected-nb-7a6f331eb573b567,selected506g-20261101-v1
+nb-068b536b05b168d6,Barracuda,F80B,firewall,perfil_en_desarrollo,selected-nb-068b536b05b168d6,selected506c-20261101-v1
+nb-1dd7604442a1239d,Belden,RV6PPF1U24BK,patch-panel,perfil_en_desarrollo,selected-nb-1dd7604442a1239d,selected506l-20261101-v1
+nb-f31245615c072a97,Belden,RV6PPF2U48BK,patch-panel,perfil_en_desarrollo,selected-nb-f31245615c072a97,selected506l-20261101-v1
+nb-03c8ee9bbb014c7c,Cabeus,PDU-8P,pdu,perfil_en_desarrollo,selected-nb-03c8ee9bbb014c7c,selected506l-20261101-v1
+nb-1a5e040822eebdd7,Cabeus,PL-24-Cat-5e-Dual-IDC,patch-panel,perfil_en_desarrollo,selected-nb-1a5e040822eebdd7,selected506l-20261101-v1
+nb-3ad914fbc8c9cb70,Cable Matters,24 Port Keystone Patch Panel,patch-panel,perfil_en_desarrollo,selected-nb-3ad914fbc8c9cb70,selected506l-20261101-v1
+nb-d1adbd24989d63bf,Calient,s320,other,perfil_en_desarrollo,selected-nb-d1adbd24989d63bf,selected506l-20261101-v1
+nb-125f92d869fe9f59,Ciena,Waveserver Ai,other,perfil_en_desarrollo,selected-nb-125f92d869fe9f59,selected506l-20261101-v1
+nb-2b88f84c9db567bf,Ciena,3926,other,perfil_en_desarrollo,selected-nb-2b88f84c9db567bf,selected506g-20261101-v1
+nb-5eb1039c16a0df6a,Ciena,3930,other,perfil_en_desarrollo,selected-nb-5eb1039c16a0df6a,selected506g-20261101-v1
+nb-feb9fd36baf516b8,Ciena,3942 AC,other,perfil_en_desarrollo,selected-nb-feb9fd36baf516b8,selected506g-20261101-v1
+nb-d7b89b29215a9708,Ciena,5160,other,perfil_en_desarrollo,selected-nb-d7b89b29215a9708,selected506g-20261101-v1
+nb-4a0b0e3bbe63b84a,Ciena,5162,other,perfil_en_desarrollo,selected-nb-4a0b0e3bbe63b84a,selected506g-20261101-v1
+nb-268313b973eee49c,Ciena,5171 Router,other,perfil_en_desarrollo,selected-nb-268313b973eee49c,selected506i-20261101-v1
+nb-af1698f9a4a852f5,Ciena,6500 R2,other,perfil_en_desarrollo,selected-nb-af1698f9a4a852f5,selected506l-20261101-v1
+nb-22691841537ee307,Ciena,6500 R4,other,perfil_en_desarrollo,selected-nb-22691841537ee307,selected506l-20261101-v1
+nb-6b344ae9fceb207f,Ciena,8110,other,perfil_en_desarrollo,selected-nb-6b344ae9fceb207f,selected506l-20261101-v1
+nb-36567f277193e94e,Ciena,8114,other,perfil_en_desarrollo,selected-nb-36567f277193e94e,selected506g-20261101-v1
+nb-d669b5e97362251a,Ciena,8140,other,perfil_en_desarrollo,selected-nb-d669b5e97362251a,selected506l-20261101-v1
+nb-a6a79509854ba38b,Commscope,360G2-1U-MOD-SD,other,perfil_en_desarrollo,selected-nb-a6a79509854ba38b,selected506k-20261101-v1
+nb-9b748f4aeb7c8a2d,Commscope,CPP-UDDM-M-1U-24,patch-panel,perfil_en_desarrollo,selected-nb-9b748f4aeb7c8a2d,selected506k-20261101-v1
+nb-75ff355641be29f1,Commscope,CPPA-UDDM-M-2U-48,patch-panel,perfil_en_desarrollo,selected-nb-75ff355641be29f1,selected506k-20261101-v1
+nb-682f01a7e3775f50,Commscope,CPP-SDDM-SL-1U-24,patch-panel,perfil_en_desarrollo,selected-nb-682f01a7e3775f50,selected506k-20261101-v1
+nb-78fb5e27dc863dbc,Commscope,SD-4U,other,perfil_en_desarrollo,selected-nb-78fb5e27dc863dbc,selected506k-20261101-v1
+nb-d711e2c300ede120,Datwyler,Patch Panel KS 24x Black,patch-panel,perfil_en_desarrollo,selected-nb-d711e2c300ede120,selected506l-20261101-v1
+nb-2174af86248be3c0,Datwyler,Patch Panel KU 24x Light Grey,patch-panel,perfil_en_desarrollo,selected-nb-2174af86248be3c0,selected506l-20261101-v1
+nb-19c462f073983955,Datwyler,Patch Panel MGK 24x Silver,patch-panel,perfil_en_desarrollo,selected-nb-19c462f073983955,selected506l-20261101-v1
+nb-908a100c3ca29495,Digi,PortServer TS 16,other,perfil_en_desarrollo,selected-nb-908a100c3ca29495,selected506k-20261101-v1
+nb-b4a7fc7373f9706c,DITEK,DTK-RM12EXTS,other,perfil_en_desarrollo,selected-nb-b4a7fc7373f9706c,selected506l-20261101-v1
+nb-346372afd400f875,DITEK,DTK-RM24NETS,other,perfil_en_desarrollo,selected-nb-346372afd400f875,selected506l-20261101-v1
+nb-800f8ec3e0535314,DITEK,DTK-WM8NETS,other,perfil_en_desarrollo,selected-nb-800f8ec3e0535314,selected506l-20261101-v1
+nb-f7f404654aad4d5a,Edgecore,AS4625-54T-O-AC-F,switch,perfil_en_desarrollo,selected-nb-f7f404654aad4d5a,selected506f-20261101-v1
+nb-6a0159c3c324ded0,Edgecore,AS7326-56X-O-AC-F,switch,perfil_en_desarrollo,selected-nb-6a0159c3c324ded0,selected506f-20261101-v1
+nb-edde85c1a3ba283d,EFB Elektronik,691651ATS8,other,perfil_en_desarrollo,selected-nb-edde85c1a3ba283d,selected506k-20261101-v1
+nb-80c45eaf78955607,Eltex,MES2308P,switch,perfil_en_desarrollo,selected-nb-80c45eaf78955607,selected506f-20261101-v1
+nb-cd689cba786b2529,Eltex,MES2324P,switch,perfil_en_desarrollo,selected-nb-cd689cba786b2529,selected506f-20261101-v1
+nb-ee49def444e1ec30,Eltex,MES3510P,switch,perfil_en_desarrollo,selected-nb-ee49def444e1ec30,selected506l-20261101-v1
+nb-021661043dd2d49f,F5,BIG-IP 2000,other,perfil_en_desarrollo,selected-nb-021661043dd2d49f,selected506g-20261101-v1
+nb-fe8d278736262b7c,F5,BIG-IP i2600,other,perfil_en_desarrollo,selected-nb-fe8d278736262b7c,selected506f-20261101-v1
+nb-d9ade587e7147b9a,F5,BIG-IP i5600,other,perfil_en_desarrollo,selected-nb-d9ade587e7147b9a,selected506f-20261101-v1
+nb-9c4abe55a270318f,F5,BIG-IP r2600,other,perfil_en_desarrollo,selected-nb-9c4abe55a270318f,selected506g-20261101-v1
+nb-ec99b9ef925f518f,F5,BIG-IP r10600,other,perfil_en_desarrollo,selected-nb-ec99b9ef925f518f,selected506g-20261101-v1
+nb-f5940bcac5635cc5,F5,BIG-IP r5600,other,perfil_en_desarrollo,selected-nb-f5940bcac5635cc5,selected506g-20261101-v1
+nb-41262e318167a929,FS,N5860-48SC,switch,perfil_en_desarrollo,selected-nb-41262e318167a929,selected506d-20261101-v1
+nb-e98baee54dcf5404,FS,N8560-48BC,switch,perfil_en_desarrollo,selected-nb-e98baee54dcf5404,selected506d-20261101-v1
+nb-93773a73e59631e4,FS,FHD-1UFMT-N,other,perfil_en_desarrollo,selected-nb-93773a73e59631e4,selected506k-20261101-v1
+nb-3a03ac04764438c3,GL-iNet,GL-AXT1800,router,perfil_en_desarrollo,glinet-axt1800,batch100b-20261031-v1
+nb-bf62e427e934e0d4,Grandstream,GWN7660E,ap,perfil_en_desarrollo,selected-nb-bf62e427e934e0d4,selected506j-20261101-v1
+nb-98efee7ae64ea280,Grandstream,GWN7803P,switch,perfil_en_desarrollo,selected-nb-98efee7ae64ea280,selected506b-20261101-v1
+nb-c2987ad4b24bf989,Grandstream,GWN7831,switch,perfil_en_desarrollo,selected-nb-c2987ad4b24bf989,selected506f-20261101-v1
+nb-18abeefcccac198a,Kemp Technologies,LoadMaster X1,other,perfil_en_desarrollo,selected-nb-18abeefcccac198a,selected506g-20261101-v1
+nb-cb0da37cc251724e,LANCOM,1790VAW,router,perfil_en_desarrollo,selected-nb-cb0da37cc251724e,selected506l-20261101-v1
+nb-592d7bf6fa2dc5f9,LANCOM,1781VA,router,perfil_en_desarrollo,selected-nb-592d7bf6fa2dc5f9,selected506l-20261101-v1
+nb-a283ed5b907280be,LANCOM,1783VA-4G,router,perfil_en_desarrollo,selected-nb-a283ed5b907280be,selected506l-20261101-v1
+nb-21beeace01ead0ab,LANCOM,1793VAW,router,perfil_en_desarrollo,selected-nb-21beeace01ead0ab,selected506l-20261101-v1
+nb-21d28e7d5a06429b,Lantronix,ETS16PR,other,perfil_en_desarrollo,selected-nb-21d28e7d5a06429b,selected506k-20261101-v1
+nb-b924dbf6777c2eb2,Lantronix,ETS32PR,other,perfil_en_desarrollo,selected-nb-b924dbf6777c2eb2,selected506k-20261101-v1
+nb-2565622a0959d865,Mellanox,SN2100,switch,perfil_en_desarrollo,selected-nb-2565622a0959d865,selected506g-20261101-v1
+nb-a90ded005fd46d23,Moxa,EDS-408A-SS-SC-T,switch,perfil_en_desarrollo,selected-nb-a90ded005fd46d23,selected506l-20261101-v1
+nb-7b2b8f9a08ca79dc,Moxa,EDS-P510,switch,perfil_en_desarrollo,selected-nb-7b2b8f9a08ca79dc,selected506l-20261101-v1
+nb-9363a14b01cfb299,Netgate,8300 Security Gateway,firewall,perfil_en_desarrollo,selected-nb-9363a14b01cfb299,selected506f-20261101-v1
+nb-e4457af07a020f38,Nokia,7220 IXR-D2 25/100GE,switch,perfil_en_desarrollo,selected-nb-e4457af07a020f38,selected506e-20261101-v1
+nb-63eb4152092cd08f,Nokia,7220 IXR-D2L 25/100GE,switch,perfil_en_desarrollo,selected-nb-63eb4152092cd08f,selected506e-20261101-v1
+nb-89d64c27c959137e,Nokia,7220 IXR-D3 32*100GE,switch,perfil_en_desarrollo,selected-nb-89d64c27c959137e,selected506e-20261101-v1
+nb-dbb1fdc53d9b42a1,Nokia,7220 IXR-D5 32*400GE,switch,perfil_en_desarrollo,selected-nb-dbb1fdc53d9b42a1,selected506h-20261101-v1
+nb-14eb45daaa9298fa,Nokia,7220 IXR-H3 32QSFPDD 2SFP+,switch,perfil_en_desarrollo,selected-nb-14eb45daaa9298fa,selected506h-20261101-v1
+nb-f9014eaa7cd819dc,Nokia,7220 IXR-H4 64QSFPDD 2SFP+,switch,perfil_en_desarrollo,selected-nb-f9014eaa7cd819dc,selected506h-20261101-v1
+nb-95ffc21479b7db70,Nokia,7750 SR-1,router,perfil_en_desarrollo,selected-nb-95ffc21479b7db70,selected506l-20261101-v1
+nb-fd5b5a585af75ae9,Nokia,7750 SR-1se 36QSFPDD-800ge,router,perfil_en_desarrollo,selected-nb-fd5b5a585af75ae9,selected506l-20261101-v1
+nb-d0eebb2cb671d40b,Nvidia,SN2201,switch,perfil_en_desarrollo,selected-nb-d0eebb2cb671d40b,selected506f-20261101-v1
+nb-a966d159c428b1d4,Opengear,CM8116,other,perfil_en_desarrollo,selected-nb-a966d159c428b1d4,selected506k-20261101-v1
+nb-08b0ee66b1eb36c8,Opengear,CM8148,other,perfil_en_desarrollo,selected-nb-08b0ee66b1eb36c8,selected506k-20261101-v1
+nb-dbdce8efed0e65d8,Opengear,CM7132-2-DAC,other,perfil_en_desarrollo,selected-nb-dbdce8efed0e65d8,selected506k-20261101-v1
+nb-4f6f5a063ccdaf07,OPNsense,DEC2770,firewall,perfil_en_desarrollo,selected-nb-4f6f5a063ccdaf07,selected506f-20261101-v1
+nb-fe8f97a3849d4e66,Ruckus,ZoneDirector 3000,other,perfil_en_desarrollo,selected-nb-fe8f97a3849d4e66,selected506g-20261101-v1
+nb-a82a300904414f52,Ruijie,RG-NBS3100-24GT4SFP-P,switch,perfil_en_desarrollo,selected-nb-a82a300904414f52,selected506b-20261101-v1
+nb-9dd49be51e6860a8,Smartoptics,DCP-M40-PAM4-ER,other,perfil_en_desarrollo,selected-nb-9dd49be51e6860a8,selected506l-20261101-v1
+nb-665e9fb0c5bbe24e,SMC Networks,SMCGS8P-SMART,switch,perfil_en_desarrollo,selected-nb-665e9fb0c5bbe24e,selected506f-20261101-v1
+nb-bf7b6e396d81b183,SNR,S5210G-24TX,switch,perfil_en_desarrollo,selected-nb-bf7b6e396d81b183,selected506b-20261101-v1
+nb-c2814dde21fa98df,SNR,SNR-UPS-ONRT-1000-S24 ELEMENT II,ups,perfil_en_desarrollo,selected-nb-c2814dde21fa98df,selected506k-20261101-v1
+nb-0948d9cade199a0b,Telco Systems,T-Metro 8104,other,perfil_en_desarrollo,selected-nb-0948d9cade199a0b,selected506l-20261101-v1
+nb-7dd2b21e61ad99a0,Terramaster,F2-424,nas,perfil_en_desarrollo,selected-nb-7dd2b21e61ad99a0,selected506k-20261101-v1
+nb-4de91d17b80dbbff,Terramaster,F6-424 Max,nas,perfil_en_desarrollo,selected-nb-4de91d17b80dbbff,selected506k-20261101-v1
+nb-31017da140e60303,UfiSpace,S9600-32X,switch,perfil_en_desarrollo,selected-nb-31017da140e60303,selected506f-20261101-v1
+nb-5bb0012c11525238,Vertiv,SA1-01002,other,perfil_en_desarrollo,selected-nb-5bb0012c11525238,selected506l-20261101-v1
+nb-00976b7274a49cd1,WTI,CPM-1600-1-c,other,perfil_en_desarrollo,selected-nb-00976b7274a49cd1,selected506l-20261101-v1
+nb-1b78d3ee187d5923,WTI,VMR-16HD20-2,pdu,perfil_en_desarrollo,selected-nb-1b78d3ee187d5923,selected506k-20261101-v1
+nb-fce19920137ab0c4,ZTE,ZXR10-5950-28PD-L,switch,perfil_en_desarrollo,selected-nb-fce19920137ab0c4,selected506f-20261101-v1
+nb-4b73963d18934c09,ZTE,ZXR10-5950-28TD-L,switch,perfil_en_desarrollo,selected-nb-4b73963d18934c09,selected506f-20261101-v1
+nb-4bed5077703a33ad,Zyxel,ES1100-8P,switch,perfil_en_desarrollo,selected-nb-4bed5077703a33ad,selected506b-20261101-v1
+nb-9445f595338fc17a,Zyxel,GS-108B-v3,switch,perfil_en_desarrollo,selected-nb-9445f595338fc17a,selected506b-20261101-v1
+nb-417dcd51ce56234d,Zyxel,GS1100-16,switch,perfil_en_desarrollo,selected-nb-417dcd51ce56234d,selected506f-20261101-v1
+nb-2c5c7ea175f64187,Zyxel,P-660HNU-T1,router,perfil_en_desarrollo,selected-nb-2c5c7ea175f64187,selected506l-20261101-v1
+nb-f545d3718ff68f34,Cisco,ASR1001,router,perfil_en_desarrollo,selected-nb-f545d3718ff68f34,selected506c-20261101-v1
+nb-22ec22b8ee2c893a,HPE,Aruba 2530-8G,switch,perfil_en_desarrollo,selected-nb-22ec22b8ee2c893a,selected506b-20261101-v1
+nb-0981324ffcccabc6,Arista,CCS-720DF-48Y-2F,switch,perfil_en_desarrollo,selected-nb-0981324ffcccabc6,selected506d-20261101-v1
+nb-9af4f14b030fd0a3,Juniper,ACX7024-AC,router,perfil_en_desarrollo,selected-nb-9af4f14b030fd0a3,selected506d-20261101-v1
+nb-640a1e0ad66b9b51,Fortinet,FortiGate 1000D,firewall,perfil_en_desarrollo,selected-nb-640a1e0ad66b9b51,selected506c-20261101-v1
+nb-f0cd8b333b81d486,MikroTik,cAP ac,ap,perfil_en_desarrollo,selected-nb-f0cd8b333b81d486,selected506j-20261101-v1
+nb-2b0409c6beac1731,Ubiquiti,Enterprise Campus Aggregation,switch,perfil_en_desarrollo,selected-nb-2b0409c6beac1731,selected506d-20261101-v1
+nb-8551913e785b8dcd,Huawei,Dorado 3000 V6,storage,perfil_en_desarrollo,selected-nb-8551913e785b8dcd,selected506l-20261101-v1
+nb-fe00cb2fcd751efc,Extreme Networks,4120-24MW-4Y,switch,perfil_en_desarrollo,selected-nb-fe00cb2fcd751efc,selected506d-20261101-v1
+nb-7a4f104d07cdb0f2,Dell,PowerEdge R540,server,perfil_en_desarrollo,selected-nb-7a4f104d07cdb0f2,selected506f-20261101-v1
+nb-7e63582b264848f9,HPE,MSA 2050 Enclosure,storage,perfil_en_desarrollo,selected-nb-7e63582b264848f9,selected506l-20261101-v1
+nb-177693053e26efa4,Lenovo,System x3650 M5,server,perfil_en_desarrollo,selected-nb-177693053e26efa4,selected506g-20261101-v1
+nb-34f23e64e816971f,Supermicro,ASG-2015S-E1CR24L,server,perfil_en_desarrollo,selected-nb-34f23e64e816971f,selected506g-20261101-v1
+nb-6d7036dbdb0153dd,Synology,DS218+,nas,perfil_en_desarrollo,synology-ds218plus,batch50-20261030-v1
+nb-a121938648f6b54a,QNAP,TVS-EC1580MU-SAS-RP,nas,perfil_en_desarrollo,selected-nb-a121938648f6b54a,selected506c-20261101-v1
+nb-476a5e2e14826616,APC,AP4421A,pdu,perfil_en_desarrollo,selected-nb-476a5e2e14826616,selected506k-20261101-v1
+nb-d14bed6bc445f3b0,Eaton,Tripp Lite PDUMH15AT,pdu,perfil_en_desarrollo,selected-nb-d14bed6bc445f3b0,selected506k-20261101-v1
+nb-04f3c36861d3b6f5,Panduit,"Cat 6 Punchdown Patch Panel, 48 Ports, 2 RU, Black",patch-panel,perfil_en_desarrollo,selected-nb-04f3c36861d3b6f5,selected506k-20261101-v1
+nb-9f4e39d04b4eef89,Netgear,GS105,switch,perfil_en_desarrollo,selected-nb-9f4e39d04b4eef89,selected506b-20261101-v1
+nb-b96a0faf83d55061,D-Link,DES-1005P,switch,perfil_en_desarrollo,selected-nb-b96a0faf83d55061,selected506f-20261101-v1
+nb-6177840266a34e21,TP-Link,Archer AX1800,router,perfil_en_desarrollo,selected-nb-6177840266a34e21,selected506l-20261101-v1
+nb-459e071f45ef28d0,NetApp,AFF C30 Chassis,storage,perfil_en_desarrollo,selected-nb-459e071f45ef28d0,selected506l-20261101-v1
+nb-5d4d2d2ec5a6b81b,Check Point,SG19200,firewall,perfil_en_desarrollo,selected-nb-5d4d2d2ec5a6b81b,selected506g-20261101-v1
+nb-f01b85bd214e6930,Sophos,SD-RED 60,other,perfil_en_desarrollo,selected-nb-f01b85bd214e6930,selected506l-20261101-v1
+nb-7e1f01ffe3e19e8a,Cisco,ASR1001-HX,router,perfil_en_desarrollo,selected-nb-7e1f01ffe3e19e8a,selected506c-20261101-v1
+nb-938151a02eb5e5d0,HPE,Aruba 2530-8G-PoE+,switch,perfil_en_desarrollo,selected-nb-938151a02eb5e5d0,selected506b-20261101-v1
+nb-6061e8a5e3e5a74c,Arista,CCS-720DP-24S-2F,switch,perfil_en_desarrollo,selected-nb-6061e8a5e3e5a74c,selected506b-20261101-v1
+nb-e54b976f708867aa,Juniper,ACX7024X,router,perfil_en_desarrollo,selected-nb-e54b976f708867aa,selected506g-20261101-v1
+nb-d18ad51e4dbe98fd,Fortinet,FortiGate 101E,firewall,perfil_en_desarrollo,selected-nb-d18ad51e4dbe98fd,selected506c-20261101-v1
+nb-c06c7dc6eccf5e90,MikroTik,cAP ax,ap,perfil_en_desarrollo,selected-nb-c06c7dc6eccf5e90,selected506j-20261101-v1
+nb-e94a1bc6fc227b74,Ubiquiti,Enterprise Campus Switch 24-Port PoE,switch,perfil_en_desarrollo,selected-nb-e94a1bc6fc227b74,selected506e-20261101-v1
+nb-58601e584ebb26d1,Huawei,Huawei S6730-S24X6Q,switch,perfil_en_desarrollo,selected-nb-58601e584ebb26d1,selected506d-20261101-v1
+nb-dd10d7331f22b8bf,Extreme Networks,4120-48MW-4Y,switch,perfil_en_desarrollo,selected-nb-dd10d7331f22b8bf,selected506e-20261101-v1
+nb-fbdb4552eed0ee61,Dell,PowerEdge R620,server,perfil_en_desarrollo,selected-nb-fbdb4552eed0ee61,selected506f-20261101-v1
+nb-1397e3169b861f26,HPE,ProLiant DL20 Gen11,server,perfil_en_desarrollo,selected-nb-1397e3169b861f26,selected506f-20261101-v1
+nb-efc4c57b1d5c811d,Lenovo,ThinkSystem SR650,server,perfil_en_desarrollo,selected-nb-efc4c57b1d5c811d,selected506f-20261101-v1
+nb-2da2003e6dc8a96f,Supermicro,MicroCloud A+ Server AS 3015MR-H8TNR,server,perfil_en_desarrollo,selected-nb-2da2003e6dc8a96f,selected506l-20261101-v1
+nb-bb280d4ca41dc95b,Synology,RS2416RP+,nas,perfil_en_desarrollo,selected-nb-bb280d4ca41dc95b,selected506c-20261101-v1
+nb-23088fe782f499ac,APC,AP4422A,pdu,perfil_en_desarrollo,selected-nb-23088fe782f499ac,selected506k-20261101-v1
+nb-a30f5454503d7402,Eaton,Tripp Lite PDUMH20HVAT,pdu,perfil_en_desarrollo,selected-nb-a30f5454503d7402,selected506k-20261101-v1
+nb-70f105515d0bf559,Panduit,"Cat 6A Punchdown Patch Panel, 24 Ports, 1 RU, Black",patch-panel,perfil_en_desarrollo,selected-nb-70f105515d0bf559,selected506k-20261101-v1
+nb-0ae02d5176e83b35,Netgear,GS108PEv3,switch,perfil_en_desarrollo,selected-nb-0ae02d5176e83b35,selected506b-20261101-v1
+nb-e6c2c9e3f06a3b7e,D-Link,DGS-1100-08,switch,perfil_en_desarrollo,selected-nb-e6c2c9e3f06a3b7e,selected506b-20261101-v1
+nb-f4684dfd15513291,TP-Link,TL-SG105,switch,perfil_en_desarrollo,selected-nb-f4684dfd15513291,selected506b-20261101-v1
+nb-d201c4c7e7756c85,NetApp,AFF-C60 Chassis,storage,perfil_en_desarrollo,selected-nb-d201c4c7e7756c85,selected506l-20261101-v1
+nb-24e436f8efc76877,Cisco,ASR1002,router,perfil_en_desarrollo,selected-nb-24e436f8efc76877,selected506e-20261101-v1
+nb-2ffc5d29f711ec36,HPE,Aruba 2930F-12G-PoE+-2SFP+,switch,perfil_en_desarrollo,selected-nb-2ffc5d29f711ec36,selected506b-20261101-v1
+nb-fcc0548ac0e54478,Arista,CCS-720DP-24ZS-2F,switch,perfil_en_desarrollo,selected-nb-fcc0548ac0e54478,selected506b-20261101-v1
+nb-595b36736b9f95f2,Juniper,ACX7332,router,perfil_en_desarrollo,selected-nb-595b36736b9f95f2,selected506i-20261101-v1
+nb-d71c560a21e0db1e,Fortinet,FortiGate 201F,firewall,perfil_en_desarrollo,selected-nb-d71c560a21e0db1e,selected506c-20261101-v1
+nb-3ee579cb14778d23,MikroTik,cAP XL ac,ap,perfil_en_desarrollo,selected-nb-3ee579cb14778d23,selected506j-20261101-v1
+nb-e043a5a21e4bc6c2,Ubiquiti,Enterprise Fortress Gateway,router,perfil_en_desarrollo,selected-nb-e043a5a21e4bc6c2,selected506d-20261101-v1
+nb-5bbf29fdc1f2fb3c,Huawei,NE8000 F1A-8H20Q,router,perfil_en_desarrollo,selected-nb-5bbf29fdc1f2fb3c,selected506i-20261101-v1
+nb-73489c7e191a0d9b,Extreme Networks,4220-12P-4X,switch,perfil_en_desarrollo,selected-nb-73489c7e191a0d9b,selected506b-20261101-v1
+nb-302f3fd979788f2e,Dell,PowerEdge R630,server,perfil_en_desarrollo,selected-nb-302f3fd979788f2e,selected506f-20261101-v1
+nb-c7c438542f1254b3,HPE,ProLiant DL360 Gen10 Plus,server,perfil_en_desarrollo,selected-nb-c7c438542f1254b3,selected506f-20261101-v1
+nb-f802ebc80b7bb96e,Lenovo,ThinkSystem SR650 V4,server,perfil_en_desarrollo,selected-nb-f802ebc80b7bb96e,selected506g-20261101-v1
+nb-cb719f76ccc4e4c8,Supermicro,SuperServer 1027R-WRF,server,perfil_en_desarrollo,selected-nb-cb719f76ccc4e4c8,selected506f-20261101-v1
+nb-86babf3249d2b78a,Synology,RS3614xs+,nas,perfil_en_desarrollo,selected-nb-86babf3249d2b78a,selected506c-20261101-v1
+nb-2d5dd2ca4dacb1c5,APC,AP4423A,pdu,perfil_en_desarrollo,selected-nb-2d5dd2ca4dacb1c5,selected506k-20261101-v1
+nb-81391abd9812b183,Eaton,Tripp Lite SMART1500LCD,ups,perfil_en_desarrollo,selected-nb-81391abd9812b183,selected506k-20261101-v1
+nb-f060040e382de573,Panduit,"DP5e Flat Cat 5e Punchdown Patch Panel 24 Ports, 1RU, Black",patch-panel,perfil_en_desarrollo,selected-nb-f060040e382de573,selected506k-20261101-v1
+nb-2213f0b401bb1b4b,Netgear,GS108PP,switch,perfil_en_desarrollo,selected-nb-2213f0b401bb1b4b,selected506b-20261101-v1
+nb-88bc04bb88386c00,D-Link,DGS-1100-08PLV2,switch,perfil_en_desarrollo,selected-nb-88bc04bb88386c00,selected506b-20261101-v1
+nb-e449413120cc6f09,NetApp,DE460C,storage,perfil_en_desarrollo,selected-nb-e449413120cc6f09,selected506l-20261101-v1
+nb-ba797213d2a5841a,Cisco,ASR1002-HX,router,perfil_en_desarrollo,selected-nb-ba797213d2a5841a,selected506e-20261101-v1
+nb-1520b9b243e9bb38,HPE,Aruba 2930F-8G-PoE+-2SFP+,switch,perfil_en_desarrollo,selected-nb-1520b9b243e9bb38,selected506b-20261101-v1
+nb-4b21539470f6d751,Arista,CCS-720DP-48S-2F,switch,perfil_en_desarrollo,selected-nb-4b21539470f6d751,selected506b-20261101-v1
+nb-13db0a5351fdba7d,Juniper,EX2300-C-12P,switch,perfil_en_desarrollo,selected-nb-13db0a5351fdba7d,selected506b-20261101-v1
+nb-14b4f71277d991de,Fortinet,FortiGate 310B,firewall,perfil_en_desarrollo,selected-nb-14b4f71277d991de,selected506c-20261101-v1
+nb-615a4c8f7c283c9a,MikroTik,CCR1016-12S-1S+,router,perfil_en_desarrollo,mikrotik-ccr1016-12s-1splus,batch100-20261031-v1
+nb-385b1e5bac71b7ef,Ubiquiti,Power Distribution Pro,pdu,perfil_en_desarrollo,selected-nb-385b1e5bac71b7ef,selected506l-20261101-v1
+nb-3b6043083efdc428,Huawei,S5700-52P-LI-AC,switch,perfil_en_desarrollo,selected-nb-3b6043083efdc428,selected506e-20261101-v1
+nb-c8a9b3d42f78ee94,Extreme Networks,4220-12T-4X,switch,perfil_en_desarrollo,selected-nb-c8a9b3d42f78ee94,selected506e-20261101-v1
+nb-73980deb1c5f24bc,Dell,PowerEdge R720,server,perfil_en_desarrollo,selected-nb-73980deb1c5f24bc,selected506f-20261101-v1
+nb-b47c684d217e4ade,HPE,ProLiant DL360 Gen9,server,perfil_en_desarrollo,selected-nb-b47c684d217e4ade,selected506f-20261101-v1
+nb-bd5913fe938354ff,Lenovo,ThinkSystem SR680a V3,server,perfil_en_desarrollo,selected-nb-bd5913fe938354ff,selected506l-20261101-v1
+nb-d532953f6aab1767,Supermicro,SuperServer 6029P-TR,server,perfil_en_desarrollo,selected-nb-d532953f6aab1767,selected506f-20261101-v1
+nb-87d53966e8a77039,Synology,RS815+,nas,perfil_en_desarrollo,selected-nb-87d53966e8a77039,selected506c-20261101-v1
+nb-de900000f3f9295d,APC,AP4424A,pdu,perfil_en_desarrollo,selected-nb-de900000f3f9295d,selected506k-20261101-v1
+nb-07e5ff352f97fad1,Eaton,Tripp Lite SMART1500RMXL2UA,ups,perfil_en_desarrollo,selected-nb-07e5ff352f97fad1,selected506k-20261101-v1
+nb-7ea04d02eec80c94,Panduit,"DP5e Flat Cat 5e Punchdown Patch Panel 48 Ports, 2RU, Black",patch-panel,perfil_en_desarrollo,selected-nb-7ea04d02eec80c94,selected506k-20261101-v1
+nb-93ff4488bf02a184,Netgear,GS308T,switch,perfil_en_desarrollo,netgear-gs308t,batch100c-20261031-v1
+nb-c9dda6663d585595,D-Link,DGS-1100-08V2,switch,perfil_en_desarrollo,selected-nb-c9dda6663d585595,selected506b-20261101-v1
+nb-f5d67a61fbc01300,NetApp,NS224-T-0-24-CF-C,storage,perfil_en_desarrollo,selected-nb-f5d67a61fbc01300,selected506l-20261101-v1
+nb-b953f55ddfc9d913,Cisco,ASR1002-X,router,perfil_en_desarrollo,selected-nb-b953f55ddfc9d913,selected506c-20261101-v1
+nb-0e6accdf31d7d113,HPE,Aruba 2930M-24G,switch,perfil_en_desarrollo,selected-nb-0e6accdf31d7d113,selected506e-20261101-v1
+nb-3a4c93d66b83c701,Arista,CCS-720DT-24S-2F,switch,perfil_en_desarrollo,selected-nb-3a4c93d66b83c701,selected506b-20261101-v1
+nb-01d2c09685f7b01f,Juniper,EX3400-48T,switch,perfil_en_desarrollo,selected-nb-01d2c09685f7b01f,selected506d-20261101-v1
+nb-8ad4df2cb7211e53,Fortinet,FortiGate 500D,firewall,perfil_en_desarrollo,selected-nb-8ad4df2cb7211e53,selected506c-20261101-v1
+nb-6f1403f8ddecb484,MikroTik,Chateau 5G ax,router,perfil_en_desarrollo,selected-nb-6f1403f8ddecb484,selected506l-20261101-v1
+nb-88aa53e158b54b05,Ubiquiti,U7 Pro XG,ap,perfil_en_desarrollo,selected-nb-88aa53e158b54b05,selected506j-20261101-v1
+nb-99ab5630f088ba2c,Huawei,S5720-52X-PWR-SI-AC,switch,perfil_en_desarrollo,selected-nb-99ab5630f088ba2c,selected506e-20261101-v1
+nb-edb5b19d211b3fd8,Extreme Networks,4220-24T-4X,switch,perfil_en_desarrollo,selected-nb-edb5b19d211b3fd8,selected506b-20261101-v1
+nb-d3f25e78482e4bff,Dell,PowerEdge R730xd,server,perfil_en_desarrollo,selected-nb-d3f25e78482e4bff,selected506g-20261101-v1
+nb-e4121ee57f092985,HPE,ProLiant DL380e Gen8,server,perfil_en_desarrollo,selected-nb-e4121ee57f092985,selected506g-20261101-v1
+nb-2cb44217d425b70f,Supermicro,SuperStorage 6049P-E1CR36L,server,perfil_en_desarrollo,selected-nb-2cb44217d425b70f,selected506g-20261101-v1
+nb-503a26493f9206a4,APC,AP4430A,pdu,perfil_en_desarrollo,selected-nb-503a26493f9206a4,selected506k-20261101-v1
+nb-0ada4f1bb27f261c,Eaton,Tripp Lite SMART2200CRMXL,ups,perfil_en_desarrollo,selected-nb-0ada4f1bb27f261c,selected506k-20261101-v1
+nb-e5e2d32326c01d41,Panduit,"Mini-Com Flush Mount Angled Patch Panel (48 Port, 2RU)",patch-panel,perfil_en_desarrollo,selected-nb-e5e2d32326c01d41,selected506j-20261101-v1
+nb-dc46d6be5cb5b6af,Netgear,ProSafe GS510TPP,switch,perfil_en_desarrollo,selected-nb-dc46d6be5cb5b6af,selected506b-20261101-v1
+nb-90d3445d2598509a,D-Link,DGS-1520-52,switch,perfil_en_desarrollo,selected-nb-90d3445d2598509a,selected506f-20261101-v1
+nb-a8af9348bfc46f13,Cisco,ASR1004,router,perfil_en_desarrollo,selected-nb-a8af9348bfc46f13,selected506g-20261101-v1
+nb-cd1c3bbe082c129d,HPE,Aruba 2930M-48G,switch,perfil_en_desarrollo,selected-nb-cd1c3bbe082c129d,selected506e-20261101-v1
+nb-b68b49db7fee9c88,Arista,CCS-720DT-48S-2F,switch,perfil_en_desarrollo,selected-nb-b68b49db7fee9c88,selected506e-20261101-v1
+nb-491844a78b378fad,Juniper,EX4000-12MP,switch,perfil_en_desarrollo,selected-nb-491844a78b378fad,selected506b-20261101-v1
+nb-fb441fc59970c5e3,Fortinet,FortiGate 50E,firewall,perfil_en_desarrollo,fortinet-fg50e,batch100-20261031-v1
+nb-25db6819881d422b,MikroTik,CRS112-8P-4S-IN,switch,perfil_en_desarrollo,selected-nb-25db6819881d422b,selected506b-20261101-v1
+nb-0b8ba8c517126e6a,Ubiquiti,U7 Pro XGS,ap,perfil_en_desarrollo,selected-nb-0b8ba8c517126e6a,selected506j-20261101-v1
+nb-520f1d7a35b7e950,Huawei,S5731-H24T4XC,switch,perfil_en_desarrollo,selected-nb-520f1d7a35b7e950,selected506e-20261101-v1
+nb-e9dabe5202e7c565,Extreme Networks,4220-48P-4X,switch,perfil_en_desarrollo,selected-nb-e9dabe5202e7c565,selected506e-20261101-v1
+nb-b6192e3e8a90a5fe,Dell,PowerProtect DP4400,storage,perfil_en_desarrollo,selected-nb-b6192e3e8a90a5fe,selected506l-20261101-v1
+nb-c6b1705740436107,HPE,ProLiant DL380p Gen8,server,perfil_en_desarrollo,selected-nb-c6b1705740436107,selected506g-20261101-v1
+nb-418d42c0d18a34a4,Supermicro,SuperServer 5018D-FN8T,server,perfil_en_desarrollo,selected-nb-418d42c0d18a34a4,selected506g-20261101-v1
+nb-aa67f910589a5502,APC,AP4431A,pdu,perfil_en_desarrollo,selected-nb-aa67f910589a5502,selected506k-20261101-v1
+nb-e8d124c1106f5ffd,Panduit,"Mini-Com Flush Mount Angled Patch Panel (72 Port, 2RU)",patch-panel,perfil_en_desarrollo,selected-nb-e8d124c1106f5ffd,selected506j-20261101-v1
+nb-0c237b37d9df0ddb,Cisco,ASR1006,router,perfil_en_desarrollo,selected-nb-0c237b37d9df0ddb,selected506g-20261101-v1
+nb-e2f5cc04c6ef0ee3,HPE,Aruba 2930M-48G-PoE+,switch,perfil_en_desarrollo,selected-nb-e2f5cc04c6ef0ee3,selected506e-20261101-v1
+nb-b1f6fce68b44bdac,Arista,CCS-720XP-96ZC2-4F,switch,perfil_en_desarrollo,selected-nb-b1f6fce68b44bdac,selected506g-20261101-v1
+nb-759e188d649a5347,Juniper,EX4000-12P,switch,perfil_en_desarrollo,selected-nb-759e188d649a5347,selected506b-20261101-v1
+nb-f9a7d60382905603,Fortinet,FortiGate 800D,firewall,perfil_en_desarrollo,selected-nb-f9a7d60382905603,selected506c-20261101-v1
+nb-746a1ccfbf605854,MikroTik,CRS418-8P-8G-2S+RM,switch,perfil_en_desarrollo,selected-nb-746a1ccfbf605854,selected506b-20261101-v1
+nb-6c3c831ad8429c1d,Ubiquiti,UniFi Security Gateway Pro,router,perfil_en_desarrollo,selected-nb-6c3c831ad8429c1d,selected506c-20261101-v1
+nb-1adb46683cc91954,Huawei,S5732-H48UM2CC,switch,perfil_en_desarrollo,selected-nb-1adb46683cc91954,selected506e-20261101-v1
+nb-cf0f597e804145ae,Extreme Networks,4220-48T-4X,switch,perfil_en_desarrollo,selected-nb-cf0f597e804145ae,selected506e-20261101-v1
+nb-b49efa2c795bb352,Dell,PowerScale F710,storage,perfil_en_desarrollo,selected-nb-b49efa2c795bb352,selected506l-20261101-v1
+nb-0e9380b77257926e,HPE,ProLiant DX385 Gen10 Plus,server,perfil_en_desarrollo,selected-nb-0e9380b77257926e,selected506g-20261101-v1
+nb-c7a1f257de229c1c,APC,AP4432A,pdu,perfil_en_desarrollo,selected-nb-c7a1f257de229c1c,selected506k-20261101-v1
+nb-b0fab63898dd7024,Panduit,"Mini-Com Flush Mount Patch Panel (24 Port, 1RU)",patch-panel,perfil_en_desarrollo,selected-nb-b0fab63898dd7024,selected506j-20261101-v1
+nb-61c1119b6a8fb4cf,Cisco,ASR1009-X,router,perfil_en_desarrollo,selected-nb-61c1119b6a8fb4cf,selected506l-20261101-v1
+nb-a77e3ed47a30e394,HPE,Aruba 6000-12G-POE4-2SFP,switch,perfil_en_desarrollo,selected-nb-a77e3ed47a30e394,selected506a-20261101-v1
+nb-f73dd791a2fc73e8,Arista,CCS-722XPM-48Y4-2F,switch,perfil_en_desarrollo,selected-nb-f73dd791a2fc73e8,selected506g-20261101-v1
+nb-06d181bdfaacef1b,Juniper,EX4000-12T,switch,perfil_en_desarrollo,selected-nb-06d181bdfaacef1b,selected506b-20261101-v1
+nb-1569935c143ae3b4,Fortinet,FortiGate 100D,firewall,perfil_en_desarrollo,selected-nb-1569935c143ae3b4,selected506c-20261101-v1
+nb-23bca6f7679f1595,MikroTik,hAP ac lite TC,router,perfil_en_desarrollo,selected-nb-23bca6f7679f1595,selected506c-20261101-v1
+nb-d6dd7311f2ef95bd,Ubiquiti,UniFi SmartPower RPS,pdu,perfil_en_desarrollo,selected-nb-d6dd7311f2ef95bd,selected506l-20261101-v1
+nb-c0ac0f175a7366e6,Huawei,S5735-L48P4XE-A-V2,switch,perfil_en_desarrollo,selected-nb-c0ac0f175a7366e6,selected506e-20261101-v1
+nb-53d11b15f96aebfd,Extreme Networks,4220-4MW-20P-4X,switch,perfil_en_desarrollo,selected-nb-53d11b15f96aebfd,selected506e-20261101-v1
+nb-66c3ee1f91a9421d,Dell,PowerSwitch N2048,switch,perfil_en_desarrollo,selected-nb-66c3ee1f91a9421d,selected506e-20261101-v1
+nb-6a9f15ba9e440e40,HPE,StoreEasy 1460 Gen10,storage,perfil_en_desarrollo,selected-nb-6a9f15ba9e440e40,selected506l-20261101-v1
+nb-624f4c89a65b309a,APC,AP4433,pdu,perfil_en_desarrollo,selected-nb-624f4c89a65b309a,selected506k-20261101-v1
+nb-86a48551b44be392,Panduit,"Mini-Com Flush Mount Patch Panel (48 Port, 2RU)",patch-panel,perfil_en_desarrollo,selected-nb-86a48551b44be392,selected506j-20261101-v1
+nb-26b1060dca08dcdb,Cisco,ASR1013,router,perfil_en_desarrollo,selected-nb-26b1060dca08dcdb,selected506l-20261101-v1
+nb-7b81ceb62353c88e,HPE,Aruba 6000-24G-4SFP,switch,perfil_en_desarrollo,selected-nb-7b81ceb62353c88e,selected506a-20261101-v1
+nb-a4126d6cef91ca26,Arista,DCS-7020SR-24C2-F,switch,perfil_en_desarrollo,selected-nb-a4126d6cef91ca26,selected506d-20261101-v1
+nb-0378e314e40b7a32,Juniper,EX4000-24MP,switch,perfil_en_desarrollo,selected-nb-0378e314e40b7a32,selected506b-20261101-v1
+nb-c81defef5301d096,Fortinet,FortiGate 100EF,firewall,perfil_en_desarrollo,selected-nb-c81defef5301d096,selected506c-20261101-v1
+nb-826994f30d34d1c2,MikroTik,hAP ac2,router,perfil_en_desarrollo,mikrotik-hap-ac2,batch100b-20261031-v1
+nb-2bd3616443d83776,Ubiquiti,UniFi Switch 24 Pro,switch,perfil_en_desarrollo,ubiquiti-usw-pro-24,batch100c-20261031-v1
+nb-fb08077e5b9dd1cd,Huawei,S5735-L8P4S-A1,switch,perfil_en_desarrollo,selected-nb-fb08077e5b9dd1cd,selected506g-20261101-v1
+nb-dc19eda57299b02a,Extreme Networks,4220-4MW-8P-4X,switch,perfil_en_desarrollo,selected-nb-dc19eda57299b02a,selected506e-20261101-v1
+nb-9d2017e0aa6f2f3c,Dell,PowerSwitch N3248P-ON,switch,perfil_en_desarrollo,selected-nb-9d2017e0aa6f2f3c,selected506d-20261101-v1
+nb-8575f3e84e37fd0d,APC,AP4433A,pdu,perfil_en_desarrollo,selected-nb-8575f3e84e37fd0d,selected506k-20261101-v1
+nb-5bd28430fbf397fc,Cisco,Catalyst 1300-12XS,switch,perfil_en_desarrollo,selected-nb-5bd28430fbf397fc,selected506b-20261101-v1
+nb-842ab89f3df610f2,HPE,Aruba 6000-48G-POE4-4SFP,switch,perfil_en_desarrollo,selected-nb-842ab89f3df610f2,selected506a-20261101-v1
+nb-0355b604a6794595,Arista,DCS-7020TR-48-F,switch,perfil_en_desarrollo,selected-nb-0355b604a6794595,selected506e-20261101-v1
+nb-fc86b47706121d42,Juniper,EX4000-24P,switch,perfil_en_desarrollo,selected-nb-fc86b47706121d42,selected506b-20261101-v1
+nb-a954659fb87b4e11,Fortinet,FortiGate 1200D,firewall,perfil_en_desarrollo,selected-nb-a954659fb87b4e11,selected506c-20261101-v1
+nb-9f034976d9130ca7,MikroTik,hAP ax S,router,perfil_en_desarrollo,selected-nb-9f034976d9130ca7,selected506c-20261101-v1
+nb-e5030fe747d79fe6,Ubiquiti,UniFi Switch 24 Pro PoE Gen2,switch,perfil_en_desarrollo,selected-nb-e5030fe747d79fe6,selected506a-20261101-v1
+nb-22aef0e6cd06d2b7,Huawei,S5735-L8T4X-A1,switch,perfil_en_desarrollo,selected-nb-22aef0e6cd06d2b7,selected506g-20261101-v1
+nb-69510e57b0827c16,Extreme Networks,4220-8MW-40P-4X,switch,perfil_en_desarrollo,selected-nb-69510e57b0827c16,selected506e-20261101-v1
+nb-61497bf34bd5fcfd,Dell,PowerSwitch S4128F-ON,switch,perfil_en_desarrollo,selected-nb-61497bf34bd5fcfd,selected506d-20261101-v1
+nb-ce5e88c6a9b7562d,APC,AP4434A,pdu,perfil_en_desarrollo,selected-nb-ce5e88c6a9b7562d,selected506k-20261101-v1
+nb-06c19caa563462d0,Cisco,Catalyst 1300-12XT-2X,switch,perfil_en_desarrollo,selected-nb-06c19caa563462d0,selected506b-20261101-v1
+nb-4f13830c6517574d,HPE,Aruba 6000-48G-POE4-4SFP 740W,switch,perfil_en_desarrollo,selected-nb-4f13830c6517574d,selected506a-20261101-v1
+nb-857386ff2603fa07,Arista,DCS-7020TRA-48-F,switch,perfil_en_desarrollo,selected-nb-857386ff2603fa07,selected506e-20261101-v1
+nb-0323789c8aa37403,Juniper,EX4000-24T,switch,perfil_en_desarrollo,selected-nb-0323789c8aa37403,selected506b-20261101-v1
+nb-d10f5a09e83e59bf,Ubiquiti,UniFi Switch 48 Pro,switch,perfil_en_desarrollo,ubiquiti-usw-pro-48,batch100c-20261031-v1
+nb-1e89ff3122676000,Cisco,Catalyst 1300-16P-4X,switch,perfil_en_desarrollo,selected-nb-1e89ff3122676000,selected506b-20261101-v1
+nb-3af5a2fcbefac97c,HPE,Aruba 6100-12G-POE4-2SFP+,switch,perfil_en_desarrollo,selected-nb-3af5a2fcbefac97c,selected506a-20261101-v1
+nb-22b5637a0a90560a,Arista,DCS-7050CX3-32C-F,switch,perfil_en_desarrollo,selected-nb-22b5637a0a90560a,selected506d-20261101-v1
+nb-ba01da0f6a8e0932,Juniper,EX4000-48MP,switch,perfil_en_desarrollo,selected-nb-ba01da0f6a8e0932,selected506b-20261101-v1
+nb-d064231ab7e45734,Ubiquiti,UniFi Switch 48 Pro PoE Gen2,switch,perfil_en_desarrollo,selected-nb-d064231ab7e45734,selected506a-20261101-v1
+nb-8bebc236c1cb62fd,Cisco,Catalyst 1300-16T-2G,switch,perfil_en_desarrollo,cisco-c1300-16t-2g,batch100-20261031-v1
+nb-b331c13345891559,HPE,Aruba 6100-24G-POE4-4SFP+,switch,perfil_en_desarrollo,selected-nb-b331c13345891559,selected506a-20261101-v1
+nb-99fbabbfd63a81ae,Arista,DCS-7050CX3-32S-R,switch,perfil_en_desarrollo,selected-nb-99fbabbfd63a81ae,selected506d-20261101-v1

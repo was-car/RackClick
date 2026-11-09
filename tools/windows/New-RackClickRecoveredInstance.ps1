@@ -22,10 +22,11 @@ function Stop-RecoveryCheck {
 
 function Get-RecoverySchemaTransition {
     param([int]$TargetSchema,[string]$AppliedVersions)
+    if($TargetSchema -eq 45 -and $AppliedVersions -cin @(((1..13)-join ','),((1..14)-join ','),((1..15)-join ','),((1..43)-join ','))){return 'migrate'}
     if($TargetSchema -eq 43 -and $AppliedVersions -cin @(((1..13)-join ','),((1..14)-join ','),((1..15)-join ','))){return 'migrate'}
     if($TargetSchema -eq 14 -and $AppliedVersions -ceq ((1..13)-join ',')){return 'migrate'}
     if($TargetSchema -eq 15 -and $AppliedVersions -cin @(((1..13)-join ','),((1..14)-join ','))){return 'migrate'}
-    if($TargetSchema -in @(9,10,11,12,13,14,15,43) -and $AppliedVersions -ceq ((1..$TargetSchema)-join ',')){return 'current'}
+    if($TargetSchema -in @(9,10,11,12,13,14,15,43,45) -and $AppliedVersions -ceq ((1..$TargetSchema)-join ',')){return 'current'}
     Stop-RecoveryCheck ('restored_schema_required_'+[string]$TargetSchema) 1
 }
 

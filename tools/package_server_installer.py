@@ -114,7 +114,7 @@ def build(archive, service_publish, output, *, bundle_sha256, edition, stamp=STA
         if len(set(names)) != len(names):
             raise ValueError('duplicate_original_member')
         actual = [name for name in names if name.startswith('operators/')]
-        selected_operators = OPERATORS + ('RackClick.SqlSecrets.ps1',) if edition in {'12', '13', '14', '15'} else OPERATORS
+        selected_operators = OPERATORS + ('RackClick.SqlSecrets.ps1',) if edition in {'12', '13', '14', '15', '16'} else OPERATORS
         expected = {'operators/' + name for name in selected_operators}
         if len(actual) != len(expected) or set(actual) != expected:
             raise ValueError('original_operator_inventory_mismatch')
@@ -150,7 +150,7 @@ def build(archive, service_publish, output, *, bundle_sha256, edition, stamp=STA
         payload['service/' + path.relative_to(service_publish).as_posix()] = path.read_bytes()
     if digest(payload.get('service/RackClick.WindowsService.dll', b'')) != SERVICE_DLL_SHA256:
         raise ValueError('service_dll_hash_mismatch')
-    manual = 'docs/INSTALADOR' + edition + '-SQL-PROTEGIDO.html' if edition in {'12', '13', '14', '15'} else 'docs/INSTALADOR11-WINDOWS43.html' if edition == '11' else 'docs/INSTALACION-SERVIDOR-DESDE-CERO.html'
+    manual = 'docs/INSTALADOR' + edition + '-SQL-PROTEGIDO.html' if edition in {'12', '13', '14', '15', '16'} else 'docs/INSTALADOR11-WINDOWS43.html' if edition == '11' else 'docs/INSTALACION-SERVIDOR-DESDE-CERO.html'
     payload['docs/INSTALACION-SERVIDOR-DESDE-CERO.html'] = checked_path(ROOT / manual).read_bytes()
     if edition == '11':
         payload['docs/INSTALADOR11-WINDOWS43.md'] = checked_path(ROOT / 'docs/INSTALADOR11-WINDOWS43.md').read_bytes()

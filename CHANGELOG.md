@@ -1,5 +1,115 @@
 # S1 Windows · 28.09.2026 — fundamento comprobado; inventario en desarrollo
 
+## 09.11.2026 · Retoma y sello final de la revisión8–18/candidata16
+
+Se retoma exactamente el cierre documental interrumpido tras la integraciónF04 del04.11, sin recompilar ni repetir las suites de producto. Comprobación fresca09.11:413fuentes congeladas,5pins de entrega,9entradas del sello independiente,73archivos de distribución,2018del bundle,117del payload y35scripts de instalador coinciden con lo revisado. Tres verificaciones nativas de integridad actuales pasan sin ejecutar instalador/producto. Los resultados43empaquetado/15operadores/16ReleaseMFA yNew/RestorePG conservan su fecha04.11; no se presentan como ejecutados hoy.
+
+Ledger y criterio congelado contrastados: sólo F04.integrated_current_candidate está acreditado por esa entrega, target_acceptance continúa pendiente;52tareas restantes ycheckpoints sin cambios. Índice1607/84=19,13/100,41done/237pending/2in_progress,0crédito adicional. Se completa registro/escaneo/sello final, preservando fuentes, binarios y evidencias históricas. D/E sin operaciones; sinVM/DB/servicios/credencialesMFA/commits/push. El primer intento del nuevo comprobador leyó erróneamente un SHA textual como objeto; se corrigió sóloelcomprobador segúnel formato existente, sin cambiar manifiesto o producto.
+
+Pendientes reales: ensayo16 elevado enVMlimpia (cuenta/SID, formato mínimoSQL3, servicio/HTTPS/backup/reinicio y aceptación) y operador de recuperaciónMFA con vínculo backup/material ycoordinadorD2/fence/journal/marcador/conciliación. La guardia de factores continúa intacta. Detalle en evidence/s1-20261104/f04-integracion16/cierre-20261109/RESULTADOS.md; ficha docs/INTEGRACION-PENDIENTES-08-18-CANDIDATA16.md. No reabrir ni repetir los once pasos técnicos/documentales, ni actualizar D con el envoltorio.
+
+## 04.11.2026 · Pendientes8–18: writer MFA integrado en candidata16
+
+Se cierra el tramo de integraciónF04: nueva candidata completa16/app45 desde413fuentes congeladas y único deltaC#writer76e6; DLLReleasec057 exacta, frontend18/SQL45/dependencias/servicio38 preservados. Perfil nuevo73archivos, bundle2018/b933, payload117/90a8 y envoltorioa862, cuatro pines coherentes y35scripts instalador seleccionados desde15autenticado, excluyendo4actualizadores ajenos aNew16.
+
+Corregidos bloqueos45 de SetupMfa, readiness/recibo y matrizRestore cerrada; guardia recovery_mfa_envelope_required idéntica. Empaquetado43/43 y operadores15/15;16/16sobre mismaDLLRelease (8creaciónsegura+8DB/TOTP). New/Restore45→45 y43→45PG17.11 reales:20filas porrecorrido, identidades nuevas, reanudación/permisos/backupinvariable;16llamadas/14positivas+2rechazos,4clustersparados. Fixture formato2 protegido, noaceptaciónformatomínimo3. IntentoHTTP8/16 inicial rechazó raíz histórica antesesquema; copia privadacorregida sólo1línea a igualdadexacta, fuenteoriginal intacta, R2final16/16 y ambosclustersHTTPparados.
+
+Revisión independiente favorable:29focos y25controles propios, fuentes/pines/recibos/cadena; no nuevaspruebasPG/build/VM delrevisor. Sólo F04.integrated_current_candidate pending→done; target_acceptancependiente,52tareas/checkpoints/pesos/huellav3/268números intactos y crédito0. Índice1607/84=19,13/100del cierre restante, sin porcentaje global nuevo. D/E sin operaciones ni cambios de datos/MFA; sin commits/push/publicación. No es actualizador45→45 de D ni habilitaRestoreMFAoperativo.
+
+Ficha docs/INTEGRACION-PENDIENTES-08-18-CANDIDATA16.md; evidencia evidence/s1-20261104/f04-integracion16/RESULTADOS.md y review/DICTAMEN.md. Faltan ensayo16 elevado/SCM/HTTPS/backup/reinicio y aceptación; coordinadorD2/vínculo backup-material/fence/journal/marcadorDB/CLI/RestoreMFA/rotación/emergencia conservan F06/F09/R04. No quitar guardias ni repetir componentes ya probados. Candidata16privada en.local, redistribuciónabierta.
+
+## 03.11.2026 · Revisión de los pasos8–18: cierres contrastados
+
+Auditoría nueva del coordinador y dos revisores independientes: once criterios respaldados,9/10documentales y resto técnicos, sin bloqueantes nuevos para retirar crédito. Se contrastaron fuentes/aserciones, recibos originales,11sellos/524referencias y ledger/numeración;28+127controles propios de evidencia, sin nuevas suites de producto. Ficha `docs/REVISION-PASOS-08-A-18.md`; resultados y dictámenes en `evidence/s1-20261103/revision-pasos08-18/`.
+
+Adenda D2 aclara fórmula InstancesRoot/id/mfa-keys y perfilWindows real Instances/id/security/id/mfa-keys, preservando cuerpo/snapshot previos y revisión separada. No se mueven claves ni se cambian ACL/custodia. Se conservan expresos: escritorF04 pendiente de candidata/aceptación; recuperaciónMFA operativa pendiente, gates18 enfixture y guardia del operador vigente; ruta larga observada no resuelta en producto; prueba8histórica no acreditaNew/Restore45 ni rebootRestore14.
+
+0puntos añadidos: índice1607/84=19,13/100del cierre restante;41done/237pending/2in_progress,baselinev3/huella/pesos/criterios intactos. D/E conservadas,0operacionesVM/DB/servicios/materialMFA; sin builds/testsproducto, commits/push o cambiosQA. Sólo informe/evidencias/adenda/continuidad/changelog. Sigue19/F-06.01, sin repetir pruebas invariantes ni declarar adopción.
+
+## 03.11.2026 · Paso18/F-05.05: DB restaurada y login MFA conservado
+
+Nuevo MfaPortableDatabaseRestoreTests.cs y runner tools/tests/run_mfa_portable_database_restore.py, sin modificar producto/csproj/locks/SQL/GUI/instaladores. Source/DLLDebugF0401cd3cc/45 fijados, testRelease/SDK401/runtimes10.0.12 con0errores/advertencias y binlogsprivados. Tres clustersWindowsPG17.11 nuevos parados; origen/material contrastados invariantes. R3:8/8PASS sinomitir, DB45 customrestoreSingleTransaction/igualdad de todas las filas públicas antes de RecoveryAdmin; runtimeSQLnoowner/nosuper/sinDDL,7catálogos sólolectura. RecoveryAdministrator real revoca sesiones/desafíos; proveedorWindows real+Program/TestServer conserva factores1retirada/7activa, loginTOTP/CSRF/API, replay y negativos sin sesión nueva. IdentidadWindowsLAB ydirecciones cliente son seams explícitos; no TLS/red/servicio/instalación ni adopción.
+
+Intentospreviosconservados: R1fallóinitMAXPATH266/Win32206(sinHTTP;sonda258PASS);R2tresPASS/cincofallosdecontentroot/aserciónCrypto del fixture. R3corrigió sólofixture. No se cambiaWinreg/nativeproducto ni se oculta límite de rutas largas. RunnerlimpiaDOTNET heredados; primera revisión sólo nombres peligrosos0. Investigación primariaPG17/MSASP.NET10 y fuentesaprobadas reutilizadas. Ninguna operaciónVM/D/E, cuentas/datos/MFA/QA delusuario intactos, sincommits/push.
+
+Dictamen independiente favorable sóloF0505técnico:1/2,1565/84→1607/84=19,13/100del cierre restante;41done/237pending/2in_progress y scope/pesos/baselinev3/números intactos. F05 technical_tests/independent_reviewdone; implementation/integrated/target pendientes. No F06/F09/R04/coordinador/fence/journal/CLI/instalador/aceptación acreditados ni porcentaje global nuevo. Ficha docs/PASO-018-CIERRE-RECUPERACION-PORTABLE-MFA.md; evidencia evidence/s1-20261103/f05-05-cierre/RESULTADOS.md. Sigue19/F-06.01, reutilizar este cierre y no repetir los códecs/portabilidad.
+
+## 03.11.2026 · Paso17/F-05.04: portabilidad Windows real comprobada
+
+Wascar encendió E; D permanece sin comandos de invitado. Se añadieron harness aislado en `tools/mfa-portable-trial/` y ejecución/evidencia en `evidence/s1-20261103/f05-04-portable/`, reutilizando RecoveryFiles/DPAPI/RCKEY y sonda nativa aprobados. SDK401, auxiliar Release0errores/advertencias, ServerDebug F0401 fijado, runtime10.0.12. Diez controles locales; fuente nueva1retirada/7activa y dos factores sintéticos; dumpPG17.11 custom separado sólo de ciphertext/AAD. Siete casos en E pasan, incluyendo token estándar real/2factores/6AAD rechazadas,6objetivos y12denegaciones write/DAC sin concesiones. Se preservó fallo inicial H/Get-History anterior al hijo y se corrigió con ronda2 explícita revisada, sin rebuild del producto.
+
+Postflight:2tareas ausentesCOM, entrada privada y2copiasE del sobre retiradas,2servicios AutoRunning/PID/fecha/imagen intactos. Fuente y contraseñaDPAPI privada separadas del dump; se declara contraseña sintética temporal en claro sin borrado físico. Sin tocar stores instalados, DB/listener, VMpower/snapshot, GUI/QA, instaladores, commits o push. Dictamen independiente favorable sóloF0504:1/2,1523/84→1565/84=18,63/100del cierre restante,40done/238pending/2in_progress,53resultados/280checkpoints/268números y huella intactos. No porcentaje global nuevo ni aceptación.
+
+Documentados los huecos de CLI/coordinadorD2, vínculo backup/versiones, rama New/Restore, guardias y compatibilidad45 en `docs/F05-RECUPERACION-INTEGRADA-PENDIENTE.md`, sin relajar controles ni asignar pesos. F-05.05/hitos completosF05/R04 pendientes. Sigue18/F-05.05; reutilizar esta prueba, no repetir codec ni operaciones en D. Resultado: `docs/PASO-017-RECUPERACION-PORTABLE-MFA.md` y evidencia/RESULTADOS.md/review/DICTAMEN-F0504.md.
+
+## 03.11.2026 · Paso 16/F-05.03: negativos del sobre MFA
+
+- Contraseña incorrecta, alteración, truncado, datos extra/concatenación, versiones/algoritmos/coste/tamaño fuera de perfil conciliados con revisión independiente favorable.26+8casos históricos,21referencias/seis fuentes exactas, sin nuevas suites.
+- ContadoresKDF limitados a sus aserciones;600001 probado, sin falsos tests de todoslosuint. Recuperación por componentes falla antes del writer y conserva destino ausente; no equivale a recuperación de una instalación real.
+- Sólo F-05.03 +1/2: índice1523/84 =18,13/100,39cerrados/241sin cierre; pesos/criterios/268números intactos. F-05.04/.05 y todoF05 abiertos.
+- Ficha docs/PASO-016-NEGATIVOS-SOBRE-MFA.md; evidencia evidence/s1-20261103/f05-03-negativos/. Sigue17/F-05.04. D/E, producto, DB, claves/MFA y QA sin operaciones/cambios; sin commits/push, despliegue o porcentaje global nuevo.
+
+## 03.11.2026 · Paso 15/F-05.02: coste Windows del sobre MFA
+
+- Reutilizada la mediciónL2d y ratificado expresamente el perfil600000, con revisión independiente favorable. Seis duraciones completasOpen57–62ms,mediana59,5; no PBKDF2aislado, Release o medida universal/deD.
+- AdendaD2 corrige la unidad conservando cuerpo original/perfil; snapshot/diff y11referencias contrastados. Sin nuevo benchmark/build, cambios de producto o VM/D/E/DB/servicios/MFA.
+- Sólo F-05.02 +1/2: índice1481/84 =17,63/100;38cerrados/242sin cierre, pesos/criterios/268números intactos. OtrosF05/hitos pendientes conservados.
+- Ficha docs/PASO-015-COSTE-PBKDF2-MFA.md; evidencia evidence/s1-20261103/f05-02-coste/. Sigue16/F-05.03. Sin UI/QA, commits/push, despliegue o porcentaje global nuevo.
+
+## 03.11.2026 · Paso 14/F-05.01: validación del sobre MFA
+
+- Codec/payload existentes reutilizados: cinco fuentes y25referencias contrastadas, con revisión independiente favorable. Magia/perfil/tamaños/codificación antes deKDF y metadata0..42AAD cubiertos; salida canónica frente a entradaJSONválida explicitadas.
+- Sin cambios de producto/dependencias o nuevas compilaciones/pruebas criptográficas. Resultados L2d/L2e son históricos. D/E, claves, servicios, DB y QA sin operaciones.
+- Sólo F-05.01 +1/2: índice1439/84 =17,13/100;37cerrados/243sin cierre, pesos/criterios/268números intactos. F05 completo y otroscuatro checkpoints siguen pendientes.
+- Ficha docs/PASO-014-VALIDACION-SOBRE-MFA.md; evidencia evidence/s1-20261103/f05-01-sobre/. Sigue15/F-05.02. Contexto antiguo «no implementado» conciliado; sin commits/push, despliegue o porcentaje global nuevo.
+
+## 03.11.2026 · Paso 13/F-04.04: cierre técnico del proveedor MFA Windows
+
+- Conciliado el criterio completo con F-04.01/.02/.03 y revisión independiente favorable; sin repetir instalación, login, sonda o suites de producto.
+- Verificadas99referencias y cuatro fuentes del núcleo; Program cambia de forma documentada pero conserva composiciónMFA. Writer corregido sigue en fuentes, sin atribuirlo al binario de D. Evidencia en evidence/s1-20261103/f04-04-cierre/.
+- Sólo F-04.04 acreditado:+5/8, índice1397/84 =16,63/100;36cerrados/244sin cierre. F-04 cerrado técnicamente; candidata completa actualizada/aceptación final conservan hitos pendientes. Criterios/pesos/268números intactos.
+- Ficha docs/PASO-013-CIERRE-PROVEEDOR-MFA.md; sigue14/F-05.01. D/E y resultadosQA conservados, sin producto/DB/MFA/VM/servicios modificados; sin commits/push ni porcentaje global nuevo.
+
+## 03.11.2026 · Paso 12/F-04.02: permisos reales del almacén MFA verificados
+
+- Reutilizadas las dos instalaciones/cuentas estándar de E. 30 objetivos por actor y504 aperturas correctas:16 lecturas propias/comunes,44 lecturas ajenas/management denegadas y444 derechos de modificación denegados; sólo Win325, cero inconcluyentes.
+- Padres, herencia/reparse, propietarios, management e invariancia contrastados. Servicios/PID y ACL sin cambios; sin contenido de claves leído ni destinos modificados. Tarea temporal terminada y retirada, ausencia confirmada por consulta posterior.
+- Revisión independiente favorable; evidencia en evidence/s1-20261103/f04-02-permisos/ejecucion/. Conservadas las incidencias y límites de serialización de descriptores, transporte y consulta inicial de retirada.
+- Sólo F-04.02 cerrado: +5/8, índice2689/168 =16,01/100;35 cerrados/245 sin cierre, pesos/criterios/268 números intactos. Ficha docs/PASO-012-PERMISOS-MFA.md. Sigue13/F-04.04; no cierre de todo F-04.
+- D y sus datos/MFA conservados. Sin cambios de producto/DB/servicios/cuentas/claves/ACL, instalación o potencia de VM. Sin commits/push ni nuevo porcentaje global.
+
+## 03.11.2026 · Paso 12/F-04.02: auxiliar de permisos preparado, ensayo E pendiente
+
+- Reutilizados lector/proveedor e instalación/lectura reales; no se rehacen MFA ni inicialización. El resultado antiguo returned no incluía denegaciones efectivas de escritura/WRITE_DAC o management.
+- Añadida sonda sin dependencias externas: SCM/PID/creación/SID e identidad efectiva, aperturas OPEN_EXISTING sin contenidos/escrituras, denegación sólo por Win32 5, metadatos y entorno aislado. Runtime 10.0.12 exacto; fuente/artefactos fijados.
+- Selftest Windows 15/15 con token propio; revisión previa independiente, 15 selftests repetidos y 9 focos propios PASS, parser/rechazo LEAO correctos. No equivalen al ensayo de dos servicios reales.
+- F-04.02 sólo en progreso, 0 puntos: 15,38/100 intacto, 34 cerrados/246 sin cierre; criterios/pesos/268 números conservados. Matriz y ficha docs/PASO-012-PERMISOS-MFA.md; evidencia evidence/s1-20261103/f04-02-permisos/.
+- E apagada: se pidió a Wascar encenderla, sin revertir ni reinstalar. D intacta; sin ejecuciones dentro de invitados, cambios de potencia, servicio, DB, claves/MFA, paquetes o QA; sin commits/push. Falta medición real en E y dictamen posterior.
+
+## 03.11.2026 · Paso 11/F-04.01: creación protegida del almacén MFA
+
+- Reutilizada cadena elevada C10/D11 y ubicación separada de management. Escritor corregido: descriptor protegido desde CreateDirectoryW/CREATE_NEW, sin SetAcl posterior; conserva destinos ajenos y contratos.
+- Publicación inicial del conjunto completo con flush de archivos. Un fallo posterior al rename conserva el almacén y declara su ruta final; no éxito falso ni limpieza parcial. No se afirma durabilidad frente a corte de energía o transacción disco/DB.
+- Rojo 5 FAIL/3 controles; verde 8/8; regresión afectada Windows 195/195 sin omitidas. Revisión independiente: 16 focos .NET y 8 Python PASS. Corregidos import omitido del fixture de wiring y contador histórico 23 del pie de la hoja maestra.
+- Sólo F-04.01 cerrado: +5/8, índice 323/21 = 15,38/100; 34 checkpoints cerrados/246 sin cierre, pesos/criterios/268 números intactos. Ficha docs/PASO-011-ALMACEN-MFA.md; evidencia evidence/s1-20261103/f04-01-almacen/.
+- D45/E, VM, DB, servicios, claves/MFA, paquetes y respuestas QA conservados sin operaciones. Sin despliegue, commits o push. Sigue 12/F-04.02; F-04 completo permanece abierto.
+
+## 03.11.2026 · Paso10/F-03.03: límites de custodia MFA
+
+- Registrada y revisada la frontera DPAPI LocalMachine/ACL: no aislamiento frente al administrador local/SYSTEM ni al proceso de servicio comprometido; memoria, snapshots, sobre y semilla TOTP exfiltrada diferenciados.
+- Reutilización de D2 y componentes/evidencias existentes, sin código, SQL, claves, pruebas de producto o VM modificados. D45 conservada.
+- F-03.03 cerrado, completando F-03 sólo como decisión documental;0puntos.33checkpoints cerrados/247sin cierre,14,76/100 intacto. Política45/custodia confirmada y aceptación operativa separadas.
+- Ficha docs/D2-LIMITES-AMENAZA-F03-03.md; evidencia/revisión evidence/s1-20261103/f03-03-amenazas/. Plan conservando número10; sigue11/F-04.01. Sin commits ni push.
+
+
+## 03.11.2026 · Paso9/F-03.02: condiciones técnicas de custodia y recuperación
+
+- Especificación D2 revisada: recuperación restringida, RCKEYv1/KDF/AAD y publicación recuperable disco/DB; modos y caídas explícitos, sin prometer integración todavía pendiente.
+- Reutilización por hashes de seis componentes y evidencias L2d/f/g; ninguna prueba de producto repetida. D/E conservadas, sin cambios de aplicación, SQL, instaladores o MFA.
+- Sólo F-03.02 cerrado documentalmente; F-03.03 sigue pendiente.32checkpoints cerrados/248sin cierre,0puntos añadidos,14,76/100 sin cambio. Auxiliar del plan usa vmRule configurableD45 para no imprimir estado43 obsoleto.
+- Contrato docs/D2-CONDICIONES-TECNICAS-F03-02.md; evidencia/revisión evidence/s1-20261103/f03-02-condiciones/. Sin commits ni push.
+
+
 ## 03.11.2026 · Fuentes45 y documentación base en tres idiomas para GitHub privado
 
 - Portadas y guías de inicio equivalentes EN/DE/ES; comunicación y registros internos en español. Estado45, catálogo884/877 y límites MFA/Windows explícitos.
@@ -1861,3 +1971,12 @@ Diseño inicial: 10 oficinas/comercios, 10 empresas medianas, 8 multisede, 6 edu
 Se reutilizarán como referencia el ejemplo original de diez clientes y su cargador, adaptando y probando su compatibilidad con el catálogo final: hoy el cargador documenta esquema15. Carga por comandos del servidor en PostgreSQL17 nuevo, inventario reproducible y secretos aleatorios locales; no sobrescribir datos/seguridad/MFA/QA/VM existentes. Demo portable sin seguridad separada del backup PostgreSQL privado. Revisiones independientes y guía QA posterior por módulos, sin exigir a Wascar cientos de altas manuales.
 
 En esta tanda sólo se planifica y documenta: no se crea DB o generador ni se ejecuta producto, PostgreSQL, navegador o instalación. Hoja maestra y registro regenerados; ledger conservado. Perfiles actuales: 68/506 (13,44% del catálogo), 438 pendientes. Índice del cierre restante: 9,76/100, sin crédito por planificación.
+
+
+## 09.11.2026 · Actualización privada GitHub, fuentes 45 y Demo50
+
+Wascar pide actualizar `was-car/RackClick`. Se seleccionan fuentes desde un clon separado de main, conservando el trabajo concurrente. Incluye writer MFA corregido de candidata16, operadores/perfil45, pruebas, decisiones/revisión8–18 y planificación; catálogo completo884revisiones/877modelos;50clientes sintéticos con180racks,1563equipos,20665puertos y2207conexiones; visor y replay de2553comandos, sólo inventario. El conjunto50cubre868parejas históricas43, no todas las884actuales. El importador histórico exige43 y no se adapta ni se ejecuta sobre D/E.
+
+Se actualizan las presentaciones EN/DE/ES y se conservan los seis fixtures con credenciales aleatorias ya publicados. Verificación en clon:98casos Python (97PASS,1omitido por recibos privados),8pruebas Windows del writer PASS, restore locked/build Release, generadores43/44/45 y registro maestro coherentes. La revisión independiente y el commit remoto se registran en `evidence/s1-20261109/github-update/`. Se escanea la selección completa con reglas intactas y se clasifican las coincidencias de identificadores/hash; no se omiten como si el escaneo hubiera sido vacío.
+
+No se publican instaladores binarios, bases, credenciales, seguridad del inventario, claves/sobres MFA, certificados privados, rawlogs/binlogs o fotos comerciales. La referencia offline adoptada ya publicada se conserva exactamente por ser entrada de compilación. Candidata16 aún requiere ensayo nativo limpio y reinicio; recuperaciónMFA operativa/emergencia/rotación siguen pendientes. Sin despliegues ni operaciones sobre D/E; índice de cierre restante19,13/100, sin crédito nuevo. Ficha: `docs/PUBLICACION-GITHUB-09-11-2026.md`.

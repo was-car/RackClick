@@ -1,5 +1,29 @@
 #requires -Version 5.1
 # Explicit elevated provisioning only. Importing this file has no side effects.
+function Get-SetupMfaApplicationSchema {
+    param([string]$ApplicationManifestSha256)
+    # Call only after the source ZIP has passed its external archive pin. The
+    # application digest must resolve in the closed native profile registry.
+    $schema=Get-OfflineBundleExpectedSchema (Get-OfflineBundleApplicationProfile $ApplicationManifestSha256)
+    if($schema -isnot [int] -or $schema -notin @(15,43,45)){throw 'setup_mfa_schema_required_15_43_or_45'}
+    return $schema
+}
+function Test-SetupMfaReadiness {
+    param($Health,$ExpectedSchema,[string]$ServiceStatus)
+    if($ExpectedSchema -isnot [int] -or $ExpectedSchema -notin @(15,43,45) -or $null -eq $Health -or
+       $ServiceStatus -cne 'Running'){return $false}
+    if($Health -is [Collections.IDictionary]){
+        if(-not $Health.Contains('status') -or -not $Health.Contains('schemaVersion')){return $false}
+        $status=$Health['status'];$version=$Health['schemaVersion']
+    }else{
+        $statusProperty=$Health.PSObject.Properties['status'];$versionProperty=$Health.PSObject.Properties['schemaVersion']
+        if($null -eq $statusProperty -or $null -eq $versionProperty){return $false}
+        $status=$statusProperty.Value;$version=$versionProperty.Value
+    }
+    # A ready response for a different or coerced schema cannot confirm this
+    # installation. ExpectedSchema was obtained from its verified bundle.
+    return ($status -is [string] -and $status -ceq 'ready' -and $version -is [int] -and $version -eq $ExpectedSchema)
+}
 function Get-SetupMfaInitializationRequest {
     param($Manifest,[string]$InstallationId,[string]$ServiceSid)
     . (Join-Path $PSScriptRoot 'RackClick.MfaRuntime.ps1')
@@ -83,7 +107,7 @@ function Initialize-SetupMfaStore {
     $bundle=$null;$process=$null;$started=$false
     try{
         $bundle=Read-RackClickOfflineBundle -ArchivePath (Join-Path $CodeRoot 'RackClick.zip') -ExpectedArchiveSha256 $ExpectedBundleSha256
-        if((Get-OfflineBundleExpectedSchema (Get-OfflineBundleApplicationProfile $bundle.manifest.applicationManifestSha256))-notin@(15,43)){throw 'setup_mfa_schema_required_15_or_43'}
+        $applicationSchema=Get-SetupMfaApplicationSchema $bundle.manifest.applicationManifestSha256
         $content=Join-Path $InstancePath 'content'
         Assert-RackClickOfflineInstalledContent -Bundle $bundle -ContentPath $content
         $dotnet=Join-Path $content 'dependencies\dotnet\dotnet.exe'
@@ -101,7 +125,7 @@ function Initialize-SetupMfaStore {
         if(-not$process.WaitForExit(120000)){throw 'setup_mfa_initialization_timeout_preserved'}
         $process.WaitForExit()
         Assert-SetupMfaInitializationReceipt -ExitCode $process.ExitCode -StandardOutput $output.Result -StandardError $errors.Result
-        return @{schemaVersion=1;valid=$true;exitCode=0;code='setup_mfa_store_created';residue='none';policy='grace_45_days';keysDisclosed=$false}
+        return @{schemaVersion=1;valid=$true;exitCode=0;code='setup_mfa_store_created';residue='none';policy='grace_45_days';keysDisclosed=$false;applicationSchemaVersion=$applicationSchema}
     }finally{
         if($null-ne$process){try{if($started-and-not$process.HasExited){$process.Kill();$null=$process.WaitForExit(5000)}}finally{$process.Dispose()}}
         if($null-ne$bundle){Close-RackClickOfflineBundle $bundle}

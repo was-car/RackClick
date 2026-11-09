@@ -1,5 +1,7 @@
 # MFA · decisiones confirmadas por Wascar · 25.10.2026
 
+**Adenda03.11.2026:** La custodia aquí confirmada se conserva. La exigencia inmediata para todos que figura en el cuerpo histórico fue sustituida por [gracia45/exención global](DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md). Las condiciones técnicas están concretadas y revisadas en [F-03.02](D2-CONDICIONES-TECNICAS-F03-02.md); eso no acredita recuperación portable/emergencia/rotación implementadas. MFA nativo ya se ensayó por separado; no alterar D por los estados históricos que siguen.
+
 **Custodia y recuperación confirmadas expresamente.** Estas decisiones sustituyen las menciones anteriores que las dejaban pendientes. La implementación completa y su revisión siguen pendientes; MFA aún no está disponible para usuarios.
 
 ## Custodia y ubicación

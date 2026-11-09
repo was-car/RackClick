@@ -20,9 +20,11 @@ Die **[Windows-Anleitung zur Quelldemo](docs/GETTING-STARTED.de.md)** beschreibt
 
 Das Beispiel enthält **10 synthetische Kunden, 68 Racks, 311 Geräte, 5.408 Ports und 623 Verbindungen**. Es enthält ausschließlich Inventar, keine Konten, Sitzungen oder MFA-Faktoren. Jeder Start erzeugt ein separates lokales PostgreSQL-Labor und zufällige Zugangsdaten. Die Demo verwendet HTTP auf Loopback und deaktiviert MFA ausdrücklich. Sie ist weder der Windows-Dienstinstaller noch eine Bereitstellung im Netzwerk.
 
-## Entwicklungsstand · 3. November 2026
+Zusätzlich gibt es eine **[Sammlung mit 50 synthetischen Kunden](docs/DEMO50.de.md)** mit Standorten, Räumen, Racks, Geräten, Ports und Verbindungen, einem durchsuchbaren HTML-Betrachter und Dateiprüfsummen. Sie deckt die historischen **868 Profil-/Revisionspaare des Schemas 43** ab; der aktuelle Katalog enthält 884 Revisionen. Dies sind optionale Inventardaten, kein PostgreSQL-Backup. Die Quelldemo mit zehn Kunden lädt diese Sammlung nicht automatisch.
 
-Das aktuelle Quellschema ist **45**. Die Anwendung wurde auf einer bestehenden Windows-Testinstallation aktualisiert; HTTPS, automatischer Dienststart und Backups wurden geprüft. Inventar- und Sicherheitsdaten blieben erhalten. Eine saubere New-/Restore-Installation und die Prüfung nach einem Windows-Neustart mit dem neuesten Paket stehen noch aus. Frühere Windows-Tests ersetzen diese Prüfungen nicht.
+## Entwicklungsstand · 9. November 2026
+
+Das aktuelle Quellschema ist **45**. Dieses Update enthält die geprüfte Korrektur des MFA-Schlüsselspeicher-Writers aus der internen Kandidatin 16 und die Windows-Operatorquellen. Das vorherige Schema 45-Update wurde auf einer bestehenden Windows-Installation geprüft. **Eine saubere native New-/Restore-Installation und die Abnahme nach Neustart der Kandidatin 16 stehen noch aus**; Quellcode- und isolierte PostgreSQL-Tests ersetzen sie nicht. Operative portable MFA-Wiederherstellung, Notfallverfahren und Rotation bleiben offen.
 
 Offline-Funktionsumfang, Wiederherstellung, Leistung und abschließende QA werden anhand des [Masterplans](docs/HOJA-DE-RUTA-MAESTRA.md) weiterbearbeitet. SNMP-/LLDP-Erkennung und echte Identitätsföderation sind spätere Vorhaben. Dies ist ein privater Entwicklungsstand der Quellen, keine endgültig abgenommene Produktionsversion.
 
@@ -35,7 +37,8 @@ Offline-Funktionsumfang, Wiederherstellung, Leistung und abschließende QA werde
 | `development/frontend/` | Oberfläche, interaktive Geräteprofile und Frontendtests |
 | `development/server/` | Domäne, HTTP-Server, SQL-Migrationen und Servertests |
 | `development/hardware/` | Katalogeingaben und Modellreferenzen |
-| `development/examples/` | Synthetische Inventarbeispiele |
+| `development/examples/` | Ursprüngliches Inventar der Quelldemo mit zehn Kunden |
+| `DEMO-50-CLIENTES-01/` | Optionale50-Kunden-Sammlung, Betrachter und Abdeckungsmatrix |
 | `tools/` | Build-, Prüf-, Demo- und Windows-Operatorquellen |
 | `docs/` | Anleitungen, Verträge, Entscheidungen und Planung |
 | `reference/` | Abgenommene Offline-Referenz als Build-Eingabe |

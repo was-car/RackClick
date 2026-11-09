@@ -20,6 +20,7 @@ $ErrorActionPreference='Stop'
 Set-StrictMode -Version Latest
 $repo=__ROOT__
 . (Join-Path $repo 'tools/windows/server-install/RackClick.MfaRuntime.ps1')
+. (Join-Path $repo 'tools/windows/RackClick.SqlSecrets.ps1')
 $script:launcherText=[IO.File]::ReadAllText((Join-Path $repo 'tools/windows/RackClick.LaunchControl.ps1'))
 $tok=$null;$err=$null
 $tree=[Management.Automation.Language.Parser]::ParseInput($script:launcherText,[ref]$tok,[ref]$err)

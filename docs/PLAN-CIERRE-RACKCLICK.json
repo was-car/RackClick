@@ -454,8 +454,8 @@
       "area": "F",
       "title": "Registrar decisión de custodia y ubicación definitiva D2",
       "kind": "decisión",
-      "status": "decisión de custodia/recuperación confirmada; concreción técnica pendiente",
-      "current": "Wascar confirmó25.10 la custodia externa del sobre/contraseña en medios separados, ubicación mfa-keys por instancia y recuperación restringida. Precisión técnica de KDF/publicación/ACL-SID e implementación siguen en el equipo; no hay otra autorización de arranque pendiente.",
+      "status": "cerrado documentalmente: custodia, condiciones técnicas y límites registrados",
+      "current": "Custodia/ubicación confirmadas25.10; F-03.02 concreta recuperación/KDF/publicación y F-03.03 registra límites LocalMachine frente a administrador/SYSTEM/servicio comprometido, con revisiones independientes. F-03 completa sólo la decisión documental. Política45 intacta; F-04..F-09/R-04 conservan sus pruebas/integraciones, sin nueva aceptación operativa o producción. D45 no operada.",
       "available": [],
       "evidence": [
         "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
@@ -463,7 +463,13 @@
         "docs/PLAN-MFA-Y-FRENTES-C1-C5.md",
         "docs/DECISIONES-MFA-CONFIRMADAS-25-10-2026.md",
         "docs/MENSAJE-PARA-CLAUDE-MFA-L1-25-10-2026.md",
-        "evidence/s1-20261025/mfa-decision-asignacion-codex/CIERRE.md"
+        "evidence/s1-20261025/mfa-decision-asignacion-codex/CIERRE.md",
+        "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
+        "evidence/s1-20261103/f03-02-condiciones/REVISION-INDEPENDIENTE.md",
+        "evidence/s1-20261103/f03-02-condiciones/RESULTADOS.md",
+        "docs/D2-LIMITES-AMENAZA-F03-03.md",
+        "evidence/s1-20261103/f03-03-amenazas/REVISION-INDEPENDIENTE.md",
+        "evidence/s1-20261103/f03-03-amenazas/RESULTADOS.md"
       ],
       "criteria": [
         "rev4 C.5",
@@ -479,21 +485,29 @@
       "closure": "Decisión de Wascar identificada y especificación D2 final sin ambigüedad sobre responsables, almacén, pérdida total, recuperación y límites; revisión técnica separada de la aceptación operativa.",
       "milestones": {
         "definition_confirmed": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Hay propuesta/condiciones o transición operativa por concretar; no inventar decisión.",
+          "reason": "Decisión de custodia25.10 identificada y especificación D2 final concretada en F-03.02/.03, sin pedir de nuevo esa confirmación. Sólo definición documental.",
           "evidence": [
             "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
             "docs/REVISION-D2-CODEX.md",
-            "docs/PLAN-MFA-Y-FRENTES-C1-C5.md"
+            "docs/PLAN-MFA-Y-FRENTES-C1-C5.md",
+            "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
+            "evidence/s1-20261103/f03-02-condiciones/REVISION-INDEPENDIENTE.md",
+            "docs/D2-LIMITES-AMENAZA-F03-03.md",
+            "evidence/s1-20261103/f03-03-amenazas/REVISION-INDEPENDIENTE.md"
           ]
         },
         "implementation_complete": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "La salida es una decisión registrada, no código. Falta confirmación de custodia/ubicación de Wascar; desarrollo de pruebas sintéticas y condiciones técnicas puede continuar.",
+          "reason": "Salida de esta tarea de decisión completada: registro de custodia, condiciones y amenazas. No significa código, proveedor, recuperación, rotación o Restore implementados/ensayados.",
           "evidence": [
-            "docs/REVISION-D2-CODEX.md"
+            "docs/REVISION-D2-CODEX.md",
+            "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
+            "evidence/s1-20261103/f03-02-condiciones/REVISION-INDEPENDIENTE.md",
+            "docs/D2-LIMITES-AMENAZA-F03-03.md",
+            "evidence/s1-20261103/f03-03-amenazas/REVISION-INDEPENDIENTE.md"
           ]
         },
         "technical_tests_same_scope": {
@@ -505,11 +519,15 @@
         "independent_review_same_scope": {
           "state": "done",
           "applicable": true,
-          "reason": "Revisión D2v2 favorable condicionada realizada; no aprueba implementación ni sustituye decisión de custodia.",
+          "reason": "Condiciones F-03.02 y límites F-03.03 contrastados por revisores distintos de los autores; alcance documental de D2, no ensayo operativo.",
           "evidence": [
             "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
             "docs/REVISION-D2-CODEX.md",
-            "docs/PLAN-MFA-Y-FRENTES-C1-C5.md"
+            "docs/PLAN-MFA-Y-FRENTES-C1-C5.md",
+            "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
+            "evidence/s1-20261103/f03-02-condiciones/REVISION-INDEPENDIENTE.md",
+            "docs/D2-LIMITES-AMENAZA-F03-03.md",
+            "evidence/s1-20261103/f03-03-amenazas/REVISION-INDEPENDIENTE.md"
           ]
         },
         "integrated_current_candidate": {
@@ -519,17 +537,18 @@
           "evidence": []
         },
         "target_acceptance": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Aceptación o validación del objetivo final pendiente; responsable y criterio concreto se definen en owners/close_criterion.",
+          "reason": "Se acredita únicamente la confirmación de custodia/ubicación de Wascar25.10 ya registrada en F-03.01. No es nueva aprobación de riesgos ni aceptación operativa, QA o producción del servidor.",
           "evidence": [
             "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
             "docs/REVISION-D2-CODEX.md",
-            "docs/PLAN-MFA-Y-FRENTES-C1-C5.md"
+            "docs/PLAN-MFA-Y-FRENTES-C1-C5.md",
+            "docs/DECISIONES-MFA-CONFIRMADAS-25-10-2026.md"
           ]
         }
       },
-      "note": "",
+      "note": "Tres checkpoints documentales completos, peso0. Mantener separadas la decisión registrada y la aceptación operativa posterior; no habilitar nada en D por este cierre.",
       "scored": false,
       "counting_note": "DecisiónD2: desbloquea F-04/F-05; sin crédito separado por aprobar desarrollo.",
       "checkpoints": [
@@ -547,16 +566,32 @@
         {
           "id": "F-03.02",
           "text": "Desarrollo concreta las condiciones técnicas de la revisión: recuperación restringida sin clave, límites/cabecera autenticada del KDF y publicación recuperable entre disco/DB.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "0"
+          "status": "done",
+          "evidence": [
+            "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
+            "evidence/s1-20261103/f03-02-condiciones/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261103/f03-02-condiciones/RESULTADOS.md"
+          ],
+          "weight_points": "0",
+          "review_evidence": [
+            "evidence/s1-20261103/f03-02-condiciones/REVISION-INDEPENDIENTE.md"
+          ],
+          "closure_method": "independent_review_of_technical_specification"
         },
         {
           "id": "F-03.03",
           "text": "Registrar límites de amenaza: DPAPI LocalMachine no aísla del administrador local ni del proceso de servicio comprometido.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "0"
+          "status": "done",
+          "evidence": [
+            "docs/D2-LIMITES-AMENAZA-F03-03.md",
+            "evidence/s1-20261103/f03-03-amenazas/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261103/f03-03-amenazas/RESULTADOS.md"
+          ],
+          "weight_points": "0",
+          "review_evidence": [
+            "evidence/s1-20261103/f03-03-amenazas/REVISION-INDEPENDIENTE.md"
+          ],
+          "closure_method": "independent_review_of_documented_threat_boundary"
         }
       ],
       "baseline_state": "pending_remaining_work_as_of_2026-10-25",
@@ -572,8 +607,8 @@
       "area": "F",
       "title": "Implementar proveedor TOTP Windows bajo la identidad real del servicio",
       "kind": "producto",
-      "status": "Proveedor real integrado en candidata10; F-04.03 cerrado, ACL/otros tokens y cierre total pendientes",
-      "current": "En C Windows Server2025 limpia, candidata10 instala almacén dedicado e inicia proveedor Windows DPAPI bajo cuenta estándar SCM. Enrolamiento y nuevo login TOTP por HTTPS verificados antes y después del reinicio. Negativos de pérdida de clave/versión y arranque cerrado conciliados con las fuentes actuales. No se cierra la recuperación portable ni todos los negativos de ACL/otros tokens.",
+      "status": "Cerrado técnicamente e integrado en candidata16; aceptación final pendiente",
+      "current": "Criterios técnicos F04 conservados; writer76e6 integrado en candidata completa16/app45 con DLLReleasec057 y frontend/SQL/dependencias/servicio preservados. Bundle2018/payload117 y cadena de pins verificados; 16casos de creación+DB/TOTP sobre la DLL exacta y New/RestoreSQL45/43→45 reales en laboratorio. Propagación45 cerrada de SetupMfa/readiness/recibo y matrizRestore, sin retirar guardiaMFA. Integración de candidata acreditada con revisión independiente04.11; no instalación elevada, SCM/HTTPS/reinicio, formato mínimo3 o adopción de16. target_acceptance sigue pendiente; D/E sin cambios.",
       "available": [
         "Candidata10 en VM C: proveedor Windows real, init elevado, cuenta estándar y HTTPS; MFA persiste tras reinicio. No es adopción productiva."
       ],
@@ -582,7 +617,26 @@
         "development/server/src/RackClick.Server/MfaStore.cs",
         "development/server/src/RackClick.Server/MfaSecretCipher.cs",
         "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-        "docs/REVISION-D2-CODEX.md"
+        "docs/REVISION-D2-CODEX.md",
+        "evidence/s1-20261103/f04-01-almacen/RESULTADOS.md",
+        "evidence/s1-20261103/f04-01-almacen/REVISION-INDEPENDIENTE.md",
+        "evidence/s1-20261103/f04-02-permisos/RESULTADOS.md",
+        "evidence/s1-20261103/f04-02-permisos/review/DICTAMEN-PREVIO-SONDA.md",
+        "evidence/s1-20261103/f04-02-permisos/ejecucion/RESULTADOS.md",
+        "evidence/s1-20261103/f04-02-permisos/ejecucion/review/DICTAMEN-F0402.md",
+        "evidence/s1-20261103/f04-02-permisos/ejecucion/RESULTADO-CONSOLIDADO.json",
+        "evidence/s1-20261103/f04-04-cierre/RESULTADOS.md",
+        "evidence/s1-20261103/f04-04-cierre/review/DICTAMEN-F0404.md",
+        "evidence/s1-20261103/f04-04-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261103/f04-04-cierre/CONCILIACION-EVIDENCIA.json",
+        "evidence/s1-20261103/f04-04-cierre/CONTRASTE-NUCLEO.json",
+        "docs/INTEGRACION-PENDIENTES-08-18-CANDIDATA16.md",
+        "evidence/s1-20261104/f04-integracion16/RESULTADOS.md",
+        "evidence/s1-20261104/f04-integracion16/review/DICTAMEN.md",
+        "evidence/s1-20261104/f04-integracion16/package/ENTREGA.json",
+        "evidence/s1-20261104/f04-integracion16/PUBLICACION-EN-PRUEBAS.json",
+        "evidence/s1-20261104/f04-integracion16/HTTP-WRITER-RELEASE-R2.json",
+        "evidence/s1-20261104/f04-integracion16/NEW-RESTORE45.json"
       ],
       "criteria": [
         "rev4 C.5",
@@ -602,95 +656,101 @@
       "closure": "Servicio real lee/descifra y verifica factores; otra cuenta no lee, servicio no escribe ni modifica ACL, management no se amplía; negativos y revisión independiente registrados.",
       "milestones": {
         "definition_confirmed": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Hay propuesta/condiciones o transición operativa por concretar; no inventar decisión.",
+          "reason": "Custodia25.10 y condiciones F-03.02/.03 confirmadas y revisadas; gracia45/exención global vigentes, sin nueva solicitud de decisión.",
           "evidence": [
-            "development/server/src/RackClick.Server/Program.cs",
-            "development/server/src/RackClick.Server/MfaStore.cs",
-            "development/server/src/RackClick.Server/MfaSecretCipher.cs",
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md"
+            "docs/DECISIONES-MFA-CONFIRMADAS-25-10-2026.md",
+            "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
+            "docs/D2-LIMITES-AMENAZA-F03-03.md",
+            "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md"
           ]
         },
         "implementation_complete": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "El resultado completo de esta tarea no está implementado; partes existentes se conservan en real_state/done_scope.",
+          "reason": "Proveedor/almacén/validación de F-04 implementados en fuentes; writer corregido revisado. No comprende recuperación portable, rotación ni distribución nueva instalada.",
           "evidence": [
-            "development/server/src/RackClick.Server/Program.cs",
-            "development/server/src/RackClick.Server/MfaStore.cs",
-            "development/server/src/RackClick.Server/MfaSecretCipher.cs",
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md"
+            "evidence/s1-20261103/f04-01-almacen/RESULTADOS.md",
+            "evidence/s1-20261103/f04-04-cierre/review/DICTAMEN-F0404.md"
           ]
         },
         "technical_tests_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Faltan pruebas del entregable completo/final o de los cambios afectados; no repetir suites que ya cubren partes invariantes.",
+          "reason": "Evidencia compuesta trazada: creación Windows, positivos nativos de lectura/descifrado/TOTP, negativos del host y permisos efectivos de dos tokens. Se reutilizan ejecuciones existentes, no un único instalador nuevo ensayado.",
           "evidence": [
-            "development/server/src/RackClick.Server/Program.cs",
-            "development/server/src/RackClick.Server/MfaStore.cs",
-            "development/server/src/RackClick.Server/MfaSecretCipher.cs",
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md"
+            "evidence/s1-20261103/f04-01-almacen/RESULTADOS.md",
+            "evidence/s1-20261103/f04-02-permisos/ejecucion/RESULTADOS.md",
+            "evidence/s1-20261029/installer15-review/DICTAMEN-F04-03.md",
+            "evidence/s1-20261103/f04-04-cierre/RESULTADOS.md"
           ]
         },
         "independent_review_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Revisión distinta final/afectada pendiente tras implementar o integrar el resultado.",
+          "reason": "Revisión independiente específica de los tres subpasos y favorable del criterio F-04 completo; fuentes, matriz y límites contrastados sin repetir pruebas/VM.",
           "evidence": [
-            "development/server/src/RackClick.Server/Program.cs",
-            "development/server/src/RackClick.Server/MfaStore.cs",
-            "development/server/src/RackClick.Server/MfaSecretCipher.cs",
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md"
+            "evidence/s1-20261103/f04-04-cierre/review/DICTAMEN-F0404.md",
+            "evidence/s1-20261103/f04-04-cierre/review/COMPROBACION-F0404.json"
           ]
         },
         "integrated_current_candidate": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Resultado completo todavía no integrado en la candidata objetivo; no confundir app03 interna con GUI MFA/instalación final.",
+          "reason": "Writer aprobado F0401 integrado en candidata completa16 de esquema45, con procedencia413/único delta, cadena distribución/bundle/payload/envoltorio y misma DLLRelease en pruebas; revisión independiente favorable. No equivale a instalarla ni aceptar la entrega.",
           "evidence": [
-            "development/server/src/RackClick.Server/Program.cs",
-            "development/server/src/RackClick.Server/MfaStore.cs",
-            "development/server/src/RackClick.Server/MfaSecretCipher.cs",
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md"
+            "docs/INTEGRACION-PENDIENTES-08-18-CANDIDATA16.md",
+            "evidence/s1-20261104/f04-integracion16/RESULTADOS.md",
+            "evidence/s1-20261104/f04-integracion16/review/DICTAMEN.md",
+            "evidence/s1-20261104/f04-integracion16/package/ENTREGA.json",
+            "evidence/s1-20261104/f04-integracion16/PUBLICACION-EN-PRUEBAS.json",
+            "evidence/s1-20261104/f04-integracion16/HTTP-WRITER-RELEASE-R2.json",
+            "evidence/s1-20261104/f04-integracion16/NEW-RESTORE45.json"
           ]
         },
         "target_acceptance": {
           "state": "pending",
           "applicable": true,
-          "reason": "Aceptación o validación del objetivo final pendiente; responsable y criterio concreto se definen en owners/close_criterion.",
+          "reason": "Aceptación final de la entrega pendiente. Custodia confirmada y observación favorable de MFA administrativo no se convierten en PASS de toda la QA ni adopción productiva.",
           "evidence": [
-            "development/server/src/RackClick.Server/Program.cs",
-            "development/server/src/RackClick.Server/MfaStore.cs",
-            "development/server/src/RackClick.Server/MfaSecretCipher.cs",
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md"
+            "docs/QA-MFA10-WASCAR.md",
+            "evidence/s1-20261103/f04-04-cierre/review/DICTAMEN-F0404.md"
           ]
         }
       },
-      "note": "",
+      "note": "Cierre técnico del criterio original mediante evidencia compuesta, sin rebajar condiciones ni declarar candidata única actualizada o aceptación final. Los hitos de integración/aceptación son descriptivos y siguen abiertos; no añaden ni restan pesos del inventario congelado.",
       "scored": true,
       "counting_note": "Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.",
       "checkpoints": [
         {
           "id": "F-04.01",
           "text": "Crear almacén separado de management con ACL seguras desde el primer instante y escrituras atómicas por instalador/operador.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261103/f04-01-almacen/RESULTADOS.md",
+            "evidence/s1-20261103/f04-01-almacen/REVISION-INDEPENDIENTE.md"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261103/f04-01-almacen/REVISION-INDEPENDIENTE.md"
+          ]
         },
         {
           "id": "F-04.02",
           "text": "Dar sólo lectura al SID efectivo del servicio y mantener management cerrado; comprobar padres, herencia y reparse.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261103/f04-02-permisos/RESULTADOS.md",
+            "evidence/s1-20261103/f04-02-permisos/review/DICTAMEN-PREVIO-SONDA.md",
+            "evidence/s1-20261103/f04-02-permisos/ejecucion/RESULTADOS.md",
+            "evidence/s1-20261103/f04-02-permisos/ejecucion/review/DICTAMEN-F0402.md",
+            "evidence/s1-20261103/f04-02-permisos/ejecucion/RESULTADO-CONSOLIDADO.json"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261103/f04-02-permisos/ejecucion/review/DICTAMEN-F0402.md"
+          ]
         },
         {
           "id": "F-04.03",
@@ -708,11 +768,19 @@
         {
           "id": "F-04.04",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261103/f04-04-cierre/RESULTADOS.md",
+            "evidence/s1-20261103/f04-04-cierre/review/DICTAMEN-F0404.md",
+            "evidence/s1-20261103/f04-04-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261103/f04-04-cierre/CONCILIACION-EVIDENCIA.json",
+            "evidence/s1-20261103/f04-04-cierre/CONTRASTE-NUCLEO.json"
+          ],
           "weight_points": "5/8",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261103/f04-04-cierre/review/DICTAMEN-F0404.md"
+          ]
         }
       ],
       "baseline_state": "pending_remaining_work_as_of_2026-10-25",
@@ -729,14 +797,48 @@
       "area": "F",
       "title": "Implementar sobre portable autenticado y restauración de claves",
       "kind": "producto/operación",
-      "status": "implementación",
-      "current": "Formato RCKEY/PBKDF2/AES-GCM diseñado, no implementado/ensayado. Backup y Restore PostgreSQL existentes no prueban portabilidad del secreto TOTP.",
-      "available": [],
+      "status": "F-05: checkpoints técnicos completos; operador, integración y aceptación pendientes",
+      "current": "F-05.01/.02/.03 concilian codec/perfil600000/negativos existentes; .04 comprueba portabilidad Windows y token estándar real con dos factores/AAD, sin repetirla. F-05.05 añade DBaplicación45 nueva, pg_dump/pg_restore custom transacciónúnica, igualdad de todas las filas públicas antes de RecoveryAdministrator y roles nuevos restringidos. ProveedorWindows real sobre material recuperado y Program/WebApplicationFactory: dos logins con factores conservados versiones1retirada/7activa, desafío sinAPI, TOTP/sesión/CSRF/API, replay/TOTPincorrecto y autoridad de backup revocada. Ocho casos pasan en WindowsPG17.11, sin omitidas, revisión independiente; sólo nuevo test/runner, sin cambios de producto. Gates de material/versiones/AAD previos son del fixture, no operador productivo. FuenteDebug F0401cd3cc/45 fijada; TestServer en memoria con identidad/confianzaWindowsLAB explícita y direcciones de cliente sintéticas para conservar limiter. F-05.04 sigue acreditando otroWindows/SIDreal, no se atribuye esa medición al TestServer. Origen invariable; tres clusters propios detenidos. Dos intentos fallidos de fixture preservados (ruta266/Win32206;contentroot/aserciónCrypto); no se ocultan ni son defectos del producto. F-05 checklist técnica completa, pero implementación operativa, candidata integrada y aceptación permanecen pendientes: no CLI/instalador, fence/journal/marcadorDBD2, exportaciónconcurrente, rotación/pérdida, HTTPS/servicio/reinicio/cutover/R04 o custodia/adopción nuevas. D/E sin operaciones.",
+      "available": [
+        "Codec RCKEYv1 y contenido RCKPAY en memoria, implementados y revisados; no equivale a recuperación operativa de la instalación.",
+        "Componentes de exportación/recuperación existentes; integración final y portabilidad con factores pendientes de sus propios criterios.",
+        "Recuperación portable offline LEAO→WindowsServerE ensayada con dos factores/AAD y token estándar real; no activa una instalación ni completa Restore DB.",
+        "DB de aplicación restaurada y login MFA conservado comprobados con componentes reales en TestServer/PG17; sólo cierre técnico, no operador/entrega adoptados."
+      ],
       "evidence": [
         "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
         "docs/REVISION-D2-CODEX.md",
         "docs/AUTENTICACION-MFA-S1.md",
-        "docs/REVISION-D14-05-CODEX.md"
+        "docs/REVISION-D14-05-CODEX.md",
+        "docs/REVISION-MFA-L2D-CODEX-26-10-2026.md",
+        "docs/REVISION-MFA-L2E-CODEX-26-10-2026.md",
+        "evidence/s1-20261103/f05-01-sobre/RESULTADOS.md",
+        "evidence/s1-20261103/f05-01-sobre/review/DICTAMEN-F0501.md",
+        "evidence/s1-20261103/f05-01-sobre/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261103/f05-01-sobre/CONCILIACION-EVIDENCIA.json",
+        "evidence/s1-20261103/f05-02-coste/RESULTADOS.md",
+        "evidence/s1-20261103/f05-02-coste/review/DICTAMEN-F0502.md",
+        "evidence/s1-20261103/f05-02-coste/DECISION-PARAMETRO.md",
+        "evidence/s1-20261103/f05-02-coste/MEDICION-CONCILIADA.json",
+        "evidence/s1-20261103/f05-03-negativos/RESULTADOS.md",
+        "evidence/s1-20261103/f05-03-negativos/review/DICTAMEN-F0503.md",
+        "evidence/s1-20261103/f05-03-negativos/MATRIZ-NEGATIVOS.md",
+        "evidence/s1-20261103/f05-03-negativos/NEGATIVOS-CONCILIADOS.json",
+        "docs/PASO-017-RECUPERACION-PORTABLE-MFA.md",
+        "evidence/s1-20261103/f05-04-portable/RESULTADOS.md",
+        "evidence/s1-20261103/f05-04-portable/review/DICTAMEN-F0504.md",
+        "evidence/s1-20261103/f05-04-portable/review/COMPROBACION-F0504.json",
+        "evidence/s1-20261103/f05-04-portable/ejecucion/POSTFLIGHT.json",
+        "evidence/s1-20261103/f05-04-portable/ejecucion/06-service-token.json",
+        "docs/F05-RECUPERACION-INTEGRADA-PENDIENTE.md",
+        "docs/PASO-018-CIERRE-RECUPERACION-PORTABLE-MFA.md",
+        "evidence/s1-20261103/f05-05-cierre/RESULTADOS.md",
+        "evidence/s1-20261103/f05-05-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261103/f05-05-cierre/review/DICTAMEN-F0505.md",
+        "evidence/s1-20261103/f05-05-cierre/review/COMPROBACION-F0505.json",
+        "evidence/s1-20261103/f05-05-cierre/COORDINACION-PG-R3.json",
+        "evidence/s1-20261103/f05-05-cierre/implementacion/HARNESS-FREEZE6-PREVIO-PG.json",
+        "evidence/s1-20261103/f05-05-cierre/implementacion/RESUMEN-SANITIZADO-CORRIDA3.json"
       ],
       "criteria": [
         "rev4 C.5",
@@ -778,25 +880,31 @@
           ]
         },
         "technical_tests_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Faltan pruebas del entregable completo/final o de los cambios afectados; no repetir suites que ya cubren partes invariantes.",
+          "reason": "Criterio técnico F-05 cubierto por F-05.01–.04 y nueva integración DB45/Program/TestServer con proveedorWindows real y revisión independiente. Alcance de laboratorio explícito; no acredita operador/instalador o adopción.",
           "evidence": [
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md",
-            "docs/AUTENTICACION-MFA-S1.md",
-            "docs/REVISION-D14-05-CODEX.md"
+            "evidence/s1-20261103/f05-05-cierre/RESULTADOS.md",
+            "evidence/s1-20261103/f05-05-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261103/f05-05-cierre/review/DICTAMEN-F0505.md",
+            "evidence/s1-20261103/f05-05-cierre/review/COMPROBACION-F0505.json",
+            "evidence/s1-20261103/f05-05-cierre/COORDINACION-PG-R3.json",
+            "evidence/s1-20261103/f05-05-cierre/implementacion/HARNESS-FREEZE6-PREVIO-PG.json",
+            "evidence/s1-20261103/f05-05-cierre/implementacion/RESUMEN-SANITIZADO-CORRIDA3.json"
           ]
         },
         "independent_review_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Revisión distinta final/afectada pendiente tras implementar o integrar el resultado.",
+          "reason": "Criterio técnico F-05 cubierto por F-05.01–.04 y nueva integración DB45/Program/TestServer con proveedorWindows real y revisión independiente. Alcance de laboratorio explícito; no acredita operador/instalador o adopción.",
           "evidence": [
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md",
-            "docs/AUTENTICACION-MFA-S1.md",
-            "docs/REVISION-D14-05-CODEX.md"
+            "evidence/s1-20261103/f05-05-cierre/RESULTADOS.md",
+            "evidence/s1-20261103/f05-05-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261103/f05-05-cierre/review/DICTAMEN-F0505.md",
+            "evidence/s1-20261103/f05-05-cierre/review/COMPROBACION-F0505.json",
+            "evidence/s1-20261103/f05-05-cierre/COORDINACION-PG-R3.json",
+            "evidence/s1-20261103/f05-05-cierre/implementacion/HARNESS-FREEZE6-PREVIO-PG.json",
+            "evidence/s1-20261103/f05-05-cierre/implementacion/RESUMEN-SANITIZADO-CORRIDA3.json"
           ]
         },
         "integrated_current_candidate": {
@@ -829,39 +937,86 @@
         {
           "id": "F-05.01",
           "text": "Validar magia/versión/algoritmo, tamaños, codificación canónica y límites min/max de iteraciones antes de KDF; autenticar cabecera completa como AAD.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261103/f05-01-sobre/RESULTADOS.md",
+            "evidence/s1-20261103/f05-01-sobre/review/DICTAMEN-F0501.md",
+            "evidence/s1-20261103/f05-01-sobre/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261103/f05-01-sobre/CONCILIACION-EVIDENCIA.json"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261103/f05-01-sobre/review/DICTAMEN-F0501.md"
+          ]
         },
         {
           "id": "F-05.02",
           "text": "Medir coste del parámetro propuesto600000 en Windows antes de fijarlo; no adoptarlo por silencio.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261103/f05-02-coste/RESULTADOS.md",
+            "evidence/s1-20261103/f05-02-coste/review/DICTAMEN-F0502.md",
+            "evidence/s1-20261103/f05-02-coste/DECISION-PARAMETRO.md",
+            "evidence/s1-20261103/f05-02-coste/MEDICION-CONCILIADA.json"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261103/f05-02-coste/review/DICTAMEN-F0502.md"
+          ]
         },
         {
           "id": "F-05.03",
           "text": "Probar contraseña errónea, alteración, truncado, datos extra, versión/algoritmo desconocidos y coste/tamaño fuera de rango.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "evidence/s1-20261103/f05-03-negativos/RESULTADOS.md",
+            "evidence/s1-20261103/f05-03-negativos/review/DICTAMEN-F0503.md",
+            "evidence/s1-20261103/f05-03-negativos/MATRIZ-NEGATIVOS.md",
+            "evidence/s1-20261103/f05-03-negativos/NEGATIVOS-CONCILIADOS.json"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261103/f05-03-negativos/review/DICTAMEN-F0503.md"
+          ]
         },
         {
           "id": "F-05.04",
           "text": "Recuperar anillo en otra instancia Windows preservando AAD Systemhaus/usuario/versión o mediante reenvoltura explícita; sobre y contraseña separados del dump.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PASO-017-RECUPERACION-PORTABLE-MFA.md",
+            "evidence/s1-20261103/f05-04-portable/RESULTADOS.md",
+            "evidence/s1-20261103/f05-04-portable/review/DICTAMEN-F0504.md",
+            "evidence/s1-20261103/f05-04-portable/review/COMPROBACION-F0504.json",
+            "evidence/s1-20261103/f05-04-portable/ejecucion/POSTFLIGHT.json",
+            "evidence/s1-20261103/f05-04-portable/ejecucion/06-service-token.json"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261103/f05-04-portable/review/DICTAMEN-F0504.md",
+            "evidence/s1-20261103/f05-04-portable/review/COMPROBACION-F0504.json"
+          ]
         },
         {
           "id": "F-05.05",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "docs/PASO-018-CIERRE-RECUPERACION-PORTABLE-MFA.md",
+            "evidence/s1-20261103/f05-05-cierre/RESULTADOS.md",
+            "evidence/s1-20261103/f05-05-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261103/f05-05-cierre/review/DICTAMEN-F0505.md",
+            "evidence/s1-20261103/f05-05-cierre/review/COMPROBACION-F0505.json",
+            "evidence/s1-20261103/f05-05-cierre/COORDINACION-PG-R3.json",
+            "evidence/s1-20261103/f05-05-cierre/implementacion/HARNESS-FREEZE6-PREVIO-PG.json",
+            "evidence/s1-20261103/f05-05-cierre/implementacion/RESUMEN-SANITIZADO-CORRIDA3.json"
+          ],
           "weight_points": "1/2",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261103/f05-05-cierre/review/DICTAMEN-F0505.md",
+            "evidence/s1-20261103/f05-05-cierre/review/COMPROBACION-F0505.json"
+          ]
         }
       ],
       "baseline_state": "pending_remaining_work_as_of_2026-10-25",
@@ -6830,6 +6985,137 @@
       "baselineRevision": "RC-CIERRE-20261103-v3",
       "closureMethod": "independent_review_of_administrative_disposition",
       "reason": "Decisión explícita de Wascar y criterio enmendado ANTES de acreditar; no cierre técnico de exposición ni revocación inferida."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-03.02",
+      "from": "pending",
+      "to": "done",
+      "creditAdded": "0",
+      "evidence": "evidence/s1-20261103/f03-02-condiciones/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f03-02-condiciones/REVISION-INDEPENDIENTE.md",
+      "scopeChanged": false,
+      "closureMethod": "independent_review_of_technical_specification",
+      "reason": "Especificación final de recuperación restringida, KDF/AAD y publicación recuperable disco/DB. Reutiliza piezas revisadas, no acredita sus integraciones pendientes ni opera D."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-03.03",
+      "from": "pending",
+      "to": "done",
+      "creditAdded": "0",
+      "evidence": "evidence/s1-20261103/f03-03-amenazas/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f03-03-amenazas/REVISION-INDEPENDIENTE.md",
+      "scopeChanged": false,
+      "closureMethod": "independent_review_of_documented_threat_boundary",
+      "reason": "Límite DPAPI/administrador/proceso de servicio registrado y revisado reutilizando fuentes/evidencia; completa F-03 sólo como decisión documental. No acredita tareas operativas ni aceptación nueva de Wascar."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-04.01",
+      "from": "pending",
+      "to": "done",
+      "creditAdded": "5/8",
+      "evidence": "evidence/s1-20261103/f04-01-almacen/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f04-01-almacen/REVISION-INDEPENDIENTE.md",
+      "scopeChanged": false,
+      "closureMethod": "independent_review_of_initial_store_creation_and_publication",
+      "reason": "Descriptor protegido desde creación nativa y publicación inicial del conjunto con fallos seguros, probado en Windows. Cadena elevada/ubicación existente reutilizada; no despliegue en D ni cierre de F-04.02/.04 o durabilidad disco/DB."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-04.02",
+      "from": "pending",
+      "to": "in_progress",
+      "creditAdded": "0",
+      "evidence": "evidence/s1-20261103/f04-02-permisos/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f04-02-permisos/review/DICTAMEN-PREVIO-SONDA.md",
+      "scopeChanged": false,
+      "reason": "Auxiliar sin cambios de producto preparado/revisado; SelfTests no sustituyen tokens de los servicios reales. E apagada, solicitud de encendido a Wascar pendiente. D conservada."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-04.02",
+      "from": "in_progress",
+      "to": "done",
+      "creditAdded": "5/8",
+      "evidence": "evidence/s1-20261103/f04-02-permisos/ejecucion/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f04-02-permisos/ejecucion/review/DICTAMEN-F0402.md",
+      "scopeChanged": false,
+      "closureMethod": "independent_review_of_real_service_token_access_matrix",
+      "reason": "Dos tokens estándar de servicio de E, matriz completa de 30 objetivos por actor y 504 aperturas OPEN_EXISTING sin contenidos/escrituras. Sólo lectura propia/común; ajenos/management y mutación denegados. Padres/herencia/reparse, invariancia y retirada de tarea contrastados. No cierre automático de F-04.04, no cambios en D."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-04.04",
+      "from": "pending",
+      "to": "done",
+      "creditAdded": "5/8",
+      "evidence": "evidence/s1-20261103/f04-04-cierre/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f04-04-cierre/review/DICTAMEN-F0404.md",
+      "scopeChanged": false,
+      "closureMethod": "independent_review_of_complete_F04_technical_criterion_with_component_provenance",
+      "reason": "Criterio original cubierto por F-04.01/.02/.03 y contraste de fuentes/recibos. Sólo cierre técnico; integración de candidata completa y aceptación final permanecen pendientes. Sin nuevas pruebas de producto u operaciones VM, D conservada."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-05.01",
+      "from": "pending",
+      "to": "done",
+      "creditAdded": "1/2",
+      "evidence": "evidence/s1-20261103/f05-01-sobre/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f05-01-sobre/review/DICTAMEN-F0501.md",
+      "scopeChanged": false,
+      "closureMethod": "independent_reconciliation_of_unchanged_RCKEY_codec_header_bounds_encoding_and_AAD",
+      "reason": "Codec/pruebas exactos a L2d;25referencias y cinco fuentes contrastadas. Perfilv1 mínimo=máximo600000 previo aKDF, metadata0..42AAD, canonicidad delimitada por contratoL2e. Sólo validación del formato, sin coste universal, recuperación operativa o nuevo ensayo VM; D conservada."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-05.02",
+      "from": "pending",
+      "to": "done",
+      "creditAdded": "1/2",
+      "evidence": "evidence/s1-20261103/f05-02-coste/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f05-02-coste/review/DICTAMEN-F0502.md",
+      "scopeChanged": false,
+      "closureMethod": "independent_reconciliation_of_historical_Windows_operation_timings_and_explicit_profile_decision",
+      "reason": "Seis casos completos Open con una derivación en Windows Debug/.NET10.0.12,57-62ms; unidad/contexto precisados, fuentes intactas y decisión explícita de mantener600000. No nueva medición, SLA, latencia de D o limitador operativo acreditados. Sólo F-05.02, otros criterios/VM conservados."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-05.03",
+      "from": "pending",
+      "to": "done",
+      "creditAdded": "1/2",
+      "evidence": "evidence/s1-20261103/f05-03-negativos/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f05-03-negativos/review/DICTAMEN-F0503.md",
+      "scopeChanged": false,
+      "closureMethod": "independent_reconciliation_of_existing_RCKEY_negative_tests_and_unchanged_integration_failure_path",
+      "reason": "Categorías negativas cubiertas por L2d26+8 y mapeo/preservación de destino L2f;21referencias y seis fuentes contrastadas. Sin falsos recuentos KDF, fuzzing exhaustivo o nuevas ejecuciones. Sólo F-05.03; recuperación portable/F05completo y D conservados."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-05.04",
+      "from": "pending",
+      "to": "done",
+      "creditAdded": "1/2",
+      "evidence": "evidence/s1-20261103/f05-04-portable/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f05-04-portable/review/DICTAMEN-F0504.md",
+      "scopeChanged": false,
+      "closureMethod": "independent_review_of_real_cross_Windows_offline_key_recovery_AAD_and_standard_service_token",
+      "reason": "Recuperación del anillo sintético en otroWindows, AAD de dos factores preservada bajo token estándar real, material incompleto rechazado antes de escribir, dump separado y limpieza comprobada. Sólo checkpoint portable; F-05.05 e hitos del resultado completo intactos. D sin operaciones."
+    },
+    {
+      "date": "2026-11-03",
+      "checkpoint": "F-05.05",
+      "from": "pending",
+      "to": "done",
+      "creditAdded": "1/2",
+      "evidence": "evidence/s1-20261103/f05-05-cierre/RESULTADOS.md",
+      "review": "evidence/s1-20261103/f05-05-cierre/review/DICTAMEN-F0505.md",
+      "scopeChanged": false,
+      "closureMethod": "independent_review_of_restored_application_database_and_real_Program_MFA_login_in_TestServer",
+      "reason": "Ocho casos WindowsPG17.11 con DB45restaurada/material importado y endpoints reales. Sesiones/desafíos restaurados revocados por código real; TOTP/CSRF/replay/negativos y origen invariable. Sólo cierre técnico; implementación/integración/adopción operativas pendientes. D/E intactos."
     }
   ]
 }

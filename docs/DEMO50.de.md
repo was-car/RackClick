@@ -1,0 +1,11 @@
+# Optionale Inventarsammlung mit 50 synthetischen Kunden
+
+Dieses Repository enthält [DEMO-50-CLIENTES-01](../DEMO-50-CLIENTES-01/) mit 50 fiktiven Kunden sowie Standorten, Räumen, Racks, Geräten, Ports und physischen Verbindungen. Repository herunterladen oder klonen und anschließend `DEMO-50-CLIENTES-01/VER-50-CLIENTES.html` im Browser öffnen. Suche und Detailansicht zeigen die Kunden; deren JSON-Dateien können heruntergeladen werden. Der Betrachter läuft lokal ohne Datenbankzugriff.
+
+`manifest.json` enthält pro Kunde Dateiname, Größe und SHA256. `SHA256SUMS.txt` fixiert alle Sammlungsdateien außer sich selbst. `coverage-matrix.json` ordnet die historischen 868 Profil-/Revisionspaare den Instanzen und Verbindungen zu. Der aktuelle Anwendungskatalog enthält 884 Revisionen für877 kommerzielle Modelle. Die Sammlung belegt deshalb nicht alle aktuellen Profile. Die ursprüngliche 506-Modell-Auswahl ist weiterhin im Katalog enthalten.
+
+Die Sammlung enthält ausschließlich Inventar: keine Benutzer, Passwörter, Sitzungen, MFA-Faktoren oder Datenbank-Verbindungszeichenfolgen. Sie ist weder ein PostgreSQL-Dump noch eine vollständige Sicherung mit Sicherheitsdaten. JSON-Dateien nicht in Datenbankverzeichnisse kopieren oder über bestehende Installationen laden. Die [Quelldemo mit zehn Kunden](GETTING-STARTED.de.md) bleibt der Standard; Zugangsdaten werden neu erzeugt, MFA ist ausdrücklich deaktiviert. Demo50-Reproduktion und Import gehören zu einem getrennten isolierten Laborablauf, auf Spanisch dokumentiert in [LABORATORIO-50-CLIENTES.md](LABORATORIO-50-CLIENTES.md) und [CARGADOR-DEMO50-02.md](CARGADOR-DEMO50-02.md). Diese Quellveröffentlichung behauptet keine Verfügbarkeit in einem installierten Paket.
+
+Herstellerfotos und externe Referenzrepositories sind ausgeschlossen. Gerätedarstellungen sind interaktiver Anwendungscode. Vergebene Objektnamen werden nicht automatisch übersetzt.
+
+`development/examples/demo50-replay43.json` enthält den API-Replay nur mit Inventar (2.553 Befehle), fixiert auf SHA256 `a3b44a37d8ca81f2f13d515d26905a520af8f09ffb2cfe498f97d06367bf423a`. Der historische Windows-Importer erfordert ausdrücklich einen leeren Server mit **Schema43** und lehnt Schema45 ab. Diese Veröffentlichung passt den Importer nicht an und erlaubt kein Laden auf einem bestehenden Server.

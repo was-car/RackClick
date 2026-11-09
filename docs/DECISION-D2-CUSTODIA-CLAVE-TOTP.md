@@ -1,5 +1,9 @@
 # D2 · Custodia de la clave TOTP · versión 2
 
+**Límites registrados03.11.2026:** [F-03.03](D2-LIMITES-AMENAZA-F03-03.md) precisa que DPAPI LocalMachine no aísla del administrador local/SYSTEM ni del servicio comprometido. F-03 completa la decisión documental con custodia confirmada y condiciones F-03.02; no acredita implementación, aceptación operativa o una nueva aprobación de riesgos. El cuerpo histórico permanece debajo.
+
+**Adenda03.11.2026:** La especificación vigente de las condiciones de revisión está en [F-03.02](D2-CONDICIONES-TECNICAS-F03-02.md), con recuperación restringida, perfil RCKEYv1 y publicación disco/DB. Custodia confirmada; política45/exención global vigente. El cuerpo v2 siguiente es histórico, no describe nuevas operaciones ya implementadas ni manda desactivar el proveedor en D.
+
 **Confirmación de Wascar · 25.10.2026:** custodia, ubicación del almacén por instancia y recuperación aprobadas expresamente. Wascar custodia el sobre cifrado fuera del servidor/backups y su contraseña en medios separados. Restablecimiento web con security.manage y MFA completado; emergencia por códigos o procedimiento local, siempre reenrolamiento antes de acceso completo. [Decisiones vigentes](DECISIONES-MFA-CONFIRMADAS-25-10-2026.md). Quedan implementación y condiciones técnicas de la revisión; no otra aprobación de arranque. La propuesta v2 que sigue se conserva como cuerpo histórico; sus menciones de decisión pendiente de Wascar quedan superadas por esta confirmación. MFA aún no disponible para usuarios.
 
 Fecha: 23.10.2026. Estado: **propuesta v2 de Claude, corrigiendo los seis hallazgos de `docs/REVISION-D2-CODEX.md`.** Pendiente de revisión de Codex sobre esta versión y de confirmación de Wascar. No implementada. La v1 queda superada.

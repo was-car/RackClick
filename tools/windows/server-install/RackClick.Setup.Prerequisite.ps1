@@ -58,7 +58,7 @@ function Install-SetupCrt {
         $archiveStream=[IO.File]::Open($archive,'Open','Read','Read')
         $hash=[Security.Cryptography.SHA256]::Create()
         try{$actual=([BitConverter]::ToString($hash.ComputeHash($archiveStream))).Replace('-','').ToLowerInvariant()}finally{$hash.Dispose()}
-        if($actual -cne 'b9564d390b266cd3e03316f5981dc4f9f53aab8e4fb218c0ee43c0428b6f5df6'){throw 'crt_archive_hash_mismatch'}
+        if($actual -cne 'b9336b50e4460166595c63d4e1631eb64e206214906b047e326939d62e9dc521'){throw 'crt_archive_hash_mismatch'}
         $archiveStream.Position=0
         Add-Type -AssemblyName System.IO.Compression
         $zip=New-Object IO.Compression.ZipArchive($archiveStream,[IO.Compression.ZipArchiveMode]::Read,$true)

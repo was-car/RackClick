@@ -385,7 +385,8 @@ def build():
     lines.extend([
         "## Progreso y cierre de esta consolidación", "",
         f"**{points}/100 del cierre restante**, misma base "
-        f"{ledger['baseline_id']},53resultados/280subpasos/23acreditados. "
+        f"{ledger['baseline_id']}, {registry['metric']['sourceTasks']} resultados / "
+        f"{registry['metric']['checkpoints']} subpasos / {registry['metric']['doneCheckpoints']} acreditados. "
         "**No es porcentaje global del producto.** Registrar pendientes, "
         "descargar modelos o regenerar esta hoja no suma implementación.", "",
         "El cierre de esta consolidación es documental: ninguna función, "

@@ -54,8 +54,15 @@ APPLICATION_SCHEMA43_SQL_SUMS_SHA256 = "e2cb5728431bfa51bf66d2d4b17760a8d70a3d66
 APPLICATION_SCHEMA45_SQL_SHA256 = "528a03d2efc939d1cea631b1caa9f3e6a445e44257fa757f87a95691acfb6933"
 APPLICATION_SCHEMA45_SQL_INVENTORY_SHA256 = "75b9a378560072c841afea83d305384780244bdb8b258c39de0cf29d17359930"
 APPLICATION_SCHEMA45_SQL_SUMS_SHA256 = "b623c46ba133d515765ad74bfaf6f7d1d8acdb4d784bbe84296b95e4e0557c56"
+# F0401 writer integrated into the same closed SQL-protected schema45 family.
+APPLICATION_SCHEMA45_MFA_SHA256 = "a2ec1c7d3570593297a63b672ee485489e49ed0658ff49f6d2ef585803f6a8af"
+APPLICATION_SCHEMA45_MFA_INVENTORY_SHA256 = "cfaf7ea2629c9bafcfa550bac07dedaad3ec1062a5e006f692c28bb915c4ec52"
+APPLICATION_SCHEMA45_MFA_SUMS_SHA256 = "cac5516551740a24eef010a3157d691f2e61ab4bdaad69da3a1a7dd02cc470d2"
 
 APPLICATION_PROFILES = {
+    APPLICATION_SCHEMA45_MFA_SHA256: {"name": "45-sql", "files": {"server": 55, "frontend": 18}, "bytes": 25870874,
+                                      "metadata": {"inventory.json": APPLICATION_SCHEMA45_MFA_INVENTORY_SHA256,
+                                                   "SHA256SUMS.txt": APPLICATION_SCHEMA45_MFA_SUMS_SHA256}},
     APPLICATION_SCHEMA45_SQL_SHA256: {"name": "45-sql", "files": {"server": 55, "frontend": 18}, "bytes": 25867806,
                                       "metadata": {"inventory.json": APPLICATION_SCHEMA45_SQL_INVENTORY_SHA256,
                                                    "SHA256SUMS.txt": APPLICATION_SCHEMA45_SQL_SUMS_SHA256}},
@@ -150,7 +157,7 @@ def require(ok: bool, code: str) -> None:
 
 def application_schema(manifest_sha256: str) -> int:
     require(manifest_sha256 in APPLICATION_PROFILES, "application_pin_mismatch")
-    if manifest_sha256 == APPLICATION_SCHEMA45_SQL_SHA256:
+    if manifest_sha256 in (APPLICATION_SCHEMA45_SQL_SHA256, APPLICATION_SCHEMA45_MFA_SHA256):
         return 45
     if manifest_sha256 in (APPLICATION_SCHEMA43P3_SHA256, APPLICATION_SCHEMA43_SQL_SHA256):
         return 43
@@ -353,8 +360,13 @@ def collect_application(manifest_path: Path, expected_sha: str) -> tuple[list[Pa
     distributions = manifest.get("distributions")
     require(isinstance(distributions, dict) and set(distributions) == {"server", "frontend"}, "application_inventory_invalid")
     if profile['name'] == '45-sql':
-        require(manifest_path == ROOT / '.local/distribution45/sql-01/manifest.json', "application_root_invalid")
-        require(manifest.get('profileId') == 'schema45-sql-protected-01', "application_profile_mismatch")
+        pinned_45 = {
+            APPLICATION_SCHEMA45_SQL_SHA256: ('.local/distribution45/sql-01/manifest.json', 'schema45-sql-protected-01'),
+            APPLICATION_SCHEMA45_MFA_SHA256: ('.local/distribution45/mfa-store-01/manifest.json', 'schema45-mfa-store-01'),
+        }
+        expected_path, expected_profile = pinned_45[expected_sha]
+        require(manifest_path == ROOT / expected_path, "application_root_invalid")
+        require(manifest.get('profileId') == expected_profile, "application_profile_mismatch")
         candidate = clean_path(manifest_path.parent, directory=True)
     elif profile['name'] == '43-sql':
         require(manifest_path == ROOT / '.local/sql-integracion-12/distribution/manifest.json',

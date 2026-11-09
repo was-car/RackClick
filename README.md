@@ -20,9 +20,11 @@ Follow the **[Windows source-demo guide](docs/GETTING-STARTED.en.md)**. It cover
 
 The example contains **10 synthetic customers, 68 racks, 311 devices, 5,408 ports and 623 connections**. It contains inventory only, without accounts, sessions or MFA factors. Each start creates a separate local PostgreSQL lab and random credentials. The demo uses HTTP on loopback and explicitly disables MFA; it is not the Windows service installer or a network deployment.
 
-## Development status · 3 November 2026
+An additional **[50-customer synthetic inventory collection](docs/DEMO50.en.md)** includes sites, rooms, racks, devices, ports and connections, plus a searchable HTML viewer and file hashes. It covers the historical **868 profile/revision pairs of schema 43**, while the current catalogue contains 884 revisions. It is optional inventory data, not a PostgreSQL backup, and is not loaded automatically by the ten-customer source demo.
 
-The current source schema is **45**. The application has been updated on an existing Windows test installation with HTTPS, automatic service startup and backup checks; its inventory and security data were preserved. A clean New/Restore installation and post-reboot verification of this latest package are still pending. Previous Windows tests do not replace those checks.
+## Development status · 9 November 2026
+
+The current source schema is **45**. This update includes the reviewed MFA key-store writer correction from internal candidate 16 and its Windows operator sources. The previous schema45 update was tested on an existing Windows installation. **Candidate16 still needs a clean native New/Restore installation and post-reboot acceptance**; source and isolated PostgreSQL tests do not replace them. Operational portable MFA recovery, emergency procedures and rotation remain pending.
 
 Offline parity, recovery, performance and final QA continue under the [master roadmap](docs/HOJA-DE-RUTA-MAESTRA.md). Discovery through SNMP/LLDP and real identity federation are future scope. This is a private development source snapshot, not a final accepted production release.
 
@@ -35,7 +37,8 @@ Offline parity, recovery, performance and final QA continue under the [master ro
 | `development/frontend/` | Interface, interactive device profiles and frontend tests |
 | `development/server/` | Domain, HTTP server, SQL migrations and server tests |
 | `development/hardware/` | Catalogue inputs and model references |
-| `development/examples/` | Synthetic inventory examples |
+| `development/examples/` | Original ten-customer source-demo inventory |
+| `DEMO-50-CLIENTES-01/` | Optional50-customer inventory collection, viewer and coverage matrix |
 | `tools/` | Build, validation, demo and Windows operator sources |
 | `docs/` | Guides, contracts, decisions and roadmap |
 | `reference/` | Adopted offline reference used by the build |

@@ -106,7 +106,13 @@ try {
     if ($manifest.schema -eq 15 -and $digest -cne '294b61577ed7aa8fe68ddb1ecd6c4f11a20b4f03935c11a22404009aec6a00fb') {Stop-DistributionCheck 'manifest_distribution_unsupported'}
     if ($manifest.schema -eq 43 -and $digest -cnotin @('eb274f1f82deb9936c69214fae07e4188275063cf35ec775fe41d560a1806830','d352c04381cd4f1954aa43735e540970b295f231106560c5c9880c7ee1dc78db','29685419d0746df89777a5da72d25f5b7ac0e571e30decec1888787fe5f0f950')) {Stop-DistributionCheck 'manifest_distribution_unsupported'}
     if ($digest -ceq '29685419d0746df89777a5da72d25f5b7ac0e571e30decec1888787fe5f0f950' -and $manifest.profileId -cne 'schema43-sql-protected-01') {Stop-DistributionCheck 'manifest_distribution_unsupported'}
-    if ($manifest.schema -eq 45 -and ($digest -cne '528a03d2efc939d1cea631b1caa9f3e6a445e44257fa757f87a95691acfb6933' -or $manifest.profileId -cne 'schema45-sql-protected-01')) {Stop-DistributionCheck 'manifest_distribution_unsupported'}
+    if ($manifest.schema -eq 45) {
+        $profiles45=@{
+            '528a03d2efc939d1cea631b1caa9f3e6a445e44257fa757f87a95691acfb6933'='schema45-sql-protected-01'
+            'a2ec1c7d3570593297a63b672ee485489e49ed0658ff49f6d2ef585803f6a8af'='schema45-mfa-store-01'
+        }
+        if (-not $profiles45.ContainsKey($digest) -or $manifest.profileId -cne $profiles45[$digest]) {Stop-DistributionCheck 'manifest_distribution_unsupported'}
+    }
     $serverCount=if ($manifest.schema -eq 45) {$profile45Server.Count} elseif ($manifest.schema -eq 43) {$profile43Server.Count} elseif ($manifest.schema -eq 15) {$profile15Server.Count} elseif ($manifest.schema -eq 14) {$profile14Server.Count} else {9+$manifest.schema}
     $declared=@{server=(Get-DeclaredDistribution $manifest.distributions.server $serverCount);frontend=(Get-DeclaredDistribution $manifest.distributions.frontend)}
     foreach ($name in @('RackClick.Server.dll','RackClick.Server.runtimeconfig.json','RackClick.Server.deps.json','Npgsql.dll')) {

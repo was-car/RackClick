@@ -59,7 +59,7 @@ function Read-SetupPlan([string]$Path) {
 function Assert-SetupPayload([string]$Root) {
     Assert-SetupNoReparse $Root
     $manifest=[IO.File]::ReadAllText((Join-Path $Root 'payload.json'))|ConvertFrom-Json -ErrorAction Stop
-    if($manifest.schemaVersion-ne1-or$manifest.kind-cne'RackClickServerSetup'-or$manifest.bundleArchiveSha256-cne'b9564d390b266cd3e03316f5981dc4f9f53aab8e4fb218c0ee43c0428b6f5df6'){throw 'setup_payload_invalid'}
+    if($manifest.schemaVersion-ne1-or$manifest.kind-cne'RackClickServerSetup'-or$manifest.bundleArchiveSha256-cne'b9336b50e4460166595c63d4e1631eb64e206214906b047e326939d62e9dc521'){throw 'setup_payload_invalid'}
     $seen=New-Object 'Collections.Generic.HashSet[string]' ([StringComparer]::OrdinalIgnoreCase)
     foreach($file in $manifest.files){
         if($file.path-cnotmatch'^[a-zA-Z0-9_. /-]+$'-or$file.path-match'(^|/)\.\.?(/|$)'-or$file.path.StartsWith('/')-or-not$seen.Add($file.path)){throw 'setup_payload_path_invalid'}

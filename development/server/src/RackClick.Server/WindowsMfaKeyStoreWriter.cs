@@ -19,9 +19,9 @@ namespace RackClick.Server;
 // la publicación y el borrado actúan sobre el identificador verificado, nunca sobre el nombre. Un objeto que ya no coincide se
 // conserva y se declara como residuo.
 // Investigación previa: evidence/s1-20261026/mfa-l2c-claude/INVESTIGACION-PREVIA.md.
-// Límites: el renombrado no tiene atomicidad documentada; hay una ventana mínima entre la creación de una carpeta y la captura
-// de su identidad, y entre la comprobación de identidad y el cambio de ACL; el creador debe ser un principal de confianza; sólo
-// se trata NTFS (identidad de 64 bits).
+// F-04.01: cada objeto nace con DACL protegida explícita. No se cambia ninguna ACL por ruta después de crearlo.
+// Límites: no se afirma durabilidad del directorio ni atomicidad disco/DB. Persiste la ventana entre crear una carpeta y
+// capturar su identidad; el creador debe ser un principal de confianza; sólo NTFS (identidad de 64 bits).
 [SupportedOSPlatform("windows")]
 internal static class WindowsMfaKeyStoreWriter
 {
@@ -53,7 +53,7 @@ internal static class WindowsMfaKeyStoreWriter
     // Crea el almacén de una instalación. Lanza MfaKeyStoreCreationException; si queda algo propio sin retirar, lo declara en Residue.
     // beforeOwnFolderCreation y beforePublish son puntos de ensayo para las pruebas; en producción no se usan.
     private static void CreateCore(string instancesRoot, Guid installationId, SecurityIdentifier readerSid,
-        IReadOnlyCollection<SecurityIdentifier> trustedPrincipals, Action? beforePublish, Action? beforeOwnFolderCreation, StagePreparation stage)
+        IReadOnlyCollection<SecurityIdentifier> trustedPrincipals, Action? beforePublish, Action? beforeOwnFolderCreation, StagePreparation stage, Action<string, bool>? afterObjectCreated, Action? afterPublish)
     {
         if (!Path.IsPathFullyQualified(instancesRoot)) throw Invalid("la raíz debe ser absoluta");
         var root = Path.GetFullPath(instancesRoot);
@@ -76,16 +76,17 @@ internal static class WindowsMfaKeyStoreWriter
         var tracked = new List<Tracked>();
         try
         {
-            EnsureFolder(root, trusted, readerSid, reader, tracked);
+            EnsureFolder(root, trusted, readerSid, reader, tracked, afterObjectCreated);
             beforeOwnFolderCreation?.Invoke();
-            var installationEntry = EnsureFolder(installation, trusted, readerSid, reader, tracked);
+            var installationEntry = EnsureFolder(installation, trusted, readerSid, reader, tracked, afterObjectCreated);
             var staging = Path.Combine(installation, StagingPrefix + Guid.NewGuid().ToString("N"));
-            var stagingEntry = TryCreateOwnedDirectory(staging) ?? throw Creation(MfaKeyStoreCreationErrorKind.CreationFailed,
+            var stagingEntry = TryCreateOwnedDirectory(staging, trusted, readerSid) ?? throw Creation(MfaKeyStoreCreationErrorKind.CreationFailed,
                 "mfa_key_store_staging_exists: el nombre de staging ya existe; no se reutiliza");
             tracked.Add(stagingEntry);
-            ProtectVerified(stagingEntry, trusted, readerSid);
-            stage(stagingEntry, trusted, readerSid, reader, tracked);
-            Publish(stagingEntry, installationEntry, keys, tracked, beforePublish);
+            afterObjectCreated?.Invoke(stagingEntry.Path, true);
+            ValidateCreatedFolder(stagingEntry, reader);
+            stage(stagingEntry, trusted, readerSid, reader, tracked, afterObjectCreated);
+            Publish(stagingEntry, installationEntry, keys, tracked, beforePublish, afterPublish);
         }
         catch (MfaKeyStoreCreationException ex)
         {
@@ -108,20 +109,20 @@ internal static class WindowsMfaKeyStoreWriter
 
     // Etapa de preparación del staging: recibe el objeto de staging ya creado y validado, y escribe los archivos del almacén.
     private delegate void StagePreparation(Tracked stagingEntry, SecurityIdentifier[] trusted, SecurityIdentifier readerSid,
-        WindowsMfaKeyFileReader reader, List<Tracked> tracked);
+        WindowsMfaKeyFileReader reader, List<Tracked> tracked, Action<string, bool>? afterObjectCreated);
 
     // Crea el almacén de una instalación con una clave generada (versión inicial). Lanza MfaKeyStoreCreationException; si queda
     // algo propio sin retirar, lo declara en Residue. beforeOwnFolderCreation y beforePublish son puntos de ensayo de las pruebas.
     public static void CreateInitialStore(string instancesRoot, Guid installationId, SecurityIdentifier readerSid,
-        IReadOnlyCollection<SecurityIdentifier> trustedPrincipals, Action? beforePublish = null, Action? beforeOwnFolderCreation = null) =>
+        IReadOnlyCollection<SecurityIdentifier> trustedPrincipals, Action? beforePublish = null, Action? beforeOwnFolderCreation = null, Action<string, bool>? afterObjectCreated = null, Action? afterPublish = null) =>
         CreateCore(instancesRoot, installationId, readerSid, trustedPrincipals, beforePublish, beforeOwnFolderCreation,
-            (stagingEntry, trusted, sid, reader, tracked) => StageStore(installationId, stagingEntry, trusted, sid, reader, tracked));
+            (stagingEntry, trusted, sid, reader, tracked, observed) => StageStore(installationId, stagingEntry, trusted, sid, reader, tracked, observed), afterObjectCreated, afterPublish);
 
     // Crea un almacén nuevo con material importado (MFA-L2f): ring canónico validado por MfaKeyRing.Parse y una clave de 32 bytes
     // por versión del anillo. Las claves de entrada no se modifican ni se ponen a cero. Todo se valida antes de tocar el disco.
     internal static void CreateStoreFromMaterial(string instancesRoot, Guid installationId, SecurityIdentifier readerSid,
         IReadOnlyCollection<SecurityIdentifier> trustedPrincipals, byte[] ringJson, IReadOnlyList<(int Version, byte[] Key)> keys,
-        Action? beforePublish = null, Action? beforeOwnFolderCreation = null)
+        Action? beforePublish = null, Action? beforeOwnFolderCreation = null, Action<string, bool>? afterObjectCreated = null, Action? afterPublish = null)
     {
         if (ringJson is null || keys is null) throw Invalid("material ausente");
         MfaKeyRing ring;
@@ -150,14 +151,14 @@ internal static class WindowsMfaKeyStoreWriter
         }
 
         CreateCore(instancesRoot, installationId, readerSid, trustedPrincipals, beforePublish, beforeOwnFolderCreation,
-            (stagingEntry, trusted, sid, reader, tracked) => StageMaterial(installationId, ringJson, ordered, stagingEntry, trusted, sid, reader, tracked));
+            (stagingEntry, trusted, sid, reader, tracked, observed) => StageMaterial(installationId, ringJson, ordered, stagingEntry, trusted, sid, reader, tracked, observed), afterObjectCreated, afterPublish);
     }
 
     // Escribe el material importado: el anillo tal como se validó y una clave protegida con su entropía de versión por cada versión.
     private static void StageMaterial(Guid installationId, byte[] ringJson, (int Version, byte[] Key)[] keys, Tracked stagingEntry,
-        SecurityIdentifier[] trusted, SecurityIdentifier readerSid, WindowsMfaKeyFileReader reader, List<Tracked> tracked)
+        SecurityIdentifier[] trusted, SecurityIdentifier readerSid, WindowsMfaKeyFileReader reader, List<Tracked> tracked, Action<string, bool>? afterObjectCreated)
     {
-        var ringEntry = CreateExclusiveFile(Path.Combine(stagingEntry.Path, MfaKeyRing.RingFileName), ringJson, tracked);
+        var ringEntry = CreateExclusiveFile(Path.Combine(stagingEntry.Path, MfaKeyRing.RingFileName), ringJson, tracked, trusted, readerSid, afterObjectCreated);
         var keyEntries = new List<Tracked>(keys.Length);
         foreach (var (version, key) in keys)
         {
@@ -175,11 +176,8 @@ internal static class WindowsMfaKeyStoreWriter
             }
             var keyFile = KeyFileBytes(installationId, version, blob);
             MfaKeyRing.ParseKeyFile(keyFile, installationId, version);
-            keyEntries.Add(CreateExclusiveFile(Path.Combine(stagingEntry.Path, MfaKeyRing.KeyFileName(version)), keyFile, tracked));
+            keyEntries.Add(CreateExclusiveFile(Path.Combine(stagingEntry.Path, MfaKeyRing.KeyFileName(version)), keyFile, tracked, trusted, readerSid, afterObjectCreated));
         }
-
-        ProtectVerified(ringEntry, trusted, readerSid);
-        foreach (var keyEntry in keyEntries) ProtectVerified(keyEntry, trusted, readerSid);
 
         // Mismas reglas que el lector aprobado: carpeta, propietario, DACL e identidad de cada archivo.
         reader.RequireSafeFolder(stagingEntry.Path);
@@ -189,7 +187,7 @@ internal static class WindowsMfaKeyStoreWriter
 
     // Prepara los archivos en el staging: clave generada, protegida y verificada antes de escribir nada.
     private static void StageStore(Guid installationId, Tracked stagingEntry, SecurityIdentifier[] trusted, SecurityIdentifier readerSid,
-        WindowsMfaKeyFileReader reader, List<Tracked> tracked)
+        WindowsMfaKeyFileReader reader, List<Tracked> tracked, Action<string, bool>? afterObjectCreated)
     {
         var key = RandomNumberGenerator.GetBytes(MfaKeyRing.KeyBytes);
         try
@@ -212,11 +210,8 @@ internal static class WindowsMfaKeyStoreWriter
             MfaKeyRing.Parse(ring, installationId);
             MfaKeyRing.ParseKeyFile(keyFile, installationId, InitialVersion);
 
-            var ringEntry = CreateExclusiveFile(Path.Combine(stagingEntry.Path, MfaKeyRing.RingFileName), ring, tracked);
-            var keyEntry = CreateExclusiveFile(Path.Combine(stagingEntry.Path, MfaKeyRing.KeyFileName(InitialVersion)), keyFile, tracked);
-            ProtectVerified(ringEntry, trusted, readerSid);
-            ProtectVerified(keyEntry, trusted, readerSid);
-
+            var ringEntry = CreateExclusiveFile(Path.Combine(stagingEntry.Path, MfaKeyRing.RingFileName), ring, tracked, trusted, readerSid, afterObjectCreated);
+            var keyEntry = CreateExclusiveFile(Path.Combine(stagingEntry.Path, MfaKeyRing.KeyFileName(InitialVersion)), keyFile, tracked, trusted, readerSid, afterObjectCreated);
             // Mismas reglas que el lector aprobado: carpeta, propietario, DACL e identidad de cada archivo.
             reader.RequireSafeFolder(stagingEntry.Path);
             reader.ReadValidated(ringEntry.Path, MfaKeyRing.MaxRingFileBytes);
@@ -230,8 +225,9 @@ internal static class WindowsMfaKeyStoreWriter
 
     // Publicación ligada al objeto validado: el renombrado se hace sobre el identificador del staging comprobado. Antes se
     // comprueban la identidad de los ancestros y de cada archivo propio. Si algo no coincide, se rechaza sin publicar.
-    private static void Publish(Tracked stagingEntry, Tracked installationEntry, string keys, List<Tracked> tracked, Action? beforePublish)
+    private static void Publish(Tracked stagingEntry, Tracked installationEntry, string keys, List<Tracked> tracked, Action? beforePublish, Action? afterPublish)
     {
+        var renamed = false;
         try
         {
             beforePublish?.Invoke();
@@ -250,6 +246,14 @@ internal static class WindowsMfaKeyStoreWriter
             // Renombrado sobre el identificador verificado, con destino absoluto. El nombre relativo a un identificador de padre
             // falla con ERROR_INVALID_PARAMETER en las mediciones (sonda temporal), así que no se usa.
             RenameByHandle(stagingHandle, keys);
+            renamed = true;
+            // Después del rename nunca se desmonta parcialmente un almacén publicado. Conservar las
+            // identidades y sus rutas reales permite declarar el residuo sin borrar por nombre.
+            var stagePath = stagingEntry.Path;
+            foreach (var entry in tracked.Where(entry => ReferenceEquals(entry, stagingEntry) ||
+                         entry.Path.StartsWith(stagePath + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase)))
+                entry.PreservePublished(keys + entry.Path[stagePath.Length..]);
+            afterPublish?.Invoke();
             // Antes de devolver éxito, el destino debe contener el objeto validado: misma identidad que el staging.
             using var published = OpenVerified(keys, true, stagingEntry.Identity, FileReadAttributes)
                 ?? throw new MfaKeyStoreCreationException(MfaKeyStoreCreationErrorKind.PublishFailed,
@@ -259,13 +263,16 @@ internal static class WindowsMfaKeyStoreWriter
         {
             throw;
         }
-        catch (IOException ex) when (Exists(keys))
+        catch (IOException ex) when (!renamed && Exists(keys))
         {
             throw Creation(MfaKeyStoreCreationErrorKind.AlreadyExists,
                 "mfa_key_store_exists: el destino apareció durante la publicación; no se reemplaza", ex);
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
         {
+            if (renamed)
+                throw new MfaKeyStoreCreationException(MfaKeyStoreCreationErrorKind.PublishFailed,
+                    "mfa_key_store_publish_unverified: almacén publicado conservado; comprobar antes de continuar", ex, [keys]);
             throw Creation(MfaKeyStoreCreationErrorKind.PublishFailed, "mfa_key_store_publish_failed: no se pudo publicar el almacén", ex);
         }
     }
@@ -273,13 +280,14 @@ internal static class WindowsMfaKeyStoreWriter
     // Carpeta de la cadena: si la crea esta llamada, es propia (se registra su identidad); si ya existía, se valida y no se
     // adopta para limpieza ni se cambia su ACL.
     private static Tracked EnsureFolder(string path, SecurityIdentifier[] trusted, SecurityIdentifier readerSid,
-        WindowsMfaKeyFileReader reader, List<Tracked> tracked)
+        WindowsMfaKeyFileReader reader, List<Tracked> tracked, Action<string, bool>? afterObjectCreated)
     {
-        var created = TryCreateOwnedDirectory(path);
+        var created = TryCreateOwnedDirectory(path, trusted, readerSid);
         if (created is not null)
         {
             tracked.Add(created);
-            ProtectVerified(created, trusted, readerSid);
+            afterObjectCreated?.Invoke(created.Path, true);
+            ValidateCreatedFolder(created, reader);
             return created;
         }
         if (File.Exists(path)) throw Invalid("un ancestro existe como archivo: " + Path.GetFileName(path));
@@ -315,9 +323,10 @@ internal static class WindowsMfaKeyStoreWriter
     }
 
     // Creación exclusiva de carpeta: CreateDirectoryW falla con ERROR_ALREADY_EXISTS si ya existe, y entonces no es propia.
-    private static Tracked? TryCreateOwnedDirectory(string path)
+    private static Tracked? TryCreateOwnedDirectory(string path, SecurityIdentifier[] trusted, SecurityIdentifier readerSid)
     {
-        if (!CreateDirectoryW(path, IntPtr.Zero))
+        using var security = new CreationSecurity(isDirectory: true, trusted, readerSid);
+        if (!CreateDirectoryW(path, security.Pointer))
         {
             var code = Marshal.GetLastWin32Error();
             if (code is ErrorAlreadyExists or ErrorFileExists) return null;
@@ -334,9 +343,10 @@ internal static class WindowsMfaKeyStoreWriter
     }
 
     // Creación exclusiva de archivo (CREATE_NEW). La identidad se toma del identificador de creación, antes de escribir.
-    private static Tracked CreateExclusiveFile(string path, byte[] content, List<Tracked> tracked)
+    private static Tracked CreateExclusiveFile(string path, byte[] content, List<Tracked> tracked, SecurityIdentifier[] trusted, SecurityIdentifier readerSid, Action<string, bool>? afterObjectCreated)
     {
-        using var handle = CreateFileW(path, GenericWrite | FileReadAttributes, FileShareRead, IntPtr.Zero, CreateNew,
+        using var security = new CreationSecurity(isDirectory: false, trusted, readerSid);
+        using var handle = CreateFileW(path, GenericWrite | FileReadAttributes, FileShareRead, security.Pointer, CreateNew,
             FileAttributeNormal | FileFlagOpenReparsePoint, IntPtr.Zero);
         if (handle.IsInvalid)
             throw Creation(MfaKeyStoreCreationErrorKind.CreationFailed,
@@ -346,18 +356,19 @@ internal static class WindowsMfaKeyStoreWriter
         RequireKind(info, isDirectory: false, path);
         var entry = new Tracked(path, isDirectory: false, owned: true, IdentityOf(info));
         tracked.Add(entry);
+        afterObjectCreated?.Invoke(path, false);
         RandomAccess.Write(handle, content, 0);
+        RandomAccess.FlushToDisk(handle);
         return entry;
     }
 
-    // Antes de cambiar la ACL de un objeto propio se comprueba que sigue siendo el creado.
-    private static void ProtectVerified(Tracked entry, SecurityIdentifier[] trusted, SecurityIdentifier readerSid)
+    // Sólo valida: el descriptor se aplicó en la llamada nativa de creación, nunca con SetAcl posterior.
+    private static void ValidateCreatedFolder(Tracked entry, WindowsMfaKeyFileReader reader)
     {
-        using var verified = OpenVerified(entry.Path, entry.IsDirectory, entry.Identity, FileReadAttributes)
+        using var verified = OpenVerified(entry.Path, true, entry.Identity, FileReadAttributes)
             ?? throw Creation(MfaKeyStoreCreationErrorKind.ValidationFailed,
-                "mfa_key_store_identity_changed: el objeto ya no es el creado; no se cambia su ACL");
-        if (entry.IsDirectory) ProtectFolder(entry.Path, trusted, readerSid);
-        else ProtectFile(entry.Path, trusted, readerSid);
+                "mfa_key_store_identity_changed: el objeto ya no es el creado");
+        reader.RequireSafeFolder(entry.Path);
     }
 
     // Retira lo propio: cada objeto se borra sólo si, al abrirlo por ruta, su identidad coincide con la registrada.
@@ -499,25 +510,53 @@ internal static class WindowsMfaKeyStoreWriter
         }
     }
 
-    private static void ProtectFolder(string path, SecurityIdentifier[] trusted, SecurityIdentifier readerSid)
+    // SECURITY_ATTRIBUTES contiene un descriptor autorrelativo protegido. El kernel lo aplica al crear
+    // y asigna el propietario desde el token; no se fuerza el SID del operador ni se heredan handles.
+    private sealed class CreationSecurity : IDisposable
     {
-        const InheritanceFlags inherit = InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit;
-        var security = new DirectorySecurity();
-        security.SetAccessRuleProtection(true, false);
-        foreach (var sid in trusted)
-            security.AddAccessRule(new FileSystemAccessRule(sid, FileSystemRights.FullControl, inherit, PropagationFlags.None, AccessControlType.Allow));
-        security.AddAccessRule(new FileSystemAccessRule(readerSid, FileSystemRights.ReadAndExecute, inherit, PropagationFlags.None, AccessControlType.Allow));
-        new DirectoryInfo(path).SetAccessControl(security);
+        private readonly IntPtr _descriptor;
+        public IntPtr Pointer { get; }
+
+        public CreationSecurity(bool isDirectory, SecurityIdentifier[] trusted, SecurityIdentifier readerSid)
+        {
+            FileSystemSecurity security = isDirectory ? new DirectorySecurity() : new FileSecurity();
+            security.SetAccessRuleProtection(true, false);
+            var inherit = isDirectory ? InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit : InheritanceFlags.None;
+            foreach (var sid in trusted)
+                security.AddAccessRule(new FileSystemAccessRule(sid, FileSystemRights.FullControl, inherit,
+                    PropagationFlags.None, AccessControlType.Allow));
+            security.AddAccessRule(new FileSystemAccessRule(readerSid, FileSystemRights.ReadAndExecute, inherit,
+                PropagationFlags.None, AccessControlType.Allow));
+            _descriptor = Allocate(security.GetSecurityDescriptorBinaryForm());
+            try
+            {
+                Pointer = Marshal.AllocHGlobal(Marshal.SizeOf<SecurityAttributes>());
+                Marshal.StructureToPtr(new SecurityAttributes
+                {
+                    Length = Marshal.SizeOf<SecurityAttributes>(), Descriptor = _descriptor, InheritHandle = 0,
+                }, Pointer, false);
+            }
+            catch
+            {
+                if (Pointer != IntPtr.Zero) Marshal.FreeHGlobal(Pointer);
+                Marshal.FreeHGlobal(_descriptor);
+                throw;
+            }
+        }
+
+        public void Dispose()
+        {
+            Marshal.FreeHGlobal(Pointer);
+            Marshal.FreeHGlobal(_descriptor);
+        }
     }
 
-    private static void ProtectFile(string path, SecurityIdentifier[] trusted, SecurityIdentifier readerSid)
+    [StructLayout(LayoutKind.Sequential)]
+    private struct SecurityAttributes
     {
-        var security = new FileSecurity();
-        security.SetAccessRuleProtection(true, false);
-        foreach (var sid in trusted)
-            security.AddAccessRule(new FileSystemAccessRule(sid, FileSystemRights.FullControl, InheritanceFlags.None, PropagationFlags.None, AccessControlType.Allow));
-        security.AddAccessRule(new FileSystemAccessRule(readerSid, FileSystemRights.ReadAndExecute, InheritanceFlags.None, PropagationFlags.None, AccessControlType.Allow));
-        new FileInfo(path).SetAccessControl(security);
+        public int Length;
+        public IntPtr Descriptor;
+        public int InheritHandle;
     }
 
     private static byte[] RingBytes(Guid installationId, DateTimeOffset createdAt)
@@ -652,9 +691,14 @@ internal static class WindowsMfaKeyStoreWriter
     // Objeto de la cadena. Owned: lo creó esta llamada (se puede retirar). Identity: identidad registrada.
     private sealed class Tracked(string path, bool isDirectory, bool owned, FileIdentity identity)
     {
-        public string Path { get; } = path;
+        public string Path { get; private set; } = path;
         public bool IsDirectory { get; } = isDirectory;
-        public bool Owned { get; } = owned;
+        public bool Owned { get; private set; } = owned;
+        public void PreservePublished(string publishedPath)
+        {
+            Path = publishedPath;
+            Owned = false;
+        }
         public FileIdentity Identity { get; } = identity;
     }
 

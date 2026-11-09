@@ -43,5 +43,23 @@ class RoadmapReferencesTests(unittest.TestCase):
         self.config['observations'][0]['related']=['unknown-result']
         with self.assertRaisesRegex(ValueError,'invalid_related_result'):self.build(self.config)
 
+    def test_closure_footer_tracks_the_ledger_when_a_checkpoint_is_reopened(self):
+        original_load=m.load
+        original=original_load('docs/PLAN-CIERRE-RACKCLICK.json')
+        for reopen in (False, True):
+            ledger=copy.deepcopy(original)
+            if reopen:
+                step=next(s for t in ledger['tasks'] for s in t['checkpoints'] if s['status']=='done')
+                step['status']='reopened'
+            expected=sum(s['status']=='done' for t in ledger['tasks'] for s in t['checkpoints'])
+            def load(relative):
+                return ledger if relative=='docs/PLAN-CIERRE-RACKCLICK.json' else original_load(relative)
+            with patch.object(m,'load',side_effect=load):
+                outputs,registry=self.build(self.config)
+            text=next(value for path,value in outputs.items() if path.name=='HOJA-DE-RUTA-MAESTRA.md')
+            footer=text.split('## Progreso y cierre de esta consolidación',1)[1]
+            self.assertIn(f'{expected} acreditados',footer)
+            self.assertEqual(expected,registry['metric']['doneCheckpoints'])
+
 
 if __name__=='__main__':unittest.main()

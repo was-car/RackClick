@@ -6,7 +6,7 @@
   "global_product_percentage": null,
   "snapshot": "Inventario fechado del pendiente; no reinicia el trabajo ya construido.",
   "basis": "Cierre de 100 puntos del trabajo restante desde 25.10.2026; no porcentaje global del producto.",
-  "closure_points": 14.755952380952381,
+  "closure_points": 19.13095238095238,
   "total_closure_points": 100,
   "historical_map": "evidence/s1-20261025/plan-cierre-medible/MAPA-ENTREGA-ANTERIOR.json",
   "historical_78_retired": true,
@@ -20,7 +20,7 @@
       "id": "F",
       "name": "Fundamento, seguridad y MFA",
       "weight": 25,
-      "closure_points": 7.625,
+      "closure_points": 12.0,
       "children": [
         {
           "id": "F-01",
@@ -91,7 +91,7 @@
         {
           "id": "F-03",
           "name": "Registrar decisión de custodia y ubicación definitiva D2",
-          "pending_kind": "decisión de custodia/recuperación confirmada; concreción técnica pendiente",
+          "pending_kind": "cerrado documentalmente: custodia, condiciones técnicas y límites registrados",
           "weight_points": "0",
           "closed_points": 0.0,
           "checkpoints": [
@@ -104,13 +104,13 @@
             {
               "id": "F-03.02",
               "name": "Desarrollo concreta las condiciones técnicas de la revisión: recuperación restringida sin clave, límites/cabecera autenticada del KDF y publicación recuperable entre disco/DB.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "0"
             },
             {
               "id": "F-03.03",
               "name": "Registrar límites de amenaza: DPAPI LocalMachine no aísla del administrador local ni del proceso de servicio comprometido.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "0"
             }
           ]
@@ -118,20 +118,20 @@
         {
           "id": "F-04",
           "name": "Implementar proveedor TOTP Windows bajo la identidad real del servicio",
-          "pending_kind": "Proveedor real integrado en candidata10; F-04.03 cerrado, ACL/otros tokens y cierre total pendientes",
+          "pending_kind": "Cerrado técnicamente e integrado en candidata16; aceptación final pendiente",
           "weight_points": "5/2",
-          "closed_points": 0.625,
+          "closed_points": 2.5,
           "checkpoints": [
             {
               "id": "F-04.01",
               "name": "Crear almacén separado de management con ACL seguras desde el primer instante y escrituras atómicas por instalador/operador.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
               "id": "F-04.02",
               "name": "Dar sólo lectura al SID efectivo del servicio y mantener management cerrado; comprobar padres, herencia y reparse.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
@@ -143,7 +143,7 @@
             {
               "id": "F-04.04",
               "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             }
           ]
@@ -151,38 +151,38 @@
         {
           "id": "F-05",
           "name": "Implementar sobre portable autenticado y restauración de claves",
-          "pending_kind": "implementación",
+          "pending_kind": "F-05: checkpoints técnicos completos; operador, integración y aceptación pendientes",
           "weight_points": "5/2",
-          "closed_points": 0.0,
+          "closed_points": 2.5,
           "checkpoints": [
             {
               "id": "F-05.01",
               "name": "Validar magia/versión/algoritmo, tamaños, codificación canónica y límites min/max de iteraciones antes de KDF; autenticar cabecera completa como AAD.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
               "id": "F-05.02",
               "name": "Medir coste del parámetro propuesto600000 en Windows antes de fijarlo; no adoptarlo por silencio.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
               "id": "F-05.03",
               "name": "Probar contraseña errónea, alteración, truncado, datos extra, versión/algoritmo desconocidos y coste/tamaño fuera de rango.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
               "id": "F-05.04",
               "name": "Recuperar anillo en otra instancia Windows preservando AAD Systemhaus/usuario/versión o mediante reenvoltura explícita; sobre y contraseña separados del dump.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
               "id": "F-05.05",
               "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             }
           ]

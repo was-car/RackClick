@@ -20,9 +20,11 @@ Sigue la **[guía de demostración desde fuentes para Windows](docs/INSTALACION-
 
 El ejemplo contiene **10 clientes sintéticos, 68 racks, 311 equipos, 5408 puertos y 623 conexiones**. Es sólo inventario, sin cuentas, sesiones ni factores MFA. Cada arranque crea otro laboratorio PostgreSQL local con credenciales aleatorias. La demo usa HTTP en loopback y desactiva explícitamente MFA; no es el instalador del servicio Windows ni un despliegue de red.
 
-## Estado de desarrollo · 3 de noviembre de 2026
+También se incluye una **[colección adicional de 50 clientes sintéticos](docs/DEMO50.es.md)** con sitios, salas, racks, equipos, puertos y conexiones, un visor HTML con búsqueda y hashes de archivos. Cubre las **868 parejas perfil/revisión históricas del esquema 43**; el catálogo actual contiene 884 revisiones. Es inventario opcional, no un backup PostgreSQL, y la demo de diez clientes desde fuentes no lo carga automáticamente.
 
-El esquema actual de las fuentes es **45**. La aplicación se actualizó sobre una instalación Windows de prueba existente, con HTTPS, servicio automático y backups comprobados, conservando inventario y seguridad. Quedan la instalación limpia New/Restore y la comprobación tras reiniciar Windows de este paquete más reciente. Los ensayos anteriores no sustituyen esos recorridos.
+## Estado de desarrollo · 9 de noviembre de 2026
+
+El esquema actual de las fuentes es **45**. Esta actualización incluye la corrección revisada del escritor del almacén MFA de la candidata interna16 y las fuentes de los operadores Windows. La actualización 45 anterior se probó sobre una instalación Windows existente. **La candidata 16 aún necesita instalación nativa limpia New/Restore y aceptación tras reiniciar Windows**; las pruebas de fuentes y PostgreSQL aislado no sustituyen esos recorridos. Recuperación MFA portable operativa, emergencia y rotación continúan pendientes.
 
 Paridad offline, recuperación, rendimiento y QA final continúan según la [hoja de ruta maestra](docs/HOJA-DE-RUTA-MAESTRA.md). Descubrimiento SNMP/LLDP y federación real de identidades son alcance posterior. Es una selección privada de fuentes en desarrollo, no una versión final adoptada para producción.
 
@@ -35,7 +37,8 @@ Frontend **React/JavaScript**; servidor **C# / ASP.NET Core / .NET 10**; **Postg
 | `development/frontend/` | Interfaz, perfiles interactivos y pruebas frontend |
 | `development/server/` | Dominio, servidor HTTP, migraciones SQL y pruebas |
 | `development/hardware/` | Entradas del catálogo y referencias de modelos |
-| `development/examples/` | Inventarios sintéticos de ejemplo |
+| `development/examples/` | Inventario original de diez clientes para la demo desde fuentes |
+| `DEMO-50-CLIENTES-01/` | Colección opcional de 50 clientes, visor y matriz de cobertura |
 | `tools/` | Fuentes de compilación, validación, demo y operadores Windows |
 | `docs/` | Guías, contratos, decisiones y planificación |
 | `reference/` | Referencia offline adoptada que utiliza la compilación |

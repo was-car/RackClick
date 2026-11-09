@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <!-- Explicit isolated friend-test harness; never copied over the real quality suite. -->
+    <AssemblyName>RackClick.Quality.Tests</AssemblyName>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <UseAppHost>false</UseAppHost>
+    <SelfContained>false</SelfContained>
+    <RuntimeFrameworkVersion>10.0.12</RuntimeFrameworkVersion>
+    <RollForward>Disable</RollForward>
+    <Deterministic>true</Deterministic>
+    <RestorePackagesWithLockFile>false</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <Reference Include="RackClick.Server"><HintPath>$(RackClickServerDir)/RackClick.Server.dll</HintPath></Reference>
+    <Reference Include="RackClick.Domain"><HintPath>$(RackClickServerDir)/RackClick.Domain.dll</HintPath></Reference>
+    <Reference Include="Npgsql"><HintPath>$(RackClickServerDir)/Npgsql.dll</HintPath></Reference>
+    <Reference Include="Otp.NET"><HintPath>$(RackClickServerDir)/Otp.NET.dll</HintPath></Reference>
+    <Compile Include="../mfa-service-read-probe/Native.cs" Link="Reviewed/Native.cs" />
+    <Compile Include="../mfa-service-read-probe/Measure.cs" Link="Reviewed/Measure.cs" />
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>RackClickServerSha256</_Parameter1><_Parameter2>$(RackClickServerSha256)</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <Target Name="RequirePinnedAssembly" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="'$(RackClickServerDir)' == '' Or '$(RackClickServerSha256)' == ''" Text="Pinned server directory and SHA256 are required." />
+    <Error Condition="!Exists('$(RackClickServerDir)/RackClick.Server.dll')" Text="Pinned server assembly missing." />
+  </Target>
+</Project>

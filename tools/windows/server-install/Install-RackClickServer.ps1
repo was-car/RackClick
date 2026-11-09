@@ -137,6 +137,8 @@ try {
     Set-SetupProgress 'mfa_keys' 60 'Preparando custodia MFA privada; politica de 45 dias sin bloquear cuentas existentes.'
     Set-SetupMfaContentAdministrativeRead -InstancePath $setupInstance -ServiceSid $setupAccount.SID.Value
     $setupMfaResult=Initialize-SetupMfaStore -InstancePath $setupInstance -CodeRoot $setupCode -InstallationId $setupPlan.id -ServiceSid $setupAccount.SID.Value -ExpectedManifestSha256 $setupPrepared.manifestSha256 -ExpectedBundleSha256 $setupPayload.bundleArchiveSha256
+    if($setupMfaResult.applicationSchemaVersion -isnot [int] -or $setupMfaResult.applicationSchemaVersion -notin @(15,43,45)){throw 'setup_mfa_schema_receipt_invalid'}
+    $setupApplicationSchema=$setupMfaResult.applicationSchemaVersion
     Write-SetupJson (Join-Path $ReportDirectory 'mfa-initialization.json') $setupMfaResult
     Set-SetupProgress 'service' 65 'Registrando servicio Windows y acceso HTTPS de la red autorizada.'
     $setupDotnet=Join-Path $setupInstance 'content\dependencies\dotnet\dotnet.exe'
@@ -149,7 +151,7 @@ try {
     Set-SetupProgress 'readiness' 80 'Comprobando servicio y readiness HTTPS; no basta que el proceso exista.'
     $setupReady=$false;$setupWatch=[Diagnostics.Stopwatch]::StartNew()
     while($setupWatch.Elapsed.TotalSeconds-lt120){
-        try{$health=Invoke-RestMethod -Uri ($setupPreparationPlan.publicOrigin+'/health/ready') -TimeoutSec 5 -UseBasicParsing;if($health.status-eq'ready'-and$health.schemaVersion-eq43-and(Get-Service $setupPlan.serviceName).Status-eq'Running'){$setupReady=$true;break}}catch{}
+        try{$health=Invoke-RestMethod -Uri ($setupPreparationPlan.publicOrigin+'/health/ready') -TimeoutSec 5 -UseBasicParsing;if(Test-SetupMfaReadiness -Health $health -ExpectedSchema $setupApplicationSchema -ServiceStatus ([string](Get-Service $setupPlan.serviceName).Status)){$setupReady=$true;break}}catch{}
         Start-Sleep -Milliseconds 500
     }
     if(-not$setupReady){throw 'setup_https_readiness_failed'}
@@ -157,7 +159,7 @@ try {
     $setupBackup=Join-Path $setupInstance ('runtime\backups\initial-'+[guid]::NewGuid().ToString('N'))
     $setupBackupResult=Invoke-SetupServiceChild (Join-Path $setupCode 'operators\server-install\Invoke-RackClickServerRuntime.ps1') @('-Operation','Backup','-ManifestPath',(ConvertTo-SetupArgument $setupManifest),'-ExpectedManifestSha256',$setupPrepared.manifestSha256,'-BackupPath',(ConvertTo-SetupArgument $setupBackup)) 'initial-backup'
     $setupReceipt=@{schemaVersion=1;installationId=$setupPlan.id;installedUtc=[DateTime]::UtcNow.ToString('o');bootAtInstall=(Get-CimInstance Win32_OperatingSystem).LastBootUpTime.ToUniversalTime().ToString('o');serviceName=$setupPlan.serviceName;serviceSid=$setupAccount.SID.Value;accountName=$setupPlan.accountName;codeRoot=$setupCode;instancePath=$setupInstance;managementPath=$setupManagement;publicOrigin=$setupPreparationPlan.publicOrigin;manifestSha256=$setupPrepared.manifestSha256;firewallRule=$setupFirewallName;trustedCaThumbprint=$setupTrusted.Thumbprint;initialBackup=$setupBackup;backupResult=$setupBackupResult;rebootVerified=$false;productAdopted=$false}
-    $setupReceipt.applicationSchemaVersion=43
+    $setupReceipt.applicationSchemaVersion=$setupApplicationSchema
     Set-SetupProgress 'scheduled_backup' 90 'Registrando backup diario y comprobacion automatica del proximo arranque.'
     $setupTasks=Register-SetupLifecycleTasks -Credential $setupCredential -InstallationId $setupPlan.id -CodeRoot $setupCode -ManifestPath $setupManifest -ManifestSha256 $setupPrepared.manifestSha256 -ManagementPath $setupManagement
     foreach($key in $setupTasks.Keys){$setupReceipt[$key]=$setupTasks[$key]}

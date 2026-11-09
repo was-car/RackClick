@@ -1,5 +1,81 @@
 # Progreso de la entrega completa
 
+## 04.11.2026 · IntegraciónF04 en candidata16:19,13/100 sin crédito repetido
+
+El writer corregido pasa de fuentes a candidata completa16/app45 y mismaDLLRelease en16casos; se corrigen tres bloqueos de operadores45, se verificanNew/RestoreSQL45/43→45 de laboratorio y cadena completa del paquete, con [revisión independiente](../evidence/s1-20261104/f04-integracion16/review/DICTAMEN.md). [Resultado y límites](INTEGRACION-PENDIENTES-08-18-CANDIDATA16.md). Sólo cambia el hito F04.integrated_current_candidate a done; aceptación nativa pendiente. No se entrega aún operador RestoreMFA ni se modifica D/E.
+
+**0puntos adicionales**, porque F04.01/.04 ya estaban acreditados:1607/84=19,130952…/100del cierre restante;41done/237pending/2in_progress,53resultados/280checkpoints/268números y baselinev3/huella/pesos/criterios intactos. Es avance de integración real, sin contar otra vez el mismo criterio ni estimar porcentaje global. Ensayo elevado16 y coordinador/operaciónMFA/rotación/emergencia siguen pendientes.
+
+## 03.11.2026 · Paso18/F-05.05 cerrado técnicamente:19,13/100 del cierre restante
+
+DB de aplicación45 con dump/restore real y claves recuperadas: Program/TestServer y proveedorWindows reales, factores1/7 conservados, revocación de sesiones/desafíos, TOTP/CSRF/API y negativos. Ocho casos WindowsPG17.11 PASS sin omitidas, [revisión independiente favorable](../evidence/s1-20261103/f05-05-cierre/review/DICTAMEN-F0505.md). Se reutilizan F-05.01–.04; no nuevos codecs/instalación u operaciones en D/E. [Ficha y límites](PASO-018-CIERRE-RECUPERACION-PORTABLE-MFA.md).
+
+Sólo **+1/2**:1565/84→**1607/84=19,130952…/100**, redondeado **19,13**.41done/239sin cierre (237pending,2in_progress),53resultados/280checkpoints/268números, baselinev3/huella/pesos/criterios intactos. Checklist técnica F05 completa y dos hitos técnicos conciliados; implementación operativa, integración y aceptación pendientes. No acredita fence/journal/CLI/instalador/R04 ni porcentaje global nuevo/adopción. Sigue19/F-06.01.
+
+## 03.11.2026 · Paso17/F-05.04 cerrado:18,63/100 del cierre restante
+
+Recuperación portable offline real LEAO→WindowsServerE, dos factores con AAD original y token estándar real, versiones1retirada/7activa, siete casos del destino y limpieza comprobados con [revisión independiente favorable](../evidence/s1-20261103/f05-04-portable/review/DICTAMEN-F0504.md). Se reutilizaron componentes aprobados; D sin comandos, E instalado sin cambios. [Ficha y límites](PASO-017-RECUPERACION-PORTABLE-MFA.md).
+
+Sólo **+1/2 punto**:1523/84→**1565/84=18,630952…/100**, redondeado **18,63**.40cerrados/240sin cierre (238pending,2in_progress),53resultados/280checkpoints/268números y alcance/pesos/baselinev3 intactos. F-05.05 y resultado completoF05/R04 siguen abiertos; no afirma RestoreDB/login/TOTP/instalador ni custodia productiva/adopción. No es porcentaje global nuevo. Sigue18/F-05.05.
+
+## 03.11.2026 · Paso 16/F-05.03 cerrado: 18,13/100 del cierre restante
+
+Negativos RCKEY existentes conciliados con [revisión independiente favorable](../evidence/s1-20261103/f05-03-negativos/review/DICTAMEN-F0503.md).26casos/8controles históricos,21referencias y seis fuentes idénticas cubren contraseña errónea, alteración, truncado, datos extra/concatenación y perfiles fuera de rango. ContadoresKDF sólo donde instrumentados, sin inventar todoslosuint/fuzzing. Sin suites nuevas o cambios de producto/VM. [Ficha y límites](PASO-016-NEGATIVOS-SOBRE-MFA.md).
+
+Sólo **+1/2 punto**:1481/84→**1523/84 =18,130952…/100**, redondeado **18,13**.39cerrados/241sin cierre (239pending,2in_progress),53resultados/280checkpoints/268números, criterios/pesos/baselinev3/huella intactos. F-05.04/.05 y todoF05 siguen abiertos. No porcentaje global nuevo ni adopción. D/E y resultadosQA preservados sin operaciones. Sigue17/F-05.04.
+
+## 03.11.2026 · Paso 15/F-05.02 cerrado: 17,63/100 del cierre restante
+
+Medición Windows existente y decisión explícita del coste conciliadas con [revisión independiente favorable](../evidence/s1-20261103/f05-02-coste/review/DICTAMEN-F0502.md). Se conservan600000iteraciones: seis duraciones de casos Open con una derivación57–62ms, mediana59,5. Son casos completos Debug/xUnit/.NET10.0.12, no PBKDF2 aislado ni latencia de D. Fe de erratas de unidad en D2, fuentes/perfil intactos, sin nuevo benchmark/VM. [Ficha y límites](PASO-015-COSTE-PBKDF2-MFA.md).
+
+Sólo **+1/2 punto**:1439/84→**1481/84 =17,630952…/100**, redondeado **17,63**.38cerrados/242sin cierre (240pending,2in_progress),53resultados/280checkpoints/268números y huella/pesos/criterios/baselinev3 intactos. F-05.03/.04/.05 y todoF05 siguen abiertos. No porcentaje global nuevo o aceptación productiva. D/E, datos, claves/MFA y QA conservados sin operaciones. Sigue16/F-05.03.
+
+## 03.11.2026 · Paso 14/F-05.01 cerrado: 17,13/100 del cierre restante
+
+Validación RCKEY existente conciliada con [revisión independiente favorable](../evidence/s1-20261103/f05-01-sobre/review/DICTAMEN-F0501.md): cabecera, límites/codificación antes de KDF y AAD completa;25referencias/cinco fuentes exactas a las revisadas. Resultados L2d/L2e históricos reutilizados, sin nuevas suites/compilaciones u operacionesVM. [Ficha y límites](PASO-014-VALIDACION-SOBRE-MFA.md).
+
+Sólo **+1/2 punto**:1397/84→**1439/84 =17,130952…/100**, redondeado **17,13**.37cerrados/243sin cierre (241pending,2in_progress),53resultados/280checkpoints/268números y huella/pesos/criterios/baselinev3 intactos. F-05.02/.03/.04/.05 y el resultado completo siguen abiertos. No es porcentaje global nuevo ni aceptación productiva. D/E, datos, claves/MFA y QA sin operaciones. Sigue15/F-05.02.
+
+## 03.11.2026 · Paso 13/F-04.04 cerrado: 16,63/100 del cierre restante
+
+El criterio técnico completo de F-04 está cubierto con [revisión independiente favorable](../evidence/s1-20261103/f04-04-cierre/review/DICTAMEN-F0404.md). Se reutilizan creación protegida, proveedor Windows real, negativos y permisos efectivos de E;99referencias y cuatro núcleos contrastados, sin repetir pruebas de producto o VM. [Ficha y límites](PASO-013-CIERRE-PROVEEDOR-MFA.md).
+
+Sólo **+5/8 =0,625 puntos**:2689/168→**1397/84 =16,630952…/100**, redondeado **16,63**.36checkpoints cerrados/244sin cierre (242pending,2in_progress);53resultados/280checkpoints/268números, criterios, pesos y baselinev3 intactos. F-04 completa sus checkpoints técnicos, pero conserva **integración de candidata completa y aceptación final pendientes**. No se afirma una única DLL nueva ensayada ni adopción de Wascar; no es porcentaje global nuevo del producto. D/E, datos, claves y MFA sin operaciones. Sigue14/F-05.01.
+
+## 03.11.2026 · Paso 12 cerrado: 16,01/100 del cierre restante
+
+F-04.02 completado con dos cuentas estándar reales de E y [revisión independiente favorable](../evidence/s1-20261103/f04-02-permisos/ejecucion/review/DICTAMEN-F0402.md). 504 aperturas sobre la matriz fijada: 16 lecturas propias/comunes permitidas, 44 lecturas ajenas/management y 444 derechos de modificación denegados, cero inconcluyentes. Padres, herencia/reparse e invariancia contrastados; servicios/PID intactos y tarea temporal retirada. [Ficha](PASO-012-PERMISOS-MFA.md).
+
+Sólo **+5/8 = 0,625 puntos**: 323/21 → **2689/168 = 16,005952…/100**, redondeado **16,01**. 35 checkpoints cerrados y 245 sin cierre (243 pending, 2 in_progress); 53 resultados/280 checkpoints/268 números, pesos, criterios y baseline v3 intactos. F-04.04 y F-04 completo siguen abiertos. **No es porcentaje global nuevo del producto ni aceptación final.** D preservada; sin actualización de aplicación, DB, claves o MFA. Sigue 13/F-04.04.
+
+## 03.11.2026 · Paso 12 en progreso: 15,38/100 sin cambio
+
+La preparación de F-04.02 está probada y [revisada](../evidence/s1-20261103/f04-02-permisos/review/DICTAMEN-PREVIO-SONDA.md); falta medir las dos cuentas reales en E. Los 15 selftests y 9 controles independientes no sustituyen esa evidencia. [Resultado y siguiente acción](PASO-012-PERMISOS-MFA.md).
+
+**0 puntos añadidos**,323/21=15,38/100.34cerrados/246sin cierre, de ellos243pending y3in_progress. Criterios,pesos,baselinev3 y268números intactos. D conservada, sin ejecutar dentro de invitados o cambiar potencia/servicios/MFA. No porcentaje global nuevo ni cierre del paso12/F-04 completo.
+
+## 03.11.2026 · Paso 11 cerrado: 15,38/100 del cierre restante
+
+F-04.01 completado técnicamente en fuentes con [revisión independiente](../evidence/s1-20261103/f04-01-almacen/REVISION-INDEPENDIENTE.md). Se reutilizaron proveedor e instalaciones reales; se corrigieron ACL al nacimiento y fallo posterior a publicar. Regresión afectada Windows 195/195, sin omitidas; revisión con focos propios. [Resultado y límites](../evidence/s1-20261103/f04-01-almacen/RESULTADOS.md).
+
+Sólo **+5/8 = 0,625 puntos**: 2479/168 → 323/21 = 15,380952…/100, redondeado **15,38**. 34 checkpoints cerrados y 246 sin cierre; 53 resultados/280 checkpoints/268 números, pesos y criterio congelado intactos. F-04.02/.04 y la tarea completa no se acreditan. **No es porcentaje global nuevo ni adopción.**
+
+D45/E se conservan sin operaciones; no se actualizó su binario ni se cambió su MFA. La incorporación del escritor corregido a una candidata completa mantiene sus pasos Windows. Sigue el número 12/F-04.02, sin repetir el proveedor.
+
+## 03.11.2026 · F-03.03 cerrado:33subpasos,14,76/100 sin cambio
+
+[Los límites de custodia](D2-LIMITES-AMENAZA-F03-03.md) quedaron registrados con [revisión independiente](../evidence/s1-20261103/f03-03-amenazas/REVISION-INDEPENDIENTE.md). Sólo F-03.03 cambia; completa F-03 como decisión documental, con custodia25.10 ya confirmada y condiciones F-03.02. No acredita proveedor, recuperación, rotación, Windows o QA.
+
+Peso0, **+0puntos**:2479/168=14,755952…/100, redondeado14,76.33done/247sin cierre;53resultados/280checkpoints/268números, alcance y pesos intactos. No es porcentaje global nuevo ni aceptación operativa. D45/E y sus datos/MFA permanecen sin operaciones. Sigue11/F-04.01, sin repetir piezas ya existentes.
+
+
+## 03.11.2026 · F-03.02 cerrado como especificación:14,76/100 sin cambio
+
+Paso9 completado con [condiciones técnicas D2](D2-CONDICIONES-TECNICAS-F03-02.md) y [revisión independiente](../evidence/s1-20261103/f03-02-condiciones/REVISION-INDEPENDIENTE.md). Es decisión sin peso: **+0**, índice exacto2479/168 y pesos/criterios/baselinev3 intactos.32checkpoints cerrados/248sin cierre; sólo F-03.02 cambia. Los números no se renumeran; sigue10/F-03.03.
+
+Recuperación restringida sin clave, límites/AAD de RCKEYv1 y orden recuperable disco/DB quedan concretados. Se reutilizan codecs y evidencias existentes; no se implementa ni ensaya aquí emergencia/rotación/Restore. F-03 completo y los cierres F-04..F-09/R-04 no se acreditan por este documento. D45/E, datos/MFA y resultadosQA se conservan. No hay porcentaje global nuevo ni adopción.
+
+
 ## 03.11.2026 · Archivo F01 autorizado:14,76/100 del cierre
 
 Wascar aceptó el archivo administrativo del antecedente perdido con incertidumbre y reapertura. Se revisó y aplicó la enmienda limitadav3 **antes** de acreditar F-01.02/.04: +5/4=1,25,2269/168→2479/168=**14,755952…**,redondeado **14,76/100**. [Decisión](DECISION-F01-ARCHIVO-ADMINISTRATIVO-03-11-2026.md) · [Evidencia y revisión](../evidence/s1-20261103/f01-archivo-administrativo/RESULTADOS.md).

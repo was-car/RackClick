@@ -1,9 +1,13 @@
-> **02.11.2026 · Demo50 adicional preparada.** [Datos, alcance y reproducción](../../docs/LABORATORIO-50-CLIENTES.md):50clientes nuevos y868parejas perfil/revisión en laboratorio43. Es opcional, sin seguridad, y su integraciónWindows queda enpunto5. Los diez originales y el cargador15 descritos debajo se conservan; no usar ese cargador paraDemo50 ni copiar datos a una instalación existente.
+# Inventarios sintéticos
 
-# Inventario sintetico original
+## Diez clientes originales
 
-`demo-original.inventory.json` contiene solo inventario de los diez clientes ficticios aportados por Wascar, convertido desde RC9 al formato canonico del cargador. SHA256: `cbfe4b43a0148299f6f4c24a21dfcb5e21a8efd5ca2d08d552119ac0cd292bd7`.
+`demo-original.inventory.json` conserva el inventario de los diez clientes ficticios aportados por Wascar, convertido desde RC9 al formato canónico del cargador. SHA256: `cbfe4b43a0148299f6f4c24a21dfcb5e21a8efd5ca2d08d552119ac0cd292bd7`.
 
-No contiene cuentas, passwords, sesiones, factores MFA ni conexiones PostgreSQL. No es una copia completa de seguridad. No se importa a una base en uso: el cargador exige destino vacio, actor global autorizado, esquema15 y rol de ejecucion limitado.
+La [guía desde GitHub](../../docs/INSTALACION-DESDE-GITHUB.md) lo carga automáticamente en un laboratorio PostgreSQL nuevo con credenciales aleatorias. El cargador de la demo acepta únicamente sus perfiles cerrados de esquema 15/45; no importa seguridad ni modifica una base instalada.
 
-Seguir [Instalacion desde GitHub](../../docs/INSTALACION-DESDE-GITHUB.md) para cargarlo automaticamente en un laboratorio nuevo. El auxiliar conserva las identidades de inventario y genera cuentas/secretos nuevos localmente. La base actual de Wascar no se copia.
+## Cincuenta clientes adicionales
+
+[Colección Demo50, visor y alcance](../../docs/DEMO50.es.md). Los archivos están en `DEMO-50-CLIENTES-01/`, fijados por hashes y separados de la demo anterior. Sus868 parejas perfil/revisión corresponden al catálogo histórico43; el catálogo actual completo incluye884 revisiones. No usar el cargador de los diez clientes para este conjunto ni copiar archivos a una base existente.
+
+Ambos ejemplos son sólo inventario: sin usuarios, contraseñas, sesiones, factores MFA ni cadenas PostgreSQL. No equivalen a backups completos. La publicación no copia las bases actuales de Wascar.
