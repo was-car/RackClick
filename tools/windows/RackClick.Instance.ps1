@@ -31,9 +31,13 @@ function Get-InstanceRuntimeGrantsSql {
     if ($Runtime -cnotmatch '^rc_runtime_[a-f0-9]{32}$') {Stop-InstanceCheck 'runtime_role_invalid'}
     $null=Get-StageServerFileCount $Schema
     $sql="REVOKE ALL ON SCHEMA public FROM PUBLIC; GRANT USAGE ON SCHEMA public TO $Runtime; GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA public TO $Runtime;"
-    if ($Schema -in @(43,45)) {
+    if ($Schema -in @(43,45,48)) {
         $tables=(Get-InstanceCatalogTables)-join ','
         $sql+=" REVOKE ALL PRIVILEGES ON TABLE $tables FROM $Runtime; GRANT SELECT ON TABLE $tables TO $Runtime;"
+    }
+    if ($Schema -eq 48) {
+        $witness='public.app_mfa_rotation_witness,public.app_mfa_loss_startup_witness'
+        $sql+=" REVOKE ALL PRIVILEGES ON TABLE $witness FROM $Runtime; GRANT SELECT ON TABLE $witness TO $Runtime; REVOKE ALL ON SCHEMA rackclick_private FROM $Runtime; REVOKE ALL ON ALL TABLES IN SCHEMA rackclick_private FROM $Runtime;"
     }
     return $sql
 }
@@ -43,11 +47,13 @@ function Get-InstanceMissingTableRightsSql {
     if ($Runtime -cnotmatch '^rc_runtime_[a-f0-9]{32}$' -or $Owner -cnotmatch '^rc_owner_[a-f0-9]{32}$') {Stop-InstanceCheck 'runtime_role_invalid'}
     $null=Get-StageServerFileCount $Schema
     $requirements="has_table_privilege('$Runtime',c.oid,'SELECT') AND has_table_privilege('$Runtime',c.oid,'INSERT') AND has_table_privilege('$Runtime',c.oid,'UPDATE') AND has_table_privilege('$Runtime',c.oid,'DELETE')"
-    if ($Schema -in @(43,45)) {
+    if ($Schema -in @(43,45,48)) {
         $catalogue=((Get-InstanceCatalogTables | ForEach-Object {"'"+$_.Substring(7)+"'"})-join ',')
+        if ($Schema -eq 48) {$catalogue+=",'app_mfa_rotation_witness','app_mfa_loss_startup_witness'"}
         $requirements="CASE WHEN c.relname IN ($catalogue) THEN has_table_privilege('$Runtime',c.oid,'SELECT') AND NOT has_table_privilege('$Runtime',c.oid,'INSERT,UPDATE,DELETE,TRUNCATE,REFERENCES,TRIGGER') ELSE $requirements END"
     }
-    return "SELECT count(*) FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='public' AND c.relkind IN ('r','p') AND (pg_catalog.pg_get_userbyid(c.relowner)<>'$Owner' OR NOT ($requirements));"
+    $kinds=if($Schema-eq48){"'r','p','v'"}else{"'r','p'"}
+    return "SELECT count(*) FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='public' AND c.relkind IN ($kinds) AND (pg_catalog.pg_get_userbyid(c.relowner)<>'$Owner' OR NOT ($requirements));"
 }
 
 function Assert-InstancePort {
@@ -119,9 +125,11 @@ function Get-InstanceSecretNames([int]$Version) {
     Stop-InstanceCheck 'instance_manifest_invalid'
 }
 
-function Get-InstanceBackupGrantsSql([string]$BackupRole) {
+function Get-InstanceBackupGrantsSql([string]$BackupRole,[int]$Schema=45) {
     if($BackupRole-cnotmatch'^rc_backup_[a-f0-9]{32}$'){Stop-InstanceCheck 'backup_role_invalid'}
-    return "GRANT USAGE ON SCHEMA public TO $BackupRole; GRANT SELECT ON ALL TABLES IN SCHEMA public TO $BackupRole; GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO $BackupRole;"
+    $sql="GRANT USAGE ON SCHEMA public TO $BackupRole; GRANT SELECT ON ALL TABLES IN SCHEMA public TO $BackupRole; GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO $BackupRole;"
+    if($Schema-eq48){$sql+=" GRANT USAGE ON SCHEMA rackclick_private TO $BackupRole; GRANT SELECT ON TABLE rackclick_private.mfa_loss_operation,rackclick_private.mfa_loss_factor_archive TO $BackupRole;"}
+    return $sql
 }
 
 function Write-InstanceBackupProfile([string]$Private,[string]$Id,[int]$Port,[string]$Database,[string]$Role,[string]$Password) {

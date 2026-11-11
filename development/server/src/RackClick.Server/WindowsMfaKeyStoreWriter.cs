@@ -326,7 +326,7 @@ internal static class WindowsMfaKeyStoreWriter
     private static Tracked? TryCreateOwnedDirectory(string path, SecurityIdentifier[] trusted, SecurityIdentifier readerSid)
     {
         using var security = new CreationSecurity(isDirectory: true, trusted, readerSid);
-        if (!CreateDirectoryW(path, security.Pointer))
+        if (!CreateDirectoryW(ExtendedLocalPath(path), security.Pointer))
         {
             var code = Marshal.GetLastWin32Error();
             if (code is ErrorAlreadyExists or ErrorFileExists) return null;
@@ -346,7 +346,7 @@ internal static class WindowsMfaKeyStoreWriter
     private static Tracked CreateExclusiveFile(string path, byte[] content, List<Tracked> tracked, SecurityIdentifier[] trusted, SecurityIdentifier readerSid, Action<string, bool>? afterObjectCreated)
     {
         using var security = new CreationSecurity(isDirectory: false, trusted, readerSid);
-        using var handle = CreateFileW(path, GenericWrite | FileReadAttributes, FileShareRead, security.Pointer, CreateNew,
+        using var handle = CreateFileW(ExtendedLocalPath(path), GenericWrite | FileReadAttributes, FileShareRead, security.Pointer, CreateNew,
             FileAttributeNormal | FileFlagOpenReparsePoint, IntPtr.Zero);
         if (handle.IsInvalid)
             throw Creation(MfaKeyStoreCreationErrorKind.CreationFailed,
@@ -436,7 +436,7 @@ internal static class WindowsMfaKeyStoreWriter
     private static SafeFileHandle? OpenByPath(string path, bool isDirectory, uint access)
     {
         var flags = FileFlagOpenReparsePoint | (isDirectory ? FileFlagBackupSemantics : 0);
-        var handle = CreateFileW(path, access, FileShareRead | FileShareWrite | FileShareDelete, IntPtr.Zero, OpenExisting, flags, IntPtr.Zero);
+        var handle = CreateFileW(ExtendedLocalPath(path), access, FileShareRead | FileShareWrite | FileShareDelete, IntPtr.Zero, OpenExisting, flags, IntPtr.Zero);
         return handle.IsInvalid ? null : handle;
     }
 
@@ -492,6 +492,9 @@ internal static class WindowsMfaKeyStoreWriter
             Marshal.FreeHGlobal(buffer);
         }
     }
+
+    // Only the native call receives the extended prefix. Canonical paths/ACL/identity anchoring remain unchanged.
+    private static string ExtendedLocalPath(string path)=>path.Length>=248&&path.Length>=3&&path[1]==':'&&path[2]=='\\'?@"\\?\"+path:path;
 
     // Marca el objeto para borrarse al cerrar el identificador. Un directorio sólo se borra si está vacío.
     private static void MarkForDeletion(SafeFileHandle handle)
@@ -578,6 +581,21 @@ internal static class WindowsMfaKeyStoreWriter
             writer.WriteEndObject();
         }
         return stream.ToArray();
+    }
+
+    // Rotation preparation reuses the same DPAPI/format without constructing another nested store on disk.
+    internal static byte[] ProtectVersionMaterial(Guid installationId,int version,byte[] key)
+    {
+        if(installationId==Guid.Empty || version is < 1 or > 1_000_000 || key.Length!=MfaKeyRing.KeyBytes)
+            throw Invalid("invalid version material");
+        var entropy=MfaKeyRing.EntropyFor(installationId,version);
+        var blob=Protect(key,entropy);var check=Unprotect(blob,entropy);
+        try
+        {
+            if(!CryptographicOperations.FixedTimeEquals(key,check))throw Invalid("DPAPI roundtrip mismatch");
+            return KeyFileBytes(installationId,version,blob);
+        }
+        finally{CryptographicOperations.ZeroMemory(check);CryptographicOperations.ZeroMemory(blob);}
     }
 
     private static byte[] KeyFileBytes(Guid installationId, int version, byte[] protectedKey)

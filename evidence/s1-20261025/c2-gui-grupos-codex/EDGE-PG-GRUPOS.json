@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "qaTouched": false,
+  "vmTouched": false,
+  "newCluster": true,
+  "fixture": "SQL synthetic; writes under test use GUI",
+  "dllSha256": "5eb1abcf9d2f91d293bae8f1b01e94f0352ca254c0387aaa45de1c35b2a97585",
+  "browserScriptSha256": "671a05ee67d11d2b6fb4948b8ca491d5ac15240659e40f444156c2edb7659436",
+  "browserExitCode": 0,
+  "nineSqlTablesExactlyRestored": true,
+  "persistenceAfterServerRestart": true,
+  "postgresql": "17.11",
+  "labStopped": true,
+  "serversStopped": true,
+  "elapsedSeconds": 22.27,
+  "inputsUnchanged": true
+}

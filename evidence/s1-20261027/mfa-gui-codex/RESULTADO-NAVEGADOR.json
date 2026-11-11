@@ -1,0 +1,190 @@
+{
+  "result": "PASS",
+  "checks": [
+    "Password login enters enrollment without session, API authority or automatic start.",
+    "Enrollment instructions are available in English, German and Spanish.",
+    "Invalid TOTP is rejected; enrollment remains restricted and retryable.",
+    "Valid code creates confirmed API session and removes enrollment material.",
+    "Next login requires verification; reload discards the transient challenge without granting access.",
+    "Fresh second-factor verification creates a session, with EN/DE/ES instructions and no persisted secrets."
+  ],
+  "responses": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/app.css",
+      "status": 200
+    },
+    {
+      "path": "/vendor/react.production.min.js",
+      "status": 200
+    },
+    {
+      "path": "/vendor/react-dom.production.min.js",
+      "status": 200
+    },
+    {
+      "path": "/app.js",
+      "status": 200
+    },
+    {
+      "path": "/assets/fonts/ibm-plex-sans-latin-400-normal.woff2",
+      "status": 200
+    },
+    {
+      "path": "/assets/fonts/ibm-plex-sans-latin-600-normal.woff2",
+      "status": 200
+    },
+    {
+      "path": "/assets/fonts/space-grotesk-latin-600-normal.woff2",
+      "status": 200
+    },
+    {
+      "path": "/assets/fonts/ibm-plex-mono-latin-400-normal.woff2",
+      "status": 200
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 401
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "status": 202
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 401
+    },
+    {
+      "path": "/api/v1/auth/mfa/enroll/start",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/auth/mfa/enroll/confirm",
+      "status": 401
+    },
+    {
+      "path": "/api/v1/auth/mfa/enroll/confirm",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/systemhaus",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/customers",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/auth/logout",
+      "status": 204
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "status": 202
+    },
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/app.css",
+      "status": 200
+    },
+    {
+      "path": "/vendor/react.production.min.js",
+      "status": 200
+    },
+    {
+      "path": "/vendor/react-dom.production.min.js",
+      "status": 200
+    },
+    {
+      "path": "/app.js",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 401
+    },
+    {
+      "path": "/assets/fonts/ibm-plex-sans-latin-400-normal.woff2",
+      "status": 200
+    },
+    {
+      "path": "/assets/fonts/space-grotesk-latin-600-normal.woff2",
+      "status": 200
+    },
+    {
+      "path": "/assets/fonts/ibm-plex-mono-latin-400-normal.woff2",
+      "status": 200
+    },
+    {
+      "path": "/assets/fonts/ibm-plex-sans-latin-600-normal.woff2",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "status": 202
+    },
+    {
+      "path": "/api/v1/auth/mfa/verify",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/customers",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/systemhaus",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me/port-colors",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me/category-colors",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me/preferences",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 200
+    }
+  ],
+  "browser": "Edg/156.0.4314.42",
+  "provider": "synthetic-test-DI",
+  "transport": "real-Kestrel-loopback-HTTP",
+  "serviceTokenTested": false,
+  "productionOrQaEnabled": false
+}

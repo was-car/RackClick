@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "edition": "16",
+  "applicationSchema": 45,
+  "files": {
+    "bundle": {
+      "path": ".local/f04-integration16-20261104/RackClick-Bundle-45-16.zip",
+      "sha256": "b9336b50e4460166595c63d4e1631eb64e206214906b047e326939d62e9dc521",
+      "bytes": 119038694
+    },
+    "payload": {
+      "path": ".local/f04-integration16-20261104/packaging/.local/Servidor-16.zip",
+      "sha256": "90a8e17ecdd4ef6da8cf81cbfdfd72c462d29b8fa9c3efbd1b5326549a93f9d8",
+      "bytes": 119272252
+    },
+    "wrapper": {
+      "path": ".local/f04-integration16-20261104/packaging/.local/RackClick-Servidor-16.zip",
+      "sha256": "a862565da3e8351d734206b87886e4d8653b3cf4526661496012acc37901345a",
+      "bytes": 119292322
+    },
+    "payloadManifest": {
+      "path": ".local/f04-integration16-20261104/payload/RackClick-Instalador/payload.json",
+      "sha256": "92079ab27d60635cb484be04ae314d995193731e24bba3af2439e411393e69f6",
+      "bytes": 21199
+    },
+    "applicationDll": {
+      "path": ".local/f04-integration16-20261104/publish/RackClick.Server.dll",
+      "sha256": "c05742f9079705c6cd97a1f97f89133183fc72e554dac0b2d52678c548921c2f",
+      "bytes": 5248000
+    }
+  },
+  "payloadFiles": 117,
+  "installed": false,
+  "adopted": false,
+  "VMOperations": 0
+}

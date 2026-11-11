@@ -11,11 +11,12 @@ internal static class Program
     private const string PlanSha = "cbfe4b43a0148299f6f4c24a21dfcb5e21a8efd5ca2d08d552119ac0cd292bd7";
     private const string SourceSha = "cb52d27990a82d3f2dc12bf731bcbe6c1586575643f301e4b040b250f31374d0";
     // Closed profiles: preserve the historical15 loader contract and explicitly
-    // admit the reviewed45 source demo. Never accept an arbitrary later schema.
+    // admit the reviewed45 and48 source demos. Never accept an arbitrary later schema.
     private static readonly IReadOnlyDictionary<string, string> SchemaProfiles = new Dictionary<string, string>
     {
         [string.Join(',', Enumerable.Range(1, 15))] = "a09be30a6b72512a6fc0cc7a1d9419aec6a08f5c6b9ff8a603161c6285d022be",
-        [string.Join(',', Enumerable.Range(1, 45))] = "50649cc57003f7c7f797e980072a4c52e425875a114d59bee63b7eeddf85b4d5"
+        [string.Join(',', Enumerable.Range(1, 45))] = "50649cc57003f7c7f797e980072a4c52e425875a114d59bee63b7eeddf85b4d5",
+        [string.Join(',', Enumerable.Range(1, 48))] = "68d935a07f744b0696ee09ff53710b3c79b2786826993fefdf7dfa9cb77cae61"
     };
     private static int CommitPhase;
     private sealed record Table(string Name, string Columns);

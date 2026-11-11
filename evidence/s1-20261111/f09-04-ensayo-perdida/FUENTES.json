@@ -1,0 +1,81 @@
+{
+  "baselineFiles": 232,
+  "unchanged": 221,
+  "modified": [
+    {
+      "path": "development/server/src/RackClick.Server/MfaRotationStartupGuard.cs",
+      "before": "e01b9bbb2c0607d381fdb836c430d6dc908a5fdefb95607257f1c0e625d469c5",
+      "after": "9894a4dcb0bc54577e520412708da72e352ffb8229c618e8873a052b06ede646"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyStoreWriter.cs",
+      "before": "e08909fd66e2d994475926848b82298340c95e5ec9e4776f6de017d064587385",
+      "after": "5f1054257363aff7288d90e587eb9a88204c06ed03f3405f6a358bddf85833eb"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaMaintenanceStore.cs",
+      "before": "d510254f31f658833988e1bba4f5e76d8612ea0b5a6f724b388ca99cd4731e67",
+      "after": "164a5b47854a45d139ed9c74be68e5b4b45a1b4c78a8bc4a9ee1b1b7196713b9"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Program.cs",
+      "before": "f4a73d0e9386d96ccbb33d7fc4860b37e381dc181aec0b135f7c0f1ce7eccebe",
+      "after": "c5386ca7d6729227f5792254b2a139232ff7e49f1eaaf4377a121187214de6b8"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaMaintenanceCoordinator.cs",
+      "before": "0d4e88d3fcba78a9e5af0b35445b02b3d56d2cd54c7c6799c6d8017910ae5a46",
+      "after": "a3f13c034fd5c37b85deebbb4971858d627d26c14f43b0c9efd01bb05b259147"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaRotationCoordinator.cs",
+      "before": "2eb8b4bbda50be7ef9a21242ef5f5fdbdb0b6e7d686e8a089bba5201b162adf6",
+      "after": "54ccfaca8eaf88c52ca44c549de3cd264a9ca31945bb1992402a2f550fc5caf3"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/SchemaMigrations.cs",
+      "before": "596f9f712ab24f1824f70eb8e569de4c2b8184420e2a2a1346877e827430ade8",
+      "after": "0edfc6137243d4983cae6ace490700537d3d49d7caaed1ebfef9520752b4b634"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaEmergencyRecoveryCommand.cs",
+      "before": "4e6e10cdb530c9771b49ab87b8ee318623f3c1ffca2006a96e592fbfcaee16e5",
+      "after": "eba8aea815781c0007d56923fa62d265a8c83fa899d220e48d2fdb8447b29b7f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaLossResetCoordinator.cs",
+      "before": "ea6e0f5e82b7d6dab862311ebb32b55f1cd67f010ce68dc6b4f2d8d4e346023e",
+      "after": "bc08787e84cd75019203e06ef6ab7fe081b730fb2c33d44f64bac197a624ed9a"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaMaintenanceStore.Loss.cs",
+      "before": "9eac691523d9326837736903cec23d2a4b1f07bce9dfdebdcf8af0fcfb6b16b7",
+      "after": "89fe2226f1e0b34cb34228a510d6fceb5c069ad27328ada77438f4bcdea1ebaa"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaLossResetDatabase.cs",
+      "before": "0b0c41e45af47b21457b9bf1210b52afba0574184684bf0641941e979b5b0e16",
+      "after": "e1f9713435f490dd2071677e77d39d5736ae0dec413cb2f7c90b20d0c000bb57"
+    }
+  ],
+  "added": [
+    {
+      "path": "development/server/src/RackClick.Server/MfaLossRecoveryCommand.cs",
+      "sha256": "702bfb81507ccc34539ec04fb4dcfe5e26919c1adc91d7ed7bf1c896aeeea834"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaLossStartupGuard.cs",
+      "sha256": "1cafaeda525b586e8d0bd7981b284f0393d36b53e8b6e3430623f56fb539a4b7"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaMaintenanceStore.LossStartup.cs",
+      "sha256": "39df3cd1221ae0ade3e4cb5bcecd160e9b132584f943b452fc7e1ebc4f7dcd7a"
+    },
+    {
+      "path": "development/server/database/048-mfa-loss-startup.sql",
+      "sha256": "e730ac80059aac986a086aa6c7737bdd0c3f8a24c3c653cc365c2ea9c3d7e210"
+    }
+  ],
+  "totalProductFiles": 236,
+  "serverDllSha256": "d9366dbe9be377d4147417fd8c51e40aaa302b82c8d3bd9b830c67d68980b909"
+}

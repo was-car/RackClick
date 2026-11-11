@@ -1,5 +1,133 @@
 # RackClick — continuidad ChatGPT → Codex local
 
+## 12.11.2026 · A operativa después del reinicio con50clientes EN/DE/ES
+
+Wascar reinicióWindows enA; servicioSTD arrancóAuto, HTTPSnormal48/JS21d85…coincidente,50nombres y8conteos releídos:180racks/1563equipos/20665puertos/2207conexiones. PolíticaMFA activa/gracia45/exención global/disponibilidad yactivación propia contrastadasAPI; factor nuevoWascar aúnnone, no modificado poragente. Backup posterior yaejecutado0 conrolSTD. AccesoWeb ynota sincontraseñas creados enEscritorio. D/E ysnapshotspreservados.
+
+Primera verificaciónSYS devolviópostboot_https_health_failed unos11sdespuésboot; causa puntual no demostrada, LastTaskResult1 conservado. Comprobador oficialmanual posteriorpostboot_verified, seguido de relecturaAPI completa. No convertirlo enéxitoautomático. Un auxiliar deobservación perdióOrigin alimportar parámetros delcargador:se corrigió sólosucontextoURL; no se repitió importación ni comandos. Se conserva elfallo original17/Checkylecturas, junto conrecibos de finalización.
+
+[Acceso y entrega18](INSTALACION18-ESTADO-Y-ACCESO.md). Entrega18 preparada/revisada sin coldNew18completo; A esNew17 másfinalización acotada. Sinadopción final ni cambios26,63/100 delcierrestante/F0905. Lasnotasanteriores de“postboot pendiente” sonhistóricas yquedan superadas eneste alcance.
+
+
+## 12.11.2026 · A nueva con aplicación48 y50clientes; entrega18 corregida, postboot pendiente
+
+Wascar preparó VM limpia/snapshot; única encendidaRackClick-W02-A, sin servicios/cuentas/carpetasRackClick, Server2025noDC. NEW17 creó base/cuentas/clave nuevas, servicioSTD/HTTPS48 ybackup inicial; el broker falló después porStrictMode propagado al importarlector, campoerrorTypeopcional. Fallo originalconservado. Rojo1/1→verde5/5 yrevisor4/4; lectorahora enámbitohijo sinrelajarRestore. Edición18 nueva con mismobundle/app/datos, revisión completa73/117/2021;45focos finalesPASS. No se declara coldNew18 ejecutado.
+
+FinalizadorA acotado/revisado: sólo tareas y recibo faltantes, Check/Run realesPASS, hashmanifest+dumpinicial325753bytes, cuentaSTD, mismoPID, backup diarioejecutado0. PrimerCheck delauxiliar falló sinmutaciones porcolisión$backup deprivilegios; diezrefsrenombradas yrevisor reprodujo/corrigió conalcancedinámicoreal. No reinstalación, borrado, recreacióncuentas/DB/claves niD/E.
+
+Cargaúnica de2553comandos víaHTTPS normal: demo50_loaded_verified,50nombres contrastadosAPI,17EN/17DE/16ES;66sitios/88edificios/226salas/180racks/1563equipos/2869grupos/20665puertos/2207conexiones. Copia posterior oficialbajorolSTD: post_demo_backup_verified/exit0. NoMFA cambiado ni seguridad importada. Reinicio manual pedido aWascar; postboot/datos tras arranque pendientes.
+
+Entrega privada18 SHA512fcaf6aa255e6ff6ae9610daa722f8b9d135972d33d5a249b9d42ad90625ed. [Acceso/manual/estado](INSTALACION18-ESTADO-Y-ACCESO.md). Métrica26,63/100 del cierre restante sin cambio; noF0905 niadopción ni porcentajeglobalnuevo. Sin commits/push. El bloque17siguiente conserva el estado histórico de preparación antes del ensayo y queda superado por esta adenda.
+
+
+## 11.11.2026 · Instalación nueva17/48 yDemo50 trilingüe preparados
+
+A petición de Wascar, candidataNEW48 integrada desde el productoF0904 revisado (DLLd9366dbe;513/514fuentes coinciden, sóloREADME posterior;193/193fuentes frontend coinciden conF0805). No compilación ni dependencias nuevas. Perfil48 cerrado76archivos, bundle2021, payload117, envoltorio5 y entrega completa73miembros. Runtimelee catálogo/testigos sinDDL ni acceso privado; backupmínimo3 tieneSELECT sobre las dos tablas privadas. NEW48 y backup/restauración deldump en otra base comprobados PostgreSQL17.11. RechazoRestore48 en padre antesCRT/cuentas y enOfflineBundle; cambioRed48 sin habilitar.
+
+Demo50 edición03:17empresasEN/17DE/16ES, sólo nombres/idiomas cambiados;50inventarios y cables intactos. Datosfuente43→destino48 explícito, MFA/CSRF/TLS/permisos/servidorvacío/no retry conservados. Catálogo884disponible yDemo868/506 distinguidos. Entrega privada `.local/install17-20261111/entrega-final/RackClick-Windows-Completo-17.zip`, SHA256`3d97ad8d24b3e1858f0d92d17556766f6947242effdad34bd3f0e20f9dc0c9b3`. Manual autónomo [INSTALACION17-COMPLETA.html](INSTALACION17-COMPLETA.html). Revisión independiente favorable para ensayo, noinstalaciónacreditada.
+
+Pruebas coordinador:58regresión empaquetado/guardas/históricos,9focos finales (incluye4contratos48 y5colector),2PG real PASS. Datos:12invariantes+26seguridad PASS (repetición26 no cuenta doble). Revisor:15sondas propias y cadena completa bytea byte. Fallos de preparación/fixture conservados. Sin acceso/operaciónD/E ni VM; destino nuevo pendiente de Wascar. Instalación completa, carga2553comandos y comprobación postboot/nombres/API/navegador pendientes. QA-176 queda planned; resultados del usuario conservados.
+
+[Evidencia](../evidence/s1-20261111/instalacion17-demo50/RESULTADOS.md). Índice26,63/100 del cierre restante sin cambio; no acreditaF0905 ni los seis hitos completos, no nuevo porcentaje global. Sin commits/push/publicación.
+
+
+## 11.11.2026 · Paso32/F-09.04 cerrado técnicamente:26,63/100 del cierre restante
+
+F-09.01–.04 técnicos: CLI local de pérdida con cinco fases, finalización/recibo/guarda y proyección48 mínima no actualizable. Ensayo real en instancia separada de E: pérdida de toda su clave v1, arranque rechazado sin listener, mantenimiento SYSTEM, servidor estándar, regreso HTTPS mediante enrolamiento restringido/TOTP2, credenciales antiguas revocadas e inventario sentinel conservado. Regresión378/378 y revisión independiente40/40 reutilizadas; revisión nativa final favorable por lectura de fuentes/recibos. 221/232fuentes previas conservadas,11modificadas/4nuevas,total236; sin dependencias nuevas. D sin acceso; dos servicios previos de E Running con iguales PID, propios detenidos/puertos y tareas0. Fallos del arnés preservados, cliente HTTPAdmin separado de mantenimientoSYSTEM. F-09.05, seis hitos completos, instalador/Restore48, mantenimientoAdmin, custodia externa y QA/adopción pendientes.
+
+[Resultados y revisión](../evidence/s1-20261111/f09-04-ensayo-perdida/RESULTADOS.md). Sólo F-09.04 cambia pending→done: **+1/2**,2195/84→**2237/84=26,630952…**, redondeado **26,63/100 del cierre restante**. 55done/223pending/2in_progress;53resultados/280checkpoints/268números,baselinev3 y pesos intactos. No se suman pruebas o fases como puntos ni se crea porcentaje global nuevo del producto. Siguiente paso33/F-09.05.
+
+## 11.11.2026 · Paso31/F-09.03 cerrado técnicamente:26,13/100 del cierre restante
+
+F-09.01–.03 técnicos: loss-reset reutilizado, revocación real de credenciales anteriores y auditoría Windows dedicada sin secretos; no appactor inventado. Corregida primera aplicación: recuentos archivo/pending/finish y testigo fresh/hashes antes de commit, con rollback de resultados SQL incompletos. Rojo limpio14=5PASS/9FAIL→verde14/14; final52/52 sin omitidas. Único global conserva identidad/permisos/gracia y recupera administración sólo tras TOTP nuevo; last_admin_required vigente. Revisión independiente acotada y registrada.231/232fuentes previas conservadas,1adaptador DB corregido,1test nuevo; SQL047/Program/dependencias/GUI intactos. Fence conservado, CLI aún no operativa; sin cambio D/E. F-09.04/.05 y seis hitos completos pendientes; observación Edge F0805 abierta.
+
+[Resultados y revisión](../evidence/s1-20261111/f09-03-revocacion-auditoria/RESULTADOS.md). Sólo F-09.03 pasa pending→done: **+1/2**,2153/84→**2195/84=26,130952…**, redondeado **26,13/100 del cierre restante**.54done/224pending/2in_progress;53resultados/280checkpoints/268números,baselinev3,criterios/pesos intactos. Los seis hitos completos F-09 permanecen pendientes. No se suman pruebas, variantes o repeticiones como puntos ni se crea un porcentaje global del producto. Siguiente paso32/F-09.04.
+
+
+## 11.11.2026 · Paso30/F-09.02 cerrado técnicamente:25,63/100 del cierre restante
+
+F-09.01/.02 técnicos: autoridad Windows y protocolo interno Prepare/Export/Apply/Publish para pérdida explícita con censo fiable. Conserva claves legibles/blobs opacos y archivo cifrado completo privado; retira factores perdidos, fuerza required/pending, preserva cuentas/permisos/gracia45 e inventario. Sobre autenticado y pin privado inmutable; witness completamente vinculado, rollback/reentrada y publicación verificada con fence retenido. SQL047 aditiva,224fuentes previas conservadas/4modificadas/4nuevas,2tests nuevos. Regresión144/144 PASS sin omitidas y revisión independiente acotada. CLI no habilitada (transition_unavailable tras autorización)/0operaciones; no instalador47, servicio recuperado ni positivo elevado/SID real. D/E intactos. F-09.03–.05 y seis hitos completos pendientes; observación Edge F0805 abierta.
+
+[Resultados y revisión](../evidence/s1-20261111/f09-02-material-perdida/RESULTADOS.md). Sólo F-09.02 pasa pending→done: **+1/2**,2111/84→**2153/84=25,630952…**, redondeado **25,63/100 del cierre restante**.53done/225pending/2in_progress;53resultados/280checkpoints/268números,baselinev3,criterios/pesos intactos. Los seis hitos completos F-09 permanecen pendientes; no se acredita F0903 por la seguridad mínima inseparable ni se cuentan pruebas como puntos. No es porcentaje global nuevo del producto. Siguiente paso31/F-09.03.
+
+
+## 11.11.2026 · Paso29/F-09.01 cerrado técnicamente:25,13/100 del cierre restante
+
+F-09.01 técnico: nueva compuerta CLI --mfa-emergency-recovery antes de host/config/SQL, autoridad de token Windows real SYSTEM o Administradores elevados; impersonación, token estándar/filtrado/no consultable y autoridad falsa por claims/env no autorizan. Incluso autorizado devuelve transition_unavailable/exit1/0operaciones/ninguna sesión hasta F-09.02/.03. Program es el único archivo previo modificado; helper y tres tests nuevos,226fuentes previas conservadas. Rojo10fallos por rama ausente, final76/76, HTTP3/3 y regresión74+7 PASS sin omitidas, mutación detectada por5fallos; revisor79/79 y8sondas propias PASS. Positivos SYSTEM/elevado reales no ejecutados; política simulada separada de token nativo estándar. Sin GUI/SQL/dependencias/instaladores/VM o cambios D/E. F-09.02–.05 y los seis hitos completos pendientes. Observación Edge de F0805 sigue abierta.
+
+[Resultados y revisión](../evidence/s1-20261111/f09-01-autorizacion-local/RESULTADOS.md). Sólo F-09.01 pasa pending→done: **+1/2**,2069/84→**2111/84=25,130952…**, redondeado **25,13/100 del cierre restante**.52done/226pending/2in_progress;53resultados/280checkpoints/268números,baselinev3,criterios/pesos intactos. Los seis hitos completos F-09 permanecen pendientes y no se añade crédito por casos/mutaciones/builds. No es porcentaje global nuevo del producto. Siguiente paso30/F-09.02.
+
+
+## 11.11.2026 · Paso28/F-08.05 cerrado técnicamente: 24,63/100 del cierre restante
+
+F-08.01–.05 cerrados técnicamente y revisados en conjunto. Se conserva la generación expresa de diez códigos propios, entrega inicial única, hashes salados y canje a enrolamiento restringido: sólo TOTP nuevo permite sesión/API, también para único global; revocación/auditoría/rollback y concurrencia real contrastados. Build corregido F0804 sin recompilar, 227 archivos y cuatro tests previos conservados; foco12/12 y revisor6/6 PASS, sin omitidas. Frontend privado18 archivos: positivos Edge de dashboard8 y recuperación4 en corridas distintas; primer conjunto1PASS/1FAIL y recuperación intermitente sin causa acreditada, siete intentos preservados, sin presentar batería íntegramente verde. Sin cambios de producto, guiones compartidos, SQL, dependencias o D/E. Cuatro hitos técnicos acreditados; integración de candidata, aceptación/custodia y emergencia F-09 siguen pendientes.
+
+[Resultados y revisión](../evidence/s1-20261111/f08-05-cierre/RESULTADOS.md). Sólo F-08.05 pasa pending→done: **+1/2**, 2027/84→**2069/84 = 24,630952…**, redondeado **24,63/100 del cierre restante**. 51 done / 227 pending / 2 in_progress; 53 resultados / 280 checkpoints / 268 números, baseline v3, criterios y pesos intactos. La conciliación de los cuatro hitos técnicos F-08 no suma puntos adicionales. No es un porcentaje global nuevo del producto. Siguiente paso29/F-09.01; integración de candidata, aceptación/custodia y observación de automatización Edge pendientes.
+
+
+## 11.11.2026 · Paso 27/F-08.04 cerrado técnicamente: 24,13/100 del cierre restante
+
+F-08.01–.04 cerrados técnicamente. Único global por ambas capacidades recupera con contraseña/código, conserva identidad/autoridad y vuelve a administrar sólo tras confirmar un factor nuevo; repone códigos y conserva la guarda del último administrador de seguridad. Se corrigió un fallo preexistente D2: Desactivar ya no cancela pending (409 y CanDisable=false), sin alterar gracia45/exención de factor activo no pendiente. Base de 227: 226 archivos conservados y MfaAccountManagement corregido, una prueba nueva con 5 casos. Rojo D2 0/2 → verde 2/2; regresión de 49 seleccionados = 48 PASS / 0 FAIL / 1 navegador opcional omitido, conciliada por discovery sin ejecución nueva; 68 Node PASS. Revisor distinto: 5/5 y sondas roja/verde. D/E intactos, sin despliegue. F-08.05, custodia, emergencia F-09, candidata instalada y aceptación pendientes.
+
+[Resultados y revisión](../evidence/s1-20261111/f08-04-ultimo-administrador/RESULTADOS.md). Sólo F-08.04 pasa pending→done: **+1/2**, 1985/84→**2027/84 = 24,130952…**, redondeado **24,13/100 del cierre restante**. 50 done / 228 pending / 2 in_progress; 53 resultados / 280 checkpoints / 268 números, baseline v3 y criterios/pesos intactos. No hay crédito adicional por el hallazgo o por contar pruebas. F-08.05 e hitos operativos de F-08 permanecen pendientes; no es porcentaje global nuevo del producto.
+
+
+## 11.11.2026 · Paso 26/F-08.03 cerrado técnicamente: 23,63/100 del cierre restante
+
+F-08.01–.03 cerrados técnicamente. Se conserva el canje existente: una sola transacción consume el conjunto antiguo, revoca sesiones/desafíos y exige reenrolamiento con auditoría sin valores originales. Dos escenarios nuevos fuerzan canjes realmente solapados (mismo código o dos distintos), un ganador y seis relaciones en la transacción ganadora bajo rol runtime; otra cuenta y gracia45 intactas. Foco 9/9 PASS y repetición independiente 3/3, con rollback forzado y negativos existentes. Producto 227 archivos conservado; HTTP/Node/Edge anteriores reutilizados, no repetidos como nuevos. D/E intactos. Custodia, último administrador, F-08.04/.05, candidata instalada y aceptación pendientes.
+
+[Resultados y revisión](../evidence/s1-20261111/f08-03-consumo/RESULTADOS.md). Sólo F-08.03 pasa pending→done: **+1/2**, 1943/84→**1985/84 = 23,630952…**, redondeado **23,63/100 del cierre restante**. 49 done / 229 pending / 2 in_progress; 53 resultados / 280 checkpoints / 268 números, baseline v3 y criterios/pesos intactos. Los hitos de F-08 y los checkpoints F-08.04/.05 permanecen pendientes; no es porcentaje global nuevo del producto.
+
+
+## 11.11.2026 · Paso 25/F-08.02 cerrado técnicamente: 23,13/100 del cierre restante
+
+F-08.01 y F-08.02 cerrados técnicamente. Se conserva la generación revisada; contraseña y código de recuperación sólo emiten un desafío enroll nuevo, sin sesión API. Dos casos HTTP nuevos (cuenta ordinaria/global) comprueban lecturas/escrituras denegadas tras canje, start, confirmación inválida y otro login, incluso con cookie renombrada o sesión antigua. Sólo confirmar el factor nuevo emite sesión/CSRF nuevos. Gracia45 conservada. Foco final 6/6 y Node 20/20 PASS; revisor distinto repite 2/2. Producto 227 archivos conservado, sin nuevo login/política. D/E intactos. F-08.03–.05, custodia, último administrador, candidata instalada y aceptación pendientes.
+
+[Resultados y revisión](../evidence/s1-20261111/f08-02-recuperacion/RESULTADOS.md). Sólo F-08.02 pasa pending→done: **+1/2**, 1901/84→**1943/84 = 23,130952…**, redondeado **23,13/100 del cierre restante**. 48 done / 230 pending / 2 in_progress; 53 resultados / 280 checkpoints / 268 números, baseline v3 y criterios/pesos intactos. Los hitos de F-08 y los checkpoints F-08.03–.05 permanecen pendientes; no es porcentaje global nuevo del producto.
+
+
+## 11.11.2026 · Paso 24/F-08.01 cerrado técnicamente: 22,63/100 del cierre restante
+
+F-08.01 cerrado técnicamente: generación explícita existente de diez códigos propios con 128 bits aleatorios y hashes con sal de 128 bits, ligados a Systemhaus/usuario e independientes de la clave TOTP. Sólo la primera respuesta entrega valores; status, receipt y replay no los revelan. Una nueva prueba con dos solicitudes realmente bloqueadas simultáneamente confirma una sola entrega, diez hashes, una operación y un evento de auditoría. Pasaron 15 casos focales y 10 de Node; un revisor distinto repitió 1/1. Los 227 archivos de producto se conservaron. No se acreditan generación automática al confirmar, custodia/canje en candidata instalada, último administrador ni F-08.02 a F-08.05. D y E intactas.
+
+[Resultados y revisión](../evidence/s1-20261111/f08-01-generacion/RESULTADOS.md). Sólo F-08.01 pasa pending→done: **+1/2**, 1859/84→**1901/84=22,630952…**, redondeado **22,63/100 del cierre restante**. 47 done / 231 pending / 2 in_progress; 53 resultados / 280 checkpoints / 268 números, baseline v3 y criterios/pesos intactos. Todos los hitos completos de F-08 y F-08.02 a F-08.05 permanecen pendientes; no es porcentaje global nuevo del producto.
+
+
+## 11.11.2026 · Paso23/F-07.05 cerrado técnicamente:22,13/100 del cierre restante
+
+F-07.01–.05 cerrados técnicamente: enrolamiento restringido existente contrastado con evidencia GUI/nativa y fuentes actuales. Dos escenarios nuevos con cuentas ordinarias de gracia45 vencida, Windows/DPAPI real y rol SQL restringido: desafío/pending/código inválido sin /me, clientes ni mutaciones; cookie renombrada no autoriza. Dos confirmaciones producen una única sesión/CSRF nuevos, con testigo SQL de identidad/transacción y replay rechazado. 2/2 casos,36/36 de núcleo y70/70 Node, sin omitidas; revisor distinto repite2/2. Producto227archivos conservado, sin nuevo login o política. D/E intactos. Integración de candidata objetivo y aceptación pendientes; no nuevo ensayo TLS/servicio ni cierre de emergencia/custodia externa.
+
+[Resultados y revisión](../evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md). Sólo F-07.05 pasa pending→done: **+1/2**,1817/84→**1859/84=22,130952…**, redondeado **22,13/100 del cierre restante**.46done/232pending/2in_progress;53resultados/280checkpoints/268números, baselinev3, criterios/pesos intactos. Implementación, pruebas y revisión técnicas conciliadas; integración de candidata objetivo y aceptación siguen pendientes. No es porcentaje global nuevo del producto.
+
+
+## 11.11.2026 · Paso22/F-06.04 cerrado técnicamente:21,63/100 del cierre restante
+
+F-06 cerrado en su criterio técnico con F-06.01–.04: fases, catálogo/retirada, caídas y recuperación trazados. Nueva prueba encadenada con tres backups reales retenidos, dos rotaciones a8/9 y Restore de cada generación en clúster nuevo; todos los TOTP/metadatos conservados y claves sólo referidas por backup protegidas. Cinco invocaciones PASS sin omisiones y revisión independiente con otras cinco; producto227archivos idéntico a F0603, cuyas360pruebas/15cortes se reutilizan sin repetirlas. Sin CLI pública, integración/instalador46, SID efectivo/custodia externa real o aceptación nativa. D/E intactos.
+
+[Resultados y revisión](../evidence/s1-20261111/f06-04-cierre/RESULTADOS.md). Sólo F-06.04 pasa pending→done: **+5/8**,3529/168→**1817/84=21,630952…**, redondeado **21,63/100 del cierre restante**.45done/233pending/2in_progress;53resultados/280checkpoints/268números, baselinev3, pesos/criterios intactos. Hitos técnicos pruebas/revisión conciliados; definición/implementación operativas, integración y aceptación siguen pendientes. No es porcentaje global del producto.
+
+
+## 10.11.2026 · Paso21/F-06.03 cerrado técnicamente:21,01/100 del cierre restante
+
+F-06.01/.02 conservados. F-06.03: rotación interna offline con SQL046 aditivo/testigo transaccional, publicación de clave/anillos/recibo bajo coordinador, guard de vínculo y reanudación por hechos; DPAPI anterior, TOTP/metadatos/política conservados. 360/360 regresión pertinente,15 cortes de proceso con15 reaperturas,2 Restores custom en otros clústeres nuevos,3 negativos PG/publicación y14 operadores; sin omisiones en resultados finales. Revisión distinta registrada con sus ejecuciones/pines y límites. Sin CLI pública rotate, instalador46, apagón/Windowsreboot, SID efectivo/servicio instalado, custodia externa real o QA/adopción. D/E intactos. No es cierre integral F-06.04/R-04 ni porcentaje global. Reutilizar este alcance, no repetir codecs/factores/retirada.
+
+[Resultados y revisión](../evidence/s1-20261110/f06-03-rotacion/RESULTADOS.md). Sólo F-06.03 pasa pending→done: **+5/8**,428/21→**3529/168=21,005952…**, redondeado **21,01/100 del cierre restante**.44done/234pending/2in_progress;53resultados/280checkpoints/268números, baselinev3, estructura/pesos/criterios e hitos operativosF06 intactos. No es porcentaje global del producto.
+
+
+## 09.11.2026 · F-06.02, catálogo y retirada lógica cerrados técnicamente
+
+F-06.02 cerrado técnicamente: catálogo privado con declaración de todas las raíces retenidas, inventarios/recibos pineados y comprobación exacta de objetos; unknown/legacy/parcial/missing/tampered bloquean. Retirada lógica real de versión no activa/sin factores ni backups dependientes bajo locklocal+admisiónPG+ACCESS EXCLUSIVE, censo nuevo y autenticaciónAAD. Fence/journal/publicación/reanudación e idempotencia conservan archivosDPAPI; no recifrado, SQLmutante o destruccióncriptográfica. 297regresión pertinente+8backup nativo+18Python, sinomisiones; revisor distinto153focales propios y dictamen favorable sólo5/8deestecriterio. CLI elevada/SCMpositivoservicioinstalado y token real no ensayados; siguen en QA/hitos. F-06.03 rotación/testigo/caídasreales yF-06.04 pendientes. D/E intactos; sin commits/push/instaladores/despliegues. La cobertura atestada no descubreUSB/raícesomitidas por el operador; no expira backups. Reutilizar componentes y evidencia, no repetir codecs/login/portabilidad.
+
+[Resultado y revisión](../evidence/s1-20261109/f06-02-retirada/RESULTADOS.md). Sólo F06.02 pasa in_progress→done,+5/8; índice428/21=**20,38/100 del cierre restante** (antes3319/168=19,76). Texto/pesos/estructura e hitos operativosF06 intactos. QA172 preparado/no disponible; no se modifica la disponibilidad de D ni los resultados de Wascar.
+
+
+## 09.11.2026 · F-06.02, inventario nativo y snapshot de backup
+
+F-06.02 en progreso,0credito: componentes revisados conservados; nueva CLI local y operadores Windows producen/consumen inventario lateral con recibo externo privado. PG17.11 nuevo: snapshot exportado común a censo/dump y Restore sintético con escritor posterior;8controles nativos;138regresión acotada y13Python correctos. Identidad DB/owner/backupUUID, roles cerrados, rechazo de marcador recuperación y pines. FormatoSQLhistórico2archivos intacto. No equivale a retirada: faltan catálogo autoritativo exhaustivo, coordinador/exclusión/fence/recenso/guard/publicador recuperable de F-06.03 y cortes antes de cerrar20. No se opera D/E ni se cambia esquema45, cuentas, claves, MFA45 o instaladores. No repetir codecs, portabilidad ni login ya probados.
+
+[Resultado y límites](../evidence/s1-20261109/f06-02-nativo/RESULTADOS.md). F-06.02 sigue `in_progress`,peso5/8 sin acreditar; índice19,76/100 del cierre restante, no porcentaje global. Sin commits/push/despliegues; binlogs y credenciales sintéticas sólo `.local/`.
+
+
 ## 09.11.2026 · Retoma y sello final de la revisión8–18/candidata16
 
 Se retoma exactamente el cierre documental interrumpido tras la integraciónF04 del04.11, sin recompilar ni repetir las suites de producto. Comprobación fresca09.11:413fuentes congeladas,5pins de entrega,9entradas del sello independiente,73archivos de distribución,2018del bundle,117del payload y35scripts de instalador coinciden con lo revisado. Tres verificaciones nativas de integridad actuales pasan sin ejecutar instalador/producto. Los resultados43empaquetado/15operadores/16ReleaseMFA yNew/RestorePG conservan su fecha04.11; no se presentan como ejecutados hoy.
@@ -1992,3 +2120,30 @@ Wascar pide actualizar `was-car/RackClick`. Se seleccionan fuentes desde un clon
 Se actualizan las presentaciones EN/DE/ES y se conservan los seis fixtures con credenciales aleatorias ya publicados. Verificación en clon:98casos Python (97PASS,1omitido por recibos privados),8pruebas Windows del writer PASS, restore locked/build Release, generadores43/44/45 y registro maestro coherentes. La revisión independiente y el commit remoto se registran en `evidence/s1-20261109/github-update/`. Se escanea la selección completa con reglas intactas y se clasifican las coincidencias de identificadores/hash; no se omiten como si el escaneo hubiera sido vacío.
 
 No se publican instaladores binarios, bases, credenciales, seguridad del inventario, claves/sobres MFA, certificados privados, rawlogs/binlogs o fotos comerciales. La referencia offline adoptada ya publicada se conserva exactamente por ser entrada de compilación. Candidata16 aún requiere ensayo nativo limpio y reinicio; recuperaciónMFA operativa/emergencia/rotación siguen pendientes. Sin despliegues ni operaciones sobre D/E; índice de cierre restante19,13/100, sin crédito nuevo. Ficha: `docs/PUBLICACION-GITHUB-09-11-2026.md`.
+
+
+## 09.11.2026 · Paso19/F-06.01: fases de rotación especificadas y revisadas
+
+Se reutilizan D2/F-03.02 y piezas/evidencia F04/F05; se contrasta la semántica de anillo/proveedor/AAD y SQL014 con fuentes actuales y documentación oficial. Nuevo docs/PROTOCOLO-ROTACION-MFA-v1.md: mantenimiento/fence/journal, clave nueva y anillo aditivo con activa anterior antes de DB, sobre externo/persistencia exigidos, recifrado transaccional con testigo local y publicación final hacia delante, verificación offline/guard y conciliación de commit incierto. Incluye factores pending/active/disabled, conserva antirreplay, TOTP y gracia45/exención, y retiene versiones para backups. No se reutiliza StartEnrollment como recifrador ni CreateInitialStore como publicador de anillo existente.
+
+Revisión independiente favorable y diez casos razonados en evidence/s1-20261109/f06-01-fases/review/DICTAMEN-F0601.md; doce fuentes/recibos fijados y piezas actuales contrastadas. Es cierre de especificación, no diez pruebas de producto ni rotación ejecutada. Guía docs/PASO-019-FASES-ROTACION-MFA.md; fuente de producto invariable. Ningún build, PostgreSQL, VM, claves/credenciales, servicios, cuentas, instalador, commit, push o despliegue en esta tanda; D/E conservados.
+
+Se acredita sólo F-06.01: +5/8; 1607/84 →3319/168=19,755952…/100 del cierre restante, redondeado19,76.42done/236pending/2in_progress;53resultados/280checkpoints/268números, baseline/huella/pesos/criterios intactos. F06 completo y sus hitos, incluido definition_confirmed, siguen pendientes. No porcentaje global ni adopción nuevos. Siguiente:20/F-06.02, inventario/versiones de factores-backups-sobres y criterio de retirada; no rotar D ni repetir codecs/portabilidad/login.
+
+
+## 09.11.2026 · Paso20/F-06.02: inventario/guarda implementados, cierre operativo pendiente
+
+Nuevos MfaKeyRetention.cs y MfaFactorKeyInventoryReader.cs, sus dos clases de prueba y runnerPG aislado. Se reutilizan anillo/RCKEY/RCKPAY y D2/F06.01, sin modificar código previo, SQL, proveedor/writer, Program/endpoints, locks, csproj, formatos históricos o instaladores. Inventario de factores pending/active/disabled, inspección autenticada de sobre y JSONlateral con pins externos de inventario/manifiesto/dump/sobre; required incluye la activa del sobre aun sin factores. Catálogo incompleto/ámbito/versión ausente/referencia bloquean CandidateUnreferenced, que NO es permiso para borrar.
+
+51casos puros del implementador PASS, incluido Unicode corregido tras3rojos y mutación requerida detectada; coordinador115/115regresión (incluye51) y10/10PG17.11,3DB45 nuevas con rolesSELECTonly. Dumpcustom real quieto, sidecarfuera de carpeta histórica, validación nativa dosarchivosPASS/tercero rechazado/carpeta recuperada. Factores sin cambios en testigos frescos; lector no lee ciphertext. Rojo/verde usanclústeres propios distintos, detenidos. Primerbuilddel coordinadorxUnit1051 por tokens de fixtures corregido antes del rojo válido2PASS/8FAIL contra stub vacío; logs y binlogs privados, fuentes finales fijadas. No se atribuye descifradoTOTP a esos bytes opacos sintéticos ni snapshot concurrente/custodia real/retirada a la fixture.
+
+Revisión independiente security repite51por DLL directa y confirma los componentes; dictamen evidence/s1-20261109/f06-02-retencion/review/DICTAMEN-F0602.md exige in_progress+0: falta caller nativo, autoridad/vigencia del catálogo, publicación/consumo lateral y retirada bajo coordinador/fence/guard/publicador F06.03. Sólo F06.02 pending→in_progress, criterios/pesos/hitos intactos. Índice3319/168=19,76/100del cierre restante sin crédito;42done/235pending/3in_progress,53resultados/280checkpoints/268números, sin nuevo porcentaje global.
+
+Contrato docs/CONTRATO-INVENTARIO-RETENCION-MFA-v1.md y guía docs/PASO-020-INVENTARIO-RETENCION-MFA.md. D/E y datos/MFA conservados sin operaciones, servicios o cuentasWindows;0commits/push/despliegues. Nuevo código sólo en fuentes y copia aislada, no candidata nativa16 adoptada. Continuar integración con F06.03 y revaluar20 antes de declararlo cerrado; reutilizar estas pruebas, no repetir codecs/portabilidad/login.
+
+
+## 12.11.2026 · Actualización privada GitHub: fuentes48 y Demo50 trilingüe
+
+Wascar autoriza actualizar was-car/RackClick. Selección en clon separado de main, con esquema48/SQL046–048, mantenimiento y recuperación MFA revisados, operadores18, catálogo884revisiones/877modelos y50clientes ficticios(17EN/17DE/16ES). A ya conserva50datos tras reinicio; esNew17 másfinalizaciónacotada, no coldNew18. Fallo inicial delverificadorautomáticoHTTPS yéxitomanualposterior se mantienen diferenciados. Restore48/cambiodeRed48 deshabilitados.
+
+Demo10 separada: rojoPG realrechazó48; añadido sólo perfil48/digest exacto conservando15/45 ynegativos. Demo50 conserva8colecciones,fuente43,868revisiones y2553comandos;sinseguridad. Investigación/reutilización ylímites:docs/PUBLICACION-GITHUB-12-11-2026.md. Resultados reales,escaneo, revisión independiente ycommit remoto seevidencian enevidence/s1-20261112/github-update/. Instaladoresbinarios,fotos,reposajenos,credenciales,DB,claves/sobres,CAparticular,binlogs yrawlogs excluidos. D/E/A yestadosVM nooperadospara publicar. Métrica26,63/100 delcierrestante sinincremento niadopción.

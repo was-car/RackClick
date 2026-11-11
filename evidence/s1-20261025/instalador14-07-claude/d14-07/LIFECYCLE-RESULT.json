@@ -1,0 +1,102 @@
+{
+  "scope": "production runtime script foreground; synthetic installation receipt",
+  "newLabsOnly": true,
+  "qaTouched": false,
+  "vmTouched": false,
+  "productEdits": 0,
+  "scmOperations": 0,
+  "windowsAccountsChanged": 0,
+  "firewallChanged": false,
+  "trustStoreWrites": 0,
+  "applicationManifestSha256": "e9c58c0c67500afc09c1ac979a7433830c96f94c2a2e4501d81286796d65d74d",
+  "applicationDllSha256": "19c94d4e104ef117f4c7788a0a0d4fbe1f846656c4e00d2dc854c2e80bd7f78c",
+  "steps": {
+    "new-private-deployment": {
+      "exitCode": 0,
+      "valid": true,
+      "code": "deployment_prepared"
+    },
+    "new-server-profile": {
+      "exitCode": 0,
+      "valid": true,
+      "code": "server_profile_prepared"
+    },
+    "verify-profile": {
+      "exitCode": 0,
+      "valid": true,
+      "code": "server_profile_verified"
+    },
+    "reject-wrong-profile-pin": {
+      "exitCode": 2,
+      "valid": false,
+      "code": "server_manifest_hash_mismatch"
+    },
+    "reject-other-run-stop": {
+      "exitCode": 2,
+      "valid": false,
+      "code": "server_active_run_changed"
+    },
+    "online-backup": {
+      "exitCode": 0,
+      "valid": true,
+      "code": "backup_complete"
+    },
+    "first-stop": {
+      "exitCode": 0,
+      "valid": true,
+      "code": "server_stopped"
+    },
+    "repeat-exact-stop": {
+      "exitCode": 0,
+      "valid": true,
+      "code": "server_stopped"
+    },
+    "restart-stop": {
+      "exitCode": 0,
+      "valid": true,
+      "code": "server_stopped"
+    }
+  },
+  "runtimeRuns": [
+    {
+      "label": "first",
+      "runId": "36c936ac-0041-45f8-bbb7-1a9ba474fcfe",
+      "ready": true,
+      "normalStop": true,
+      "forcedCleanup": false,
+      "exitCode": 0,
+      "postgresCleanStop": true,
+      "applicationGracefulExit": true,
+      "applicationHttpDrain": false
+    },
+    {
+      "label": "restart",
+      "runId": "a0eb0574-3a8a-4125-81fd-5c7eecf2210d",
+      "ready": true,
+      "normalStop": true,
+      "forcedCleanup": false,
+      "exitCode": 0,
+      "postgresCleanStop": true,
+      "applicationGracefulExit": true,
+      "applicationHttpDrain": false
+    }
+  ],
+  "cleanWindowsInstallationTested": false,
+  "csharpServiceHostTested": false,
+  "windowsRebootTested": false,
+  "mfaHttpTested": false,
+  "firstHttp": {
+    "schema": 14,
+    "verifiedTls": true,
+    "login": true,
+    "csrfNegative": true,
+    "writeRead": true,
+    "wrongStopLeavesReady": true
+  },
+  "persistenceAfterForegroundRestart": true,
+  "observationsCompleted": true,
+  "inputFilesUnchanged": true,
+  "postmasterFileAbsent": true,
+  "portsClosed": true,
+  "elapsedSeconds": 83.02
+}

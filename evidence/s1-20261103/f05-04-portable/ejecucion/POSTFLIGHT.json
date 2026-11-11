@@ -1,0 +1,50 @@
+{
+  "offlineTrialPassed": true,
+  "plaintextKeysRead": false,
+  "measuredUtc": "2026-11-03T14:30:02.5534741Z",
+  "physicalErasureClaimed": false,
+  "applicationConfigurationChanged": false,
+  "privateInputAbsent": true,
+  "envelopeCopies": [
+    {
+      "label": "export.rckey",
+      "hashMatched": true,
+      "removed": true
+    },
+    {
+      "label": "missing-retired.rckey",
+      "hashMatched": true,
+      "removed": true
+    }
+  ],
+  "valid": true,
+  "schemaVersion": 1,
+  "tasks": [
+    {
+      "leafHResult": -2147024894,
+      "absent": true
+    },
+    {
+      "leafHResult": -2147024894,
+      "absent": true
+    }
+  ],
+  "serviceBindingsUnchanged": true,
+  "serviceCount": 2,
+  "services": [
+    {
+      "state": "Running",
+      "startMode": "Auto",
+      "pid": 3392,
+      "processStartUtc": "2026-11-03T14:03:57.0514265Z"
+    },
+    {
+      "state": "Running",
+      "startMode": "Auto",
+      "pid": 3380,
+      "processStartUtc": "2026-11-03T14:03:57.0444845Z"
+    }
+  ],
+  "processImageSupplementVerified": true,
+  "note": "Raw postflight image is SCM command line; separate read-only supplement compares actual process image. Originals preserved."
+}

@@ -50,7 +50,7 @@ function Test-SetupPostbootSnapshot {
     if($Snapshot.serviceState-cne'Running'-or$Snapshot.serviceStartMode-cne'Auto'){return @{valid=$false;code='postboot_service_not_automatic_running'}}
     $expectedSchema=14
     if($Snapshot.ContainsKey('expectedSchemaVersion')){
-        if($Snapshot.expectedSchemaVersion-isnot[int]-or$Snapshot.expectedSchemaVersion-notin@(14,15,43,45)){return @{valid=$false;code='postboot_expected_schema_invalid'}}
+        if($Snapshot.expectedSchemaVersion-isnot[int]-or$Snapshot.expectedSchemaVersion-notin@(14,15,43,45,48)){return @{valid=$false;code='postboot_expected_schema_invalid'}}
         $expectedSchema=$Snapshot.expectedSchemaVersion
     }
     if($Snapshot.healthStatus-cne'ready'-or$Snapshot.schemaVersion-isnot[int]-or$Snapshot.schemaVersion-ne$expectedSchema){return @{valid=$false;code='postboot_application_not_ready'}}

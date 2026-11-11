@@ -1,0 +1,382 @@
+{
+  "schemaVersion": 1,
+  "criterion": "F-09.04",
+  "status": "native_trial_passed_independently_reviewed",
+  "productServerSha256": "d9366dbe9be377d4147417fd8c51e40aaa302b82c8d3bd9b830c67d68980b909",
+  "environment": {
+    "guest": "isolated Windows Server lab in E",
+    "postgresql": "17.11",
+    "runtime": "10.0.12",
+    "schema": 48,
+    "applicationService": "actual standard Windows account",
+    "maintenanceAuthority": "SYSTEM",
+    "httpClientAuthority": "Administrator with application password and real TOTP",
+    "installerTested": false,
+    "productFilesChangedInExistingInstallations": false,
+    "dAccessed": false
+  },
+  "receipts": {
+    "baseline-sanitized.json": {
+      "sha256": "613121b1cad71f2291b23547c0c3d6de8843aeddc9f3b4e65f6786cf2f8e64d6",
+      "result": {
+        "tlsVerified": true,
+        "clientAuthority": "Administrator",
+        "installationId": "4e9fcdae-a098-4d1a-87ab-0c425aadd7a6",
+        "lastGlobalActiveMfa": true,
+        "inventoryCreated": true,
+        "oldSessionCaptured": true,
+        "ringSha256": "8601b86b30410b61fe3951eca91ff25a7970a3a3597db34d6054bc7aa9895681",
+        "maintenanceAuthority": "SYSTEM",
+        "recoveryCodesCaptured": true,
+        "apiDeniedBeforeTotp": true
+      }
+    },
+    "failed-start-sanitized.json": {
+      "sha256": "7192d598ef5ae91478a14aee99ee747cce9c4aaed5dd99b4211fbc4e7ea522f4",
+      "result": {
+        "providerEnabled": true,
+        "status": "verified",
+        "code": "mfa_keystore_version_missing",
+        "serviceStopped": true,
+        "failedBeforeListener": true
+      }
+    },
+    "loss-trigger-sanitized.json": {
+      "sha256": "fa7ce0cdc3d262fbc830da74a3315be1f1cb83ecb50093a074bdd33aac702645",
+      "result": {
+        "lostVersions": [
+          1
+        ],
+        "keyMaterialCopied": false,
+        "installationId": "4e9fcdae-a098-4d1a-87ab-0c425aadd7a6",
+        "ringPreserved": true
+      }
+    },
+    "provision-sanitized.json": {
+      "sha256": "bd1330f672d40a2828934785a13ee07598c45047197f5af9a8e57204df822a89",
+      "result": {
+        "standardServiceAccount": true,
+        "provisionChildLogon": "CreateProcessWithLogonW",
+        "newServiceAccountInUsers": true,
+        "globalTrustChanged": false,
+        "mfaInitialized": true,
+        "administratorMaintenancePositiveVerified": false,
+        "resumedP02": true,
+        "checkpointSealed": true,
+        "priorAttemptPreserved": true,
+        "laterPhasesRequireSystem": true,
+        "servicesRegistered": 2,
+        "applicationSchema": 48,
+        "servicesStarted": 0,
+        "existingInstallationsChanged": false,
+        "provisioned": true
+      }
+    },
+    "recovered-sanitized.json": {
+      "sha256": "ffb85c1eec2db34dced5ab38b36235a9a04dbdf195a69beaec416fb913ef19ee",
+      "result": {
+        "maintenanceAuthority": "SYSTEM",
+        "inventoryPreserved": true,
+        "factorVersion": 2,
+        "oldSessionRejected": true,
+        "oldRecoveryRequestRejected": true,
+        "clientAuthority": "Administrator",
+        "restrictedUntilNewTotp": true,
+        "runtimeIdentity": "real-standard-service",
+        "testKind": "SCM-HTTPS-PG17-DPAPI",
+        "oldSecurityRevoked": true,
+        "status": "verified",
+        "oldChallengeRequestRejected": true,
+        "tlsVerified": true,
+        "providerEnabled": true,
+        "newSessionAndCsrf": true,
+        "serviceRunning": true
+      }
+    }
+  },
+  "cliPhases": [
+    {
+      "action": "prepare",
+      "receiptSha256": "cd7ab8f90e7e7c42e11d83af69153fa6bcba9807077c4de4abf9385f52b1d745",
+      "result": {
+        "status": "verified",
+        "code": "mfa_loss_awaiting_external_envelope_fenced",
+        "stage": "prepare",
+        "NewVersion": 2,
+        "Factors": 0,
+        "sessionGranted": false,
+        "serviceVerified": false
+      }
+    },
+    {
+      "action": "export",
+      "receiptSha256": "9b41599c076db07acae4fbeebdd6e5eaa705739bcdae01f0047297b46bfa532b",
+      "result": {
+        "status": "verified",
+        "code": "mfa_loss_external_envelope_published",
+        "stage": "export",
+        "sessionGranted": false,
+        "serviceVerified": false,
+        "envelopeSha256": "99b2f4bfec63ca787f894764efff54655af4c94d8278dbf86a2b43e72d497925",
+        "envelopeBytes": 297
+      }
+    },
+    {
+      "action": "apply",
+      "receiptSha256": "22ac49a92fe7069956d60bdb1696531a8d4a0cd5bd14663a3493bac19e3ac3a8",
+      "result": {
+        "status": "verified",
+        "code": "mfa_loss_db_committed_fenced",
+        "stage": "apply",
+        "NewVersion": 2,
+        "Factors": 1,
+        "sessionGranted": false,
+        "serviceVerified": false
+      }
+    },
+    {
+      "action": "publish",
+      "receiptSha256": "a182a80e9f0b22de196abb276411b126666e78ccd7e00fcebb34e60464f0a417",
+      "result": {
+        "status": "verified",
+        "code": "mfa_loss_material_published_verified_fenced",
+        "stage": "publish",
+        "NewVersion": 2,
+        "Factors": 1,
+        "sessionGranted": false,
+        "serviceVerified": false
+      }
+    },
+    {
+      "action": "complete",
+      "receiptSha256": "5cfb65427a779b4ef1f16be80e14428e0eb24f74dd3be454c938113f42727215",
+      "result": {
+        "status": "verified",
+        "code": "mfa_loss_data_verified_released",
+        "stage": "complete",
+        "NewVersion": 2,
+        "Factors": 1,
+        "sessionGranted": false,
+        "serviceVerified": false
+      }
+    }
+  ],
+  "phases": [
+    {
+      "phase": "CatalogInitialize",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "3a7d767d6084b34271900e61563e9baec7380e0ed04b649fb195de570bdd5cee",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "ad7e6c6f6f036c52a1f96114004d9723387bd540ccf2e97b6387c5ac4bb51a60"
+    },
+    {
+      "phase": "StartAppInitial",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "3ef3d692a3496f77cda8f94d331e36f5a6b123971e586a66180adbf4b9a355a4",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "78edfc5e3d4b2fd08a77e1f989c0db2dbadde7d79d57787392718f21de0c77f1"
+    },
+    {
+      "phase": "Baseline",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "462dc1df2d651209e6199b093fcb64be5e0a2fb7f87cc8609f2a28ad7eb40337",
+      "executor": "Administrator HTTP client"
+    },
+    {
+      "phase": "StopBeforeLoss",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "77724101f6536c5650ccd0d751d712a3420c6af055cd480f1ac578dcebfe3e87",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "145e603a6213ce37240000bbb8d114c6c311e9af273a14cea851753d342c35b3"
+    },
+    {
+      "phase": "RemoveKey1",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "4ef33fc891f89e26607e38427f49c040561f1d01d77d0ac99029596ab374c95d",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "ae4745a6c51c8295e01e9cebcef510f36ac54c2cef64dade1a5ccfe9893e7607"
+    },
+    {
+      "phase": "StartWithMissingKeyRequested",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "3ef3d692a3496f77cda8f94d331e36f5a6b123971e586a66180adbf4b9a355a4",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "fb2ecc23a8318415d6525b4d264a35e74a9d0aada1d9ea133f5f97df468645c5"
+    },
+    {
+      "phase": "FailedStart",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "157c978e6ad8db9ab1c44b252ea583d25d4766c6f05b08b5fd9e7eac2f5e7ada",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "d43daf704b3ec2a35df63faae89921fc64423382bc4dbf23679ea2a4bd6ec1cd"
+    },
+    {
+      "phase": "Prepare",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "9cd848d990ac0a7a62b09d8b21e6f16e131ade9e5cc4a979400ccfb7f2ed9dd6",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "4c492b06919167f7518723dd0100a8367125a251848a74bc7eb0370b773245e8"
+    },
+    {
+      "phase": "Export",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "692aed44bfbdb8b76c873df6f9533f9399426d6ee8ffaef8fb1f6063b0ba70e4",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "754e327d37672ef7e32715b1bbca8754305e2a9fe0679eacf2e0f57984e197df"
+    },
+    {
+      "phase": "Apply",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "4a5f615e7e564483c26d4e6856995ff06ea2c9f26f320860c0d0f08088833579",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "2239fb7b8af1d232d979a1e472c6798acc120da1f72a5b6acfffdf02c20f03f1"
+    },
+    {
+      "phase": "Publish",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "d042d881b70559b2a9aa5b48d88b3860313e7cf7867c4d9446a4ac5bec0b69d2",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "9962fc87f0115d482d4775fb06ef481d96e54c4d7cde0749c6520bf9e4a1f812"
+    },
+    {
+      "phase": "Complete",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "251286b6ba671a9c2b06bde41da4959cfcbe62b756e81faef3528a28cf147e36",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "dd1f32a4251961032005e67c8c7c10220ef7e2acac0273c7aefbb3cc7779c766"
+    },
+    {
+      "phase": "StartRecovered",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "3ef3d692a3496f77cda8f94d331e36f5a6b123971e586a66180adbf4b9a355a4",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "75eb5831812fd809a2813e0d2d5260168c3b1f3091b845a4920987f5d7d633da"
+    },
+    {
+      "phase": "Recovered",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "467fa58622965e0067b8ef7fd324891db3bacb89183d0ba8b89928703efc2cd1",
+      "executor": "Administrator HTTP client"
+    },
+    {
+      "phase": "StopOwnApp",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "77724101f6536c5650ccd0d751d712a3420c6af055cd480f1ac578dcebfe3e87",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "7537380c661c1b1dc57da1eba7512fc3313824f75dd303be70ad6d607f061510"
+    },
+    {
+      "phase": "StopOwnDatabase",
+      "exitCode": 0,
+      "receiptSha256": "6041df3e9b345d68be886f995c452395674ea950cd3ca9992c13b64f3aa9cbd0",
+      "wrapperSha256": "30d959148a4810b90a4945a39d1b5ec92e77b539ea03cfb6f0bab4c3d032cb94",
+      "executor": "SYSTEM",
+      "taskRegistered": true,
+      "taskStarted": true,
+      "taskRemoved": true,
+      "childExitCode": 0,
+      "taskNormalizedXmlSha256": "36bf45e2712fea9dc46568a4807ea081dc38bc306c279ccb415d84cba8bac8c4"
+    }
+  ],
+  "finalState": {
+    "existingServicesRunningUnchangedProcessIds": 2,
+    "ownServicesStopped": 2,
+    "ownListeningPorts": 0,
+    "ownTemporaryTasksRemaining": 0,
+    "previousAttemptPreserved": true,
+    "vmPowerOrSnapshotsChanged": false,
+    "observationSha256": "bc4060940c0324d2b36f4e2b1c9c002b8c7c7dee5c0a965d3f5d0e762687fdf3"
+  },
+  "harnessPins": {
+    "prepared/native48.zip": "4d84d91c1d958e95d37651091510a97de38ee55eb56639093e9de768f238f018",
+    "prepared/plan.json": "71a23a87ef455321297e05acbd32888317c835842a8ceba94f59e0060ea38d3c",
+    "Exercise48.ps1": "8573a92b2a98a03e9fff746dbe989aa6237fb8a189823001c5b4d2bd1efa776d",
+    "p02/RunSystem49.ps1": "b21eb47524fb4e477b45584681253ef76ba17f89c96efe9b83efb0b4b661e1a6",
+    "p02/CompleteInitialization04.ps1": "f95d493d6f6ab932ce1d682f0085c125c030e80b2246fddbfe26faf6ef1d1ca2",
+    "p02/p04-pins.json": "5c72afd06eea0fb70cf30e7845ad5c435df9b9fb48215cb9f36d80bb410e4a2e",
+    "drive49.py": "90e31858aba55c75130686198f18bc0240a073398018029ad2588fb748e52913",
+    "driveHTTPAdmin.py": "3f5a671f1d88252daabff5ebba4941696796bb317fc5a06c1c26f4eb50ca1278"
+  },
+  "limits": [
+    "loss of key material with reliable metadata; no loss of all metadata",
+    "one loss operation, not a second independent loss",
+    "old challenge request uses an invalid TOTP; old recovery request uses an actual previous recovery code",
+    "no power-loss/reboot/installer48/Restore48/adoption test",
+    "SYSTEM HTTP client failures preserved; final HTTP client is Administrator",
+    "no physical off-server custody acceptance; new envelope stays in private synthetic custody directory",
+    "administrator maintenance without SYSTEM not exercised",
+    "retirement after loss without a new rotation not exercised"
+  ],
+  "review": {
+    "path": "review/DICTAMEN.md",
+    "sha256": "9148d59b841fdcb2197a3e10def7298258b380cec01dec2c31bf4649cc94f130",
+    "reviewerExecutedE": false
+  }
+}

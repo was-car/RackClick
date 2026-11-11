@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "valid": true,
+  "checkpoint": "F-05.04",
+  "recommendation": "close_offline_portability_checkpoint_only",
+  "proposedCredit": "1/2",
+  "blockingFindings": [],
+  "sevenChildReceiptsVerified": true,
+  "factorsVerifiedUnderStandardServiceToken": 2,
+  "aadMismatchesRejected": 6,
+  "writeAccessDenials": 6,
+  "dacAccessDenials": 6,
+  "accessGrants": 0,
+  "inconclusiveAccessMeasurements": 0,
+  "temporaryTasksAbsent": 2,
+  "targetEnvelopeCopiesRemoved": 2,
+  "targetPrivateInputRemoved": true,
+  "sourceTransientPlaintextInputRemoved": true,
+  "servicesMatchOriginalMetadata": 2,
+  "processImageSupplementRequiredAndVerified": true,
+  "roundOneFailurePreserved": true,
+  "reviewerVmOperations": 0,
+  "reviewerBuilds": 0,
+  "reviewerCryptographicExecutions": 0,
+  "secretContentsOpenedByReviewer": false,
+  "checkpointStatusBeforeCredit": "pending",
+  "limits": [
+    "Synthetic new ring/factors, not existing user data",
+    "Source trust is laboratory-specific",
+    "Dump is real PostgreSQL but only synthetic factor table, not product backup",
+    "No destination DB restore, web login/TOTP/session or production coordinator",
+    "No product custody or physical erasure accepted",
+    "Only FILE_WRITE_DATA and WRITE_DAC measured here; full F-04 matrix reused separately"
+  ],
+  "references": [
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/ejecucion/01-no-adaptation.json",
+      "sha256": "f4aa70eacf081e3019490e28f1d9c8c49b75266460703a6838a7c97cc629ae9f"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/ejecucion/02-wrong-password.json",
+      "sha256": "377071a6f68ef5c776d92e561dff268294b4b149066b4b4fc149e36dca26eea2"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/ejecucion/03-missing-retired.json",
+      "sha256": "e7efdf65b29a1d34d637eb5c721d33ef4a70f4d1ecb3278609fb73505eef8b28"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/ejecucion/04-wrong-origin.json",
+      "sha256": "66783f82e7b95b9118c84cae6ff1a047e9279debcb42d425acb157df73439120"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/ejecucion/05-recovered.json",
+      "sha256": "6828dd5cfc6dfaed45b682c759a46ab10acaa39aebce3bece22784e01fcf348d"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/ejecucion/06-service-token.json",
+      "sha256": "2cab584dd9ec5c67887d6b97d773855212a2a7cdb4773ba0007ea2806eae1b4f"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/ejecucion/07-existing-target.json",
+      "sha256": "a40f997b286cd2a7d8145ccef9e4e2a95bf4e6f240cbbc019b4787a366ee08bc"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/ejecucion/trial-exit.json",
+      "sha256": "5afbf6dacfa519984b13b52fa9ee3c56a7bad9aa06298182703bb52a8a14eefd"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/ejecucion/task-result.json",
+      "sha256": "b44ec67cf22b197accffe2ebdc483d0c0f2cce71bfa013065196fec3c7e0071e"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/ejecucion/POSTFLIGHT.json",
+      "sha256": "df1c689a9ea0778a1114914b70ea38b1e4f6f76e0ed1a5157b05f75d9fb2c78e"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/implementacion/MANIFIESTO-TOOL.json",
+      "sha256": "20489b740f551eb6e60d4348f7cc3c138b8bd78016b16189fce2f77d69431a3f"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/ORIGEN-Y-ALCANCE.json",
+      "sha256": "df71dea911fcd75be27f8ddb506749f383f268e835a61aa1756d419fe15eeda8"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-04-portable/INVESTIGACION-Y-DECISION.md",
+      "sha256": "dc2a30fefde0b8c00fc525f5e68cd74cd8cbf39e6c3b0f2ca87443fa302c5c4c"
+    }
+  ],
+  "privateMetadataVerifiedWithoutContents": [
+    "guest-context.json",
+    "image-postflight.json",
+    "r2-run-started.json"
+  ],
+  "commandsExecuted": [
+    "C:/Python312/python.exe -B evidence/s1-20261103/f05-04-portable/review/Verify-Portable-Result.py"
+  ],
+  "commandsNotExecuted": [
+    "VMware/guest operations",
+    "DB/SCM/ACL changes",
+    "dotnet build/test/publish",
+    "decrypt/recover/verify tool"
+  ]
+}

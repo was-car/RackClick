@@ -2,7 +2,7 @@
 
 **[English](GETTING-STARTED.en.md) · [Deutsch](GETTING-STARTED.de.md) · [Español](INSTALACION-DESDE-GITHUB.md)**
 
-Stand 3. November 2026 · Quellschema **45**.
+Stand 12. November 2026 · Quellschema **48**.
 
 Diese Anleitung erzeugt ein **neues lokales Entwicklungslabor** mit dem ursprünglichen synthetischen Inventar für zehn Kunden. Ein installierter RackClick-Server wird nicht verändert. Jeder Start erzeugt eine weitere Datenbank und zufällige Zugangsdaten; frühere Labore bleiben auf dem Datenträger. Änderungen eines früheren Labors werden weder erneut geöffnet noch exportiert.
 
@@ -98,6 +98,6 @@ Für eine dauerhafte Windows-Bereitstellung das separat geprüfte native Paket u
 | Build- oder Ausgabehashprüfung schlägt fehl | Privates Protokoll lesen, Ursache beheben und Schritt 4 wiederholen. |
 | URL antwortet nicht mehr | Konsole geöffnet lassen; jeder neue Start verwendet einen neuen Port. |
 
-Native MFA-Registrierung, Anmeldung und Dashboard wurden separat getestet. Richtlinie: 45 Tage Übergangsfrist für normale Konten, Techniker und Kundenadministratoren; für bestehende Konten ab Richtlinienaktivierung, für neue ab Erstellung. Ausgenommen sind nur globale Systemhausadministratoren mit beiden globalen Verwaltungsberechtigungen. Das Entfernen eines Faktors setzt die Frist nicht zurück. Portable Wiederherstellung, Notfallverfahren, Schlüsselrotation und abschließende Abnahme stehen noch aus.
+Native MFA-Registrierung, Anmeldung und Dashboard wurden separat getestet. Richtlinie: 45 Tage Übergangsfrist für normale Konten, Techniker und Kundenadministratoren; für bestehende Konten ab Richtlinienaktivierung, für neue ab Erstellung. Ausgenommen sind nur globale Systemhausadministratoren mit beiden globalen Verwaltungsberechtigungen. Das Entfernen eines Faktors setzt die Frist nicht zurück. Wiederherstellung, Notfall/Verlust und Rotation besitzen geprüfte interne Implementierungen und begrenzte Labortests; endgültige Produktionsabnahme und verbleibende Szenarien sind noch offen. Siehe [aktuellen Stand und Grenzen](PUBLICACION-GITHUB-12-11-2026.md).
 
 Echte MFA benötigt einen separat geschützten Schlüsselspeicher außerhalb von PostgreSQL, korrekte DPAPI-/ACL-Konfiguration und die Dienstidentität. Schlüssel und Wiederherstellungsumschläge sind von GitHub ausgeschlossen. Keine Konfiguration eines anderen Rechners kopieren und MFA nicht über diese Demo aktivieren.

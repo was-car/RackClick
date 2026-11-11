@@ -24,6 +24,17 @@ public sealed class MfaWindowsHostCompositionTests
     private const int RetiredVersion = 1;
     private const int ActiveVersion = 7;
 
+    [Fact]
+    public void ValidWindowsStoreWithPersistentMaintenanceFenceCannotComposeAHost()
+    {
+        using var store=StoreFixture.Create();
+        var fence=Path.Combine(store.Root,store.Installation.ToString("D"),"mfa-maintenance-fence.json");
+        File.WriteAllText(fence,"{\"pending\":true}");
+        var before=store.Listing();var configuration=Config("true",store.Root,store.Installation.ToString("D"));
+        Assert.Equal("mfa_maintenance_pending",Assert.Throws<MfaMaintenanceException>(()=>MfaWindowsHostComposition.Compose(MfaHostMode.Enabled,configuration,Identity())).Code);
+        Assert.Equal(before,store.Listing());
+    }
+
     [Theory]
     [InlineData(null, "Disabled")]
     [InlineData("", "Disabled")]

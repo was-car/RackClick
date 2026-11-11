@@ -11,7 +11,7 @@ Der Server verbindet die bewährte Offline-Oberfläche mit gemeinsam genutzten D
 - Interaktive Vorder- und Rückansichten, physische Montage und Fachböden, Portzustände, Verkabelung sowie Stromversorgung und PoE-Dokumentation.
 - Durchsuchbarer Hardwarekatalog mit **884 Profilrevisionen für 877 unterschiedliche kommerzielle Modelle**, einschließlich der ursprünglichen Auswahl von 506 Modellen sowie deutscher Providerrouter und Repeater. Eine Revision ist kein zusätzliches physisches Modell.
 - Gemeinsames Inventar, Kundenbereiche, Benutzer- und Kundengruppen, Berechtigungen, Auditprotokoll und bestätigte Schreibvorgänge.
-- Native MFA-Registrierung, MFA-Anmeldung und Benutzerverwaltung. Die Richtlinie sieht **45 Tage** bis zur MFA-Pflicht vor; globale Systemhausadministratoren sind ausgenommen. Portable Wiederherstellung, Notfallverfahren, Rotation und vollständige Abnahme stehen noch aus.
+- Native MFA-Registrierung, MFA-Anmeldung und Benutzerverwaltung. Die Richtlinie sieht **45 Tage** bis zur MFA-Pflicht vor; globale Systemhausadministratoren sind ausgenommen.
 - Anwendungssprachen **Englisch, Deutsch und Spanisch**. Projektübersicht und Anleitung zur Quelldemo liegen in diesen drei Sprachen vor; historische technische Aufzeichnungen behalten ihre ursprüngliche Sprache.
 
 ## Quellen ausprobieren
@@ -20,13 +20,17 @@ Die **[Windows-Anleitung zur Quelldemo](docs/GETTING-STARTED.de.md)** beschreibt
 
 Das Beispiel enthält **10 synthetische Kunden, 68 Racks, 311 Geräte, 5.408 Ports und 623 Verbindungen**. Es enthält ausschließlich Inventar, keine Konten, Sitzungen oder MFA-Faktoren. Jeder Start erzeugt ein separates lokales PostgreSQL-Labor und zufällige Zugangsdaten. Die Demo verwendet HTTP auf Loopback und deaktiviert MFA ausdrücklich. Sie ist weder der Windows-Dienstinstaller noch eine Bereitstellung im Netzwerk.
 
-Zusätzlich gibt es eine **[Sammlung mit 50 synthetischen Kunden](docs/DEMO50.de.md)** mit Standorten, Räumen, Racks, Geräten, Ports und Verbindungen, einem durchsuchbaren HTML-Betrachter und Dateiprüfsummen. Sie deckt die historischen **868 Profil-/Revisionspaare des Schemas 43** ab; der aktuelle Katalog enthält 884 Revisionen. Dies sind optionale Inventardaten, kein PostgreSQL-Backup. Die Quelldemo mit zehn Kunden lädt diese Sammlung nicht automatisch.
+Die optionale **[dreisprachige Demo50](docs/DEMO50.de.md)** enthält **17 englische, 17 deutsche und 16 spanische fiktive Firmennamen** sowie 180 Racks, 1.563 Geräte, 20.665 Ports und 2.207 Verbindungen. [HTML-Betrachter](development/examples/demo50-trilingual03/DATOS-DEMO50/VER-50-CLIENTES.html) aus dem heruntergeladenen Klon öffnen. Das Quellinventar bleibt Schema43 und deckt 868 historische Profil-/Revisionspaare ab; der aktuelle Katalog enthält 884 Revisionen. Der geprüfte Lader benötigt einen leeren Server mit Schema48 und importiert keine Anmeldedaten. Die Quelldemo mit zehn Kunden bleibt getrennt.
 
-## Entwicklungsstand · 9. November 2026
+## Entwicklungsstand · 12. November 2026
 
-Das aktuelle Quellschema ist **45**. Dieses Update enthält die geprüfte Korrektur des MFA-Schlüsselspeicher-Writers aus der internen Kandidatin 16 und die Windows-Operatorquellen. Das vorherige Schema 45-Update wurde auf einer bestehenden Windows-Installation geprüft. **Eine saubere native New-/Restore-Installation und die Abnahme nach Neustart der Kandidatin 16 stehen noch aus**; Quellcode- und isolierte PostgreSQL-Tests ersetzen sie nicht. Operative portable MFA-Wiederherstellung, Notfallverfahren und Rotation bleiben offen.
+Das aktuelle Quellschema ist **48**. Die Windows-Testinstallation A enthält alle **50 synthetischen Kunden**. Nach einem echten Neustart wurden automatischer Dienststart, reguläre HTTPS-Prüfung, Datenbestand und eine Sicherung geprüft. A wurde mit Edition17 installiert und anschließend mit einer gesondert geprüften, begrenzten Fertigstellung fehlender Aufgaben/Belege abgeschlossen. Edition18 behebt den Installerfehler; eine vollständige Neuinstallation18 ist noch nicht ausgeführt. Die erste automatische HTTPS-Prüfung nach dem Start schlug fehl, die spätere offizielle manuelle Prüfung war erfolgreich. **Restore48 bleibt gesperrt**; die endgültige Produktionsabnahme steht aus.
 
-Offline-Funktionsumfang, Wiederherstellung, Leistung und abschließende QA werden anhand des [Masterplans](docs/HOJA-DE-RUTA-MAESTRA.md) weiterbearbeitet. SNMP-/LLDP-Erkennung und echte Identitätsföderation sind spätere Vorhaben. Dies ist ein privater Entwicklungsstand der Quellen, keine endgültig abgenommene Produktionsversion.
+MFA-Wiederherstellungscodes, lokale Notfall-/Verlustwiederherstellung, Rotation, Sicherungskatalog und Versionsaufbewahrung besitzen implementierte, unabhängig geprüfte interne Komponenten mit begrenzten Labortests. Die Grenzen bleiben im nummerierten Plan dokumentiert; damit sind nicht alle Wiederherstellungs- und Wartungsszenarien produktiv abgenommen.
+
+
+
+Offline-Parität, Wiederherstellung, Leistung und abschließende QA folgen der [Master-Roadmap](docs/HOJA-DE-RUTA-MAESTRA.md). SNMP/LLDP-Erkennung und echte Identitätsföderation bleiben spätere Vorhaben. Dies ist ein privater Entwicklungsstand, keine abgenommene Produktionsversion.
 
 ## Technik und Repository
 

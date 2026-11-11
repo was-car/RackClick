@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-25T19:34:30.320166+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "result": "PASS",
+  "realQaAccessed": false,
+  "productModified": false,
+  "fixtureCreatedBy": "SQL initial inventory; genuine sw8p creation and edits through Edge GUI",
+  "limits": [
+    "One sw8p preset; no33-preset matrix, Dosen, drag/touch, Windows reboot, actual QA or adoption."
+  ],
+  "browserExitCode": 0,
+  "browserSeconds": 6.812,
+  "sqlExactOriginalRowsAndIntendedChanges": true,
+  "sqlExactPresetRows": true,
+  "presetCatalogAndNonNotePropertiesPreserved": true,
+  "groupsPortsCablesExactAfterEdit": true,
+  "sqlTableRowCounts": {
+    "inventory_site": 2,
+    "inventory_building": 2,
+    "inventory_room": 2,
+    "inventory_rack": 2,
+    "inventory_device": 4,
+    "inventory_port_group": 5,
+    "inventory_port": 16,
+    "inventory_connection": 1,
+    "inventory_connection_endpoint": 2
+  },
+  "auditCommits": {
+    "rack.update": 1,
+    "device.createFromCatalog": 1,
+    "device.update": 1,
+    "device.move": 0
+  },
+  "sqlBeforeSha256": "a2b55abe28a7614a33c7683fccc989df3189f191bb4e3ed32ae1fa29298be37a",
+  "sqlAfterSha256": "1a60b4a71ecc5a9ce543afd394adaea3b38f58341cdc6cc839db2f0b5d960867",
+  "serverRestartPersistence": true,
+  "postgresql": "17.11",
+  "seconds": 22.0,
+  "labStopped": true,
+  "serversStopped": true,
+  "inputsUnchanged": true
+}

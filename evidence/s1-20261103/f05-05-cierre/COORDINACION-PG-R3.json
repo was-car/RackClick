@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "valid": true,
+  "scope": "new_application_databases_and_in_memory_Program_pipeline",
+  "VMOperations": 0,
+  "DGuestCommands": 0,
+  "installedStoresChanged": 0,
+  "adoptedDatabase": false,
+  "productOperatorClaimed": false,
+  "testExitCode": 0,
+  "counters": {
+    "total": 8,
+    "executed": 8,
+    "passed": 8,
+    "failed": 0,
+    "error": 0,
+    "timeout": 0,
+    "aborted": 0,
+    "inconclusive": 0,
+    "passedButRunAborted": 0,
+    "notRunnable": 0,
+    "notExecuted": 0,
+    "disconnected": 0,
+    "warning": 0,
+    "completed": 0,
+    "inProgress": 0,
+    "pending": 0
+  },
+  "cases": [
+    {
+      "name": "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.RestoredBackupSessionsAndChallengesCannotAuthorizeRequests",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.WrongTotpNeverEmitsASession",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.AFactorWithInvalidUserAadRejectsBeforePublishingAStoreOrBuildingAHost",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.EachPreservedFactorCompletesPasswordChallengeTotpSessionAndCsrf(version: 7)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.EachPreservedFactorCompletesPasswordChallengeTotpSessionAndCsrf(version: 1)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.CustomDumpRestoresTheCompleteSchemaInventoryAndRestrictedRuntimeIdentity",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.WrongEnvelopePasswordRejectsBeforePublishingAStoreOrBuildingAHost",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.EnvelopeWithoutTheRetiredVersionCannotEnableAHostForItsDatabase",
+      "outcome": "Passed"
+    }
+  ],
+  "testBinlogProduced": true,
+  "ownClusterStopped": true
+}

@@ -1,0 +1,367 @@
+{
+  "result": "PASS_WITH_DOCKER_SKIP",
+  "passed": 88,
+  "failed": 0,
+  "skipped": 1,
+  "source": "Original results extracted without the extra reviewer Fact from INTENTO2-REGRESION-Y-OBSERVADOR.json",
+  "tests": [
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.ConfirmActivatesFactorIssuesOneSessionAndCannotBeReplayed",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.RevocationDuringConfirmationLeavesNoSession",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.MfaRequiredWithoutFactorNeedsEnrollment",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaSecretCipherTests.RoundTripRecoversSecretForSameContext",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.PolicyRevisionChangeWithoutEnrollmentCancelsTheChallenge",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.HttpSecurityHeadersTests.UnsafeOrDevelopmentProfilesNeverEmitHsts(origin: \"https://rackclick.example:5443\", actualScheme: \"http\", developmentHttp: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaHttpTests.WrongCodeCountsOverHttpAndReplayIsRejected",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaSecretCipherTests.RejectsKeysThatAreNotAes256(length: 33)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.WrongCodesAccumulateAcrossChallengesAndLockAfterFive",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.NewSecretHasExpectedLengthAndVariesBetweenCalls",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.VerifyRejectsSecretOfWrongLength",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.VerifyRejectsMalformedCodes(code: \"12345\")",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.ExpiredLockAllowsRecoveryWithAValidCode",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaSecretCipherTests.RejectsKeysThatAreNotAes256(length: 31)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaHttpTests.EnrollmentOverHttpThenApiAndNextVerifyLogin",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.ForcedAuditFailureRollsBackTheWholeConfirmation",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.ValidCodeIssuesSessionMarkedAsMfaVerified",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaHttpTests.ForeignOriginOrWrongCsrfNeverConsumesTheChallenge",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.VerifyRejectsMalformedCodes(code: \"1234567\")",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.PostgresContainerTests.BootstrapUnicodeLoginAndSessionPersistAndRejectWrongPassword",
+      "outcome": "NotExecuted"
+    },
+    {
+      "name": "RackClick.Quality.Tests.HttpSecurityHeadersTests.UnsafeOrDevelopmentProfilesNeverEmitHsts(origin: \"https://rackclick.example:5443\", actualScheme: \"https\", developmentHttp: True)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.HttpSecurityHeadersTests.UnsafeOrDevelopmentProfilesNeverEmitHsts(origin: \"http://rackclick.example:5443\", actualScheme: \"https\", developmentHttp: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.WithoutProviderLoginRejectsEnrollmentExplicitlyAndIssuesNothing",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.ChallengeCannotBeUsedTwice",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.LoginWithMfaReturnsChallengeAndNoSession",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.HttpSecurityHeadersTests.PublicDnsOriginWithRealTlsUsesOnlyOneDayHsts",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaSecretCipherTests.SameSecretSealsDifferentlyEachTime",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.DeactivatedUserCannotCompleteAPendingChallenge",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.StartRequiresValidCsrfAndStoresOnlyAPendingFactor",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.ComputeMatchesRfc6238Sha1Vectors(unixSeconds: 59, expected: \"287082\")",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.LoginWithoutMfaIssuesSession",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.ExpiredChallengeIsRejected",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.NewChallengeAndStartCannotReopenALockedFactor",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.VerifyAcceptsPreviousStepInsideWindowButNotTwoStepsBack",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaHttpTests.VerifyChallengeCannotEnrollAndStillCompletesLogin",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.VerifyRejectsMalformedCodes(code: \"12 456\")",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.HistoricAuthenticateKeepsItsEnrollmentRejectionWithoutChallenge",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.ComputeMatchesRfc6238Sha1Vectors(unixSeconds: 1111111109, expected: \"081804\")",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.WrongCodeCountsAndOpensNoSession",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.VerifyRejectsReplayOfAlreadyConsumedStep",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.RecoveryChallengeTests.Recovery_consumes_pending_enroll_and_verify_challenges_together_with_sessions",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.HttpSecurityHeadersTests.UnsafeOrDevelopmentProfilesNeverEmitHsts(origin: \"https://192.0.2.8:5443\", actualScheme: \"https\", developmentHttp: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.LoginWithoutFactorIssuesRestrictedEnrollChallengeAndNoSession",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.ComputeMatchesRfc6238Sha1Vectors(unixSeconds: 1234567890, expected: \"005924\")",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.VerifyAcceptsCurrentStepAndRecordsIt",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.HttpSecurityHeadersTests.SuccessAndErrorResponsesPreserveCspAndDoNotEnableCors",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.VerifyRejectsMalformedCodes(code: \"12345a\")",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.ComputeMatchesRfc6238Sha1Vectors(unixSeconds: 1111111111, expected: \"050471\")",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.RecoveryChallengeTests.Failed_recovery_rolls_back_challenges_sessions_marker_and_user_together",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.PolicyChangeAfterChallengeCancelsIt",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.LegacyLoginRefusesUserWithMfa",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaSecretCipherTests.RejectsKeysThatAreNotAes256(length: 16)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaSecretCipherTests.OpenFailsForTruncatedInput",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.HttpSecurityHeadersTests.UnsafeOrDevelopmentProfilesNeverEmitHsts(origin: \"https://[::1]:5443\", actualScheme: \"https\", developmentHttp: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.PasswordResetRevokesPendingChallengeWhenCommitted",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.WrongCsrfIsRejectedWithoutConsumingTheChallenge",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.ExpiredEnrollChallengeIsRejectedAndBurned",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.ConcurrentConfirmWithTheSameCodeOpensExactlyOneSession",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.ComputeMatchesRfc6238Sha1Vectors(unixSeconds: 2000000000, expected: \"279037\")",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaHttpTests.ConcurrentHttpConfirmOpensExactlyOneSession",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaHttpTests.WithoutProviderLoginAndEnrollmentAreExplicitlyRejected",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.MfaRequiredWithoutKeyProviderIsUnavailable",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaSecretCipherTests.OpenFailsForAnotherUser",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.ChallengeExpiringWhileWaitingForAnAccountLockIsRejected",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.EnrollmentPendingRejectsLoginEvenWithAnOldActiveFactor",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.ConcurrentCompletionsOfTheSameChallengeYieldOneSession",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.ChallengeExpiringWhileConfirmWaitsForPolicyLockIsRejected",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaSecretCipherTests.OpenFailsForAnotherInstallation",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.ChallengeExpiringWhileWaitingForThePolicyLockIsRejected",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.EnrollmentWritesMinimalAuditWithoutSecrets",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.SameCodeCannotBeReusedWithANewChallenge",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.MissingCsrfIsRejected",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.PolicyChangeAfterStartCancelsConfirmation",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaSecretCipherTests.OpenFailsForTamperedCiphertext",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaHttpTests.StartIsRateLimitedAfterTheLoginWindowIsSpent",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.PasswordResetRolledBackKeepsTheChallengeUsable",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.CrossPurposeUseDoesNotConsumeTheValidChallenge",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaHttpTests.StartAndConfirmWithoutChallengeCookieAreRejected",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaSecretCipherTests.OpenFailsForAnotherKeyVersion",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.ComputeMatchesRfc6238Sha1Vectors(unixSeconds: 20000000000, expected: \"353130\")",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaEnrollmentTests.VerifyAndEnrollChallengesAreNotInterchangeable",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaTotpTests.VerifyRejectsMalformedCodes(code: \"\")",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.FiveWrongCodesConsumeTheChallengeAndLockTheFactor",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.HttpSecurityHeadersTests.UnsafeOrDevelopmentProfilesNeverEmitHsts(origin: \"https://127.0.0.1:5443\", actualScheme: \"https\", developmentHttp: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.VerificationWaitingForAPasswordResetDoesNotEmitASession",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.HttpSecurityHeadersTests.UnsafeOrDevelopmentProfilesNeverEmitHsts(origin: \"https://[2001:db8::8]:5443\", actualScheme: \"https\", developmentHttp: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.HttpSecurityHeadersTests.UnsafeOrDevelopmentProfilesNeverEmitHsts(origin: \"https://localhost:5443\", actualScheme: \"https\", developmentHttp: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaStoreTests.ChallengeExpiringWhileWaitingForTheChallengeLockIsRejected",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaHttpTests.ChallengeCookieNeverOpensTheApi",
+      "outcome": "Passed"
+    }
+  ],
+  "dllSha256": "2d067c424f0e120b6b7671871cf704a013f9e4ff1591bff16f9ff36528d653a4",
+  "sourcesUnchangedAfterReview": true
+}

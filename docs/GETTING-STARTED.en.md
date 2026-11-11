@@ -2,7 +2,7 @@
 
 **[English](GETTING-STARTED.en.md) · [Deutsch](GETTING-STARTED.de.md) · [Español](INSTALACION-DESDE-GITHUB.md)**
 
-Updated 3 November 2026 · source schema **45**.
+Updated 12 November 2026 · source schema **48**.
 
 This walkthrough creates a **new local development lab**, with the original 10-customer synthetic inventory. It does not modify an installed RackClick server. Every start creates another database and random credentials; previous labs remain on disk. It does not reopen or export changes from a previous lab.
 
@@ -98,6 +98,6 @@ For a persistent Windows deployment, use its separately reviewed native package 
 | Build/output hash check fails | Read the private log, correct the cause and repeat step 4. |
 | URL stops responding | Keep the console open; each new run uses a new port. |
 
-Native MFA enrolment/login and its dashboard were tested separately. Policy: 45-day grace for ordinary accounts, technicians and customer administrators; existing accounts count from policy activation, new accounts from creation. Only global Systemhaus administrators with both global management capabilities are exempt. Removing a factor does not restart the grace period. Portable recovery, emergency procedures, key rotation and final acceptance remain pending.
+Native MFA enrolment/login and its dashboard were tested separately. Policy: 45-day grace for ordinary accounts, technicians and customer administrators; existing accounts count from policy activation, new accounts from creation. Only global Systemhaus administrators with both global management capabilities are exempt. Removing a factor does not restart the grace period. Recovery, emergency/loss and rotation have reviewed internal implementations and bounded laboratory tests; final production acceptance and remaining scenarios are still open. See [current status and limits](PUBLICACION-GITHUB-12-11-2026.md).
 
 Real MFA requires a separately protected keystore outside PostgreSQL, correct DPAPI/ACL configuration and the service identity. Keys and recovery envelopes are excluded from GitHub. Do not copy another machine's configuration or enable MFA through this demo.

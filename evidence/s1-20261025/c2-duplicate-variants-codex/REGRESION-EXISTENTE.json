@@ -1,0 +1,76 @@
+{
+  "utc": "2026-10-25T19:53:29.589107+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "result": "PASS",
+  "realQaAccessed": false,
+  "productModified": false,
+  "fixtureCreatedBy": "SQL; not GUI creation",
+  "browserExitCode": 0,
+  "browserSeconds": 6.25,
+  "exactSqlAdditions": {
+    "inventory_site": 0,
+    "inventory_building": 0,
+    "inventory_room": 0,
+    "inventory_rack": 1,
+    "inventory_device": 2,
+    "inventory_port_group": 3,
+    "inventory_port": 5,
+    "inventory_connection": 1,
+    "inventory_connection_endpoint": 2
+  },
+  "sqlSourceExternalAndRemappingExact": true,
+  "atomicNegatives": [
+    {
+      "status": "reserved",
+      "confirmation": "empty",
+      "http": 409,
+      "error": "reserved_confirmation_required",
+      "unchanged": true
+    },
+    {
+      "status": "reserved",
+      "confirmation": "wrong external UUID",
+      "http": 409,
+      "error": "reserved_confirmation_required",
+      "unchanged": true
+    },
+    {
+      "status": "disabled",
+      "confirmation": "empty",
+      "http": 409,
+      "error": "port_blocked",
+      "unchanged": true
+    },
+    {
+      "status": "faulty",
+      "confirmation": "empty",
+      "http": 409,
+      "error": "port_blocked",
+      "unchanged": true
+    }
+  ],
+  "permissionChecks": [
+    {
+      "user": "move-reader",
+      "write": 403,
+      "outsideRead": 404,
+      "unchanged": true
+    },
+    {
+      "user": "move-technician",
+      "write": 403,
+      "outsideRead": 404,
+      "unchanged": true
+    }
+  ],
+  "crossCustomerDuplicate": {
+    "http": 404,
+    "unchanged": true
+  },
+  "serverRestartPersistence": true,
+  "postgresql": "17.11",
+  "seconds": 33.469,
+  "labStopped": true,
+  "serversStopped": true,
+  "inputsUnchanged": true
+}

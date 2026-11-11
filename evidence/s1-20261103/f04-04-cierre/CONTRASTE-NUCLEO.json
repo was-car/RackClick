@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "valid": true,
+  "comparison": "Frozen source used for C10 versus current source; no binary-identity claim",
+  "sources": [
+    {
+      "path": "development/server/src/RackClick.Server/MfaStore.cs",
+      "frozenC10Sha256": "7fdc78964f9d95d29ebeca09d98b100a2aae28680a72ee493f1ee5bc124b736a",
+      "currentSha256": "7fdc78964f9d95d29ebeca09d98b100a2aae28680a72ee493f1ee5bc124b736a",
+      "identical": true
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaStore.Enrollment.cs",
+      "frozenC10Sha256": "0333e5c96daf53b9fc5dae5f9765f7d33b9fe1a45c8a484be2ac36ea128d9727",
+      "currentSha256": "0333e5c96daf53b9fc5dae5f9765f7d33b9fe1a45c8a484be2ac36ea128d9727",
+      "identical": true
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaSecretCipher.cs",
+      "frozenC10Sha256": "9c1cdc76b3d189c9cd09532766190e6175e5d6d8c1ce5365a787d407de5cb100",
+      "currentSha256": "9c1cdc76b3d189c9cd09532766190e6175e5d6d8c1ce5365a787d407de5cb100",
+      "identical": true
+    },
+    {
+      "path": "development/server/src/RackClick.Server/PostgresStore.Authentication.cs",
+      "frozenC10Sha256": "ab148d80144c3b0ba672e2a8ae80764de9a8a65cf84d4774d8305b8eafc683ab",
+      "currentSha256": "ab148d80144c3b0ba672e2a8ae80764de9a8a65cf84d4774d8305b8eafc683ab",
+      "identical": true
+    }
+  ],
+  "productTestsExecuted": 0,
+  "vmOperations": 0
+}

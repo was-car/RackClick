@@ -4,7 +4,7 @@ Base **RC-CIERRE-20261103-v3**, 2026-11-03. El inventario inicial se creó media
 
 **El 78 % anterior queda retirado como indicador vigente.** Sus 7 puntos pendientes funcionales eran 2 de fundamento, 3 de inventario, 1 de administración y 1 de paridad: no eran 7 tareas. El inventario actual distingue 7 bloques, con trabajo concreto y evidencia.
 
-**Cierre de este trabajo restante: 19,13/100 puntos.** No significa que el producto esté al 0 %. Lo ya construido se reconoce abajo. No se conoce aquí un nuevo porcentaje global del producto y no se utiliza 78+22×cierre.
+**Cierre de este trabajo restante: 26,63/100 puntos.** No significa que el producto esté al 0 %. Lo ya construido se reconoce abajo. No se conoce aquí un nuevo porcentaje global del producto y no se utiliza 78+22×cierre.
 
 El inventario tiene **53 entradas: 50 resultados ponderados y 3 decisiones/controles sin doble puntuación; 280 subpasos**. No son jornadas, pruebas nuevas ni nuevas funciones. Los 55 criterios S1–S4 están trazados; S-50/retorno de campo pertenece a S5.
 
@@ -20,7 +20,7 @@ El denominador inicial es 100. No aumenta por bugs, ZIPs, pruebas repetidas o su
 
 | Bloque | Peso del cierre | Cerrado | Resultados con peso |
 |---|---:|---:|---:|
-| F · Fundamento, seguridad y MFA | 25 | 12,00 | 10 |
+| F · Fundamento, seguridad y MFA | 25 | 19,50 | 10 |
 | I · Jerarquía, inventario y colaboración | 15 | 3,63 | 6 |
 | A · Usuarios, grupos y administración | 5 | 0,00 | 4 |
 | P · Paridad funcional y visual RC9 | 15 | 0,00 | 11 |
@@ -40,8 +40,8 @@ El denominador inicial es 100. No aumenta por bugs, ZIPs, pruebas repetidas o su
 | F-04 | Implementar proveedor TOTP Windows bajo la identidad real del servicio | Cerrado técnicamente e integrado en candidata16; aceptación final pendiente | 2,50 |
 | F-05 | Implementar sobre portable autenticado y restauración de claves | F-05: checkpoints técnicos completos; operador, integración y aceptación pendientes | 2,50 |
 | F-06 | Cerrar rotación y recuperación coherente entre anillo y PostgreSQL | implementación | 2,50 |
-| F-07 | Completar enrolamiento restringido cuando MFA sea exigible | F-07.01 a .04 cerrados técnicamente en laboratorio; candidata, custodia real integrada y cierre .05 pendientes | 2,50 |
-| F-08 | Implementar códigos de recuperación y reenrolamiento restringido | implementación | 2,50 |
+| F-07 | Completar enrolamiento restringido cuando MFA sea exigible | Implementado y revisado técnicamente; integración de candidata objetivo y aceptación pendientes | 2,50 |
+| F-08 | Implementar códigos de recuperación y reenrolamiento restringido | Implementado y revisado técnicamente; integración de candidata objetivo y aceptación pendientes | 2,50 |
 | F-09 | Implementar recuperación local cuando no quedan clave, sobre ni códigos | implementación | 2,50 |
 | F-10 | Completar panel/política MFA por usuario y obligatoriedad antes de producción | implementación | 2,50 |
 | F-11 | Integrar segundo paso y todos los formularios de reautenticación | integración | 2,50 |
@@ -221,14 +221,14 @@ Las referencias acreditan sus builds/entornos originales y límites; no se convi
 
 ### F-06 · Cerrar rotación y recuperación coherente entre anillo y PostgreSQL
 
-**Situación:** Anillo versionado/rotación propuestos; atomicidad de un archivo no cubre publicación de claves más commit DB.
+**Situación:** F-06 cerrado en su criterio técnico con F-06.01–.04: fases, catálogo/retirada, caídas y recuperación trazados. Nueva prueba encadenada con tres backups reales retenidos, dos rotaciones a8/9 y Restore de cada generación en clúster nuevo; todos los TOTP/metadatos conservados y claves sólo referidas por backup protegidas. Cinco invocaciones PASS sin omisiones y revisión independiente con otras cinco; producto227archivos idéntico a F0603, cuyas360pruebas/15cortes se reutilizan sin repetirlas. Sin CLI pública, integración/instalador46, SID efectivo/custodia externa real o aceptación nativa. D/E intactos.
 
 **Qué falta:**
 
-- [ ] F-06.01 · Especificar fases: persistir/verificar clave nueva antes de usarla, conservar versiones requeridas, reenvolver factores y publicar anillo coherente.
-- [ ] F-06.02 · Retirar una versión sólo si ningún factor ni backup retenido la necesita; incluir inventario de versiones en backup/sobre.
-- [ ] F-06.03 · Inyectar caída antes/después de cada publicación y commit; reinicio/Restore deben identificar estado y recuperar sin perder factores.
-- [ ] F-06.04 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
+- [x] F-06.01 · Especificar fases: persistir/verificar clave nueva antes de usarla, conservar versiones requeridas, reenvolver factores y publicar anillo coherente.
+- [x] F-06.02 · Retirar una versión sólo si ningún factor ni backup retenido la necesita; incluir inventario de versiones en backup/sobre.
+- [x] F-06.03 · Inyectar caída antes/después de cada publicación y commit; reinicio/Restore deben identificar estado y recuperar sin perder factores.
+- [x] F-06.04 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
 
 **Se cierra cuando:** Cada punto de interrupción tiene estado recuperable demostrado; todos los factores/backups retenidos siguen descifrables con versiones conservadas y faltantes se rechazan explícitamente.
 
@@ -238,11 +238,11 @@ Las referencias acreditan sus builds/entornos originales y límites; no se convi
 
 **Criterios:** rev4 C.5; rev4 C.6; D2 §5; S-45; S-46.
 
-**Evidencia existente:** [docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md](DECISION-D2-CUSTODIA-CLAVE-TOTP.md), [docs/REVISION-D2-CODEX.md](REVISION-D2-CODEX.md). Todas las referencias e hitos separados están en elJSON.
+**Evidencia existente:** [docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md](DECISION-D2-CUSTODIA-CLAVE-TOTP.md), [docs/REVISION-D2-CODEX.md](REVISION-D2-CODEX.md), [docs/PROTOCOLO-ROTACION-MFA-v1.md](PROTOCOLO-ROTACION-MFA-v1.md). Todas las referencias e hitos separados están en elJSON.
 
 ### F-07 · Completar enrolamiento restringido cuando MFA sea exigible
 
-**Situación:** Dashboard45 y enrolamiento integrados en candidata10 instalada de laboratorio C. Proveedor Windows real, enrolamiento/confirmación y siguiente login verificados por HTTPS antes y después del reinicio. QA visual de Wascar, recuperación portable y cierre total F-07.05 pendientes; QA anterior y producción sin adoptar.
+**Situación:** F-07.01–.05 cerrados técnicamente: enrolamiento restringido existente contrastado con evidencia GUI/nativa y fuentes actuales. Dos escenarios nuevos con cuentas ordinarias de gracia45 vencida, Windows/DPAPI real y rol SQL restringido: desafío/pending/código inválido sin /me, clientes ni mutaciones; cookie renombrada no autoriza. Dos confirmaciones producen una única sesión/CSRF nuevos, con testigo SQL de identidad/transacción y replay rechazado. 2/2 casos,36/36 de núcleo y70/70 Node, sin omitidas; revisor distinto repite2/2. Producto227archivos conservado, sin nuevo login o política. D/E intactos. Integración de candidata objetivo y aceptación pendientes; no nuevo ensayo TLS/servicio ni cierre de emergencia/custodia externa.
 
 **Qué falta:**
 
@@ -250,13 +250,13 @@ Las referencias acreditan sus builds/entornos originales y límites; no se convi
 - [x] F-07.02 · Presentar secreto/QR sólo al usuario durante proceso, sin URL/log/auditoría/historial; confirmar primer TOTP antes de activar factor.
 - [x] F-07.03 · Emitir sesión/CSRF nuevos y confirmar factor/consumir desafío en una sola transacción; revalidar cuenta/política/caducidad después de locks.
 - [x] F-07.04 · Alta nueva conserva45días desdecreación y cuenta existente desdeactivación persistida; administrador globalSystemhaus exento; el servidor exige enrolamiento al vencer o al activar/exigirMFA; probar código erróneo/caducado/repetido, reintento/respuesta perdida y dos confirmaciones concurrentes.
-- [ ] F-07.05 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
+- [x] F-07.05 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
 
 **Se cierra cuando:** Usuario nuevo completa primer factor y obtiene única sesión nueva sólo al confirmar; desafío/enrolamiento incompleto no acceden a /me, clientes ni mutaciones; negativos concurrentes y revisión independiente.
 
 **Responsable:** Desarrollo: API, estado de alta, transacciones y pruebas; Wascar: QA posterior del primer inicio; Entorno: PostgreSQL real y navegador para integración. **Dependencias:** F-04 para producto; proveedor sintético aislado puede permitir desarrollo/pruebas previas
 
-**Tipo de pendiente:** F-07.01 a .04 cerrados técnicamente en laboratorio; candidata, custodia real integrada y cierre .05 pendientes. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
+**Tipo de pendiente:** Implementado y revisado técnicamente; integración de candidata objetivo y aceptación pendientes. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
 
 **Criterios:** rev4 C.5; D3; M3; S-04; S-05; S-43.
 
@@ -264,21 +264,21 @@ Las referencias acreditan sus builds/entornos originales y límites; no se convi
 
 ### F-08 · Implementar códigos de recuperación y reenrolamiento restringido
 
-**Situación:** Tabla app_mfa_recovery_code existe; generación/entrega/consumo y transición posterior no demostrados como flujo de producto.
+**Situación:** F-08.01–.05 cerrados técnicamente y revisados en conjunto. Se conserva la generación expresa de diez códigos propios, entrega inicial única, hashes salados y canje a enrolamiento restringido: sólo TOTP nuevo permite sesión/API, también para único global; revocación/auditoría/rollback y concurrencia real contrastados. Build corregido F0804 sin recompilar, 227 archivos y cuatro tests previos conservados; foco12/12 y revisor6/6 PASS, sin omitidas. Frontend privado18 archivos: positivos Edge de dashboard8 y recuperación4 en corridas distintas; primer conjunto1PASS/1FAIL y recuperación intermitente sin causa acreditada, siete intentos preservados, sin presentar batería íntegramente verde. Sin cambios de producto, guiones compartidos, SQL, dependencias o D/E. Cuatro hitos técnicos acreditados; integración de candidata, aceptación/custodia y emergencia F-09 siguen pendientes.
 
 **Qué falta:**
 
-- [ ] F-08.01 · Generar y mostrar una sola vez códigos por usuario; almacenar sólo hashes con sal conforme D2, sin dependencia de clave TOTP.
-- [ ] F-08.02 · Concretar e implementar si password+código concede sólo recuperación restringida hasta reenrolar; no dejar frase ambigua que emita sesión normal antes de nuevo factor.
-- [ ] F-08.03 · Consumir transaccionalmente, invalidar sesiones/desafíos/códigos anteriores según contrato y probar consumo concurrente/replay/rollback/secretos.
-- [ ] F-08.04 · Garantizar vía administrativa de recuperación con códigos válidos sin bloquear último administrador.
-- [ ] F-08.05 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
+- [x] F-08.01 · Generar y mostrar una sola vez códigos por usuario; almacenar sólo hashes con sal conforme D2, sin dependencia de clave TOTP.
+- [x] F-08.02 · Concretar e implementar si password+código concede sólo recuperación restringida hasta reenrolar; no dejar frase ambigua que emita sesión normal antes de nuevo factor.
+- [x] F-08.03 · Consumir transaccionalmente, invalidar sesiones/desafíos/códigos anteriores según contrato y probar consumo concurrente/replay/rollback/secretos.
+- [x] F-08.04 · Garantizar vía administrativa de recuperación con códigos válidos sin bloquear último administrador.
+- [x] F-08.05 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
 
 **Se cierra cuando:** Cada código sirve una sola vez incluso en concurrencia; recuperación no abre API antes del estado autorizado; reenrolamiento y revocación/auditoría sin secretos probados por revisor distinto.
 
 **Responsable:** Desarrollo: Transición, código y pruebas; Wascar: Custodia privada de códigos y QA; Entorno: PG real/navegador y cuentas sintéticas. **Dependencias:** F-07; F-10
 
-**Tipo de pendiente:** implementación. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
+**Tipo de pendiente:** Implementado y revisado técnicamente; integración de candidata objetivo y aceptación pendientes. **Peso:** 2,50 puntos. Resultado único de cierre; no sumar sus referencias cruzadas como otras tareas.
 
 **Criterios:** rev4 C.5; D2 §3a; M4; S-05; S-41; S-42.
 
@@ -286,14 +286,14 @@ Las referencias acreditan sus builds/entornos originales y límites; no se convi
 
 ### F-09 · Implementar recuperación local cuando no quedan clave, sobre ni códigos
 
-**Situación:** La recuperación CLI actual revoca sesiones y desafíos; D14-05 lo acredita. No equivale al flujo local de emergencia de pérdida total MFA.
+**Situación:** F-09.01–.04 técnicos: CLI local de pérdida con cinco fases, finalización/recibo/guarda y proyección48 mínima no actualizable. Ensayo real en instancia separada de E: pérdida de toda su clave v1, arranque rechazado sin listener, mantenimiento SYSTEM, servidor estándar, regreso HTTPS mediante enrolamiento restringido/TOTP2, credenciales antiguas revocadas e inventario sentinel conservado. Regresión378/378 y revisión independiente40/40 reutilizadas; revisión nativa final favorable por lectura de fuentes/recibos. 221/232fuentes previas conservadas,11modificadas/4nuevas,total236; sin dependencias nuevas. D sin acceso; dos servicios previos de E Running con iguales PID, propios detenidos/puertos y tareas0. Fallos del arnés preservados, cliente HTTPAdmin separado de mantenimientoSYSTEM. F-09.05, seis hitos completos, instalador/Restore48, mantenimientoAdmin, custodia externa y QA/adopción pendientes.
 
 **Qué falta:**
 
-- [ ] F-09.01 · Autorizar sólo operador local SYSTEM/Administradores; sin web anónima ni bypass password-only.
-- [ ] F-09.02 · Permitir preparar anillo nuevo explícitamente, conservar material anterior recuperable, retirar factores ilegibles del uso y marcar enrolamiento pendiente sin borrar DB.
-- [ ] F-09.03 · Revocar sesiones/desafíos y registrar auditoría sin secretos, preservando recuperación de último administrador.
-- [ ] F-09.04 · Ensayar pérdida simulada total, arranque fallido explícito, recuperación local y vuelta mediante enrolamiento restringido.
+- [x] F-09.01 · Autorizar sólo operador local SYSTEM/Administradores; sin web anónima ni bypass password-only.
+- [x] F-09.02 · Permitir preparar anillo nuevo explícitamente, conservar material anterior recuperable, retirar factores ilegibles del uso y marcar enrolamiento pendiente sin borrar DB.
+- [x] F-09.03 · Revocar sesiones/desafíos y registrar auditoría sin secretos, preservando recuperación de último administrador.
+- [x] F-09.04 · Ensayar pérdida simulada total, arranque fallido explícito, recuperación local y vuelta mediante enrolamiento restringido.
 - [ ] F-09.05 · Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
 
 **Se cierra cuando:** Administrador recupera acceso mediante enrolamiento nuevo después de pérdida total simulada; no se borra inventario ni se reactivan sesiones; ninguna ruta remota permite eludir factor.

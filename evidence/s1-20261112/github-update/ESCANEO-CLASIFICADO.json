@@ -1,0 +1,23 @@
+{
+  "tool": "gitleaks8.30.1",
+  "binarySha256": "17157e2ee8b76fc8b1d8bee607a250e34b8a8023c8bc81822d4b5ee4d78fcb7c",
+  "rulesUnmodified": true,
+  "archiveDepth": 1,
+  "scannerExitCode": 10,
+  "rawFindings": 2457,
+  "classified": 2457,
+  "unresolved": 0,
+  "categories": {
+    "previously_reviewed_unchanged_validated_catalogue_profile_identifier": 1609,
+    "previously_reviewed_unchanged_validated_catalogue_group_identifier": 20,
+    "validated_catalogue_profile_identifier": 786,
+    "validated_catalogue_group_identifier": 12,
+    "previously_reviewed_unchanged_verified_source_file_sha256": 28,
+    "natural_language_sql_object_list_no_authentication_value": 1,
+    "previously_reviewed_unchanged_natural_language_description_no_value": 1
+  },
+  "rawReportPrivate": true,
+  "scope": "Complete final selected working snapshot before commit; not private folders or rewritten historical refs",
+  "classificationMethod": "Previous reviewed unchanged byte-hash plus exact finding location/rule; new findings verified against closed catalogue identifiers",
+  "checkoutBytePolicy": "unchanged baseline bytes preserved; docs -text; fixed installer manuals not rewritten"
+}

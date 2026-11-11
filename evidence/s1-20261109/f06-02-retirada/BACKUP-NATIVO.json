@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "checks": [
+    "shared_database_marker_rejected",
+    "column_write_elsewhere_rejected",
+    "set_role_without_inheritance_rejected",
+    "exported_snapshot_census_and_restored_dump_exclude_later_commit",
+    "native_backup_and_external_receipt_consumer",
+    "altered_inventory_rejected",
+    "existing_destination_rejected_and_preserved",
+    "historic_third_file_rejected"
+  ],
+  "checkCount": 8,
+  "productSchema": 45,
+  "postgresql": "17.11",
+  "sourceServerSha256": "d5520d9882e43602cba54c8a7b92ea4d47625b0195c281805771ab9769367a4d",
+  "nativeOperatorExecuted": true,
+  "concurrentWriterCommitted": true,
+  "restoredSnapshotMatchesCensus": true,
+  "sourceFactorCount": 4,
+  "sourceFactorRowsPreserved": true,
+  "servicesAccessed": false,
+  "vmAccessed": false,
+  "retirementExecuted": false,
+  "globalCatalogCompletenessEstablished": false,
+  "externalCustodyReal": false,
+  "ownClusterStopped": true
+}

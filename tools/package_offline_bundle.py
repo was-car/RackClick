@@ -59,7 +59,13 @@ APPLICATION_SCHEMA45_MFA_SHA256 = "a2ec1c7d3570593297a63b672ee485489e49ed0658ff4
 APPLICATION_SCHEMA45_MFA_INVENTORY_SHA256 = "cfaf7ea2629c9bafcfa550bac07dedaad3ec1062a5e006f692c28bb915c4ec52"
 APPLICATION_SCHEMA45_MFA_SUMS_SHA256 = "cac5516551740a24eef010a3157d691f2e61ab4bdaad69da3a1a7dd02cc470d2"
 
+APPLICATION_SCHEMA48_SHA256 = "a7b622f917404bbe3ea2560e1fcc2dad008910395c6ab5fa8bc6875be2c88112"
+APPLICATION_SCHEMA48_INVENTORY_SHA256 = "f08abc37d9d129db72bedd8d2f4bdfee7c7f76946ff717b36e216de38b789c77"
+APPLICATION_SCHEMA48_SUMS_SHA256 = "a62e81a358c1393eb49652b6800883c4766c736dadb9a80733dbb0b027f58573"
+
 APPLICATION_PROFILES = {
+    APPLICATION_SCHEMA48_SHA256: {"name":"48-sql","files":{"server":58,"frontend":18},"bytes":26432703,"metadata":{"inventory.json":APPLICATION_SCHEMA48_INVENTORY_SHA256,"SHA256SUMS.txt":APPLICATION_SCHEMA48_SUMS_SHA256}},
+
     APPLICATION_SCHEMA45_MFA_SHA256: {"name": "45-sql", "files": {"server": 55, "frontend": 18}, "bytes": 25870874,
                                       "metadata": {"inventory.json": APPLICATION_SCHEMA45_MFA_INVENTORY_SHA256,
                                                    "SHA256SUMS.txt": APPLICATION_SCHEMA45_MFA_SUMS_SHA256}},
@@ -157,6 +163,8 @@ def require(ok: bool, code: str) -> None:
 
 def application_schema(manifest_sha256: str) -> int:
     require(manifest_sha256 in APPLICATION_PROFILES, "application_pin_mismatch")
+    if manifest_sha256 == APPLICATION_SCHEMA48_SHA256:
+        return 48
     if manifest_sha256 in (APPLICATION_SCHEMA45_SQL_SHA256, APPLICATION_SCHEMA45_MFA_SHA256):
         return 45
     if manifest_sha256 in (APPLICATION_SCHEMA43P3_SHA256, APPLICATION_SCHEMA43_SQL_SHA256):
@@ -176,7 +184,7 @@ def application_schema(manifest_sha256: str) -> int:
 
 def operator_names(manifest_sha256: str) -> tuple[str, ...]:
     require(manifest_sha256 in APPLICATION_PROFILES, "application_pin_mismatch")
-    return SQL_OPERATORS if APPLICATION_PROFILES[manifest_sha256]["name"] in {"43-sql", "45-sql"} else OPERATORS
+    return SQL_OPERATORS if APPLICATION_PROFILES[manifest_sha256]["name"] in {"43-sql", "45-sql", "48-sql"} else OPERATORS
 
 
 def json_bytes(value: object) -> bytes:
@@ -359,7 +367,11 @@ def collect_application(manifest_path: Path, expected_sha: str) -> tuple[list[Pa
     require(manifest.get("schema") == schema and type(manifest.get("schema")) is int, "application_schema_mismatch")
     distributions = manifest.get("distributions")
     require(isinstance(distributions, dict) and set(distributions) == {"server", "frontend"}, "application_inventory_invalid")
-    if profile['name'] == '45-sql':
+    if profile['name'] == '48-sql':
+        require(manifest_path == ROOT / '.local/distribution48/maintenance-01/manifest.json', 'application_root_invalid')
+        require(manifest.get('profileId') == 'schema48-maintenance-01', 'application_profile_mismatch')
+        candidate = clean_path(manifest_path.parent, directory=True)
+    elif profile['name'] == '45-sql':
         pinned_45 = {
             APPLICATION_SCHEMA45_SQL_SHA256: ('.local/distribution45/sql-01/manifest.json', 'schema45-sql-protected-01'),
             APPLICATION_SCHEMA45_MFA_SHA256: ('.local/distribution45/mfa-store-01/manifest.json', 'schema45-mfa-store-01'),

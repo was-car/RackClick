@@ -140,6 +140,7 @@ internal static class MfaWindowsHostComposition
             files.RequireSafeFolder(root);
             files.RequireSafeFolder(installationFolder);
             files.RequireSafeFolder(keysFolder);
+            MfaMaintenanceAdmission.ThrowIfFenced(root, installation);
             ring = MfaKeyRing.Parse(files.ReadValidated(Path.Combine(keysFolder, MfaKeyRing.RingFileName), MfaKeyRing.MaxRingFileBytes),
                 installation);
         }

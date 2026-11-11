@@ -1,5 +1,5 @@
 {
-  "revision": "2026-11-03-servidor-D45-171",
+  "revision": "2026-11-12-instalacion18-demo50-176",
   "groupsBundle": "c457e5860274dcf87ec68dbdb1f7fef60b2589adaba20a00f2410157dc05487c",
   "cases": [
     {
@@ -2828,10 +2828,12 @@
         "Entra y completa MFA. En la barra lateral izquierda, abajo, debajo de tu nombre, pulsa Mi seguridad. En el centro despliega Códigos de recuperación.",
         "Escribe Contraseña actual, marca Entiendo que generar códigos reemplaza todos los anteriores y pulsa Generar diez códigos de recuperación. Espera El servidor confirmó la generación. Guarda los diez valores en un medio privado fuera del servidor; puedes usar Descargar mis códigos. Después pulsa Ya los guardé; ocultar códigos.",
         "Abre una ventana privada del navegador e inicia sesión con esa cuenta. En la pantalla del segundo factor pulsa Perdí mi autenticador. Introduce un código guardado y pulsa Recuperar y configurar un autenticador nuevo.",
+        "En un laboratorio con otra sesión de administrador global con MFA, antes de confirmar el factor nuevo del usuario recuperándose, abre Administración → usuario afectado → MFA. Debe indicar enrolamiento pendiente y Desactivar debe estar deshabilitado. Si un formulario se abrió antes del canje y se envía después, el servidor debe rechazarlo con 409 mfa_enrollment_required; la cuenta afectada sigue en enrolamiento, sin acceso sólo por contraseña. No cambies cuentas de D para preparar esta prueba.",
         "Debe aparecer la configuración de un autenticador nuevo, sin dashboard. La sesión anterior deja de servir. Configura y confirma el nuevo factor; sólo después debe abrirse la aplicación. Mi seguridad debe indicar cero códigos antiguos sin usar. Genera y guarda un conjunto nuevo.",
+        "En otro laboratorio que tenga un único administrador global activo, repite la recuperación de su propia cuenta con un código privado: no se necesita otro administrador; sólo tras confirmar el factor nuevo deben volver los permisos originales. Genera y custodia un nuevo juego de códigos. Un administrador limitado a cliente no cuenta como otro global. No elimines ni deshabilites cuentas para simular este caso en una instalación existente.",
         "Si se pierde una respuesta al generar, usa Comprobar solicitud original. Un recibo no debe revelar los códigos otra vez. Marca Pass/Not Pass/No probado y describe sólo el paso y mensaje, sin material secreto."
       ],
-      "expected": "Diez códigos de entrega única y hashes con sal; generación propia con contraseña y sesión MFA; canje revoca sesiones/conjunto anterior y sólo concede enrolamiento. Política45/exención global conservadas. Desarrollo:28 pruebas nuevas C#/HTTP/OpenAPI y76 históricas con PostgreSQL17.11/Edge,26 Node y revisión distinta; no acredita emergencia local ni instalación. Manual docs/PUNTO3-FUNCIONES-PENDIENTES.md."
+      "expected": "Diez códigos de entrega única y hashes con sal; generación propia con contraseña y sesión MFA; canje revoca sesiones/conjunto anterior y sólo concede enrolamiento. Política45/exención global conservadas. Desarrollo:28 pruebas nuevas C#/HTTP/OpenAPI y76 históricas con PostgreSQL17.11/Edge,26 Node y revisión distinta; no acredita emergencia local ni instalación. Manual docs/PUNTO3-FUNCIONES-PENDIENTES.md. Adenda F-08.04: pending no puede cancelarse con Desactivar (botón inactivo y rechazo del servidor); el único global recupera sus permisos tras otro factor y repone códigos. La guarda existente de último administrador de seguridad se conserva. Validación instalada y custodia real pendientes; no ejecutar sobre D para preparar estos estados."
     },
     {
       "id": "QA-164",
@@ -2949,6 +2951,86 @@
         "En D45: Clientes → cliente → administración de estructura → sala → Crear dispositivo final → Perfil de referencia. Elegir un repetidor; debe quedar en sala sin U, rack, padre ni bandeja. Con datos de prueba que quieras conservar, conectar sólo extremos compatibles, guardar y comprobar recarga/otra sesión. Los radios WLAN no se conectan como cable. No ejecutar New/Restore para realizar este caso."
       ],
       "expected": "Diez modelos y 23 extremos (13 Ethernet y 10 de alimentación) con IDs y roles conservados, clavija y DC diferenciados, sin Ethernet inventado ni Powerline. El visor permite revisión local; persistencia y permisos requieren candidata instalada. QA de Wascar permanece pendiente."
+    },
+    {
+      "id": "QA-172",
+      "module": "Mantenimiento MFA · preparado, no instalado",
+      "title": "Catálogo retenido y retirada lógica con interrupción y reanudación",
+      "feature": "planned",
+      "steps": [
+        "NO EJECUTAR EN D/E ACTUALES: requiere candidata completa nueva, ensayo aprobado en laboratorio independiente y servicio propio detenido. Las fuentes y pruebas no habilitan este caso en el servidor instalado.",
+        "En laboratorio autorizado, abrir Inicio → Windows PowerShell → Ejecutar como administrador. Seguir docs/MANTENIMIENTO-CATALOGO-Y-RETIRADA-MFA.md y verificar runtime/herramienta/SHA256SUMS por pin externo; identificar UUID, servicio, cuenta/SID y raíz MFA exacta.",
+        "Declarar todas las raíces de copias retenidas, incluidos medios externos; comprobar cada recibo por su hash independiente. Inicializar catálogo mediante Invoke-RackClickMfaKeyMaintenance.ps1 -Action catalog-initialize y conservar catalogSha256 fuera del catálogo. Introducir contraseña SQL sólo en el prompt oculto, nunca en observaciones o chat.",
+        "Verificar rechazo de raíz/backup desconocido, legacy sin inventario, INCOMPLETE, archivo alterado, activa y versión usada por factor pending/active/disabled o backup. No borrar datos para hacer pasar el caso; usar fixtures propios separados.",
+        "Sobre versión no activa sin referencias, guardar UUID de operación y ejecutar retire. GetKey debe rechazarla tras reapertura, la activa seguir legible y el archivo DPAPI de la retirada conservar su SHA256; datos de seguridad permanecen iguales.",
+        "El técnico ensaya interrupciones sólo con el arnés aprobado. Fence debe impedir arranque antes del listener; resume con el mismo UUID/pin concilia sólo anillo original/final, sin repetir retire ni limpiar journal. Una segunda reanudación confirma operación ya verificada.",
+        "Registrar resultados sanitizados y límites; no adjuntar contraseñas, claves, sobres, connectionStrings, dumps o binlogs. QA/adopción de Wascar pendiente; el positivo elevado y el token real del servicio se registran sólo cuando se ejecuten."
+      ],
+      "expected": "Catálogo completo dentro de las raíces atestadas, desconocidos bloqueados, retirada lógica sin borrar DPAPI ni cambiar TOTP/datos; reanudación comprobada. Preparado para candidata posterior, sin disponibilidad instalada acreditada."
+    },
+    {
+      "id": "QA-173",
+      "module": "Rotación MFA · preparada, no instalada",
+      "title": "Caídas y conciliación de rotación con el mismo autenticador",
+      "feature": "planned",
+      "steps": [
+        "No ejecutar en D ni en la candidata instalada: la rotación pública y el instalador46 siguen pendientes. El técnico debe disponer de candidata completa aprobada y laboratorio objetivo aislado.",
+        "Consultar docs/PASO-021-CAIDAS-ROTACION-MFA.md y el protocolo F-06.01. Identificar servicio/UUID/roles/SID, todas las copias retenidas y custodia externa. No adjuntar secretos o sobres al resultado QA.",
+        "Con el arnés aprobado, cortar antes/después de publicar clave, anillos, recibo de arranque y commit. Conservar marcador, journal/fence y salida sanitizada; no borrar ni repetir una operación con otro UUID.",
+        "Reabrir el coordinador y contrastar testigo DB/material: antes del commit, estado inicial comprobado; después, continuar hacia delante sin volver a cifrar. Verificar pending/active/disabled, antirreplay y mismo autenticador; confirmar que sesiones/desafíos afectados quedan revocados.",
+        "Restaurar únicamente a un destino nuevo autorizado. Verificar recuperación y rechazo de DB antigua/testigo ausente, factor viejo auténtico, archivo sustituido y pérdida de admisión. Conservar bases/materiales originales y las claves para backups.",
+        "Sólo tras integración y ensayo nativo: comprobar arranque del servicio, HTTPS/health/login, cuenta efectiva y custodia externa; registrar lo ejecutado realmente. Los kills de procesos de laboratorio no acreditan apagón ni aprobación de Wascar."
+      ],
+      "expected": "Recuperación sin perder factores ni cambiar TOTP/metadatos; desconocidos bloqueados y versiones retenidas conservadas. Caso futuro, sin disponibilidad ni aceptación instalada acreditadas."
+    },
+    {
+      "id": "QA-174",
+      "module": "Rotación MFA · preparada, no instalada",
+      "title": "Recuperar backups de generaciones anteriores después de rotar",
+      "feature": "planned",
+      "steps": [
+        "No ejecutar en D ni copiar DLL/SQL/claves. Caso pendiente de candidata completa y laboratorio nativo autorizado; consultar docs/PASO-022-CIERRE-ROTACION-MFA.md.",
+        "El técnico identifica la instancia y declara todas las raíces de backups retenidos. Preparar factores sintéticos pending/active/disabled y copias previas/posteriores con inventario/recibo y sobre externo confirmado; no incluir sobres ni contraseñas en resultados.",
+        "Con el coordinador aprobado, efectuar dos rotaciones y conservar todas las generaciones. Contrastar catálogo y verificar que una versión usada sólo por backup no pueda retirarse.",
+        "Restaurar cada generación únicamente en base/almacén nuevos. Comparar todos los factores y metadatos con el origen sintético, autenticar con versiones conservadas y con el sobre propio de cada copia. Mantener intactos origen y backups.",
+        "En el fixture del arnés, comprobar rechazo de clave requerida ausente y dump alterado sin cambios de datos/anillo. No retirar material manualmente de una instalación ni degradar MFA.",
+        "Sólo después de la integración nativa, verificar servicio/cuenta efectiva, HTTPS/login y custodia externa y registrar observaciones reales. Las pruebas offline actuales no permiten marcar disponible o aceptado este recorrido en D."
+      ],
+      "expected": "Cada copia retenida del conjunto declarado conserva sus factores/TOTP y versiones recuperables; faltantes o alteraciones bloquean. Caso futuro, no habilitado ni adoptado en D."
+    },
+    {
+      "id": "QA-175",
+      "module": "MFA · cierre restringido preparado",
+      "title": "Primer factor exigible sin acceso previo a clientes ni cambios",
+      "feature": "planned",
+      "steps": [
+        "Usar sólo laboratorio/candidata autorizados con cuentas sintéticas propias. No modificar las fechas, cuentas o MFA de Wascar en D. Consultar docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md.",
+        "El técnico prepara una cuenta ordinaria cuyo plazo45 desde creación haya vencido y otra existente con plazo45 desde activación persistida. No cambiar el reloj ni la política de una instalación para simularlo.",
+        "En la pantalla de login, elegir EN, DE o ES, escribir la cuenta sintética y su contraseña privada, y pulsar Entrar. Debe aparecer el paso MFA de enrolamiento; no el dashboard de clientes.",
+        "Antes de pulsar Configurar autenticador y después de mostrar el QR, comprobar con la matriz del arnés que /me y clientes y las mutaciones de cliente/preferencias reciben401. No copiar QR, semilla o códigos a los resultados.",
+        "Introducir un código inválido y pulsar Confirmar: el usuario permanece restringido. Introducir un TOTP válido: se confirma el factor y aparece la sesión de aplicación. El técnico contrasta una única sesión y CSRF nuevos incluso con dos confirmaciones simultáneas o un reintento.",
+        "Registrar sólo resultados sanitizados. La prueba automática actual usa HTTP en memoria y proveedor Windows real de laboratorio; no habilita por sí sola este nuevo caso en la candidata instalada ni sustituye QA/adopción.",
+        "Referencia técnica adicional: docs/PASO-032-ENSAYO-PERDIDA-MFA.md ensaya pérdida y retorno por enrolamiento en una instancia nueva aislada. No ejecutar esa pérdida en D ni habilitar este caso por existir fuentes48: candidata y aceptación conservan su comprobación propia."
+      ],
+      "expected": "El desafío/factor pendiente/código incorrecto no autoriza API. Sólo la confirmación válida crea una sesión nueva; gracia45 y exención global se conservan. Caso de cierre preparado, pendiente de candidata objetivo y QA."
+    },
+    {
+      "id": "QA-176",
+      "module": "Instalación nueva y datos sintéticos",
+      "title": "Edición18/48 con50 empresas de referencia EN/DE/ES",
+      "feature": "planned",
+      "steps": [
+        "Usar sólo la VM Windows Server2025 limpia identificada por Wascar. Conservar D/E y seguir docs/INSTALACION18-COMPLETA.html; comprobar hash externo del ZIP antes de extraer.",
+        "Crear C:\\RackClick_Instalar18, copiar RackClick-Windows-Completo-18.zip, abrir PowerShell como administrador y ejecutar los comandos de extracción y 01-INSTALAR-NUEVO.ps1 del manual.",
+        "Revisar IP/DNS de esa VM, subred, puertos5443/55441, Systemhaus y administrador; modoNew. Esperar HTTPS/backup, reiniciar Windows manualmente y abrir RackClick-VERIFICAR-18-… para Verificar instalacion; exigir postboot_verified.",
+        "En CARGAR-50-CLIENTES abrir el CMD, indicar URL HTTPS y credenciales en privado, con TOTP si está activo. Confirmar una sola vez sobre servidor48 vacío y esperar demo50_loaded_verified. Ante resultado incierto, conservar la salida sin repetir ni borrar.",
+        "Recargar Clientes y contrastar50 nombres con el manifiesto: Oakbridge Office Supplies(EN), Lindenwerk Büroservice(DE), Papelería Encinar(ES), distribución17/17/16. Cambiar la interfaz entre EN/DE/ES: los nombres propios se conservan.",
+        "Abrir clientes→sitios→salas→racks y comprobar equipos y conexiones. El técnico contrasta las ocho colecciones completas y los50 nombres por API; después genera otro backup.",
+        "No importar usuarios/MFA del origen ni desactivar el factor para cargar datos. No ejecutar Restore48 ni cambio automático de red48. Caso preparado; habilitación y aceptación sólo tras ensayo de la candidata objetivo.",
+        "Estado realA: la carga50 yelbackup están contrastados; A empezó con17 yfinalización revisada, no coldNew18. Ver docs/INSTALACION18-ESTADO-Y-ACCESO.md. La guía no habilita este caso sobre D ni cambia resultados del usuario.",
+        "A ya fue contrastada tras reinicio real:50nombres,8conteos,HTTPS48 yMFA disponible. La primera tarea automática fallóHTTPS; comprobador oficialmanual posteriorpasó, ambosconservados. No se reclasifica como coldNew18 ni se habilita elcaso enotro snapshot."
+      ],
+      "expected": "50 clientes,66 sitios,88 edificios,226 salas,180 racks,1563 equipos,2869 grupos,20665 puertos y2207 conexiones. Nombres fijos17EN/17DE/16ES; catálogo884 disponible, Demo50 conserva868 revisiones/506modelos. D/E intactos. Pendiente de VM y QA; las pruebas locales no lo habilitan."
     }
   ],
   "membersBundle": "efc8bda2405174feced0792048f7c65a2bfdba6665d7220b440589dcdea8ecd7",

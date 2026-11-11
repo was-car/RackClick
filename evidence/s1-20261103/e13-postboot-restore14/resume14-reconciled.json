@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "valid": true,
+  "code": "recovery_service_resume_reconciled",
+  "installationId": "57822410-3b69-4542-a829-260152db9f17",
+  "sameMaterial": true,
+  "materialBefore": {
+    "instance": "92b8cfeb8efe2746230ebab4966d965872f98c28e36c4a7d1ba3afa7bde346ad",
+    "runtime": "ed542ee444a7856bd2f7b8c1b0c694039f9cad6b9e4546e567fa50ea394924ab",
+    "backupProfile": "cb9bc3674daf3baa98e2be92aa17023c676c61f060855a982012e35bbd3e92af",
+    "backupCipher": "720972d0ee93bfc63e0fcf3dacf42dc64ff363a2c1dea8412b5fac0e05d860ae",
+    "runtimeCipher": "7a853ab880a40bfd998ca965959e81c7c07d9e634913fb5b09d87fb35d8888fa"
+  },
+  "materialAfter": {
+    "instance": "92b8cfeb8efe2746230ebab4966d965872f98c28e36c4a7d1ba3afa7bde346ad",
+    "runtime": "ed542ee444a7856bd2f7b8c1b0c694039f9cad6b9e4546e567fa50ea394924ab",
+    "backupProfile": "cb9bc3674daf3baa98e2be92aa17023c676c61f060855a982012e35bbd3e92af",
+    "backupCipher": "720972d0ee93bfc63e0fcf3dacf42dc64ff363a2c1dea8412b5fac0e05d860ae",
+    "runtimeCipher": "7a853ab880a40bfd998ca965959e81c7c07d9e634913fb5b09d87fb35d8888fa"
+  },
+  "serviceSidMatched": true,
+  "sqlAfter": {
+    "clients": 20,
+    "syntheticNames": 20,
+    "runtimeNoDdl": true
+  },
+  "backupSqlAfter": {
+    "backupClients": 20,
+    "backupCanRead": true,
+    "backupCannotWrite": true,
+    "backupNoDdl": true
+  },
+  "stopStartCallsCompleted": true,
+  "nativeChildExitZeroInferredFromCheckedBranch": true,
+  "exitObservationLimit": "Original driver reached the hash-comparison branch after checking native exit0; original error preserved. No fabricated direct exit receipt.",
+  "currentObservation": {
+    "processId": 4396,
+    "original13StillRunning": true,
+    "bootAtInstall": "2026-11-02T23:41:19.5000000Z",
+    "fixture": {
+      "propertyCount": 5,
+      "wrongComparisonTruthy": false,
+      "correctComparison": true
+    },
+    "state": "Running",
+    "status": "ready",
+    "bootCurrent": "2026-11-02T23:41:19.5000000Z",
+    "measuredUtc": "2026-11-02T23:54:39.2288720Z",
+    "normalTlsValidation": true,
+    "startMode": "Auto",
+    "schemaVersion": 43,
+    "serviceSidMatches": true
+  },
+  "originalDriverFailure": {
+    "line": 40,
+    "code": "resume_material_changed",
+    "stage": "real_service_probe",
+    "startAttempted": true,
+    "type": "System.Management.Automation.RuntimeException",
+    "valid": false,
+    "attemptedStop": true
+  },
+  "reconciliationOnly": true,
+  "secondStopStartPerformed": false,
+  "windowsRebootClaimed": false,
+  "DOperated": false
+}

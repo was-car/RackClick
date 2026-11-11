@@ -9,3 +9,9 @@ Die Sammlung enthält ausschließlich Inventar: keine Benutzer, Passwörter, Sit
 Herstellerfotos und externe Referenzrepositories sind ausgeschlossen. Gerätedarstellungen sind interaktiver Anwendungscode. Vergebene Objektnamen werden nicht automatisch übersetzt.
 
 `development/examples/demo50-replay43.json` enthält den API-Replay nur mit Inventar (2.553 Befehle), fixiert auf SHA256 `a3b44a37d8ca81f2f13d515d26905a520af8f09ffb2cfe498f97d06367bf423a`. Der historische Windows-Importer erfordert ausdrücklich einen leeren Server mit **Schema43** und lehnt Schema45 ab. Diese Veröffentlichung passt den Importer nicht an und erlaubt kein Laden auf einem bestehenden Server.
+
+## Dreisprachige Edition03 · 12. November 2026
+
+Der aktuelle optionale Bestand liegt unter [development/examples/demo50-trilingual03](../development/examples/demo50-trilingual03/): 17 englische, 17 deutsche und 16 spanische fiktive Firmennamen. `DATOS-DEMO50/VER-50-CLIENTES.html` lokal öffnen. `CARGAR-50-CLIENTES` enthält den geprüften HTTPS-Lader, seinen fixierten Replay und die Anleitung. Er lädt ausschließlich einen **neuen, leeren Server mit Schema48** nach ausdrücklicher Bestätigung; die Quelldemo mit zehn Kunden bleibt getrennt. Bei Ablehnung oder unklarem Ergebnis die Teildaten bewahren und nicht automatisch wiederholen. Benutzer, Sitzungen, Passwörter und MFA-Faktoren werden nicht importiert.
+
+Quellstruktur43, 50 Inventardateien und Verbindungen bleiben unverändert: 180 Racks, 1.563 Geräte, 20.665 Ports und 2.207 Verbindungen. Die Abdeckung bleibt bei 868 historischen Revisionen, nicht allen aktuellen Katalogrevisionen. Der Bestand wurde in Test-VM A geladen und nach einem Windows-Neustart erneut gelesen. Frühere Abschnitte beschreiben die erhaltene Edition01. Native Installer bleiben außerhalb von GitHub.

@@ -1,3 +1,7 @@
+> **12.11.2026 · Aplicación48 instalada en A con Demo50 trilingüe.** NEW17 más finalización acotada revisada,50clientes/copia posterior comprobados; postboot oficial manual y50datos verificados tras reinicio real; primer chequeo automáticoHTTPS fallido conservado como observación. ZIP18 corrige el asistente y conserva la misma aplicación, sin declarar coldNew18 completo ni adopción. [Acceso, manual y límites](../../docs/INSTALACION18-ESTADO-Y-ACCESO.md).
+
+> **11.11.2026 · Fuentes48 y paso32.** Recuperación local de pérdida MFA, proyección mínima de arranque y finalización de mantenimiento implementadas/revisadas. Ensayo nativo aislado en E con cuenta estándar, HTTPS y TOTP nuevo completado; D y las instalaciones anteriores se conservan. [Alcance y pendientes](../../docs/PASO-032-ENSAYO-PERDIDA-MFA.md). No es un instalador48 ni actualización automática de versiones existentes. F-09.05 y aceptación siguen pendientes.
+
 > **02.11.2026 · Candidata de aplicación43 consolidada.** Catálogo506, MFA/gracia45 y administración existentes en distribución71archivos/ZIP de revisión. [Manual/estado](../../docs/CANDIDATA-CONSOLIDADA43.md). No es instaladorWindows43 ni actualiza VM/QA; operadores/New/Restore y pruebas nativas finales pendientes. Los registros siguientes son históricos.
 
 > Desarrollo41: grupo K52,805 definiciones/799 comerciales, selección444/506. [Manual](../../docs/INTEGRACION-506-GRUPO-K.md). No actualiza instalación nativa; paquete integral/Restore/QA pendientes.

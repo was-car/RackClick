@@ -1,0 +1,37 @@
+RACKCLICK - DEMO50 TRILINGUE - EDICION03
+
+Inventario ficticio opcional:50 empresas,17 EN/17 DE/16 ES. Los nombres
+son fijos; cambiar el idioma de la interfaz no cambia la empresa.
+
+Solo para una instalacion NUEVA y VACIA de esquema48. La fuente de
+inventario sigue siendo esquema43; no es un backup de PostgreSQL.
+No importa usuarios, sesiones, contrasenas ni MFA. No desactive MFA.
+
+1. Verifique el ZIP completo y SHA256SUMS.txt con los hashes entregados
+   por Codex. Extraiga en una carpeta nueva. No mezcle ediciones.
+2. Compruebe que el instalador termino, HTTPS funciona y no hay clientes.
+3. Abra CARGAR-50-CLIENTES.cmd en la VM, o PowerShell y ejecute:
+
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Import-RackClickDemo50.ps1 -PlanPath .\demo50-replay.json -ExpectedPlanSha256 44f7fca5dd78b10de1a5efbb51f34cff488974ed264bfcf9ea72059b1194216d
+
+4. Indique URL HTTPS, usuario administrador global y contrasena privada.
+   Si tiene MFA activo, introduzca su TOTP en la consola. Si debe enrolarse,
+   termine el enrolamiento desde el navegador antes de iniciar esta carga.
+5. Confirme exactamente: CARGAR 50 CLIENTES SINTETICOS
+6. Espere el resultado demo50_loaded_verified,50 clientes,2553 comandos.
+
+Resultados esperados:66 sitios,88 edificios,226 salas,180 racks,
+1563 equipos,2869 grupos,20665 puertos y2207 conexiones.
+
+Cada cliente se guarda mediante la API y se relee por completo. No hay
+transaccion global ni reintentos automaticos. Si falla o la salida queda
+incierta: conserve los datos parciales y la salida; no repita ni borre.
+No cambie permisos, cookies, TLS ni MFA para hacer que pase.
+
+Los UUID de fuente se conservan en los archivos. Al crear recursos nuevos,
+el cargador usa los UUID devueltos por la API y comprueba sus relaciones.
+868 revisiones de perfil y506 modelos originales estan representados;
+el catalogo instalado48 contiene884 revisiones/877 modelos y no todos
+los16 perfiles posteriores estan colocados en estos inventarios.
+
+La edicion02 y sus artefactos historicos permanecen sin cambios.

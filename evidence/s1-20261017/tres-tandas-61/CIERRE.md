@@ -1,0 +1,52 @@
+# Grupo61: tres tandas cerradas, borrado conjunto de equipos
+
+**Pareja61/61, esquema7, seleccionada en QA restaurado http://127.0.0.1:52346.** Misma base, IDs, cuentas, permisos, secretos, puntero y URL; pareja60 y versiones anteriores conservadas. La actualización dejó APP/PostgreSQL propios apagados. No se borraron objetos de Wascar para probar: todas las operaciones destructivas técnicas ocurrieron en bases nuevas sintéticas.
+
+Ejecutar **INICIAR-QA-RESTAURADO.cmd**, pulsar **Ctrl+F5** y seguir **QA-32** en la [guía restaurada](../../../GUIA-QA-RESTAURADO.html). Incluye creación de dos racks/tres equipos ficticios, cables internos/externos, revisión del impacto, cancelar, confirmar y lectura desde otra cuenta.32casos disponibles describe funcionalidad seleccionada, no32guiones manuales aprobados. Las notas/resultados de Wascar no se leen ni sobrescriben.
+
+**Progreso58/100 provisional**, inventario17→18 por la nueva operación API+GUI que antes faltaba. Pesos20/25/15/15/15/10 sin cambios; aportes18/18/14/4/3/1. No incremento por motor, pruebas o documentación. Administración14/15. [Registro](../../../docs/PLAN-TRES-TANDAS-61.json), [criterio](../../../docs/PROGRESO-GLOBAL.md).
+
+## Tres resultados concretos
+
+1. **61-A, servidor:** `devices.delete` para1..64UUID distintos/no vacíos del mismo cliente, cualquier clase de equipo. Vista previa contiene unión exacta de equipos, grupos, puertos y cables incidentes internos/externos sin duplicar. Conserva racks y equipos/puertos del otro extremo. Token ligado al actor/cliente/revisión/payload ordenado/impacto; permiso vigente inventory.read+inventory.delete. Un commit, revisión, auditoría y resultado idempotente. Nueva rama preview mantiene cliente SHARE→actor/sesión, ReadCommitted y revalidación tras esperas/antes de devolver. [Contrato, archivos y pruebas](../../../docs/API-BORRADO-LOTE-S1.md), [cierre del autor](backend/CIERRE.md).
+2. **61-B, interfaz:** selección RC9 de equipos y tarjetas de sala, contadorN/64, listado literal por UUID/rack/sala, Revisar objetos afectados/Confirmar eliminación mediante OperationDialog y journal existentes. No bucle de borrados individuales, subconjunto silencioso ni éxito antes de commit.412 conserva IDs; refrescar invalida preview; respuesta perdida reintenta body/clave/revisión exactos. Limpia sólo lote confirmado, no borrador de otra sesión; avisos27acciones con lote identificado como operación. EN/DE/ES y390px verificados, CSS y RC9 adoptada intactos. [Guion/controles](../../../docs/GUI-BORRADO-LOTE-S1.md), [archivos/resultados](frontend/CIERRE.md).
+3. **61-C, actualización:** motor compartido con dataclass frozen y sólo dos transiciones aprobadas59→60/60→61, pins/manifiestos completos16/18 y SQL001–007 idénticos. Default API/CLI histórico59→60 conservado, nueva entrada61; subprocess preview propaga ID cerrado y valida baseline, nunca acepta rutas/hashes arbitrarios. Supervisor estable histórico conservado sin modificar; padre valida pareja antes/después y bundle servido. Custodia propia PID/JobObject, lectura de filas/historia/identidad/actividadXID, rollback de archivos condicionado a ausencia de actividad; DMLcompensada exige recovery_required. Misma DB/roles/secretos/puntero, sin migración ni reconstrucción. [Procedimiento](../../../docs/ACTUALIZACION-ARTEFACTOS7-61-S1.md), [fuentes/resultado/compatibilidad](windows/CIERRE.md).
+
+## Evidencia Windows nueva, sin sustituir históricos
+
+Windows11, .NET SDK10.0.401, PostgreSQL17.11, Python3.12.3; Node24.21.0/Edge nativos para GUI. No instalaciones ni cambios de dependencias/versiones fijadas. Dos builds C# (el primero tenía el defecto detectado); un build frontend. [Pareja congelada](CANDIDATA61.json), SHA256 `d14e799e6a4a0f5bb2624be336dba53b06793a37d064b6f997a7e231b6d9ffc7`,16servidor/18frontend/schema7. DLL `cab4eb661d18c77b223a1413899d81af784b24fad6a1fed4fcd4504c789ce639`, JS `59d450cf41f520cd0c7da70d94fd87ef76e2bafdadfd0cf79cdcca62f95aa76a`. Copia final inmutable `.local/candidates/tres61-final-6dd9efd42e3242bfaadff8a10fd6cfce`; nativos sin bin/dist mutables.
+
+| Ejecutor | Resultado real y versión |
+|---|---|
+| Autor API |pg01:6casos,3PASS/3FAIL503,40,678s de tests/50,687s total, sobre primera DLL. Tras corregir P1, pg02-final:3afectados+1regresiónApply,4/4 PASS16,856s/25,578s total con DLLfinal. No se cuenta primera corrida como6PASS ni se afirma que los5focos propios corrieron todos en DLLfinal.|
+| Autor GUI |38unidades PASS; primer fixture falló CHECKpatch antes del navegador8,235s, corregido sólo runner. Único integral final PASS27,984s; única regresión de movimiento22,750s, misma pareja61 y persistencia/reinicio.|
+| Autor Windows |4contratos finales PASS0,490s. Smoke nativo59→60 PASS49,493s en versión anterior al delta documentado de guarda preview/pin61; no se presenta como smoke nativo de la fuente final idéntica. Única suite61 en fuente final:1grupo PASS190,789s (registro190,782), dos fuentes60nuevas, inputs/target intactos y ambas apagadas.|
+| Revisor distinto |2PGfinales PASS22,992s/32,344s total;38unidades195.3627ms;23guía0,291s; único integralGUI28,687s/PNG390px; único Windows focal58,113s en una fuente60nueva, PGexterno retenido+éxito apagado/OID/filas/historia. No repite suite extensa ni regresión del autor.|
+
+Todos los reportes finales registran entradas y laboratorios/servidores propios intactos/apagados. El backend usó frontend60 explícito para sus pruebas API; los nativosGUI/revisor y Windows61 usan pareja61 conjunta. Roles, datos, triggers/locks y DMLcompensada se identifican como fixtures nuevos, no acciones en QA real. [Revisión y comandos](revision/REVISION.md); la adopción sigue en Wascar. El revisor conserva sus errores de lectura UTF8 y falso negativo CRLF del arnés estático; corrección sólo del arnés y comparación final14/14, sin repetir pruebas de producto.
+
+## Errores encontrados y correcciones comprobadas
+
+- **P1 nuevo backend:** se supuso erróneamente audit_event.resource_id nullable; SQL001:63 exige NOT NULL. El commit falló503 y toda la transacción se revirtió. Se conservan primera DLL, intentos y logs. Revisión estática inicial también omitió comprobar esa constraint; queda reconocido. Se rechazó migración008, usar cliente/primer equipo o exponer requestId como identidad. **batchId=result.resourceId=envelope.operationId=audit.id=audit.resource_id**, UUID generado por servidor después de resolver replay/comprobar revisión y antes de Apply. No procede del payload ni Idempotency-Key. Change mantiene Guid y SQL7 no cambia. [Decisión](DECISION-AUDIT-ID.json), focos afectados y2PGindependientes verifican unión/rollback/feed27/replay/reinicio y autoridad de preview con DLLfinal.
+- **P2 fixture GUI:** patch='' infringía CHECK; corregido a none sólo en nuevo runner. Intento prebrowser conservado; sin rebuild del producto. El manifiesto frontend inicial se conserva; VERIFICACION explica la diferencia de hash del arnés y confirma producto idéntico.
+- **Guardia Windows:** comparación de claves por unión y sólo3campos evita el supuesto opcional que falló en verificador60; preview valida baseline también cuando hay artifactDirectory. Compatibilidad49,493s se atribuye a su fuente exacta; suite61final cubre el motor/guardia final. Snapshot/fuentes anteriores al refactor preservados, no se reescriben informes60.
+
+## Operación real y guías
+
+CLI61 exit0 y wrapper exit0: **33,058s,16/16postchecks**. Antes exigió fuente60aprobada/inactiva; usa el mismo lock y aborta si está activa, sin forzar cierres ajenos. Helper realiza lecturas SQL READ ONLY, ready/bundle y arranque/parada sólo propios para validar;0login/DML de aplicación del operador. Root compara36archivos originales y8privados sin cambios. [Resultado](OPERACION-REAL.json). Fuente exacta del wrapper conservada como texto al congelar evidencias; no incluye secretos.
+
+Revisor postoperación, encargo expreso: **19/19pasivos**, misma URL/identidad/base/roles/valores de conexión sólo en memoria,61completa/60retenida, SQL7igual, locks libres, sin listeners y pg_ctlapagado.0SQL/HTTP/auth/startstop, sin accesos/cuentas/credenciales/notas/exportes/journals ni lectura QAoriginal; las comparaciones de privados/original se atribuyen al operador. [Post61](revision/POST61-PASIVO.json).
+
+Catálogo32IDs, nuevoQA32 y sólo una frase/procedimiento de QA10 adaptada al mensaje de bloqueo (compatible60/61);30objetos previos intactos. Pareja61 se añade a23gates independientes de módulos revisados/compatibles, sin atribuir ejecución de todos los guiones manuales. Original8/32QA32no, restaurado32/32QA32sí; ambas guías generadas y --check0. Lógica/notas del navegador intactas; no export/import o sobrescritura de resultados de Wascar. [Generación](GUIAS.json).
+
+## Qué sigue pendiente
+
+No undo/redo ni compensación colaborativa, eliminación de jerarquías en lote, todos los casos de Dose pasante/presupuestos/conectores o paridad completa. Los previews heredados conservan el límite documentado de revalidación de sesión; el nueva rama protegida no certifica todas las rutas antiguas ni intercalaciones/carga máxima. Avisos siguen parciales: batch muestra acción/autor/revisión, sin reconstruir la lista histórica borrada ni publicar contexto no capturado.
+
+Faltan operaciones/combinaciones restantes, administración/seguridad finales, informes/exportes/accesibilidad/EN-DE-ES completos, instalación limpia/servicio/HTTPS/certificados, backup/restore productivo en otro equipo, manual final, paquete Windows completo reproducible y QA/adopción final. No publicación externa ni sustitución de PostgreSQL. Este cierre interno no es instalador/servidor final.
+
+Los manifiestos60 y anteriores describen sus fuentes históricas, conservadas en snapshots/Git; no deben verificarse contra los módulos compartidos editados en61 como si fueran un nuevo paquete. El manifiesto61 liga fuentes/documentos/evidencias vigentes y no se presenta como ZIP final de instalación.
+
+El coordinador genera y verifica SHA256SUMS de Windows61 al cerrar, sobre sus evidencias y5fuentes, después de terminar el autor; no se atribuye al autor ni a una prueba nativa nueva.
+
+Control de espacios: fuentes y evidencias conformes salvo contexto literal de los tres diff crudos final-product.diff, pg01/source-attempt.diff y windows/tracked.diff. Se conservan byteexactos y se excluyen únicamente esas rutas del chequeo de espacios; el manifiesto sí los incluye. No se altera el diff para simular otra ejecución.

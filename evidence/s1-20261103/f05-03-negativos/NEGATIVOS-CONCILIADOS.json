@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "valid": true,
+  "checkpoint": "F-05.03",
+  "sources": [
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRecoveryEnvelope.cs",
+      "sha256": "8a7b06ee0441086c40aba3cc8735c21fc562eee08383a58e6ed169b01b7d7fe1",
+      "matchesHistoricalSource": true,
+      "reference": "mfa-l2d-codex"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaKeyRecoveryEnvelopeTests.cs",
+      "sha256": "5d15b220d6d12cfe9ab8e340fe39a8e902b47f609af434989f84db96060e4a1f",
+      "matchesHistoricalSource": true,
+      "reference": "mfa-l2d-codex"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyRecovery.cs",
+      "sha256": "fa21ec1b0430f254b6594cee6c3f2094becab26c13cb71a5be1ffdecea9a8c7f",
+      "matchesHistoricalSource": true,
+      "reference": "mfa-l2f-codex"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/WindowsMfaKeyRecoveryTests.cs",
+      "sha256": "025c3f3cd5d4ff99cc3edc3d5f975a36b0a81a3a6503f99d5f65e60811b9b2f0",
+      "matchesHistoricalSource": true,
+      "reference": "mfa-l2f-codex"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyRecoveryFiles.cs",
+      "sha256": "37f2c762b708ed5abbf3df97bc40b263b7691167854da505f1769709253e12bc",
+      "matchesHistoricalSource": true,
+      "reference": "mfa-l2g-correccion-codex"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/WindowsMfaKeyRecoveryFilesTests.cs",
+      "sha256": "ebfc51aa7172c406591c66429d5809367d20ea40d34b4e4daefa9f83b82ff5f4",
+      "matchesHistoricalSource": true,
+      "reference": "mfa-l2g-correccion-codex"
+    }
+  ],
+  "publicAuthorLog": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-final.txt",
+  "historicalAuthorCases": [
+    {
+      "case": "HeaderOutsideTheProfileIsRejectedBeforeDerivation(field: \"kdf\")",
+      "sourceLine": 7,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "HeaderOutsideTheProfileIsRejectedBeforeDerivation(field: \"aead\")",
+      "sourceLine": 8,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "HeaderOutsideTheProfileIsRejectedBeforeDerivation(field: \"version\")",
+      "sourceLine": 9,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "HeaderOutsideTheProfileIsRejectedBeforeDerivation(field: \"longitud-etiqueta\")",
+      "sourceLine": 10,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "HeaderOutsideTheProfileIsRejectedBeforeDerivation(field: \"magia\")",
+      "sourceLine": 11,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "HeaderOutsideTheProfileIsRejectedBeforeDerivation(field: \"longitud-sal\")",
+      "sourceLine": 12,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "HeaderOutsideTheProfileIsRejectedBeforeDerivation(field: \"iteraciones\")",
+      "sourceLine": 13,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "HeaderOutsideTheProfileIsRejectedBeforeDerivation(field: \"longitud-nonce\")",
+      "sourceLine": 14,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "OversizedEnvelopeIsRejectedBeforeDerivation",
+      "sourceLine": 15,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "MaximalPayloadRoundTripsWithinTheEnvelopeLimit",
+      "sourceLine": 16,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"ciphertext\")",
+      "sourceLine": 17,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"sal\")",
+      "sourceLine": 18,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"nonce\")",
+      "sourceLine": 19,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"etiqueta\")",
+      "sourceLine": 20,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"truncado\")",
+      "sourceLine": 21,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "TwoSealsOfTheSamePayloadDifferInSaltNonceAndCiphertext",
+      "sourceLine": 22,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "EnvelopesWithoutPayloadAreRejectedBeforeDerivation(length: 1)",
+      "sourceLine": 23,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "EnvelopesWithoutPayloadAreRejectedBeforeDerivation(length: 0)",
+      "sourceLine": 24,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "EnvelopesWithoutPayloadAreRejectedBeforeDerivation(length: 59)",
+      "sourceLine": 26,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "EnvelopesWithoutPayloadAreRejectedBeforeDerivation(length: 58)",
+      "sourceLine": 27,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "WrongPasswordIsRejectedWithoutEchoingThePasswordOrThePayload",
+      "sourceLine": 28,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "OversizedOrEmptyPayloadIsRejectedBeforeDerivation",
+      "sourceLine": 29,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "RoundTripRestoresTheSyntheticPayloadAndWritesTheProfileHeader",
+      "sourceLine": 30,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "PasswordOutsideTheCharacterBoundsIsRejectedBeforeDerivation",
+      "sourceLine": 31,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "PasswordIsEncodedWithoutNormalization",
+      "sourceLine": 32,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    },
+    {
+      "case": "PasswordBoundariesOfTwelveAndTwoHundredFiftySixCharactersAreAccepted",
+      "sourceLine": 33,
+      "historicalOutcome": "Passed",
+      "executedAgain": false
+    }
+  ],
+  "historicalIndependentCases": 8,
+  "oldSealEntriesVerified": 7,
+  "countedKdfOnlyWhereAsserted": true,
+  "allUIntValuesTested": false,
+  "allTruncationPrefixesTested": false,
+  "newProductTestExecutions": 0,
+  "builds": 0,
+  "vmOperations": 0,
+  "fullRecoveryClaimed": false,
+  "initialPlanHashes": {
+    "docs/PLAN-CIERRE-RACKCLICK.json": "cd04b648924bc2a2187fb639f349d0ae72f8dbbb19e025c8ebd92e04c62a8303",
+    "docs/PLAN-PENDIENTES-CONFIG.json": "e8561d63ca3f25af86edfd8bb24e3db72e8037dd2696dbc03ddbe4ef39ff46a7",
+    "docs/REGISTRO-MAESTRO-CONFIG.json": "4ebaa4e6629d4f0cb4e251cc6b341ef88930a30868c34de91da39d49db94ac17"
+  },
+  "references": [
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRecoveryEnvelope.cs",
+      "sha256": "8a7b06ee0441086c40aba3cc8735c21fc562eee08383a58e6ed169b01b7d7fe1"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyRecovery.cs",
+      "sha256": "fa21ec1b0430f254b6594cee6c3f2094becab26c13cb71a5be1ffdecea9a8c7f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyRecoveryFiles.cs",
+      "sha256": "37f2c762b708ed5abbf3df97bc40b263b7691167854da505f1769709253e12bc"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaKeyRecoveryEnvelopeTests.cs",
+      "sha256": "5d15b220d6d12cfe9ab8e340fe39a8e902b47f609af434989f84db96060e4a1f"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/WindowsMfaKeyRecoveryFilesTests.cs",
+      "sha256": "ebfc51aa7172c406591c66429d5809367d20ea40d34b4e4daefa9f83b82ff5f4"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/WindowsMfaKeyRecoveryTests.cs",
+      "sha256": "025c3f3cd5d4ff99cc3edc3d5f975a36b0a81a3a6503f99d5f65e60811b9b2f0"
+    },
+    {
+      "path": "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
+      "sha256": "87bd8af34772a4952ac1f96f60942f1b1a619a7da121721677dbce212d02f7df"
+    },
+    {
+      "path": "docs/REVISION-MFA-L2D-CODEX-26-10-2026.md",
+      "sha256": "73ae99bce435b39bd3cf420fd91b07a273e48de0c31c50da308f690cf450be3a"
+    },
+    {
+      "path": "docs/REVISION-MFA-L2F-CODEX-26-10-2026.md",
+      "sha256": "f725c3b91708c40bea060b2d8518d86195cee16249356e41dede200cdb988710"
+    },
+    {
+      "path": "docs/REVISION-MFA-L2G-CORRECCION-CODEX-26-10-2026.md",
+      "sha256": "acf2c7ea7e037763d5348ee95a4a9ed55b699f778125bbc8dd635b0218892f1c"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-final.txt",
+      "sha256": "9af840ca19d6fffa74646755f14a90712a4b6d6acf4a0058147b78785b3c8693"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/CIERRE.md",
+      "sha256": "c9a2a3167e13d240ff604207ede864b57663101eed71aed0f94bd7138d5cd912"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/DOCUMENTOS-PROTEGIDOS.json",
+      "sha256": "6d113a2b47725f5b7379843472d104ad2dd68cf57a9f689afbe1c37507a23148"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/FUENTES-ENTREGADAS.json",
+      "sha256": "76158225b02acddd5c96634747419f5d3f9d250b90a3e641540db51f704750fb"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/INVESTIGACION-PREVIA.md",
+      "sha256": "a9f686031b7487eeabf389124d7c159c483ceee55bb77243a2abbe0a701cf249"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/MfaL2dIndependentReviewTests.cs",
+      "sha256": "70b0b8b1351cc495e90ceb8ff6c1e3506bbaa6ea47e6d7d80f0271bf6578fdb2"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/RESULTADOS-EJECUTADOS.json",
+      "sha256": "fc6b41751d4374894a0e293002b01271bc2c74b8476a5a2a61755fab738589f6"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/SHA256SUMS.txt",
+      "sha256": "647b5bce71a18d3dfe743d8637caca9f6b329678c321e8bd610a46f7493c3f4e"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/SUBREVISION-FUENTE.md",
+      "sha256": "122054aaebacea62489ca0887eed7d488ef5a51d4b789cbe43ea1bd6476604d0"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2f-codex/FUENTES-ENTREGADAS.json",
+      "sha256": "b9650f99c23ce2b330d2b0534beae0b884b7ee7ea1ddf39fea07dfa3ee4e1fb8"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2g-correccion-codex/FUENTES-ENTREGADAS.json",
+      "sha256": "223d169b8827c6e7857dce3c7b2bf76878977ef2db04dea8541b1e9bea9cc3a6"
+    }
+  ]
+}

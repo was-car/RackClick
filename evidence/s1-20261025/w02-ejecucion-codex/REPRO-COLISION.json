@@ -1,0 +1,27 @@
+{
+  "result": "PASS",
+  "dllSha256": "19c94d4e104ef117f4c7788a0a0d4fbe1f846656c4e00d2dc854c2e80bd7f78c",
+  "vmTouched": false,
+  "qaTouched": false,
+  "newCluster": true,
+  "backupRead": false,
+  "dotnetBuildPerformed": false,
+  "existingName": {
+    "exitCode": 1,
+    "status": "rejected",
+    "error": "recovery_username_exists",
+    "fourteenTablesAndMarkerUnchanged": true
+  },
+  "newName": {
+    "exitCode": 0,
+    "originalUserRetained": true,
+    "newUserCreated": true,
+    "recoveryAuditCount": 1,
+    "markerConsumed": true
+  },
+  "postgresql": "17.11",
+  "schema": 14,
+  "labStopped": true,
+  "inputsUnchanged": true,
+  "elapsedSeconds": 16.72
+}

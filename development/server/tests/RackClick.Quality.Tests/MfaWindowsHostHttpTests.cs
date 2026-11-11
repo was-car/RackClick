@@ -39,6 +39,24 @@ public sealed class MfaWindowsHostHttpTests
     private static readonly SecurityIdentifier AdministratorsSid = new(WellKnownSidType.BuiltinAdministratorsSid, null);
 
     [Fact]
+    public async Task RunningHostRetainsTheRingUntilItsOwnLifetimeEnds()
+    {
+        using var store=HostStore.Create();
+        var ring=Path.Combine(store.Root,store.Installation.ToString("D"),WindowsMfaKeyProvider.KeysFolderName,MfaKeyRing.RingFileName);
+        await using(var host=await Harness.CreateAsync(store))
+        {
+            using var response=await host.Get("/health/live","");
+            Assert.Equal(HttpStatusCode.OK,response.StatusCode);
+            Assert.Throws<IOException>(()=>{using var write=new FileStream(ring,FileMode.Open,FileAccess.ReadWrite,FileShare.Read);});
+        }
+        for(var attempt=0;attempt<100;attempt++)
+        {
+            try {using var afterStop=new FileStream(ring,FileMode.Open,FileAccess.ReadWrite,FileShare.Read);Assert.True(afterStop.CanRead);return;}
+            catch(IOException)when(attempt<99){await Task.Delay(20,TestContext.Current.CancellationToken);}
+        }
+    }
+
+    [Fact]
     public async Task EnrollmentThroughTheHostWithTheWindowsProviderOpensSessionWithTheActiveVersion()
     {
         using var store = HostStore.Create();
@@ -432,20 +450,12 @@ public sealed class MfaWindowsHostHttpTests
 
         private async Task ApplyMigrationsAsync()
         {
-            var folder = Path.Combine(AppContext.BaseDirectory, "database");
-            var files = new[]
-            {
-                "001-foundation.sql", "002-inventory.sql", "003-operation-cancellation.sql", "004-session-identity.sql",
-                "005-audit-context.sql", "006-audit-state-intent.sql", "007-audit-context-families.sql",
-                "008-user-catalog-favorites.sql", "009-private-device-templates.sql", "010-customer-shared-device-templates.sql",
-                "011-user-preferences.sql", "012-user-port-colors.sql", "013-user-category-colors.sql", "014-mfa.sql", "015-mfa-account-policy.sql",
-            };
+            // Exercise the real current migration/history contract. The old hand-written
+            // 001..015 subset left schema_migration empty and cannot describe a current host.
             await using var connection = await Source().OpenConnectionAsync(TestContext.Current.CancellationToken);
-            foreach (var name in files)
-            {
-                await using var command = new NpgsqlCommand(await File.ReadAllTextAsync(Path.Combine(folder, name), TestContext.Current.CancellationToken), connection);
-                await command.ExecuteNonQueryAsync(TestContext.Current.CancellationToken);
-            }
+            await using var transaction = await connection.BeginTransactionAsync(TestContext.Current.CancellationToken);
+            await SchemaMigrations.Apply(connection, transaction, TestContext.Current.CancellationToken);
+            await transaction.CommitAsync(TestContext.Current.CancellationToken);
         }
 
         // Idempotente. Cierra el host, retira la base temporal y restaura las variables de entorno.

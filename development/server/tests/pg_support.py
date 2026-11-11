@@ -273,7 +273,7 @@ class Lab:
                            f'REVOKE CREATE ON SCHEMA public FROM PUBLIC;')
         # Global definition tables are read-only, unlike the customer's inventory.
         # The list is closed and internal; old schema fixtures have none of these.
-        for table in ('hardware_definition', 'hardware_mount_slot', 'hardware_group_template', 'hardware_passthrough', 'hardware_connector_template', 'hardware_profile_extension', 'hardware_group_extension'):
+        for table in ('hardware_definition', 'hardware_mount_slot', 'hardware_group_template', 'hardware_passthrough', 'hardware_connector_template', 'hardware_profile_extension', 'hardware_group_extension', 'app_mfa_rotation_witness'):
             if self.sql(database, f"SELECT to_regclass('public.{table}') IS NOT NULL") == 't':
                 self.sql(database, f'REVOKE ALL ON {table} FROM {database.runtime}; GRANT SELECT ON {table} TO {database.runtime};')
 

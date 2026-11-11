@@ -22,3 +22,6 @@ development/server/database/018-commercial-hardware.sql -text
 
 # Preserve the inventory collection SHA256SUMS on Windows clones.
 /DEMO-50-CLIENTES-01/** -text
+
+# Preserve hashed roadmap inputs and fixed distribution/manual profiles.
+/docs/** -text

@@ -1,6 +1,6 @@
 # Hoja de ruta maestra de RackClick
 
-2026-11-04 · Entrada única para continuar el proyecto. Integra el cierre existente, las peticiones de Wascar, la comparación RC10 y el catálogo de fabricantes. No declara implementado lo que sólo está investigado.
+2026-11-11 · Entrada única para continuar el proyecto. Integra el cierre existente, las peticiones de Wascar, la comparación RC10 y el catálogo de fabricantes. No declara implementado lo que sólo está investigado.
 
 **Abrir este documento al planificar.** [Registro completo JSON](REGISTRO-REQUISITOS-MAESTRO.json) · [Trazabilidad de las 302 acciones](TRAZABILIDAD-RC10-MAESTRA.csv) · [Pasos numerados para elegir](PLAN-PENDIENTES-NUMERADO.md) · [Conciliación de documentos](CONCILIACION-PLANES-30-10-2026.md).
 
@@ -8,7 +8,7 @@
 
 D fue actualizada en sitio a aplicación45 el03.11.2026, conservando servicio/SID/DB/cuentas/MFA/certificados/URL. HTTPS ready45 y backup real posteriorPASS, Auto/Running. Inventario actual preservado:50clientes,180racks,1561equipos/objetos,20650puertos,2202conexiones;43tablas comparadas idénticas. Catálogo884revisiones/877comerciales, selección506 intacta. Datos previos manuales no se sustituyen por cifras históricas Demo50. Windows no reiniciado para postboot45; QA/login personal posterior y cierre restante pendientes. No volver a migrar o cargar Demo50.
 
-El cierre cuantificado mantiene 53 resultados (50 con peso y 3 controles), 280 subpasos y 41 acreditados. Son comprobaciones de cierre, no funciones nuevas que haya que escribir. Las 302 acciones RC10 son detalle trazado; el catálogo nuevo es una ampliación diferenciada.
+El cierre cuantificado mantiene 53 resultados (50 con peso y 3 controles), 280 subpasos y 55 acreditados. Son comprobaciones de cierre, no funciones nuevas que haya que escribir. Las 302 acciones RC10 son detalle trazado; el catálogo nuevo es una ampliación diferenciada.
 
 ## Qué falta, por bloques
 
@@ -101,7 +101,7 @@ Regeneración documental desde la raíz: C:/Python312/python.exe -B tools/build_
 ## Siguiente grupo propuesto
 
 - **SIG-DE-CPE-01 · Revisión visual de Alemania, repetidores y soportes antes del paso 9** (C-HW-07, P-11, REQ-DE-CPE-01, REQ-UX-RACK-02). Wascar revisa D45 con Ctrl+F5; usar perfiles del catálogo/sala y comprobar soportes sin repetir instalación ni Demo50. Registrar observaciones. Los pasos9/10 están cerrados documentalmente; paso11 cerrado en fuentes. Postboot45/instalación limpia/Restore45 mantienen su criterio propio.
-- **SIG-CIERRE-01 · Elegir un paso del inventario numerado de pendientes** (E-07, F-10, E-05). Siguiente19/F-06.01: especificar/conciliar fases de rotación y coherencia disco–DB con D2, reutilizando el cierre técnico F05 y sin repetir codecs/portabilidad/login. F05operator/candidata/aceptación, F06/F09/R04 conservan sus pendientes. D/E intactos.
+- **SIG-CIERRE-01 · Elegir un paso del inventario numerado de pendientes** (E-07, F-10, E-05). Continuar paso33/F-09.05: revisar conjuntamente F-09.01–.04, límites y entrega operativa. Reutilizar378/378,40/40 y ensayo nativo completo en E sin repetir la pérdida ni tocar D. Conciliar mantenimiento Admin, segunda pérdida/retirada posterior, candidata/operadores/manual48 y aceptación; no acreditar seis hitos por inercia.
 - **SIG-RECUPERACION-02 · Cerrar recuperacion MFA portable y local de forma integrada** (F-05, F-06, F-08, F-09, R-03, R-04). F04 writer ya integrado en candidata16 completa y revisado, aceptación nativa pendiente. Completar coordinador D2/vínculo backup-material/CLI/RestoreMFA con fence-journal-marcador y cortes, reutilizando componentes/DBTOTP comprobados. No quitar guardia recovery_mfa_envelope_required o tocar D.
 - **SIG-JSON-03 · Importacion JSON normal con previsualizacion y original** (P-01, P-02, P-03, P-04, REQ-UX-05). Completar importacion/merge/round-trip sin confundir cargador fijo de demo con importador general.
 
@@ -152,31 +152,31 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 
 #### F-06 · Cerrar rotación y recuperación coherente entre anillo y PostgreSQL
 
-- **Cierre acreditado:** 0/4 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Anillo versionado/rotación propuestos; atomicidad de un archivo no cubre publicación de claves más commit DB.
-- **Resultado que falta cerrar:** Cada punto de interrupción tiene estado recuperable demostrado; todos los factores/backups retenidos siguen descifrables con versiones conservadas y faltantes se rechazan explícitamente.
-- **Fuentes:** [DECISION-D2-CUSTODIA-CLAVE-TOTP.md](DECISION-D2-CUSTODIA-CLAVE-TOTP.md); [REVISION-D2-CODEX.md](REVISION-D2-CODEX.md)
+- **Cierre acreditado:** 4/4 subpasos; 2,50/2,50 puntos. Estado:cerrado_acreditado.
+- **Lo que hay:** F-06 cerrado en su criterio técnico con F-06.01–.04: fases, catálogo/retirada, caídas y recuperación trazados. Nueva prueba encadenada con tres backups reales retenidos, dos rotaciones a8/9 y Restore de cada generación en clúster nuevo; todos los TOTP/metadatos conservados y claves sólo referidas por backup protegidas. Cinco invocaciones PASS sin omisiones y revisión independiente con otras cinco; producto227archivos idéntico a F0603, cuyas360pruebas/15cortes se reutilizan sin repetirlas. Sin CLI pública, integración/instalador46, SID efectivo/custodia externa real o aceptación nativa. D/E intactos.
+- **Criterio conservado; no reabrir por este registro:** Cada punto de interrupción tiene estado recuperable demostrado; todos los factores/backups retenidos siguen descifrables con versiones conservadas y faltantes se rechazan explícitamente.
+- **Fuentes:** [PLAN-F0604-CIERRE-ROTACION.md](PLAN-F0604-CIERRE-ROTACION.md); [PASO-022-CIERRE-ROTACION-MFA.md](PASO-022-CIERRE-ROTACION-MFA.md); [RESULTADOS.md](../evidence/s1-20261111/f06-04-cierre/RESULTADOS.md); [MATRIZ-CIERRE.md](../evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md); [RETENIDOS.json](../evidence/s1-20261111/f06-04-cierre/RETENIDOS.json); [FUENTES.json](../evidence/s1-20261111/f06-04-cierre/FUENTES.json); [PIN-NEGATIVO.json](../evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json); [DICTAMEN.md](../evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md)
 
 #### F-07 · Completar enrolamiento restringido cuando MFA sea exigible
 
-- **Cierre acreditado:** 4/5 subpasos; 2,00/2,50 puntos. Estado:parcial_acreditado.
-- **Lo que hay:** Enrolamiento/login/GUI y politica45 existentes; F-07.01-.04 acreditados. D11 tiene proveedor real y prueba HTTPS/DPAPI de cuenta sintetica. Falta cierre integral y escenarios pendientes; no crear otro login. Codigos de recuperacion del punto3 probados en desarrollo43, no canje nativo en D.
-- **Resultado que falta cerrar:** Cuando se exige MFA o se inicia enrolamiento, el desafío no concede acceso API; confirmar un factor válido emite una única sesión nueva, con negativos de concurrencia y revisión. Respetar la gracia de 45 días y exención global confirmadas, sin bloquear de golpe todas las cuentas nuevas.
-- **Fuentes:** [MFA-DASHBOARD-GRACIA-45-29-10-2026.md](MFA-DASHBOARD-GRACIA-45-29-10-2026.md); [RESULTADOS.md](../evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md); [PUNTO3-FUNCIONES-PENDIENTES.md](PUNTO3-FUNCIONES-PENDIENTES.md); [RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md); [RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md)
+- **Cierre acreditado:** 5/5 subpasos; 2,50/2,50 puntos. Estado:cerrado_acreditado.
+- **Lo que hay:** F-07.01–.05 cerrados técnicamente: enrolamiento restringido existente contrastado con evidencia GUI/nativa y fuentes actuales. Dos escenarios nuevos con cuentas ordinarias de gracia de 45 días vencida, Windows/DPAPI real y rol SQL restringido: desafío/pending/código inválido sin /me, clientes ni mutaciones; cookie renombrada no autoriza. Dos confirmaciones producen una única sesión/CSRF nuevos, con testigo SQL de identidad/transacción y replay rechazado. 2/2 casos,36/36 de núcleo y70/70 Node, sin omitidas; revisor distinto repite2/2. Producto227archivos conservado, sin nuevo login o política. D/E intactos. Integración de candidata objetivo y aceptación pendientes; no nuevo ensayo TLS/servicio ni cierre de emergencia/custodia externa.
+- **Criterio conservado; no reabrir por este registro:** Usuario nuevo completa primer factor y obtiene única sesión nueva sólo al confirmar; desafío/enrolamiento incompleto no acceden a /me, clientes ni mutaciones; negativos concurrentes y revisión independiente.
+- **Fuentes:** [PLAN-F0705-CIERRE-ENROLAMIENTO.md](PLAN-F0705-CIERRE-ENROLAMIENTO.md); [PASO-023-CIERRE-ENROLAMIENTO-MFA.md](PASO-023-CIERRE-ENROLAMIENTO-MFA.md); [RESULTADOS.md](../evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md); [MATRIZ-CIERRE.md](../evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md); [HTTP-ENROLAMIENTO.json](../evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json); [REGRESION-NUCLEO.json](../evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json); [FRONTEND.json](../evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json); [FUENTES.json](../evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json); [PIN-NEGATIVO.json](../evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json); [DICTAMEN.md](../evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md)
 
 #### F-08 · Implementar códigos de recuperación y reenrolamiento restringido
 
-- **Cierre acreditado:** 0/5 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** Codigos propios y canje a reenrolamiento restringido implementados y revisados en desarrollo43, con revocacion transaccional y entrega unica. Faltan ultimo administrador, custodia operativa, canje en candidata instalada y conciliacion/acreditacion, no otro generador de codigos.
-- **Resultado que falta cerrar:** Cada código sirve una sola vez incluso en concurrencia; recuperación no abre API antes del estado autorizado; reenrolamiento y revocación/auditoría sin secretos probados por revisor distinto.
-- **Fuentes:** [PUNTO3-FUNCIONES-PENDIENTES.md](PUNTO3-FUNCIONES-PENDIENTES.md); [RESULTADOS.md](../evidence/s1-20261102/punto3/RESULTADOS.md)
+- **Cierre acreditado:** 5/5 subpasos; 2,50/2,50 puntos. Estado:cerrado_acreditado.
+- **Lo que hay:** F-08.01–.05 cerrados técnicamente y revisados en conjunto. Se conserva la generación expresa de diez códigos propios, entrega inicial única, hashes salados y canje a enrolamiento restringido: sólo TOTP nuevo permite sesión/API, también para único global; revocación/auditoría/rollback y concurrencia real contrastados. Build corregido F0804 sin recompilar, 227 archivos y cuatro tests previos conservados; foco12/12 y revisor6/6 PASS, sin omitidas. Frontend privado18 archivos: positivos Edge de dashboard8 y recuperación4 en corridas distintas; primer conjunto1PASS/1FAIL y recuperación intermitente sin causa acreditada, siete intentos preservados, sin presentar batería íntegramente verde. Sin cambios de producto, guiones compartidos, SQL, dependencias o D/E. Cuatro hitos técnicos acreditados; integración de candidata, aceptación/custodia y emergencia F-09 siguen pendientes.
+- **Criterio conservado; no reabrir por este registro:** Cada código sirve una sola vez incluso en concurrencia; recuperación no abre API antes del estado autorizado; reenrolamiento y revocación/auditoría sin secretos probados por revisor distinto.
+- **Fuentes:** [PLAN-F0805-CIERRE-CODIGOS.md](PLAN-F0805-CIERRE-CODIGOS.md); [PASO-028-CIERRE-CODIGOS-MFA.md](PASO-028-CIERRE-CODIGOS-MFA.md); [RESULTADOS.md](../evidence/s1-20261111/f08-05-cierre/RESULTADOS.md); [MATRIZ-CIERRE.md](../evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md); [FOCO.json](../evidence/s1-20261111/f08-05-cierre/FOCO.json); [FUENTES.json](../evidence/s1-20261111/f08-05-cierre/FUENTES.json); [FRONTEND.json](../evidence/s1-20261111/f08-05-cierre/FRONTEND.json); [NAVEGADOR-INTENTOS.json](../evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json); [OBSERVACION-NAVEGADOR.md](../evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md); [DICTAMEN.md](../evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md)
 
 #### F-09 · Implementar recuperación local cuando no quedan clave, sobre ni códigos
 
-- **Cierre acreditado:** 0/5 subpasos; 0,00/2,50 puntos. Estado:pendiente_de_cierre_acreditado.
-- **Lo que hay:** La recuperación CLI actual revoca sesiones y desafíos; D14-05 lo acredita. No equivale al flujo local de emergencia de pérdida total MFA.
+- **Cierre acreditado:** 4/5 subpasos; 2,00/2,50 puntos. Estado:parcial_acreditado.
+- **Lo que hay:** F-09.01–.04 técnicos: CLI local de pérdida con cinco fases, finalización/recibo/guarda y proyección48 mínima no actualizable. Ensayo real en instancia separada de E: pérdida de toda su clave v1, arranque rechazado sin listener, mantenimiento SYSTEM, servidor estándar, regreso HTTPS mediante enrolamiento restringido/TOTP2, credenciales antiguas revocadas e inventario sentinel conservado. Regresión378/378 y revisión independiente40/40 reutilizadas; revisión nativa final favorable por lectura de fuentes/recibos. 221/232fuentes previas conservadas,11modificadas/4nuevas,total236; sin dependencias nuevas. D sin acceso; dos servicios previos de E Running con iguales PID, propios detenidos/puertos y tareas0. Fallos del arnés preservados, cliente HTTPAdmin separado de mantenimientoSYSTEM. F-09.05, seis hitos completos, instalador/Restore48, mantenimientoAdmin, custodia externa y QA/adopción pendientes.
 - **Resultado que falta cerrar:** Administrador recupera acceso mediante enrolamiento nuevo después de pérdida total simulada; no se borra inventario ni se reactivan sesiones; ninguna ruta remota permite eludir factor.
-- **Fuentes:** [REVISION-D14-05-CODEX.md](REVISION-D14-05-CODEX.md); [DECISION-D2-CUSTODIA-CLAVE-TOTP.md](DECISION-D2-CUSTODIA-CLAVE-TOTP.md); [REVISION-D2-CODEX.md](REVISION-D2-CODEX.md); [RecoveryAdministrator.cs](../development/server/src/RackClick.Server/RecoveryAdministrator.cs)
+- **Fuentes:** [PLAN-F0904-ENSAYO-PERDIDA-MFA.md](PLAN-F0904-ENSAYO-PERDIDA-MFA.md); [PASO-032-ENSAYO-PERDIDA-MFA.md](PASO-032-ENSAYO-PERDIDA-MFA.md); [RESULTADOS.md](../evidence/s1-20261111/f09-04-ensayo-perdida/RESULTADOS.md); [MATRIZ-CRITERIO.md](../evidence/s1-20261111/f09-04-ensayo-perdida/MATRIZ-CRITERIO.md); [NATIVO.json](../evidence/s1-20261111/f09-04-ensayo-perdida/NATIVO.json); [FUENTES.json](../evidence/s1-20261111/f09-04-ensayo-perdida/FUENTES.json); [FOCOS.json](../evidence/s1-20261111/f09-04-ensayo-perdida/FOCOS.json); [CAMBIOS.patch](../evidence/s1-20261111/f09-04-ensayo-perdida/CAMBIOS.patch); [INVESTIGACION-NATIVA.md](../evidence/s1-20261111/f09-04-ensayo-perdida/INVESTIGACION-NATIVA.md); [DICTAMEN.md](../evidence/s1-20261111/f09-04-ensayo-perdida/review/DICTAMEN.md)
 
 #### F-10 · Cerrar política y administración MFA conforme a gracia de 45 días
 
@@ -501,6 +501,6 @@ A continuación están los53 resultados existentes con su avance acreditado, con
 
 ## Progreso y cierre de esta consolidación
 
-**19,13/100 del cierre restante**, misma base RC-CIERRE-20261103-v3, 53 resultados / 280 subpasos / 41 acreditados. **No es porcentaje global del producto.** Registrar pendientes, descargar modelos o regenerar esta hoja no suma implementación.
+**26,63/100 del cierre restante**, misma base RC-CIERRE-20261103-v3, 53 resultados / 280 subpasos / 55 acreditados. **No es porcentaje global del producto.** Registrar pendientes, descargar modelos o regenerar esta hoja no suma implementación.
 
 El cierre de esta consolidación es documental: ninguna función, plantilla o prueba de producto se acredita por este registro. Los originales y los paquetes históricos se conservan.

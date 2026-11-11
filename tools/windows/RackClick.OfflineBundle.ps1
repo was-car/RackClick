@@ -96,7 +96,7 @@ function Get-OfflineBundleOperatorNames {
         'Start-RackClickLabInstance.ps1','Stop-RackClickLabInstance.ps1','Test-RackClickPrivateDeployment.ps1',
         'Test-RuntimePrerequisites.ps1','Test-ServerDistribution.ps1','RackClick.OfflineBundle.ps1',
         'Test-RackClickOfflineBundle.ps1','Install-RackClickOfflineBundle.ps1')
-    if ($null -ne $Profile -and $Profile.name -cin @('43-sql','45-sql')) {$names+=@('RackClick.SqlSecrets.ps1')}
+    if ($null -ne $Profile -and $Profile.name -cin @('43-sql','45-sql','48-sql')) {$names+=@('RackClick.SqlSecrets.ps1')}
     return $names
 }
 
@@ -123,6 +123,7 @@ function Get-OfflineBundleApplicationProfile {
         '29685419d0746df89777a5da72d25f5b7ac0e571e30decec1888787fe5f0f950' {return @{name='43-sql';server=53;frontend=18;bytes=25650673L;metadata=@{'inventory.json'='86ad16f9295fbd71c6aae78a403a2c336e15d284897ae4216d341b8d040ef40c';'SHA256SUMS.txt'='e2cb5728431bfa51bf66d2d4b17760a8d70a3d66a30595ead24bc39cf5e8baac'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
         '528a03d2efc939d1cea631b1caa9f3e6a445e44257fa757f87a95691acfb6933' {return @{name='45-sql';server=55;frontend=18;bytes=25867806L;metadata=@{'inventory.json'='75b9a378560072c841afea83d305384780244bdb8b258c39de0cf29d17359930';'SHA256SUMS.txt'='b623c46ba133d515765ad74bfaf6f7d1d8acdb4d784bbe84296b95e4e0557c56'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
         'a2ec1c7d3570593297a63b672ee485489e49ed0658ff49f6d2ef585803f6a8af' {return @{name='45-sql';server=55;frontend=18;bytes=25870874L;metadata=@{'inventory.json'='cfaf7ea2629c9bafcfa550bac07dedaad3ec1062a5e006f692c28bb915c4ec52';'SHA256SUMS.txt'='cac5516551740a24eef010a3157d691f2e61ab4bdaad69da3a1a7dd02cc470d2'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
+        'a7b622f917404bbe3ea2560e1fcc2dad008910395c6ab5fa8bc6875be2c88112' {return @{name='48-sql';server=58;frontend=18;bytes=26432703L;metadata=@{'inventory.json'='f08abc37d9d129db72bedd8d2f4bdfee7c7f76946ff717b36e216de38b789c77';'SHA256SUMS.txt'='a62e81a358c1393eb49652b6800883c4766c736dadb9a80733dbb0b027f58573'};notices=@{'licenses/Otp.NET-LICENSE.txt'='0bc32be0ce13330ba88d208548582a641f95b1f66bb19be91f5acc1436c52472'}}}
         default {Stop-OfflineBundleCheck 'application_pin_mismatch'}
     }
 }
@@ -130,6 +131,7 @@ function Get-OfflineBundleApplicationProfile {
 function Get-OfflineBundleExpectedSchema {
     param([hashtable]$Profile)
     # Un único lugar para el esquema esperado de cada perfil; lo usan la validación de diseño y la lectura del ZIP.
+    if ($Profile.name -ceq '48-sql') {return 48}
     if ($Profile.name -ceq '45-sql') {return 45}
     if ($Profile.name -cin @('43','43-sql')) {return 43}
     if ($Profile.name -ceq '15') {return 15}
@@ -153,7 +155,7 @@ function Assert-OfflineBundleLayout {
     }
     if ($Manifest.schemaVersion -isnot [int] -or $Manifest.schemaVersion -ne 1 -or $Manifest.kind -cne 'RackClickOfflineBundle' -or
         $Manifest.platform -cne 'win-x64' -or $Manifest.id -isnot [string] -or $Manifest.id -cnotmatch '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$' -or
-        $Manifest.versions.schema -isnot [int] -or $Manifest.versions.schema -notin @(9,10,11,12,13,14,15,43,45) -or
+        $Manifest.versions.schema -isnot [int] -or $Manifest.versions.schema -notin @(9,10,11,12,13,14,15,43,45,48) -or
         $Manifest.versions.dotnetRuntime -cne '10.0.12' -or $Manifest.versions.postgresql -cne '17.11' -or
         $Manifest.versions.vcRedist -cne '14.51.36247.0' -or $Manifest.versions.vcRuntimeMinimum -cne '14.44.35211.0' -or
         $Manifest.files -isnot [pscustomobject]) {Stop-OfflineBundleCheck 'manifest_schema_invalid'}

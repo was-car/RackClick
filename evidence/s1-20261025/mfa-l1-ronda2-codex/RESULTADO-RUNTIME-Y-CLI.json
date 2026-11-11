@@ -1,0 +1,55 @@
+{
+  "utc": "2026-10-25T21:56:42.804627+00:00",
+  "result": "PASS",
+  "realQaAccessed": false,
+  "sourcesChecked": 110,
+  "probeSha256": "d8fec5ca1812e9de6e9e931854b5f41169c806fbc420a523e6a901dae13eeaf4",
+  "scope": "Frozen source tree; TestServer HTTP plus PostgreSQL17 and CLI, no TCP/TLS/browser/VM or deployment.",
+  "buildExit": 0,
+  "dllSha256": "2d067c424f0e120b6b7671871cf704a013f9e4ff1591bff16f9ff36528d653a4",
+  "cli": {
+    "bootstrapReal": true,
+    "migrateInitialized14": true,
+    "migrationAndUsersUnchanged": true,
+    "duplicateBootstrapRejected": true,
+    "conflictingModesRejected": true,
+    "emptyMigrationRejectedWithoutInitialization": true,
+    "recoverMissingUserRejectedBeforeHost": true,
+    "invalidOriginNeverRequiredHost": true,
+    "stateSha256": "4d46c5efe02e8bf1420ed2542cc1f92a64b632d7a212c249d3d6852243a4991f",
+    "migration13To14Tested": false
+  },
+  "testExit": 0,
+  "tests": [
+    {
+      "name": "RackClick.Quality.Tests.MfaL1RuntimeReviewTests.RestrictedRuntimeEnrollsAndVerifiesWithFreshSessionAndCookieContracts",
+      "outcome": "Passed"
+    }
+  ],
+  "counters": {
+    "total": "1",
+    "executed": "1",
+    "passed": "1",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "postgresql": "17.11",
+  "targetedMfaTestsPassed": 1,
+  "probeOnly": true,
+  "runtimeRoleHttpVerified": true,
+  "privateBinlogs": 5,
+  "seconds": 19.031,
+  "labStopped": true,
+  "serversStopped": true
+}

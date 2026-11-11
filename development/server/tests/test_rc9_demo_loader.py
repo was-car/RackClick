@@ -1,6 +1,6 @@
 """Real PG17 tests for the pinned original-data loader; never an installed DB.
 
-Run with --publication <approved schema15 or45 server folder>, --loader <tool DLL>
+Run with --publication <approved schema15,45 or48 server folder>, --loader <tool DLL>
 and --plan <canonical demo-plan.json>. No tools are installed or existing bases
 reused. Logs/credentials remain in the new private .local/labs directory.
 """

@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "scenario": "write-permission",
+  "qaTouched": false,
+  "vmTouched": false,
+  "newCluster": true,
+  "dllSha256": "5eb1abcf9d2f91d293bae8f1b01e94f0352ca254c0387aaa45de1c35b2a97585",
+  "browserScriptSha256": "ffa92d25dd1cce473e10f07547e231cc69387d2fa482bdb59728bb22250ce620",
+  "browserExitCode": 0,
+  "nineSqlTablesExactlyRestored": true,
+  "persistenceAfterServerRestart": true,
+  "postgresql": "17.11",
+  "labStopped": true,
+  "serversStopped": true,
+  "elapsedSeconds": 21.83,
+  "inputsUnchanged": true
+}

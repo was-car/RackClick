@@ -1034,11 +1034,59 @@
       "title": "Cerrar rotación y recuperación coherente entre anillo y PostgreSQL",
       "kind": "producto/operación",
       "status": "implementación",
-      "current": "Anillo versionado/rotación propuestos; atomicidad de un archivo no cubre publicación de claves más commit DB.",
-      "available": [],
+      "current": "F-06 cerrado en su criterio técnico con F-06.01–.04: fases, catálogo/retirada, caídas y recuperación trazados. Nueva prueba encadenada con tres backups reales retenidos, dos rotaciones a8/9 y Restore de cada generación en clúster nuevo; todos los TOTP/metadatos conservados y claves sólo referidas por backup protegidas. Cinco invocaciones PASS sin omisiones y revisión independiente con otras cinco; producto227archivos idéntico a F0603, cuyas360pruebas/15cortes se reutilizan sin repetirlas. Sin CLI pública, integración/instalador46, SID efectivo/custodia externa real o aceptación nativa. D/E intactos.",
+      "available": [
+        "Especificación de fases D2 para rotación offline; no comando o publicador operativo",
+        "Componentes internos de inventario/guarda y lectorSQL probados, sin caller operativo de retirada",
+        "Operadores nativos de inventario MFA y snapshot censo/dump probados; sin retirada ni catálogo completo",
+        "Catálogo y retirada lógica bajo coordinador probados/revisados; sin adopción instalada ni rotación",
+        "Rotación interna y caídas/Restore de laboratorio probados/revisados; operación instalada todavía pendiente",
+        "Criterio técnico F06 completo revisado; backups retenidos restaurados/autenticados tras rotación; integración operativa pendiente"
+      ],
       "evidence": [
         "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-        "docs/REVISION-D2-CODEX.md"
+        "docs/REVISION-D2-CODEX.md",
+        "docs/PROTOCOLO-ROTACION-MFA-v1.md",
+        "docs/PASO-019-FASES-ROTACION-MFA.md",
+        "evidence/s1-20261109/f06-01-fases/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261109/f06-01-fases/RESULTADOS.md",
+        "evidence/s1-20261109/f06-01-fases/review/DICTAMEN-F0601.md",
+        "docs/CONTRATO-INVENTARIO-RETENCION-MFA-v1.md",
+        "docs/PASO-020-INVENTARIO-RETENCION-MFA.md",
+        "evidence/s1-20261109/f06-02-retencion/RESULTADOS.md",
+        "evidence/s1-20261109/f06-02-retencion/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261109/f06-02-retencion/review/DICTAMEN-F0602.md",
+        "evidence/s1-20261109/f06-02-retencion/POSTGRES-CENSO-BACKUP.json",
+        "evidence/s1-20261109/f06-02-retencion/REGRESION-COMPONENTES.json",
+        "docs/PLAN-F0602-INTEGRACION-BACKUP.md",
+        "docs/BACKUP-MFA-CON-INVENTARIO-DESARROLLO.md",
+        "evidence/s1-20261109/f06-02-nativo/RESULTADOS.md",
+        "evidence/s1-20261109/f06-02-nativo/POSTGRES-NATIVO.json",
+        "evidence/s1-20261109/f06-02-nativo/REGRESION.json",
+        "evidence/s1-20261109/f06-02-nativo/REVISION-INDEPENDIENTE.md",
+        "docs/PLAN-F0602-CATALOGO-Y-RETIRADA.md",
+        "docs/MANTENIMIENTO-CATALOGO-Y-RETIRADA-MFA.md",
+        "evidence/s1-20261109/f06-02-retirada/RESULTADOS.md",
+        "evidence/s1-20261109/f06-02-retirada/REVISION.md",
+        "evidence/s1-20261109/f06-02-retirada/POSTGRES-REGRESION.json",
+        "evidence/s1-20261109/f06-02-retirada/BACKUP-NATIVO.json",
+        "evidence/s1-20261109/f06-02-retirada/FUENTES.json",
+        "docs/PLAN-F0603-ROTACION-Y-CAIDAS.md",
+        "docs/PASO-021-CAIDAS-ROTACION-MFA.md",
+        "evidence/s1-20261110/f06-03-rotacion/RESULTADOS.md",
+        "evidence/s1-20261110/f06-03-rotacion/REVISION.md",
+        "evidence/s1-20261110/f06-03-rotacion/FUENTES.json",
+        "evidence/s1-20261110/f06-03-rotacion/POSTGRES-REGRESION.json",
+        "evidence/s1-20261110/f06-03-rotacion/MATRIZ-CAIDAS.json",
+        "evidence/s1-20261110/f06-03-rotacion/NEGATIVOS.json",
+        "docs/PLAN-F0604-CIERRE-ROTACION.md",
+        "docs/PASO-022-CIERRE-ROTACION-MFA.md",
+        "evidence/s1-20261111/f06-04-cierre/RESULTADOS.md",
+        "evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f06-04-cierre/RETENIDOS.json",
+        "evidence/s1-20261111/f06-04-cierre/FUENTES.json",
+        "evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json",
+        "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md"
       ],
       "criteria": [
         "rev4 C.5",
@@ -1061,10 +1109,12 @@
         "definition_confirmed": {
           "state": "pending",
           "applicable": true,
-          "reason": "Hay propuesta/condiciones o transición operativa por concretar; no inventar decisión.",
+          "reason": "F-06.01 especifica las fases con revisión distinta; la definición completa conserva el censo/retirada F-06.02 y el contrato operativo por cerrar. No acredita implementación ni pruebas de rotación.",
           "evidence": [
             "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md"
+            "docs/REVISION-D2-CODEX.md",
+            "docs/PROTOCOLO-ROTACION-MFA-v1.md",
+            "evidence/s1-20261109/f06-01-fases/review/DICTAMEN-F0601.md"
           ]
         },
         "implementation_complete": {
@@ -1077,21 +1127,33 @@
           ]
         },
         "technical_tests_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Faltan pruebas del entregable completo/final o de los cambios afectados; no repetir suites que ya cubren partes invariantes.",
+          "reason": "Criterio técnico completo F06 trazado entre F0601–03 y escenario retenido no vacío F0604, con revisión distinta y pines. No acredita CLI pública, servicio instalado/custodia externa, integración de candidata ni adopción.",
           "evidence": [
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md"
+            "docs/PLAN-F0604-CIERRE-ROTACION.md",
+            "docs/PASO-022-CIERRE-ROTACION-MFA.md",
+            "evidence/s1-20261111/f06-04-cierre/RESULTADOS.md",
+            "evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f06-04-cierre/RETENIDOS.json",
+            "evidence/s1-20261111/f06-04-cierre/FUENTES.json",
+            "evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json",
+            "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md"
           ]
         },
         "independent_review_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Revisión distinta final/afectada pendiente tras implementar o integrar el resultado.",
+          "reason": "Criterio técnico completo F06 trazado entre F0601–03 y escenario retenido no vacío F0604, con revisión distinta y pines. No acredita CLI pública, servicio instalado/custodia externa, integración de candidata ni adopción.",
           "evidence": [
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md"
+            "docs/PLAN-F0604-CIERRE-ROTACION.md",
+            "docs/PASO-022-CIERRE-ROTACION-MFA.md",
+            "evidence/s1-20261111/f06-04-cierre/RESULTADOS.md",
+            "evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f06-04-cierre/RETENIDOS.json",
+            "evidence/s1-20261111/f06-04-cierre/FUENTES.json",
+            "evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json",
+            "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md"
           ]
         },
         "integrated_current_candidate": {
@@ -1120,32 +1182,90 @@
         {
           "id": "F-06.01",
           "text": "Especificar fases: persistir/verificar clave nueva antes de usarla, conservar versiones requeridas, reenvolver factores y publicar anillo coherente.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "docs/PROTOCOLO-ROTACION-MFA-v1.md",
+            "docs/PASO-019-FASES-ROTACION-MFA.md",
+            "evidence/s1-20261109/f06-01-fases/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261109/f06-01-fases/RESULTADOS.md",
+            "evidence/s1-20261109/f06-01-fases/review/DICTAMEN-F0601.md"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261109/f06-01-fases/review/DICTAMEN-F0601.md"
+          ]
         },
         {
           "id": "F-06.02",
           "text": "Retirar una versión sólo si ningún factor ni backup retenido la necesita; incluir inventario de versiones en backup/sobre.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "docs/CONTRATO-INVENTARIO-RETENCION-MFA-v1.md",
+            "docs/PASO-020-INVENTARIO-RETENCION-MFA.md",
+            "evidence/s1-20261109/f06-02-retencion/RESULTADOS.md",
+            "evidence/s1-20261109/f06-02-retencion/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261109/f06-02-retencion/review/DICTAMEN-F0602.md",
+            "evidence/s1-20261109/f06-02-retencion/POSTGRES-CENSO-BACKUP.json",
+            "evidence/s1-20261109/f06-02-retencion/REGRESION-COMPONENTES.json",
+            "docs/PLAN-F0602-INTEGRACION-BACKUP.md",
+            "docs/BACKUP-MFA-CON-INVENTARIO-DESARROLLO.md",
+            "evidence/s1-20261109/f06-02-nativo/RESULTADOS.md",
+            "evidence/s1-20261109/f06-02-nativo/POSTGRES-NATIVO.json",
+            "evidence/s1-20261109/f06-02-nativo/REGRESION.json",
+            "evidence/s1-20261109/f06-02-nativo/REVISION-INDEPENDIENTE.md",
+            "docs/PLAN-F0602-CATALOGO-Y-RETIRADA.md",
+            "docs/MANTENIMIENTO-CATALOGO-Y-RETIRADA-MFA.md",
+            "evidence/s1-20261109/f06-02-retirada/RESULTADOS.md",
+            "evidence/s1-20261109/f06-02-retirada/REVISION.md",
+            "evidence/s1-20261109/f06-02-retirada/POSTGRES-REGRESION.json",
+            "evidence/s1-20261109/f06-02-retirada/BACKUP-NATIVO.json",
+            "evidence/s1-20261109/f06-02-retirada/FUENTES.json"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261109/f06-02-retencion/review/DICTAMEN-F0602.md",
+            "evidence/s1-20261109/f06-02-nativo/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261109/f06-02-retirada/REVISION.md"
+          ]
         },
         {
           "id": "F-06.03",
           "text": "Inyectar caída antes/después de cada publicación y commit; reinicio/Restore deben identificar estado y recuperar sin perder factores.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0603-ROTACION-Y-CAIDAS.md",
+            "docs/PASO-021-CAIDAS-ROTACION-MFA.md",
+            "evidence/s1-20261110/f06-03-rotacion/RESULTADOS.md",
+            "evidence/s1-20261110/f06-03-rotacion/REVISION.md",
+            "evidence/s1-20261110/f06-03-rotacion/FUENTES.json",
+            "evidence/s1-20261110/f06-03-rotacion/POSTGRES-REGRESION.json",
+            "evidence/s1-20261110/f06-03-rotacion/MATRIZ-CAIDAS.json",
+            "evidence/s1-20261110/f06-03-rotacion/NEGATIVOS.json"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261110/f06-03-rotacion/REVISION.md"
+          ]
         },
         {
           "id": "F-06.04",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0604-CIERRE-ROTACION.md",
+            "docs/PASO-022-CIERRE-ROTACION-MFA.md",
+            "evidence/s1-20261111/f06-04-cierre/RESULTADOS.md",
+            "evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f06-04-cierre/RETENIDOS.json",
+            "evidence/s1-20261111/f06-04-cierre/FUENTES.json",
+            "evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json",
+            "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md"
+          ],
           "weight_points": "5/8",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md"
+          ]
         }
       ],
       "baseline_state": "pending_remaining_work_as_of_2026-10-25",
@@ -1163,12 +1283,13 @@
       "area": "F",
       "title": "Completar enrolamiento restringido cuando MFA sea exigible",
       "kind": "producto",
-      "status": "F-07.01 a .04 cerrados técnicamente en laboratorio; candidata, custodia real integrada y cierre .05 pendientes",
-      "current": "Dashboard45 y enrolamiento integrados en candidata10 instalada de laboratorio C. Proveedor Windows real, enrolamiento/confirmación y siguiente login verificados por HTTPS antes y después del reinicio. QA visual de Wascar, recuperación portable y cierre total F-07.05 pendientes; QA anterior y producción sin adoptar.",
+      "status": "Implementado y revisado técnicamente; integración de candidata objetivo y aceptación pendientes",
+      "current": "F-07.01–.05 cerrados técnicamente: enrolamiento restringido existente contrastado con evidencia GUI/nativa y fuentes actuales. Dos escenarios nuevos con cuentas ordinarias de gracia45 vencida, Windows/DPAPI real y rol SQL restringido: desafío/pending/código inválido sin /me, clientes ni mutaciones; cookie renombrada no autoriza. Dos confirmaciones producen una única sesión/CSRF nuevos, con testigo SQL de identidad/transacción y replay rechazado. 2/2 casos,36/36 de núcleo y70/70 Node, sin omitidas; revisor distinto repite2/2. Producto227archivos conservado, sin nuevo login o política. D/E intactos. Integración de candidata objetivo y aceptación pendientes; no nuevo ensayo TLS/servicio ni cierre de emergencia/custodia externa.",
       "available": [
         "Backend de enrolamiento/desafío/confirmación probado en TestServer+PG17.11; cuenta runtime no propietaria y DDL rechazado; revisión independiente favorable. No habilitado en QA.",
         "GUI de enrolamiento/verificación EN/DE/ES y QR local, comprobada con Kestrel/Edge y proveedor sintético en laboratorio independiente; pendiente de entrega en candidata.",
-        "Dashboard Mi seguridad y Métodos de autenticación del usuario seleccionado; 45días y exención global comprobados en laboratorio15, no candidata instalada."
+        "Dashboard Mi seguridad y Métodos de autenticación del usuario seleccionado; 45días y exención global comprobados en laboratorio15, no candidata instalada.",
+        "Enrolamiento restringido público y GUI existentes verificados en su criterio técnico completo; flujo con proveedor Windows real y runtime sin DDL, sin adopción nueva de candidata."
       ],
       "evidence": [
         "docs/MFA-M3-RESULTADOS.md",
@@ -1191,7 +1312,17 @@
         "evidence/s1-20261027/mfa-gui-codex/REVISION-INDEPENDIENTE.md",
         "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md",
         "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
-        "evidence/s1-20261029/mfa-dashboard-codex/RESULTADOS.md"
+        "evidence/s1-20261029/mfa-dashboard-codex/RESULTADOS.md",
+        "docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md",
+        "docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md"
       ],
       "criteria": [
         "rev4 C.5",
@@ -1224,39 +1355,54 @@
           ]
         },
         "implementation_complete": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "El resultado completo de esta tarea no está implementado; partes existentes se conservan en real_state/done_scope.",
+          "reason": "API/GUI de enrolamiento existentes e identificadas, primer factor confirmado y sesión única probados con fuentes actuales, proveedor Windows y rol restringido; concurrencia/negativos y revisión distinta trazados. No acredita integración de candidata46 ni aceptación instalada/productiva.",
           "evidence": [
-            "docs/MFA-M3-RESULTADOS.md",
-            "docs/AUTENTICACION-MFA-S1.md",
-            "docs/MFA-M2-RESULTADOS.md",
-            "development/server/src/RackClick.Server/PostgresStore.Authentication.cs",
-            "development/server/database/014-mfa.sql"
+            "docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md",
+            "docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md"
           ]
         },
         "technical_tests_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Faltan pruebas del entregable completo/final o de los cambios afectados; no repetir suites que ya cubren partes invariantes.",
+          "reason": "API/GUI de enrolamiento existentes e identificadas, primer factor confirmado y sesión única probados con fuentes actuales, proveedor Windows y rol restringido; concurrencia/negativos y revisión distinta trazados. No acredita integración de candidata46 ni aceptación instalada/productiva.",
           "evidence": [
-            "docs/MFA-M3-RESULTADOS.md",
-            "docs/AUTENTICACION-MFA-S1.md",
-            "docs/MFA-M2-RESULTADOS.md",
-            "development/server/src/RackClick.Server/PostgresStore.Authentication.cs",
-            "development/server/database/014-mfa.sql"
+            "docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md",
+            "docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md"
           ]
         },
         "independent_review_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Revisión distinta final/afectada pendiente tras implementar o integrar el resultado.",
+          "reason": "API/GUI de enrolamiento existentes e identificadas, primer factor confirmado y sesión única probados con fuentes actuales, proveedor Windows y rol restringido; concurrencia/negativos y revisión distinta trazados. No acredita integración de candidata46 ni aceptación instalada/productiva.",
           "evidence": [
-            "docs/MFA-M3-RESULTADOS.md",
-            "docs/AUTENTICACION-MFA-S1.md",
-            "docs/MFA-M2-RESULTADOS.md",
-            "development/server/src/RackClick.Server/PostgresStore.Authentication.cs",
-            "development/server/database/014-mfa.sql"
+            "docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md",
+            "docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md"
           ]
         },
         "integrated_current_candidate": {
@@ -1350,11 +1496,24 @@
         {
           "id": "F-07.05",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md",
+            "docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md"
+          ],
           "weight_points": "1/2",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md"
+          ]
         }
       ],
       "baseline_state": "pending_remaining_work_as_of_2026-10-25",
@@ -1373,14 +1532,65 @@
       "area": "F",
       "title": "Implementar códigos de recuperación y reenrolamiento restringido",
       "kind": "producto",
-      "status": "implementación",
-      "current": "Tabla app_mfa_recovery_code existe; generación/entrega/consumo y transición posterior no demostrados como flujo de producto.",
-      "available": [],
+      "status": "Implementado y revisado técnicamente; integración de candidata objetivo y aceptación pendientes",
+      "current": "F-08.01–.05 cerrados técnicamente y revisados en conjunto. Se conserva la generación expresa de diez códigos propios, entrega inicial única, hashes salados y canje a enrolamiento restringido: sólo TOTP nuevo permite sesión/API, también para único global; revocación/auditoría/rollback y concurrencia real contrastados. Build corregido F0804 sin recompilar, 227 archivos y cuatro tests previos conservados; foco12/12 y revisor6/6 PASS, sin omitidas. Frontend privado18 archivos: positivos Edge de dashboard8 y recuperación4 en corridas distintas; primer conjunto1PASS/1FAIL y recuperación intermitente sin causa acreditada, siete intentos preservados, sin presentar batería íntegramente verde. Sin cambios de producto, guiones compartidos, SQL, dependencias o D/E. Cuatro hitos técnicos acreditados; integración de candidata, aceptación/custodia y emergencia F-09 siguen pendientes.",
+      "available": [
+        "Generación propia/entrega inicial única con hash salado ya implementada y revisada; resultado técnico F0801 conciliado, sin nueva aceptación instalada o custodia.",
+        "Canje propio a enrolamiento restringido contrastado en HTTP/PG; sesión sólo tras factor nuevo, sin eludir pending por exención global. Cierre técnico F-08.02, sin nueva aceptación instalada.",
+        "Consumo transaccional, revocación por cuenta, concurrencia observada, replay/esperas/rollback y valores originales ausentes contrastados; F-08.03 técnico, sin nueva aceptación instalada.",
+        "Último global conserva la autorrecuperación y autoridad tras nuevo factor; pending no admite Desactivar. F-08.04 técnico revisado, con custodia/instalación/aceptación aún pendientes.",
+        "Criterio F-08 contrastado conjuntamente en el build corregido y por revisor distinto; observación de automatización Edge conservada, sin adopción o aceptación instalada."
+      ],
       "evidence": [
         "development/server/database/014-mfa.sql",
         "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
         "docs/REVISION-D2-CODEX.md",
-        "docs/PLAN-MFA-Y-FRENTES-C1-C5.md"
+        "docs/PLAN-MFA-Y-FRENTES-C1-C5.md",
+        "docs/PLAN-F0801-GENERACION-CODIGOS.md",
+        "docs/PASO-024-GENERACION-CODIGOS-MFA.md",
+        "evidence/s1-20261111/f08-01-generacion/RESULTADOS.md",
+        "evidence/s1-20261111/f08-01-generacion/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f08-01-generacion/FOCO.json",
+        "evidence/s1-20261111/f08-01-generacion/FRONTEND.json",
+        "evidence/s1-20261111/f08-01-generacion/FUENTES.json",
+        "evidence/s1-20261111/f08-01-generacion/review/DICTAMEN.md",
+        "docs/PLAN-F0802-RECUPERACION-RESTRINGIDA.md",
+        "docs/PASO-025-RECUPERACION-RESTRINGIDA-MFA.md",
+        "evidence/s1-20261111/f08-02-recuperacion/RESULTADOS.md",
+        "evidence/s1-20261111/f08-02-recuperacion/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f08-02-recuperacion/FOCO.json",
+        "evidence/s1-20261111/f08-02-recuperacion/FRONTEND.json",
+        "evidence/s1-20261111/f08-02-recuperacion/FUENTES.json",
+        "evidence/s1-20261111/f08-02-recuperacion/review/DICTAMEN.md",
+        "docs/PLAN-F0803-CONSUMO-TRANSACCIONAL.md",
+        "docs/PASO-026-CONSUMO-CODIGOS-MFA.md",
+        "evidence/s1-20261111/f08-03-consumo/RESULTADOS.md",
+        "evidence/s1-20261111/f08-03-consumo/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f08-03-consumo/FOCO.json",
+        "evidence/s1-20261111/f08-03-consumo/FUENTES.json",
+        "evidence/s1-20261111/f08-03-consumo/REUTILIZACION.json",
+        "evidence/s1-20261111/f08-03-consumo/review/DICTAMEN.md",
+        "docs/PLAN-F0804-ULTIMO-ADMINISTRADOR.md",
+        "docs/PASO-027-ULTIMO-ADMINISTRADOR-MFA.md",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/RESULTADOS.md",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/FOCO.json",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/FUENTES.json",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/FRONTEND.json",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/SCOPE-RECONCILIACION.json",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/D2-ROJO-VERDE-INDEPENDIENTE.json",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/CAMBIOS-PRODUCTO.patch",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/review/DICTAMEN.md",
+        "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+        "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+        "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+        "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+        "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+        "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+        "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+        "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+        "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
       ],
       "criteria": [
         "rev4 C.5",
@@ -1402,47 +1612,71 @@
       "closure": "Cada código sirve una sola vez incluso en concurrencia; recuperación no abre API antes del estado autorizado; reenrolamiento y revocación/auditoría sin secretos probados por revisor distinto.",
       "milestones": {
         "definition_confirmed": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Hay propuesta/condiciones o transición operativa por concretar; no inventar decisión.",
+          "reason": "Generación expresa posterior al enrolamiento conciliada por el plan numerado, recuperación sólo a nuevo factor y gracia45/exención global definidas en decisiones vigentes; sin prometer generación automática/custodia histórica.",
           "evidence": [
-            "development/server/database/014-mfa.sql",
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md",
-            "docs/PLAN-MFA-Y-FRENTES-C1-C5.md"
+            "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+            "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+            "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+            "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+            "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+            "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+            "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+            "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+            "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
           ]
         },
         "implementation_complete": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "El resultado completo de esta tarea no está implementado; partes existentes se conservan en real_state/done_scope.",
+          "reason": "Generación, API/GUI, canje transaccional y revocación/auditoría existentes, con guard D2 ya corregido y revisado; fuentes y mismos binarios finales identificados. No acredita integración nativa ni custodia efectiva.",
           "evidence": [
-            "development/server/database/014-mfa.sql",
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md",
-            "docs/PLAN-MFA-Y-FRENTES-C1-C5.md"
+            "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+            "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+            "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+            "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+            "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+            "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+            "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+            "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+            "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
           ]
         },
         "technical_tests_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Faltan pruebas del entregable completo/final o de los cambios afectados; no repetir suites que ya cubren partes invariantes.",
+          "reason": "Foco conjunto PG/HTTP12/12 sin omitidas en mismos binarios; fuentes para reutilizar Node68/regresión afectada identificadas. Edge tiene positivos actuales separados y fallos intermitentes conservados, no una batería totalmente verde; aceptación GUI/nativa pendiente.",
           "evidence": [
-            "development/server/database/014-mfa.sql",
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md",
-            "docs/PLAN-MFA-Y-FRENTES-C1-C5.md"
+            "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+            "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+            "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+            "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+            "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+            "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+            "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+            "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+            "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
           ]
         },
         "independent_review_same_scope": {
-          "state": "pending",
+          "state": "done",
           "applicable": true,
-          "reason": "Revisión distinta final/afectada pendiente tras implementar o integrar el resultado.",
+          "reason": "Revisor distinto inspeccionó el criterio completo, fuente/evidencia actual y repitió6/6 casos críticos en otro PG17.11, sin omitidas. Dictamen delimita observación del navegador y mantiene integración/aceptación pendientes.",
           "evidence": [
-            "development/server/database/014-mfa.sql",
-            "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-            "docs/REVISION-D2-CODEX.md",
-            "docs/PLAN-MFA-Y-FRENTES-C1-C5.md"
+            "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+            "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+            "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+            "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+            "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+            "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+            "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+            "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+            "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
           ]
         },
         "integrated_current_candidate": {
@@ -1475,39 +1709,103 @@
         {
           "id": "F-08.01",
           "text": "Generar y mostrar una sola vez códigos por usuario; almacenar sólo hashes con sal conforme D2, sin dependencia de clave TOTP.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0801-GENERACION-CODIGOS.md",
+            "docs/PASO-024-GENERACION-CODIGOS-MFA.md",
+            "evidence/s1-20261111/f08-01-generacion/RESULTADOS.md",
+            "evidence/s1-20261111/f08-01-generacion/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f08-01-generacion/FOCO.json",
+            "evidence/s1-20261111/f08-01-generacion/FRONTEND.json",
+            "evidence/s1-20261111/f08-01-generacion/FUENTES.json",
+            "evidence/s1-20261111/f08-01-generacion/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f08-01-generacion/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-08.02",
           "text": "Concretar e implementar si password+código concede sólo recuperación restringida hasta reenrolar; no dejar frase ambigua que emita sesión normal antes de nuevo factor.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0802-RECUPERACION-RESTRINGIDA.md",
+            "docs/PASO-025-RECUPERACION-RESTRINGIDA-MFA.md",
+            "evidence/s1-20261111/f08-02-recuperacion/RESULTADOS.md",
+            "evidence/s1-20261111/f08-02-recuperacion/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f08-02-recuperacion/FOCO.json",
+            "evidence/s1-20261111/f08-02-recuperacion/FRONTEND.json",
+            "evidence/s1-20261111/f08-02-recuperacion/FUENTES.json",
+            "evidence/s1-20261111/f08-02-recuperacion/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f08-02-recuperacion/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-08.03",
           "text": "Consumir transaccionalmente, invalidar sesiones/desafíos/códigos anteriores según contrato y probar consumo concurrente/replay/rollback/secretos.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0803-CONSUMO-TRANSACCIONAL.md",
+            "docs/PASO-026-CONSUMO-CODIGOS-MFA.md",
+            "evidence/s1-20261111/f08-03-consumo/RESULTADOS.md",
+            "evidence/s1-20261111/f08-03-consumo/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f08-03-consumo/FOCO.json",
+            "evidence/s1-20261111/f08-03-consumo/FUENTES.json",
+            "evidence/s1-20261111/f08-03-consumo/REUTILIZACION.json",
+            "evidence/s1-20261111/f08-03-consumo/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f08-03-consumo/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-08.04",
           "text": "Garantizar vía administrativa de recuperación con códigos válidos sin bloquear último administrador.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0804-ULTIMO-ADMINISTRADOR.md",
+            "docs/PASO-027-ULTIMO-ADMINISTRADOR-MFA.md",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/RESULTADOS.md",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/FOCO.json",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/FUENTES.json",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/FRONTEND.json",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/SCOPE-RECONCILIACION.json",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/D2-ROJO-VERDE-INDEPENDIENTE.json",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/CAMBIOS-PRODUCTO.patch",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f08-04-ultimo-administrador/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-08.05",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+            "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+            "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+            "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+            "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+            "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+            "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+            "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+            "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
+          ],
           "weight_points": "1/2",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
+          ]
         }
       ],
       "baseline_state": "pending_remaining_work_as_of_2026-10-25",
@@ -1527,13 +1825,44 @@
       "title": "Implementar recuperación local cuando no quedan clave, sobre ni códigos",
       "kind": "producto/operación",
       "status": "implementación",
-      "current": "La recuperación CLI actual revoca sesiones y desafíos; D14-05 lo acredita. No equivale al flujo local de emergencia de pérdida total MFA.",
-      "available": [],
+      "current": "F-09.01–.04 técnicos: CLI local de pérdida con cinco fases, finalización/recibo/guarda y proyección48 mínima no actualizable. Ensayo real en instancia separada de E: pérdida de toda su clave v1, arranque rechazado sin listener, mantenimiento SYSTEM, servidor estándar, regreso HTTPS mediante enrolamiento restringido/TOTP2, credenciales antiguas revocadas e inventario sentinel conservado. Regresión378/378 y revisión independiente40/40 reutilizadas; revisión nativa final favorable por lectura de fuentes/recibos. 221/232fuentes previas conservadas,11modificadas/4nuevas,total236; sin dependencias nuevas. D sin acceso; dos servicios previos de E Running con iguales PID, propios detenidos/puertos y tareas0. Fallos del arnés preservados, cliente HTTPAdmin separado de mantenimientoSYSTEM. F-09.05, seis hitos completos, instalador/Restore48, mantenimientoAdmin, custodia externa y QA/adopción pendientes.",
+      "available": [
+        "Autoridad Windows nativa y CLI local de cinco fases operativas en fuentes48; cada fase sin sesión ni afirmación de servicio recuperado.",
+        "Pérdida/material, revocación, auditoría privada, publicación y finalización revisadas; guarda y proyección runtime de metadatos mínimas.",
+        "Ensayo nativo completo en E aislada con SCM/PG17/DPAPI/HTTPS/TOTP real y cuenta de servicio estándar; D e instalaciones previas conservadas.",
+        "Cliente HTTPAdmin y mantenimientoSYSTEM diferenciados; propios detenidos y cero tareas temporales al terminar. Entrega/QA y F-09.05 pendientes."
+      ],
       "evidence": [
         "docs/REVISION-D14-05-CODEX.md",
         "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
         "docs/REVISION-D2-CODEX.md",
-        "development/server/src/RackClick.Server/RecoveryAdministrator.cs"
+        "development/server/src/RackClick.Server/RecoveryAdministrator.cs",
+        "docs/PLAN-F0901-AUTORIZACION-EMERGENCIA.md",
+        "docs/PASO-029-AUTORIZACION-LOCAL-EMERGENCIA-MFA.md",
+        "evidence/s1-20261111/f09-01-autorizacion-local/RESULTADOS.md",
+        "evidence/s1-20261111/f09-01-autorizacion-local/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f09-01-autorizacion-local/FUENTES.json",
+        "evidence/s1-20261111/f09-01-autorizacion-local/FOCOS.json",
+        "evidence/s1-20261111/f09-01-autorizacion-local/MUTACION.json",
+        "evidence/s1-20261111/f09-01-autorizacion-local/CAMBIOS.patch",
+        "evidence/s1-20261111/f09-01-autorizacion-local/review/DICTAMEN.md",
+        "docs/PLAN-F0902-MATERIAL-PERDIDA-MFA.md",
+        "docs/PASO-030-MATERIAL-PERDIDA-MFA.md",
+        "evidence/s1-20261111/f09-02-material-perdida/RESULTADOS.md",
+        "evidence/s1-20261111/f09-02-material-perdida/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f09-02-material-perdida/FUENTES.json",
+        "evidence/s1-20261111/f09-02-material-perdida/FOCOS.json",
+        "evidence/s1-20261111/f09-02-material-perdida/MUTACION.json",
+        "evidence/s1-20261111/f09-02-material-perdida/CAMBIOS.patch",
+        "evidence/s1-20261111/f09-02-material-perdida/review/DICTAMEN.md",
+        "docs/PLAN-F0903-REVOCACION-AUDITORIA-MFA.md",
+        "docs/PASO-031-REVOCACION-Y-AUDITORIA-MFA.md",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/RESULTADOS.md",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/FUENTES.json",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/FOCOS.json",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/CAMBIOS.patch",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/review/DICTAMEN.md"
       ],
       "criteria": [
         "rev4 C.5",
@@ -1630,30 +1959,82 @@
         {
           "id": "F-09.01",
           "text": "Autorizar sólo operador local SYSTEM/Administradores; sin web anónima ni bypass password-only.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0901-AUTORIZACION-EMERGENCIA.md",
+            "docs/PASO-029-AUTORIZACION-LOCAL-EMERGENCIA-MFA.md",
+            "evidence/s1-20261111/f09-01-autorizacion-local/RESULTADOS.md",
+            "evidence/s1-20261111/f09-01-autorizacion-local/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f09-01-autorizacion-local/FUENTES.json",
+            "evidence/s1-20261111/f09-01-autorizacion-local/FOCOS.json",
+            "evidence/s1-20261111/f09-01-autorizacion-local/MUTACION.json",
+            "evidence/s1-20261111/f09-01-autorizacion-local/CAMBIOS.patch",
+            "evidence/s1-20261111/f09-01-autorizacion-local/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f09-01-autorizacion-local/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-09.02",
           "text": "Permitir preparar anillo nuevo explícitamente, conservar material anterior recuperable, retirar factores ilegibles del uso y marcar enrolamiento pendiente sin borrar DB.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0902-MATERIAL-PERDIDA-MFA.md",
+            "docs/PASO-030-MATERIAL-PERDIDA-MFA.md",
+            "evidence/s1-20261111/f09-02-material-perdida/RESULTADOS.md",
+            "evidence/s1-20261111/f09-02-material-perdida/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f09-02-material-perdida/FUENTES.json",
+            "evidence/s1-20261111/f09-02-material-perdida/FOCOS.json",
+            "evidence/s1-20261111/f09-02-material-perdida/MUTACION.json",
+            "evidence/s1-20261111/f09-02-material-perdida/CAMBIOS.patch",
+            "evidence/s1-20261111/f09-02-material-perdida/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f09-02-material-perdida/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-09.03",
           "text": "Revocar sesiones/desafíos y registrar auditoría sin secretos, preservando recuperación de último administrador.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0903-REVOCACION-AUDITORIA-MFA.md",
+            "docs/PASO-031-REVOCACION-Y-AUDITORIA-MFA.md",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/RESULTADOS.md",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/FUENTES.json",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/FOCOS.json",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/CAMBIOS.patch",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-09.04",
           "text": "Ensayar pérdida simulada total, arranque fallido explícito, recuperación local y vuelta mediante enrolamiento restringido.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0904-ENSAYO-PERDIDA-MFA.md",
+            "docs/PASO-032-ENSAYO-PERDIDA-MFA.md",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/RESULTADOS.md",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/NATIVO.json",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/FUENTES.json",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/FOCOS.json",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/CAMBIOS.patch",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/INVESTIGACION-NATIVA.md",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f09-04-ensayo-perdida/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-09.05",

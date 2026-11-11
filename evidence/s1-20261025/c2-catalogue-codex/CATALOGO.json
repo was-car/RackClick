@@ -1,0 +1,143 @@
+{
+  "families": [
+    {
+      "family": 1,
+      "control": "Crear/editar sede: `hierarchy('site',…)`",
+      "commandAndPermission": "`site.create`, `site.update` · E",
+      "evidenceAndLimit": "[Pruebas PostgreSQL](../development/server/tests/test_inventory_postgres.py), [alta GUI](../development/frontend/tests/browser-inventory.mjs) y [edición 59](../development/frontend/tests/browser-hierarchy-edit59.mjs)."
+    },
+    {
+      "family": 2,
+      "control": "Crear/editar edificio y elegir sede: `hierarchy('building',…)`",
+      "commandAndPermission": "`building.create`, `building.update` · E",
+      "evidenceAndLimit": "PostgreSQL y edición 59; reasignación por UUID, no por nombre."
+    },
+    {
+      "family": 3,
+      "control": "Crear/editar sala y elegir edificio: `hierarchy('room',…)`",
+      "commandAndPermission": "`room.create`, `room.update` · E",
+      "evidenceAndLimit": "Mismas fuentes; padre obligatorio del mismo cliente."
+    },
+    {
+      "family": 4,
+      "control": "Eliminar sede, edificio o sala: `removeEntity`",
+      "commandAndPermission": "`site.delete`, `building.delete`, `room.delete` · D",
+      "evidenceAndLimit": "PostgreSQL y edición 59; se rechazan ubicaciones ocupadas. No hay lote de ubicaciones."
+    },
+    {
+      "family": 5,
+      "control": "Crear rack: `rackEditor()`",
+      "commandAndPermission": "`rack.create` · E",
+      "evidenceAndLimit": "PostgreSQL y alta GUI."
+    },
+    {
+      "family": 6,
+      "control": "Editar nombre, sala, U y ubicación del rack: `rackEditor(r)`",
+      "commandAndPermission": "`rack.update` · E",
+      "evidenceAndLimit": "Edición 59 asigna sala. Existe validación contra ocupación; falta cerrar todas las variantes visuales de reducción U."
+    },
+    {
+      "family": 7,
+      "control": "Asignación específica de sala, sólo API",
+      "commandAndPermission": "`rack.assignRoom` · E",
+      "evidenceAndLimit": "PostgreSQL. `roomId:null` desasigna. El selector GUI de la fila 6 envía `rack.update`; no inventar otro botón."
+    },
+    {
+      "family": 8,
+      "control": "Duplicar rack, con opción de cables y confirmación reserved: `duplicateRack`",
+      "commandAndPermission": "`rack.duplicate` · E",
+      "evidenceAndLimit": "[GUI de duplicado](../development/frontend/tests/browser-inventory-duplicate.mjs) y PostgreSQL. El histórico 53 cubre con cables; sin cables y reserved positivo siguen en I-04.03."
+    },
+    {
+      "family": 9,
+      "control": "Eliminar rack: `removeEntity('rack',r)`",
+      "commandAndPermission": "`rack.delete` · D, con preview",
+      "evidenceAndLimit": "[Impacto GUI](../development/frontend/tests/browser-impact.mjs) y PostgreSQL. Conserva equipos del extremo externo."
+    },
+    {
+      "family": 10,
+      "control": "Alta manual de equipo, Dose o final: `deviceEditor`, modo manual",
+      "commandAndPermission": "`device.create` · E",
+      "evidenceAndLimit": "PostgreSQL y alta GUI. Clases cerradas: `rackEquipment`, `dose`, `endDevice`."
+    },
+    {
+      "family": 11,
+      "control": "Alta desde preset RC9: `InventoryCatalogFields`",
+      "commandAndPermission": "`device.createFromCatalog` · E",
+      "evidenceAndLimit": "[API catálogo](../development/server/tests/test_inventory_catalog.py), [GUI catálogo](../development/frontend/tests/browser-inventory-catalog.mjs); 33 presets, 7 categorías, EN/DE/ES. No todas las combinaciones visuales verificadas."
+    },
+    {
+      "family": 12,
+      "control": "Instanciar plantilla privada: modo private",
+      "commandAndPermission": "`device.createFromPrivateTemplate` · E y plantilla propia",
+      "evidenceAndLimit": "[GUI privada](../development/frontend/tests/browser-private-templates.mjs). Mantenimiento de plantillas pertenece a otro resultado."
+    },
+    {
+      "family": 13,
+      "control": "Instanciar plantilla compartida: `sharedDeviceEditor`",
+      "commandAndPermission": "`device.createFromSharedTemplate` · E; no requiere `templates.publish`",
+      "evidenceAndLimit": "[GUI compartida](../development/frontend/tests/browser-shared-templates.mjs); existen pruebas de las tres clases de objeto."
+    },
+    {
+      "family": 14,
+      "control": "Editar equipo o tarjeta de sala: `deviceEditor(value)`",
+      "commandAndPermission": "`device.update` · E",
+      "evidenceAndLimit": "PostgreSQL cubre nombre/propiedad y conservación. GUI ofrece nombre, U, presupuesto, SN, modelo, IP, firmware y notas; falta comprobar cada variante prevista en I-04.02."
+    },
+    {
+      "family": 15,
+      "control": "Opciones del equipo → Mover → rack destino: `moveDevice`",
+      "commandAndPermission": "`device.move` con `rackId` · E",
+      "evidenceAndLimit": "[Movimiento GUI](../development/frontend/tests/browser-inventory-movement.mjs), PostgreSQL e histórico 52."
+    },
+    {
+      "family": 16,
+      "control": "Tarjeta Dose/final → Mover → sala destino: `moveDevice`",
+      "commandAndPermission": "`device.move` con `roomId` · E",
+      "evidenceAndLimit": "[Traslado entre salas](../development/frontend/tests/browser-room-device-move.mjs), PostgreSQL e histórico 62. Conserva UUID y cables."
+    },
+    {
+      "family": 17,
+      "control": "Flechas ↑/↓, arrastre y callbacks táctiles: `reorder`, `drop`",
+      "commandAndPermission": "`device.reorder` · E",
+      "evidenceAndLimit": "Movimiento GUI 52 cubre flechas/límites; [edición rápida](../development/frontend/tests/browser-inventory-instant.mjs) cubre contexto. No acredita drag ni táctil."
+    },
+    {
+      "family": 18,
+      "control": "Papelera de equipo o tarjeta de sala: `removeEntity('device',d)`",
+      "commandAndPermission": "`device.delete` · D, con preview",
+      "evidenceAndLimit": "Impacto GUI y [regresión de borrado](../development/server/tests/test_inventory_delete_batch.py). También admite Dose/final."
+    },
+    {
+      "family": 19,
+      "control": "Seleccionar/quitar selección y eliminar conjunto: `[data-delete-selected]`",
+      "commandAndPermission": "`devices.delete` · D, con preview",
+      "evidenceAndLimit": "[API de lote](../development/server/tests/test_inventory_delete_batch.py), [GUI de lote](../development/frontend/tests/browser-delete-batch.mjs), histórico 61: 1..64 UUID, clases mixtas y un commit/revisión."
+    }
+  ],
+  "commands": [
+    "building.create",
+    "building.delete",
+    "building.update",
+    "device.create",
+    "device.createFromCatalog",
+    "device.createFromPrivateTemplate",
+    "device.createFromSharedTemplate",
+    "device.delete",
+    "device.move",
+    "device.reorder",
+    "device.update",
+    "devices.delete",
+    "rack.assignRoom",
+    "rack.create",
+    "rack.delete",
+    "rack.duplicate",
+    "rack.update",
+    "room.create",
+    "room.delete",
+    "room.update",
+    "site.create",
+    "site.delete",
+    "site.update"
+  ]
+}

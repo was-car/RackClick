@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-04",
+  "date": "2026-11-11",
   "role": "Entrada única de planificación. El ledger conserva la contabilidad; las decisiones confirmadas más recientes rigen la ejecución.",
   "sourceBaseline": "RC-CIERRE-20261103-v3",
   "sourceFrozenFingerprint": "9ef507b41abc2c8cab58e38bf345c4a4f30dd48a8a156b0d1d4ebd7ea45be974",
   "metric": {
     "kind": "remaining_work_closure_not_global_product_percentage",
-    "closedPointsExact": "1607/84",
-    "closedPoints": 19.13095238095238,
+    "closedPointsExact": "2237/84",
+    "closedPoints": 26.63095238095238,
     "totalPoints": 100,
     "globalProductPercentage": null,
     "sourceTasks": 53,
     "scoredSourceTasks": 50,
     "checkpoints": 280,
-    "doneCheckpoints": 41,
+    "doneCheckpoints": 55,
     "newWeightAllocated": 0
   },
   "inputs": [
     {
       "file": "docs/REGISTRO-MAESTRO-CONFIG.json",
-      "sha256": "c58f490e2d4f44c3233dabd907513bc248628f87c7ef6675425f28c408a59317"
+      "sha256": "ae6d9976c74201ecbde5552f050da56e84696cb415b0768884a7d7db2063dae1"
     },
     {
       "file": "docs/PLAN-CIERRE-RACKCLICK.json",
-      "sha256": "647c47cb7afcb1dc12a0218d67b1295883ba99c1185a624b7602dbb2bbe09a03"
+      "sha256": "59cafd8e03f8f4b05469b65cbf8bb37e930fddebb719fc67d43c9b0d4ed7e211"
     },
     {
       "file": "evidence/s1-20261029/comparacion-rc10-servidor/PLAN-ACCIONES.json",
@@ -67,7 +67,7 @@
     },
     {
       "file": "docs/INSTALACION-DESDE-GITHUB.md",
-      "sha256": "620fe8b345e834375daec70f552b3a2b984bab5df65930e7dad6a818279f1c51"
+      "sha256": "8d3983ed2aba5ea79f98e58a4f87121f75e5ce0b13a117575e8c6d421e4d5b1d"
     },
     {
       "file": "docs/TANDA-RACKS-PRIMERO-30-10-2026.md",
@@ -376,6 +376,402 @@
     {
       "file": "docs/PASO-018-CIERRE-RECUPERACION-PORTABLE-MFA.md",
       "sha256": "3764fc28708cf3d14720599c021d1c107ffe1633601c5c7e72070da6108848b9"
+    },
+    {
+      "file": "docs/PROTOCOLO-ROTACION-MFA-v1.md",
+      "sha256": "0acf68af3cbc4cb5c7a40b52304262cec20e6303cf8105668b810dfc771d4a05"
+    },
+    {
+      "file": "docs/PASO-019-FASES-ROTACION-MFA.md",
+      "sha256": "ee6eee34f52a13faa977bc3e26fbbca78e3c16cbca87f9a5e48655e9b5ff97bd"
+    },
+    {
+      "file": "docs/CONTRATO-INVENTARIO-RETENCION-MFA-v1.md",
+      "sha256": "bd1992919861b61a8eea16c2544a42320c5994563b88185ba9ed28179697cf20"
+    },
+    {
+      "file": "docs/PASO-020-INVENTARIO-RETENCION-MFA.md",
+      "sha256": "d1e319cb58778e06e90b64e40fbc3af3c98fc48aa32c9b026ef5ef8fd019bd78"
+    },
+    {
+      "file": "docs/PLAN-F0602-INTEGRACION-BACKUP.md",
+      "sha256": "ec9145efdb3751a84e5cd7f5f8c28264c82ffb35e6a6649eab2df1a9fe297b25"
+    },
+    {
+      "file": "docs/BACKUP-MFA-CON-INVENTARIO-DESARROLLO.md",
+      "sha256": "e1bb161ce02a491240baf8436f44394f00603f368dfcd790b00574a543d023aa"
+    },
+    {
+      "file": "docs/PLAN-F0602-CATALOGO-Y-RETIRADA.md",
+      "sha256": "9a3d4d1639cf52ec922ac2666b06a6de90b7621a4f0f52aa4a49c97eb0eb7f69"
+    },
+    {
+      "file": "docs/MANTENIMIENTO-CATALOGO-Y-RETIRADA-MFA.md",
+      "sha256": "04d86634f6dcd1e0f5f6af251d011efc4fc537e908c731327d9102e4c5b892ab"
+    },
+    {
+      "file": "docs/PLAN-F0603-ROTACION-Y-CAIDAS.md",
+      "sha256": "6f8cdaf51227f70b56b629a38a95f0620eccb9faac2bd42697904dfea7515073"
+    },
+    {
+      "file": "docs/PASO-021-CAIDAS-ROTACION-MFA.md",
+      "sha256": "2aa6a05d23bff3ef499ff954948dc50a71e40c38294ba17f91737b9edb6e5ca7"
+    },
+    {
+      "file": "docs/PLAN-F0604-CIERRE-ROTACION.md",
+      "sha256": "68dd22522d8cb6c613fa50546c9e1618bc814eacf391dedbadfd913f5ccb339d"
+    },
+    {
+      "file": "docs/PASO-022-CIERRE-ROTACION-MFA.md",
+      "sha256": "0e41efea1c6442a1c7a07631cc1faf4cbad4717b9c41b7d10dd33d67d13536e5"
+    },
+    {
+      "file": "evidence/s1-20261111/f06-04-cierre/RESULTADOS.md",
+      "sha256": "1c915eaf44edead231198ac91f891508847865e4e254d6d0fb2ca17c99903db4"
+    },
+    {
+      "file": "evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md",
+      "sha256": "4b3cc0628af2170b3e2cb86ad5ccd3299b820d0f3d1416b544572b81c7856447"
+    },
+    {
+      "file": "evidence/s1-20261111/f06-04-cierre/RETENIDOS.json",
+      "sha256": "f5874c27f32499892c6dd6e043de8903401d291977833a1ad9eff58b3dd477b7"
+    },
+    {
+      "file": "evidence/s1-20261111/f06-04-cierre/FUENTES.json",
+      "sha256": "88f77c3d3dfe425da9b55129ca7669698af2103333b375a200d0dfdf107032a8"
+    },
+    {
+      "file": "evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json",
+      "sha256": "9c4e7ad82551702d76d52d49b1c74a81d866259d8891e52a65a57a5cb59ec353"
+    },
+    {
+      "file": "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md",
+      "sha256": "db78785313d84e0f196a36ce9ee552370e13d90d0d4f208d0431a47b53c7da9b"
+    },
+    {
+      "file": "docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md",
+      "sha256": "21bbfa9e4c7511620d9d963d569df778a003eec096c33ca49a4ba4113b0fabfd"
+    },
+    {
+      "file": "docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md",
+      "sha256": "62b60a867594e1664843d75f80515f539f6c97c3cf1d9599dd854ba141f45183"
+    },
+    {
+      "file": "evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md",
+      "sha256": "d1a87e8b4e3a41cda93da188d6e5fd13ae5d628097ee15978e84efd3f9379d96"
+    },
+    {
+      "file": "evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md",
+      "sha256": "e7800343d2e707387e4bb46294a9a96f8167c8b3727ca0cf243388271cb76665"
+    },
+    {
+      "file": "evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json",
+      "sha256": "20bc7ab9de11d2743a46317eeef6f800fd9970b05a0d82f0d02b2bf9e0aedf5e"
+    },
+    {
+      "file": "evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json",
+      "sha256": "22bc1439a077c76c6cefbba9505f1cb8a3b0465d0564ff8f35e53097f5870e94"
+    },
+    {
+      "file": "evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json",
+      "sha256": "055d5dc6368ffe1f1da2a69756d65405540d7c8e34f3d492de1719b6e0dc395a"
+    },
+    {
+      "file": "evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json",
+      "sha256": "081c36555c7738dd15026c27882959ef18506322243732bb94cd8b3d7ce1a061"
+    },
+    {
+      "file": "evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json",
+      "sha256": "aa157070dc439abd69dbc187013b2a89dfb7b0713527eab8a10cfb4c1cb45508"
+    },
+    {
+      "file": "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md",
+      "sha256": "eb0d10278fccc87836e1aee0b190607979aa0ee3c748b5ec3cfe3b8a3badb8f0"
+    },
+    {
+      "file": "docs/PLAN-F0801-GENERACION-CODIGOS.md",
+      "sha256": "cab1857f3f09a6a37861a8d8d67703aa30a5b9cac9aad9bdf8df932903529ca6"
+    },
+    {
+      "file": "docs/PASO-024-GENERACION-CODIGOS-MFA.md",
+      "sha256": "fe295261a128485b908628dfda56af866ada96ebf069be95978a98ae5642d7db"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-01-generacion/RESULTADOS.md",
+      "sha256": "ec10753e3a0d211069dbec0522506d8f64ec6a08dd0d2c70b2625a7673430cac"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-01-generacion/MATRIZ-CRITERIO.md",
+      "sha256": "28d9e9188810d0830e986fc977343a4ddc51553b3ddb977ddd6b2284ec1cc401"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-01-generacion/FOCO.json",
+      "sha256": "1d52a1547036711f2d4308dbca737c86989558bf91c1eaede3ef53f14b0fadc8"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-01-generacion/FRONTEND.json",
+      "sha256": "d15f1f33a191dd2a8b551f9a6e72425f62606a1923b8e3fff37d486952eb1a22"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-01-generacion/FUENTES.json",
+      "sha256": "6b3b2fc219aa718c747e2f27e12ed60f368bfc894237ef3a90c7c9d292f87e3e"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-01-generacion/review/DICTAMEN.md",
+      "sha256": "1ad824670a9b2d126366845f1e3af4620e0b3fc45e3ca9b084ddf51a51f1df0f"
+    },
+    {
+      "file": "docs/PLAN-F0802-RECUPERACION-RESTRINGIDA.md",
+      "sha256": "b2e43ad98b565af1afd1a8582ce11448f79fe6ff34729c47be550afa1e2705e2"
+    },
+    {
+      "file": "docs/PASO-025-RECUPERACION-RESTRINGIDA-MFA.md",
+      "sha256": "c25ac0df81178c22939fc04222eed8f56e6b5a582b0b90fa6973ebb42b707baa"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-02-recuperacion/RESULTADOS.md",
+      "sha256": "528b3010d78053e4054193b44f702d79ba8511d6bfcbaa806166dced40288b7a"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-02-recuperacion/MATRIZ-CRITERIO.md",
+      "sha256": "25d03bbd0b359d1e6d5dcf5786254fd31b0f3d88dc5ddaa3f7a5f9526df9aa4c"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-02-recuperacion/FOCO.json",
+      "sha256": "3daf13c2742d03794e6e974f9809d26ed20394029c6207fff66ceeebb1079bfa"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-02-recuperacion/FRONTEND.json",
+      "sha256": "dd1754bd24df0d7d95ff0e1847fbc4318119055c7df6452aa39b1b787075da95"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-02-recuperacion/FUENTES.json",
+      "sha256": "3d9cdb9cbae2361337f7f6bfac9c8cd4ab1fc4880086979bc992293c34d6d7dd"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-02-recuperacion/review/DICTAMEN.md",
+      "sha256": "8944b65a622aaa9567f03abc33262272f1733ca36461164859508345a7c8aa26"
+    },
+    {
+      "file": "docs/PLAN-F0803-CONSUMO-TRANSACCIONAL.md",
+      "sha256": "0537c8233ad1f0e4bc6e31d86edc1ce06b20787d508a4d31118587895ee6d30b"
+    },
+    {
+      "file": "docs/PASO-026-CONSUMO-CODIGOS-MFA.md",
+      "sha256": "6d5ab261c5920eb6daea0915b48c366090fb9d4726ca8e296cde74e112e9e607"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-03-consumo/RESULTADOS.md",
+      "sha256": "c49d9a1904dfd44c2bc04e738ad9839958ba18c82e9bf00df85f3b4a57fcb25e"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-03-consumo/MATRIZ-CRITERIO.md",
+      "sha256": "f89f398c00f58d66cc9ebc596c950ea459243d9de033118152153b59bc63cd0b"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-03-consumo/FOCO.json",
+      "sha256": "aefd33b2d9733b81abc762adca4ced83355549b61b8e3b986bf2d61fd59dccd3"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-03-consumo/FUENTES.json",
+      "sha256": "ee097fc9c6e83ca18a3a6342a17887b924548f7133f0c907848c6a23083d1752"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-03-consumo/REUTILIZACION.json",
+      "sha256": "98d7fac16a1cc8584fa8939879835c249d84836e021315b8146237169a165c47"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-03-consumo/review/DICTAMEN.md",
+      "sha256": "489255780b7468ee75321d5c75dae68f18bacc93cd3d1b27abb73b7270f8aa1f"
+    },
+    {
+      "file": "docs/PLAN-F0804-ULTIMO-ADMINISTRADOR.md",
+      "sha256": "b5beb9cf6af14093a8f3962433e66de8ff26c04f0eda110e4bc046a3c3e0c97c"
+    },
+    {
+      "file": "docs/PASO-027-ULTIMO-ADMINISTRADOR-MFA.md",
+      "sha256": "22b65895aec9729382431c6ebdb39d55e62cf56bb2bded6242aa8a1727b726b6"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-04-ultimo-administrador/RESULTADOS.md",
+      "sha256": "8c9c2f1f65d54cd24da2397025096f372abdac500467d684a490b46cf609f60c"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-04-ultimo-administrador/MATRIZ-CRITERIO.md",
+      "sha256": "eea6b7760c6b475042b1df90c611405599bcbbc912148ec9f12fa76905097532"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-04-ultimo-administrador/FOCO.json",
+      "sha256": "783b36c4f870ffda5d467b46b5253f63029e1a5df789eeb48ec6028ca2779e20"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-04-ultimo-administrador/FUENTES.json",
+      "sha256": "8c5246aaf2e0f6a30cc23a4c0a03efac55d1865b588718b2ffe79219c8186f66"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-04-ultimo-administrador/FRONTEND.json",
+      "sha256": "b022c2974ce25655ed493a5a842ae58bb6af99002712d20045f4365e5b1edd02"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-04-ultimo-administrador/SCOPE-RECONCILIACION.json",
+      "sha256": "cba544629b742f52e17981c8a5db71c3c629a84014d71d05db86959e189fafe2"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-04-ultimo-administrador/D2-ROJO-VERDE-INDEPENDIENTE.json",
+      "sha256": "bc752c3fe0670730d64938666cfc59000dedea934496a81c11e589cdaa1964a1"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-04-ultimo-administrador/CAMBIOS-PRODUCTO.patch",
+      "sha256": "d7d0d6dd5817d98dc87465c9e007fd7525ba1aa65408e0cd11fe29cd4b60f5e2"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-04-ultimo-administrador/review/DICTAMEN.md",
+      "sha256": "157428254308df1d9d16bd00bb206df76946fd8586615ff8cdadbca0a62c158b"
+    },
+    {
+      "file": "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+      "sha256": "c39340311387f2f910806c49fad315915cc6023e165433c758e6d8300678c8c4"
+    },
+    {
+      "file": "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+      "sha256": "01e1f0befa0dbd193082486f40d681a4cdbd0e525cf207c851a9df885c7866c9"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+      "sha256": "1d28caf904a57a5fc7a4dd0fd4b89300529ff27f976518bf2c791c5c080af24c"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+      "sha256": "9a11fd49a504d33b4ba6777ef783567024e426c91fe35166d1a7c31f1e256de6"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+      "sha256": "953f01550539f1a1a08ae686a37062eeb51b32b4547749d95fb37aa379923966"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+      "sha256": "90c871a591d11fe7dce7e7485d1617aef0bb8163e96a6e88de46629f6503a260"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+      "sha256": "4870fb3e64d672ef4fc496f10f6d8b0818f0d570d9ed9f0a8a2b878e3dad4efe"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+      "sha256": "6abdf630f1f24ce83babd992bfaf5f5f98ceced109dd1abe24379a0477e147b8"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+      "sha256": "98727f5d6c9f6711275f0698c7ff37fa580fd33e6188dbb540a1626392828dad"
+    },
+    {
+      "file": "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md",
+      "sha256": "704ee90723eed63ba848d77c24ceb416c95cf6dee8f379c652ec1dfe7f95acb4"
+    },
+    {
+      "file": "docs/PLAN-F0901-AUTORIZACION-EMERGENCIA.md",
+      "sha256": "3a4bcc82b8f044af4a722efd94cc3901daf25a223fcfd7523b6e3e91861ca7b7"
+    },
+    {
+      "file": "docs/PASO-029-AUTORIZACION-LOCAL-EMERGENCIA-MFA.md",
+      "sha256": "669fc0985171cd8e06d3dffae4d615e51158f8611cfd39669ff00a3a88202145"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-01-autorizacion-local/RESULTADOS.md",
+      "sha256": "0b783c29d44ae1982d08730f6c05d5e987203536750ef8b291676d47be8bf560"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-01-autorizacion-local/MATRIZ-CRITERIO.md",
+      "sha256": "b2281e519921d5bc135654fec9cfad5cce04e32264a9f81ee03c8f196ebf0477"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-01-autorizacion-local/FUENTES.json",
+      "sha256": "ad84dbefbdc79fb636af04ba529a47377e849dffb02f02c3f7332a9ad0b99b1d"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-01-autorizacion-local/FOCOS.json",
+      "sha256": "7145e50e8c44b752779a12eecd25a15765bc8ee839765515572fb8db30995e3c"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-01-autorizacion-local/MUTACION.json",
+      "sha256": "eec49affcc0a77d3985e244541fc2a4f852c29d1d6928a7fe7a02f2c554fcac5"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-01-autorizacion-local/CAMBIOS.patch",
+      "sha256": "a2f05bab3d648d8cbcec7f10fe1b3dec0e25b1d323af75490c69df0dff3b13bf"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-01-autorizacion-local/review/DICTAMEN.md",
+      "sha256": "602aae6cd7e112204f3e3d7fb8a308e1f886e3314f803975ea63bb2d0acedc18"
+    },
+    {
+      "file": "docs/PLAN-F0902-MATERIAL-PERDIDA-MFA.md",
+      "sha256": "b62b61cc4b7beab8f00fe3f871d5b63ac8121586428c71c3ecb59e6c11ff41f9"
+    },
+    {
+      "file": "docs/PASO-030-MATERIAL-PERDIDA-MFA.md",
+      "sha256": "c1f88b592be5f770273a894ffe18baa5be332f34e7b8bc7b8ca08519befaf713"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-02-material-perdida/RESULTADOS.md",
+      "sha256": "c4ba5cab6106646029a8d194aa4aff1146841a7796de5e360ee437e4b5f687c8"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-02-material-perdida/MATRIZ-CRITERIO.md",
+      "sha256": "2e7c41f60d2e5672ccc48303b017e1ace2ee02c4ef906049acb40d2d6339b38f"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-02-material-perdida/FUENTES.json",
+      "sha256": "dc1e52bf2da7ea363068b6a98bbf95bf1c77a58331cb5ff6c720c7f31879fe3a"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-02-material-perdida/FOCOS.json",
+      "sha256": "b5f887a2282ca825e4474917e824324acf2abb3426cef95cfb77a2f05c1eaf86"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-02-material-perdida/MUTACION.json",
+      "sha256": "80431943bfc6125b8107408a4df3471e8b03b4bdcaba9ab919c7ff07b1f265e4"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-02-material-perdida/CAMBIOS.patch",
+      "sha256": "049bd9c02ff9fb26f4969827936ae43e1be26ca8dd5b3507f71051e92b03f6b1"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-02-material-perdida/review/DICTAMEN.md",
+      "sha256": "86f1fa084fe8e26b317739c87b5f6a905027add1f2a6a39e2801622c5882c377"
+    },
+    {
+      "file": "docs/PLAN-F0903-REVOCACION-AUDITORIA-MFA.md",
+      "sha256": "223e9472bd7435d801ed14a7fc5c6355fcd414bf1f419ed8a6f020b27f3dc448"
+    },
+    {
+      "file": "docs/PASO-031-REVOCACION-Y-AUDITORIA-MFA.md",
+      "sha256": "ba1a90921c60e96d7ce7c6d975fbd54337d5589e9cc68e296c069893290e6cbd"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-03-revocacion-auditoria/RESULTADOS.md",
+      "sha256": "c8e9a2bc90dab89faed8cf9d65c2afe05088f9dc8e0e4ba21724a30c7fe6ad57"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-03-revocacion-auditoria/MATRIZ-CRITERIO.md",
+      "sha256": "8d4c76d2c807e8324f3b4514d50d6846c6ed654d61b6055c461a83cd1c817f63"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-03-revocacion-auditoria/FUENTES.json",
+      "sha256": "2ce92b5a1a86b7922a12bcc23c46c8cdf0857d7ac72805a39699b0a82b7a142d"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-03-revocacion-auditoria/FOCOS.json",
+      "sha256": "05cb9eb34e9d7327268bebe9ec36c23e0f3faba489cf38ed28c82d4107173d93"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-03-revocacion-auditoria/CAMBIOS.patch",
+      "sha256": "0b876f7bcab1229d1f1b095531c7b9f3b9558f325eedbc0ee80be7e69129c065"
+    },
+    {
+      "file": "evidence/s1-20261111/f09-03-revocacion-auditoria/review/DICTAMEN.md",
+      "sha256": "ab94a089c3f605c97ae542f275df6ef2ed528bed795c13ad2240859cb6494fae"
     }
   ],
   "baseResults": [
@@ -926,12 +1322,18 @@
       "title": "Cerrar rotación y recuperación coherente entre anillo y PostgreSQL",
       "ledgerTitle": "Cerrar rotación y recuperación coherente entre anillo y PostgreSQL",
       "classification": "resultado_base",
-      "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Anillo versionado/rotación propuestos; atomicidad de un archivo no cubre publicación de claves más commit DB.",
-      "contextIsCurrentOverride": false,
+      "state": "cerrado_acreditado",
+      "currentContext": "F-06 cerrado en su criterio técnico con F-06.01–.04: fases, catálogo/retirada, caídas y recuperación trazados. Nueva prueba encadenada con tres backups reales retenidos, dos rotaciones a8/9 y Restore de cada generación en clúster nuevo; todos los TOTP/metadatos conservados y claves sólo referidas por backup protegidas. Cinco invocaciones PASS sin omisiones y revisión independiente con otras cinco; producto227archivos idéntico a F0603, cuyas360pruebas/15cortes se reutilizan sin repetirlas. Sin CLI pública, integración/instalador46, SID efectivo/custodia externa real o aceptación nativa. D/E intactos.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-        "docs/REVISION-D2-CODEX.md"
+        "docs/PLAN-F0604-CIERRE-ROTACION.md",
+        "docs/PASO-022-CIERRE-ROTACION-MFA.md",
+        "evidence/s1-20261111/f06-04-cierre/RESULTADOS.md",
+        "evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f06-04-cierre/RETENIDOS.json",
+        "evidence/s1-20261111/f06-04-cierre/FUENTES.json",
+        "evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json",
+        "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md"
       ],
       "closureCriterion": "Cada punto de interrupción tiene estado recuperable demostrado; todos los factores/backups retenidos siguen descifrables con versiones conservadas y faltantes se rechazan explícitamente.",
       "ledgerClosureCriterion": "Cada punto de interrupción tiene estado recuperable demostrado; todos los factores/backups retenidos siguen descifrables con versiones conservadas y faltantes se rechazan explícitamente.",
@@ -940,39 +1342,97 @@
         "F-05"
       ],
       "weightPoints": "5/2",
-      "closedPoints": "0",
-      "completedCheckpoints": 0,
+      "closedPoints": "5/2",
+      "completedCheckpoints": 4,
       "totalCheckpoints": 4,
       "checkpoints": [
         {
           "id": "F-06.01",
           "text": "Especificar fases: persistir/verificar clave nueva antes de usarla, conservar versiones requeridas, reenvolver factores y publicar anillo coherente.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "docs/PROTOCOLO-ROTACION-MFA-v1.md",
+            "docs/PASO-019-FASES-ROTACION-MFA.md",
+            "evidence/s1-20261109/f06-01-fases/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261109/f06-01-fases/RESULTADOS.md",
+            "evidence/s1-20261109/f06-01-fases/review/DICTAMEN-F0601.md"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261109/f06-01-fases/review/DICTAMEN-F0601.md"
+          ]
         },
         {
           "id": "F-06.02",
           "text": "Retirar una versión sólo si ningún factor ni backup retenido la necesita; incluir inventario de versiones en backup/sobre.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "docs/CONTRATO-INVENTARIO-RETENCION-MFA-v1.md",
+            "docs/PASO-020-INVENTARIO-RETENCION-MFA.md",
+            "evidence/s1-20261109/f06-02-retencion/RESULTADOS.md",
+            "evidence/s1-20261109/f06-02-retencion/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261109/f06-02-retencion/review/DICTAMEN-F0602.md",
+            "evidence/s1-20261109/f06-02-retencion/POSTGRES-CENSO-BACKUP.json",
+            "evidence/s1-20261109/f06-02-retencion/REGRESION-COMPONENTES.json",
+            "docs/PLAN-F0602-INTEGRACION-BACKUP.md",
+            "docs/BACKUP-MFA-CON-INVENTARIO-DESARROLLO.md",
+            "evidence/s1-20261109/f06-02-nativo/RESULTADOS.md",
+            "evidence/s1-20261109/f06-02-nativo/POSTGRES-NATIVO.json",
+            "evidence/s1-20261109/f06-02-nativo/REGRESION.json",
+            "evidence/s1-20261109/f06-02-nativo/REVISION-INDEPENDIENTE.md",
+            "docs/PLAN-F0602-CATALOGO-Y-RETIRADA.md",
+            "docs/MANTENIMIENTO-CATALOGO-Y-RETIRADA-MFA.md",
+            "evidence/s1-20261109/f06-02-retirada/RESULTADOS.md",
+            "evidence/s1-20261109/f06-02-retirada/REVISION.md",
+            "evidence/s1-20261109/f06-02-retirada/POSTGRES-REGRESION.json",
+            "evidence/s1-20261109/f06-02-retirada/BACKUP-NATIVO.json",
+            "evidence/s1-20261109/f06-02-retirada/FUENTES.json"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261109/f06-02-retencion/review/DICTAMEN-F0602.md",
+            "evidence/s1-20261109/f06-02-nativo/REVISION-INDEPENDIENTE.md",
+            "evidence/s1-20261109/f06-02-retirada/REVISION.md"
+          ]
         },
         {
           "id": "F-06.03",
           "text": "Inyectar caída antes/después de cada publicación y commit; reinicio/Restore deben identificar estado y recuperar sin perder factores.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "5/8"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0603-ROTACION-Y-CAIDAS.md",
+            "docs/PASO-021-CAIDAS-ROTACION-MFA.md",
+            "evidence/s1-20261110/f06-03-rotacion/RESULTADOS.md",
+            "evidence/s1-20261110/f06-03-rotacion/REVISION.md",
+            "evidence/s1-20261110/f06-03-rotacion/FUENTES.json",
+            "evidence/s1-20261110/f06-03-rotacion/POSTGRES-REGRESION.json",
+            "evidence/s1-20261110/f06-03-rotacion/MATRIZ-CAIDAS.json",
+            "evidence/s1-20261110/f06-03-rotacion/NEGATIVOS.json"
+          ],
+          "weight_points": "5/8",
+          "review_evidence": [
+            "evidence/s1-20261110/f06-03-rotacion/REVISION.md"
+          ]
         },
         {
           "id": "F-06.04",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0604-CIERRE-ROTACION.md",
+            "docs/PASO-022-CIERRE-ROTACION-MFA.md",
+            "evidence/s1-20261111/f06-04-cierre/RESULTADOS.md",
+            "evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f06-04-cierre/RETENIDOS.json",
+            "evidence/s1-20261111/f06-04-cierre/FUENTES.json",
+            "evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json",
+            "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md"
+          ],
           "weight_points": "5/8",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md"
+          ]
         }
       ],
       "ledgerAlignmentRequired": [],
@@ -985,24 +1445,29 @@
       "title": "Completar enrolamiento restringido cuando MFA sea exigible",
       "ledgerTitle": "Completar enrolamiento restringido cuando MFA sea exigible",
       "classification": "resultado_base",
-      "state": "parcial_acreditado",
-      "currentContext": "Enrolamiento/login/GUI y politica45 existentes; F-07.01-.04 acreditados. D11 tiene proveedor real y prueba HTTPS/DPAPI de cuenta sintetica. Falta cierre integral y escenarios pendientes; no crear otro login. Codigos de recuperacion del punto3 probados en desarrollo43, no canje nativo en D.",
+      "state": "cerrado_acreditado",
+      "currentContext": "F-07.01–.05 cerrados técnicamente: enrolamiento restringido existente contrastado con evidencia GUI/nativa y fuentes actuales. Dos escenarios nuevos con cuentas ordinarias de gracia45 vencida, Windows/DPAPI real y rol SQL restringido: desafío/pending/código inválido sin /me, clientes ni mutaciones; cookie renombrada no autoriza. Dos confirmaciones producen una única sesión/CSRF nuevos, con testigo SQL de identidad/transacción y replay rechazado. 2/2 casos,36/36 de núcleo y70/70 Node, sin omitidas; revisor distinto repite2/2. Producto227archivos conservado, sin nuevo login o política. D/E intactos. Integración de candidata objetivo y aceptación pendientes; no nuevo ensayo TLS/servicio ni cierre de emergencia/custodia externa.",
       "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
-        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md",
-        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
-        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
-        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+        "docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md",
+        "docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md"
       ],
-      "closureCriterion": "Cuando se exige MFA o se inicia enrolamiento, el desafío no concede acceso API; confirmar un factor válido emite una única sesión nueva, con negativos de concurrencia y revisión. Respetar la gracia45 y exención global confirmadas, sin bloquear de golpe todas las cuentas nuevas.",
+      "closureCriterion": "Usuario nuevo completa primer factor y obtiene única sesión nueva sólo al confirmar; desafío/enrolamiento incompleto no acceden a /me, clientes ni mutaciones; negativos concurrentes y revisión independiente.",
       "ledgerClosureCriterion": "Usuario nuevo completa primer factor y obtiene única sesión nueva sólo al confirmar; desafío/enrolamiento incompleto no acceden a /me, clientes ni mutaciones; negativos concurrentes y revisión independiente.",
       "dependencies": [
         "F-04 para producto; proveedor sintético aislado puede permitir desarrollo/pruebas previas"
       ],
       "weightPoints": "5/2",
-      "closedPoints": "2",
-      "completedCheckpoints": 4,
+      "closedPoints": "5/2",
+      "completedCheckpoints": 5,
       "totalCheckpoints": 5,
       "checkpoints": [
         {
@@ -1067,11 +1532,24 @@
         {
           "id": "F-07.05",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md",
+            "docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json",
+            "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md"
+          ],
           "weight_points": "1/2",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md"
+          ]
         }
       ],
       "ledgerAlignmentRequired": [],
@@ -1084,12 +1562,20 @@
       "title": "Implementar códigos de recuperación y reenrolamiento restringido",
       "ledgerTitle": "Implementar códigos de recuperación y reenrolamiento restringido",
       "classification": "resultado_base",
-      "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "Codigos propios y canje a reenrolamiento restringido implementados y revisados en desarrollo43, con revocacion transaccional y entrega unica. Faltan ultimo administrador, custodia operativa, canje en candidata instalada y conciliacion/acreditacion, no otro generador de codigos.",
+      "state": "cerrado_acreditado",
+      "currentContext": "F-08.01–.05 cerrados técnicamente y revisados en conjunto. Se conserva la generación expresa de diez códigos propios, entrega inicial única, hashes salados y canje a enrolamiento restringido: sólo TOTP nuevo permite sesión/API, también para único global; revocación/auditoría/rollback y concurrencia real contrastados. Build corregido F0804 sin recompilar, 227 archivos y cuatro tests previos conservados; foco12/12 y revisor6/6 PASS, sin omitidas. Frontend privado18 archivos: positivos Edge de dashboard8 y recuperación4 en corridas distintas; primer conjunto1PASS/1FAIL y recuperación intermitente sin causa acreditada, siete intentos preservados, sin presentar batería íntegramente verde. Sin cambios de producto, guiones compartidos, SQL, dependencias o D/E. Cuatro hitos técnicos acreditados; integración de candidata, aceptación/custodia y emergencia F-09 siguen pendientes.",
       "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
-        "evidence/s1-20261102/punto3/RESULTADOS.md"
+        "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+        "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+        "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+        "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+        "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+        "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+        "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+        "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+        "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
       ],
       "closureCriterion": "Cada código sirve una sola vez incluso en concurrencia; recuperación no abre API antes del estado autorizado; reenrolamiento y revocación/auditoría sin secretos probados por revisor distinto.",
       "ledgerClosureCriterion": "Cada código sirve una sola vez incluso en concurrencia; recuperación no abre API antes del estado autorizado; reenrolamiento y revocación/auditoría sin secretos probados por revisor distinto.",
@@ -1098,46 +1584,110 @@
         "F-10"
       ],
       "weightPoints": "5/2",
-      "closedPoints": "0",
-      "completedCheckpoints": 0,
+      "closedPoints": "5/2",
+      "completedCheckpoints": 5,
       "totalCheckpoints": 5,
       "checkpoints": [
         {
           "id": "F-08.01",
           "text": "Generar y mostrar una sola vez códigos por usuario; almacenar sólo hashes con sal conforme D2, sin dependencia de clave TOTP.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0801-GENERACION-CODIGOS.md",
+            "docs/PASO-024-GENERACION-CODIGOS-MFA.md",
+            "evidence/s1-20261111/f08-01-generacion/RESULTADOS.md",
+            "evidence/s1-20261111/f08-01-generacion/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f08-01-generacion/FOCO.json",
+            "evidence/s1-20261111/f08-01-generacion/FRONTEND.json",
+            "evidence/s1-20261111/f08-01-generacion/FUENTES.json",
+            "evidence/s1-20261111/f08-01-generacion/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f08-01-generacion/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-08.02",
           "text": "Concretar e implementar si password+código concede sólo recuperación restringida hasta reenrolar; no dejar frase ambigua que emita sesión normal antes de nuevo factor.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0802-RECUPERACION-RESTRINGIDA.md",
+            "docs/PASO-025-RECUPERACION-RESTRINGIDA-MFA.md",
+            "evidence/s1-20261111/f08-02-recuperacion/RESULTADOS.md",
+            "evidence/s1-20261111/f08-02-recuperacion/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f08-02-recuperacion/FOCO.json",
+            "evidence/s1-20261111/f08-02-recuperacion/FRONTEND.json",
+            "evidence/s1-20261111/f08-02-recuperacion/FUENTES.json",
+            "evidence/s1-20261111/f08-02-recuperacion/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f08-02-recuperacion/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-08.03",
           "text": "Consumir transaccionalmente, invalidar sesiones/desafíos/códigos anteriores según contrato y probar consumo concurrente/replay/rollback/secretos.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0803-CONSUMO-TRANSACCIONAL.md",
+            "docs/PASO-026-CONSUMO-CODIGOS-MFA.md",
+            "evidence/s1-20261111/f08-03-consumo/RESULTADOS.md",
+            "evidence/s1-20261111/f08-03-consumo/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f08-03-consumo/FOCO.json",
+            "evidence/s1-20261111/f08-03-consumo/FUENTES.json",
+            "evidence/s1-20261111/f08-03-consumo/REUTILIZACION.json",
+            "evidence/s1-20261111/f08-03-consumo/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f08-03-consumo/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-08.04",
           "text": "Garantizar vía administrativa de recuperación con códigos válidos sin bloquear último administrador.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0804-ULTIMO-ADMINISTRADOR.md",
+            "docs/PASO-027-ULTIMO-ADMINISTRADOR-MFA.md",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/RESULTADOS.md",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/FOCO.json",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/FUENTES.json",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/FRONTEND.json",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/SCOPE-RECONCILIACION.json",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/D2-ROJO-VERDE-INDEPENDIENTE.json",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/CAMBIOS-PRODUCTO.patch",
+            "evidence/s1-20261111/f08-04-ultimo-administrador/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f08-04-ultimo-administrador/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-08.05",
           "text": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-          "status": "pending",
-          "evidence": [],
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+            "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+            "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+            "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+            "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+            "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+            "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+            "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+            "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+            "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
+          ],
           "weight_points": "1/2",
           "closure_review_required": true,
-          "review_evidence": []
+          "review_evidence": [
+            "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
+          ]
         }
       ],
       "ledgerAlignmentRequired": [],
@@ -1150,14 +1700,20 @@
       "title": "Implementar recuperación local cuando no quedan clave, sobre ni códigos",
       "ledgerTitle": "Implementar recuperación local cuando no quedan clave, sobre ni códigos",
       "classification": "resultado_base",
-      "state": "pendiente_de_cierre_acreditado",
-      "currentContext": "La recuperación CLI actual revoca sesiones y desafíos; D14-05 lo acredita. No equivale al flujo local de emergencia de pérdida total MFA.",
-      "contextIsCurrentOverride": false,
+      "state": "parcial_acreditado",
+      "currentContext": "F-09.01–.04 técnicos: CLI local de pérdida con cinco fases, finalización/recibo/guarda y proyección48 mínima no actualizable. Ensayo real en instancia separada de E: pérdida de toda su clave v1, arranque rechazado sin listener, mantenimiento SYSTEM, servidor estándar, regreso HTTPS mediante enrolamiento restringido/TOTP2, credenciales antiguas revocadas e inventario sentinel conservado. Regresión378/378 y revisión independiente40/40 reutilizadas; revisión nativa final favorable por lectura de fuentes/recibos. 221/232fuentes previas conservadas,11modificadas/4nuevas,total236; sin dependencias nuevas. D sin acceso; dos servicios previos de E Running con iguales PID, propios detenidos/puertos y tareas0. Fallos del arnés preservados, cliente HTTPAdmin separado de mantenimientoSYSTEM. F-09.05, seis hitos completos, instalador/Restore48, mantenimientoAdmin, custodia externa y QA/adopción pendientes.",
+      "contextIsCurrentOverride": true,
       "contextEvidence": [
-        "docs/REVISION-D14-05-CODEX.md",
-        "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
-        "docs/REVISION-D2-CODEX.md",
-        "development/server/src/RackClick.Server/RecoveryAdministrator.cs"
+        "docs/PLAN-F0904-ENSAYO-PERDIDA-MFA.md",
+        "docs/PASO-032-ENSAYO-PERDIDA-MFA.md",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/RESULTADOS.md",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/NATIVO.json",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/FUENTES.json",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/FOCOS.json",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/CAMBIOS.patch",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/INVESTIGACION-NATIVA.md",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/review/DICTAMEN.md"
       ],
       "closureCriterion": "Administrador recupera acceso mediante enrolamiento nuevo después de pérdida total simulada; no se borra inventario ni se reactivan sesiones; ninguna ruta remota permite eludir factor.",
       "ledgerClosureCriterion": "Administrador recupera acceso mediante enrolamiento nuevo después de pérdida total simulada; no se borra inventario ni se reactivan sesiones; ninguna ruta remota permite eludir factor.",
@@ -1167,37 +1723,89 @@
         "F-07"
       ],
       "weightPoints": "5/2",
-      "closedPoints": "0",
-      "completedCheckpoints": 0,
+      "closedPoints": "2",
+      "completedCheckpoints": 4,
       "totalCheckpoints": 5,
       "checkpoints": [
         {
           "id": "F-09.01",
           "text": "Autorizar sólo operador local SYSTEM/Administradores; sin web anónima ni bypass password-only.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0901-AUTORIZACION-EMERGENCIA.md",
+            "docs/PASO-029-AUTORIZACION-LOCAL-EMERGENCIA-MFA.md",
+            "evidence/s1-20261111/f09-01-autorizacion-local/RESULTADOS.md",
+            "evidence/s1-20261111/f09-01-autorizacion-local/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f09-01-autorizacion-local/FUENTES.json",
+            "evidence/s1-20261111/f09-01-autorizacion-local/FOCOS.json",
+            "evidence/s1-20261111/f09-01-autorizacion-local/MUTACION.json",
+            "evidence/s1-20261111/f09-01-autorizacion-local/CAMBIOS.patch",
+            "evidence/s1-20261111/f09-01-autorizacion-local/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f09-01-autorizacion-local/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-09.02",
           "text": "Permitir preparar anillo nuevo explícitamente, conservar material anterior recuperable, retirar factores ilegibles del uso y marcar enrolamiento pendiente sin borrar DB.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0902-MATERIAL-PERDIDA-MFA.md",
+            "docs/PASO-030-MATERIAL-PERDIDA-MFA.md",
+            "evidence/s1-20261111/f09-02-material-perdida/RESULTADOS.md",
+            "evidence/s1-20261111/f09-02-material-perdida/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f09-02-material-perdida/FUENTES.json",
+            "evidence/s1-20261111/f09-02-material-perdida/FOCOS.json",
+            "evidence/s1-20261111/f09-02-material-perdida/MUTACION.json",
+            "evidence/s1-20261111/f09-02-material-perdida/CAMBIOS.patch",
+            "evidence/s1-20261111/f09-02-material-perdida/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f09-02-material-perdida/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-09.03",
           "text": "Revocar sesiones/desafíos y registrar auditoría sin secretos, preservando recuperación de último administrador.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0903-REVOCACION-AUDITORIA-MFA.md",
+            "docs/PASO-031-REVOCACION-Y-AUDITORIA-MFA.md",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/RESULTADOS.md",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/FUENTES.json",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/FOCOS.json",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/CAMBIOS.patch",
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f09-03-revocacion-auditoria/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-09.04",
           "text": "Ensayar pérdida simulada total, arranque fallido explícito, recuperación local y vuelta mediante enrolamiento restringido.",
-          "status": "pending",
-          "evidence": [],
-          "weight_points": "1/2"
+          "status": "done",
+          "evidence": [
+            "docs/PLAN-F0904-ENSAYO-PERDIDA-MFA.md",
+            "docs/PASO-032-ENSAYO-PERDIDA-MFA.md",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/RESULTADOS.md",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/MATRIZ-CRITERIO.md",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/NATIVO.json",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/FUENTES.json",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/FOCOS.json",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/CAMBIOS.patch",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/INVESTIGACION-NATIVA.md",
+            "evidence/s1-20261111/f09-04-ensayo-perdida/review/DICTAMEN.md"
+          ],
+          "weight_points": "1/2",
+          "review_evidence": [
+            "evidence/s1-20261111/f09-04-ensayo-perdida/review/DICTAMEN.md"
+          ]
         },
         {
           "id": "F-09.05",
@@ -11729,7 +12337,7 @@
         "F-10",
         "E-05"
       ],
-      "output": "Siguiente19/F-06.01: especificar/conciliar fases de rotación y coherencia disco–DB con D2, reutilizando el cierre técnico F05 y sin repetir codecs/portabilidad/login. F05operator/candidata/aceptación, F06/F09/R04 conservan sus pendientes. D/E intactos."
+      "output": "Continuar paso33/F-09.05: revisar conjuntamente F-09.01–.04, límites y entrega operativa. Reutilizar378/378,40/40 y ensayo nativo completo en E sin repetir la pérdida ni tocar D. Conciliar mantenimiento Admin, segunda pérdida/retirada posterior, candidata/operadores/manual48 y aceptación; no acreditar seis hitos por inercia."
     },
     {
       "id": "SIG-RECUPERACION-02",

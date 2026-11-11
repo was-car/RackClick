@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "valid": true,
+  "checkpoint": "F-05.01",
+  "sources": [
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRecoveryEnvelope.cs",
+      "sha256": "8a7b06ee0441086c40aba3cc8735c21fc562eee08383a58e6ed169b01b7d7fe1",
+      "matchesHistoricalFrozenSource": true,
+      "reference": "L2d"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaKeyRecoveryEnvelopeTests.cs",
+      "sha256": "5d15b220d6d12cfe9ab8e340fe39a8e902b47f609af434989f84db96060e4a1f",
+      "matchesHistoricalFrozenSource": true,
+      "reference": "L2d"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRecoveryPayload.cs",
+      "sha256": "3c0779a15f9ca670d0b30d7a5965c17ddc918d6be2ec6512aa2a4c24de757aae",
+      "matchesHistoricalFrozenSource": true,
+      "reference": "L2e"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaKeyRecoveryPayloadTests.cs",
+      "sha256": "41ea487f269409c475d9e13b3d1267c6e25d50e0cb39b6f5d708e85f0477b1ee",
+      "matchesHistoricalFrozenSource": true,
+      "reference": "L2e"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRing.cs",
+      "sha256": "749930d3813c71286d7d02d9a0b24a318aba9abe536d82ada7b2ed3a41188ad9",
+      "matchesHistoricalFrozenSource": true,
+      "reference": "L2e"
+    }
+  ],
+  "historicalTests": [
+    {
+      "edition": "L2d",
+      "measuredUtc": "2026-10-26T10:53:11.995348+00:00",
+      "authorCasesRepeated": 26,
+      "independentCases": 8,
+      "oldSealEntriesVerified": 7,
+      "executedAgain": false
+    },
+    {
+      "edition": "L2e",
+      "measuredUtc": "2026-10-26T12:23:51.043342+00:00",
+      "authorCasesRepeated": 28,
+      "independentCases": 8,
+      "oldSealEntriesVerified": 7,
+      "executedAgain": false
+    }
+  ],
+  "initialPlanHashes": {
+    "docs/PLAN-CIERRE-RACKCLICK.json": "9bcf1bc76c47c3c0a28ae51ddaeaf629cc13c8333e346979dd3aea547563e1a2",
+    "docs/PLAN-PENDIENTES-CONFIG.json": "821b8bd0a6c6dfd6f0fd892985daabfad4862a99007639b28213c3217b7ae59a",
+    "docs/REGISTRO-MAESTRO-CONFIG.json": "a21675a068deb823c6ebe317e65ef344ff2a37523ac6e2c416e6f1340a7674c8"
+  },
+  "newProductTestExecutions": 0,
+  "vmOperations": 0,
+  "privateCredentialsOrKeysRead": false,
+  "immutableReferences": [
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRecoveryEnvelope.cs",
+      "sha256": "8a7b06ee0441086c40aba3cc8735c21fc562eee08383a58e6ed169b01b7d7fe1"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRecoveryPayload.cs",
+      "sha256": "3c0779a15f9ca670d0b30d7a5965c17ddc918d6be2ec6512aa2a4c24de757aae"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRing.cs",
+      "sha256": "749930d3813c71286d7d02d9a0b24a318aba9abe536d82ada7b2ed3a41188ad9"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaKeyRecoveryEnvelopeTests.cs",
+      "sha256": "5d15b220d6d12cfe9ab8e340fe39a8e902b47f609af434989f84db96060e4a1f"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaKeyRecoveryPayloadTests.cs",
+      "sha256": "41ea487f269409c475d9e13b3d1267c6e25d50e0cb39b6f5d708e85f0477b1ee"
+    },
+    {
+      "path": "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
+      "sha256": "b8a601686d9a7c03518f5c3f4084ccd348fcecf393ee41d46fb8c1caec7c0dd3"
+    },
+    {
+      "path": "docs/DECISION-MFA-GRACIA-45-DIAS-29-10-2026.md",
+      "sha256": "639b4f61f14448a4c83c3dd40cf1f45a4fc38ca13bc0dc759851c6f3c92e3b76"
+    },
+    {
+      "path": "docs/REVISION-MFA-L2D-CODEX-26-10-2026.md",
+      "sha256": "73ae99bce435b39bd3cf420fd91b07a273e48de0c31c50da308f690cf450be3a"
+    },
+    {
+      "path": "docs/REVISION-MFA-L2E-CODEX-26-10-2026.md",
+      "sha256": "5013fe1150ee4a912686cdd28916ea5fecc2ad7f4e7799613a19f5cc15804fdb"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/CIERRE.md",
+      "sha256": "c9a2a3167e13d240ff604207ede864b57663101eed71aed0f94bd7138d5cd912"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/DOCUMENTOS-PROTEGIDOS.json",
+      "sha256": "6d113a2b47725f5b7379843472d104ad2dd68cf57a9f689afbe1c37507a23148"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/FUENTES-ENTREGADAS.json",
+      "sha256": "76158225b02acddd5c96634747419f5d3f9d250b90a3e641540db51f704750fb"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/INVESTIGACION-PREVIA.md",
+      "sha256": "a9f686031b7487eeabf389124d7c159c483ceee55bb77243a2abbe0a701cf249"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/MfaL2dIndependentReviewTests.cs",
+      "sha256": "70b0b8b1351cc495e90ceb8ff6c1e3506bbaa6ea47e6d7d80f0271bf6578fdb2"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/RESULTADOS-EJECUTADOS.json",
+      "sha256": "fc6b41751d4374894a0e293002b01271bc2c74b8476a5a2a61755fab738589f6"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/SHA256SUMS.txt",
+      "sha256": "647b5bce71a18d3dfe743d8637caca9f6b329678c321e8bd610a46f7493c3f4e"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/SUBREVISION-FUENTE.md",
+      "sha256": "122054aaebacea62489ca0887eed7d488ef5a51d4b789cbe43ea1bd6476604d0"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2e-codex/CIERRE.md",
+      "sha256": "657201dfbc55c7d82064fb326bace963afb3ae52b9dded9772905bb65fe00d83"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2e-codex/DOCUMENTOS-PROTEGIDOS.json",
+      "sha256": "6d113a2b47725f5b7379843472d104ad2dd68cf57a9f689afbe1c37507a23148"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2e-codex/FUENTES-ENTREGADAS.json",
+      "sha256": "8a8e6fff33de29a361187171379e3377e732a1b6e81d8ae4a7bbc2df8bdd60e8"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2e-codex/INVESTIGACION-PREVIA.md",
+      "sha256": "474c244a48fd8c68e8ad98adff835ca3f6e2824228d1659e8506503f42d85346"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2e-codex/MfaL2eIndependentReviewTests.cs",
+      "sha256": "41a7df7564a977f7b8d1f68bf2d3b7f956767152408109c773213c2304726ebc"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2e-codex/RESULTADOS-EJECUTADOS.json",
+      "sha256": "85ff1ae7dd29b223262c3e19ae975dfbed145d0d6ccd6fc3ea77e6b83f081819"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2e-codex/SHA256SUMS.txt",
+      "sha256": "ed3cd757801b108d2739cec467217a7657b5778083d9c6feb6d9d7ee61dd61ca"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2e-codex/SUBREVISION-FUENTE.md",
+      "sha256": "26a6df76625857093f6536a27cc1849bf3d495a2eceafb0ad4a1ed5237b11504"
+    }
+  ]
+}

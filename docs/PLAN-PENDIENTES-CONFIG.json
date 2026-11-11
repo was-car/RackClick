@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "planVersion": "2026-11-04-v1.23",
-  "date": "2026-11-04",
+  "date": "2026-11-11",
   "numberingRule": "Numeros estables. Al cerrar un paso se conserva su numero. Ampliaciones se anexan con motivo/version; no renumerar ni asignar pesos.",
   "vmRule": "D45 se conserva: servicio/SID/DB/HTTPS/MFA y datos existentes intactos. La lista no ejecuta ni autoriza operaciones destructivas, reinstalación o recarga de Demo50; los ensayos futuros usan su laboratorio asignado.",
   "stableStepIds": [
@@ -356,27 +356,45 @@
       ]
     },
     "F-08.01": {
-      "action": "Conciliar generacion y entrega unica de diez codigos propios ya implementadas; verificar su custodia/uso en candidata instalada. No crear otro generador.",
-      "technicalStage": "Conciliar evidencia existente",
+      "action": "F-08.01 cerrado técnicamente: generación explícita existente de diez códigos propios con 128 bits aleatorios y hashes con sal de 128 bits, ligados a Systemhaus/usuario e independientes de la clave TOTP. Sólo la primera respuesta entrega valores; status, receipt y replay no los revelan. Una nueva prueba con dos solicitudes realmente bloqueadas simultáneamente confirma una sola entrega, diez hashes, una operación y un evento de auditoría. Pasaron 15 casos focales y 10 de Node; un revisor distinto repitió 1/1. Los 227 archivos de producto se conservaron. No se acreditan generación automática al confirmar, custodia/canje en candidata instalada, último administrador ni F-08.02 a F-08.05. D y E intactas.",
+      "technicalStage": "Cerrado técnicamente; custodia/uso instalado y F0802–05 pendientes",
       "evidence": [
-        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
-        "evidence/s1-20261102/punto3/RESULTADOS.md"
+        "docs/PLAN-F0801-GENERACION-CODIGOS.md",
+        "docs/PASO-024-GENERACION-CODIGOS-MFA.md",
+        "evidence/s1-20261111/f08-01-generacion/RESULTADOS.md",
+        "evidence/s1-20261111/f08-01-generacion/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f08-01-generacion/FOCO.json",
+        "evidence/s1-20261111/f08-01-generacion/FRONTEND.json",
+        "evidence/s1-20261111/f08-01-generacion/FUENTES.json",
+        "evidence/s1-20261111/f08-01-generacion/review/DICTAMEN.md"
       ]
     },
     "F-08.02": {
-      "action": "Conservar el canje ya implementado: password+codigo solo habilita nuevo enrolamiento, sin API hasta confirmar factor. Completar integracion y QA instaladas.",
-      "technicalStage": "Conciliar evidencia existente",
+      "action": "F-08.01 y F-08.02 cerrados técnicamente. Se conserva la generación revisada; contraseña y código de recuperación sólo emiten un desafío enroll nuevo, sin sesión API. Dos casos HTTP nuevos (cuenta ordinaria/global) comprueban lecturas/escrituras denegadas tras canje, start, confirmación inválida y otro login, incluso con cookie renombrada o sesión antigua. Sólo confirmar el factor nuevo emite sesión/CSRF nuevos. Gracia45 conservada. Foco final 6/6 y Node 20/20 PASS; revisor distinto repite 2/2. Producto 227 archivos conservado, sin nuevo login/política. D/E intactos. F-08.03–.05, custodia, último administrador, candidata instalada y aceptación pendientes.",
+      "technicalStage": "Cerrado técnicamente; integración/QA instalada e hitos operativos de F-08 pendientes",
       "evidence": [
-        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
-        "evidence/s1-20261102/punto3/RESULTADOS.md"
+        "docs/PLAN-F0802-RECUPERACION-RESTRINGIDA.md",
+        "docs/PASO-025-RECUPERACION-RESTRINGIDA-MFA.md",
+        "evidence/s1-20261111/f08-02-recuperacion/RESULTADOS.md",
+        "evidence/s1-20261111/f08-02-recuperacion/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f08-02-recuperacion/FOCO.json",
+        "evidence/s1-20261111/f08-02-recuperacion/FRONTEND.json",
+        "evidence/s1-20261111/f08-02-recuperacion/FUENTES.json",
+        "evidence/s1-20261111/f08-02-recuperacion/review/DICTAMEN.md"
       ]
     },
     "F-08.03": {
-      "action": "Reutilizar las pruebas transaccionales/replay/rollback de codigos ya existentes; completar el recorrido nativo pendiente y acreditar su cobertura.",
-      "technicalStage": "Conciliar evidencia existente",
+      "action": "F-08.01–.03 cerrados técnicamente. Se conserva el canje existente: una sola transacción consume el conjunto antiguo, revoca sesiones/desafíos y exige reenrolamiento con auditoría sin valores originales. Dos escenarios nuevos fuerzan canjes realmente solapados (mismo código o dos distintos), un ganador y seis relaciones en la transacción ganadora bajo rol runtime; otra cuenta y gracia45 intactas. Foco 9/9 PASS y repetición independiente 3/3, con rollback forzado y negativos existentes. Producto 227 archivos conservado; HTTP/Node/Edge anteriores reutilizados, no repetidos como nuevos. D/E intactos. Custodia, último administrador, F-08.04/.05, candidata instalada y aceptación pendientes.",
+      "technicalStage": "Cerrado técnicamente; integración/QA instalada e hitos operativos de F-08 pendientes",
       "evidence": [
-        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
-        "evidence/s1-20261102/punto3/RESULTADOS.md"
+        "docs/PLAN-F0803-CONSUMO-TRANSACCIONAL.md",
+        "docs/PASO-026-CONSUMO-CODIGOS-MFA.md",
+        "evidence/s1-20261111/f08-03-consumo/RESULTADOS.md",
+        "evidence/s1-20261111/f08-03-consumo/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f08-03-consumo/FOCO.json",
+        "evidence/s1-20261111/f08-03-consumo/FUENTES.json",
+        "evidence/s1-20261111/f08-03-consumo/REUTILIZACION.json",
+        "evidence/s1-20261111/f08-03-consumo/review/DICTAMEN.md"
       ]
     },
     "F-10.01": {
@@ -715,6 +733,151 @@
         "evidence/s1-20261103/f05-05-cierre/COORDINACION-PG-R3.json",
         "evidence/s1-20261103/f05-05-cierre/implementacion/HARNESS-FREEZE6-PREVIO-PG.json",
         "evidence/s1-20261103/f05-05-cierre/implementacion/RESUMEN-SANITIZADO-CORRIDA3.json"
+      ]
+    },
+    "F-06.01": {
+      "action": "F-06.01 cerrado como especificación de fases con revisión independiente: n verificada y anillo aditivo con activa anterior antes de DB, sobre externo/persistencia exigidos, recifrado transaccional con testigo y publicación final hacia delante, fence/guard y conciliación de commit incierto. Todos los factores persistidos y versiones de backups se conservan; no se recortan estados/antirreplay/gracia. No se implementa o ejecuta un rotador, migración, retirada o caída; F-06.02/.03/.04 e hitos operativos siguen pendientes. D/E sin operaciones; reutilizar evidencia y seguir20/F-06.02.",
+      "technicalStage": "Especificación de fases cerrada con revisión independiente; rotación operativa pendiente",
+      "evidence": [
+        "docs/PROTOCOLO-ROTACION-MFA-v1.md",
+        "docs/PASO-019-FASES-ROTACION-MFA.md",
+        "evidence/s1-20261109/f06-01-fases/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261109/f06-01-fases/RESULTADOS.md",
+        "evidence/s1-20261109/f06-01-fases/review/DICTAMEN-F0601.md"
+      ]
+    },
+    "F-06.02": {
+      "action": "F-06.02 cerrado técnicamente: catálogo privado con declaración de todas las raíces retenidas, inventarios/recibos pineados y comprobación exacta de objetos; unknown/legacy/parcial/missing/tampered bloquean. Retirada lógica real de versión no activa/sin factores ni backups dependientes bajo locklocal+admisiónPG+ACCESS EXCLUSIVE, censo nuevo y autenticaciónAAD. Fence/journal/publicación/reanudación e idempotencia conservan archivosDPAPI; no recifrado, SQLmutante o destruccióncriptográfica. 297regresión pertinente+8backup nativo+18Python, sinomisiones; revisor distinto153focales propios y dictamen favorable sólo5/8deestecriterio. CLI elevada/SCMpositivoservicioinstalado y token real no ensayados; siguen en QA/hitos. F-06.03 rotación/testigo/caídasreales yF-06.04 pendientes. D/E intactos; sin commits/push/instaladores/despliegues. La cobertura atestada no descubreUSB/raícesomitidas por el operador; no expira backups. Reutilizar componentes y evidencia, no repetir codecs/login/portabilidad.",
+      "technicalStage": "Cerrado técnicamente: catálogo y retirada lógica revisados; no adopción instalada/rotación",
+      "evidence": [
+        "docs/PLAN-F0602-CATALOGO-Y-RETIRADA.md",
+        "docs/MANTENIMIENTO-CATALOGO-Y-RETIRADA-MFA.md",
+        "evidence/s1-20261109/f06-02-retirada/RESULTADOS.md",
+        "evidence/s1-20261109/f06-02-retirada/REVISION.md",
+        "evidence/s1-20261109/f06-02-retirada/POSTGRES-REGRESION.json",
+        "evidence/s1-20261109/f06-02-retirada/BACKUP-NATIVO.json",
+        "evidence/s1-20261109/f06-02-retirada/FUENTES.json"
+      ]
+    },
+    "F-06.03": {
+      "action": "F-06.01/.02 conservados. F-06.03: rotación interna offline con SQL046 aditivo/testigo transaccional, publicación de clave/anillos/recibo bajo coordinador, guard de vínculo y reanudación por hechos; DPAPI anterior, TOTP/metadatos/política conservados. 360/360 regresión pertinente,15 cortes de proceso con15 reaperturas,2 Restores custom en otros clústeres nuevos,3 negativos PG/publicación y14 operadores; sin omisiones en resultados finales. Revisión distinta registrada con sus ejecuciones/pines y límites. Sin CLI pública rotate, instalador46, apagón/Windowsreboot, SID efectivo/servicio instalado, custodia externa real o QA/adopción. D/E intactos. No es cierre integral F-06.04/R-04 ni porcentaje global. Reutilizar este alcance, no repetir codecs/factores/retirada.",
+      "technicalStage": "Cerrado técnicamente: caídas/reinicio del coordinador y Restore de laboratorio; integración operativa pendiente",
+      "evidence": [
+        "docs/PLAN-F0603-ROTACION-Y-CAIDAS.md",
+        "docs/PASO-021-CAIDAS-ROTACION-MFA.md",
+        "evidence/s1-20261110/f06-03-rotacion/RESULTADOS.md",
+        "evidence/s1-20261110/f06-03-rotacion/REVISION.md",
+        "evidence/s1-20261110/f06-03-rotacion/FUENTES.json",
+        "evidence/s1-20261110/f06-03-rotacion/POSTGRES-REGRESION.json",
+        "evidence/s1-20261110/f06-03-rotacion/MATRIZ-CAIDAS.json",
+        "evidence/s1-20261110/f06-03-rotacion/NEGATIVOS.json"
+      ]
+    },
+    "F-06.04": {
+      "action": "F-06 cerrado en su criterio técnico con F-06.01–.04: fases, catálogo/retirada, caídas y recuperación trazados. Nueva prueba encadenada con tres backups reales retenidos, dos rotaciones a8/9 y Restore de cada generación en clúster nuevo; todos los TOTP/metadatos conservados y claves sólo referidas por backup protegidas. Cinco invocaciones PASS sin omisiones y revisión independiente con otras cinco; producto227archivos idéntico a F0603, cuyas360pruebas/15cortes se reutilizan sin repetirlas. Sin CLI pública, integración/instalador46, SID efectivo/custodia externa real o aceptación nativa. D/E intactos.",
+      "technicalStage": "Cierre técnico acreditado; implementación operativa, integración y aceptación pendientes",
+      "evidence": [
+        "docs/PLAN-F0604-CIERRE-ROTACION.md",
+        "docs/PASO-022-CIERRE-ROTACION-MFA.md",
+        "evidence/s1-20261111/f06-04-cierre/RESULTADOS.md",
+        "evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f06-04-cierre/RETENIDOS.json",
+        "evidence/s1-20261111/f06-04-cierre/FUENTES.json",
+        "evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json",
+        "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md"
+      ]
+    },
+    "F-07.05": {
+      "action": "F-07.01–.05 cerrados técnicamente: enrolamiento restringido existente contrastado con evidencia GUI/nativa y fuentes actuales. Dos escenarios nuevos con cuentas ordinarias de gracia45 vencida, Windows/DPAPI real y rol SQL restringido: desafío/pending/código inválido sin /me, clientes ni mutaciones; cookie renombrada no autoriza. Dos confirmaciones producen una única sesión/CSRF nuevos, con testigo SQL de identidad/transacción y replay rechazado. 2/2 casos,36/36 de núcleo y70/70 Node, sin omitidas; revisor distinto repite2/2. Producto227archivos conservado, sin nuevo login o política. D/E intactos. Integración de candidata objetivo y aceptación pendientes; no nuevo ensayo TLS/servicio ni cierre de emergencia/custodia externa.",
+      "technicalStage": "Cerrado técnicamente; integración de candidata objetivo y aceptación pendientes",
+      "evidence": [
+        "docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md",
+        "docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md"
+      ]
+    },
+    "F-08.04": {
+      "action": "F-08.01–.04 cerrados técnicamente. Único global por ambas capacidades recupera con contraseña/código, conserva identidad/autoridad y vuelve a administrar sólo tras confirmar un factor nuevo; repone códigos y conserva la guarda del último administrador de seguridad. Se corrigió un fallo preexistente D2: Desactivar ya no cancela pending (409 y CanDisable=false), sin alterar gracia45/exención de factor activo no pendiente. Base de 227: 226 archivos conservados y MfaAccountManagement corregido, una prueba nueva con 5 casos. Rojo D2 0/2 → verde 2/2; regresión de 49 seleccionados = 48 PASS / 0 FAIL / 1 navegador opcional omitido, conciliada por discovery sin ejecución nueva; 68 Node PASS. Revisor distinto: 5/5 y sondas roja/verde. D/E intactos, sin despliegue. F-08.05, custodia, emergencia F-09, candidata instalada y aceptación pendientes.",
+      "technicalStage": "Cerrado técnicamente con corrección D2 revisada; integración/QA instalada e hitos operativos pendientes",
+      "evidence": [
+        "docs/PLAN-F0804-ULTIMO-ADMINISTRADOR.md",
+        "docs/PASO-027-ULTIMO-ADMINISTRADOR-MFA.md",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/RESULTADOS.md",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/FOCO.json",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/FUENTES.json",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/FRONTEND.json",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/SCOPE-RECONCILIACION.json",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/D2-ROJO-VERDE-INDEPENDIENTE.json",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/CAMBIOS-PRODUCTO.patch",
+        "evidence/s1-20261111/f08-04-ultimo-administrador/review/DICTAMEN.md"
+      ]
+    },
+    "F-08.05": {
+      "action": "F-08.01–.05 cerrados técnicamente y revisados en conjunto. Se conserva la generación expresa de diez códigos propios, entrega inicial única, hashes salados y canje a enrolamiento restringido: sólo TOTP nuevo permite sesión/API, también para único global; revocación/auditoría/rollback y concurrencia real contrastados. Build corregido F0804 sin recompilar, 227 archivos y cuatro tests previos conservados; foco12/12 y revisor6/6 PASS, sin omitidas. Frontend privado18 archivos: positivos Edge de dashboard8 y recuperación4 en corridas distintas; primer conjunto1PASS/1FAIL y recuperación intermitente sin causa acreditada, siete intentos preservados, sin presentar batería íntegramente verde. Sin cambios de producto, guiones compartidos, SQL, dependencias o D/E. Cuatro hitos técnicos acreditados; integración de candidata, aceptación/custodia y emergencia F-09 siguen pendientes.",
+      "technicalStage": "Cierre técnico conjunto revisado; integración/aceptación y observación de automatización Edge pendientes",
+      "evidence": [
+        "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+        "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+        "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+        "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+        "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+        "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+        "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+        "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+        "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
+      ]
+    },
+    "F-09.01": {
+      "action": "F-09.01 técnico: nueva compuerta CLI --mfa-emergency-recovery antes de host/config/SQL, autoridad de token Windows real SYSTEM o Administradores elevados; impersonación, token estándar/filtrado/no consultable y autoridad falsa por claims/env no autorizan. Incluso autorizado devuelve transition_unavailable/exit1/0operaciones/ninguna sesión hasta F-09.02/.03. Program es el único archivo previo modificado; helper y tres tests nuevos,226fuentes previas conservadas. Rojo10fallos por rama ausente, final76/76, HTTP3/3 y regresión74+7 PASS sin omitidas, mutación detectada por5fallos; revisor79/79 y8sondas propias PASS. Positivos SYSTEM/elevado reales no ejecutados; política simulada separada de token nativo estándar. Sin GUI/SQL/dependencias/instaladores/VM o cambios D/E. F-09.02–.05 y los seis hitos completos pendientes. Observación Edge de F0805 sigue abierta.",
+      "technicalStage": "Compuerta local revisada; transición de pérdida total, integración y aceptación pendientes",
+      "evidence": [
+        "docs/PLAN-F0901-AUTORIZACION-EMERGENCIA.md",
+        "docs/PASO-029-AUTORIZACION-LOCAL-EMERGENCIA-MFA.md",
+        "evidence/s1-20261111/f09-01-autorizacion-local/RESULTADOS.md",
+        "evidence/s1-20261111/f09-01-autorizacion-local/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f09-01-autorizacion-local/FUENTES.json",
+        "evidence/s1-20261111/f09-01-autorizacion-local/FOCOS.json",
+        "evidence/s1-20261111/f09-01-autorizacion-local/MUTACION.json",
+        "evidence/s1-20261111/f09-01-autorizacion-local/CAMBIOS.patch",
+        "evidence/s1-20261111/f09-01-autorizacion-local/review/DICTAMEN.md"
+      ]
+    },
+    "F-09.02": {
+      "action": "F-09.01/.02 técnicos: autoridad Windows y protocolo interno Prepare/Export/Apply/Publish para pérdida explícita con censo fiable. Conserva claves legibles/blobs opacos y archivo cifrado completo privado; retira factores perdidos, fuerza required/pending, preserva cuentas/permisos/gracia45 e inventario. Sobre autenticado y pin privado inmutable; witness completamente vinculado, rollback/reentrada y publicación verificada con fence retenido. SQL047 aditiva,224fuentes previas conservadas/4modificadas/4nuevas,2tests nuevos. Regresión144/144 PASS sin omitidas y revisión independiente acotada. CLI no habilitada (transition_unavailable tras autorización)/0operaciones; no instalador47, servicio recuperado ni positivo elevado/SID real. D/E intactos. F-09.03–.05 y seis hitos completos pendientes; observación Edge F0805 abierta.",
+      "technicalStage": "Material/transición interna revisados con fence; composición operativa, servicio real y aceptación pendientes",
+      "evidence": [
+        "docs/PLAN-F0902-MATERIAL-PERDIDA-MFA.md",
+        "docs/PASO-030-MATERIAL-PERDIDA-MFA.md",
+        "evidence/s1-20261111/f09-02-material-perdida/RESULTADOS.md",
+        "evidence/s1-20261111/f09-02-material-perdida/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f09-02-material-perdida/FUENTES.json",
+        "evidence/s1-20261111/f09-02-material-perdida/FOCOS.json",
+        "evidence/s1-20261111/f09-02-material-perdida/MUTACION.json",
+        "evidence/s1-20261111/f09-02-material-perdida/CAMBIOS.patch",
+        "evidence/s1-20261111/f09-02-material-perdida/review/DICTAMEN.md"
+      ]
+    },
+    "F-09.03": {
+      "action": "F-09.01–.03 técnicos: loss-reset reutilizado, revocación real de credenciales anteriores y auditoría Windows dedicada sin secretos; no appactor inventado. Corregida primera aplicación: recuentos archivo/pending/finish y testigo fresh/hashes antes de commit, con rollback de resultados SQL incompletos. Rojo limpio14=5PASS/9FAIL→verde14/14; final52/52 sin omitidas. Único global conserva identidad/permisos/gracia y recupera administración sólo tras TOTP nuevo; last_admin_required vigente. Revisión independiente acotada y registrada.231/232fuentes previas conservadas,1adaptador DB corregido,1test nuevo; SQL047/Program/dependencias/GUI intactos. Fence conservado, CLI aún no operativa; sin cambio D/E. F-09.04/.05 y seis hitos completos pendientes; observación Edge F0805 abierta.",
+      "technicalStage": "Revocación/auditoría y último global revisados en backend; composición y ensayo operativo de pérdida siguen pendientes",
+      "evidence": [
+        "docs/PLAN-F0903-REVOCACION-AUDITORIA-MFA.md",
+        "docs/PASO-031-REVOCACION-Y-AUDITORIA-MFA.md",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/RESULTADOS.md",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/FUENTES.json",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/FOCOS.json",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/CAMBIOS.patch",
+        "evidence/s1-20261111/f09-03-revocacion-auditoria/review/DICTAMEN.md"
       ]
     }
   },

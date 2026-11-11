@@ -1,0 +1,35 @@
+# Revisión D2 v2 · Codex · 23.10.2026
+
+**Adenda vigente · 25.10.2026:** Wascar confirmó custodia, ubicación y recuperación en [DECISIONES-MFA-CONFIRMADAS-25-10-2026.md](DECISIONES-MFA-CONFIRMADAS-25-10-2026.md). Esas decisiones ya no bloquean el inicio. Las condiciones técnicas de este dictamen siguen pendientes de implementación/prueba; no se declara proveedor operativo. [Asignación MFA-L1](MENSAJE-PARA-CLAUDE-MFA-L1-25-10-2026.md). La v2 con SHA2cbb59db…da04df1 está conservada [antes de esta confirmación](../evidence/s1-20261025/mfa-decision-asignacion-codex/D2-v2-antes-confirmacion.md); el cuerpo siguiente es el dictamen histórico.
+
+**Dictamen: orientación de diseño favorable, con condiciones antes de implementar y validar la custodia real.** La v2 atiende los seis hallazgos de la v1; ya no se propone dar acceso al servicio a todo `management` ni depender de un administrador que sólo pueda autenticarse con la clave perdida. Esto no aprueba un proveedor DPAPI, un formato portable implementado ni un despliegue. **Custodia y ubicación definitiva siguen siendo decisión de Wascar.**
+
+Fuente revisada: `docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md`, SHA256 `2cbb59dbb45e982263d2d4531546452c5f5e29bb6bf019774b1694666da04df1`. Implementación/propuesta: Claude; revisión: Codex, independiente del implementador. La revisión v1 se conserva intacta en `evidence/s1-20261023/m3-tramo2-codex/REVISION-D2-v1-historica.md` y su evidencia original en `evidence/s1-20261023/c1-logs-d2/`.
+
+## 1. Respuesta a los seis hallazgos originales
+
+| Hallazgo | Dictamen sobre v2 | Comprobación que falta |
+|---|---|---|
+| D2-01 · acceso del servicio | Resuelto conceptualmente por §2: almacén `mfa-keys` separado, SYSTEM/Administradores gestionan y SID real del servicio sólo lee. No relajar el validador de `management`. | Probar creación segura desde el primer instante, tránsito por padres, lectura/DPAPI con el SID real y rechazo de lectura a otra cuenta y de escritura al servicio. No se ha ejecutado ese proveedor. |
+| D2-02 · recuperación administrativa | Dos vías independientes en §3: códigos de un uso y autorización local de emergencia. Es una solución viable al bloqueo de la v1. | Concretar la transición de recuperación completa indicada abajo; probar que no se abre una sesión API sólo con contraseña. |
+| D2-03 · sobre portable | §4 concreta PBKDF2-HMAC-SHA256, AES-256-GCM, sal/nonce/tag, formato y tamaño máximo. Corrige la ausencia de diseño. | Cerrar límites del KDF y autenticar la cabecera; parámetros aún propuestos, sin implementación ensayada. |
+| D2-04 · versiones/AAD | §5 incorpora anillo, retención por factores **y backups**, identidades AAD conservadas o reenvoltura explícita. | Especificar publicación/recuperación entre archivos y DB; un reemplazo atómico de un archivo no hace atómica esa secuencia completa. |
+| D2-05 · amenaza LocalMachine | §1 reconoce administrador y proceso comprometido fuera de la protección. Corrección documental suficiente. | Mantener ese límite en manual/operadores; claves y secretos fuera de logs, dumps y diagnósticos públicos. |
+| D2-06 · pérdida de copias | §6 distingue copias, contraseña y pérdida total; no regenera silenciosamente una clave. Corrección suficiente de diseño. | Ensayar cada estado, incluido archivo/versiones faltantes con factores ya enrolados. |
+
+## 2. Condiciones concretas para la implementación
+
+1. **Recuperación sin clave y sin sobre.** §6 exige fallar el arranque al faltar un archivo, mientras §3b sólo marca `enrollment_pending`. El operador local debe poder preparar de forma explícita un anillo nuevo, conservar el material anterior para recuperación y retirar del uso los factores ilegibles, sin borrar la base. Definir cómo se entra al flujo restringido de enrolamiento después de esa autorización local. El estado pendiente no concede sesión API; únicamente confirmar el nuevo factor permite emitir sesión/CSRF nuevos. La frase «con contraseña y código se entra» de §3a debe precisar si concede acceso de recuperación restringido hasta reenrolar, y qué sesiones/desafíos/códigos anteriores se invalidan. No es una autorización para password-only.
+2. **Sobre y trabajo del KDF acotados.** Validar magia/versión/algoritmo, longitudes y mínimos/máximos de iteraciones **antes** de PBKDF2. Un archivo menor de 1 MiB todavía puede declarar un coste desmesurado. Fijar una codificación canónica y ligar la cabecera completa como AAD de GCM; rechazar variantes/valores desconocidos y contenido extra. Medir el coste de 600 000 iteraciones en Windows antes de fijarlo; este dictamen no cambia ese parámetro silenciosamente. Añadir prueba de iteraciones fuera de rango, además de contraseña incorrecta, alteración, truncado y tamaño.
+3. **Rotación recuperable entre disco y PostgreSQL.** Especificar el orden: persistir y verificar clave nueva antes de que ningún factor la use; conservar todas las versiones requeridas durante el cambio; registrar fases y publicar el anillo coherente. Probar caída antes/después de cada publicación y del commit de reenvoltura. El hecho de que algunos factores ya usen la versión nueva impide prometer que todos siguen legibles sólo con la anterior. Backup y sobre deben identificar el conjunto de versiones necesario y comprobarlo en Restore.
+4. **Cuenta estándar real.** El proveedor de producción espera la decisión de Wascar y pruebas bajo el SID efectivo del servicio. No basta un roundtrip DPAPI en el proceso del desarrollador. Probar también ACL heredadas/reparse y denegación de escritura; no elevar el servicio para resolver permisos.
+
+Son precisiones de cierre del diseño corregido, no seis hallazgos originales nuevos ni una razón para rehacer M3. Claude puede seguir con su proveedor sintético aislado; no debe anunciar custodia real disponible.
+
+## 3. Evidencia y límites
+
+Esta revisión compara la v2 con los seis hallazgos históricos y con `AUTENTICACION-MFA-S1.md`. **No se repitió hoy el ensayo DPAPI/ACL de la v1 ni se presenta como ejecución nueva.** Tampoco se ha creado una cuenta de servicio, modificado un almacén de certificados o accedido al servidor QA.
+
+Fuentes primarias: [Microsoft DPAPI/LocalMachine](https://learn.microsoft.com/en-us/windows/win32/api/dpapi/nf-dpapi-cryptprotectdata), [evaluación de DACL](https://learn.microsoft.com/en-us/windows/win32/secauthz/how-dacls-control-access-to-an-object) y [AES-GCM y datos asociados](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.aesgcm.decrypt?view=net-10.0). La elección final de custodia/ubicación y su aceptación son de Wascar; la evaluación de las transiciones propuestas es una inferencia de revisión del diseño, no un ensayo portable realizado.
+
+La revisión de login/verificación se registra por separado en `docs/REVISION-M3-CODEX.md`. Evidencia nueva: `evidence/s1-20261023/m3-tramo2-codex/CIERRE.md`. README de calidad: la contradicción histórica ya se corrigió en la revisión anterior; no se volvió a modificar aquí. Sin commits, push ni cambios en QA. **Avance global aproximado: 78%, sin incremento por esta revisión.**

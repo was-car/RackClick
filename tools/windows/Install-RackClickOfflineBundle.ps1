@@ -77,6 +77,7 @@ try {
             $offlineInstallInputs.backupHash -cnotmatch '^[a-fA-F0-9]{64}$') {Stop-OfflineBundleCheck 'recovery_arguments_invalid'}
     }
     $bundle=Read-RackClickOfflineBundle -ArchivePath $offlineInstallInputs.archive -ExpectedArchiveSha256 $offlineInstallInputs.hash
+    if($offlineInstallInputs.mode-ceq'Restore'-and$bundle.manifest.versions.schema-eq48){Stop-OfflineBundleCheck 'schema48_restore_not_available' 1}
     # Candidata 06: el esquema 14 se admite para la instalación de ensayo limpio. Stage, runtime, migración y Restore
     # están propagados y probados en laboratorio; la instalación completa en Windows Server aún no se ha ensayado.
     $root=Get-OfflineBundleLocalPath $offlineInstallInputs.destination -Ascii
@@ -149,7 +150,7 @@ try {
     if ($offlineInstallInputs.mode -ceq 'Restore') {
         $arguments+=@('-RecoveryUser',$user,'-BackupPath',$backupRoot,'-ExpectedBackupManifestSha256',$offlineInstallInputs.backupHash.ToLowerInvariant())
     } else {$arguments+=@('-BootstrapUser',$user,'-SystemhausName',$house)}
-    if((Get-OfflineBundleApplicationProfile $bundle.manifest.applicationManifestSha256).name-cin@('43-sql','45-sql')){
+    if((Get-OfflineBundleApplicationProfile $bundle.manifest.applicationManifestSha256).name-cin@('43-sql','45-sql','48-sql')){
         $arguments+=@('-ProtectSqlCredentials','-MinimizeSqlSecrets')
     }
     $result=Invoke-OfflineInstallerChild (Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe') $arguments $root $logs 'deployment'

@@ -144,7 +144,7 @@ function Test-LauncherReadyBody {
     param($Body,[int]$ExpectedSchema)
     # The expected version comes from the externally authenticated, locked Stage.
     # A version supported by some other Stage is not readiness for this instance.
-    return $ExpectedSchema -in @(9,10,11,12,13,14,15,43,45) -and $Body -is [pscustomobject] -and
+    return $ExpectedSchema -in @(9,10,11,12,13,14,15,43,45,48) -and $Body -is [pscustomobject] -and
         $null -ne $Body.PSObject.Properties['status'] -and $Body.status -ceq 'ready' -and
         $null -ne $Body.PSObject.Properties['schemaVersion'] -and $Body.schemaVersion -is [int] -and $Body.schemaVersion -eq $ExpectedSchema
 }

@@ -66,6 +66,14 @@ try {
     $setupPlan=Read-SetupPlan $PlanPath
     $setupPayloadRoot=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..'))
     $setupPayload=Assert-SetupPayload $setupPayloadRoot
+    # Keep the reader's StrictMode local. The broker's successful child reports
+    # intentionally omit optional diagnostic properties such as errorType.
+    $setupVerifiedSchema=& {
+        . (Join-Path $setupPayloadRoot 'operators\RackClick.OfflineBundle.ps1')
+        $verified=Read-RackClickOfflineBundle -ArchivePath (Join-Path $setupPayloadRoot 'RackClick.zip') -ExpectedArchiveSha256 $setupPayload.bundleArchiveSha256
+        try{return $verified.manifest.versions.schema}finally{Close-RackClickOfflineBundle $verified}
+    }
+    if($setupPlan.mode-ceq'Restore'-and$setupVerifiedSchema-eq48){throw 'schema48_restore_not_available'}
     Set-SetupProgress 'host' 3 'Comprobando que el servidor permite cuentas locales.'
     $setupHost=Get-SetupHostCompatibility
     Write-SetupJson (Join-Path $ReportDirectory 'host-result.json') $setupHost
@@ -137,7 +145,7 @@ try {
     Set-SetupProgress 'mfa_keys' 60 'Preparando custodia MFA privada; politica de 45 dias sin bloquear cuentas existentes.'
     Set-SetupMfaContentAdministrativeRead -InstancePath $setupInstance -ServiceSid $setupAccount.SID.Value
     $setupMfaResult=Initialize-SetupMfaStore -InstancePath $setupInstance -CodeRoot $setupCode -InstallationId $setupPlan.id -ServiceSid $setupAccount.SID.Value -ExpectedManifestSha256 $setupPrepared.manifestSha256 -ExpectedBundleSha256 $setupPayload.bundleArchiveSha256
-    if($setupMfaResult.applicationSchemaVersion -isnot [int] -or $setupMfaResult.applicationSchemaVersion -notin @(15,43,45)){throw 'setup_mfa_schema_receipt_invalid'}
+    if($setupMfaResult.applicationSchemaVersion -isnot [int] -or $setupMfaResult.applicationSchemaVersion -notin @(15,43,45,48)){throw 'setup_mfa_schema_receipt_invalid'}
     $setupApplicationSchema=$setupMfaResult.applicationSchemaVersion
     Write-SetupJson (Join-Path $ReportDirectory 'mfa-initialization.json') $setupMfaResult
     Set-SetupProgress 'service' 65 'Registrando servicio Windows y acceso HTTPS de la red autorizada.'

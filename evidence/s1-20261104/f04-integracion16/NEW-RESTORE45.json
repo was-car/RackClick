@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "valid": true,
+  "vmOperations": 0,
+  "DGuestCommands": 0,
+  "nativeInstallerExecuted": false,
+  "newWindowsAccountsOrServices": false,
+  "readExistingInstallation": false,
+  "schema": 45,
+  "applicationDllSha256": "c05742f9079705c6cd97a1f97f89133183fc72e554dac0b2d52678c548921c2f",
+  "originalProbeSha256": "52aea47d005b41e95a03a4afb363d3e21ff26b6e8dbf767c1c50a6793f776c77",
+  "adaptedProbeSha256": {
+    "43": "626cfd8b831b7606a715c85e2539e27563b94620c2aa537bb54b7b44e07d7a29",
+    "45": "7f1becf674d5f699e04581c011d2aec33653c34502ebe65c6c49e011a7ea6b7e"
+  },
+  "seedingFixture": "protected instance format2 for explicit owner-maintenance seed; not native format3 acceptance",
+  "transitions": [
+    {
+      "transition": "45to45",
+      "rows": 20,
+      "repeatResumes": 2,
+      "newIdentities": true,
+      "sourceBackupUnchanged": true,
+      "catalogPrivilegesVerified": true,
+      "runtimeDdlDenied": true,
+      "existingTargetAndPrivateMaterialPreserved": true
+    },
+    {
+      "transition": "43to45",
+      "rows": 20,
+      "repeatResumes": 2,
+      "newIdentities": true,
+      "sourceBackupUnchanged": true,
+      "catalogPrivilegesVerified": true,
+      "runtimeDdlDenied": true,
+      "existingTargetAndPrivateMaterialPreserved": true
+    }
+  ],
+  "privateRawLogs": true,
+  "calls": [
+    {
+      "label": "stage43",
+      "exitCode": 0,
+      "code": "artifacts_staged",
+      "valid": true
+    },
+    {
+      "label": "stage45",
+      "exitCode": 0,
+      "code": "artifacts_staged",
+      "valid": true
+    },
+    {
+      "label": "new-45to45",
+      "exitCode": 0,
+      "code": "instance_initialized",
+      "valid": true
+    },
+    {
+      "label": "seed-45to45",
+      "exitCode": 0,
+      "code": "resumed",
+      "valid": true
+    },
+    {
+      "label": "backup-45to45",
+      "exitCode": 0,
+      "code": "backup_complete",
+      "valid": true
+    },
+    {
+      "label": "restore-45to45",
+      "exitCode": 0,
+      "code": "instance_initialized",
+      "valid": true
+    },
+    {
+      "label": "resume-45to45-0",
+      "exitCode": 0,
+      "code": "resumed",
+      "valid": true
+    },
+    {
+      "label": "resume-45to45-1",
+      "exitCode": 0,
+      "code": "resumed",
+      "valid": true
+    },
+    {
+      "label": "existing-target-45to45",
+      "exitCode": 1,
+      "code": "preflight_instance_destination_exists",
+      "valid": false
+    },
+    {
+      "label": "new-43to45",
+      "exitCode": 0,
+      "code": "instance_initialized",
+      "valid": true
+    },
+    {
+      "label": "seed-43to45",
+      "exitCode": 0,
+      "code": "resumed",
+      "valid": true
+    },
+    {
+      "label": "backup-43to45",
+      "exitCode": 0,
+      "code": "backup_complete",
+      "valid": true
+    },
+    {
+      "label": "restore-43to45",
+      "exitCode": 0,
+      "code": "instance_initialized",
+      "valid": true
+    },
+    {
+      "label": "resume-43to45-0",
+      "exitCode": 0,
+      "code": "resumed",
+      "valid": true
+    },
+    {
+      "label": "resume-43to45-1",
+      "exitCode": 0,
+      "code": "resumed",
+      "valid": true
+    },
+    {
+      "label": "existing-target-43to45",
+      "exitCode": 1,
+      "code": "preflight_instance_destination_exists",
+      "valid": false
+    }
+  ],
+  "ownedClusters": [
+    {
+      "rootLabel": "source45",
+      "postmasterPidAbsent": true
+    },
+    {
+      "rootLabel": "target45to45",
+      "postmasterPidAbsent": true
+    },
+    {
+      "rootLabel": "source43",
+      "postmasterPidAbsent": true
+    },
+    {
+      "rootLabel": "target43to45",
+      "postmasterPidAbsent": true
+    }
+  ],
+  "allOwnedClustersStopped": true
+}

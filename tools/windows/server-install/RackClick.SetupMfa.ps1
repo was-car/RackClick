@@ -5,12 +5,12 @@ function Get-SetupMfaApplicationSchema {
     # Call only after the source ZIP has passed its external archive pin. The
     # application digest must resolve in the closed native profile registry.
     $schema=Get-OfflineBundleExpectedSchema (Get-OfflineBundleApplicationProfile $ApplicationManifestSha256)
-    if($schema -isnot [int] -or $schema -notin @(15,43,45)){throw 'setup_mfa_schema_required_15_43_or_45'}
+    if($schema -isnot [int] -or $schema -notin @(15,43,45,48)){throw 'setup_mfa_schema_required_15_43_or_45'}
     return $schema
 }
 function Test-SetupMfaReadiness {
     param($Health,$ExpectedSchema,[string]$ServiceStatus)
-    if($ExpectedSchema -isnot [int] -or $ExpectedSchema -notin @(15,43,45) -or $null -eq $Health -or
+    if($ExpectedSchema -isnot [int] -or $ExpectedSchema -notin @(15,43,45,48) -or $null -eq $Health -or
        $ServiceStatus -cne 'Running'){return $false}
     if($Health -is [Collections.IDictionary]){
         if(-not $Health.Contains('status') -or -not $Health.Contains('schemaVersion')){return $false}

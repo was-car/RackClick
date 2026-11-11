@@ -14,7 +14,8 @@ La entrada JSON se recibe exclusivamente por stdin: mode(check/apply), connectio
 actorName, expectedHouseId, expectedRevision, requestId. Nunca poner credenciales
 en argumentos, historial, documentación, logs públicos ni Git.
 
-`check` valida conexión runtime restringida/loopback, esquema15/digests, actor
+`check` valida conexión runtime restringida/loopback, perfiles cerrados15/45/48
+con sus digests exactos, actor
 global y destino vacío. Devuelve UUID y revisión, sin mutaciones. `apply` requiere
 esos valores explícitos y un requestId nuevo; inserta inventario, revisión,
 auditoría y recibo en una transacción. Un replay válido devuelve el recibo previo.

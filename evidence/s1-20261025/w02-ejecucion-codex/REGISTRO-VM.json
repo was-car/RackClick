@@ -1,0 +1,72 @@
+{
+  "recordedBy": "Claude; read and cross-checked against host VM configuration by Codex",
+  "vms": [
+    {
+      "vmDisplayName": "RackClick-W02-A",
+      "guestInitialName": "WIN-JKVH580AGGR",
+      "guestTrialName": "W02-A",
+      "caption": "Microsoft Windows Server 2025 Standard Evaluation",
+      "build": "26100",
+      "domainRole": 2,
+      "powershell": "5.1.26100.7462",
+      "ipv4": [
+        "192.168.206.128",
+        "127.0.0.1"
+      ],
+      "cpu": 4,
+      "memoryMB": 6144,
+      "diskGiB": 80.0,
+      "parentDiskCID": [
+        "ffffffff"
+      ],
+      "network": "VMnet1 host-only",
+      "initialServices": [],
+      "initialRackClickPrograms": [],
+      "freeC_GB": 66.2,
+      "pythonStoreAliasOnly": true,
+      "operatorAccount": "Administrator",
+      "serviceAccount": "RackClickSvcA",
+      "completeLocalAccountEnumeration": "B is in listo-W02-B; A not supplied as a full list",
+      "imageNameDeclaredByOperator": "26100.32230.260111-0550.lt_release_svc_refresh_SERVER_EVAL_x64FRE_de-de.iso"
+    },
+    {
+      "vmDisplayName": "RackClick-W02-B",
+      "guestInitialName": "WIN-ST93820Q24B",
+      "guestTrialName": "W02-B",
+      "caption": "Microsoft Windows Server 2025 Standard Evaluation",
+      "build": "26100",
+      "domainRole": 2,
+      "powershell": "5.1.26100.7462",
+      "ipv4": [
+        "192.168.206.129",
+        "127.0.0.1"
+      ],
+      "cpu": 4,
+      "memoryMB": 6144,
+      "diskGiB": 80.0,
+      "parentDiskCID": [
+        "ffffffff"
+      ],
+      "network": "VMnet1 host-only",
+      "initialServices": [],
+      "initialRackClickPrograms": [],
+      "freeC_GB": 66.7,
+      "pythonStoreAliasOnly": true,
+      "operatorAccount": "Administrator",
+      "serviceAccount": "RackClickSvcB",
+      "completeLocalAccountEnumeration": "B is in listo-W02-B; A not supplied as a full list",
+      "imageNameDeclaredByOperator": "26100.32230.260111-0550.lt_release_svc_refresh_SERVER_EVAL_x64FRE_de-de.iso"
+    }
+  ],
+  "qaObservation": {
+    "vmDisplayName": "RackClickSRV",
+    "runningAtRead": false,
+    "network": "VMnet2",
+    "knownQaFromHandoff": "ac096e7e-55f0-4ab7-8149-b97139f3be02 at 192.168.250.78:5443",
+    "mappingConfirmed": false,
+    "powerChangeCause": "unknown",
+    "changedByThisReview": false
+  },
+  "readUtc": "2026-10-25T14:29:17.819505+00:00",
+  "vmInstallationTrialsRepeatedByReviewer": false
+}

@@ -1,18 +1,18 @@
 # Plan pendiente de RackClick: pasos numerados
 
-Fecha: 2026-11-04 · Versión: 2026-11-04-v1.23
+Fecha: 2026-11-11 · Versión: 2026-11-04-v1.23
 
 **Para elegir:** «Continúa con el paso 80» o «Continúa con F-05.04». Los números se conservan al cerrar pasos. Cada resultado incluye contexto, criterio de cierre y referencias; sus subpasos son seleccionables por separado.
 
 [Abrir visor con búsqueda](../VER-PENDIENTES-RACKCLICK.html) · [Datos completos](PLAN-PENDIENTES-NUMERADO.json) · [Hoja maestra](HOJA-DE-RUTA-MAESTRA.md)
 
-Números conservados tras un cierre posterior: 18. Ya están acreditados y no se ofrecen como nueva implementación.
+Números conservados tras un cierre posterior: 32. Ya están acreditados y no se ofrecen como nueva implementación.
 
 ## Qué representa esta lista
 
-Hay **268 opciones numeradas**: 239 subpasos del cierre (237 pendientes y 2 en curso), 7 cierres/mantenimiento del catálogo, 3 iniciativas posteriores y 1 proceso de repositorio. Son desgloses de trabajo, no 268 funciones ausentes ni una estimación de duración. Los 41 subpasos con crédito previo se conservan en el apéndice, fuera de los pendientes iniciales.
+Hay **268 opciones numeradas**: 225 subpasos del cierre (223 pendientes y 2 en curso), 7 cierres/mantenimiento del catálogo, 3 iniciativas posteriores y 1 proceso de repositorio. Son desgloses de trabajo, no 268 funciones ausentes ni una estimación de duración. Los 55 subpasos con crédito previo se conservan en el apéndice, fuera de los pendientes iniciales.
 
-**Índice acreditado del cierre: 19,13/100, sin cambio. No hay un nuevo porcentaje global del producto.** Los estados formales congelados no describen por sí solos la implementación actual. Un paso puede requerir sólo conciliar pruebas existentes, integración o QA. Las 302 acciones RC10 y 13 peticiones están trazadas en los apéndices; no se suman como trabajo duplicado.
+**Índice acreditado del cierre: 26,63/100, sin cambio. No hay un nuevo porcentaje global del producto.** Los estados formales congelados no describen por sí solos la implementación actual. Un paso puede requerir sólo conciliar pruebas existentes, integración o QA. Las 302 acciones RC10 y 13 peticiones están trazadas en los apéndices; no se suman como trabajo duplicado.
 
 **Se conserva D:** D45 se conserva: servicio/SID/DB/HTTPS/MFA y datos existentes intactos. La lista no ejecuta ni autoriza operaciones destructivas, reinstalación o recarga de Demo50; los ensayos futuros usan su laboratorio asignado.
 
@@ -264,147 +264,168 @@ Cierre técnico F05 revisado: DBaplicación45 dump/restore y proveedorWindows/ma
 
 ### F-06 · Cerrar rotación y recuperación coherente entre anillo y PostgreSQL
 
-**Situación conocida:** Anillo versionado/rotación propuestos; atomicidad de un archivo no cubre publicación de claves más commit DB.
+**Situación conocida:** F-06 cerrado en su criterio técnico con F-06.01–.04: fases, catálogo/retirada, caídas y recuperación trazados. Nueva prueba encadenada con tres backups reales retenidos, dos rotaciones a8/9 y Restore de cada generación en clúster nuevo; todos los TOTP/metadatos conservados y claves sólo referidas por backup protegidas. Cinco invocaciones PASS sin omisiones y revisión independiente con otras cinco; producto227 archivos idéntico a F0603, cuyas360 pruebas/15 cortes se reutilizan sin repetirlas. Sin CLI pública, integración/instalador46, SID efectivo/custodia externa real o aceptación nativa. D/E intactos.
 
 **Cierre esperado:** Cada punto de interrupción tiene estado recuperable demostrado; todos los factores/backups retenidos siguen descifrables con versiones conservadas y faltantes se rechazan explícitamente.
 
 **Dependencias del resultado:** F-04, F-05.
 
-**Fuentes:** [docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md](../docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md) · [docs/REVISION-D2-CODEX.md](../docs/REVISION-D2-CODEX.md).
+**Fuentes:** [docs/PLAN-F0604-CIERRE-ROTACION.md](../docs/PLAN-F0604-CIERRE-ROTACION.md) · [docs/PASO-022-CIERRE-ROTACION-MFA.md](../docs/PASO-022-CIERRE-ROTACION-MFA.md) · [evidence/s1-20261111/f06-04-cierre/RESULTADOS.md](../evidence/s1-20261111/f06-04-cierre/RESULTADOS.md) · [evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md](../evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md) · [evidence/s1-20261111/f06-04-cierre/RETENIDOS.json](../evidence/s1-20261111/f06-04-cierre/RETENIDOS.json) · [evidence/s1-20261111/f06-04-cierre/FUENTES.json](../evidence/s1-20261111/f06-04-cierre/FUENTES.json) · [evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json](../evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json) · [evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md](../evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md) · [docs/PROTOCOLO-ROTACION-MFA-v1.md](../docs/PROTOCOLO-ROTACION-MFA-v1.md) · [docs/PASO-019-FASES-ROTACION-MFA.md](../docs/PASO-019-FASES-ROTACION-MFA.md) · [evidence/s1-20261109/f06-01-fases/MATRIZ-CRITERIO.md](../evidence/s1-20261109/f06-01-fases/MATRIZ-CRITERIO.md) · [evidence/s1-20261109/f06-01-fases/RESULTADOS.md](../evidence/s1-20261109/f06-01-fases/RESULTADOS.md) · [evidence/s1-20261109/f06-01-fases/review/DICTAMEN-F0601.md](../evidence/s1-20261109/f06-01-fases/review/DICTAMEN-F0601.md) · [docs/PLAN-F0602-CATALOGO-Y-RETIRADA.md](../docs/PLAN-F0602-CATALOGO-Y-RETIRADA.md) · [docs/MANTENIMIENTO-CATALOGO-Y-RETIRADA-MFA.md](../docs/MANTENIMIENTO-CATALOGO-Y-RETIRADA-MFA.md) · [evidence/s1-20261109/f06-02-retirada/RESULTADOS.md](../evidence/s1-20261109/f06-02-retirada/RESULTADOS.md) · [evidence/s1-20261109/f06-02-retirada/REVISION.md](../evidence/s1-20261109/f06-02-retirada/REVISION.md) · [evidence/s1-20261109/f06-02-retirada/POSTGRES-REGRESION.json](../evidence/s1-20261109/f06-02-retirada/POSTGRES-REGRESION.json) · [evidence/s1-20261109/f06-02-retirada/BACKUP-NATIVO.json](../evidence/s1-20261109/f06-02-retirada/BACKUP-NATIVO.json) · [evidence/s1-20261109/f06-02-retirada/FUENTES.json](../evidence/s1-20261109/f06-02-retirada/FUENTES.json) · [docs/CONTRATO-INVENTARIO-RETENCION-MFA-v1.md](../docs/CONTRATO-INVENTARIO-RETENCION-MFA-v1.md) · [docs/PASO-020-INVENTARIO-RETENCION-MFA.md](../docs/PASO-020-INVENTARIO-RETENCION-MFA.md) · [evidence/s1-20261109/f06-02-retencion/RESULTADOS.md](../evidence/s1-20261109/f06-02-retencion/RESULTADOS.md) · [evidence/s1-20261109/f06-02-retencion/MATRIZ-CRITERIO.md](../evidence/s1-20261109/f06-02-retencion/MATRIZ-CRITERIO.md) · [evidence/s1-20261109/f06-02-retencion/review/DICTAMEN-F0602.md](../evidence/s1-20261109/f06-02-retencion/review/DICTAMEN-F0602.md) · [evidence/s1-20261109/f06-02-retencion/POSTGRES-CENSO-BACKUP.json](../evidence/s1-20261109/f06-02-retencion/POSTGRES-CENSO-BACKUP.json) · [evidence/s1-20261109/f06-02-retencion/REGRESION-COMPONENTES.json](../evidence/s1-20261109/f06-02-retencion/REGRESION-COMPONENTES.json) · [docs/PLAN-F0602-INTEGRACION-BACKUP.md](../docs/PLAN-F0602-INTEGRACION-BACKUP.md) · [docs/BACKUP-MFA-CON-INVENTARIO-DESARROLLO.md](../docs/BACKUP-MFA-CON-INVENTARIO-DESARROLLO.md) · [evidence/s1-20261109/f06-02-nativo/RESULTADOS.md](../evidence/s1-20261109/f06-02-nativo/RESULTADOS.md) · [evidence/s1-20261109/f06-02-nativo/POSTGRES-NATIVO.json](../evidence/s1-20261109/f06-02-nativo/POSTGRES-NATIVO.json) · [evidence/s1-20261109/f06-02-nativo/REGRESION.json](../evidence/s1-20261109/f06-02-nativo/REGRESION.json) · [evidence/s1-20261109/f06-02-nativo/REVISION-INDEPENDIENTE.md](../evidence/s1-20261109/f06-02-nativo/REVISION-INDEPENDIENTE.md) · [docs/PLAN-F0603-ROTACION-Y-CAIDAS.md](../docs/PLAN-F0603-ROTACION-Y-CAIDAS.md) · [docs/PASO-021-CAIDAS-ROTACION-MFA.md](../docs/PASO-021-CAIDAS-ROTACION-MFA.md) · [evidence/s1-20261110/f06-03-rotacion/RESULTADOS.md](../evidence/s1-20261110/f06-03-rotacion/RESULTADOS.md) · [evidence/s1-20261110/f06-03-rotacion/REVISION.md](../evidence/s1-20261110/f06-03-rotacion/REVISION.md) · [evidence/s1-20261110/f06-03-rotacion/FUENTES.json](../evidence/s1-20261110/f06-03-rotacion/FUENTES.json) · [evidence/s1-20261110/f06-03-rotacion/POSTGRES-REGRESION.json](../evidence/s1-20261110/f06-03-rotacion/POSTGRES-REGRESION.json) · [evidence/s1-20261110/f06-03-rotacion/MATRIZ-CAIDAS.json](../evidence/s1-20261110/f06-03-rotacion/MATRIZ-CAIDAS.json) · [evidence/s1-20261110/f06-03-rotacion/NEGATIVOS.json](../evidence/s1-20261110/f06-03-rotacion/NEGATIVOS.json).
 
 #### Paso 019 · F-06.01
 
-Especificar fases: persistir/verificar clave nueva antes de usarla, conservar versiones requeridas, reenvolver factores y publicar anillo coherente.
+F-06.01 cerrado como especificación de fases con revisión independiente: n verificada y anillo aditivo con activa anterior antes de DB, sobre externo/persistencia exigidos, recifrado transaccional con testigo y publicación final hacia delante, fence/guard y conciliación de commit incierto. Todos los factores persistidos y versiones de backups se conservan; no se recortan estados/antirreplay/gracia. No se implementa o ejecuta un rotador, migración, retirada o caída; F-06.02/.03/.04 e hitos operativos siguen pendientes. D/E sin operaciones; reutilizar evidencia y seguir20/F-06.02.
 
-- Tipo de trabajo: Contrastar cierre; puede existir implementación.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-06.
+- Tipo de trabajo: Especificación de fases cerrada con revisión independiente; rotación operativa pendiente.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-06.
+- Texto histórico trazable: Especificar fases: persistir/verificar clave nueva antes de usarla, conservar versiones requeridas, reenvolver factores y publicar anillo coherente.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 #### Paso 020 · F-06.02
 
-Retirar una versión sólo si ningún factor ni backup retenido la necesita; incluir inventario de versiones en backup/sobre.
+F-06.02 cerrado técnicamente: catálogo privado con declaración de todas las raíces retenidas, inventarios/recibos pineados y comprobación exacta de objetos; unknown/legacy/parcial/missing/tampered bloquean. Retirada lógica real de versión no activa/sin factores ni backups dependientes bajo locklocal+admisiónPG+ACCESS EXCLUSIVE, censo nuevo y autenticaciónAAD. Fence/journal/publicación/reanudación e idempotencia conservan archivosDPAPI; no recifrado, SQLmutante o destruccióncriptográfica. 297 regresión pertinente+8 backup nativo+18Python, sinomisiones; revisor distinto153 focales propios y dictamen favorable sólo5/8 deestecriterio. CLI elevada/SCMpositivoservicioinstalado y token real no ensayados; siguen en QA/hitos. F-06.03 rotación/testigo/caídasreales yF-06.04 pendientes. D/E intactos; sin commits/push/instaladores/despliegues. La cobertura atestada no descubreUSB/raícesomitidas por el operador; no expira backups. Reutilizar componentes y evidencia, no repetir codecs/login/portabilidad.
 
-- Tipo de trabajo: Contrastar cierre; puede existir implementación.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-06.
+- Tipo de trabajo: Cerrado técnicamente: catálogo y retirada lógica revisados; no adopción instalada/rotación.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-06.
+- Texto histórico trazable: Retirar una versión sólo si ningún factor ni backup retenido la necesita; incluir inventario de versiones en backup/sobre.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 #### Paso 021 · F-06.03
 
-Inyectar caída antes/después de cada publicación y commit; reinicio/Restore deben identificar estado y recuperar sin perder factores.
+F-06.01/.02 conservados. F-06.03: rotación interna offline con SQL046 aditivo/testigo transaccional, publicación de clave/anillos/recibo bajo coordinador, guard de vínculo y reanudación por hechos; DPAPI anterior, TOTP/metadatos/política conservados. 360/360 regresión pertinente,15 cortes de proceso con 15 reaperturas,2 Restores custom en otros clústeres nuevos,3 negativos PG/publicación y 14 operadores; sin omisiones en resultados finales. Revisión distinta registrada con sus ejecuciones/pines y límites. Sin CLI pública rotate, instalador46, apagón/Windowsreboot, SID efectivo/servicio instalado, custodia externa real o QA/adopción. D/E intactos. No es cierre integral F-06.04/R-04 ni porcentaje global. Reutilizar este alcance, no repetir codecs/factores/retirada.
 
-- Tipo de trabajo: Contrastar cierre; puede existir implementación.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-06.
+- Tipo de trabajo: Cerrado técnicamente: caídas/reinicio del coordinador y Restore de laboratorio; integración operativa pendiente.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-06.
+- Texto histórico trazable: Inyectar caída antes/después de cada publicación y commit; reinicio/Restore deben identificar estado y recuperar sin perder factores.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 #### Paso 022 · F-06.04
 
-Cerrar «Cerrar rotación y recuperación coherente entre anillo y PostgreSQL» con evidencia, revisión independiente y aceptación manual cuando corresponda.
+F-06 cerrado en su criterio técnico con F-06.01–.04: fases, catálogo/retirada, caídas y recuperación trazados. Nueva prueba encadenada con tres backups reales retenidos, dos rotaciones a8/9 y Restore de cada generación en clúster nuevo; todos los TOTP/metadatos conservados y claves sólo referidas por backup protegidas. Cinco invocaciones PASS sin omisiones y revisión independiente con otras cinco; producto227 archivos idéntico a F0603, cuyas360 pruebas/15 cortes se reutilizan sin repetirlas. Sin CLI pública, integración/instalador46, SID efectivo/custodia externa real o aceptación nativa. D/E intactos.
 
-- Tipo de trabajo: Contrastar cierre; puede existir implementación.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-06.
+- Tipo de trabajo: Cierre técnico acreditado; implementación operativa, integración y aceptación pendientes.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-06.
 - Texto histórico trazable: Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 ### F-07 · Completar enrolamiento restringido cuando MFA sea exigible
 
-**Situación conocida:** Enrolamiento/login/GUI y política de 45 días existentes; F-07.01-.04 acreditados. D11 tiene proveedor real y prueba HTTPS/DPAPI de cuenta sintetica. Falta cierre integral y escenarios pendientes; no crear otro login. Codigos de recuperacion del punto3 probados en desarrollo43, no canje nativo en D.
+**Situación conocida:** F-07.01–.05 cerrados técnicamente: enrolamiento restringido existente contrastado con evidencia GUI/nativa y fuentes actuales. Dos escenarios nuevos con cuentas ordinarias de gracia45 vencida, Windows/DPAPI real y rol SQL restringido: desafío/pending/código inválido sin /me, clientes ni mutaciones; cookie renombrada no autoriza. Dos confirmaciones producen una única sesión/CSRF nuevos, con testigo SQL de identidad/transacción y replay rechazado. 2/2 casos,36/36 de núcleo y 70/70 Node, sin omitidas; revisor distinto repite2/2. Producto227 archivos conservado, sin nuevo login o política. D/E intactos. Integración de candidata objetivo y aceptación pendientes; no nuevo ensayo TLS/servicio ni cierre de emergencia/custodia externa.
 
-**Cierre esperado:** Cuando se exige MFA o se inicia enrolamiento, el desafío no concede acceso API; confirmar un factor válido emite una única sesión nueva, con negativos de concurrencia y revisión. Respetar la gracia45 y exención global confirmadas, sin bloquear de golpe todas las cuentas nuevas.
+**Cierre esperado:** Usuario nuevo completa primer factor y obtiene única sesión nueva sólo al confirmar; desafío/enrolamiento incompleto no acceden a /me, clientes ni mutaciones; negativos concurrentes y revisión independiente.
 
 **Dependencias del resultado:** F-04 para producto; proveedor sintético aislado puede permitir desarrollo/pruebas previas.
 
-**Fuentes:** [docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md](../docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md) · [evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md](../evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md) · [docs/PUNTO3-FUNCIONES-PENDIENTES.md](../docs/PUNTO3-FUNCIONES-PENDIENTES.md) · [evidence/s1-20261102/vm11-d/RESULTADOS.md](../evidence/s1-20261102/vm11-d/RESULTADOS.md) · [evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md](../evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md).
+**Fuentes:** [docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md](../docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md) · [docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md](../docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md) · [evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md](../evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md) · [evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md](../evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md) · [evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json](../evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json) · [evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json](../evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json) · [evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json](../evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json) · [evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json](../evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json) · [evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json](../evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json) · [evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md](../evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md).
 
 #### Paso 023 · F-07.05
 
-Cerrar «Completar enrolamiento restringido cuando MFA sea exigible» con evidencia, revisión independiente y aceptación manual cuando corresponda.
+F-07.01–.05 cerrados técnicamente: enrolamiento restringido existente contrastado con evidencia GUI/nativa y fuentes actuales. Dos escenarios nuevos con cuentas ordinarias de gracia45 vencida, Windows/DPAPI real y rol SQL restringido: desafío/pending/código inválido sin /me, clientes ni mutaciones; cookie renombrada no autoriza. Dos confirmaciones producen una única sesión/CSRF nuevos, con testigo SQL de identidad/transacción y replay rechazado. 2/2 casos,36/36 de núcleo y 70/70 Node, sin omitidas; revisor distinto repite2/2. Producto227 archivos conservado, sin nuevo login o política. D/E intactos. Integración de candidata objetivo y aceptación pendientes; no nuevo ensayo TLS/servicio ni cierre de emergencia/custodia externa.
 
-- Tipo de trabajo: Contrastar cierre; puede existir implementación.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-07.
+- Tipo de trabajo: Cerrado técnicamente; integración de candidata objetivo y aceptación pendientes.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-07.
 - Texto histórico trazable: Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 ### F-08 · Implementar códigos de recuperación y reenrolamiento restringido
 
-**Situación conocida:** Codigos propios y canje a reenrolamiento restringido implementados y revisados en desarrollo43, con revocacion transaccional y entrega unica. Faltan ultimo administrador, custodia operativa, canje en candidata instalada y conciliacion/acreditacion, no otro generador de codigos.
+**Situación conocida:** F-08.01–.05 cerrados técnicamente y revisados en conjunto. Se conserva la generación expresa de diez códigos propios, entrega inicial única, hashes salados y canje a enrolamiento restringido: sólo TOTP nuevo permite sesión/API, también para único global; revocación/auditoría/rollback y concurrencia real contrastados. Build corregido F0804 sin recompilar, 227 archivos y cuatro tests previos conservados; foco12/12 y revisor6/6 PASS, sin omitidas. Frontend privado18 archivos: positivos Edge de dashboard8 y recuperación4 en corridas distintas; primer conjunto1PASS/1FAIL y recuperación intermitente sin causa acreditada, siete intentos preservados, sin presentar batería íntegramente verde. Sin cambios de producto, guiones compartidos, SQL, dependencias o D/E. Cuatro hitos técnicos acreditados; integración de candidata, aceptación/custodia y emergencia F-09 siguen pendientes.
 
 **Cierre esperado:** Cada código sirve una sola vez incluso en concurrencia; recuperación no abre API antes del estado autorizado; reenrolamiento y revocación/auditoría sin secretos probados por revisor distinto.
 
 **Dependencias del resultado:** F-07, F-10.
 
-**Fuentes:** [docs/PUNTO3-FUNCIONES-PENDIENTES.md](../docs/PUNTO3-FUNCIONES-PENDIENTES.md) · [evidence/s1-20261102/punto3/RESULTADOS.md](../evidence/s1-20261102/punto3/RESULTADOS.md).
+**Fuentes:** [docs/PLAN-F0805-CIERRE-CODIGOS.md](../docs/PLAN-F0805-CIERRE-CODIGOS.md) · [docs/PASO-028-CIERRE-CODIGOS-MFA.md](../docs/PASO-028-CIERRE-CODIGOS-MFA.md) · [evidence/s1-20261111/f08-05-cierre/RESULTADOS.md](../evidence/s1-20261111/f08-05-cierre/RESULTADOS.md) · [evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md](../evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md) · [evidence/s1-20261111/f08-05-cierre/FOCO.json](../evidence/s1-20261111/f08-05-cierre/FOCO.json) · [evidence/s1-20261111/f08-05-cierre/FUENTES.json](../evidence/s1-20261111/f08-05-cierre/FUENTES.json) · [evidence/s1-20261111/f08-05-cierre/FRONTEND.json](../evidence/s1-20261111/f08-05-cierre/FRONTEND.json) · [evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json](../evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json) · [evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md](../evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md) · [evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md](../evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md) · [docs/PLAN-F0801-GENERACION-CODIGOS.md](../docs/PLAN-F0801-GENERACION-CODIGOS.md) · [docs/PASO-024-GENERACION-CODIGOS-MFA.md](../docs/PASO-024-GENERACION-CODIGOS-MFA.md) · [evidence/s1-20261111/f08-01-generacion/RESULTADOS.md](../evidence/s1-20261111/f08-01-generacion/RESULTADOS.md) · [evidence/s1-20261111/f08-01-generacion/MATRIZ-CRITERIO.md](../evidence/s1-20261111/f08-01-generacion/MATRIZ-CRITERIO.md) · [evidence/s1-20261111/f08-01-generacion/FOCO.json](../evidence/s1-20261111/f08-01-generacion/FOCO.json) · [evidence/s1-20261111/f08-01-generacion/FRONTEND.json](../evidence/s1-20261111/f08-01-generacion/FRONTEND.json) · [evidence/s1-20261111/f08-01-generacion/FUENTES.json](../evidence/s1-20261111/f08-01-generacion/FUENTES.json) · [evidence/s1-20261111/f08-01-generacion/review/DICTAMEN.md](../evidence/s1-20261111/f08-01-generacion/review/DICTAMEN.md) · [docs/PLAN-F0802-RECUPERACION-RESTRINGIDA.md](../docs/PLAN-F0802-RECUPERACION-RESTRINGIDA.md) · [docs/PASO-025-RECUPERACION-RESTRINGIDA-MFA.md](../docs/PASO-025-RECUPERACION-RESTRINGIDA-MFA.md) · [evidence/s1-20261111/f08-02-recuperacion/RESULTADOS.md](../evidence/s1-20261111/f08-02-recuperacion/RESULTADOS.md) · [evidence/s1-20261111/f08-02-recuperacion/MATRIZ-CRITERIO.md](../evidence/s1-20261111/f08-02-recuperacion/MATRIZ-CRITERIO.md) · [evidence/s1-20261111/f08-02-recuperacion/FOCO.json](../evidence/s1-20261111/f08-02-recuperacion/FOCO.json) · [evidence/s1-20261111/f08-02-recuperacion/FRONTEND.json](../evidence/s1-20261111/f08-02-recuperacion/FRONTEND.json) · [evidence/s1-20261111/f08-02-recuperacion/FUENTES.json](../evidence/s1-20261111/f08-02-recuperacion/FUENTES.json) · [evidence/s1-20261111/f08-02-recuperacion/review/DICTAMEN.md](../evidence/s1-20261111/f08-02-recuperacion/review/DICTAMEN.md) · [docs/PLAN-F0803-CONSUMO-TRANSACCIONAL.md](../docs/PLAN-F0803-CONSUMO-TRANSACCIONAL.md) · [docs/PASO-026-CONSUMO-CODIGOS-MFA.md](../docs/PASO-026-CONSUMO-CODIGOS-MFA.md) · [evidence/s1-20261111/f08-03-consumo/RESULTADOS.md](../evidence/s1-20261111/f08-03-consumo/RESULTADOS.md) · [evidence/s1-20261111/f08-03-consumo/MATRIZ-CRITERIO.md](../evidence/s1-20261111/f08-03-consumo/MATRIZ-CRITERIO.md) · [evidence/s1-20261111/f08-03-consumo/FOCO.json](../evidence/s1-20261111/f08-03-consumo/FOCO.json) · [evidence/s1-20261111/f08-03-consumo/FUENTES.json](../evidence/s1-20261111/f08-03-consumo/FUENTES.json) · [evidence/s1-20261111/f08-03-consumo/REUTILIZACION.json](../evidence/s1-20261111/f08-03-consumo/REUTILIZACION.json) · [evidence/s1-20261111/f08-03-consumo/review/DICTAMEN.md](../evidence/s1-20261111/f08-03-consumo/review/DICTAMEN.md) · [docs/PLAN-F0804-ULTIMO-ADMINISTRADOR.md](../docs/PLAN-F0804-ULTIMO-ADMINISTRADOR.md) · [docs/PASO-027-ULTIMO-ADMINISTRADOR-MFA.md](../docs/PASO-027-ULTIMO-ADMINISTRADOR-MFA.md) · [evidence/s1-20261111/f08-04-ultimo-administrador/RESULTADOS.md](../evidence/s1-20261111/f08-04-ultimo-administrador/RESULTADOS.md) · [evidence/s1-20261111/f08-04-ultimo-administrador/MATRIZ-CRITERIO.md](../evidence/s1-20261111/f08-04-ultimo-administrador/MATRIZ-CRITERIO.md) · [evidence/s1-20261111/f08-04-ultimo-administrador/FOCO.json](../evidence/s1-20261111/f08-04-ultimo-administrador/FOCO.json) · [evidence/s1-20261111/f08-04-ultimo-administrador/FUENTES.json](../evidence/s1-20261111/f08-04-ultimo-administrador/FUENTES.json) · [evidence/s1-20261111/f08-04-ultimo-administrador/FRONTEND.json](../evidence/s1-20261111/f08-04-ultimo-administrador/FRONTEND.json) · [evidence/s1-20261111/f08-04-ultimo-administrador/SCOPE-RECONCILIACION.json](../evidence/s1-20261111/f08-04-ultimo-administrador/SCOPE-RECONCILIACION.json) · [evidence/s1-20261111/f08-04-ultimo-administrador/D2-ROJO-VERDE-INDEPENDIENTE.json](../evidence/s1-20261111/f08-04-ultimo-administrador/D2-ROJO-VERDE-INDEPENDIENTE.json) · [evidence/s1-20261111/f08-04-ultimo-administrador/CAMBIOS-PRODUCTO.patch](../evidence/s1-20261111/f08-04-ultimo-administrador/CAMBIOS-PRODUCTO.patch) · [evidence/s1-20261111/f08-04-ultimo-administrador/review/DICTAMEN.md](../evidence/s1-20261111/f08-04-ultimo-administrador/review/DICTAMEN.md).
 
 #### Paso 024 · F-08.01
 
-Conciliar generacion y entrega unica de diez codigos propios ya implementadas; verificar su custodia/uso en candidata instalada. No crear otro generador.
+F-08.01 cerrado técnicamente: generación explícita existente de diez códigos propios con 128 bits aleatorios y hashes con sal de 128 bits, ligados a Systemhaus/usuario e independientes de la clave TOTP. Sólo la primera respuesta entrega valores; status, receipt y replay no los revelan. Una nueva prueba con dos solicitudes realmente bloqueadas simultáneamente confirma una sola entrega, diez hashes, una operación y un evento de auditoría. Pasaron 15 casos focales y 10 de Node; un revisor distinto repitió 1/1. Los 227 archivos de producto se conservaron. No se acreditan generación automática al confirmar, custodia/canje en candidata instalada, último administrador ni F-08.02 a F-08.05. D y E intactas.
 
-- Tipo de trabajo: Conciliar evidencia existente.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-08.
+- Tipo de trabajo: Cerrado técnicamente; custodia/uso instalado y F0802–05 pendientes.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-08.
 - Texto histórico trazable: Generar y mostrar una sola vez códigos por usuario; almacenar sólo hashes con sal conforme D2, sin dependencia de clave TOTP.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 #### Paso 025 · F-08.02
 
-Conservar el canje ya implementado: password+codigo solo habilita nuevo enrolamiento, sin API hasta confirmar factor. Completar integracion y QA instaladas.
+F-08.01 y F-08.02 cerrados técnicamente. Se conserva la generación revisada; contraseña y código de recuperación sólo emiten un desafío enroll nuevo, sin sesión API. Dos casos HTTP nuevos (cuenta ordinaria/global) comprueban lecturas/escrituras denegadas tras canje, start, confirmación inválida y otro login, incluso con cookie renombrada o sesión antigua. Sólo confirmar el factor nuevo emite sesión/CSRF nuevos. Gracia45 conservada. Foco final 6/6 y Node 20/20 PASS; revisor distinto repite 2/2. Producto 227 archivos conservado, sin nuevo login/política. D/E intactos. F-08.03–.05, custodia, último administrador, candidata instalada y aceptación pendientes.
 
-- Tipo de trabajo: Conciliar evidencia existente.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-08.
+- Tipo de trabajo: Cerrado técnicamente; integración/QA instalada e hitos operativos de F-08 pendientes.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-08.
 - Texto histórico trazable: Concretar e implementar si password+código concede sólo recuperación restringida hasta reenrolar; no dejar frase ambigua que emita sesión normal antes de nuevo factor.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 #### Paso 026 · F-08.03
 
-Reutilizar las pruebas transaccionales/replay/rollback de codigos ya existentes; completar el recorrido nativo pendiente y acreditar su cobertura.
+F-08.01–.03 cerrados técnicamente. Se conserva el canje existente: una sola transacción consume el conjunto antiguo, revoca sesiones/desafíos y exige reenrolamiento con auditoría sin valores originales. Dos escenarios nuevos fuerzan canjes realmente solapados (mismo código o dos distintos), un ganador y seis relaciones en la transacción ganadora bajo rol runtime; otra cuenta y gracia45 intactas. Foco 9/9 PASS y repetición independiente 3/3, con rollback forzado y negativos existentes. Producto 227 archivos conservado; HTTP/Node/Edge anteriores reutilizados, no repetidos como nuevos. D/E intactos. Custodia, último administrador, F-08.04/.05, candidata instalada y aceptación pendientes.
 
-- Tipo de trabajo: Conciliar evidencia existente.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-08.
+- Tipo de trabajo: Cerrado técnicamente; integración/QA instalada e hitos operativos de F-08 pendientes.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-08.
 - Texto histórico trazable: Consumir transaccionalmente, invalidar sesiones/desafíos/códigos anteriores según contrato y probar consumo concurrente/replay/rollback/secretos.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 #### Paso 027 · F-08.04
 
-Garantizar vía administrativa de recuperación con códigos válidos sin bloquear último administrador.
+F-08.01–.04 cerrados técnicamente. Único global por ambas capacidades recupera con contraseña/código, conserva identidad/autoridad y vuelve a administrar sólo tras confirmar un factor nuevo; repone códigos y conserva la guarda del último administrador de seguridad. Se corrigió un fallo preexistente D2: Desactivar ya no cancela pending (409 y CanDisable=false), sin alterar gracia45/exención de factor activo no pendiente. Base de 227: 226 archivos conservados y MfaAccountManagement corregido, una prueba nueva con 5 casos. Rojo D2 0/2 → verde 2/2; regresión de 49 seleccionados = 48 PASS / 0 FAIL / 1 navegador opcional omitido, conciliada por discovery sin ejecución nueva; 68 Node PASS. Revisor distinto: 5/5 y sondas roja/verde. D/E intactos, sin despliegue. F-08.05, custodia, emergencia F-09, candidata instalada y aceptación pendientes.
 
-- Tipo de trabajo: Contrastar cierre; puede existir implementación.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-08.
+- Tipo de trabajo: Cerrado técnicamente con corrección D2 revisada; integración/QA instalada e hitos operativos pendientes.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-08.
+- Texto histórico trazable: Garantizar vía administrativa de recuperación con códigos válidos sin bloquear último administrador.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 #### Paso 028 · F-08.05
 
-Cerrar «Implementar códigos de recuperación y reenrolamiento restringido» con evidencia, revisión independiente y aceptación manual cuando corresponda.
+F-08.01–.05 cerrados técnicamente y revisados en conjunto. Se conserva la generación expresa de diez códigos propios, entrega inicial única, hashes salados y canje a enrolamiento restringido: sólo TOTP nuevo permite sesión/API, también para único global; revocación/auditoría/rollback y concurrencia real contrastados. Build corregido F0804 sin recompilar, 227 archivos y cuatro tests previos conservados; foco12/12 y revisor6/6 PASS, sin omitidas. Frontend privado18 archivos: positivos Edge de dashboard8 y recuperación4 en corridas distintas; primer conjunto1PASS/1FAIL y recuperación intermitente sin causa acreditada, siete intentos preservados, sin presentar batería íntegramente verde. Sin cambios de producto, guiones compartidos, SQL, dependencias o D/E. Cuatro hitos técnicos acreditados; integración de candidata, aceptación/custodia y emergencia F-09 siguen pendientes.
 
-- Tipo de trabajo: Contrastar cierre; puede existir implementación.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-08.
+- Tipo de trabajo: Cierre técnico conjunto revisado; integración/aceptación y observación de automatización Edge pendientes.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-08.
 - Texto histórico trazable: Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 ### F-09 · Implementar recuperación local cuando no quedan clave, sobre ni códigos
 
-**Situación conocida:** La recuperación CLI actual revoca sesiones y desafíos; D14-05 lo acredita. No equivale al flujo local de emergencia de pérdida total MFA.
+**Situación conocida:** F-09.01–.04 técnicos: CLI local de pérdida con cinco fases, finalización/recibo/guarda y proyección48 mínima no actualizable. Ensayo real en instancia separada de E: pérdida de toda su clave v1, arranque rechazado sin listener, mantenimiento SYSTEM, servidor estándar, regreso HTTPS mediante enrolamiento restringido/TOTP2, credenciales antiguas revocadas e inventario sentinel conservado. Regresión378/378 y revisión independiente40/40 reutilizadas; revisión nativa final favorable por lectura de fuentes/recibos. 221/232 fuentes previas conservadas,11 modificadas/4 nuevas,total236; sin dependencias nuevas. D sin acceso; dos servicios previos de E Running con iguales PID, propios detenidos/puertos y tareas0. Fallos del arnés preservados, cliente HTTPAdmin separado de mantenimientoSYSTEM. F-09.05, seis hitos completos, instalador/Restore48, mantenimientoAdmin, custodia externa y QA/adopción pendientes.
 
 **Cierre esperado:** Administrador recupera acceso mediante enrolamiento nuevo después de pérdida total simulada; no se borra inventario ni se reactivan sesiones; ninguna ruta remota permite eludir factor.
 
 **Dependencias del resultado:** F-03, F-04, F-07.
 
-**Fuentes:** [docs/REVISION-D14-05-CODEX.md](../docs/REVISION-D14-05-CODEX.md) · [docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md](../docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md) · [docs/REVISION-D2-CODEX.md](../docs/REVISION-D2-CODEX.md) · [development/server/src/RackClick.Server/RecoveryAdministrator.cs](../development/server/src/RackClick.Server/RecoveryAdministrator.cs).
+**Fuentes:** [docs/PLAN-F0904-ENSAYO-PERDIDA-MFA.md](../docs/PLAN-F0904-ENSAYO-PERDIDA-MFA.md) · [docs/PASO-032-ENSAYO-PERDIDA-MFA.md](../docs/PASO-032-ENSAYO-PERDIDA-MFA.md) · [evidence/s1-20261111/f09-04-ensayo-perdida/RESULTADOS.md](../evidence/s1-20261111/f09-04-ensayo-perdida/RESULTADOS.md) · [evidence/s1-20261111/f09-04-ensayo-perdida/MATRIZ-CRITERIO.md](../evidence/s1-20261111/f09-04-ensayo-perdida/MATRIZ-CRITERIO.md) · [evidence/s1-20261111/f09-04-ensayo-perdida/NATIVO.json](../evidence/s1-20261111/f09-04-ensayo-perdida/NATIVO.json) · [evidence/s1-20261111/f09-04-ensayo-perdida/FUENTES.json](../evidence/s1-20261111/f09-04-ensayo-perdida/FUENTES.json) · [evidence/s1-20261111/f09-04-ensayo-perdida/FOCOS.json](../evidence/s1-20261111/f09-04-ensayo-perdida/FOCOS.json) · [evidence/s1-20261111/f09-04-ensayo-perdida/CAMBIOS.patch](../evidence/s1-20261111/f09-04-ensayo-perdida/CAMBIOS.patch) · [evidence/s1-20261111/f09-04-ensayo-perdida/INVESTIGACION-NATIVA.md](../evidence/s1-20261111/f09-04-ensayo-perdida/INVESTIGACION-NATIVA.md) · [evidence/s1-20261111/f09-04-ensayo-perdida/review/DICTAMEN.md](../evidence/s1-20261111/f09-04-ensayo-perdida/review/DICTAMEN.md) · [docs/PLAN-F0901-AUTORIZACION-EMERGENCIA.md](../docs/PLAN-F0901-AUTORIZACION-EMERGENCIA.md) · [docs/PASO-029-AUTORIZACION-LOCAL-EMERGENCIA-MFA.md](../docs/PASO-029-AUTORIZACION-LOCAL-EMERGENCIA-MFA.md) · [evidence/s1-20261111/f09-01-autorizacion-local/RESULTADOS.md](../evidence/s1-20261111/f09-01-autorizacion-local/RESULTADOS.md) · [evidence/s1-20261111/f09-01-autorizacion-local/MATRIZ-CRITERIO.md](../evidence/s1-20261111/f09-01-autorizacion-local/MATRIZ-CRITERIO.md) · [evidence/s1-20261111/f09-01-autorizacion-local/FUENTES.json](../evidence/s1-20261111/f09-01-autorizacion-local/FUENTES.json) · [evidence/s1-20261111/f09-01-autorizacion-local/FOCOS.json](../evidence/s1-20261111/f09-01-autorizacion-local/FOCOS.json) · [evidence/s1-20261111/f09-01-autorizacion-local/MUTACION.json](../evidence/s1-20261111/f09-01-autorizacion-local/MUTACION.json) · [evidence/s1-20261111/f09-01-autorizacion-local/CAMBIOS.patch](../evidence/s1-20261111/f09-01-autorizacion-local/CAMBIOS.patch) · [evidence/s1-20261111/f09-01-autorizacion-local/review/DICTAMEN.md](../evidence/s1-20261111/f09-01-autorizacion-local/review/DICTAMEN.md) · [docs/PLAN-F0902-MATERIAL-PERDIDA-MFA.md](../docs/PLAN-F0902-MATERIAL-PERDIDA-MFA.md) · [docs/PASO-030-MATERIAL-PERDIDA-MFA.md](../docs/PASO-030-MATERIAL-PERDIDA-MFA.md) · [evidence/s1-20261111/f09-02-material-perdida/RESULTADOS.md](../evidence/s1-20261111/f09-02-material-perdida/RESULTADOS.md) · [evidence/s1-20261111/f09-02-material-perdida/MATRIZ-CRITERIO.md](../evidence/s1-20261111/f09-02-material-perdida/MATRIZ-CRITERIO.md) · [evidence/s1-20261111/f09-02-material-perdida/FUENTES.json](../evidence/s1-20261111/f09-02-material-perdida/FUENTES.json) · [evidence/s1-20261111/f09-02-material-perdida/FOCOS.json](../evidence/s1-20261111/f09-02-material-perdida/FOCOS.json) · [evidence/s1-20261111/f09-02-material-perdida/MUTACION.json](../evidence/s1-20261111/f09-02-material-perdida/MUTACION.json) · [evidence/s1-20261111/f09-02-material-perdida/CAMBIOS.patch](../evidence/s1-20261111/f09-02-material-perdida/CAMBIOS.patch) · [evidence/s1-20261111/f09-02-material-perdida/review/DICTAMEN.md](../evidence/s1-20261111/f09-02-material-perdida/review/DICTAMEN.md) · [docs/PLAN-F0903-REVOCACION-AUDITORIA-MFA.md](../docs/PLAN-F0903-REVOCACION-AUDITORIA-MFA.md) · [docs/PASO-031-REVOCACION-Y-AUDITORIA-MFA.md](../docs/PASO-031-REVOCACION-Y-AUDITORIA-MFA.md) · [evidence/s1-20261111/f09-03-revocacion-auditoria/RESULTADOS.md](../evidence/s1-20261111/f09-03-revocacion-auditoria/RESULTADOS.md) · [evidence/s1-20261111/f09-03-revocacion-auditoria/MATRIZ-CRITERIO.md](../evidence/s1-20261111/f09-03-revocacion-auditoria/MATRIZ-CRITERIO.md) · [evidence/s1-20261111/f09-03-revocacion-auditoria/FUENTES.json](../evidence/s1-20261111/f09-03-revocacion-auditoria/FUENTES.json) · [evidence/s1-20261111/f09-03-revocacion-auditoria/FOCOS.json](../evidence/s1-20261111/f09-03-revocacion-auditoria/FOCOS.json) · [evidence/s1-20261111/f09-03-revocacion-auditoria/CAMBIOS.patch](../evidence/s1-20261111/f09-03-revocacion-auditoria/CAMBIOS.patch) · [evidence/s1-20261111/f09-03-revocacion-auditoria/review/DICTAMEN.md](../evidence/s1-20261111/f09-03-revocacion-auditoria/review/DICTAMEN.md).
 
 #### Paso 029 · F-09.01
 
-Autorizar sólo operador local SYSTEM/Administradores; sin web anónima ni bypass password-only.
+F-09.01 técnico: nueva compuerta CLI --mfa-emergency-recovery antes de host/config/SQL, autoridad de token Windows real SYSTEM o Administradores elevados; impersonación, token estándar/filtrado/no consultable y autoridad falsa por claims/env no autorizan. Incluso autorizado devuelve transition_unavailable/exit1/0 operaciones/ninguna sesión hasta F-09.02/.03. Program es el único archivo previo modificado; helper y tres tests nuevos,226 fuentes previas conservadas. Rojo10 fallos por rama ausente, final76/76, HTTP3/3 y regresión74+7 PASS sin omitidas, mutación detectada por 5 fallos; revisor79/79 y 8 sondas propias PASS. Positivos SYSTEM/elevado reales no ejecutados; política simulada separada de token nativo estándar. Sin GUI/SQL/dependencias/instaladores/VM o cambios D/E. F-09.02–.05 y los seis hitos completos pendientes. Observación Edge de F0805 sigue abierta.
 
-- Tipo de trabajo: Contrastar cierre; puede existir implementación.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-09.
+- Tipo de trabajo: Compuerta local revisada; transición de pérdida total, integración y aceptación pendientes.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-09.
+- Texto histórico trazable: Autorizar sólo operador local SYSTEM/Administradores; sin web anónima ni bypass password-only.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 #### Paso 030 · F-09.02
 
-Permitir preparar anillo nuevo explícitamente, conservar material anterior recuperable, retirar factores ilegibles del uso y marcar enrolamiento pendiente sin borrar DB.
+F-09.01/.02 técnicos: autoridad Windows y protocolo interno Prepare/Export/Apply/Publish para pérdida explícita con censo fiable. Conserva claves legibles/blobs opacos y archivo cifrado completo privado; retira factores perdidos, fuerza required/pending, preserva cuentas/permisos/gracia45 e inventario. Sobre autenticado y pin privado inmutable; witness completamente vinculado, rollback/reentrada y publicación verificada con fence retenido. SQL047 aditiva,224 fuentes previas conservadas/4 modificadas/4 nuevas,2 tests nuevos. Regresión144/144 PASS sin omitidas y revisión independiente acotada. CLI no habilitada (transition_unavailable tras autorización)/0 operaciones; no instalador47, servicio recuperado ni positivo elevado/SID real. D/E intactos. F-09.03–.05 y seis hitos completos pendientes; observación Edge F0805 abierta.
 
-- Tipo de trabajo: Contrastar cierre; puede existir implementación.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-09.
+- Tipo de trabajo: Material/transición interna revisados con fence; composición operativa, servicio real y aceptación pendientes.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-09.
+- Texto histórico trazable: Permitir preparar anillo nuevo explícitamente, conservar material anterior recuperable, retirar factores ilegibles del uso y marcar enrolamiento pendiente sin borrar DB.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 #### Paso 031 · F-09.03
 
-Revocar sesiones/desafíos y registrar auditoría sin secretos, preservando recuperación de último administrador.
+F-09.01–.03 técnicos: loss-reset reutilizado, revocación real de credenciales anteriores y auditoría Windows dedicada sin secretos; no appactor inventado. Corregida primera aplicación: recuentos archivo/pending/finish y testigo fresh/hashes antes de commit, con rollback de resultados SQL incompletos. Rojo limpio14=5PASS/9FAIL→verde14/14; final52/52 sin omitidas. Único global conserva identidad/permisos/gracia y recupera administración sólo tras TOTP nuevo; last_admin_required vigente. Revisión independiente acotada y registrada.231/232 fuentes previas conservadas,1 adaptador DB corregido,1 test nuevo; SQL047/Program/dependencias/GUI intactos. Fence conservado, CLI aún no operativa; sin cambio D/E. F-09.04/.05 y seis hitos completos pendientes; observación Edge F0805 abierta.
 
-- Tipo de trabajo: Contrastar cierre; puede existir implementación.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-09.
+- Tipo de trabajo: Revocación/auditoría y último global revisados en backend; composición y ensayo operativo de pérdida siguen pendientes.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-09.
+- Texto histórico trazable: Revocar sesiones/desafíos y registrar auditoría sin secretos, preservando recuperación de último administrador.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 #### Paso 032 · F-09.04
 
 Ensayar pérdida simulada total, arranque fallido explícito, recuperación local y vuelta mediante enrolamiento restringido.
 
 - Tipo de trabajo: Contrastar cierre; puede existir implementación.
-- Estado formal: pending; ámbito: Primera entrega; responsable: F-09.
+- Estado formal: done; ámbito: Primera entrega; responsable: F-09.
+- Número conservado tras el cierre: no repetir como nueva implementación.
 
 #### Paso 033 · F-09.05
 
@@ -3068,10 +3089,24 @@ Se conservan por trazabilidad; no se ofrecen como nueva implementación ni se su
 | F-05.03 | Implementar sobre portable autenticado y restauración de claves: Probar contraseña errónea, alteración, truncado, datos extra, versión/algoritmo desconocidos y coste/tamaño fuera de rango. |
 | F-05.04 | Implementar sobre portable autenticado y restauración de claves: Recuperar anillo en otra instancia Windows preservando AAD Systemhaus/usuario/versión o mediante reenvoltura explícita; sobre y contraseña separados del dump. |
 | F-05.05 | Implementar sobre portable autenticado y restauración de claves: Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda. |
+| F-06.01 | Cerrar rotación y recuperación coherente entre anillo y PostgreSQL: Especificar fases: persistir/verificar clave nueva antes de usarla, conservar versiones requeridas, reenvolver factores y publicar anillo coherente. |
+| F-06.02 | Cerrar rotación y recuperación coherente entre anillo y PostgreSQL: Retirar una versión sólo si ningún factor ni backup retenido la necesita; incluir inventario de versiones en backup/sobre. |
+| F-06.03 | Cerrar rotación y recuperación coherente entre anillo y PostgreSQL: Inyectar caída antes/después de cada publicación y commit; reinicio/Restore deben identificar estado y recuperar sin perder factores. |
+| F-06.04 | Cerrar rotación y recuperación coherente entre anillo y PostgreSQL: Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda. |
 | F-07.01 | Completar enrolamiento restringido cuando MFA sea exigible: Después de password válido emitir desafío enroll de finalidad fija, hash/CSRF propio, cinco minutos y consumo único; sin app_session/autoridad API. |
 | F-07.02 | Completar enrolamiento restringido cuando MFA sea exigible: Presentar secreto/QR sólo al usuario durante proceso, sin URL/log/auditoría/historial; confirmar primer TOTP antes de activar factor. |
 | F-07.03 | Completar enrolamiento restringido cuando MFA sea exigible: Emitir sesión/CSRF nuevos y confirmar factor/consumir desafío en una sola transacción; revalidar cuenta/política/caducidad después de locks. |
 | F-07.04 | Completar enrolamiento restringido cuando MFA sea exigible: Alta nueva conserva45días desdecreación y cuenta existente desdeactivación persistida; administrador globalSystemhaus exento; el servidor exige enrolamiento al vencer o al activar/exigirMFA; probar código erróneo/caducado/repetido, reintento/respuesta perdida y dos confirmaciones concurrentes. |
+| F-07.05 | Completar enrolamiento restringido cuando MFA sea exigible: Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda. |
+| F-08.01 | Implementar códigos de recuperación y reenrolamiento restringido: Generar y mostrar una sola vez códigos por usuario; almacenar sólo hashes con sal conforme D2, sin dependencia de clave TOTP. |
+| F-08.02 | Implementar códigos de recuperación y reenrolamiento restringido: Concretar e implementar si password+código concede sólo recuperación restringida hasta reenrolar; no dejar frase ambigua que emita sesión normal antes de nuevo factor. |
+| F-08.03 | Implementar códigos de recuperación y reenrolamiento restringido: Consumir transaccionalmente, invalidar sesiones/desafíos/códigos anteriores según contrato y probar consumo concurrente/replay/rollback/secretos. |
+| F-08.04 | Implementar códigos de recuperación y reenrolamiento restringido: Garantizar vía administrativa de recuperación con códigos válidos sin bloquear último administrador. |
+| F-08.05 | Implementar códigos de recuperación y reenrolamiento restringido: Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda. |
+| F-09.01 | Implementar recuperación local cuando no quedan clave, sobre ni códigos: Autorizar sólo operador local SYSTEM/Administradores; sin web anónima ni bypass password-only. |
+| F-09.02 | Implementar recuperación local cuando no quedan clave, sobre ni códigos: Permitir preparar anillo nuevo explícitamente, conservar material anterior recuperable, retirar factores ilegibles del uso y marcar enrolamiento pendiente sin borrar DB. |
+| F-09.03 | Implementar recuperación local cuando no quedan clave, sobre ni códigos: Revocar sesiones/desafíos y registrar auditoría sin secretos, preservando recuperación de último administrador. |
+| F-09.04 | Implementar recuperación local cuando no quedan clave, sobre ni códigos: Ensayar pérdida simulada total, arranque fallido explícito, recuperación local y vuelta mediante enrolamiento restringido. |
 | I-01.01 | Ofrecer e integrar Deshacer de crecimiento/reducción pura de grupos: Crear candidato desde operación confirmada propia, actor/cliente/revisión; ningún before del navegador. |
 | I-01.02 | Ofrecer e integrar Deshacer de crecimiento/reducción pura de grupos: Mostrar alcance/confirmación de retirar/restaurar grupos/puertos/cables y límites de evidencia completa1..256puertos/32grupos/256IDs combinados. |
 | I-01.03 | Ofrecer e integrar Deshacer de crecimiento/reducción pura de grupos: Integrar consulta/reintento/cancelación originales ante incertidumbre e invalidación tras otra revisión/permiso/cuenta/cliente. |

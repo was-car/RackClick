@@ -1,0 +1,95 @@
+﻿{
+    "schemaVersion":  1,
+    "valid":  true,
+    "measuredUtc":  "2026-11-02T23:52:48.2600781Z",
+    "installationId":  "57822410-3b69-4542-a829-260152db9f17",
+    "edition":  "14-r2",
+    "stage":  "preboot",
+    "archiveSha256":  "90f9660daf611793a6730c47554cb869cde0d69e96b59f3db53098f28a454f20",
+    "broker":  {
+                   "code":  "setup_ready_reboot_verification_pending",
+                   "reportedExitCode":  3,
+                   "stage":  "awaiting_reboot",
+                   "observedExitCode":  3
+               },
+    "service":  {
+                    "processOwnerSidMatches":  true,
+                    "name":  "RackClick-Recovery-cb52d279",
+                    "sidMatchesReceipt":  true,
+                    "differentFromNew13Sid":  true,
+                    "startMode":  "Auto",
+                    "state":  "Running",
+                    "accountIsAdministrator":  false
+                },
+    "https":  {
+                  "normalTlsValidation":  true,
+                  "status":  "ready",
+                  "schemaVersion":  43,
+                  "original13StillReady":  true,
+                  "origin":  "https://192.168.206.134:5444"
+              },
+    "sql":  {
+                "noSourcePrivateFilesCopied":  true,
+                "privateFiles":  [
+                                     "admin-login.json",
+                                     "backup-password.dpapi.json",
+                                     "backup-profile.json",
+                                     "runtime.json"
+                                 ],
+                "instanceSchema":  3,
+                "backupDistinct":  true,
+                "minimalInventory":  true,
+                "privileges":  {
+                                   "clients":  20,
+                                   "syntheticNames":  20,
+                                   "runtimeNoDdl":  true
+                               },
+                "rolesBoundToNewId":  true,
+                "queryUnderRealServiceAccount":  true,
+                "backupPrivileges":  {
+                                         "backupClients":  20,
+                                         "backupCanRead":  true,
+                                         "backupCannotWrite":  true,
+                                         "backupNoDdl":  true
+                                     }
+            },
+    "access":  {
+                   "cardSha256":  "d76b706997a331ffba5c3b726a7b752809afb5d6e23d8101725a83ebdc2da524",
+                   "viewerSha256":  "85609cacfa76af09b6285252059f23ffb35ab11fd15bc821a080a73a2b42e4b4",
+                   "credentialsPrinted":  false,
+                   "cardContainsPassword":  false,
+                   "metadataCardWritten":  true,
+                   "getterValidated":  true
+               },
+    "http":  {
+                 "logoutPassed":  true,
+                 "namesMatchExactly":  true,
+                 "clientsRead":  20,
+                 "manualBrowserClaimed":  false,
+                 "loginPassed":  true
+             },
+    "backup":  {
+                   "logonType":  "Password",
+                   "runLevel":  "Limited",
+                   "scheduledManifestSha256":  "a1a950db0c184c3b113256d49ae7825766c8a3437187f44a8ebfe042f55b20b9",
+                   "scheduledDumpBytes":  307531,
+                   "scheduledVerified":  true,
+                   "scheduledDumpMatchesManifest":  true,
+                   "initialCode":  "backup_complete",
+                   "taskState":  "Ready",
+                   "lastTaskResult":  0
+               },
+    "diagnostic":  {
+                       "code":  "report_exported",
+                       "archiveSha256":  "221a6e956f40d14095305edbad7dc87dd932ad449b19e34fb319f9726bc2afa7",
+                       "entries":  1,
+                       "observedExitCode":  0,
+                       "includesRawLogsOrPrivateFilesClaimed":  false,
+                       "containsEitherCurrentPassword":  false
+                   },
+    "bootAtInstall":  "2026-11-02T23:41:19.5000000Z",
+    "currentBoot":  "2026-11-02T23:41:19.5000000Z",
+    "rebootVerified":  false,
+    "productAdopted":  false,
+    "DOperated":  false
+}

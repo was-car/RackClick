@@ -1,0 +1,19 @@
+{
+  "credentialsPrinted": false,
+  "privateFiles": [
+    "admin-login.json",
+    "backup-password.dpapi.json",
+    "backup-profile.json",
+    "runtime.json"
+  ],
+  "instanceSchema": 3,
+  "noOwnerOrClusterProfiles": true,
+  "backupRoleBound": true,
+  "aclsChanged": false,
+  "sourceOnlyDiagnostic": true,
+  "runtimeRoleMatches": true,
+  "installedCodeChanged": false,
+  "code": "next_source_private_access_verified",
+  "valid": true,
+  "backupRoleDistinct": true
+}

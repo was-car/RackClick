@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RackClick · conectar en casa y trabajo</title>
+<style>
+body{margin:0;background:#eef2f7;color:#18253a;font:17px/1.65 system-ui,sans-serif}main{max-width:880px;margin:40px auto;padding:32px;background:#fff;border-radius:16px}h1{font-size:30px;line-height:1.2}h2{font-size:22px;margin-top:30px}li{padding:7px 0}code{overflow-wrap:anywhere;background:#edf2f9;padding:2px 6px;border-radius:4px}strong{color:#143a65}.note{border-left:4px solid #3978c0;padding:12px 20px;background:#eef5ff}table{width:100%;border-collapse:collapse}td,th{text-align:left;border-bottom:1px solid #dce3ec;padding:10px}small{color:#4c5c73}@media(max-width:650px){main{margin:12px;padding:20px}}
+</style>
+<main>
+<small>Acceso 01 · 22.10.2026 · instalaciones existentes del paquete 05</small>
+<h1>Abrir RackClick en casa o en el trabajo</h1>
+<p>Guarda este acceso en la <strong>VM Windows Server donde ya instalaste RackClick</strong>. Detecta su IP activa en las redes <code>192.168.178.x</code> y <code>192.168.250.x</code>. Seleccionas tu instancia y el acceso adapta RackClick, comprueba HTTPS y abre el navegador.</p>
+<div class="note">Conserva las bases, los clientes ficticios, usuarios y contraseñas. No necesitas reinstalar ni restaurar de nuevo tus datos al cambiar de red.</div>
+<h2>La primera vez</h2>
+<ol>
+<li>Copia <strong>RackClick-Conectar-Aqui-01.zip</strong> a la VM. Pulsa con el botón derecho sobre el ZIP, elige <strong>Extraer todo…</strong> y después <strong>Extraer</strong>.</li>
+<li>Abre la carpeta extraída. Haz doble clic en <strong>00-ABRIR-RACKCLICK.cmd</strong>. Si Windows pregunta si permites los cambios, pulsa <strong>Sí</strong>; se requieren permisos de administrador para adaptar el servicio.</li>
+<li>En la ventana <strong>RackClick - conectar aqui</strong>, el primer selector, en la parte superior, identifica la instancia. Deja <strong>Restaurada - tus datos (5444)</strong> para trabajar con los clientes ficticios. La original usa 5443 y se elige por separado.</li>
+<li>En el segundo selector aparece la IP actual de la VM. Normalmente puedes dejar la selección automática. Si aparecen dos tarjetas activas, selecciona la IP de la red desde la que vas a conectarte.</li>
+<li>En el centro, pulsa <strong>Conectar y abrir RackClick</strong>. Espera a que termine: un cambio de red puede tardar unos minutos. El navegador se abre después de comprobar el servicio y HTTPS. Entra con tus mismas credenciales de RackClick.</li>
+</ol>
+<h2>Cuando cambies entre casa y trabajo</h2>
+<p>Conecta la tarjeta de red de la VM a la red que vayas a usar y vuelve a abrir <strong>00-ABRIR-RACKCLICK.cmd</strong>. Repite la selección y pulsa <strong>Conectar y abrir RackClick</strong>. Si la dirección ya coincide, sólo inicia el servicio cuando está detenido y verifica su respuesta.</p>
+<table><thead><tr><th>Instancia</th><th>Si la IP activa es 192.168.178.141</th></tr></thead><tbody>
+<tr><td>Restaurada · tus datos</td><td><code>https://192.168.178.141:5444</code></td></tr>
+<tr><td>Original</td><td><code>https://192.168.178.141:5443</code></td></tr>
+</tbody></table>
+<p>Si la IP activa es <code>192.168.250.78</code>, se usa esa dirección con el mismo puerto. Si DHCP asigna otra IP válida dentro de esas dos redes, se usa la dirección realmente asignada.</p>
+<p>El acceso <strong>no asigna una IP a Windows</strong>: si quieres exactamente <code>192.168.178.141</code>, la VM debe tener esa dirección en Windows o mediante su reserva DHCP. Tampoco cambia DNS, el adaptador de la VM ni su modo de red. Sólo se adapta y arranca la instancia que eliges; la otra se conserva.</p>
+<h2>Si abres el navegador desde otro equipo</h2>
+<p>Usa la dirección que abre el navegador en la VM, incluido su puerto. El otro equipo debe tener comunicación con esa red. La primera adaptación puede generar una CA nueva; si aparece un aviso de certificado, no lo ignores.</p>
+<p>Después de conectar, se intenta dejar en el Escritorio de la VM un archivo público <strong>RackClick-CA-…cer</strong>. Para confiar en él desde otro equipo, copia únicamente ese CER, haz doble clic, pulsa <strong>Instalar certificado</strong>, elige <strong>Equipo local</strong>, luego <strong>Colocar todos los certificados en el siguiente almacén</strong> y, en <strong>Examinar</strong>, selecciona <strong>Entidades de certificación raíz de confianza</strong>. Verifica que procede de tu VM y termina el asistente. Reabre el navegador. Los nombres pueden aparecer en alemán o inglés según Windows.</p>
+<p>Nunca copies archivos PFX, claves privadas o contraseñas de servicio. El nuevo certificado cubre las dos IP conocidas, <code>192.168.178.141</code> y <code>192.168.250.78</code>, para reutilizarlo al alternar mientras siga vigente y confiable. Otra IP no incluida puede requerir una CA nueva. Si no aparece el CER en el Escritorio, conserva el informe y comunica esa situación.</p>
+<h2>Si no abre</h2>
+<p>La ventana muestra el motivo y guarda un <strong>RackClick-Conexion-…json</strong> en el Escritorio. No contiene contraseñas. Si no encuentra una red autorizada, conecta la tarjeta de la VM a una de las dos redes y vuelve a abrir el acceso. Después de un fallo, cierra la ventana para salir; los controles no permiten repetir dentro del mismo intento.</p>
+<p>Si indica <strong>operación pendiente</strong>, no vuelvas a ejecutarlo ni detengas servicios manualmente: conserva el informe. Un intento anterior con recuperación parcial se bloquea para proteger sus datos. Este acceso no realiza una limpieza ni descarta una recuperación pendiente.</p>
+<p><small>Verificación de desarrollo: Windows PowerShell 5.1 con fixtures de ambas instancias, procesos hijos sintéticos y certificados nativos, más revisión independiente. No se ha ejecutado este nuevo acceso en tu VM ni se ha medido su interfaz allí. La comprobación operativa de casa/trabajo queda para su primer uso. PostgreSQL sigue privado y local; no se abre su puerto en la red.</small></p>
+</main></html>

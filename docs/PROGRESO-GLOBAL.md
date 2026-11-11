@@ -1,5 +1,108 @@
 # Progreso de la entrega completa
 
+## 11.11.2026 · Paso32/F-09.04 cerrado técnicamente:26,63/100 del cierre restante
+
+F-09.01–.04 técnicos: CLI local de pérdida con cinco fases, finalización/recibo/guarda y proyección48 mínima no actualizable. Ensayo real en instancia separada de E: pérdida de toda su clave v1, arranque rechazado sin listener, mantenimiento SYSTEM, servidor estándar, regreso HTTPS mediante enrolamiento restringido/TOTP2, credenciales antiguas revocadas e inventario sentinel conservado. Regresión378/378 y revisión independiente40/40 reutilizadas; revisión nativa final favorable por lectura de fuentes/recibos. 221/232fuentes previas conservadas,11modificadas/4nuevas,total236; sin dependencias nuevas. D sin acceso; dos servicios previos de E Running con iguales PID, propios detenidos/puertos y tareas0. Fallos del arnés preservados, cliente HTTPAdmin separado de mantenimientoSYSTEM. F-09.05, seis hitos completos, instalador/Restore48, mantenimientoAdmin, custodia externa y QA/adopción pendientes.
+
+[Resultados y revisión](../evidence/s1-20261111/f09-04-ensayo-perdida/RESULTADOS.md). Sólo F-09.04 cambia pending→done: **+1/2**,2195/84→**2237/84=26,630952…**, redondeado **26,63/100 del cierre restante**. 55done/223pending/2in_progress;53resultados/280checkpoints/268números,baselinev3 y pesos intactos. No se suman pruebas o fases como puntos ni se crea porcentaje global nuevo del producto. Siguiente paso33/F-09.05.
+
+## 11.11.2026 · Paso31/F-09.03 cerrado técnicamente:26,13/100 del cierre restante
+
+F-09.01–.03 técnicos: loss-reset reutilizado, revocación real de credenciales anteriores y auditoría Windows dedicada sin secretos; no appactor inventado. Corregida primera aplicación: recuentos archivo/pending/finish y testigo fresh/hashes antes de commit, con rollback de resultados SQL incompletos. Rojo limpio14=5PASS/9FAIL→verde14/14; final52/52 sin omitidas. Único global conserva identidad/permisos/gracia y recupera administración sólo tras TOTP nuevo; last_admin_required vigente. Revisión independiente acotada y registrada.231/232fuentes previas conservadas,1adaptador DB corregido,1test nuevo; SQL047/Program/dependencias/GUI intactos. Fence conservado, CLI aún no operativa; sin cambio D/E. F-09.04/.05 y seis hitos completos pendientes; observación Edge F0805 abierta.
+
+[Resultados y revisión](../evidence/s1-20261111/f09-03-revocacion-auditoria/RESULTADOS.md). Sólo F-09.03 pasa pending→done: **+1/2**,2153/84→**2195/84=26,130952…**, redondeado **26,13/100 del cierre restante**.54done/224pending/2in_progress;53resultados/280checkpoints/268números,baselinev3,criterios/pesos intactos. Los seis hitos completos F-09 permanecen pendientes. No se suman pruebas, variantes o repeticiones como puntos ni se crea un porcentaje global del producto. Siguiente paso32/F-09.04.
+
+
+## 11.11.2026 · Paso30/F-09.02 cerrado técnicamente:25,63/100 del cierre restante
+
+F-09.01/.02 técnicos: autoridad Windows y protocolo interno Prepare/Export/Apply/Publish para pérdida explícita con censo fiable. Conserva claves legibles/blobs opacos y archivo cifrado completo privado; retira factores perdidos, fuerza required/pending, preserva cuentas/permisos/gracia45 e inventario. Sobre autenticado y pin privado inmutable; witness completamente vinculado, rollback/reentrada y publicación verificada con fence retenido. SQL047 aditiva,224fuentes previas conservadas/4modificadas/4nuevas,2tests nuevos. Regresión144/144 PASS sin omitidas y revisión independiente acotada. CLI no habilitada (transition_unavailable tras autorización)/0operaciones; no instalador47, servicio recuperado ni positivo elevado/SID real. D/E intactos. F-09.03–.05 y seis hitos completos pendientes; observación Edge F0805 abierta.
+
+[Resultados y revisión](../evidence/s1-20261111/f09-02-material-perdida/RESULTADOS.md). Sólo F-09.02 pasa pending→done: **+1/2**,2111/84→**2153/84=25,630952…**, redondeado **25,63/100 del cierre restante**.53done/225pending/2in_progress;53resultados/280checkpoints/268números,baselinev3,criterios/pesos intactos. Los seis hitos completos F-09 permanecen pendientes; no se acredita F0903 por la seguridad mínima inseparable ni se cuentan pruebas como puntos. No es porcentaje global nuevo del producto. Siguiente paso31/F-09.03.
+
+
+## 11.11.2026 · Paso29/F-09.01 cerrado técnicamente:25,13/100 del cierre restante
+
+F-09.01 técnico: nueva compuerta CLI --mfa-emergency-recovery antes de host/config/SQL, autoridad de token Windows real SYSTEM o Administradores elevados; impersonación, token estándar/filtrado/no consultable y autoridad falsa por claims/env no autorizan. Incluso autorizado devuelve transition_unavailable/exit1/0operaciones/ninguna sesión hasta F-09.02/.03. Program es el único archivo previo modificado; helper y tres tests nuevos,226fuentes previas conservadas. Rojo10fallos por rama ausente, final76/76, HTTP3/3 y regresión74+7 PASS sin omitidas, mutación detectada por5fallos; revisor79/79 y8sondas propias PASS. Positivos SYSTEM/elevado reales no ejecutados; política simulada separada de token nativo estándar. Sin GUI/SQL/dependencias/instaladores/VM o cambios D/E. F-09.02–.05 y los seis hitos completos pendientes. Observación Edge de F0805 sigue abierta.
+
+[Resultados y revisión](../evidence/s1-20261111/f09-01-autorizacion-local/RESULTADOS.md). Sólo F-09.01 pasa pending→done: **+1/2**,2069/84→**2111/84=25,130952…**, redondeado **25,13/100 del cierre restante**.52done/226pending/2in_progress;53resultados/280checkpoints/268números,baselinev3,criterios/pesos intactos. Los seis hitos completos F-09 permanecen pendientes y no se añade crédito por casos/mutaciones/builds. No es porcentaje global nuevo del producto. Siguiente paso30/F-09.02.
+
+
+## 11.11.2026 · Paso28/F-08.05 cerrado técnicamente: 24,63/100 del cierre restante
+
+F-08.01–.05 cerrados técnicamente y revisados en conjunto. Se conserva la generación expresa de diez códigos propios, entrega inicial única, hashes salados y canje a enrolamiento restringido: sólo TOTP nuevo permite sesión/API, también para único global; revocación/auditoría/rollback y concurrencia real contrastados. Build corregido F0804 sin recompilar, 227 archivos y cuatro tests previos conservados; foco12/12 y revisor6/6 PASS, sin omitidas. Frontend privado18 archivos: positivos Edge de dashboard8 y recuperación4 en corridas distintas; primer conjunto1PASS/1FAIL y recuperación intermitente sin causa acreditada, siete intentos preservados, sin presentar batería íntegramente verde. Sin cambios de producto, guiones compartidos, SQL, dependencias o D/E. Cuatro hitos técnicos acreditados; integración de candidata, aceptación/custodia y emergencia F-09 siguen pendientes.
+
+[Resultados y revisión](../evidence/s1-20261111/f08-05-cierre/RESULTADOS.md). Sólo F-08.05 pasa pending→done: **+1/2**, 2027/84→**2069/84 = 24,630952…**, redondeado **24,63/100 del cierre restante**. 51 done / 227 pending / 2 in_progress; 53 resultados / 280 checkpoints / 268 números, baseline v3, criterios y pesos intactos. La conciliación de los cuatro hitos técnicos F-08 no suma puntos adicionales. No es un porcentaje global nuevo del producto. Siguiente paso29/F-09.01; integración de candidata, aceptación/custodia y observación de automatización Edge pendientes.
+
+
+## 11.11.2026 · Paso 27/F-08.04 cerrado técnicamente: 24,13/100 del cierre restante
+
+F-08.01–.04 cerrados técnicamente. Único global por ambas capacidades recupera con contraseña/código, conserva identidad/autoridad y vuelve a administrar sólo tras confirmar un factor nuevo; repone códigos y conserva la guarda del último administrador de seguridad. Se corrigió un fallo preexistente D2: Desactivar ya no cancela pending (409 y CanDisable=false), sin alterar gracia45/exención de factor activo no pendiente. Base de 227: 226 archivos conservados y MfaAccountManagement corregido, una prueba nueva con 5 casos. Rojo D2 0/2 → verde 2/2; regresión de 49 seleccionados = 48 PASS / 0 FAIL / 1 navegador opcional omitido, conciliada por discovery sin ejecución nueva; 68 Node PASS. Revisor distinto: 5/5 y sondas roja/verde. D/E intactos, sin despliegue. F-08.05, custodia, emergencia F-09, candidata instalada y aceptación pendientes.
+
+[Resultados y revisión](../evidence/s1-20261111/f08-04-ultimo-administrador/RESULTADOS.md). Sólo F-08.04 pasa pending→done: **+1/2**, 1985/84→**2027/84 = 24,130952…**, redondeado **24,13/100 del cierre restante**. 50 done / 228 pending / 2 in_progress; 53 resultados / 280 checkpoints / 268 números, baseline v3 y criterios/pesos intactos. No hay crédito adicional por el hallazgo o por contar pruebas. F-08.05 e hitos operativos de F-08 permanecen pendientes; no es porcentaje global nuevo del producto.
+
+
+## 11.11.2026 · Paso 26/F-08.03 cerrado técnicamente: 23,63/100 del cierre restante
+
+F-08.01–.03 cerrados técnicamente. Se conserva el canje existente: una sola transacción consume el conjunto antiguo, revoca sesiones/desafíos y exige reenrolamiento con auditoría sin valores originales. Dos escenarios nuevos fuerzan canjes realmente solapados (mismo código o dos distintos), un ganador y seis relaciones en la transacción ganadora bajo rol runtime; otra cuenta y gracia45 intactas. Foco 9/9 PASS y repetición independiente 3/3, con rollback forzado y negativos existentes. Producto 227 archivos conservado; HTTP/Node/Edge anteriores reutilizados, no repetidos como nuevos. D/E intactos. Custodia, último administrador, F-08.04/.05, candidata instalada y aceptación pendientes.
+
+[Resultados y revisión](../evidence/s1-20261111/f08-03-consumo/RESULTADOS.md). Sólo F-08.03 pasa pending→done: **+1/2**, 1943/84→**1985/84 = 23,630952…**, redondeado **23,63/100 del cierre restante**. 49 done / 229 pending / 2 in_progress; 53 resultados / 280 checkpoints / 268 números, baseline v3 y criterios/pesos intactos. Los hitos de F-08 y los checkpoints F-08.04/.05 permanecen pendientes; no es porcentaje global nuevo del producto.
+
+
+## 11.11.2026 · Paso 25/F-08.02 cerrado técnicamente: 23,13/100 del cierre restante
+
+F-08.01 y F-08.02 cerrados técnicamente. Se conserva la generación revisada; contraseña y código de recuperación sólo emiten un desafío enroll nuevo, sin sesión API. Dos casos HTTP nuevos (cuenta ordinaria/global) comprueban lecturas/escrituras denegadas tras canje, start, confirmación inválida y otro login, incluso con cookie renombrada o sesión antigua. Sólo confirmar el factor nuevo emite sesión/CSRF nuevos. Gracia45 conservada. Foco final 6/6 y Node 20/20 PASS; revisor distinto repite 2/2. Producto 227 archivos conservado, sin nuevo login/política. D/E intactos. F-08.03–.05, custodia, último administrador, candidata instalada y aceptación pendientes.
+
+[Resultados y revisión](../evidence/s1-20261111/f08-02-recuperacion/RESULTADOS.md). Sólo F-08.02 pasa pending→done: **+1/2**, 1901/84→**1943/84 = 23,130952…**, redondeado **23,13/100 del cierre restante**. 48 done / 230 pending / 2 in_progress; 53 resultados / 280 checkpoints / 268 números, baseline v3 y criterios/pesos intactos. Los hitos de F-08 y los checkpoints F-08.03–.05 permanecen pendientes; no es porcentaje global nuevo del producto.
+
+
+## 11.11.2026 · Paso 24/F-08.01 cerrado técnicamente: 22,63/100 del cierre restante
+
+F-08.01 cerrado técnicamente: generación explícita existente de diez códigos propios con 128 bits aleatorios y hashes con sal de 128 bits, ligados a Systemhaus/usuario e independientes de la clave TOTP. Sólo la primera respuesta entrega valores; status, receipt y replay no los revelan. Una nueva prueba con dos solicitudes realmente bloqueadas simultáneamente confirma una sola entrega, diez hashes, una operación y un evento de auditoría. Pasaron 15 casos focales y 10 de Node; un revisor distinto repitió 1/1. Los 227 archivos de producto se conservaron. No se acreditan generación automática al confirmar, custodia/canje en candidata instalada, último administrador ni F-08.02 a F-08.05. D y E intactas.
+
+[Resultados y revisión](../evidence/s1-20261111/f08-01-generacion/RESULTADOS.md). Sólo F-08.01 pasa pending→done: **+1/2**, 1859/84→**1901/84=22,630952…**, redondeado **22,63/100 del cierre restante**. 47 done / 231 pending / 2 in_progress; 53 resultados / 280 checkpoints / 268 números, baseline v3 y criterios/pesos intactos. Todos los hitos completos de F-08 y F-08.02 a F-08.05 permanecen pendientes; no es porcentaje global nuevo del producto.
+
+
+## 11.11.2026 · Paso23/F-07.05 cerrado técnicamente:22,13/100 del cierre restante
+
+F-07.01–.05 cerrados técnicamente: enrolamiento restringido existente contrastado con evidencia GUI/nativa y fuentes actuales. Dos escenarios nuevos con cuentas ordinarias de gracia45 vencida, Windows/DPAPI real y rol SQL restringido: desafío/pending/código inválido sin /me, clientes ni mutaciones; cookie renombrada no autoriza. Dos confirmaciones producen una única sesión/CSRF nuevos, con testigo SQL de identidad/transacción y replay rechazado. 2/2 casos,36/36 de núcleo y70/70 Node, sin omitidas; revisor distinto repite2/2. Producto227archivos conservado, sin nuevo login o política. D/E intactos. Integración de candidata objetivo y aceptación pendientes; no nuevo ensayo TLS/servicio ni cierre de emergencia/custodia externa.
+
+[Resultados y revisión](../evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md). Sólo F-07.05 pasa pending→done: **+1/2**,1817/84→**1859/84=22,130952…**, redondeado **22,13/100 del cierre restante**.46done/232pending/2in_progress;53resultados/280checkpoints/268números, baselinev3, criterios/pesos intactos. Implementación, pruebas y revisión técnicas conciliadas; integración de candidata objetivo y aceptación siguen pendientes. No es porcentaje global nuevo del producto.
+
+
+## 11.11.2026 · Paso22/F-06.04 cerrado técnicamente:21,63/100 del cierre restante
+
+F-06 cerrado en su criterio técnico con F-06.01–.04: fases, catálogo/retirada, caídas y recuperación trazados. Nueva prueba encadenada con tres backups reales retenidos, dos rotaciones a8/9 y Restore de cada generación en clúster nuevo; todos los TOTP/metadatos conservados y claves sólo referidas por backup protegidas. Cinco invocaciones PASS sin omisiones y revisión independiente con otras cinco; producto227archivos idéntico a F0603, cuyas360pruebas/15cortes se reutilizan sin repetirlas. Sin CLI pública, integración/instalador46, SID efectivo/custodia externa real o aceptación nativa. D/E intactos.
+
+[Resultados y revisión](../evidence/s1-20261111/f06-04-cierre/RESULTADOS.md). Sólo F-06.04 pasa pending→done: **+5/8**,3529/168→**1817/84=21,630952…**, redondeado **21,63/100 del cierre restante**.45done/233pending/2in_progress;53resultados/280checkpoints/268números, baselinev3, pesos/criterios intactos. Hitos técnicos pruebas/revisión conciliados; definición/implementación operativas, integración y aceptación siguen pendientes. No es porcentaje global del producto.
+
+
+## 10.11.2026 · Paso21/F-06.03 cerrado técnicamente:21,01/100 del cierre restante
+
+F-06.01/.02 conservados. F-06.03: rotación interna offline con SQL046 aditivo/testigo transaccional, publicación de clave/anillos/recibo bajo coordinador, guard de vínculo y reanudación por hechos; DPAPI anterior, TOTP/metadatos/política conservados. 360/360 regresión pertinente,15 cortes de proceso con15 reaperturas,2 Restores custom en otros clústeres nuevos,3 negativos PG/publicación y14 operadores; sin omisiones en resultados finales. Revisión distinta registrada con sus ejecuciones/pines y límites. Sin CLI pública rotate, instalador46, apagón/Windowsreboot, SID efectivo/servicio instalado, custodia externa real o QA/adopción. D/E intactos. No es cierre integral F-06.04/R-04 ni porcentaje global. Reutilizar este alcance, no repetir codecs/factores/retirada.
+
+[Resultados y revisión](../evidence/s1-20261110/f06-03-rotacion/RESULTADOS.md). Sólo F-06.03 pasa pending→done: **+5/8**,428/21→**3529/168=21,005952…**, redondeado **21,01/100 del cierre restante**.44done/234pending/2in_progress;53resultados/280checkpoints/268números, baselinev3, estructura/pesos/criterios e hitos operativosF06 intactos. No es porcentaje global del producto.
+
+
+## 09.11.2026 · Paso20/F-06.02 cerrado técnicamente:20,38/100 del cierre restante
+
+[Catálogo y retirada bajo mantenimiento](MANTENIMIENTO-CATALOGO-Y-RETIRADA-MFA.md) implementados y con [revisión independiente favorable](../evidence/s1-20261109/f06-02-retirada/REVISION.md). Se verifica el conjunto de backups de todas las raíces declaradas, se bloquean desconocidos y referencias vigentes, y se retira del anillo una versión no activa sin borrar su archivo DPAPI. Coordinador, fence, journal y reanudación probados:297/297 casos de regresión pertinente,8 controles de backup nativo y18 de operadores; el revisor repitió153 focos propios. [Resultados y límites](../evidence/s1-20261109/f06-02-retirada/RESULTADOS.md).
+
+Sólo F-06.02 pasa de in_progress a done: **+5/8**,3319/168→**428/21=20,380952…/100**, redondeado **20,38**.43done/235pending/2in_progress;53resultados/280checkpoints/268números, baselinev3, estructura, pesos y criterios intactos. El ensayo elevado con un servicio instalado, la integración en una candidata completa, los cortes reales y QA/adopción siguen pendientes; no se acredita rotación/recifrado F-06.03 ni el recorrido F-06.04. D/E conservados sin operaciones. **No es un nuevo porcentaje global del producto.** La entrada anterior refleja la fase previa a este cierre.
+
+## 09.11.2026 · Paso20/F-06.02 en progreso:19,76/100 sin crédito anticipado
+
+[Inventario y guarda de versiones](PASO-020-INVENTARIO-RETENCION-MFA.md) implementados: lectorSQLread-only, sobre autenticado y JSONlateral con pins externos, conserva activa/factores/backups y bloquea catálogo incompleto. Coordinador115/115componentes (incluye51nuevos)+10/10PG17.11y backupquieto real, sin D/E. [Revisión independiente](../evidence/s1-20261109/f06-02-retencion/review/DICTAMEN-F0602.md) repite51por DLL y exige mantener el criterio completo abierto: falta caller nativo, catálogo confiable y retirada/publicación bajo coordinadorF06.03. CandidateUnreferenced no autoriza borrar ni prueba la vigencia del censo.
+
+Sólo F06.02 pasa a **in_progress**, **0puntos**.3319/168=**19,755952…/100**, redondeado **19,76**;42done/235pending/3in_progress,53resultados/280checkpoints/268números y baseline/huella/pesos/criterios intactos. Hitos de F06 y adopción siguen pendientes, sin nuevo porcentaje global. Continuar integración operativa y volver a evaluar20; no declarar cierre por añadir pruebas o repetir componentes.
+
+
+## 09.11.2026 · Paso19/F-06.01 cerrado como especificación:19,76/100
+
+[Protocolo de fases de rotación](PROTOCOLO-ROTACION-MFA-v1.md) y [guía del paso19](PASO-019-FASES-ROTACION-MFA.md) concretan el orden D2: material/anillo aditivo antes de DB, testigo transaccional y publicación final hacia delante, conservación de versiones y conciliación bajo fence. [Revisión independiente favorable](../evidence/s1-20261109/f06-01-fases/review/DICTAMEN-F0601.md), diez casos razonados y contraste de piezas/recibos existentes. No hay rotador, publicación de anillo existente o prueba de caída ejecutados por este documento.
+
+Sólo **+5/8**:1607/84→**3319/168=19,755952…/100**, redondeado **19,76**.42done/236pending/2in_progress;53resultados/280checkpoints/268números y baselinev3/huella/pesos/criterios intactos. F06 completo y sus hitos, incluido definition_confirmed, quedan pendientes; no se acredita implementación, prueba, integración ni aceptación operativas. D/E sin operaciones. Sigue20/F-06.02; no porcentaje global nuevo.
+
+
 ## 04.11.2026 · IntegraciónF04 en candidata16:19,13/100 sin crédito repetido
 
 El writer corregido pasa de fuentes a candidata completa16/app45 y mismaDLLRelease en16casos; se corrigen tres bloqueos de operadores45, se verificanNew/RestoreSQL45/43→45 de laboratorio y cadena completa del paquete, con [revisión independiente](../evidence/s1-20261104/f04-integracion16/review/DICTAMEN.md). [Resultado y límites](INTEGRACION-PENDIENTES-08-18-CANDIDATA16.md). Sólo cambia el hito F04.integrated_current_candidate a done; aceptación nativa pendiente. No se entrega aún operador RestoreMFA ni se modifica D/E.

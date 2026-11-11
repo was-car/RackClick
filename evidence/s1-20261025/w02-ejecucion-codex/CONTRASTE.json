@@ -1,0 +1,250 @@
+{
+  "reviewKind": "Independent read of Claude VM evidence, not rerun of VMs",
+  "attempts": [
+    {
+      "source": "evidence/s1-20261025/w02-vm-limpia-07-claude/ejecucion-2026-10-25/intentos-fallidos-B/informe-cuenta-W02-B.zip",
+      "attemptId": "af631734-70ed-4f99-b47d-7b31d66b37d7",
+      "generatedUtc": "2026-10-25T13:37:37.8123291Z",
+      "computer": "W02-B",
+      "result": {
+        "schemaVersion": 1,
+        "success": false,
+        "valid": false,
+        "exitCode": 1,
+        "code": "setup_account_exists",
+        "stage": "host",
+        "installationPercent": 3,
+        "rebootVerified": false,
+        "productAdopted": false,
+        "errorType": "System.Management.Automation.RuntimeException",
+        "errorHResult": -2146233087,
+        "failureLine": 82,
+        "hostProductType": 3,
+        "hostDomainRole": 2,
+        "hostPartOfDomain": false
+      },
+      "installation": null,
+      "exceptionSummary": null,
+      "service": null,
+      "reset": {
+        "schemaVersion": 1,
+        "valid": true,
+        "exitCode": 0,
+        "code": "namespace_isolated_preserved",
+        "cleanupComplete": true,
+        "archivedInstanceCount": 2,
+        "retiredAccountCount": 0,
+        "preservedCount": 1,
+        "blockerCount": 0
+      }
+    },
+    {
+      "source": "evidence/s1-20261025/w02-vm-limpia-07-claude/ejecucion-2026-10-25/intentos-fallidos-B/informe-fallo-W02-B.zip",
+      "attemptId": "db0d1dc3-c5b4-44ee-9656-4ece3fcd1687",
+      "generatedUtc": "2026-10-25T13:22:00.9527268Z",
+      "computer": "W02-B",
+      "result": {
+        "schemaVersion": 1,
+        "success": false,
+        "valid": false,
+        "exitCode": 1,
+        "code": "setup_child_failed_preserved",
+        "stage": "prepare",
+        "installationPercent": 25,
+        "rebootVerified": false,
+        "productAdopted": false,
+        "errorType": "System.Management.Automation.RuntimeException",
+        "errorHResult": -2146233087,
+        "failureLine": 45,
+        "nativeExitCode": 2,
+        "childCode": "preparation_child_failed",
+        "childErrorType": "System.Management.Automation.RuntimeException",
+        "childFailureLine": 142,
+        "hostProductType": 3,
+        "hostDomainRole": 2,
+        "hostPartOfDomain": false
+      },
+      "installation": {
+        "status": "parsed",
+        "bytes": 623,
+        "fields": {
+          "valid": false,
+          "exitCode": 1,
+          "code": "deployment_instance_administrator_recover_admin_failed",
+          "rebootRequired": false
+        },
+        "sha256": "01573655ea01595dcbb4a93653d551f7a9555ebdf8e0cbf813f15db802185f51",
+        "encoding": "bom_or_utf8"
+      },
+      "exceptionSummary": {
+        "status": "exception_summary",
+        "bytes": 377,
+        "frames": [
+          {
+            "line": 142,
+            "script": "Prepare-RackClickServer.ps1"
+          },
+          {
+            "line": 230,
+            "script": "Prepare-RackClickServer.ps1"
+          }
+        ],
+        "errorType": "System.Management.Automation.RuntimeException"
+      },
+      "service": {
+        "status": "not_found"
+      },
+      "reset": {
+        "schemaVersion": 1,
+        "valid": true,
+        "exitCode": 0,
+        "code": "namespace_isolated_preserved",
+        "cleanupComplete": true,
+        "archivedInstanceCount": 0,
+        "retiredAccountCount": 0,
+        "preservedCount": 0,
+        "blockerCount": 0
+      }
+    },
+    {
+      "source": "evidence/s1-20261025/w02-vm-limpia-07-claude/ejecucion-2026-10-25/vmA-new/informe-instalacion-W02-A.zip",
+      "attemptId": "afafb239-c8d2-4305-9a50-46cef9b00a18",
+      "generatedUtc": "2026-10-25T12:37:10.3779469Z",
+      "computer": "W02-A",
+      "result": {
+        "schemaVersion": 1,
+        "success": false,
+        "valid": true,
+        "exitCode": 3,
+        "code": "setup_ready_reboot_verification_pending",
+        "stage": "awaiting_reboot",
+        "installationPercent": 95,
+        "rebootVerified": false,
+        "productAdopted": false,
+        "nativeExitCode": 0,
+        "childCode": "backup_complete",
+        "hostProductType": 3,
+        "hostDomainRole": 2,
+        "hostPartOfDomain": false
+      },
+      "installation": {
+        "status": "parsed",
+        "bytes": 1293,
+        "fields": {
+          "valid": true,
+          "exitCode": 0,
+          "code": "installation_prepared",
+          "rebootRequired": false
+        },
+        "sha256": "1142c9de7e780767abaeca3a57a6de1409505c2bbde1ef26dfd6104eae8c1afd",
+        "encoding": "bom_or_utf8"
+      },
+      "exceptionSummary": {
+        "status": "unavailable",
+        "failure": {
+          "errorType": "System.ComponentModel.Win32Exception",
+          "errorHResult": -2147467259,
+          "nativeErrorCode": 2
+        }
+      },
+      "service": {
+        "status": "found",
+        "state": "Running",
+        "startMode": "Auto",
+        "win32ExitCode": 0,
+        "serviceSpecificExitCode": 0,
+        "processId": 5180,
+        "accountSidMatches": true,
+        "executableBindingMatches": true
+      },
+      "reset": {
+        "schemaVersion": 1,
+        "valid": true,
+        "exitCode": 0,
+        "code": "namespace_isolated_preserved",
+        "cleanupComplete": true,
+        "archivedInstanceCount": 0,
+        "retiredAccountCount": 0,
+        "preservedCount": 0,
+        "blockerCount": 0
+      }
+    },
+    {
+      "source": "evidence/s1-20261025/w02-vm-limpia-07-claude/ejecucion-2026-10-25/vmB-restore/informe-instalacion-W02-B.zip",
+      "attemptId": "ee0a448d-ff7b-484d-b821-ccca500acf1b",
+      "generatedUtc": "2026-10-25T13:57:00.4976703Z",
+      "computer": "W02-B",
+      "result": {
+        "schemaVersion": 1,
+        "success": false,
+        "valid": true,
+        "exitCode": 3,
+        "code": "setup_ready_reboot_verification_pending",
+        "stage": "awaiting_reboot",
+        "installationPercent": 95,
+        "rebootVerified": false,
+        "productAdopted": false,
+        "nativeExitCode": 0,
+        "childCode": "backup_complete",
+        "hostProductType": 3,
+        "hostDomainRole": 2,
+        "hostPartOfDomain": false
+      },
+      "installation": {
+        "status": "parsed",
+        "bytes": 1468,
+        "fields": {
+          "valid": true,
+          "exitCode": 0,
+          "code": "installation_prepared",
+          "rebootRequired": false
+        },
+        "sha256": "f16e48d9b4530f8697b5471afafea9569fa0e61470208eb2fd9ca837df5d3efb",
+        "encoding": "bom_or_utf8"
+      },
+      "exceptionSummary": {
+        "status": "unavailable",
+        "failure": {
+          "errorType": "System.ComponentModel.Win32Exception",
+          "errorHResult": -2147467259,
+          "nativeErrorCode": 2
+        }
+      },
+      "service": {
+        "status": "found",
+        "state": "Running",
+        "startMode": "Auto",
+        "win32ExitCode": 0,
+        "serviceSpecificExitCode": 0,
+        "processId": 1056,
+        "accountSidMatches": true,
+        "executableBindingMatches": true
+      },
+      "reset": {
+        "schemaVersion": 1,
+        "valid": true,
+        "exitCode": 0,
+        "code": "namespace_isolated_preserved",
+        "cleanupComplete": true,
+        "archivedInstanceCount": 0,
+        "retiredAccountCount": 0,
+        "preservedCount": 0,
+        "blockerCount": 0
+      }
+    }
+  ],
+  "AInstallationId": "afafb239-c8d2-4305-9a50-46cef9b00a18",
+  "BInstallationId": "ee0a448d-ff7b-484d-b821-ccca500acf1b",
+  "AAndBPostbootIdsMatchInstallation": true,
+  "exportManifestMatchesRestorePlanAndMeasurement": true,
+  "backupManifestSha256": "af6a82d20417368ccc003a58bb28af437778edf89eeb95d538240a5e6fd0adda",
+  "payloadJsonSha256": "25a764a9fa40f0e8feb39cfbc9b2b3f1f21bb1137738edd53614b257f6277ec7",
+  "businessClientVisible": "Reported by Claude; no independent HTTP/login or screenshot in this review",
+  "initialResultsArePrebootSnapshots": true,
+  "vmCommandsExecutedByReviewer": [
+    "vmrun list"
+  ],
+  "guestAuthenticationAttempts": 0,
+  "vmPowerCommands": 0,
+  "qaInstallationIdentityConfirmed": false
+}

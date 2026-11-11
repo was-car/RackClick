@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-04",
+  "date": "2026-11-11",
   "purpose": "Integrar pendientes y conversaciones sin duplicar resultados, alterar el ledger o declarar nuevas funciones implementadas.",
   "sources": [
     "docs/PLAN-CIERRE-RACKCLICK.json",
@@ -91,7 +91,106 @@
     "docs/D2-CONDICIONES-TECNICAS-F03-02.md",
     "docs/D2-LIMITES-AMENAZA-F03-03.md",
     "docs/PASO-017-RECUPERACION-PORTABLE-MFA.md",
-    "docs/PASO-018-CIERRE-RECUPERACION-PORTABLE-MFA.md"
+    "docs/PASO-018-CIERRE-RECUPERACION-PORTABLE-MFA.md",
+    "docs/PROTOCOLO-ROTACION-MFA-v1.md",
+    "docs/PASO-019-FASES-ROTACION-MFA.md",
+    "docs/CONTRATO-INVENTARIO-RETENCION-MFA-v1.md",
+    "docs/PASO-020-INVENTARIO-RETENCION-MFA.md",
+    "docs/PLAN-F0602-INTEGRACION-BACKUP.md",
+    "docs/BACKUP-MFA-CON-INVENTARIO-DESARROLLO.md",
+    "docs/PLAN-F0602-CATALOGO-Y-RETIRADA.md",
+    "docs/MANTENIMIENTO-CATALOGO-Y-RETIRADA-MFA.md",
+    "docs/PLAN-F0603-ROTACION-Y-CAIDAS.md",
+    "docs/PASO-021-CAIDAS-ROTACION-MFA.md",
+    "docs/PLAN-F0604-CIERRE-ROTACION.md",
+    "docs/PASO-022-CIERRE-ROTACION-MFA.md",
+    "evidence/s1-20261111/f06-04-cierre/RESULTADOS.md",
+    "evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md",
+    "evidence/s1-20261111/f06-04-cierre/RETENIDOS.json",
+    "evidence/s1-20261111/f06-04-cierre/FUENTES.json",
+    "evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json",
+    "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md",
+    "docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md",
+    "docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md",
+    "evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md",
+    "evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md",
+    "evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json",
+    "evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json",
+    "evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json",
+    "evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json",
+    "evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json",
+    "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md",
+    "docs/PLAN-F0801-GENERACION-CODIGOS.md",
+    "docs/PASO-024-GENERACION-CODIGOS-MFA.md",
+    "evidence/s1-20261111/f08-01-generacion/RESULTADOS.md",
+    "evidence/s1-20261111/f08-01-generacion/MATRIZ-CRITERIO.md",
+    "evidence/s1-20261111/f08-01-generacion/FOCO.json",
+    "evidence/s1-20261111/f08-01-generacion/FRONTEND.json",
+    "evidence/s1-20261111/f08-01-generacion/FUENTES.json",
+    "evidence/s1-20261111/f08-01-generacion/review/DICTAMEN.md",
+    "docs/PLAN-F0802-RECUPERACION-RESTRINGIDA.md",
+    "docs/PASO-025-RECUPERACION-RESTRINGIDA-MFA.md",
+    "evidence/s1-20261111/f08-02-recuperacion/RESULTADOS.md",
+    "evidence/s1-20261111/f08-02-recuperacion/MATRIZ-CRITERIO.md",
+    "evidence/s1-20261111/f08-02-recuperacion/FOCO.json",
+    "evidence/s1-20261111/f08-02-recuperacion/FRONTEND.json",
+    "evidence/s1-20261111/f08-02-recuperacion/FUENTES.json",
+    "evidence/s1-20261111/f08-02-recuperacion/review/DICTAMEN.md",
+    "docs/PLAN-F0803-CONSUMO-TRANSACCIONAL.md",
+    "docs/PASO-026-CONSUMO-CODIGOS-MFA.md",
+    "evidence/s1-20261111/f08-03-consumo/RESULTADOS.md",
+    "evidence/s1-20261111/f08-03-consumo/MATRIZ-CRITERIO.md",
+    "evidence/s1-20261111/f08-03-consumo/FOCO.json",
+    "evidence/s1-20261111/f08-03-consumo/FUENTES.json",
+    "evidence/s1-20261111/f08-03-consumo/REUTILIZACION.json",
+    "evidence/s1-20261111/f08-03-consumo/review/DICTAMEN.md",
+    "docs/PLAN-F0804-ULTIMO-ADMINISTRADOR.md",
+    "docs/PASO-027-ULTIMO-ADMINISTRADOR-MFA.md",
+    "evidence/s1-20261111/f08-04-ultimo-administrador/RESULTADOS.md",
+    "evidence/s1-20261111/f08-04-ultimo-administrador/MATRIZ-CRITERIO.md",
+    "evidence/s1-20261111/f08-04-ultimo-administrador/FOCO.json",
+    "evidence/s1-20261111/f08-04-ultimo-administrador/FUENTES.json",
+    "evidence/s1-20261111/f08-04-ultimo-administrador/FRONTEND.json",
+    "evidence/s1-20261111/f08-04-ultimo-administrador/SCOPE-RECONCILIACION.json",
+    "evidence/s1-20261111/f08-04-ultimo-administrador/D2-ROJO-VERDE-INDEPENDIENTE.json",
+    "evidence/s1-20261111/f08-04-ultimo-administrador/CAMBIOS-PRODUCTO.patch",
+    "evidence/s1-20261111/f08-04-ultimo-administrador/review/DICTAMEN.md",
+    "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+    "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+    "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+    "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+    "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+    "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+    "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+    "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+    "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+    "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md",
+    "docs/PLAN-F0901-AUTORIZACION-EMERGENCIA.md",
+    "docs/PASO-029-AUTORIZACION-LOCAL-EMERGENCIA-MFA.md",
+    "evidence/s1-20261111/f09-01-autorizacion-local/RESULTADOS.md",
+    "evidence/s1-20261111/f09-01-autorizacion-local/MATRIZ-CRITERIO.md",
+    "evidence/s1-20261111/f09-01-autorizacion-local/FUENTES.json",
+    "evidence/s1-20261111/f09-01-autorizacion-local/FOCOS.json",
+    "evidence/s1-20261111/f09-01-autorizacion-local/MUTACION.json",
+    "evidence/s1-20261111/f09-01-autorizacion-local/CAMBIOS.patch",
+    "evidence/s1-20261111/f09-01-autorizacion-local/review/DICTAMEN.md",
+    "docs/PLAN-F0902-MATERIAL-PERDIDA-MFA.md",
+    "docs/PASO-030-MATERIAL-PERDIDA-MFA.md",
+    "evidence/s1-20261111/f09-02-material-perdida/RESULTADOS.md",
+    "evidence/s1-20261111/f09-02-material-perdida/MATRIZ-CRITERIO.md",
+    "evidence/s1-20261111/f09-02-material-perdida/FUENTES.json",
+    "evidence/s1-20261111/f09-02-material-perdida/FOCOS.json",
+    "evidence/s1-20261111/f09-02-material-perdida/MUTACION.json",
+    "evidence/s1-20261111/f09-02-material-perdida/CAMBIOS.patch",
+    "evidence/s1-20261111/f09-02-material-perdida/review/DICTAMEN.md",
+    "docs/PLAN-F0903-REVOCACION-AUDITORIA-MFA.md",
+    "docs/PASO-031-REVOCACION-Y-AUDITORIA-MFA.md",
+    "evidence/s1-20261111/f09-03-revocacion-auditoria/RESULTADOS.md",
+    "evidence/s1-20261111/f09-03-revocacion-auditoria/MATRIZ-CRITERIO.md",
+    "evidence/s1-20261111/f09-03-revocacion-auditoria/FUENTES.json",
+    "evidence/s1-20261111/f09-03-revocacion-auditoria/FOCOS.json",
+    "evidence/s1-20261111/f09-03-revocacion-auditoria/CAMBIOS.patch",
+    "evidence/s1-20261111/f09-03-revocacion-auditoria/review/DICTAMEN.md"
   ],
   "latestContext": {
     "F-03": {
@@ -153,14 +252,18 @@
       ]
     },
     "F-07": {
-      "text": "Enrolamiento/login/GUI y politica45 existentes; F-07.01-.04 acreditados. D11 tiene proveedor real y prueba HTTPS/DPAPI de cuenta sintetica. Falta cierre integral y escenarios pendientes; no crear otro login. Codigos de recuperacion del punto3 probados en desarrollo43, no canje nativo en D.",
-      "closureText": "Cuando se exige MFA o se inicia enrolamiento, el desafío no concede acceso API; confirmar un factor válido emite una única sesión nueva, con negativos de concurrencia y revisión. Respetar la gracia45 y exención global confirmadas, sin bloquear de golpe todas las cuentas nuevas.",
+      "text": "F-07.01–.05 cerrados técnicamente: enrolamiento restringido existente contrastado con evidencia GUI/nativa y fuentes actuales. Dos escenarios nuevos con cuentas ordinarias de gracia45 vencida, Windows/DPAPI real y rol SQL restringido: desafío/pending/código inválido sin /me, clientes ni mutaciones; cookie renombrada no autoriza. Dos confirmaciones producen una única sesión/CSRF nuevos, con testigo SQL de identidad/transacción y replay rechazado. 2/2 casos,36/36 de núcleo y70/70 Node, sin omitidas; revisor distinto repite2/2. Producto227archivos conservado, sin nuevo login o política. D/E intactos. Integración de candidata objetivo y aceptación pendientes; no nuevo ensayo TLS/servicio ni cierre de emergencia/custodia externa.",
       "evidence": [
-        "docs/MFA-DASHBOARD-GRACIA-45-29-10-2026.md",
-        "evidence/s1-20261029/installer10-vm-codex/RESULTADOS.md",
-        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
-        "evidence/s1-20261102/vm11-d/RESULTADOS.md",
-        "evidence/s1-20261102/demo50-auth-diagnostic/RESULTADOS.md"
+        "docs/PLAN-F0705-CIERRE-ENROLAMIENTO.md",
+        "docs/PASO-023-CIERRE-ENROLAMIENTO-MFA.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/RESULTADOS.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f07-05-enrolamiento/HTTP-ENROLAMIENTO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/REGRESION-NUCLEO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/FRONTEND.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/FUENTES.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/PIN-NEGATIVO.json",
+        "evidence/s1-20261111/f07-05-enrolamiento/review/DICTAMEN.md"
       ]
     },
     "F-10": {
@@ -295,10 +398,18 @@
       ]
     },
     "F-08": {
-      "text": "Codigos propios y canje a reenrolamiento restringido implementados y revisados en desarrollo43, con revocacion transaccional y entrega unica. Faltan ultimo administrador, custodia operativa, canje en candidata instalada y conciliacion/acreditacion, no otro generador de codigos.",
+      "text": "F-08.01–.05 cerrados técnicamente y revisados en conjunto. Se conserva la generación expresa de diez códigos propios, entrega inicial única, hashes salados y canje a enrolamiento restringido: sólo TOTP nuevo permite sesión/API, también para único global; revocación/auditoría/rollback y concurrencia real contrastados. Build corregido F0804 sin recompilar, 227 archivos y cuatro tests previos conservados; foco12/12 y revisor6/6 PASS, sin omitidas. Frontend privado18 archivos: positivos Edge de dashboard8 y recuperación4 en corridas distintas; primer conjunto1PASS/1FAIL y recuperación intermitente sin causa acreditada, siete intentos preservados, sin presentar batería íntegramente verde. Sin cambios de producto, guiones compartidos, SQL, dependencias o D/E. Cuatro hitos técnicos acreditados; integración de candidata, aceptación/custodia y emergencia F-09 siguen pendientes.",
       "evidence": [
-        "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
-        "evidence/s1-20261102/punto3/RESULTADOS.md"
+        "docs/PLAN-F0805-CIERRE-CODIGOS.md",
+        "docs/PASO-028-CIERRE-CODIGOS-MFA.md",
+        "evidence/s1-20261111/f08-05-cierre/RESULTADOS.md",
+        "evidence/s1-20261111/f08-05-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f08-05-cierre/FOCO.json",
+        "evidence/s1-20261111/f08-05-cierre/FUENTES.json",
+        "evidence/s1-20261111/f08-05-cierre/FRONTEND.json",
+        "evidence/s1-20261111/f08-05-cierre/NAVEGADOR-INTENTOS.json",
+        "evidence/s1-20261111/f08-05-cierre/OBSERVACION-NAVEGADOR.md",
+        "evidence/s1-20261111/f08-05-cierre/review/DICTAMEN.md"
       ]
     },
     "F-11": {
@@ -393,6 +504,34 @@
         "docs/REPETIDORES-ALEMANIA-03-11-2026.md",
         "evidence/s1-20261103/repetidores-alemania/RESULTADOS.md",
         "docs/ACTUALIZACION-D45-03-11-2026.md"
+      ]
+    },
+    "F-06": {
+      "text": "F-06 cerrado en su criterio técnico con F-06.01–.04: fases, catálogo/retirada, caídas y recuperación trazados. Nueva prueba encadenada con tres backups reales retenidos, dos rotaciones a8/9 y Restore de cada generación en clúster nuevo; todos los TOTP/metadatos conservados y claves sólo referidas por backup protegidas. Cinco invocaciones PASS sin omisiones y revisión independiente con otras cinco; producto227archivos idéntico a F0603, cuyas360pruebas/15cortes se reutilizan sin repetirlas. Sin CLI pública, integración/instalador46, SID efectivo/custodia externa real o aceptación nativa. D/E intactos.",
+      "evidence": [
+        "docs/PLAN-F0604-CIERRE-ROTACION.md",
+        "docs/PASO-022-CIERRE-ROTACION-MFA.md",
+        "evidence/s1-20261111/f06-04-cierre/RESULTADOS.md",
+        "evidence/s1-20261111/f06-04-cierre/MATRIZ-CIERRE.md",
+        "evidence/s1-20261111/f06-04-cierre/RETENIDOS.json",
+        "evidence/s1-20261111/f06-04-cierre/FUENTES.json",
+        "evidence/s1-20261111/f06-04-cierre/PIN-NEGATIVO.json",
+        "evidence/s1-20261111/f06-04-cierre/review/DICTAMEN.md"
+      ]
+    },
+    "F-09": {
+      "text": "F-09.01–.04 técnicos: CLI local de pérdida con cinco fases, finalización/recibo/guarda y proyección48 mínima no actualizable. Ensayo real en instancia separada de E: pérdida de toda su clave v1, arranque rechazado sin listener, mantenimiento SYSTEM, servidor estándar, regreso HTTPS mediante enrolamiento restringido/TOTP2, credenciales antiguas revocadas e inventario sentinel conservado. Regresión378/378 y revisión independiente40/40 reutilizadas; revisión nativa final favorable por lectura de fuentes/recibos. 221/232fuentes previas conservadas,11modificadas/4nuevas,total236; sin dependencias nuevas. D sin acceso; dos servicios previos de E Running con iguales PID, propios detenidos/puertos y tareas0. Fallos del arnés preservados, cliente HTTPAdmin separado de mantenimientoSYSTEM. F-09.05, seis hitos completos, instalador/Restore48, mantenimientoAdmin, custodia externa y QA/adopción pendientes.",
+      "evidence": [
+        "docs/PLAN-F0904-ENSAYO-PERDIDA-MFA.md",
+        "docs/PASO-032-ENSAYO-PERDIDA-MFA.md",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/RESULTADOS.md",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/MATRIZ-CRITERIO.md",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/NATIVO.json",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/FUENTES.json",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/FOCOS.json",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/CAMBIOS.patch",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/INVESTIGACION-NATIVA.md",
+        "evidence/s1-20261111/f09-04-ensayo-perdida/review/DICTAMEN.md"
       ]
     }
   },
@@ -779,7 +918,7 @@
         "F-10",
         "E-05"
       ],
-      "output": "Siguiente19/F-06.01: especificar/conciliar fases de rotación y coherencia disco–DB con D2, reutilizando el cierre técnico F05 y sin repetir codecs/portabilidad/login. F05operator/candidata/aceptación, F06/F09/R04 conservan sus pendientes. D/E intactos."
+      "output": "Continuar paso33/F-09.05: revisar conjuntamente F-09.01–.04, límites y entrega operativa. Reutilizar378/378,40/40 y ensayo nativo completo en E sin repetir la pérdida ni tocar D. Conciliar mantenimiento Admin, segunda pérdida/retirada posterior, candidata/operadores/manual48 y aceptación; no acreditar seis hitos por inercia."
     },
     {
       "id": "SIG-RECUPERACION-02",

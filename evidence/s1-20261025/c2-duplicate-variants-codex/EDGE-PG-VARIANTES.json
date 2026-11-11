@@ -1,0 +1,50 @@
+{
+  "utc": "2026-10-25T19:57:31.425153+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "result": "PASS",
+  "realQaAccessed": false,
+  "productModified": false,
+  "fixtureCreatedBy": "SQL initial inventory with connected pa and loose extraPort reserved; two duplicates are GUI writes",
+  "limits": [
+    "Two rack duplicate variants; historical API atomic/permission negatives run separately. No Dosen, drag/touch, Windows reboot, actual QA or adoption."
+  ],
+  "browserExitCode": 0,
+  "browserSeconds": 6.656,
+  "exactSqlAdditions": {
+    "inventory_site": 0,
+    "inventory_building": 0,
+    "inventory_room": 0,
+    "inventory_rack": 2,
+    "inventory_device": 4,
+    "inventory_port_group": 6,
+    "inventory_port": 10,
+    "inventory_connection": 1,
+    "inventory_connection_endpoint": 2
+  },
+  "sqlSourceExternalAndBothRemapsExact": true,
+  "allUuidSetsDisjoint": true,
+  "requiredCheckboxBlocksWithoutHttpOrAudit": true,
+  "confirmedReservedOldPortIdsOnly": true,
+  "operationRows": 2,
+  "duplicateAuditCommits": 2,
+  "sqlTableRowCounts": {
+    "inventory_site": 0,
+    "inventory_building": 0,
+    "inventory_room": 0,
+    "inventory_rack": 4,
+    "inventory_device": 7,
+    "inventory_port_group": 10,
+    "inventory_port": 17,
+    "inventory_connection": 3,
+    "inventory_connection_endpoint": 6
+  },
+  "sqlBeforeSha256": "27d809801cdb02713a6b84e85e271bce4ca1671ca82c6f49d0c08641360eced5",
+  "sqlAfterSha256": "4cc3d4df9ae26efec994f4c29a0d129006a087683435559b0a166963e42cb3bc",
+  "serverRestartPersistence": true,
+  "atomicReadRestartUnchanged": true,
+  "postgresql": "17.11",
+  "seconds": 23.219,
+  "labStopped": true,
+  "serversStopped": true,
+  "inputsUnchanged": true
+}

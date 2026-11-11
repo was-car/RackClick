@@ -2,7 +2,7 @@
 
 **[English](GETTING-STARTED.en.md) · [Deutsch](GETTING-STARTED.de.md) · [Español](INSTALACION-DESDE-GITHUB.md)**
 
-Actualizado el 3 de noviembre de 2026 · esquema de fuentes **45**.
+Actualizado el 12 de noviembre de 2026 · esquema de fuentes **48**.
 
 Este recorrido crea un **laboratorio local de desarrollo nuevo**, con el inventario sintético original de diez clientes. No modifica un servidor RackClick instalado. Cada arranque crea otra base y credenciales aleatorias; los laboratorios anteriores se conservan en disco. No reabre ni exporta cambios de un laboratorio anterior.
 
@@ -98,6 +98,6 @@ Para un despliegue Windows persistente utiliza su paquete nativo revisado por se
 | Falla compilación o hash de salida | Lee el log privado, corrige la causa y repite el paso 4. |
 | La URL deja de responder | Mantén la consola abierta; cada ejecución usa otro puerto. |
 
-Enrolamiento/login MFA y dashboard nativos se probaron por separado. Política: 45 días de gracia para cuentas ordinarias, técnicos y administradores de clientes; cuentas existentes desde activación de política y nuevas desde creación. Sólo están exentos los administradores globales del Systemhaus con ambas capacidades globales de administración. Quitar un factor no reinicia el plazo. Recuperación portable, emergencia, rotación de claves y aceptación final siguen pendientes.
+Enrolamiento/login MFA y dashboard nativos se probaron por separado. Política: 45 días de gracia para cuentas ordinarias, técnicos y administradores de clientes; cuentas existentes desde activación de política y nuevas desde creación. Sólo están exentos los administradores globales del Systemhaus con ambas capacidades globales de administración. Quitar un factor no reinicia el plazo. Recuperación, emergencia/pérdida y rotación tienen implementaciones internas revisadas y ensayos de laboratorio acotados; la aceptación productiva y los escenarios pendientes permanecen abiertos. Ver [estado actual y límites](PUBLICACION-GITHUB-12-11-2026.md).
 
 MFA real necesita un almacén protegido separado de PostgreSQL, configuración DPAPI/ACL correcta e identidad del servicio. Las claves y sobres de recuperación no se incluyen en GitHub. No copies configuraciones de otro equipo ni actives MFA mediante esta demo.

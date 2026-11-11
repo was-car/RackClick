@@ -6,7 +6,7 @@
   "global_product_percentage": null,
   "snapshot": "Inventario fechado del pendiente; no reinicia el trabajo ya construido.",
   "basis": "Cierre de 100 puntos del trabajo restante desde 25.10.2026; no porcentaje global del producto.",
-  "closure_points": 19.13095238095238,
+  "closure_points": 26.63095238095238,
   "total_closure_points": 100,
   "historical_map": "evidence/s1-20261025/plan-cierre-medible/MAPA-ENTREGA-ANTERIOR.json",
   "historical_78_retired": true,
@@ -20,7 +20,7 @@
       "id": "F",
       "name": "Fundamento, seguridad y MFA",
       "weight": 25,
-      "closure_points": 12.0,
+      "closure_points": 19.5,
       "children": [
         {
           "id": "F-01",
@@ -192,30 +192,30 @@
           "name": "Cerrar rotación y recuperación coherente entre anillo y PostgreSQL",
           "pending_kind": "implementación",
           "weight_points": "5/2",
-          "closed_points": 0.0,
+          "closed_points": 2.5,
           "checkpoints": [
             {
               "id": "F-06.01",
               "name": "Especificar fases: persistir/verificar clave nueva antes de usarla, conservar versiones requeridas, reenvolver factores y publicar anillo coherente.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
               "id": "F-06.02",
               "name": "Retirar una versión sólo si ningún factor ni backup retenido la necesita; incluir inventario de versiones en backup/sobre.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
               "id": "F-06.03",
               "name": "Inyectar caída antes/después de cada publicación y commit; reinicio/Restore deben identificar estado y recuperar sin perder factores.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             },
             {
               "id": "F-06.04",
               "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "5/8"
             }
           ]
@@ -223,9 +223,9 @@
         {
           "id": "F-07",
           "name": "Completar enrolamiento restringido cuando MFA sea exigible",
-          "pending_kind": "F-07.01 a .04 cerrados técnicamente en laboratorio; candidata, custodia real integrada y cierre .05 pendientes",
+          "pending_kind": "Implementado y revisado técnicamente; integración de candidata objetivo y aceptación pendientes",
           "weight_points": "5/2",
-          "closed_points": 2.0,
+          "closed_points": 2.5,
           "checkpoints": [
             {
               "id": "F-07.01",
@@ -254,7 +254,7 @@
             {
               "id": "F-07.05",
               "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             }
           ]
@@ -262,38 +262,38 @@
         {
           "id": "F-08",
           "name": "Implementar códigos de recuperación y reenrolamiento restringido",
-          "pending_kind": "implementación",
+          "pending_kind": "Implementado y revisado técnicamente; integración de candidata objetivo y aceptación pendientes",
           "weight_points": "5/2",
-          "closed_points": 0.0,
+          "closed_points": 2.5,
           "checkpoints": [
             {
               "id": "F-08.01",
               "name": "Generar y mostrar una sola vez códigos por usuario; almacenar sólo hashes con sal conforme D2, sin dependencia de clave TOTP.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
               "id": "F-08.02",
               "name": "Concretar e implementar si password+código concede sólo recuperación restringida hasta reenrolar; no dejar frase ambigua que emita sesión normal antes de nuevo factor.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
               "id": "F-08.03",
               "name": "Consumir transaccionalmente, invalidar sesiones/desafíos/códigos anteriores según contrato y probar consumo concurrente/replay/rollback/secretos.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
               "id": "F-08.04",
               "name": "Garantizar vía administrativa de recuperación con códigos válidos sin bloquear último administrador.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
               "id": "F-08.05",
               "name": "Comprobar el criterio de cierre y registrar revisión independiente/evidencia del resultado; aceptación manual sólo donde corresponda.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             }
           ]
@@ -303,30 +303,30 @@
           "name": "Implementar recuperación local cuando no quedan clave, sobre ni códigos",
           "pending_kind": "implementación",
           "weight_points": "5/2",
-          "closed_points": 0.0,
+          "closed_points": 2.0,
           "checkpoints": [
             {
               "id": "F-09.01",
               "name": "Autorizar sólo operador local SYSTEM/Administradores; sin web anónima ni bypass password-only.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
               "id": "F-09.02",
               "name": "Permitir preparar anillo nuevo explícitamente, conservar material anterior recuperable, retirar factores ilegibles del uso y marcar enrolamiento pendiente sin borrar DB.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
               "id": "F-09.03",
               "name": "Revocar sesiones/desafíos y registrar auditoría sin secretos, preservando recuperación de último administrador.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {
               "id": "F-09.04",
               "name": "Ensayar pérdida simulada total, arranque fallido explícito, recuperación local y vuelta mediante enrolamiento restringido.",
-              "status": "pending",
+              "status": "done",
               "weight_points": "1/2"
             },
             {

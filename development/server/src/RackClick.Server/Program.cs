@@ -10,10 +10,48 @@ bool migrate = args.Contains("--migrate", StringComparer.Ordinal);
 bool recoverAdmin = args.Contains("--recover-admin", StringComparer.Ordinal);
 bool mfaKeysInit = args.Contains("--mfa-keys-init", StringComparer.Ordinal);
 bool mfaRequireAll = args.Contains("--mfa-require-all", StringComparer.Ordinal);
-if ((bootstrap ? 1 : 0) + (migrate ? 1 : 0) + (recoverAdmin ? 1 : 0) + (mfaKeysInit ? 1 : 0) + (mfaRequireAll ? 1 : 0) > 1)
+bool mfaBackupInventory = args.Contains("--mfa-backup-inventory", StringComparer.Ordinal);
+bool mfaKeyMaintenance = args.Contains("--mfa-key-maintenance", StringComparer.Ordinal);
+bool mfaEmergencyRecovery = args.Contains("--mfa-emergency-recovery", StringComparer.Ordinal);
+if ((bootstrap ? 1 : 0) + (migrate ? 1 : 0) + (recoverAdmin ? 1 : 0) + (mfaKeysInit ? 1 : 0) + (mfaRequireAll ? 1 : 0) + (mfaBackupInventory ? 1 : 0) + (mfaKeyMaintenance ? 1 : 0) + (mfaEmergencyRecovery ? 1 : 0) > 1)
 {
     Console.WriteLine(JsonSerializer.Serialize(new { status = "rejected", error = "cli_mode_conflict" }));
     Environment.ExitCode = 1;
+    return;
+}
+// Explicit local authority is evaluated before host configuration, protected SQL material or a listener.
+if (mfaEmergencyRecovery)
+{
+    if (args.Length != 1 || !Console.IsInputRedirected)
+    {
+        Console.WriteLine(JsonSerializer.Serialize(new { status = "rejected", code = "mfa_emergency_arguments_invalid" }));
+        Environment.ExitCode = 1;
+        return;
+    }
+    Environment.ExitCode = await MfaLossRecoveryCommand.RunAsync(Console.In, Console.Out, CancellationToken.None);
+    return;
+}
+if (mfaKeyMaintenance)
+{
+    if (args.Length != 1 || !Console.IsInputRedirected)
+    {
+        Console.WriteLine(JsonSerializer.Serialize(new { status = "rejected", code = "mfa_maintenance_arguments_invalid" }));
+        Environment.ExitCode = 1;
+        return;
+    }
+    Environment.ExitCode = await MfaMaintenanceCommand.RunAsync(Console.In, Console.Out, CancellationToken.None);
+    return;
+}
+// Local metadata protocol: no host configuration, runtime secret, listener or live key-store composition.
+if (mfaBackupInventory)
+{
+    if (args.Length != 1 || !Console.IsInputRedirected)
+    {
+        Console.WriteLine(JsonSerializer.Serialize(new { status = "rejected", code = "mfa_backup_arguments_invalid" }));
+        Environment.ExitCode = 1;
+        return;
+    }
+    Environment.ExitCode = await MfaBackupInventoryCommand.RunAsync(Console.In, Console.Out, CancellationToken.None);
     return;
 }
 var builder = WebApplication.CreateBuilder(args.Where(a => a is not ("--bootstrap" or "--migrate" or "--recover-admin" or "--mfa-keys-init" or "--mfa-require-all")).ToArray());
@@ -140,6 +178,44 @@ catch (MfaHostCompositionException e)
     Environment.ExitCode = 1;
     return;
 }
+catch (MfaMaintenanceException e)
+{
+    Console.Error.WriteLine(e.Code);
+    Environment.ExitCode = 1;
+    return;
+}
+NpgsqlConnection? maintenanceConnection = null;
+MfaMaintenanceLease? maintenanceAdmission = null;
+FileStream? maintenanceRingLease = null;
+if (mfaComposition is not null)
+{
+    try
+    {
+        maintenanceRingLease = MfaMaintenanceAdmission.HoldHostRing(builder.Configuration["MfaKeyStore:InstancesRoot"]!,
+            Guid.Parse(builder.Configuration["MfaKeyStore:InstallationId"]!));
+        maintenanceConnection = new NpgsqlConnection(new NpgsqlConnectionStringBuilder(connection) { Pooling = false }.ConnectionString);
+        await maintenanceConnection.OpenAsync();
+        maintenanceAdmission = await MfaMaintenanceAdmission.SharedAsync(maintenanceConnection, CancellationToken.None);
+        if (OperatingSystem.IsWindows())
+        {
+            var identity = app.Services.GetRequiredService<IMfaHostIdentity>();
+            await MfaRotationStartupGuard.ValidateAsync(maintenanceConnection,
+                builder.Configuration["MfaKeyStore:InstancesRoot"]!, Guid.Parse(builder.Configuration["MfaKeyStore:InstallationId"]!),
+                identity.ReaderSid!, identity.TrustedPrincipals, mfaKeys!, CancellationToken.None);
+        }
+    }
+    catch (Exception e) when (e is NpgsqlException or MfaMaintenanceException or MfaKeyRingException or System.Security.Cryptography.CryptographicException or IOException or UnauthorizedAccessException)
+    {
+        maintenanceRingLease?.Dispose();
+        if (maintenanceConnection is not null) await maintenanceConnection.DisposeAsync();
+        Console.Error.WriteLine("mfa_maintenance_admission_unavailable");
+        Environment.ExitCode = 1;
+        return;
+    }
+}
+await using var maintenanceConnectionLifetime = maintenanceConnection;
+await using var maintenanceAdmissionLifetime = maintenanceAdmission;
+using var maintenanceRingLifetime = maintenanceRingLease;
 if (mfaComposition is not null) app.Logger.LogInformation("{Diagnostic}", mfaComposition.Diagnostic);
 var store = new PostgresStore(source) { MfaAvailable = mfaKeys is not null };
 if (mfaComposition is not null)
@@ -156,6 +232,12 @@ var mfa = mfaKeys is null ? null : new MfaStore(source, mfaKeys);
 app.Use(async (context, next) =>
 {
     HttpSecurityHeaders.Apply(context, origin, developmentHttp);
+    if (maintenanceAdmission is not null && !maintenanceAdmission.IsHealthy)
+    {
+        context.Response.StatusCode = 503;
+        await context.Response.WriteAsJsonAsync(new { error = "mfa_maintenance_admission_lost" });
+        return;
+    }
     context.Response.Headers.CacheControl = "no-store";
     context.Response.Headers["X-Content-Type-Options"] = "nosniff";
     context.Response.Headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; " +
@@ -753,7 +835,11 @@ app.MapPost("/api/v1/admin/users/operations/{requestId:guid}/cancel", async Task
     if (RequestId(c) != requestId) throw new DomainError(422, "request_id_mismatch");
     return Results.Content(await store.CancelUserCreation(InventoryActor(c), input.Username, Revision(c), requestId, c.RequestAborted), "application/json");
 });
-await app.RunAsync();
+using var maintenanceMonitorStop = new CancellationTokenSource();
+var maintenanceMonitor = maintenanceAdmission is null ? Task.CompletedTask
+    : maintenanceAdmission.MonitorAsync(app.Lifetime.StopApplication, maintenanceMonitorStop.Token);
+try { await app.RunAsync(); }
+finally { maintenanceMonitorStop.Cancel(); await maintenanceMonitor; }
 
 static SessionIdentity Identity(HttpContext c) => (SessionIdentity)c.Items["session"]!;
 static Actor InventoryActor(HttpContext c)

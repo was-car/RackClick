@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "serverConfiguration": "Release",
+  "testConfiguration": "Release",
+  "privateProject": ".local/f0416-http-23bd5b22/F0416.Integration.csproj",
+  "testDllSha256": "695e7a1e7fdfc29b9e7d18564430c7af6eaec6245338dc5fb3f7915a01026a14",
+  "testSourceSha256": "9f66dd22aac94af4eb2f9f8e38fbac4b727bcef9695a81bddfc5394e81097395",
+  "creationTestSha256": "fd904249f353825cca810db5cf4e4d90a80f89c85fb44705d704507e9aabc8b5",
+  "exactPublicationCopies": [
+    {
+      "file": "RackClick.Server.dll",
+      "testCopySha256": "c05742f9079705c6cd97a1f97f89133183fc72e554dac0b2d52678c548921c2f",
+      "publicationSha256": "c05742f9079705c6cd97a1f97f89133183fc72e554dac0b2d52678c548921c2f",
+      "identical": true
+    },
+    {
+      "file": "RackClick.Domain.dll",
+      "testCopySha256": "46f043bc00236c7ef0104e0042bb7185746c27699b94b9230c298526d87a9d41",
+      "publicationSha256": "46f043bc00236c7ef0104e0042bb7185746c27699b94b9230c298526d87a9d41",
+      "identical": true
+    },
+    {
+      "file": "Npgsql.dll",
+      "testCopySha256": "e2bcafe1660fe4543fe9dfcabed972ec8d32259e5ea8009462ce1de23c7034c2",
+      "publicationSha256": "e2bcafe1660fe4543fe9dfcabed972ec8d32259e5ea8009462ce1de23c7034c2",
+      "identical": true
+    },
+    {
+      "file": "Otp.NET.dll",
+      "testCopySha256": "5c211b2d746267e7830445d2243e7a71c29fd47f9eb3591cf53a5ecb63aa3745",
+      "publicationSha256": "5c211b2d746267e7830445d2243e7a71c29fd47f9eb3591cf53a5ecb63aa3745",
+      "identical": true
+    },
+    {
+      "file": "RackClick.Server.deps.json",
+      "testCopySha256": "95d3d9381f80ee24140c82d932d77b3b7de37d88bd9536505b492a625a1721ac",
+      "publicationSha256": "95d3d9381f80ee24140c82d932d77b3b7de37d88bd9536505b492a625a1721ac",
+      "identical": true
+    }
+  ],
+  "resultReceipt": "HTTP-WRITER-RELEASE-R2.json",
+  "rootBindingDiff": "DIFF-FIXTURE-RAIZ.diff",
+  "cases": 16,
+  "vmOperations": 0,
+  "doesNotProveSCMOrNativeInstaller": true
+}

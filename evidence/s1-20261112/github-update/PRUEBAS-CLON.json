@@ -1,0 +1,55 @@
+{
+  "environment": "Windows11; pinned SDK10.0.401/runtime10.0.12/PostgreSQL17.11/Node24.21.0/Python3.12",
+  "quality": {
+    "total": 189,
+    "passed": 189,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Eight affected quality classes; not full server regression; no service identity"
+  },
+  "loader": {
+    "total": 13,
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "postgres": "17.11 new isolated cluster, sources48",
+    "redObserved": "schema_profile_unsupported",
+    "unknownSchemaAndGapAndDigestNegatives": true
+  },
+  "sourceDemo": {
+    "success": true,
+    "customers": 10,
+    "ports": 5408,
+    "frontend": "served",
+    "runtimeDmlOnly": true,
+    "mfaEnabled": false,
+    "inventoryCommitted": true
+  },
+  "python": {
+    "finalWideRun": {
+      "total": 54,
+      "passed": 53,
+      "errors": 1,
+      "missingPrivateFixture": "pinned bundle48"
+    },
+    "correctedAffectedRepeat": {
+      "total": 16,
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0
+    },
+    "distinctCases": 54,
+    "limitations": "54/54 was not rerun as one suite; first preparation also lacked DLL env and used a rejected junction. No product or assertion relaxed."
+  },
+  "generators": [
+    "master roadmap check",
+    "numbered plan check",
+    "progress check",
+    "German CPE check",
+    "German repeaters check"
+  ],
+  "privateBuildLogs": true,
+  "newVmOperations": 0,
+  "metricChanged": false,
+  "observerLimit": "Concurrent private launchers briefly overwrote aggregate checks.json; this summary is reconciled from named final logs and quality TRX, not that aggregate."
+}

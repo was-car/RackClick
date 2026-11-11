@@ -1,0 +1,129 @@
+{
+  "files": [
+    {
+      "path": "development/server/src/RackClick.Server/MfaMaintenanceAdmission.cs",
+      "sha256": "a235daa0b2f3f3ded790c1db1879c53fd2fd675a753378a4a55e560369ee7519",
+      "bytes": 4533
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaMaintenanceCommand.cs",
+      "sha256": "e6fa6ce77497ea2b48146eb237c37d0a40add2b390e2f4a09b626d695dabb006",
+      "bytes": 9116
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaMaintenanceCoordinator.cs",
+      "sha256": "7f72dda8f2967ede3a475014583326498b3b2dd1ffa34651fc0485815e33e0fd",
+      "bytes": 15985
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaMaintenanceService.cs",
+      "sha256": "814c2432f9aa8dd92fa16f6f36c0bde262df808ecdced5487eb204e8404435bf",
+      "bytes": 10941
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaMaintenanceStore.cs",
+      "sha256": "010146bbc28295d86b6d8af2fe4281289522b0e567677cd6528e40557f1cf0d8",
+      "bytes": 32580
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaBackupCatalog.cs",
+      "sha256": "e2757ceaa3c28155db06a53632a604aed98e02b5bcd6eb9683823aa0c7519ed3",
+      "bytes": 21899
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Program.cs",
+      "sha256": "1d6c6febe29a2634cdf73adf33ef9b5c58861f84e1da249199d91c121e54c00b",
+      "bytes": 56834
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaFactorKeyInventoryReader.cs",
+      "sha256": "866382787d1920d7b337becac33b2423179ecc70d9b1e4c8f58f797a13e81f5b",
+      "bytes": 5019
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaBackupInventoryCommand.cs",
+      "sha256": "ef2b231956aab6bb41acdc0ae6838caf1a0ca5b0b906cbfe808ef1b2b97c2f6e",
+      "bytes": 14846
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaWindowsHostComposition.cs",
+      "sha256": "48d6066eecfff80849c6012ea8d70af84cd463b155783abddbaa61d746e79f41",
+      "bytes": 10193
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaMaintenanceAdmissionTests.cs",
+      "sha256": "9bbaacbcc339fa64be0aeb0b391e53f55ae6920e967c102abd97fcc567127a76",
+      "bytes": 2181
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaMaintenanceCommandTests.cs",
+      "sha256": "56b3be67ae12e00e8b9d12acf28984511694b819a174d41c1bf75bb5ff21accb",
+      "bytes": 3560
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaMaintenancePostgresTests.cs",
+      "sha256": "0b10891ac62cf8942af48037d869d55f76a9e84f5337647643166a45a539032d",
+      "bytes": 22318
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/WindowsMfaMaintenanceServiceTests.cs",
+      "sha256": "c06ed5abbc6da239b6aa11372a6c1d034629b52376623a456a5e529c0208decc",
+      "bytes": 5318
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/WindowsMfaMaintenanceStoreTests.cs",
+      "sha256": "ef03bc2a696f60d38ce8d366603392ba1d1ae15601f310a9dc0e2fa4585bbded",
+      "bytes": 20849
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaBackupCatalogTests.cs",
+      "sha256": "9bb5e94c66d1cf8e137630ce6ec464b68387d193477884ca5437354903961e23",
+      "bytes": 19040
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaWindowsHostCompositionTests.cs",
+      "sha256": "2c1f822537a5e9d8c43ecb72e3a981886258b2851f04605dd323d8d433017378",
+      "bytes": 22844
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaWindowsHostHttpTests.cs",
+      "sha256": "f232bca4d32d45f9c8770b67ea51f4335aff4fa3fbea02500ef4c0040cd1c444",
+      "bytes": 26001
+    },
+    {
+      "path": "tools/tests/run_mfa_retirement.py",
+      "sha256": "07acd89cf7c647503fb3cc2e18ecf615cecd539e8034dafb33cf3c6993142afb",
+      "bytes": 5627
+    },
+    {
+      "path": "tools/tests/test_mfa_maintenance_operator.py",
+      "sha256": "3db858fdcfe8bc5a1d9762694c951cf7c43c5e5fcdb0195932c7958c455db109",
+      "bytes": 3575
+    },
+    {
+      "path": "tools/tests/test_mfa_backup_inventory_cli_host.py",
+      "sha256": "176e52bb86caa4c3e2f2bc1066ea3c5506569d2f3fd3e827decb8bb949d0c6db",
+      "bytes": 2098
+    },
+    {
+      "path": "tools/windows/Invoke-RackClickMfaKeyMaintenance.ps1",
+      "sha256": "208e09d9d25b88a67cdb9e7f900d8e1b7e281915df613c0a067decf0b9941aeb",
+      "bytes": 5782
+    },
+    {
+      "path": "tools/windows/RackClick.MfaBackupInventory.ps1",
+      "sha256": "70a0e4ec6d3d39796b4939633c92c0024011a4e61240b44a8a7336c71723c2bb",
+      "bytes": 9246
+    }
+  ],
+  "binaries": [
+    {
+      "path": "freeze\\development\\server\\src\\RackClick.Server\\bin\\Release\\net10.0\\RackClick.Server.dll",
+      "sha256": "d5520d9882e43602cba54c8a7b92ea4d47625b0195c281805771ab9769367a4d"
+    },
+    {
+      "path": "freeze\\development\\server\\tests\\RackClick.Quality.Tests\\bin\\Release\\net10.0\\RackClick.Quality.Tests.dll",
+      "sha256": "7c1a9e4e2674afe661942afd21f643d1225a4fa1ffd6886554fc3195279150a4"
+    }
+  ]
+}

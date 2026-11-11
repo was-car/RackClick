@@ -80,6 +80,8 @@ $profile43Sql=@('database/001-foundation.sql','database/002-inventory.sql','data
 $profile43Server=@($profile14Server | Where-Object {-not $_.StartsWith('database/')})+$profile43Sql
 $profile45Sql=$profile43Sql+@('database/044-german-cpe-hardware.sql','database/045-german-repeaters-hardware.sql')
 $profile45Server=@($profile14Server | Where-Object {-not $_.StartsWith('database/')})+$profile45Sql
+$profile48Sql=$profile45Sql+@('database/046-mfa-key-rotation.sql','database/047-mfa-loss-reset.sql','database/048-mfa-loss-startup.sql')
+$profile48Server=@($profile14Server | Where-Object {-not $_.StartsWith('database/')})+$profile48Sql
 if ($MyInvocation.InvocationName -eq '.') { return }
 $report=[ordered]@{schemaVersion=1;valid=$false;exitCode=2;code='input_invalid';manifestSha256='';verifiedFiles=0;serverFiles=0;frontendFiles=0;scope='Artifact integrity only; not installation, authenticity or application acceptance'}
 try {
@@ -96,7 +98,7 @@ try {
         try { $manifest=[IO.File]::ReadAllText($ManifestPath) | ConvertFrom-Json }
         catch { Stop-DistributionCheck 'manifest_invalid' }
     } finally { $manifestLock.Dispose() }
-    if ($manifest.schema -isnot [int] -or $manifest.schema -notin @(9,10,11,12,13,14,15,43,45) -or (($manifest.distributions.PSObject.Properties.Name | Sort-Object) -join ',') -ne 'frontend,server') { Stop-DistributionCheck 'manifest_distribution_unsupported' }
+    if ($manifest.schema -isnot [int] -or $manifest.schema -notin @(9,10,11,12,13,14,15,43,45,48) -or (($manifest.distributions.PSObject.Properties.Name | Sort-Object) -join ',') -ne 'frontend,server') { Stop-DistributionCheck 'manifest_distribution_unsupported' }
     if ($manifest.schema -eq 11 -and $digest -cnotin @('f256c0fc5c99c4ff24c05e36a7eddc0ed2da9d66979db3502e0c4d606ac881cd','511c097bafd5baf7590da15287a0dbd53bb5eb8e2fde33931c940b2885e7dfc5','1b40f9ceffde0503c024f0dce1fb79de02c05a21bc9cb93ad3b0d6a3d359dc09')) {Stop-DistributionCheck 'manifest_distribution_unsupported'}
     if ($manifest.schema -eq 12 -and $digest -cne 'b589609154fed1567106ef0865972155258f0f5474128c73076f4697d43b8bda') {Stop-DistributionCheck 'manifest_distribution_unsupported'}
     if ($manifest.schema -eq 13 -and $digest -cnotin @('c8b3df5b8e0fb6c5db148b7ddca2a8064ade6b90557713fb0835cbf69bb9710c','dc79c53fe188187637972c2cad479edd1868d1942414c602de17bb4454bd153b','38bbae727ffd545436506ab65d1c66525a64bf316e0a9354079cace0aa60c6b6','55bdd496ec654494fd8e3400140e3e84241488986e24481939bad67cde7a91c6')) {Stop-DistributionCheck 'manifest_distribution_unsupported'}
@@ -113,7 +115,8 @@ try {
         }
         if (-not $profiles45.ContainsKey($digest) -or $manifest.profileId -cne $profiles45[$digest]) {Stop-DistributionCheck 'manifest_distribution_unsupported'}
     }
-    $serverCount=if ($manifest.schema -eq 45) {$profile45Server.Count} elseif ($manifest.schema -eq 43) {$profile43Server.Count} elseif ($manifest.schema -eq 15) {$profile15Server.Count} elseif ($manifest.schema -eq 14) {$profile14Server.Count} else {9+$manifest.schema}
+    if ($manifest.schema -eq 48 -and ($digest -cne 'a7b622f917404bbe3ea2560e1fcc2dad008910395c6ab5fa8bc6875be2c88112' -or $manifest.profileId -cne 'schema48-maintenance-01')) {Stop-DistributionCheck 'manifest_distribution_unsupported'}
+    $serverCount=if ($manifest.schema -eq 48) {$profile48Server.Count} elseif ($manifest.schema -eq 45) {$profile45Server.Count} elseif ($manifest.schema -eq 43) {$profile43Server.Count} elseif ($manifest.schema -eq 15) {$profile15Server.Count} elseif ($manifest.schema -eq 14) {$profile14Server.Count} else {9+$manifest.schema}
     $declared=@{server=(Get-DeclaredDistribution $manifest.distributions.server $serverCount);frontend=(Get-DeclaredDistribution $manifest.distributions.frontend)}
     foreach ($name in @('RackClick.Server.dll','RackClick.Server.runtimeconfig.json','RackClick.Server.deps.json','Npgsql.dll')) {
         if (-not $declared.server.ContainsKey($name)) { Stop-DistributionCheck 'manifest_distribution_unsupported' }
@@ -122,6 +125,7 @@ try {
     if ($manifest.schema -eq 15) { foreach ($name in $declared.server.Keys) { if ($profile15Server -cnotcontains $name) { Stop-DistributionCheck 'manifest_distribution_unsupported' } } }
     if ($manifest.schema -eq 43) { foreach ($name in $declared.server.Keys) { if ($profile43Server -cnotcontains $name) { Stop-DistributionCheck 'manifest_distribution_unsupported' } } }
     if ($manifest.schema -eq 45) { foreach ($name in $declared.server.Keys) { if ($profile45Server -cnotcontains $name) { Stop-DistributionCheck 'manifest_distribution_unsupported' } } }
+    if ($manifest.schema -eq 48) { foreach ($name in $declared.server.Keys) { if ($profile48Server -cnotcontains $name) { Stop-DistributionCheck 'manifest_distribution_unsupported' } } }
     foreach ($name in @('app.js','app.css','index.html')) {
         if (-not $declared.frontend.ContainsKey($name)) { Stop-DistributionCheck 'manifest_distribution_unsupported' }
     }
@@ -134,6 +138,7 @@ try {
     if ($manifest.schema -eq 15) {$sql+=@('015-mfa-account-policy.sql')}
     if ($manifest.schema -eq 43) {$sql=@($profile43Sql | ForEach-Object {$_.Substring(9)})}
     if ($manifest.schema -eq 45) {$sql=@($profile45Sql | ForEach-Object {$_.Substring(9)})}
+    if ($manifest.schema -eq 48) {$sql=@($profile48Sql | ForEach-Object {$_.Substring(9)})}
     if (@($declared.server.Keys | Where-Object { $_.StartsWith('database/') }).Count -ne $manifest.schema) { Stop-DistributionCheck 'manifest_distribution_unsupported' }
     foreach ($name in $sql) { if (-not $declared.server.ContainsKey('database/'+$name)) { Stop-DistributionCheck 'manifest_distribution_unsupported' } }
     $roots=@{server=[IO.Path]::GetFullPath($ServerPath).TrimEnd([char]'\');frontend=[IO.Path]::GetFullPath($FrontendPath).TrimEnd([char]'\')}

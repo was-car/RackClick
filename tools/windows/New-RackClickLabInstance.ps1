@@ -87,7 +87,7 @@ try {
     $actualUser=[Text.Encoding]::UTF8.GetString($userBytes)
     $runtimeValue=if($protectSql){New-SqlProtectedRuntimeStore $root $id ([Security.Principal.WindowsIdentity]::GetCurrent().User.Value) $database $runtime $runtimeConnection}else{@{connectionString=$runtimeConnection}}
     if($minimizeSql){
-        $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile (Get-InstanceBackupGrantsSql $backupRole)
+        $null=Invoke-BackupPg (Join-Path $pg 'psql.exe') $ownerArguments $ownerProfile (Get-InstanceBackupGrantsSql $backupRole $stageSchema)
         Write-InstanceBackupProfile $private $id $instanceInputs.port $database $backupRole $backupPassword
         # A successful native preparation must not leave an unconsumed privileged request.
         foreach($pending in @(Get-ChildItem -LiteralPath $logs -Filter 'request.json' -Recurse -File)){

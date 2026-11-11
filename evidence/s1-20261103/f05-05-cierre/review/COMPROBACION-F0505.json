@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "valid": true,
+  "checkpoint": "F-05.05",
+  "recommendation": "close_technical_F05_criterion_only",
+  "proposedCredit": "1/2",
+  "blockingFindings": [],
+  "fixtureSourceMatchesFreeze": true,
+  "frozenCoreArtifactsVerified": 9,
+  "sqlFilesVerified": 45,
+  "productionInputsUnchangedAndMatchingReviewedAssemblySource": [
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRecoveryEnvelope.cs",
+      "sha256": "8a7b06ee0441086c40aba3cc8735c21fc562eee08383a58e6ed169b01b7d7fe1"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyRecovery.cs",
+      "sha256": "fa21ec1b0430f254b6594cee6c3f2094becab26c13cb71a5be1ffdecea9a8c7f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyRecoveryFiles.cs",
+      "sha256": "37f2c762b708ed5abbf3df97bc40b263b7691167854da505f1769709253e12bc"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyStoreWriter.cs",
+      "sha256": "76e6dfc3364cb43260ef95e02bb88816702b21dc8f0230946645878d7c894d55"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyProvider.cs",
+      "sha256": "c634dd5e8e0272e8abe68842a60ae723bc87c532538fae9a775a10df7a83b3c9"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyFileReader.cs",
+      "sha256": "4cc4203cf338f484eb9ddca253a77b491e7f37f75de97efe1cfbdad328f0f884"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaSecretCipher.cs",
+      "sha256": "9c1cdc76b3d189c9cd09532766190e6175e5d6d8c1ce5365a787d407de5cb100"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaStore.cs",
+      "sha256": "7fdc78964f9d95d29ebeca09d98b100a2aae28680a72ee493f1ee5bc124b736a"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaStore.Enrollment.cs",
+      "sha256": "0333e5c96daf53b9fc5dae5f9765f7d33b9fe1a45c8a484be2ac36ea128d9727"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/PostgresStore.Authentication.cs",
+      "sha256": "ab148d80144c3b0ba672e2a8ae80764de9a8a65cf84d4774d8305b8eafc683ab"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaWindowsHostComposition.cs",
+      "sha256": "9990c379ca2704ce7350f58a81f3f9a07c9cea840b3b7b0a9539e417e03de30f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Program.cs",
+      "sha256": "e2ee79c718ec1b6198e7a3fac5bc35841c627a8a6c13bb4e72c68fc3c530e028"
+    }
+  ],
+  "coordinatorExecutedIntegrationCases": 8,
+  "passed": 8,
+  "failed": 0,
+  "omitted": 0,
+  "allThreeOwnClustersStopped": true,
+  "failedPreparationAttemptsPreserved": true,
+  "realProgramPipeline": true,
+  "realWindowsProvider": true,
+  "realPostgresqlDumpRestore": true,
+  "identityAndClientAddressSeams": "explicit_laboratory_only",
+  "databaseRoleRestricted": true,
+  "preHostMaterialValidation": "test_fixture_supervision_not_product_Restore_guard",
+  "recommendedMilestoneUpdates": [
+    "technical_tests_same_scope",
+    "independent_review_same_scope"
+  ],
+  "milestonesToKeepPending": [
+    "implementation_complete",
+    "integrated_current_candidate",
+    "target_acceptance"
+  ],
+  "reviewerProductTestExecutions": 0,
+  "reviewerBuilds": 0,
+  "reviewerVMOperations": 0,
+  "reviewerSecretOrBinlogAccess": false,
+  "limits": [
+    "No product operator or D2 maintenance coordinator implemented",
+    "No TCP/TLS/browser/service/reboot or new Windows trial",
+    "No adopted database or installed store changed",
+    "Lab trust is not actual service SID; F0504 supplies that separate evidence",
+    "No full R03/R04/production custody acceptance"
+  ],
+  "references": [
+    {
+      "path": "evidence/s1-20261103/f05-05-cierre/implementacion/HARNESS-FREEZE6-PREVIO-PG.json",
+      "sha256": "89c7f7448c50fb2866974d677932e8b602e8e149b1741be6103961c600b85fb9"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-05-cierre/COORDINACION-PG-R3.json",
+      "sha256": "4d1dd32f69c923cfb50a0b567ff555c619add88154f370ebb2d223322633df65"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-05-cierre/COORDINACION-PG.json",
+      "sha256": "8841203db7af1af9e87743dd5d386f98b26be582012c6f9d5dccbf65b19e0017"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-05-cierre/COORDINACION-PG-R2.json",
+      "sha256": "b29ec4b59d413fcf59e844c4ae34c6cbe995a52808d75584c3854aa647be5977"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-05-cierre/ENV-PRIMER-ENSAYO.json",
+      "sha256": "55ddb410f1836094bf74aab4884772e6b59c6cd873f0362836624c5f93aac4b6"
+    },
+    {
+      "path": "tools/tests/run_mfa_portable_database_restore.py",
+      "sha256": "39194578060e027af0469267311edfb6617407b6c353bb51df6e6f25737fb22f"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaPortableDatabaseRestoreTests.cs",
+      "sha256": "b6bd93e3a7cf36de94828405210cc0d4f7beef0008221e03fd0458ff9e9cd35a"
+    },
+    {
+      "path": "evidence/s1-20261103/f05-05-cierre/review/UMBRAL-F0505.md",
+      "sha256": "54627b0ed689be2629003583bb0452722898fcbf7578cce7cc2ce6bd8736d049"
+    }
+  ],
+  "commandsExecuted": [
+    "C:/Python312/python.exe -B evidence/s1-20261103/f05-05-cierre/review/Verify-F0505.py"
+  ],
+  "commandsNotExecuted": [
+    "dotnet test/build/restore/publish",
+    "SQL or crypto tools",
+    "VMware/guest operations",
+    "SCM/account/ACL changes"
+  ]
+}

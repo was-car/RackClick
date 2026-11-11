@@ -67,6 +67,7 @@ function Invoke-StageChild {
 function Get-StageServerFileCount {
     param([int]$Schema)
     # Conteo cerrado por esquema; no aceptar intermediarios sin un perfil revisado.
+    if ($Schema -eq 48) {return 58}
     if ($Schema -eq 45) {return 55}
     if ($Schema -eq 43) {return 53}
     if ($Schema -eq 15) {return 25}
@@ -95,7 +96,7 @@ function Get-StageSchema {
     param([string]$Stage)
     # Call only while holding the externally authenticated manifest read lock.
     $manifest=[IO.File]::ReadAllText((Join-Path $Stage 'manifest.json'),[Text.Encoding]::UTF8)|ConvertFrom-Json
-    if ($manifest.schema -isnot [int] -or $manifest.schema -notin @(9,10,11,12,13,14,15,43,45)) {Stop-StageCheck 'manifest_distribution_unsupported'}
+    if ($manifest.schema -isnot [int] -or $manifest.schema -notin @(9,10,11,12,13,14,15,43,45,48)) {Stop-StageCheck 'manifest_distribution_unsupported'}
     return [int]$manifest.schema
 }
 

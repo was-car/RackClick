@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "valid": true,
+  "measurement": "Real service tokens in E; no product changes",
+  "targetVm": "E",
+  "requestSha256": "7013bf62823299bd73183aa6cbc2edfafda0b4104b3da790c032b2106c0f6504",
+  "probeOutputSha256": "9e669b116be6c8b6ff9506acac445f224934a3a1eec63d528ee55ab488fd4dcb",
+  "actorCount": 2,
+  "targetsPerActor": 30,
+  "totalOpenChecks": 504,
+  "ownReadGranted": 16,
+  "foreignOrManagementReadDenied": 44,
+  "mutationRightsDenied": 444,
+  "allDenialsWin32Error5": true,
+  "inconclusive": 0,
+  "unexpectedGrants": 0,
+  "childExit": 0,
+  "taskExit": 0,
+  "stderrEmpty": true,
+  "temporaryTaskRemoved": true,
+  "taskAbsenceQueriedAfterwards": true,
+  "taskQueryLeafHResult": -2147024894,
+  "serviceStateAndPidUnchanged": true,
+  "nativeMetadataNodes": 32,
+  "nativeFingerprintUnchanged": true,
+  "sameApiAclHashesUnchanged": 30,
+  "aclPolicySemanticallyMatches": 30,
+  "crossApiDescriptorDifferences": [
+    {
+      "label": "i2.management-node-1",
+      "sameAceMultiset": true,
+      "sameProtection": true,
+      "trustedOwner": true,
+      "descriptorHashesEqual": false,
+      "observedDifference": "Order of SYSTEM/Administrators Allow FullControl ACEs differs; no universal API cause inferred"
+    },
+    {
+      "label": "i2.management-node-2",
+      "sameAceMultiset": true,
+      "sameProtection": true,
+      "trustedOwner": true,
+      "descriptorHashesEqual": false,
+      "observedDifference": "Order of SYSTEM/Administrators Allow FullControl ACEs differs; no universal API cause inferred"
+    },
+    {
+      "label": "i2.management-node-3",
+      "sameAceMultiset": true,
+      "sameProtection": true,
+      "trustedOwner": true,
+      "descriptorHashesEqual": false,
+      "observedDifference": "Order of SYSTEM/Administrators Allow FullControl ACEs differs; no universal API cause inferred"
+    },
+    {
+      "label": "i2.management-node-4",
+      "sameAceMultiset": true,
+      "sameProtection": true,
+      "trustedOwner": true,
+      "descriptorHashesEqual": false,
+      "observedDifference": "Order of SYSTEM/Administrators Allow FullControl ACEs differs; no universal API cause inferred"
+    }
+  ],
+  "physicalVmBindingVerified": true,
+  "dExcluded": true,
+  "keysRead": false,
+  "managementContentRead": false,
+  "targetAclsChanged": 0,
+  "serviceOperations": 0,
+  "vmPowerChanges": 0,
+  "applicationOrDatabaseChangesPerformed": false,
+  "portableRecoveryClaimed": false,
+  "newMfaLoginClaimed": false
+}

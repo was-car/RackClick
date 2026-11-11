@@ -9,3 +9,9 @@ Sólo contiene inventario: sin usuarios, contraseñas, sesiones, factores MFA ni
 Se excluyen fotos comerciales y repositorios de referencia de terceros. Las carcasas interactivas forman parte del código de la aplicación. Los nombres de recursos se conservan como fueron escritos, sin traducirlos automáticamente.
 
 `development/examples/demo50-replay43.json` contiene la reproducción API de inventario (2553 comandos), fijada por SHA256 `a3b44a37d8ca81f2f13d515d26905a520af8f09ffb2cfe498f97d06367bf423a`. El importador Windows histórico exige un servidor vacío de **esquema43** y rechaza el45. Esta publicación no adapta ese importador ni autoriza cargar un servidor existente.
+
+## Edición03 trilingüe · 12.11.2026
+
+El conjunto opcional actual está en [development/examples/demo50-trilingual03](../development/examples/demo50-trilingual03/): 17 empresas ficticias con nombres ingleses, 17 alemanes y 16 españoles. Abre localmente `DATOS-DEMO50/VER-50-CLIENTES.html`. `CARGAR-50-CLIENTES` contiene el cargador HTTPS revisado, el replay fijado por hash y las instrucciones. Sólo carga un **servidor48 nuevo y vacío**, con confirmación expresa; la demo de diez clientes desde fuentes sigue separada. Ante rechazo o respuesta incierta conserva los datos parciales y no repitas automáticamente. No importa usuarios, sesiones, contraseñas ni factores MFA.
+
+La estructura43 de origen, los 50 inventarios y las conexiones se conservan: 180 racks, 1.563 equipos, 20.665 puertos y 2.207 conexiones. La cobertura sigue en 868 revisiones históricas, no todas las actuales. El conjunto se cargó en la VM A y se releyó después de reiniciar Windows. Las secciones anteriores describen la edición01 conservada. Los instaladores nativos permanecen fuera de GitHub.

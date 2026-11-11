@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "valid": true,
+  "checkpoint": "F-05.02",
+  "historicalDate": "2026-10-26",
+  "newMeasurement": false,
+  "measuredUnit": "xUnit test-case wall duration including one Open/KDF, GCM, cleanup and assertions; not isolated PBKDF2",
+  "runtime": ".NET 10.0.12 x64",
+  "configuration": "Debug",
+  "platform": "Windows per original laboratory record",
+  "cpuOrWindowsBuildKnown": false,
+  "iterations": 600000,
+  "sampleCount": 6,
+  "minimumReportedMilliseconds": 57,
+  "maximumReportedMilliseconds": 62,
+  "medianOfReportedMilliseconds": 59.5,
+  "finalRunRows": [
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-final.txt",
+      "line": 17,
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"ciphertext\")",
+      "reportedMilliseconds": 60,
+      "kdfCallsAssertedByTest": 1
+    },
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-final.txt",
+      "line": 18,
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"sal\")",
+      "reportedMilliseconds": 57,
+      "kdfCallsAssertedByTest": 1
+    },
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-final.txt",
+      "line": 19,
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"nonce\")",
+      "reportedMilliseconds": 58,
+      "kdfCallsAssertedByTest": 1
+    },
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-final.txt",
+      "line": 20,
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"etiqueta\")",
+      "reportedMilliseconds": 59,
+      "kdfCallsAssertedByTest": 1
+    },
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-final.txt",
+      "line": 21,
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"truncado\")",
+      "reportedMilliseconds": 62,
+      "kdfCallsAssertedByTest": 1
+    },
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-final.txt",
+      "line": 28,
+      "case": "WrongPasswordIsRejectedWithoutEchoingThePasswordOrThePayload",
+      "reportedMilliseconds": 62,
+      "kdfCallsAssertedByTest": 1
+    }
+  ],
+  "earlierRunRows": [
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-codec.txt",
+      "line": 17,
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"ciphertext\")",
+      "reportedMilliseconds": 61,
+      "kdfCallsAssertedByTest": 1
+    },
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-codec.txt",
+      "line": 18,
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"sal\")",
+      "reportedMilliseconds": 57,
+      "kdfCallsAssertedByTest": 1
+    },
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-codec.txt",
+      "line": 19,
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"nonce\")",
+      "reportedMilliseconds": 57,
+      "kdfCallsAssertedByTest": 1
+    },
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-codec.txt",
+      "line": 20,
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"etiqueta\")",
+      "reportedMilliseconds": 58,
+      "kdfCallsAssertedByTest": 1
+    },
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-codec.txt",
+      "line": 21,
+      "case": "SaltNonceTagCiphertextOrTruncationFailAuthenticationAfterOneDerivation(field: \"truncado\")",
+      "reportedMilliseconds": 57,
+      "kdfCallsAssertedByTest": 1
+    },
+    {
+      "source": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-codec.txt",
+      "line": 28,
+      "case": "WrongPasswordIsRejectedWithoutEchoingThePasswordOrThePayload",
+      "reportedMilliseconds": 57,
+      "kdfCallsAssertedByTest": 1
+    }
+  ],
+  "runsPooled": false,
+  "currentCodecAndTestsMatchHistorical": true,
+  "newProductTests": 0,
+  "vmOperations": 0,
+  "performanceOnDClaimed": false,
+  "initialPlanHashes": {
+    "docs/PLAN-CIERRE-RACKCLICK.json": "685d0336ccd2ac8369d5ce4041c2f872a026046451fa2a54614e65dcf08f404c",
+    "docs/PLAN-PENDIENTES-CONFIG.json": "8e9fa4cfc524357db12e2eb695b24096a98d41c2b279d9670a9060823f410fae",
+    "docs/REGISTRO-MAESTRO-CONFIG.json": "18f78070eb5743ab0e9cebbb992a30dc9011d169a52b54aa5643a01ebbd39e11"
+  },
+  "references": [
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRecoveryEnvelope.cs",
+      "sha256": "8a7b06ee0441086c40aba3cc8735c21fc562eee08383a58e6ed169b01b7d7fe1"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaKeyRecoveryEnvelopeTests.cs",
+      "sha256": "5d15b220d6d12cfe9ab8e340fe39a8e902b47f609af434989f84db96060e4a1f"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-final.txt",
+      "sha256": "9af840ca19d6fffa74646755f14a90712a4b6d6acf4a0058147b78785b3c8693"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-claude/VERDE-L2d-codec.txt",
+      "sha256": "7acb87f7278d3447e7e4911b52084359a857a7b1f2b2a6e72c7439e209f6cee4"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-claude/RESULTADOS.md",
+      "sha256": "f258d6feadc0d72678b9497d20a5a96adb7b6f2697e0ebad682d7e21e021ceff"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-claude/INVESTIGACION-PREVIA.md",
+      "sha256": "9969858cb928748f2ebec99fede74fbb63ddb4eab3d640484e1e0e9778737eb7"
+    },
+    {
+      "path": "docs/REVISION-MFA-L2D-CODEX-26-10-2026.md",
+      "sha256": "73ae99bce435b39bd3cf420fd91b07a273e48de0c31c50da308f690cf450be3a"
+    },
+    {
+      "path": "docs/REVISION-D2-CODEX.md",
+      "sha256": "1e80de66a0775fc96f1627beb9576472b3ba6d4aa7951874be7ee07f41c355e6"
+    },
+    {
+      "path": "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
+      "sha256": "c34cfece96d07eb6f31b64fae1809f37890e3b20a896506e3901cdfff93e08a6"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/RESULTADOS-EJECUTADOS.json",
+      "sha256": "fc6b41751d4374894a0e293002b01271bc2c74b8476a5a2a61755fab738589f6"
+    },
+    {
+      "path": "evidence/s1-20261026/mfa-l2d-codex/FUENTES-ENTREGADAS.json",
+      "sha256": "76158225b02acddd5c96634747419f5d3f9d250b90a3e641540db51f704750fb"
+    }
+  ]
+}

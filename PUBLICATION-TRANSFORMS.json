@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-09",
-  "scope": "private schema45 candidate16 source update plus inventory-only Demo50",
+  "date": "2026-11-12",
+  "scope": "private schema48 source update plus reviewed inventory-only trilingual Demo50",
   "originalWorkspaceEdited": true,
   "transforms": [
     {
@@ -29,8 +29,8 @@
     },
     {
       "path": "development/server/tests/RackClick.Quality.Tests/MfaWindowsHostHttpTests.cs",
-      "sourceSha256": "419d4d626fd2bd7ab49682fa1404d2525492a80202f69085dc8a009101dbe8b9",
-      "exportedSha256": "9599a6414c6e310b4d89f37ceb5e4e823c2feaa35dc54df44e2b79943930b56f",
+      "sourceSha256": "82786bdd8bccf6e65900025290d982daaad0563b6a52178fa352f934850a55e0",
+      "exportedSha256": "837b51f23c0808eee47da34c0d42c5204d8a844fafc0d179120ae9dd082d7fe2",
       "change": "Fixed fixture password replaced with local runtime CSPRNG; no product source change"
     },
     {
@@ -43,12 +43,11 @@
   "previousPublicationSuperseded": true,
   "byteIntegrity": "source files retain exact bytes with existing -text attributes",
   "retainedHistoricalFiles": "Previously tracked auxiliaries are retained; missing private fixtures are not manufactured.",
-  "frozenInputFilesVerified": 413,
   "productSourceManifest": "BASELINE-SOURCES.json",
   "sourceIdentityOnly": true,
   "helperChanges": [
-    "tools/rc9-demo-load/Program.cs: closed schema15/45 profiles; no change to installed server",
-    "tools/tests/test_demo50_windows_import.py: use committed inventory-only schema43 replay fixture; retain exact digest and assertions"
+    "tools/tests/test_demo50_windows_import.py: use committed inventory-only schema43 replay fixture; retain exact digest and assertions",
+    "tools/rc9-demo-load/Program.cs: preserve closed15/45 and add exact48 migration digest; exercised by real PG negative then positive"
   ],
   "testCoverageChanges": [
     "development/server/tests/test_rc9_demo_loader.py: unknown schema and incomplete history negatives",
@@ -57,8 +56,8 @@
     "Five Quality test classes reconcile closed historical projections/schema counts; no product change"
   ],
   "fixtureTransformOriginalsEdited": false,
-  "workspaceChanges": "Reviewed sources and documentation only; no installed server or VM operation",
-  "previousPublicationCommit": "9a682b70be8381705c6b2a4b6f2a19d090bab8a4",
+  "workspaceChanges": "Selected source/documentation publication; no VM operations",
+  "previousPublicationCommit": "fd43fc41a1738baa844aa6d300e0266fc585da36",
   "nativeBinariesPublished": false,
   "additionalFixtureTransforms": [
     {
@@ -66,6 +65,27 @@
       "sourceSha256": "9f00dfb6e1d1f78bddb6f98a43a03959eff98646818fb4db7c9878a04f40215d",
       "exportedSha256": "99aa73eb5e470088148de6f4cb8339b09b4b843c5c8d0d5a929c73d0057bafc9",
       "change": "Replace local replay fixture path with same bytes committed under development/examples; no product change"
+    },
+    {
+      "path": "tools/build_demo50_trilingual.py",
+      "sourceSha256": "7631df1546ac23983e0e8430581e52338be7834d06206714bb06043770100867",
+      "exportedSha256": "d8e1da7bd8f28053073d073916c436b8f4f3ac98beddb36a465aab60cde30ffc",
+      "change": "Use committed byte-identical inventory-only historical replay; same closed pin, no private receipts"
     }
-  ]
+  ],
+  "additionalDocumentationTransforms": [
+    {
+      "path": "docs/INSTALACION18-ESTADO-Y-ACCESO.md",
+      "sourceSha256": "2c3575b4fb66974ba147bd8bcb7dd25b3debef9b895d290ec24e8bac451cee2f",
+      "exportedSha256": "3e597d598b783cc731962b6e68b680d2f29bfdc96bb845e0e6cdfc8baccb950f",
+      "change": "Explain local-only native delivery/CA; remove non-published ZIP hyperlink; do not change frozen installer manuals"
+    }
+  ],
+  "historicalFrozenInputsVerified20261103": 413,
+  "currentProductSourceFiles": 426,
+  "checkoutBytePolicy": {
+    "unchangedBaselineFilesPreserved": 144,
+    "hashedDocsTextConversionDisabled": true,
+    "productContentModified": false
+  }
 }

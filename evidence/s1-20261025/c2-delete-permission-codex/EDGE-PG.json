@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "scenario": "delete-permission",
+  "qaTouched": false,
+  "vmTouched": false,
+  "newCluster": true,
+  "dllSha256": "5eb1abcf9d2f91d293bae8f1b01e94f0352ca254c0387aaa45de1c35b2a97585",
+  "browserScriptSha256": "0811052740e44c1c1373a53a2207554da07da40bbce689e41f0a01e85ecea9b2",
+  "browserExitCode": 0,
+  "nineSqlTablesExactlyRestored": true,
+  "persistenceAfterServerRestart": true,
+  "postgresql": "17.11",
+  "labStopped": true,
+  "serversStopped": true,
+  "elapsedSeconds": 23.08,
+  "inputsUnchanged": true
+}
