@@ -1,5 +1,5 @@
 {
-  "revision": "2026-11-12-instalacion18-demo50-176",
+  "revision": "2026-11-12-instalador-online19-177",
   "groupsBundle": "c457e5860274dcf87ec68dbdb1f7fef60b2589adaba20a00f2410157dc05487c",
   "cases": [
     {
@@ -3031,6 +3031,24 @@
         "A ya fue contrastada tras reinicio real:50nombres,8conteos,HTTPS48 yMFA disponible. La primera tarea automática fallóHTTPS; comprobador oficialmanual posteriorpasó, ambosconservados. No se reclasifica como coldNew18 ni se habilita elcaso enotro snapshot."
       ],
       "expected": "50 clientes,66 sitios,88 edificios,226 salas,180 racks,1563 equipos,2869 grupos,20665 puertos y2207 conexiones. Nombres fijos17EN/17DE/16ES; catálogo884 disponible, Demo50 conserva868 revisiones/506modelos. D/E intactos. Pendiente de VM y QA; las pruebas locales no lo habilitan."
+    },
+    {
+      "id": "QA-177",
+      "module": "Instalación desde GitHub",
+      "title": "Online19: instalación nueva y Demo50 desde proveedores oficiales",
+      "feature": "planned",
+      "steps": [
+        "Usar únicamente una VM Windows Server2025 limpia noDC autorizada, con Internet y sesión administradora. Conservar A/D/E; encendido, snapshots y reinicio a cargo de Wascar. En VMware, comprobar NAT: host-only sin gateway no tiene salida a Internet.",
+        "Descargar RackClick-Windows-Online-19.zip y el SHA256 externo de su Release privada. Crear C:\\RackClick_Instalar19, copiar el ZIP, abrir Inicio → PowerShell → botón derecho → Ejecutar como administrador. Comparar Get-FileHash con el SHA publicado antes de extraer en una carpeta nueva.",
+        "Abrir 00-LEEME.html EN/DE/ES y ejecutar INICIAR-RACKCLICK.cmd como administrador. Revisar las condiciones y confirmar ADQUIRIR. Se descargan Python temporal, archivo.NET del runtime, PostgreSQL yVC++ con pins; no se compila producto ni se instalan SDK/Node/Python.",
+        "Si la preparación falla, conservar su carpeta e informe. No borrar bases/cuentas ni repetir una instalación parcial. Un transporte anterior privado sin instalación se conserva; no se adopta ni se usa como éxito. La falta de Internet debe comunicarse como download_unavailable.",
+        "En el asistenteNew revisar IP actual, nombre del navegador, subred, HTTPS5443, PG55441, Systemhaus, Wascar, servicioRackClick y cuentaRackClickSvc. Esperar HTTPS ybackup; Acceso privado muestra sólo localmente la contraseña nueva. No publicar credenciales ni factores.",
+        "En el ZIP extraído, CARGAR-50-CLIENTES → CARGAR-50-CLIENTES.cmd. Indicar la URL nueva y credencialesprivadas/TOTP si está activo; confirmar una sola vez CARGAR 50 CLIENTES SINTETICOS sobre servidor48vacío. Esperar demo50_loaded_verified; ante rechazo o incertidumbre conservar la salida y no repetir.",
+        "Comprobar50nombres17EN/17DE/16ES y8colecciones con180racks/1563equipos/20665puertos/2207conexiones. Recorrer Clientes→sitio→sala→rack y caras/puertos; cambiar idioma sin traducir nombres propios. Generarbackup posterior. No importar seguridad deA ni desactivarMFA.",
+        "Reiniciar Windows manualmente sin revertir snapshots. Abrir acceso RackClick-VERIFICAR-19 delEscritorio → Verificar instalación. Contrastar servicio automático,HTTPS y datos persistentes. Conservar por separado resultados delverificador automático y manual.",
+        "Estado B: New19,50clientes,backup ydatos trasreinicio comprobados. Primer verificadorautomáticoHTTPSfalló yseconservó; oficialmanualpostboot_verified0. Rutaautomatizadapreparación+brokeroficial;resumenGUIinicialcontrastadoporcódigo,no todoslosclics. Caso planned enesta guía compartida: disponibilidad sóloenB/entrega19 yQA finaldeWascar pendiente. A/D/E yresultadosdelusuario conservados."
+      ],
+      "expected": "Mismo producto48/catálogo884/MFA45 y datosDemo50 queA, con nuevas identidades/contraseñas/claves/certificados en el destino. Ningún runtime restringido alojado enGitHub; descargas oficiales exactas. Candidata de pruebas, sin adopción final. Caso planned hasta ensayo y disponibilidad real."
     }
   ],
   "membersBundle": "efc8bda2405174feced0792048f7c65a2bfdba6665d7220b440589dcdea8ecd7",

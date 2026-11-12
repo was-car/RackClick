@@ -1,0 +1,12 @@
+{
+  "edition": "18",
+  "archiveSha256": "512fcaf6aa255e6ff6ae9610daa722f8b9d135972d33d5a249b9d42ad90625ed",
+  "bytes": 144203012,
+  "members": 73,
+  "serviceNoticeSha256": "21aee7ffa0bd422172025695578e486cb592da05b5d3d86a45dce4f8cdb23d80",
+  "runtimeLicenseSha256": "7f6839a61ce892b79c6549e2dc5a81fdbd240a0b260f8881216b45b7fda8b45d",
+  "serviceNoticeRefersToRuntimeLicense": true,
+  "runtimeLicenseHasMicrosoftTerms": true,
+  "runtimeLicenseIsMit": false,
+  "installedOrPublished": false
+}

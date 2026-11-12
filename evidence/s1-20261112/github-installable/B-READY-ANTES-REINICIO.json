@@ -1,0 +1,15 @@
+{
+  "publicOrigin": "https://192.168.178.125:5443",
+  "frontendSha256": "21d85d7543595d77befce549b98c7f0ebb07d8619648fc9830132f2a04523d04",
+  "code": "native19_ready_before_reboot",
+  "serviceAutomatic": true,
+  "rebootVerified": false,
+  "serviceStandard": true,
+  "initialBackupVerified": true,
+  "success": true,
+  "credentialsRead": false,
+  "installationId": "f4f6f049-2005-4c02-b4ba-b24856cf1b07",
+  "schemaVersion": 1,
+  "httpsValidated": true,
+  "applicationSchema": 48
+}

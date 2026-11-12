@@ -1,0 +1,23 @@
+{
+  "edition": "19",
+  "transportRevision": 2,
+  "archiveSha256": "186cecafcfa27009f9476ba5fc58bd6538710eb9d487886f8844008998296806",
+  "archiveBytes": 12653708,
+  "archiveMembers": 68,
+  "coreSha256": "572215e3e99b2510f64433ba458beead7de69c761b722ef521b0abb221ca35e5",
+  "nativeSha256": "4bb169adf155cb521ace5917afce40ddf3a59ff5a4123c5ce726bcc3f28584dd",
+  "manualSha256": "71c35c5537c667655cc7a8b575a65262c52b37dd48c7f1f9839ce19cf5f3a9c1",
+  "schema": 48,
+  "demoCustomers": 50,
+  "restrictedRuntimeBinariesIncluded": false,
+  "checkBPassed": true,
+  "installationBExecuted": false,
+  "networkBReady": false,
+  "githubReleasePublished": false,
+  "existingInstallationsModified": false,
+  "currentGate": "waiting_for_B_Internet_NAT",
+  "closureLedgerUnchanged": true,
+  "independentReview": "favorable_before_B_installation",
+  "independentReviewSha256": "53161cdb95ed688201466d0d4d4e21f34ae6d323c52b6a29eae70cdcaf3abe09",
+  "reviewTestsExecuted": 5
+}

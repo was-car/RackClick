@@ -6,6 +6,15 @@ RackClick dokumentiert Netzwerkinfrastruktur mit einer interaktiven Ansicht von 
 
 Der Server verbindet die bewährte Offline-Oberfläche mit gemeinsam genutzten Daten und serverseitigen Berechtigungen. Die Hierarchie lautet **Systemhaus → Kunden → Standorte → Gebäude → Räume → Racks → Geräte → Ports und Verbindungen**. Datendosen und Endgeräte im Raum gehören ebenfalls zum Inventar.
 
+## Auf Windows Server installieren
+
+Den **[Windows-Installer Online19](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48)** und seine SHA256-Prüfsumme herunterladen; anschließend die **[vollständige Anleitung EN/DE/ES](docs/INSTALACION19-PASO-A-PASO.md)** befolgen. Voraussetzung ist ein neuer Windows Server 2025 x64 mit Desktopdarstellung und Internetzugang; Domänencontroller sind ausgeschlossen. Kompilierung und manuelle Installation von SDK, Node oder Python sind nicht erforderlich. Abhängigkeiten werden direkt von offiziellen Anbietern geladen und geprüft.
+
+Mit **CARGAR-50-CLIENTES** das vollständige synthetische Inventar von W02-A laden. Die leere Installation allein enthält noch keine 50 Kunden. Pro Server werden neue Konten, Kennwörter, Schlüssel und Zertifikate erzeugt. Restore und automatische Netzänderungen für Schema48 bleiben gesperrt. Testkandidat, keine Produktionsabnahme.
+
+
+Auf einer neuen Windows-Server2025-VM geprüft: New19,50Kunden,Sicherung undDaten nachNeustart. Diefrühe automatischeStartprüfung meldete einenFehler; diemanuelleoffiziellePrüfung bestand. BeideErgebnissebleibenerhalten; siehe[PrüfungundGrenzen](docs/PUBLICACION-ONLINE19-12-11-2026.md).
+
 ## Enthaltene Funktionen
 
 - Interaktive Vorder- und Rückansichten, physische Montage und Fachböden, Portzustände, Verkabelung sowie Stromversorgung und PoE-Dokumentation.
@@ -47,4 +56,4 @@ Offline-Parität, Wiederherstellung, Leistung und abschließende QA folgen der [
 | `docs/` | Anleitungen, Verträge, Entscheidungen und Planung |
 | `reference/` | Abgenommene Offline-Referenz als Build-Eingabe |
 
-Native Installer-Binärdateien bleiben außerhalb von GitHub, solange die Weitergabebedingungen geprüft werden. Private Datenbanken, Zugangsdaten, Zertifikate, MFA-Schlüssel und Buildprotokolle sind ausgeschlossen. Der Repositoryzugang erteilt keine neue Open-Source-Lizenz; [Hinweise zu Drittanbieterkomponenten](THIRD-PARTY-NOTICES.md) gelten weiterhin. Die festgeschriebenen Abhängigkeiten und dokumentierten Werkzeuge verwenden, statt Versionen an ein lokales SDK anzupassen.
+Das Online-Release liefert die geprüfte Anwendung; Runtime-Archive werden direkt von offiziellen Anbietern bezogen. Private Datenbanken, Zugangsdaten, Zertifikate, MFA-Schlüssel und Buildprotokolle sind ausgeschlossen. Der Repositoryzugang erteilt keine neue Open-Source-Lizenz; [Hinweise zu Drittanbieterkomponenten](THIRD-PARTY-NOTICES.md) gelten weiterhin. Die festgeschriebenen Abhängigkeiten und dokumentierten Werkzeuge verwenden, statt Versionen an ein lokales SDK anzupassen.

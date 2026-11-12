@@ -6,7 +6,7 @@ Actualizado el 12 de noviembre de 2026 · esquema de fuentes **48**.
 
 Este recorrido crea un **laboratorio local de desarrollo nuevo**, con el inventario sintético original de diez clientes. No modifica un servidor RackClick instalado. Cada arranque crea otra base y credenciales aleatorias; los laboratorios anteriores se conservan en disco. No reabre ni exporta cambios de un laboratorio anterior.
 
-La demo usa **HTTP sólo en loopback** y desactiva explícitamente el proveedor MFA. No la expongas a la red. Instalación como servicio Windows, HTTPS, backups programados y MFA real son otro recorrido. Los instaladores binarios no se distribuyen por este repositorio mientras se revisan sus condiciones de redistribución; instalación limpia New/Restore y comprobación tras reiniciar del paquete nativo más reciente siguen pendientes.
+La demo usa **HTTP sólo en loopback** y desactiva explícitamente el proveedor MFA. No la expongas a la red. Instalación como servicio Windows, HTTPS, backups programados y MFA real son otro recorrido. Para un servidor nativo utiliza la [Release Windows Online19](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48) y su [manual completo](INSTALADOR19-ONLINE.html). Adquiere dependencias oficiales con pins e incluye el cargador opcional Demo50. Este recorrido desde fuentes continúa siendo un laboratorio local; Restore48 permanece deshabilitado.
 
 ## 1. Requisitos
 

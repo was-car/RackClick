@@ -1,5 +1,14 @@
 # Third-party references and notices
 
+## Online19 distribution / Distribución Online19 / Online19-Weitergabe
+
+The historical statements below about withholding native installers apply to the source-only snapshots and complete offline packages through18. Online19 publishes the reviewed application, service and package dependencies with their required notices. It contains no copies of the .NET runtime/SDK, PostgreSQL, VisualC++ or Python; these download directly from their providers with fixed hashes. Their own terms still apply, including the [Windows .NET Library terms](https://dotnet.microsoft.com/en-us/dotnet_library_license.htm). MIT notices for NuGet packages do not replace that runtime agreement.
+
+Las menciones históricas a no publicar instaladores describen las selecciones de fuentes y paquetes offline hasta18. Online19 publica aplicación, servicio y dependencias de paquetes con sus avisos; adquiere runtime/SDK, PostgreSQL, VisualC++ y Python directamente de proveedores. Sus condiciones propias siguen vigentes. El aviso MIT de paquetes no sustituye el contrato del runtime.
+
+Die historischen Aussagen zur Zurückhaltung nativer Installer betreffen Quellstände und vollständige Offline-Pakete bis18. Online19 liefert Anwendung, Dienst und Paketabhängigkeiten mit ihren Hinweisen. Runtime/SDK, PostgreSQL, VisualC++ und Python werden direkt von Anbietern mit festen Hashes bezogen; ihre eigenen Bedingungen gelten weiterhin. MIT-Hinweise der NuGet-Pakete ersetzen nicht den Runtime-Vertrag.
+
+
 This file does not grant a new licence for RackClick. It records the provenance of selected third-party reference material; it does not replace the notices and terms of dependencies acquired through the committed locks.
 
 ## NetBox device-type library reference data

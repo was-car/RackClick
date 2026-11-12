@@ -1,0 +1,29 @@
+{
+  "securityImported": false,
+  "automaticRetry": false,
+  "mfaStateChanged": false,
+  "code": "demo50_loaded_verified",
+  "commands": 2553,
+  "utc": "2026-11-12T01:06:24.2164984Z",
+  "nameLanguages": {
+    "en": 17,
+    "de": 17,
+    "es": 16
+  },
+  "counts": {
+    "portGroups": 2869,
+    "devices": 1563,
+    "rooms": 226,
+    "sites": 66,
+    "ports": 20665,
+    "connections": 2207,
+    "racks": 180,
+    "buildings": 88
+  },
+  "success": true,
+  "installationId": "f4f6f049-2005-4c02-b4ba-b24856cf1b07",
+  "schemaVersion": 1,
+  "httpsValidated": true,
+  "namesVerified": true,
+  "customers": 50
+}

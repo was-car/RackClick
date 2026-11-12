@@ -1,0 +1,18 @@
+{
+  "source": "official_manual_verifier",
+  "exitCode": 0,
+  "schemaVersion": 1,
+  "result": {
+    "schemaVersion": 1,
+    "valid": true,
+    "success": true,
+    "exitCode": 0,
+    "code": "postboot_verified",
+    "checkedUtc": "2026-11-12T01:11:01.3193999Z",
+    "rebootVerified": true,
+    "productAdopted": false,
+    "installationId": "f4f6f049-2005-4c02-b4ba-b24856cf1b07",
+    "bootUtc": "2026-11-12T01:09:09.5000000Z"
+  },
+  "firstAutomaticPreserved": true
+}

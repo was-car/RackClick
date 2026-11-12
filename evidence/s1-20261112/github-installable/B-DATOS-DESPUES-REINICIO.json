@@ -1,0 +1,42 @@
+{
+  "canEnableOwnMfa": true,
+  "graceDays": 45,
+  "nameLanguages": {
+    "en": 17,
+    "de": 17,
+    "es": 16
+  },
+  "frontendSha256": "21d85d7543595d77befce549b98c7f0ebb07d8619648fc9830132f2a04523d04",
+  "bootUtc": "2026-11-12T01:09:09.5000000Z",
+  "credentialsDisclosed": false,
+  "namesVerified": true,
+  "powerOperation": false,
+  "serviceAutomatic": true,
+  "postbootVerifierSource": "official_manual_check_after_automatic_early_failure",
+  "automaticVerifierLastResult": 1,
+  "success": true,
+  "customers": 50,
+  "serviceStandard": true,
+  "globalMfaPolicyEnabled": true,
+  "httpsValidated": true,
+  "code": "postboot_demo50_verified",
+  "globalAdministratorExempt": true,
+  "mfaAvailable": true,
+  "utc": "2026-11-12T01:12:21.4627177Z",
+  "factorState": "none",
+  "mfaChanged": false,
+  "officialPostbootCode": "postboot_verified",
+  "applicationSchema": 48,
+  "counts": {
+    "portGroups": 2869,
+    "devices": 1563,
+    "rooms": 226,
+    "sites": 66,
+    "ports": 20665,
+    "connections": 2207,
+    "racks": 180,
+    "buildings": 88
+  },
+  "installationId": "f4f6f049-2005-4c02-b4ba-b24856cf1b07",
+  "schemaVersion": 1
+}

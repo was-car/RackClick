@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "vm": "RackClick-W02-B",
+  "networkReady": true,
+  "publicAddressCandidate": "192.168.178.125",
+  "prefix": 24,
+  "gateway": "192.168.178.1",
+  "normalWindowsTls": true,
+  "providerHeads": [
+    {
+      "id": "sdk",
+      "status": 200,
+      "bytes": 300608304,
+      "valid": true
+    },
+    {
+      "id": "postgresql",
+      "status": 200,
+      "bytes": 379726839,
+      "valid": true
+    },
+    {
+      "id": "crt",
+      "status": 200,
+      "bytes": 18731856,
+      "valid": true
+    }
+  ],
+  "prepare02Result": "assembler_failed",
+  "cause": "Python_OpenSSL_missing_local_issuer",
+  "pythonVerified": true,
+  "productInstallationStarted": false,
+  "servicesCreated": 0,
+  "accountsCreated": 0,
+  "databasesCreated": 0,
+  "trustOverrideAdded": false,
+  "manualCaImported": false
+}

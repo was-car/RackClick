@@ -114,7 +114,7 @@ def build(archive, service_publish, output, *, bundle_sha256, edition, stamp=STA
         if len(set(names)) != len(names):
             raise ValueError('duplicate_original_member')
         actual = [name for name in names if name.startswith('operators/')]
-        selected_operators = OPERATORS + ('RackClick.SqlSecrets.ps1',) if edition in {'12', '13', '14', '15', '16', '17', '18'} else OPERATORS
+        selected_operators = OPERATORS + ('RackClick.SqlSecrets.ps1',) if edition in {'12', '13', '14', '15', '16', '17', '18', '19'} else OPERATORS
         expected = {'operators/' + name for name in selected_operators}
         if len(actual) != len(expected) or set(actual) != expected:
             raise ValueError('original_operator_inventory_mismatch')
@@ -141,8 +141,10 @@ def build(archive, service_publish, output, *, bundle_sha256, edition, stamp=STA
     for path in all_published:
         checked_path(path, LOCAL)
     published = [path for path in all_published if path.is_file()]
-    if len(published) != 38:
+    if len(published) != (37 if edition == '19' else 38):
         raise ValueError('service_inventory_mismatch')
+    if edition == '19' and any(path.name == 'RackClick.WindowsService.exe' for path in published):
+        raise ValueError('unused_apphost_not_distributed')
     for path in published:
         checked_path(path, LOCAL)
         if not path.is_file() or path.suffix.lower() not in {'.dll', '.exe', '.json', '.pdb'}:
@@ -150,7 +152,7 @@ def build(archive, service_publish, output, *, bundle_sha256, edition, stamp=STA
         payload['service/' + path.relative_to(service_publish).as_posix()] = path.read_bytes()
     if digest(payload.get('service/RackClick.WindowsService.dll', b'')) != SERVICE_DLL_SHA256:
         raise ValueError('service_dll_hash_mismatch')
-    manual = 'docs/INSTALADOR' + edition + '-SQL-PROTEGIDO.html' if edition in {'12', '13', '14', '15', '16', '17', '18'} else 'docs/INSTALADOR11-WINDOWS43.html' if edition == '11' else 'docs/INSTALACION-SERVIDOR-DESDE-CERO.html'
+    manual = 'docs/INSTALADOR' + edition + '-SQL-PROTEGIDO.html' if edition in {'12', '13', '14', '15', '16', '17', '18', '19'} else 'docs/INSTALADOR11-WINDOWS43.html' if edition == '11' else 'docs/INSTALACION-SERVIDOR-DESDE-CERO.html'
     payload['docs/INSTALACION-SERVIDOR-DESDE-CERO.html'] = checked_path(ROOT / manual).read_bytes()
     if edition == '11':
         payload['docs/INSTALADOR11-WINDOWS43.md'] = checked_path(ROOT / 'docs/INSTALADOR11-WINDOWS43.md').read_bytes()
@@ -159,6 +161,13 @@ def build(archive, service_publish, output, *, bundle_sha256, edition, stamp=STA
         payload[guide] = checked_path(ROOT / guide).read_bytes()
     payload['LICENSES/service-host-dependencies.json'] = checked_path(ROOT / 'development/windows-service/packages.lock.json').read_bytes()
     payload['LICENSES/service-host-NOTICE.txt'] = b'RackClick Windows service host dependencies: Microsoft.Extensions.Hosting.WindowsServices 10.0.12 and locked Microsoft/System transitive dependencies. MIT; see dotnet-LICENSE.txt and service-host-dependencies.json. Official source: https://www.nuget.org/packages/Microsoft.Extensions.Hosting.WindowsServices/10.0.12\n'
+    if edition == '19':
+        for name, pin in [('service-host-MIT.txt', 'ae48df11a335dc1a615f4f938b69cba73bcf4485c4f97af49b38efb0f216353b'), ('service-host-THIRD-PARTY-NOTICES.txt', '6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21')]:
+            data = checked_path(ROOT / 'licenses' / name).read_bytes()
+            if digest(data) != pin:
+                raise ValueError('service_license_pin_mismatch')
+            payload['LICENSES/' + name] = data
+        payload['LICENSES/service-host-NOTICE.txt'] = b'RackClick Windows service uses the 30 Microsoft/System packages pinned in service-host-dependencies.json, version 10.0.12. Their MIT text and copyright are in service-host-MIT.txt; preserve service-host-THIRD-PARTY-NOTICES.txt. The separately acquired runtime has its own terms in dotnet-LICENSE.txt, which is not the MIT package license. The unused apphost EXE is omitted; SCM runs the DLL with the acquired dotnet.exe.\n'
     payload['00-EMPEZAR-AQUI.html'] = checked_path(ROOT / manual).read_bytes()
     payload['00-ESTADO.txt'] = (
         'RACKCLICK - CANDIDATA DE INSTALACION Y QA EN WINDOWS SERVER - EDICION ' + edition + '\r\n'

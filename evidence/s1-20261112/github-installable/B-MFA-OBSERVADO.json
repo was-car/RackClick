@@ -1,0 +1,13 @@
+{
+  "credentialsDisclosed": false,
+  "factorChanged": false,
+  "globalAdministratorExempt": true,
+  "factorState": "none",
+  "success": true,
+  "graceDays": 45,
+  "globalPolicyEnabled": true,
+  "code": "native19_mfa_policy_observed",
+  "canEnableOwnMfa": true,
+  "schemaVersion": 1,
+  "available": true
+}

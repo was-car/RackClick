@@ -1,0 +1,12 @@
+{
+  "manifestSha256": "c64526dffdc5616800e6bb17c20d3cae6db50aebc1b42539391d98bf1908a17c",
+  "taskResult": 0,
+  "installationId": "f4f6f049-2005-4c02-b4ba-b24856cf1b07",
+  "createdUtc": "2026-11-12T01:06:56.3254723Z",
+  "serviceAccountVerified": true,
+  "rebootVerified": false,
+  "success": true,
+  "afterCustomers": 50,
+  "code": "post_demo_backup_verified",
+  "schemaVersion": 1
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "valid": false,
+  "success": false,
+  "exitCode": 1,
+  "code": "postboot_https_health_failed",
+  "checkedUtc": "2026-11-12T01:09:23.3190503Z",
+  "rebootVerified": false,
+  "productAdopted": false
+}

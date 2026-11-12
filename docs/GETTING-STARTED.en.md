@@ -6,7 +6,7 @@ Updated 12 November 2026 · source schema **48**.
 
 This walkthrough creates a **new local development lab**, with the original 10-customer synthetic inventory. It does not modify an installed RackClick server. Every start creates another database and random credentials; previous labs remain on disk. It does not reopen or export changes from a previous lab.
 
-The demo uses **HTTP on loopback only** and explicitly disables the MFA provider. Do not expose it to the network. Native Windows service installation, HTTPS, scheduled backups and real MFA are a separate deployment path. Installer binaries are not distributed through this repository while redistribution conditions are under review; clean New/Restore and post-reboot checks of the latest native package remain pending.
+The demo uses **HTTP on loopback only** and explicitly disables the MFA provider. Do not expose it to the network. Native Windows service installation, HTTPS, scheduled backups and real MFA are a separate deployment path. For a native server use the separate [Windows Online19 release](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48) and [complete installation guide](INSTALADOR19-ONLINE.html). It acquires exact dependencies directly from official providers and includes the optional Demo50 loader. This source walkthrough remains a loopback development lab, not that native installation; Restore48 stays disabled.
 
 ## 1. Requirements
 

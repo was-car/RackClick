@@ -6,7 +6,7 @@ Stand 12. November 2026 · Quellschema **48**.
 
 Diese Anleitung erzeugt ein **neues lokales Entwicklungslabor** mit dem ursprünglichen synthetischen Inventar für zehn Kunden. Ein installierter RackClick-Server wird nicht verändert. Jeder Start erzeugt eine weitere Datenbank und zufällige Zugangsdaten; frühere Labore bleiben auf dem Datenträger. Änderungen eines früheren Labors werden weder erneut geöffnet noch exportiert.
 
-Die Demo verwendet **HTTP ausschließlich auf Loopback** und deaktiviert den MFA-Anbieter ausdrücklich. Nicht für das Netzwerk freigeben. Windows-Dienstinstallation, HTTPS, geplante Backups und echte MFA sind ein eigener Bereitstellungspfad. Installer-Binärdateien werden während der Prüfung ihrer Weitergabebedingungen nicht über dieses Repository verteilt. Saubere New-/Restore-Installationen und Neustartprüfungen des neuesten nativen Pakets stehen noch aus.
+Die Demo verwendet **HTTP ausschließlich auf Loopback** und deaktiviert den MFA-Anbieter ausdrücklich. Nicht für das Netzwerk freigeben. Windows-Dienstinstallation, HTTPS, geplante Backups und echte MFA sind ein eigener Bereitstellungspfad: das [Windows-Release Online19](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48) mit seiner [vollständigen Anleitung](INSTALADOR19-ONLINE.html). Dieser Quellcode-Leitfaden bleibt ein lokales Entwicklungslabor. Restore für Schema48 bleibt deaktiviert.
 
 ## 1. Voraussetzungen
 
@@ -101,3 +101,7 @@ Für eine dauerhafte Windows-Bereitstellung das separat geprüfte native Paket u
 Native MFA-Registrierung, Anmeldung und Dashboard wurden separat getestet. Richtlinie: 45 Tage Übergangsfrist für normale Konten, Techniker und Kundenadministratoren; für bestehende Konten ab Richtlinienaktivierung, für neue ab Erstellung. Ausgenommen sind nur globale Systemhausadministratoren mit beiden globalen Verwaltungsberechtigungen. Das Entfernen eines Faktors setzt die Frist nicht zurück. Wiederherstellung, Notfall/Verlust und Rotation besitzen geprüfte interne Implementierungen und begrenzte Labortests; endgültige Produktionsabnahme und verbleibende Szenarien sind noch offen. Siehe [aktuellen Stand und Grenzen](PUBLICACION-GITHUB-12-11-2026.md).
 
 Echte MFA benötigt einen separat geschützten Schlüsselspeicher außerhalb von PostgreSQL, korrekte DPAPI-/ACL-Konfiguration und die Dienstidentität. Schlüssel und Wiederherstellungsumschläge sind von GitHub ausgeschlossen. Keine Konfiguration eines anderen Rechners kopieren und MFA nicht über diese Demo aktivieren.
+
+## Native Windows-Installation
+
+Für den vollständigen Server das separate [Windows-Release Online19](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48) und die [Anleitung EN/DE/ES](INSTALADOR19-ONLINE.html) verwenden. Abhängigkeiten kommen direkt von offiziellen Anbietern mit festen Hashes; Demo50 ist enthalten. Diese Quellanleitung bleibt ein lokales Entwicklungslabor ohne natives MFA. Restore48 bleibt deaktiviert.

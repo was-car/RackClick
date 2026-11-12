@@ -1,5 +1,14 @@
 # RackClick — continuidad ChatGPT → Codex local
 
+## 12.11.2026 · Online19 y Demo50 verificados en B nueva
+
+Transporte propio revisión3 SHA256 `4d9dccbe75cc6a1900204699459fa0653cfaa4722626f9b48484e9259aacd6bf`,68miembros/12655070bytes. Adquisición directa dePython temporal, SDKfuente delruntime, PGyCRT conTLSWindows/pins; ningún runtime restringido alojado. Core04 yproducto48 exactos; servicio37 sinapphost, MIT/TPN correctos.20WinPS5.1/9Python y5focosindependientes finalesPASS; fuentes426 idénticas a651.
+
+B nueva: Prepare03exit0,New19brokeroficial una vez sinfinalizadores, cuentas/claves/HTTPS nuevas, servicioSTD/Auto ybackupinicial.2553comandos cargaron50clientes17EN/17DE/16ES;50nombres y8colecciones contrastados;backup posterior0. Wascar reinicióB; servicioautomático/HTTPS48/frontend21d85 ydatos persistentes. MFAavailable/gracia45/exenciónglobal/factorWascarNONEsinmodificar. Verificadoroficialmanualpostboot_verified0. PrimeroautomáticoHTTPSfalló1 yseconservó; procesoactualcreadodespués, sinreconstruirhistoria previa niafirmarcausadeA. Candidata de pruebas, no aceptaciónproductiva;Restore48/red48 bloqueados.
+
+Descarga nativa como Releaseprivada separada de fuentes;manualpasoapasoEN/DE/ES ydatos50opcionales. Revisión selección/licencias/artefacto favorable; escaneo/manifiestos/índice/remoto deben completarse antes de anunciarla. A/D/E,snapshots ycredencialespersonales preservados. Agente no ejecutó operacionesdepowerVM. [Ensayo y límites](PUBLICACION-ONLINE19-12-11-2026.md). Índice26,63/100 delcierre restante intacto, sin puntos nuevos por publicación.
+
+
 ## 12.11.2026 · A operativa después del reinicio con50clientes EN/DE/ES
 
 Wascar reinicióWindows enA; servicioSTD arrancóAuto, HTTPSnormal48/JS21d85…coincidente,50nombres y8conteos releídos:180racks/1563equipos/20665puertos/2207conexiones. PolíticaMFA activa/gracia45/exención global/disponibilidad yactivación propia contrastadasAPI; factor nuevoWascar aúnnone, no modificado poragente. Backup posterior yaejecutado0 conrolSTD. AccesoWeb ynota sincontraseñas creados enEscritorio. D/E ysnapshotspreservados.

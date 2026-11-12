@@ -6,12 +6,21 @@ RackClick documenta infraestructura de red mediante una vista interactiva de rac
 
 El servidor lleva la interfaz offline consolidada a datos compartidos con permisos comprobados en el servidor. La jerarquía es **Systemhaus → clientes → sitios → edificios → salas → racks → equipos → puertos y conexiones**. Las tomas y los dispositivos finales de sala también forman parte del inventario.
 
+## Instalar en Windows Server
+
+Descarga el **[instalador Windows Online19](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48)** y su SHA256 externo; sigue el **[manual completo EN/DE/ES](docs/INSTALACION19-PASO-A-PASO.md)**. Usa un Windows Server 2025 x64 nuevo con Escritorio e Internet, sin controlador de dominio. No hay que compilar ni instalar manualmente el SDK, Node o Python. Las dependencias se descargan directamente de sus proveedores oficiales y se verifican.
+
+Ejecuta el cargador incluido **CARGAR-50-CLIENTES** para reproducir todo el inventario sintético de W02-A. La instalación vacía por sí sola no incluye los 50 clientes. Cada servidor recibe cuentas, contraseñas, claves y certificados nuevos. Restore y cambio automático de red para el esquema48 siguen deshabilitados. Es una candidata de pruebas, sin aceptación productiva final.
+
+
+Ensayado en una VM Windows Server2025 nueva: New19,50clientes,backup y persistencia tras reinicio. El comprobador automático temprano marcó error; el verificador oficial manual pasó. Se conservan ambos resultados; ver [ensayo y límites](docs/PUBLICACION-ONLINE19-12-11-2026.md).
+
 ## Qué incluye
 
 - Frontal y trasera interactivos, montaje físico y bandejas, estados de puertos, cableado y documentación de alimentación/PoE.
 - Catálogo con búsqueda: **884 revisiones de perfiles para 877 modelos comerciales distintos**, incluidos los 506 seleccionados originalmente, routers de proveedores alemanes y repetidores. Una revisión no equivale a otro modelo físico.
 - Inventario compartido, ámbitos de clientes, grupos de usuarios y clientes, capacidades, auditoría y guardado confirmado.
-- Enrolamiento/login MFA y administración de usuarios nativos. La política concede **45 días** antes de exigir MFA; los administradores globales del Systemhaus están exentos. Recuperación portable, emergencia, rotación y aceptación completa siguen pendientes.
+- Enrolamiento/login MFA y administración de usuarios nativos. La política concede **45 días** antes de exigir MFA; los administradores globales del Systemhaus están exentos.
 - Interfaz en **inglés, alemán y español**. La presentación del proyecto y la guía de demostración desde fuentes están en esos tres idiomas; los registros técnicos históricos conservan su idioma original.
 
 ## Probar las fuentes
@@ -45,4 +54,4 @@ Frontend **React/JavaScript**; servidor **C# / ASP.NET Core / .NET 10**; **Postg
 | `docs/` | Guías, contratos, decisiones y planificación |
 | `reference/` | Referencia offline adoptada que utiliza la compilación |
 
-Los instaladores binarios se conservan fuera de GitHub mientras se revisan sus condiciones de redistribución. Se excluyen bases privadas, credenciales, certificados, claves MFA y registros de compilación. El acceso al repositorio no concede una licencia abierta nueva; siguen aplicando los [avisos de terceros](THIRD-PARTY-NOTICES.md). Usa los locks y herramientas documentados, sin cambiar versiones para ajustarlas a otro SDK instalado.
+La Release online distribuye la aplicación revisada y adquiere los runtimes directamente de sus proveedores oficiales. Se excluyen bases privadas, credenciales, certificados, claves MFA y registros de compilación. El acceso al repositorio no concede una licencia abierta nueva; siguen aplicando los [avisos de terceros](THIRD-PARTY-NOTICES.md). Usa los locks y herramientas documentados, sin cambiar versiones para ajustarlas a otro SDK instalado.
