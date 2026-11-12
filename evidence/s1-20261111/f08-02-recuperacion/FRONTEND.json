@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "node": "24.21.0",
+  "counts": {
+    "tests": 20,
+    "pass": 20,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "files": [
+    "development/frontend/tests/mfa-api.test.mjs",
+    "development/frontend/tests/mfa-recovery.test.mjs"
+  ],
+  "browserExecuted": false,
+  "warnings": [
+    "MODULE_TYPELESS_PACKAGE_JSON"
+  ],
+  "historicalBrowser": "punto3 Edge, not rerun"
+}

@@ -599,8 +599,8 @@
         "F-05"
       ],
       "source": "docs/PLAN-PARIDAD-RC10-SERVIDOR.md",
-      "state": "exportacion_JSON_actual_probada_importacion_y_backup_pendientes",
-      "outcome": "Separar intercambio JSON de copia PostgreSQL/secretos. Acceso administrativo, progreso, integridad, destino nuevo y recuperación MFA comprobada; no sobrescribir una base silenciosamente. Exportación actual RackClickInventory-v1 por cliente probada PG17.11/API/Edge,4MiB sin truncar, recibo/SHA256, sólo inventario. Importación/merge/originalRC9/backup PostgreSQL y Windows43 siguen pendientes; docs/PUNTO3-FUNCIONES-PENDIENTES.md."
+      "state": "inventario_global_demo50_copia_restore_vacio_probados_native20_y_backup_integral_pendientes",
+      "outcome": "12.11: panel EN/DE/ES de inventario global con Demo50, copia JSON y restore atómico sobre destino vacío, conservando cuentas/MFA; PG17.11 y Edge real, archivo descargado restaurado en otro laboratorio y revisión independiente. UUID/montajes/puertos/cables y metadatos,32MiB/100000filas/500clientes, recibos/cancelación sin retry. Candidata20 propia preparada; New20/QA por Wascar pendientes. No es copia PostgreSQL/Windows/seguridad: Restore48 completo, integración del backup integral, importación/merge RC9 y recuperaciónMFA operativa mantienen su alcance. Ver docs/ADMIN-DATOS-COPIAS-INVENTARIO-12-11-2026.md y docs/PUBLICACION-ONLINE20-12-11-2026.md. Sin crédito de ledger por este panel."
     },
     {
       "id": "REQ-UX-06",

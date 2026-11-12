@@ -1,0 +1,14 @@
+[
+  {
+    "path": "development/frontend/src/ServerApp.jsx",
+    "sha256": "4f3314633284677532ddcbe829a6daa1e0cb68a4477481c8bcb661cc49712620"
+  },
+  {
+    "path": "development/frontend/src/AdminUsers.jsx",
+    "sha256": "55ec9aa383d81c300d63c11cfcc34fcf0e3d3635c579ee5fc69b79512b0fa468"
+  },
+  {
+    "path": "development/frontend/src/AdminInventoryData.jsx",
+    "sha256": "e483661b4aba860a7ec451f02e1da688c3bcc9f244c13825c643fd5a91fadab8"
+  }
+]

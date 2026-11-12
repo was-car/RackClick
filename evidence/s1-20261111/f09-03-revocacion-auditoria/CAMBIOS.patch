@@ -1,0 +1,219 @@
+--- a/development/server/src/RackClick.Server/MfaLossResetDatabase.cs
++++ b/development/server/src/RackClick.Server/MfaLossResetDatabase.cs
+@@ -153,13 +153,13 @@
+                 insert.Parameters.AddWithValue("plan",planHash);insert.Parameters.AddWithValue("envelope",envelopeHash);insert.Parameters.AddWithValue("material",materialHash);insert.Parameters.AddWithValue("zero",new string('0',64));await insert.ExecuteNonQueryAsync(ct);
+             }
+             await using(var archive=new NpgsqlCommand("INSERT INTO rackclick_private.mfa_loss_factor_archive SELECT @operation,f.systemhaus_id,f.user_id,f.key_version,to_jsonb(f) FROM public.app_mfa_factor f WHERE f.key_version=ANY(@lost)",db,tx))
+-            {archive.Parameters.AddWithValue("operation",plan.OperationId);archive.Parameters.AddWithValue("lost",plan.LostVersions);await archive.ExecuteNonQueryAsync(ct);}
++            {archive.Parameters.AddWithValue("operation",plan.OperationId);archive.Parameters.AddWithValue("lost",plan.LostVersions);if(await archive.ExecuteNonQueryAsync(ct)!=plan.Factors)throw Fail("mfa_loss_archive_write_invalid");}
+             await using(var pending=new NpgsqlCommand("""
+                 INSERT INTO public.app_mfa_user(systemhaus_id,user_id,mfa_required,enrollment_pending,revision,changed_by,changed_at)
+                 SELECT systemhaus_id,user_id,true,true,1,NULL,clock_timestamp() FROM rackclick_private.mfa_loss_factor_archive WHERE operation_id=@operation
+                 ON CONFLICT(systemhaus_id,user_id) DO UPDATE SET mfa_required=true,enrollment_pending=true,revision=app_mfa_user.revision+1,changed_at=clock_timestamp()
+                 """,db,tx))
+-            {pending.Parameters.AddWithValue("operation",plan.OperationId);await pending.ExecuteNonQueryAsync(ct);}
++            {pending.Parameters.AddWithValue("operation",plan.OperationId);if(await pending.ExecuteNonQueryAsync(ct)!=plan.Factors)throw Fail("mfa_loss_pending_write_invalid");}
+             var counts=new long[4];
+             string affected="EXISTS(SELECT 1 FROM rackclick_private.mfa_loss_factor_archive a WHERE a.operation_id=@operation AND a.user_id=t.user_id)";
+             string[] changes=["DELETE FROM public.app_mfa_factor t WHERE "+affected,
+@@ -170,8 +170,13 @@
+             {await using var change=new NpgsqlCommand(changes[i],db,tx);change.Parameters.AddWithValue("operation",plan.OperationId);counts[i]=await change.ExecuteNonQueryAsync(ct);}
+             string post=await SnapshotAsync(db,tx,ct), archived=await ArchiveHashAsync(db,tx,plan.OperationId,ct);
+             await using(var finish=new NpgsqlCommand("UPDATE rackclick_private.mfa_loss_operation SET post_security_sha256=@post,archive_sha256=@archive,affected_factors=@f,revoked_sessions=@s,consumed_challenges=@c,consumed_codes=@r WHERE operation_id=@operation",db,tx))
+-            {finish.Parameters.AddWithValue("post",post);finish.Parameters.AddWithValue("archive",archived);finish.Parameters.AddWithValue("f",counts[0]);finish.Parameters.AddWithValue("s",counts[1]);finish.Parameters.AddWithValue("c",counts[2]);finish.Parameters.AddWithValue("r",counts[3]);finish.Parameters.AddWithValue("operation",plan.OperationId);await finish.ExecuteNonQueryAsync(ct);}
+-            return await ReadWitnessAsync(db,tx,plan.OperationId,ct)??throw Fail("mfa_loss_witness_missing");
++            {finish.Parameters.AddWithValue("post",post);finish.Parameters.AddWithValue("archive",archived);finish.Parameters.AddWithValue("f",counts[0]);finish.Parameters.AddWithValue("s",counts[1]);finish.Parameters.AddWithValue("c",counts[2]);finish.Parameters.AddWithValue("r",counts[3]);finish.Parameters.AddWithValue("operation",plan.OperationId);if(await finish.ExecuteNonQueryAsync(ct)!=1)throw Fail("mfa_loss_witness_write_invalid");}
++            // A successful SQL command may still have skipped/changed rows. Validate the fresh witness before COMMIT,
++            // including the zero-factor case; Publish must not be the first place an incomplete transition is detected.
++            var witness=await ReadWitnessAsync(db,tx,plan.OperationId,ct)??throw Fail("mfa_loss_witness_missing");
++            RequireWitness(plan,materialHash,witness,envelopeHash);
++            if(witness.PostSecurityHash!=post||witness.ArchiveHash!=archived)throw Fail("mfa_loss_witness_mismatch");
++            return witness;
+         }
+         catch{if(tx.Connection is not null)try{await tx.RollbackAsync(CancellationToken.None);}catch(NpgsqlException){}throw;}
+     }
+--- /dev/null
++++ b/development/server/tests/RackClick.Quality.Tests/MfaLossRevocationTests.cs
+@@ -0,0 +1,182 @@
++using System.Runtime.Versioning;
++using System.Security.Cryptography;
++using System.Security.Principal;
++using System.Text.Json;
++using Npgsql;
++using OtpNet;
++using RackClick.Domain;
++using RackClick.Server;
++using Xunit;
++using Fixture = RackClick.Quality.Tests.MfaLossResetTests.Fixture;
++
++namespace RackClick.Quality.Tests;
++
++// F0903 uses F0902's isolated fixture unchanged. No host/service/VM is selected and its fence is never removed.
++[SupportedOSPlatform("windows")]
++[Collection("MfaHttp")]
++public sealed class MfaLossRevocationTests
++{
++    private static CancellationToken Ct=>TestContext.Current.CancellationToken;
++    [Theory]
++    [InlineData("factor")][InlineData("session")][InlineData("challenge")][InlineData("code")]
++    [InlineData("pending")][InlineData("archive")][InlineData("witness")][InlineData("witness-empty")][InlineData("witness-corrupt")]
++    public async Task SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(string target)
++    {
++        await using var lab=await Lab.Create();
++        if(target!="witness-empty")await lab.Add(7,"active");
++        lab.F.Lose(7);await lab.F.Initialize();await lab.F.Run("prepare",[7]);
++        var before=await lab.F.SecuritySnapshot();var accounts=await lab.F.UnchangedAccounts();
++        var (table,events)=target switch
++        {
++            "factor"=>("public.app_mfa_factor","DELETE"),"session"=>("public.app_session","DELETE"),
++            "challenge"=>("public.app_mfa_challenge","UPDATE"),"code"=>("public.app_mfa_recovery_code","UPDATE"),
++            "pending"=>("public.app_mfa_user","INSERT OR UPDATE"),"archive"=>("rackclick_private.mfa_loss_factor_archive","INSERT"),
++            _=>("rackclick_private.mfa_loss_operation","UPDATE")
++        };
++        string body=target=="witness-corrupt"?"NEW.operator_sid='S-1-5-18'; RETURN NEW;":"RETURN NULL;";
++        // Closed fixture-only identifiers and body; the failure simulates an unexpected SQL result, not an installed trigger.
++        await lab.F.Exec("CREATE FUNCTION rackclick_private.suppress_write() RETURNS trigger LANGUAGE plpgsql AS $$BEGIN "+body+" END$$; CREATE TRIGGER suppress_write BEFORE "+events+" ON "+table+" FOR EACH ROW EXECUTE FUNCTION rackclick_private.suppress_write()");
++        var envelope=await lab.F.Export();
++        try{await Assert.ThrowsAsync<MfaMaintenanceException>(()=>lab.F.Run("apply",envelope:envelope));}
++        finally{CryptographicOperations.ZeroMemory(envelope);}
++        Assert.Equal(before,await lab.F.SecuritySnapshot());Assert.Equal(accounts,await lab.F.UnchangedAccounts());
++        Assert.Equal(0,await lab.F.Count("SELECT count(*) FROM rackclick_private.mfa_loss_operation"));
++        Assert.Equal(0,await lab.F.Count("SELECT count(*) FROM rackclick_private.mfa_loss_factor_archive"));Assert.True(File.Exists(lab.F.Fence));
++    }
++
++    [Fact]
++    public async Task CommitAuditIsClosedMetadataAndRevokesOnlyAffectedSecurityObjectsExactlyOnce()
++    {
++        await using var lab=await Lab.Create();var first=await lab.Add(7,"active");var pending=await lab.Add(7,"pending");var other=await lab.Add(1,"active");
++        var accounts=await lab.F.UnchangedAccounts();var untouched=await lab.UserSecurity(other.Id);var previousAudit=await lab.AuditEvents();
++        var consumedBefore=await lab.F.Text("SELECT jsonb_agg(to_jsonb(t) ORDER BY token_hash)::text FROM app_mfa_challenge t WHERE consumed_at IS NOT NULL");
++        lab.F.Lose(7);await lab.F.Initialize();await lab.F.Run("prepare",[7]);var envelope=await lab.F.Export();
++        try
++        {
++            await lab.F.Run("apply",envelope:envelope);var audit=await lab.F.Text("SELECT to_jsonb(t)::text FROM rackclick_private.mfa_loss_operation t");
++            await lab.F.Run("apply",envelope:envelope);await lab.F.Run("publish");await lab.F.Run("publish");
++            Assert.Equal(audit,await lab.F.Text("SELECT to_jsonb(t)::text FROM rackclick_private.mfa_loss_operation t"));
++            using var document=JsonDocument.Parse(audit);var row=document.RootElement;
++            string[] fields=["operation_id","mode","authority","installation_id","database_name","systemhaus_id","operator_sid","lost_versions","new_version","plan_sha256","envelope_sha256","material_sha256","post_security_sha256","archive_sha256","affected_factors","revoked_sessions","consumed_challenges","consumed_codes","committed_at"];
++            Assert.Equal(fields.Order(),row.EnumerateObject().Select(p=>p.Name).Order());
++            Assert.Equal(lab.F.Operation,row.GetProperty("operation_id").GetGuid());Assert.Equal(lab.F.Id,row.GetProperty("installation_id").GetGuid());
++            Assert.Equal(lab.F.House,row.GetProperty("systemhaus_id").GetGuid());Assert.Equal("rc_db_"+lab.F.Id.ToString("N"),row.GetProperty("database_name").GetString());
++            Assert.Equal("loss-reset",row.GetProperty("mode").GetString());Assert.Equal("windows-local",row.GetProperty("authority").GetString());
++            Assert.Equal(WindowsIdentity.GetCurrent().User!.Value,row.GetProperty("operator_sid").GetString());
++            Assert.Equal(new[]{7},row.GetProperty("lost_versions").EnumerateArray().Select(v=>v.GetInt32()));Assert.Equal(8,row.GetProperty("new_version").GetInt32());
++            Assert.Equal(2,row.GetProperty("affected_factors").GetInt64());Assert.Equal(4,row.GetProperty("revoked_sessions").GetInt64());
++            Assert.Equal(8,row.GetProperty("consumed_challenges").GetInt64());Assert.Equal(4,row.GetProperty("consumed_codes").GetInt64());
++            Assert.True(DateTimeOffset.TryParse(row.GetProperty("committed_at").GetString(),out var when));Assert.InRange(when,DateTimeOffset.UtcNow.AddMinutes(-5),DateTimeOffset.UtcNow.AddMinutes(1));
++            foreach(var credential in new[]{first,pending,other})foreach(var secret in new[]{credential.Password,credential.Session,credential.Verify,credential.Enroll,credential.RecoveryCode})Assert.False(audit.Contains(secret,StringComparison.Ordinal),"Maintenance audit contains a fixture credential.");
++            foreach(var key in lab.F.Keys.Values)Assert.False(audit.Contains(Convert.ToBase64String(key),StringComparison.Ordinal),"Maintenance audit contains fixture key bytes.");
++            Assert.Equal(accounts,await lab.F.UnchangedAccounts());Assert.Equal(untouched,await lab.UserSecurity(other.Id));Assert.Equal(previousAudit,await lab.AuditEvents());
++            Assert.Equal(consumedBefore,await lab.F.Text("SELECT jsonb_agg(to_jsonb(t) ORDER BY token_hash)::text FROM app_mfa_challenge t WHERE token_hash=ANY(@tokens)",("tokens",lab.AlreadyConsumedTokens.ToArray())));
++            Assert.Equal(1,await lab.F.Count("SELECT count(*) FROM rackclick_private.mfa_loss_operation"));Assert.True(File.Exists(lab.F.Fence));
++        }
++        finally{CryptographicOperations.ZeroMemory(envelope);}
++    }
++
++    [Fact]
++    public async Task OldSessionsVerifyEnrollAndRecoveryCodeCannotGrantAccessAfterLoss()
++    {
++        await using var lab=await Lab.Create();var user=await lab.Add(7,"active",true);var other=await lab.Add(1,"active");
++        var oldIdentity=await lab.Store.Session(user.Session,Ct);Assert.NotNull(oldIdentity);Assert.NotNull(await lab.Store.Session(other.Session,Ct));
++        var validCodes=await lab.Store.GenerateOwnRecoveryCodes(oldIdentity.Actor,user.Password,await lab.Revision(),Guid.NewGuid(),true,Ct);Assert.NotNull(validCodes.Codes);user.RecoveryCode=validCodes.Codes![0];
++        await lab.Reset();
++        Assert.Null(await lab.Store.Session(user.Session,Ct));Assert.NotNull(await lab.Store.Session(other.Session,Ct));
++        Assert.Equal(401,(await Assert.ThrowsAsync<DomainError>(()=>lab.Store.ReadUsers(oldIdentity.Actor,Ct))).Status);
++        var mfa=lab.Mfa;
++        Assert.Equal("mfa_challenge_invalid",(await Assert.ThrowsAsync<DomainError>(()=>mfa.CompleteVerify(user.Verify,user.OldTotp,Secrets.Csrf(user.Verify),Ct))).Code);
++        Assert.Equal("mfa_challenge_invalid",(await Assert.ThrowsAsync<DomainError>(()=>mfa.StartEnrollment(user.Enroll,Secrets.Csrf(user.Enroll),Ct))).Code);
++        Assert.Equal("mfa_challenge_invalid",(await Assert.ThrowsAsync<DomainError>(()=>mfa.ConfirmEnrollment(user.Enroll,user.OldTotp,Secrets.Csrf(user.Enroll),Ct))).Code);
++        Assert.Equal("mfa_challenge_invalid",(await Assert.ThrowsAsync<DomainError>(()=>mfa.RedeemRecoveryCode(user.Verify,user.RecoveryCode,Secrets.Csrf(user.Verify),Ct))).Code);
++        var failed=await Assert.ThrowsAsync<DomainError>(()=>lab.Store.AuthenticateForLogin(user.Name,"Incorrect synthetic password",Ct));Assert.Equal(401,failed.Status);
++        Assert.Equal(0,await lab.SessionCount(user.Id));
++        var login=await lab.Store.AuthenticateForLogin(user.Name,user.Password,Ct);Assert.Null(login.Session);Assert.NotNull(login.Challenge);Assert.Equal("enroll",login.ChallengePurpose);
++        Assert.True(File.Exists(lab.F.Fence));
++    }
++
++    [Fact]
++    public async Task SoleGlobalAdministratorKeepsIdentityAndCanAdministerOnlyAfterNewTotp()
++    {
++        await using var lab=await Lab.Create();var admin=await lab.Add(7,"active",true);
++        await lab.F.Exec("UPDATE app_user SET active=false WHERE username='loss.admin'");
++        Assert.Equal(1,await lab.ActiveGlobals());var authority=await lab.F.UnchangedAccounts();var identity=await lab.Store.Session(admin.Session,Ct);Assert.NotNull(identity);
++        var permissions=await lab.Store.ReadPermissions(identity.Actor,Ct);Assert.Contains("security.manage",permissions.SystemhausCapabilities);Assert.Contains("systemhaus.manage",permissions.SystemhausCapabilities);
++        var grace=await lab.F.Text("SELECT to_jsonb(t)::text FROM app_mfa_policy t");await lab.Reset();
++        Assert.Equal(1,await lab.ActiveGlobals());Assert.Equal(authority,await lab.F.UnchangedAccounts());Assert.Null(await lab.Store.Session(admin.Session,Ct));
++        var login=await lab.Store.AuthenticateForLogin(admin.Name,admin.Password,Ct);Assert.Null(login.Session);Assert.Equal("enroll",login.ChallengePurpose);var challenge=login.Challenge!.Value;
++        Assert.Equal(401,(await Assert.ThrowsAsync<DomainError>(()=>lab.Store.ReadUsers(identity.Actor,Ct))).Status);
++        var mfa=lab.Mfa;var start=await mfa.StartEnrollment(challenge.Token,challenge.Csrf,Ct);byte[] secret=Base32Encoding.ToBytes(start.SecretBase32);
++        try
++        {
++            Assert.Null(await lab.Store.Session(challenge.Token,Ct));Assert.Equal(401,(await Assert.ThrowsAsync<DomainError>(()=>lab.Store.ReadUsers(identity.Actor,Ct))).Status);
++            await Assert.ThrowsAsync<DomainError>(()=>mfa.ConfirmEnrollment(challenge.Token,"not-a-code",challenge.Csrf,Ct));
++            Assert.Null(await lab.Store.Session(admin.Session,Ct));Assert.Equal(0,await lab.SessionCount(admin.Id));
++            var confirmed=await mfa.ConfirmEnrollment(challenge.Token,MfaTotp.Compute(secret,DateTimeOffset.UtcNow),challenge.Csrf,Ct);
++            Assert.NotEqual(admin.Session,confirmed.Token);Assert.NotEqual(challenge.Token,confirmed.Token);Assert.NotEqual(challenge.Csrf,confirmed.Csrf);
++            var current=await lab.Store.Session(confirmed.Token,Ct);Assert.NotNull(current);Assert.Equal(admin.Id,current.Actor.Id);Assert.Equal(lab.F.House,current.Actor.HouseId);
++            var actual=await lab.Store.ReadPermissions(current.Actor,Ct);Assert.Equal(permissions.SystemhausCapabilities.Order(),actual.SystemhausCapabilities.Order());
++            Assert.Contains((await lab.Store.ReadUsers(current.Actor,Ct)).Users,u=>u.Id==admin.Id&&u.Active);
++            var status=await lab.Store.ReadOwnMfaStatus(current.Actor,true,Ct);Assert.True(status.GlobalAdministratorExempt&&status.SessionMfaVerified);Assert.False(status.EnrollmentPending);Assert.True(status.CanDisable);
++            Assert.Equal("8",await lab.F.Text("SELECT key_version FROM app_mfa_factor WHERE user_id=@id",("id",admin.Id)));
++            var beforeGuard=await lab.F.SecuritySnapshot();var revision=await lab.Revision();var denied=await Assert.ThrowsAsync<DomainError>(()=>lab.Store.SetOrCancelUserState(current.Actor,admin.Id,new UserStateRequest(false),false,revision,Guid.NewGuid(),Ct));
++            Assert.Equal("last_admin_required",denied.Code);Assert.Equal(beforeGuard,await lab.F.SecuritySnapshot());
++            Assert.Equal(authority,await lab.F.UnchangedAccounts());Assert.Equal(grace,await lab.F.Text("SELECT to_jsonb(t)::text FROM app_mfa_policy t"));Assert.Equal(1,await lab.ActiveGlobals());Assert.True(File.Exists(lab.F.Fence));
++        }
++        finally{CryptographicOperations.ZeroMemory(secret);}
++    }
++
++    [Theory][InlineData("INSERT")][InlineData("UPDATE")]
++    public async Task AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(string operation)
++    {
++        await using var lab=await Lab.Create();await lab.Add(7,"active",true);lab.F.Lose(7);await lab.F.Initialize();await lab.F.Run("prepare",[7]);
++        var before=await lab.F.SecuritySnapshot();var audit=await lab.AuditEvents();
++        await lab.F.Exec("CREATE FUNCTION rackclick_private.reject_audit() RETURNS trigger LANGUAGE plpgsql AS $$BEGIN RAISE EXCEPTION 'synthetic audit failure'; END$$; CREATE TRIGGER reject_audit BEFORE "+operation+" ON rackclick_private.mfa_loss_operation FOR EACH ROW EXECUTE FUNCTION rackclick_private.reject_audit()");
++        var envelope=await lab.F.Export();try{await Assert.ThrowsAsync<PostgresException>(()=>lab.F.Run("apply",envelope:envelope));}finally{CryptographicOperations.ZeroMemory(envelope);}
++        Assert.Equal(before,await lab.F.SecuritySnapshot());Assert.Equal(audit,await lab.AuditEvents());Assert.Equal(0,await lab.F.Count("SELECT count(*) FROM rackclick_private.mfa_loss_operation"));Assert.True(File.Exists(lab.F.Fence));
++    }
++
++    private sealed class Credentials(Guid id,string name,string password,string session,string verify,string enroll,string code,string oldTotp)
++    {
++        internal Guid Id{get;}=id;internal string Name{get;}=name;internal string Password{get;}=password;
++        internal string Session{get;}=session;internal string Verify{get;}=verify;internal string Enroll{get;}=enroll;internal string RecoveryCode{get;set;}=code;internal string OldTotp{get;}=oldTotp;
++        public override string ToString()=>"SyntheticCredentials(redacted)";
++    }
++    private sealed class Lab(Fixture f):IAsyncDisposable
++    {
++        internal Fixture F{get;}=f;private readonly NpgsqlDataSource source=NpgsqlDataSource.Create(f.RuntimeConnection);
++        internal List<string> AlreadyConsumedTokens{get;}=[];
++        internal PostgresStore Store=>new(source){MfaAvailable=true};internal MfaStore Mfa=>new(source,F.Provider);
++        internal static async Task<Lab> Create()=>new(await Fixture.Create());
++        internal async Task<Credentials> Add(int version,string state,bool global=false)
++        {
++            var user=await F.Factor(version,state,global);var name=await F.Text("SELECT username FROM app_user WHERE id=@id",("id",user));var password=Convert.ToHexString(RandomNumberGenerator.GetBytes(32));
++            var session=Secrets.Token();var verify=Secrets.Token();var enroll=Secrets.Token();var expired=Secrets.Token();var consumed=Secrets.Token();var code=Secrets.Token();AlreadyConsumedTokens.Add(Secrets.Digest(consumed));
++            await F.Exec("""
++                UPDATE app_user SET password_hash=@password WHERE id=@user;
++                UPDATE app_mfa_user SET mfa_required=true,enrollment_pending=@pending WHERE user_id=@user;
++                UPDATE app_mfa_factor SET confirmed_at=CASE WHEN state='active' THEN clock_timestamp() ELSE NULL END WHERE user_id=@user;
++                INSERT INTO app_session(token_hash,user_id,csrf_hash,expires_at,mfa_verified_at) VALUES(@token,@user,@csrf,clock_timestamp()+interval '1 hour',clock_timestamp());
++                INSERT INTO app_mfa_challenge(token_hash,systemhaus_id,user_id,purpose,csrf_hash,expires_at,policy_revision)
++                    VALUES(@verify,@house,@user,'verify',@verifycsrf,clock_timestamp()+interval '4 minutes',4),(@enroll,@house,@user,'enroll',@enrollcsrf,clock_timestamp()+interval '4 minutes',4),
++                    (@expired,@house,@user,'verify',@verifycsrf,clock_timestamp()-interval '1 minute',4);
++                INSERT INTO app_mfa_challenge(token_hash,systemhaus_id,user_id,purpose,csrf_hash,expires_at,policy_revision,consumed_at)
++                    VALUES(@consumed,@house,@user,'enroll',@enrollcsrf,clock_timestamp()+interval '4 minutes',4,clock_timestamp()-interval '30 seconds');
++                INSERT INTO app_mfa_recovery_code(systemhaus_id,user_id,code_hash) VALUES(@house,@user,@code);
++                """,("user",user),("house",F.House),("password",Secrets.PasswordHash(name,password)),("pending",state=="pending"),("token",Secrets.Digest(session)),("csrf",Secrets.Digest(Secrets.Csrf(session))),
++                ("verify",Secrets.Digest(verify)),("verifycsrf",Secrets.Digest(Secrets.Csrf(verify))),("enroll",Secrets.Digest(enroll)),("enrollcsrf",Secrets.Digest(Secrets.Csrf(enroll))),
++                ("expired",Secrets.Digest(expired)),("consumed",Secrets.Digest(consumed)),("code",Secrets.Digest(code)));
++            await using var db=await F.Connect();await using var c=new NpgsqlCommand("SELECT secret_ciphertext FROM app_mfa_factor WHERE user_id=@user",db);c.Parameters.AddWithValue("user",user);
++            var bytes=(byte[])(await c.ExecuteScalarAsync(Ct))!;var plain=MfaSecretCipher.Open(F.Keys[version],version,bytes,F.House,user);
++            try{return new(user,name,password,session,verify,enroll,code,MfaTotp.Compute(plain,DateTimeOffset.UtcNow));}finally{CryptographicOperations.ZeroMemory(plain);}
++        }
++        internal async Task Reset(){F.Lose(7);await F.Initialize();await F.Run("prepare",[7]);var envelope=await F.Export();try{await F.Run("apply",envelope:envelope);await F.Run("publish");}finally{CryptographicOperations.ZeroMemory(envelope);}}
++        internal async Task<long> Revision()=>long.Parse(await F.Text("SELECT revision FROM systemhaus"),System.Globalization.CultureInfo.InvariantCulture);
++        internal async Task<long> SessionCount(Guid user)=>long.Parse(await F.Text("SELECT count(*) FROM app_session WHERE user_id=@user",("user",user)),System.Globalization.CultureInfo.InvariantCulture);
++        internal Task<string> AuditEvents()=>F.Text("SELECT COALESCE(jsonb_agg(to_jsonb(t) ORDER BY id),'[]'::jsonb)::text FROM audit_event t");
++        internal Task<string> UserSecurity(Guid user)=>F.Text("SELECT jsonb_build_array((SELECT jsonb_agg(to_jsonb(t) ORDER BY token_hash) FROM app_session t WHERE user_id=@user),(SELECT jsonb_agg(to_jsonb(t) ORDER BY token_hash) FROM app_mfa_challenge t WHERE user_id=@user),(SELECT jsonb_agg(to_jsonb(t) ORDER BY code_hash) FROM app_mfa_recovery_code t WHERE user_id=@user))::text",("user",user));
++        internal async Task<long> ActiveGlobals()=>long.Parse(await F.Text("SELECT count(*) FROM app_user u WHERE active AND (SELECT count(DISTINCT g.capability)=2 FROM user_group_member m JOIN permission_grant g ON g.systemhaus_id=m.systemhaus_id AND g.user_group_id=m.group_id WHERE m.systemhaus_id=u.systemhaus_id AND m.user_id=u.id AND g.customer_id IS NULL AND g.customer_group_id IS NULL AND g.capability IN ('security.manage','systemhaus.manage'))"),System.Globalization.CultureInfo.InvariantCulture);
++        public async ValueTask DisposeAsync(){await source.DisposeAsync();F.Dispose();}
++    }
++}

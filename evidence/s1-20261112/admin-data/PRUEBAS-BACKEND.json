@@ -1,0 +1,498 @@
+{
+  "red02": {
+    "privateLogSha256": "90624339e82227bcf607f0f40e5ed0ca4fe30cb140af654012d4692718658af4",
+    "summary": {
+      "failed": 1,
+      "passed": 0,
+      "skipped": 0,
+      "total": 1
+    },
+    "failedTests": [
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.EmptyInventoryAdministrationIsAuthorizedAndDoesNotChangeSecurity"
+    ],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "red02-20261112-075430--3740--1XruY7.binlog",
+        "sha256": "1d471d921f37618ed11527cac4cdb7548a528d7ccf4ee8df17aa05f5924d0bb8"
+      }
+    ]
+  },
+  "red03": {
+    "privateLogSha256": "a8866f883932111345d136c99f6dce3ddd5bd22e206f1fe0450c90945e4cc3bc",
+    "summary": {
+      "failed": 5,
+      "passed": 0,
+      "skipped": 0,
+      "total": 5
+    },
+    "failedTests": [
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.Demo50BackupRestorePreservesEveryIdentityAndSecurityAndReplaysBeforeEmptyAndRevision",
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.AuditFailureRollsBackTheEntireGlobalImportAndReceipt",
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.PermissionsCsrfOriginActorAndSelectiveBodyLimitsAreEnforced",
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.EmptyInventoryAdministrationIsAuthorizedAndDoesNotChangeSecurity",
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.ClosedArchiveRejectsDuplicatesUnknownFieldsForeignReferencesAndInvalidHardwareWithoutMutation"
+    ],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "red03-20261112-075544--22564--S6i9Zy.binlog",
+        "sha256": "c908fed34ae36b1a4d510dd54b884358f2d492987182c478e81564bfc3da89a4"
+      }
+    ]
+  },
+  "red_cancel02": {
+    "privateLogSha256": "035e851758316e082f601412df67b3d82904f1b013a52dc1c62013f7bd9dcf54",
+    "summary": {
+      "failed": 1,
+      "passed": 6,
+      "skipped": 0,
+      "total": 7
+    },
+    "failedTests": [
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.ExplicitCancellationFencesUnrecordedIntentButCannotUndoACommit"
+    ],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "red_cancel02-20261112-080220--35588--wtmvyG.binlog",
+        "sha256": "8eecc57feba36bb3dc1c75db999f2880e84513582dcdfae090a9794bc999c8a0"
+      }
+    ]
+  },
+  "red_jsonb": {
+    "privateLogSha256": "0fdf6952d55caf37cbc93a57917177b9b93e9fbfa329108059eb7b783db98ba6",
+    "summary": {
+      "failed": 1,
+      "passed": 0,
+      "skipped": 0,
+      "total": 1
+    },
+    "failedTests": [
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.ArchiveLimitsAndJsonbUnicodeAreCheckedBeforeImportAndRuntimeCannotUseDdl"
+    ],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "red_jsonb-20261112-080606--26880--v4RnCM.binlog",
+        "sha256": "584fe6fd0ad59190f4bd08d311048b63b8dd3786cce26e5938687239eb112dbe"
+      }
+    ]
+  },
+  "green03": {
+    "privateLogSha256": "b2a21ffbf08d5627e2e8b3664caa4cbfa5c757bf5d469c96c452e4c9b5beb9ee",
+    "summary": {
+      "failed": 0,
+      "passed": 7,
+      "skipped": 0,
+      "total": 7
+    },
+    "failedTests": [],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "green03-20261112-080350--2800--DPwTUH.binlog",
+        "sha256": "4936a53d47dd0cee6ef182c6ea2866ce4e11da7aa3df7295c176e2588cdb4fba"
+      }
+    ]
+  },
+  "green04": {
+    "privateLogSha256": "df9fd26a67d97714f733ad9d40478b96942df9be67fa0a1c3af9c77b2c029397",
+    "summary": {
+      "failed": 0,
+      "passed": 9,
+      "skipped": 0,
+      "total": 9
+    },
+    "failedTests": [],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "green04-20261112-080647--34096--YJYIog.binlog",
+        "sha256": "f7d6df63c02e8848f5c5478436b0285f527ebfe00712d7ac07a63ff8ab98d0d5"
+      }
+    ]
+  },
+  "green05": {
+    "privateLogSha256": "daf223580784aa2e9003dbc96dc3a958c9c95198d3df891e695e2c8d2bef95a5",
+    "summary": {
+      "failed": 0,
+      "passed": 10,
+      "skipped": 0,
+      "total": 10
+    },
+    "failedTests": [],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "green05-20261112-080831--6536--mLVY0S.binlog",
+        "sha256": "c05e85725c49a061ff30642066b6e6b390c05308b2f00e248a797ac3c3e0ad2b"
+      }
+    ]
+  },
+  "regression01": {
+    "privateLogSha256": "36c1d73e8ee73d9d3fc1e08efd9235f70b68d33f8c19db7db5b3eacf70c5d8f0",
+    "summary": {
+      "failed": 9,
+      "passed": 866,
+      "skipped": 107,
+      "total": 982
+    },
+    "failedTests": [
+      "RackClick.Quality.Tests.PhysicalMediaRulesTests.CurrentCatalogueStillHasTheReviewedPhysicalMediaContract",
+      "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.AFactorWithInvalidUserAadRejectsBeforePublishingAStoreOrBuildingAHost",
+      "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.EnvelopeWithoutTheRetiredVersionCannotEnableAHostForItsDatabase",
+      "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.WrongEnvelopePasswordRejectsBeforePublishingAStoreOrBuildingAHost",
+      "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.WrongTotpNeverEmitsASession",
+      "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.EachPreservedFactorCompletesPasswordChallengeTotpSessionAndCsrf(version: 7)",
+      "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.EachPreservedFactorCompletesPasswordChallengeTotpSessionAndCsrf(version: 1)",
+      "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.RestoredBackupSessionsAndChallengesCannotAuthorizeRequests",
+      "RackClick.Quality.Tests.MfaPortableDatabaseRestoreTests.CustomDumpRestoresTheCompleteSchemaInventoryAndRestrictedRuntimeIdentity"
+    ],
+    "skippedTests": [
+      "RackClick.Quality.Tests.MfaRotationProcessTests.Worker",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.SqlPositiveVersionBeyondTheRingProfileIsRejected",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.ExportedSnapshotWithMissingOrInvalidFinalMessageHasNoInventorySuccess(final: \"{}\")",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.ExportedSnapshotWithMissingOrInvalidFinalMessageHasNoInventorySuccess(final: \"{\\\"backupId\\\":\\\"00000000-0000-0000-0000-0000000000\"···)",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.ExportedSnapshotWithMissingOrInvalidFinalMessageHasNoInventorySuccess(final: \"\")",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.WrongEnvelopePasswordIsRejectedBeforeDatabaseSnapshot",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.WorksWithSelectOnlyRoleAndDoesNotChangePersistentRows",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.NativeSnapshotAndInventoryAreBoundToExternalPins",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.ReadWriteTransactionIsRejectedBeforeTheFactorQuery",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.OversizedFinalMessageIsRejectedWhileSnapshotTransactionIsOpen",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.SerializableReadOnlyIsAccepted",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionMustNotReleaseFenceWhenRuntimeCannotReadItsProjection",
+      "RackClick.Quality.Tests.SqlOperatorInteropTests.PowershellFrameworkProducesTheSameEnvelopeContractThatDotnetConsumes",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MissingProjectionInSchema48FailsClosedAndLegitimateNewSecurityDoesNotInvalidateACompletedLoss",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionMustNotReleaseFenceWithoutItsRuntimeMetadataProjection",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionInterruptionReentersUsingItsOwnReceiptAndFenceIdentity(cut: \"before_loss_release\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionInterruptionReentersUsingItsOwnReceiptAndFenceIdentity(cut: \"after_loss_startup_receipt\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionInterruptionReentersUsingItsOwnReceiptAndFenceIdentity(cut: \"before_loss_startup_receipt\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionInterruptionReentersUsingItsOwnReceiptAndFenceIdentity(cut: \"after_loss_release\")",
+      "RackClick.Quality.Tests.SqlOperatorInteropTests.DotnetProducesTheSameEnvelopeContractThatThePrivatePowershellCodecConsumes",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MissingOrAlteredPublicationCannotBecomeAUsableStartup(target: \"key\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MissingOrAlteredPublicationCannotBecomeAUsableStartup(target: \"receipt\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MissingOrAlteredPublicationCannotBecomeAUsableStartup(target: \"witness\")",
+      "RackClick.Quality.Tests.SqlOperatorInteropTests.TheCompleteProtectedViewerAcceptsTheDotnetNormalizedConnection",
+      "RackClick.Quality.Tests.SqlOperatorInteropTests.TheRealDotnetProviderCannotRecoverAnAmbientAliasAfterTheOperatorClearsIt(alias: \"CUSTOMCONNSTR_RackClick\")",
+      "RackClick.Quality.Tests.SqlOperatorInteropTests.TheRealDotnetProviderCannotRecoverAnAmbientAliasAfterTheOperatorClearsIt(alias: \"POSTGRESQLCONNSTR_RackClick\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.PublishedTotalLossRemainsFencedUntilExplicitCompletionThenRuntimeGuardAccepts",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.SeparateInventoryBindsARealQuiescentBackupAndAnAuthenticatedEnvelope",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.AnotherConnectionsTransactionIsRejected",
+      "RackClick.Quality.Tests.MfaLossStartupTests.RuntimeProjectionContainsOnlyMetadataAndCannotBeWrittenEvenWithPublicDmlGrant",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.CountsEveryStateAcrossTheDatabaseWithoutFilteringAVisibleCustomer",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MissingProjectionWithEmptyHistoryIsAnExplicitFailureNotAnUnhandledCast",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.EmptyDatabaseIsAnExplicitEmptyCensus",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.ReadCommittedIsNotPresentedAsAStableInventory",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MostRecentModeDeterminesMaterialWithoutDiscardingTheOtherHistory(rotationFirst: False)",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.CancellationIsNotAnEmptySuccessfulCensus",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MostRecentModeDeterminesMaterialWithoutDiscardingTheOtherHistory(rotationFirst: True)",
+      "RackClick.Quality.Tests.MfaRotationClosureTests.RetainedGenerationsWorker",
+      "RackClick.Quality.Tests.MfaLossStartupTests.ApprovedWriterAndMaintenanceCanUseDeepLocalPathsWithoutDroppingAclOrIdentityChecks",
+      "RackClick.Quality.Tests.MfaBackupInventoryMarkedPostgresTests.SharedDatabaseCommentMarkerRejectsSnapshotBeforeAnyPositiveResponse",
+      "RackClick.Quality.Tests.MfaLossResetTests.AnySecurityChangeAfterPlanningStopsBeforeDatabaseCommit(change: \"user\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.AnySecurityChangeAfterPlanningStopsBeforeDatabaseCommit(change: \"code\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.AnySecurityChangeAfterPlanningStopsBeforeDatabaseCommit(change: \"policy\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"lost_versions\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"new_version\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"sid\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"envelope\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.UncertainOrStillRecoverableMaterialNeverExpandsTheDeclaredLoss(variant: \"ring_unknown\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.UncertainOrStillRecoverableMaterialNeverExpandsTheDeclaredLoss(variant: \"retained_corrupt\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.UncertainOrStillRecoverableMaterialNeverExpandsTheDeclaredLoss(variant: \"readable_lost\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.BackupOnlyVersionWithoutMaterialMustBeExplicitlyDeclaredLost",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AnyPersistedFactorStateKeepsItsVersion(state: \"active\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AnyPersistedFactorStateKeepsItsVersion(state: \"pending\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AnyPersistedFactorStateKeepsItsVersion(state: \"disabled\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.ActiveVersionCanNeverBeRetired",
+      "RackClick.Quality.Tests.MfaLossResetTests.ExistingRetirementAndRotationAcceptKnownSchema47WithoutBecomingLossReset",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.InterruptedPublicationRemainsFencedAndResumesFromObservedMaterial(cut: \"before_publish\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.InterruptedPublicationRemainsFencedAndResumesFromObservedMaterial(cut: \"before_complete\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.InterruptedPublicationRemainsFencedAndResumesFromObservedMaterial(cut: \"after_publish\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.InterruptedPublicationRemainsFencedAndResumesFromObservedMaterial(cut: \"fence_created\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.UnreferencedVersionIsRetiredAndSecurityRowsAndEveryKeyFileArePreserved",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.NewOrLegacyBackupBlocksUntilAppendOnlyCatalogueRefreshAndThenPinsItsRequiredKey",
+      "RackClick.Quality.Tests.MfaLossResetTests.AllKeyMaterialCanBeLostButKnownRingAndOpaqueZeroByteBlobArePreserved",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.DatabaseLeaseAndPhysicalHostLeasePreventMaintenanceEvenWhenPgSessionDies",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AuthenticationOrAadFailureStopsBeforeFenceAndPreservesTheObservedRows(wrongUser: True)",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AuthenticationOrAadFailureStopsBeforeFenceAndPreservesTheObservedRows(wrongUser: False)",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.MaintenanceCensusWithoutTheActualTableLockIsRejected",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AccessExclusiveLockBlocksAConcurrentWriterAndSharedBackupAdmissionIsRejected",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.UncoordinatedThirdPartyAccessToRetainedRootBlocksRetirement",
+      "RackClick.Quality.Tests.MfaLossResetTests.CommitFailureRollsBackEveryDatabaseEffectAndKeepsCandidateAndFence",
+      "RackClick.Quality.Tests.MfaLossResetTests.ExplicitlyLostBackupVersionIsRecordedAndNeverReusedOrReportedAsRecoverable",
+      "RackClick.Quality.Tests.MfaLossResetTests.MixedStatesAndAuthoritiesAreArchivedAndOnlyLostFactorsRequireReenrollment",
+      "RackClick.Quality.Tests.MfaLossResetTests.WrongEnvelopeRejectsWithoutAffectingDatabase",
+      "RackClick.Quality.Tests.MfaLossResetTests.InterruptedCommitOrPublicationResumesForwardWithoutRepeatingPolicyRevision(cut: \"after_loss_key_publish\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.InterruptedCommitOrPublicationResumesForwardWithoutRepeatingPolicyRevision(cut: \"after_loss_db_commit\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.PhysicallyMissingLostFileIsNotRecreatedAndNewCandidateCannotBeSubstituted",
+      "RackClick.Quality.Tests.PostgresContainerTests.BootstrapUnicodeLoginAndSessionPersistAndRejectWrongPassword",
+      "RackClick.Quality.Tests.SqlSecretConnectionTests.DecryptedConnectionUsesOnlyTheRestrictedPostgresRole",
+      "RackClick.Quality.Tests.MfaEnrollmentClosureTests.RestrictedEnrollmentWorker",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.CommitAuditIsClosedMetadataAndRevokesOnlyAffectedSecurityObjectsExactlyOnce",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"challenge\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"session\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"factor\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-corrupt\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"pending\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"archive\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"code\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-empty\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.OldSessionsVerifyEnrollAndRecoveryCodeCannotGrantAccessAfterLoss",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"INSERT\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"UPDATE\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SoleGlobalAdministratorKeepsIdentityAndCanAdministerOnlyAfterNewTotp",
+      "RackClick.Quality.Tests.MfaBrowserGuiTests.BrowserEnrollsThenRequiresSecondFactorOnTheNextLogin",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.FactorLockBlocksAConcurrentInsertionAndSnapshotDetectsMetadataChanges",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.WrongSystemhausAndUnknownVersionAndWrongDatabaseBindingFailClosed",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.OversizedCiphertextIsRejectedWithoutDownloadingItOrCreatingWitness",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.ExistingWitnessCommandsReconciliationInsteadOfRepeatingCiphertextRewrite",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.CorruptCiphertextRollsBackEveryChangeAndCreatesNoWitness",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.WitnessInsertionFailureRollsBackRewrapAndSecurityChanges",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.RejectsMissingLocksBeforeReadingOrMutatingFactors",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.RewrapPreservesAllFactorStatesMetadataAndTotpAndRevokesOnlyAffectedSecurityRows",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.ReusingAVersionFromAnyRetainedWitnessIsRejectedEvenWithZeroFactors",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.EmptyCensusStillWritesWitnessWithoutRevokingAccountsWithoutFactor",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.CommittedValidationRejectsWrongKeyVersionCountAndSubstitutedBinding",
+      "RackClick.Quality.Tests.MfaRecoveryHttpTests.BrowserCanGenerateCodesAndRecoverOnlyThroughNewAuthenticatorEnrollment",
+      "RackClick.Quality.Tests.MfaDashboardHttpTests.BrowserDashboardShowsGraceAndManagesPersonalAndSelectedUserMfa"
+    ],
+    "binlogs": [
+      {
+        "name": "regression01-20261112-080934--33996--IRbFbK.binlog",
+        "sha256": "851c40dc4b55e10670706ff148423c4142ff50703999bc04a5f13c38e131588d"
+      }
+    ]
+  },
+  "red_faulty": {
+    "privateLogSha256": "b0a91835396424c89f79e405273a72f66d4ad447d31c8d6b45429da0d165d530",
+    "summary": null,
+    "failedTests": [],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "red_faulty-20261112-081146--23392--YR2Kai.binlog",
+        "sha256": "2cadca0de0726ce36846bd59fb4ce0405e4188aba32d7b7ed2d38cb416f803cd"
+      }
+    ]
+  },
+  "red_faulty02": {
+    "privateLogSha256": "e0ff8e42a6f6c2d8d6190a92b04d144dbe75913a4480ceac77bdc3655176ae81",
+    "summary": {
+      "failed": 1,
+      "passed": 0,
+      "skipped": 0,
+      "total": 1
+    },
+    "failedTests": [
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.BackupAndRestorePreserveAnExistingCableWhosePortWasMarkedFaultyByTheEditor"
+    ],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "red_faulty02-20261112-081355--22332--Tb5YB1.binlog",
+        "sha256": "3c60d465826ef0b377afa2161f5cd4f285d74ae6996d175ccaebf9f2bfe4810a"
+      }
+    ]
+  },
+  "green06": {
+    "privateLogSha256": "5430c5666fe1ddbe9c8d6a6b765378c1e3366b2f920e037d9967631e87c11d82",
+    "summary": {
+      "failed": 0,
+      "passed": 21,
+      "skipped": 0,
+      "total": 21
+    },
+    "failedTests": [],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "green06-20261112-081436--29784--wGowbw.binlog",
+        "sha256": "5e422911e88975ef76dfddd8553030f7dd1fb64cf758327c14a650c02029d916"
+      }
+    ]
+  },
+  "regression02": {
+    "privateLogSha256": "ce293087fefda389d83b00fb8255a4de6eca62bf9789c88053533fc5e61eb695",
+    "summary": {
+      "failed": 0,
+      "passed": 868,
+      "skipped": 107,
+      "total": 975
+    },
+    "failedTests": [],
+    "skippedTests": [
+      "RackClick.Quality.Tests.MfaRotationClosureTests.RetainedGenerationsWorker",
+      "RackClick.Quality.Tests.MfaBackupInventoryMarkedPostgresTests.SharedDatabaseCommentMarkerRejectsSnapshotBeforeAnyPositiveResponse",
+      "RackClick.Quality.Tests.MfaLossResetTests.AnySecurityChangeAfterPlanningStopsBeforeDatabaseCommit(change: \"user\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.AnySecurityChangeAfterPlanningStopsBeforeDatabaseCommit(change: \"code\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.AnySecurityChangeAfterPlanningStopsBeforeDatabaseCommit(change: \"policy\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionMustNotReleaseFenceWhenRuntimeCannotReadItsProjection",
+      "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"lost_versions\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"new_version\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MissingProjectionInSchema48FailsClosedAndLegitimateNewSecurityDoesNotInvalidateACompletedLoss",
+      "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"sid\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"envelope\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionMustNotReleaseFenceWithoutItsRuntimeMetadataProjection",
+      "RackClick.Quality.Tests.SqlOperatorInteropTests.PowershellFrameworkProducesTheSameEnvelopeContractThatDotnetConsumes",
+      "RackClick.Quality.Tests.MfaLossResetTests.UncertainOrStillRecoverableMaterialNeverExpandsTheDeclaredLoss(variant: \"ring_unknown\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.UncertainOrStillRecoverableMaterialNeverExpandsTheDeclaredLoss(variant: \"retained_corrupt\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionInterruptionReentersUsingItsOwnReceiptAndFenceIdentity(cut: \"before_loss_release\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.UncertainOrStillRecoverableMaterialNeverExpandsTheDeclaredLoss(variant: \"readable_lost\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionInterruptionReentersUsingItsOwnReceiptAndFenceIdentity(cut: \"after_loss_startup_receipt\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionInterruptionReentersUsingItsOwnReceiptAndFenceIdentity(cut: \"before_loss_startup_receipt\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.CompletionInterruptionReentersUsingItsOwnReceiptAndFenceIdentity(cut: \"after_loss_release\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.BackupOnlyVersionWithoutMaterialMustBeExplicitlyDeclaredLost",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MissingOrAlteredPublicationCannotBecomeAUsableStartup(target: \"key\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MissingOrAlteredPublicationCannotBecomeAUsableStartup(target: \"receipt\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MissingOrAlteredPublicationCannotBecomeAUsableStartup(target: \"witness\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.ExistingRetirementAndRotationAcceptKnownSchema47WithoutBecomingLossReset",
+      "RackClick.Quality.Tests.SqlOperatorInteropTests.DotnetProducesTheSameEnvelopeContractThatThePrivatePowershellCodecConsumes",
+      "RackClick.Quality.Tests.SqlOperatorInteropTests.TheCompleteProtectedViewerAcceptsTheDotnetNormalizedConnection",
+      "RackClick.Quality.Tests.MfaLossResetTests.AllKeyMaterialCanBeLostButKnownRingAndOpaqueZeroByteBlobArePreserved",
+      "RackClick.Quality.Tests.MfaLossStartupTests.PublishedTotalLossRemainsFencedUntilExplicitCompletionThenRuntimeGuardAccepts",
+      "RackClick.Quality.Tests.SqlOperatorInteropTests.TheRealDotnetProviderCannotRecoverAnAmbientAliasAfterTheOperatorClearsIt(alias: \"CUSTOMCONNSTR_RackClick\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.CommitFailureRollsBackEveryDatabaseEffectAndKeepsCandidateAndFence",
+      "RackClick.Quality.Tests.SqlOperatorInteropTests.TheRealDotnetProviderCannotRecoverAnAmbientAliasAfterTheOperatorClearsIt(alias: \"POSTGRESQLCONNSTR_RackClick\")",
+      "RackClick.Quality.Tests.MfaLossStartupTests.RuntimeProjectionContainsOnlyMetadataAndCannotBeWrittenEvenWithPublicDmlGrant",
+      "RackClick.Quality.Tests.MfaLossResetTests.ExplicitlyLostBackupVersionIsRecordedAndNeverReusedOrReportedAsRecoverable",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MissingProjectionWithEmptyHistoryIsAnExplicitFailureNotAnUnhandledCast",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MostRecentModeDeterminesMaterialWithoutDiscardingTheOtherHistory(rotationFirst: False)",
+      "RackClick.Quality.Tests.MfaLossResetTests.MixedStatesAndAuthoritiesAreArchivedAndOnlyLostFactorsRequireReenrollment",
+      "RackClick.Quality.Tests.MfaLossStartupTests.MostRecentModeDeterminesMaterialWithoutDiscardingTheOtherHistory(rotationFirst: True)",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.SqlPositiveVersionBeyondTheRingProfileIsRejected",
+      "RackClick.Quality.Tests.MfaLossStartupTests.ApprovedWriterAndMaintenanceCanUseDeepLocalPathsWithoutDroppingAclOrIdentityChecks",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AnyPersistedFactorStateKeepsItsVersion(state: \"active\")",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.WorksWithSelectOnlyRoleAndDoesNotChangePersistentRows",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AnyPersistedFactorStateKeepsItsVersion(state: \"pending\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AnyPersistedFactorStateKeepsItsVersion(state: \"disabled\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.ActiveVersionCanNeverBeRetired",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.InterruptedPublicationRemainsFencedAndResumesFromObservedMaterial(cut: \"before_publish\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.InterruptedPublicationRemainsFencedAndResumesFromObservedMaterial(cut: \"before_complete\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.InterruptedPublicationRemainsFencedAndResumesFromObservedMaterial(cut: \"after_publish\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.InterruptedPublicationRemainsFencedAndResumesFromObservedMaterial(cut: \"fence_created\")",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.UnreferencedVersionIsRetiredAndSecurityRowsAndEveryKeyFileArePreserved",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.NewOrLegacyBackupBlocksUntilAppendOnlyCatalogueRefreshAndThenPinsItsRequiredKey",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.DatabaseLeaseAndPhysicalHostLeasePreventMaintenanceEvenWhenPgSessionDies",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AuthenticationOrAadFailureStopsBeforeFenceAndPreservesTheObservedRows(wrongUser: True)",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AuthenticationOrAadFailureStopsBeforeFenceAndPreservesTheObservedRows(wrongUser: False)",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.ReadWriteTransactionIsRejectedBeforeTheFactorQuery",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.MaintenanceCensusWithoutTheActualTableLockIsRejected",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.AccessExclusiveLockBlocksAConcurrentWriterAndSharedBackupAdmissionIsRejected",
+      "RackClick.Quality.Tests.MfaMaintenancePostgresTests.UncoordinatedThirdPartyAccessToRetainedRootBlocksRetirement",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.SerializableReadOnlyIsAccepted",
+      "RackClick.Quality.Tests.PostgresContainerTests.BootstrapUnicodeLoginAndSessionPersistAndRejectWrongPassword",
+      "RackClick.Quality.Tests.MfaLossResetTests.WrongEnvelopeRejectsWithoutAffectingDatabase",
+      "RackClick.Quality.Tests.MfaLossResetTests.InterruptedCommitOrPublicationResumesForwardWithoutRepeatingPolicyRevision(cut: \"after_loss_key_publish\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.InterruptedCommitOrPublicationResumesForwardWithoutRepeatingPolicyRevision(cut: \"after_loss_db_commit\")",
+      "RackClick.Quality.Tests.MfaLossResetTests.PhysicallyMissingLostFileIsNotRecreatedAndNewCandidateCannotBeSubstituted",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.SeparateInventoryBindsARealQuiescentBackupAndAnAuthenticatedEnvelope",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.AnotherConnectionsTransactionIsRejected",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.CountsEveryStateAcrossTheDatabaseWithoutFilteringAVisibleCustomer",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.EmptyDatabaseIsAnExplicitEmptyCensus",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.ReadCommittedIsNotPresentedAsAStableInventory",
+      "RackClick.Quality.Tests.MfaFactorKeyInventoryReaderTests.CancellationIsNotAnEmptySuccessfulCensus",
+      "RackClick.Quality.Tests.MfaRotationProcessTests.Worker",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.ExportedSnapshotWithMissingOrInvalidFinalMessageHasNoInventorySuccess(final: \"{}\")",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.ExportedSnapshotWithMissingOrInvalidFinalMessageHasNoInventorySuccess(final: \"{\\\"backupId\\\":\\\"00000000-0000-0000-0000-0000000000\"···)",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.ExportedSnapshotWithMissingOrInvalidFinalMessageHasNoInventorySuccess(final: \"\")",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.WrongEnvelopePasswordIsRejectedBeforeDatabaseSnapshot",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.NativeSnapshotAndInventoryAreBoundToExternalPins",
+      "RackClick.Quality.Tests.MfaBackupInventoryPostgresTests.OversizedFinalMessageIsRejectedWhileSnapshotTransactionIsOpen",
+      "RackClick.Quality.Tests.SqlSecretConnectionTests.DecryptedConnectionUsesOnlyTheRestrictedPostgresRole",
+      "RackClick.Quality.Tests.MfaEnrollmentClosureTests.RestrictedEnrollmentWorker",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.CommitAuditIsClosedMetadataAndRevokesOnlyAffectedSecurityObjectsExactlyOnce",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"challenge\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"session\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"factor\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-corrupt\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"pending\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"archive\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"code\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-empty\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.OldSessionsVerifyEnrollAndRecoveryCodeCannotGrantAccessAfterLoss",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"INSERT\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"UPDATE\")",
+      "RackClick.Quality.Tests.MfaLossRevocationTests.SoleGlobalAdministratorKeepsIdentityAndCanAdministerOnlyAfterNewTotp",
+      "RackClick.Quality.Tests.MfaBrowserGuiTests.BrowserEnrollsThenRequiresSecondFactorOnTheNextLogin",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.FactorLockBlocksAConcurrentInsertionAndSnapshotDetectsMetadataChanges",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.WrongSystemhausAndUnknownVersionAndWrongDatabaseBindingFailClosed",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.OversizedCiphertextIsRejectedWithoutDownloadingItOrCreatingWitness",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.ExistingWitnessCommandsReconciliationInsteadOfRepeatingCiphertextRewrite",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.CorruptCiphertextRollsBackEveryChangeAndCreatesNoWitness",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.WitnessInsertionFailureRollsBackRewrapAndSecurityChanges",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.RejectsMissingLocksBeforeReadingOrMutatingFactors",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.RewrapPreservesAllFactorStatesMetadataAndTotpAndRevokesOnlyAffectedSecurityRows",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.ReusingAVersionFromAnyRetainedWitnessIsRejectedEvenWithZeroFactors",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.EmptyCensusStillWritesWitnessWithoutRevokingAccountsWithoutFactor",
+      "RackClick.Quality.Tests.MfaRotationDatabaseTests.CommittedValidationRejectsWrongKeyVersionCountAndSubstitutedBinding",
+      "RackClick.Quality.Tests.MfaRecoveryHttpTests.BrowserCanGenerateCodesAndRecoverOnlyThroughNewAuthenticatorEnrollment",
+      "RackClick.Quality.Tests.MfaDashboardHttpTests.BrowserDashboardShowsGraceAndManagesPersonalAndSelectedUserMfa"
+    ],
+    "binlogs": [
+      {
+        "name": "regression02-20261112-081601--31492--tfpMSc.binlog",
+        "sha256": "a29b6d50ff94590c02b79149c1158b80e3e148263b00a2d92684764aad0921ac"
+      }
+    ]
+  },
+  "review_red01": {
+    "privateLogSha256": "fe636b74ebef18442c37ae690584122086d989a894507c4d08ea93961e28ebe4",
+    "summary": {
+      "failed": 3,
+      "passed": 0,
+      "skipped": 0,
+      "total": 3
+    },
+    "failedTests": [
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.BackupRejectsAnUnsafePersistedCustomerRevisionWithoutRecordingAnArtifact",
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.CustomerRevisionsOutsideTheJavaScriptSafeRangeCannotEnterTheInventory",
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.NullRequiredArchiveValuesAreRejectedEquallyByPreviewAndRestore"
+    ],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "review_red01-20261112-082351--8444--P8UMa_.binlog",
+        "sha256": "7e22f09c989e9e82a3a5cfabc965c0e3dac1ac1fa1461b60478f57a9b5a22f68"
+      }
+    ]
+  },
+  "review_red02": {
+    "privateLogSha256": "7c2b75541fa0d6b0790bb3abbc3f58e3505fd7c01f32749d285aea2dd99bed15",
+    "summary": {
+      "failed": 1,
+      "passed": 0,
+      "skipped": 0,
+      "total": 1
+    },
+    "failedTests": [
+      "RackClick.Quality.Tests.InventoryDataAdministrationTests.ExhaustedSafeHouseRevisionRejectsNewImportsAndKeepsBackupAvailable"
+    ],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "review_red02-20261112-082504--34516--zc7Hk4.binlog",
+        "sha256": "6875e265a2ca4eff96c7b81bd50418bc863d04d97ae603eee23c2a8ff7d4b3be"
+      }
+    ]
+  },
+  "review_green01": {
+    "privateLogSha256": "52767fffdf24929df819ec2b63fae688ceeda546b17ab8bbd5654afdf22b73b5",
+    "summary": {
+      "failed": 0,
+      "passed": 18,
+      "skipped": 0,
+      "total": 18
+    },
+    "failedTests": [],
+    "skippedTests": [],
+    "binlogs": [
+      {
+        "name": "review_green01-20261112-082557--26432--VoRnBu.binlog",
+        "sha256": "145f2a53f02e309d56b76636cea58834cb11e1daa64ac83f7856bbb972a018d8"
+      }
+    ]
+  }
+}

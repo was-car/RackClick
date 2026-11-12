@@ -8,12 +8,11 @@ Der Server verbindet die bewährte Offline-Oberfläche mit gemeinsam genutzten D
 
 ## Auf Windows Server installieren
 
-Den **[Windows-Installer Online19](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48)** und seine SHA256-Prüfsumme herunterladen; anschließend die **[vollständige Anleitung EN/DE/ES](docs/INSTALACION19-PASO-A-PASO.md)** befolgen. Voraussetzung ist ein neuer Windows Server 2025 x64 mit Desktopdarstellung und Internetzugang; Domänencontroller sind ausgeschlossen. Kompilierung und manuelle Installation von SDK, Node oder Python sind nicht erforderlich. Abhängigkeiten werden direkt von offiziellen Anbietern geladen und geprüft.
+Den **[Windows-Installer Online20](https://github.com/was-car/RackClick/releases/tag/windows-online20-schema48-admin-data)** mit externerSHA256 herunterladen und die **[vollständige Anleitung EN/DE/ES](docs/INSTALACION20-PASO-A-PASO.md)** befolgen. ÖffentlicherDownload ohneGitHubKonto. Neuer Windows Server2025 x64 mit Desktopdarstellung undInternet; keinDomänencontroller. Abhängigkeiten werden direkt bei offiziellenAnbietern bezogen und geprüft; keineKompilierung erforderlich.
 
-Mit **CARGAR-50-CLIENTES** das vollständige synthetische Inventar von W02-A laden. Die leere Installation allein enthält noch keine 50 Kunden. Pro Server werden neue Konten, Kennwörter, Schlüssel und Zertifikate erzeugt. Restore und automatische Netzänderungen für Schema48 bleiben gesperrt. Testkandidat, keine Produktionsabnahme.
+Unter **Administration → Daten und Inventarkopien** lassen sich50Beispielkunden in ein leeresInventar laden, eineKopie allerKunden herunterladen oder dieseJSONDatei nachVorschau in eineranderenleerenInstallation wiederherstellen. Konten, Berechtigungen undMFA amZiel bleiben unverändert. DieDatei enthält nurInventar, keineAnmeldung, privaten/geteiltenVorlagen oderWindowskonfiguration. VollständigesRestore48 undautomatischeNetzänderungen48 bleiben gesperrt.
 
-
-Auf einer neuen Windows-Server2025-VM geprüft: New19,50Kunden,Sicherung undDaten nachNeustart. Diefrühe automatischeStartprüfung meldete einenFehler; diemanuelleoffiziellePrüfung bestand. BeideErgebnissebleibenerhalten; siehe[PrüfungundGrenzen](docs/PUBLICACION-ONLINE19-12-11-2026.md).
+Edition20 enthält den neuenAdministrationsbereich; dernativeNeuinstallationstest steht noch aus. Der [erhalteneTest vonEdition19](docs/PUBLICACION-ONLINE19-12-11-2026.md) prüfteDienst,HTTPS,50Kunden undNeustartpersistenz inB; diefrüheautomatischePrüfung schlugfehl, diemanuellebestand. Dasist keinNachweis einerInstallation20. Testkandidat, keineProduktionsabnahme.
 
 ## Enthaltene Funktionen
 
@@ -39,7 +38,7 @@ MFA-Wiederherstellungscodes, lokale Notfall-/Verlustwiederherstellung, Rotation,
 
 
 
-Offline-Parität, Wiederherstellung, Leistung und abschließende QA folgen der [Master-Roadmap](docs/HOJA-DE-RUTA-MAESTRA.md). SNMP/LLDP-Erkennung und echte Identitätsföderation bleiben spätere Vorhaben. Dies ist ein privater Entwicklungsstand, keine abgenommene Produktionsversion.
+Offline-Parität, Wiederherstellung, Leistung und abschließende QA folgen der [Master-Roadmap](docs/HOJA-DE-RUTA-MAESTRA.md). SNMP/LLDP-Erkennung und echte Identitätsföderation bleiben spätere Vorhaben. Dies ist ein öffentlicher Entwicklungsstand, keine abgenommene Produktionsversion.
 
 ## Technik und Repository
 

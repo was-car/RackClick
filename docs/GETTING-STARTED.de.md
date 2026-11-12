@@ -1,4 +1,4 @@
-# RackClick aus dem privaten Repository bauen und ausprobieren
+# RackClick aus GitHub bauen und ausprobieren
 
 **[English](GETTING-STARTED.en.md) · [Deutsch](GETTING-STARTED.de.md) · [Español](INSTALACION-DESDE-GITHUB.md)**
 
@@ -6,12 +6,12 @@ Stand 12. November 2026 · Quellschema **48**.
 
 Diese Anleitung erzeugt ein **neues lokales Entwicklungslabor** mit dem ursprünglichen synthetischen Inventar für zehn Kunden. Ein installierter RackClick-Server wird nicht verändert. Jeder Start erzeugt eine weitere Datenbank und zufällige Zugangsdaten; frühere Labore bleiben auf dem Datenträger. Änderungen eines früheren Labors werden weder erneut geöffnet noch exportiert.
 
-Die Demo verwendet **HTTP ausschließlich auf Loopback** und deaktiviert den MFA-Anbieter ausdrücklich. Nicht für das Netzwerk freigeben. Windows-Dienstinstallation, HTTPS, geplante Backups und echte MFA sind ein eigener Bereitstellungspfad: das [Windows-Release Online19](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48) mit seiner [vollständigen Anleitung](INSTALADOR19-ONLINE.html). Dieser Quellcode-Leitfaden bleibt ein lokales Entwicklungslabor. Restore für Schema48 bleibt deaktiviert.
+Die Demo verwendet **HTTP ausschließlich auf Loopback** und deaktiviert den MFA-Anbieter ausdrücklich. Nicht für das Netzwerk freigeben. Windows-Dienstinstallation, HTTPS, geplante Backups und echte MFA sind ein eigener Bereitstellungspfad: das [Windows-Release Online20](https://github.com/was-car/RackClick/releases/tag/windows-online20-schema48-admin-data) mit seiner [vollständigen Anleitung](INSTALACION20-PASO-A-PASO.md). Dieser Quellcode-Leitfaden bleibt ein lokales Entwicklungslabor. Restore für Schema48 bleibt deaktiviert.
 
 ## 1. Voraussetzungen
 
 - Windows x64 und eine normale Benutzersitzung, **keine als Administrator gestartete PowerShell**.
-- [Git für Windows](https://git-scm.com/downloads/win), berechtigter Zugriff auf `was-car/RackClick` und [Python ab 3.12](https://www.python.org/downloads/windows/) mit dem Launcher `py`. Python-Pakete sind nicht erforderlich.
+- [Git für Windows](https://git-scm.com/downloads/win), HTTPS-Zugriff auf `was-car/RackClick` und [Python ab 3.12](https://www.python.org/downloads/windows/) mit dem Launcher `py`. Python-Pakete sind nicht erforderlich.
 - HTTPS-Zugriff auf die offiziellen Werkzeuganbieter, NuGet und npm sowie Speicherplatz für Werkzeuge, Pakete und je einen neuen PostgreSQL-Cluster pro Ausführung.
 - Das offizielle [Microsoft Visual C++ x64 Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) für die Windows-PostgreSQL-Binärdateien. Direkt von Microsoft unter dessen Lizenz installieren und bei Aufforderung neu starten. Im nativen Test wurde 14.51.36247.0 verwendet; die ausführbare Datei ist hier nicht enthalten.
 - Eine bestehende PostgreSQL-Datenbank oder ein Windows-Dienstkonto wird nicht benötigt.
@@ -91,7 +91,7 @@ Für eine dauerhafte Windows-Bereitstellung das separat geprüfte native Paket u
 
 | Ergebnis | Vorgehen |
 |---|---|
-| GitHub 404 oder Anmeldung erforderlich | Berechtigtes Konto prüfen; das Repository ist privat. |
+| GitHub 404 oder Anmeldung erforderlich | Release-URL und Dateinamen prüfen; dieses öffentliche Repository benötigt für Downloads keine Anmeldung. |
 | `py` fehlt | Offizielles Python mit Launcher installieren und PowerShell neu öffnen. |
 | SDK fehlt | Festgelegte Werkzeuge dieses Klons vorbereiten; `global.json` unverändert lassen. |
 | PostgreSQL startet nicht | Visual C++, angeforderten Neustart und privates Laborprotokoll prüfen. Nicht ersatzweise eine andere Datenbank benutzen. |
@@ -104,4 +104,4 @@ Echte MFA benötigt einen separat geschützten Schlüsselspeicher außerhalb von
 
 ## Native Windows-Installation
 
-Für den vollständigen Server das separate [Windows-Release Online19](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48) und die [Anleitung EN/DE/ES](INSTALADOR19-ONLINE.html) verwenden. Abhängigkeiten kommen direkt von offiziellen Anbietern mit festen Hashes; Demo50 ist enthalten. Diese Quellanleitung bleibt ein lokales Entwicklungslabor ohne natives MFA. Restore48 bleibt deaktiviert.
+Für den vollständigen Server das separate [Windows-Release Online20](https://github.com/was-car/RackClick/releases/tag/windows-online20-schema48-admin-data) und die [Anleitung EN/DE/ES](INSTALACION20-PASO-A-PASO.md) verwenden. Abhängigkeiten kommen direkt von offiziellen Anbietern mit festen Hashes; Demo50 ist enthalten. Diese Quellanleitung bleibt ein lokales Entwicklungslabor ohne natives MFA. Restore48 bleibt deaktiviert.

@@ -1,5 +1,5 @@
 {
-  "revision": "2026-11-12-instalador-online19-177",
+  "revision": "2026-11-12-admin-inventory-data-180",
   "groupsBundle": "c457e5860274dcf87ec68dbdb1f7fef60b2589adaba20a00f2410157dc05487c",
   "cases": [
     {
@@ -3049,6 +3049,53 @@
         "Estado B: New19,50clientes,backup ydatos trasreinicio comprobados. Primer verificadorautomáticoHTTPSfalló yseconservó; oficialmanualpostboot_verified0. Rutaautomatizadapreparación+brokeroficial;resumenGUIinicialcontrastadoporcódigo,no todoslosclics. Caso planned enesta guía compartida: disponibilidad sóloenB/entrega19 yQA finaldeWascar pendiente. A/D/E yresultadosdelusuario conservados."
       ],
       "expected": "Mismo producto48/catálogo884/MFA45 y datosDemo50 queA, con nuevas identidades/contraseñas/claves/certificados en el destino. Ningún runtime restringido alojado enGitHub; descargas oficiales exactas. Candidata de pruebas, sin adopción final. Caso planned hasta ensayo y disponibilidad real."
+    },
+    {
+      "id": "QA-178",
+      "module": "Datos y copias de inventario",
+      "title": "Carga de50clientes desde Administración",
+      "feature": "planned",
+      "steps": [
+        "Usar sólo la candidata20 instalada en un Windows de pruebas autorizado con inventario vacío. No usar A/B/D/E conservadas ni borrar clientes para preparar el caso.",
+        "Entrar con un administrador global del Systemhaus y completar MFA si está configurado. Abrir Administración y el acceso Datos y copias de inventario.",
+        "Comprobar el inventario vacío y el resumen de los50clientes. Leer que esta operación conserva cuentas/MFA y no es una recuperación de Windows.",
+        "Introducir la confirmación indicada por el panel y pulsar la acción de carga una sola vez. Esperar el resultado confirmado por el servidor; la pantalla debe comunicar fases reales.",
+        "Si se pierde la respuesta, recargar y consultar la solicitud original. No enviar otra carga mientras siga pendiente. No interpretar notRecorded como cancelación.",
+        "Abrir Clientes:50nombres17EN/17DE/16ES,180racks,1563equipos,20665puertos y2207conexiones. Recargar e iniciar otra sesión autorizada y comprobar persistencia. Cambiar idioma no debe traducir nombres propios.",
+        "Volver al panel: una segunda carga debe quedar impedida porque el inventario ya contiene datos. Comprobar con una cuenta de sólo lectura que no puede ejecutar las operaciones."
+      ],
+      "expected": "Carga atómica deDemo50:50clientes/66sitios/88edificios/226salas/180racks/1563equipos/2869grupos/20665puertos/2207conexiones, sin alterar cuentas, credenciales, permisos niMFA. Sin reintentos automáticos ni éxito antes del commit. Caso planned hasta instalación/QA real deWascar."
+    },
+    {
+      "id": "QA-179",
+      "module": "Datos y copias de inventario",
+      "title": "Copia descargable de todos los clientes",
+      "feature": "planned",
+      "steps": [
+        "En la candidata20 con datos sintéticos, entrar como administrador global y abrir Administración → Datos y copias de inventario.",
+        "Leer el alcance: clientes y ocho colecciones, incluidas notas/metadatos. No contiene cuentas, contraseñas, MFA, plantillas privadas/compartidas niWindows.",
+        "Solicitar la copia una sola vez y esperar su confirmación. Descargar sólo el archivo confirmado; comprobar que el panel muestra longitud ySHA256.",
+        "Comprobar con Get-FileHash que elSHA256 delJSON descargado coincide con el mostrado. No compartir archivos con notas reales.",
+        "Recargar la página o simular interrupción de respuesta y consultar la solicitud original. No crear otra copia para disfrazar el estado incierto.",
+        "Comprobar que el inventario y las cuentas permanecen iguales. Con autoridad insuficiente o revocada no debe poderse obtener el archivo, tampoco mediante un recibo antiguo."
+      ],
+      "expected": "JSON RackClickInventoryBackup-v1 íntegro de todos los clientes, conUUID/montajes/puertos/cables y metadatos. Lectura coherente, recibo ligado al actor y autorización actual; sin secretos ni cambios de inventario. No es pg_dump. Caso planned hasta QA instalada."
+    },
+    {
+      "id": "QA-180",
+      "module": "Datos y copias de inventario",
+      "title": "Restauración guiada de inventario en destino vacío",
+      "feature": "planned",
+      "steps": [
+        "Usar otra instalación20 de pruebas vacía y su propia cuenta/MFA. Conservar las instalaciones existentes y la copia original; no limpiar ninguna base para este caso.",
+        "Abrir Administración → Datos y copias de inventario → Restaurar inventario. Seleccionar elJSON generado enQA-179 y esperar la vista previa.",
+        "Comprobar formato, recuentos ySHA256; introducir la confirmación indicada y restaurar una sola vez. La vista previa no debe modificar la base.",
+        "Esperar el commit confirmado. Comprobar nombres yUUID declientes, salas, racks/equipos, soportes y puertos; contrastar conexiones de ambos extremos, frontal/trasera y recarga.",
+        "La cuenta del destino, su contraseña yMFA deben seguir funcionando. No se importan seguridad ni permisos del origen.",
+        "Un archivo alterado, formato ajeno, excesivo o con relaciones/modelos inválidos debe rechazarse. El inventario existente impide otra restauración; no se sobrescribe ni se mezcla.",
+        "Ante respuesta incierta usar la consulta de la solicitud original, incluida después de recargar. No repetir elPOST ni borrar datos."
+      ],
+      "expected": "Restauración atómica del inventario con identidades y cables conservados; destino propio y seguridad invariable. Preview sin mutaciones y errores sin carga parcial. No habilita Restore48 de PostgreSQL/Windows. Caso planned hasta QA real en instalación20."
     }
   ],
   "membersBundle": "efc8bda2405174feced0792048f7c65a2bfdba6665d7220b440589dcdea8ecd7",

@@ -141,7 +141,7 @@ $fields=[ordered]@{
  postgresPort=@('Puerto PostgreSQL local','55441')
  allowedSubnet=@('Red autorizada (propuesta editable)',$defaultSubnet)
  systemhaus=@('Nombre de Systemhaus','Systemhaus')
- bootstrapUser=@('Administrador de RackClick','Wascar')
+ bootstrapUser=@('Administrador de RackClick','RackClickAdmin')
  serviceName=@('Nombre del servicio Windows','RackClick')
  accountName=@('Cuenta Windows estandar del servicio','RackClickSvc')
 }

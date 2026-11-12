@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "postgresql": "17.11",
+  "schema": 46,
+  "runtimeSqlRole": "restricted_non_owner_no_product_ddl",
+  "host": "store_only",
+  "totpKeyRead": false,
+  "testsPassed": 9,
+  "testsFailed": 0,
+  "testsSkipped": 0,
+  "newTheoryCases": 2,
+  "existingTests": 7,
+  "firstExecutionPassed": true,
+  "productDefectCorrected": false,
+  "results": [
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.InvalidGuessesAreBoundedAcrossRecoveryAndNormalFactorUse",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryRedemptionTransactionTests.OverlappingRedemptionsCommitOneAccountRecoveryAndLeaveAnotherAccountUntouched(differentCodes: True)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.RecoveryReturnsOnlyFreshEnrollmentAndCannotReadTheTotpKey",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.ExpiryWhileWaitingForTheCodeRowIsMeasuredAfterThatLastLock",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.ExpiredOrChangedPolicyChallengeDoesNotConsumeRecoveryCodes",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.ReplayWrongPurposeAndWrongCsrfCannotConsumeAValidEnrollmentOrCode",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.OnlyOneConcurrentUseCanSucceedEvenFromDifferentVerifyChallenges",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.RecoveryAuditFailureRollsBackEverythingIncludingTheUsedCode",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryRedemptionTransactionTests.OverlappingRedemptionsCommitOneAccountRecoveryAndLeaveAnotherAccountUntouched(differentCodes: False)",
+      "outcome": "Passed"
+    }
+  ],
+  "ownClusterStopped": true,
+  "serverSha256": "d315a00df4cd522b26030369de26fba1410a04c5a2c77667572aa6733e7c59b4",
+  "testsSha256": "4f3d914452030f13eb877b2fb7680b18b77fbb63ef4531af2272cc73184b5120",
+  "trxSha256": "85bf761cf0fbf52e3aabab5483c4add1bc5457115747323b0d5477e647dab516",
+  "vmOperations": 0,
+  "installedServiceOperations": 0
+}

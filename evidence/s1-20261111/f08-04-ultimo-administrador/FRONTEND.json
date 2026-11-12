@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "node": "24.21.0",
+  "counts": {
+    "tests": 68,
+    "pass": 68,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "files": [
+    "mfa-account.test.mjs",
+    "mfa-api.test.mjs",
+    "mfa-recovery.test.mjs"
+  ],
+  "esbuild": {
+    "esbuild": "0.25.10",
+    "source": "existing locked frontend node_modules, copied without installation",
+    "files": [
+      {
+        "path": "esbuild/install.js",
+        "sha256": "10f6fa3644d8d23d066ff67b0ae449074e75884503546a9fedb667f1dcb9ade2"
+      },
+      {
+        "path": "esbuild/LICENSE.md",
+        "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681"
+      },
+      {
+        "path": "esbuild/package.json",
+        "sha256": "93f88a93cd72f8b547d44ba4a02f6f70048fb7a6f923d0b4f0b39f28fea53de6"
+      },
+      {
+        "path": "esbuild/README.md",
+        "sha256": "6d481cd60ec3c679e5e395f547ab4221147f35642894f6b95a8df38fd25c87bd"
+      },
+      {
+        "path": "esbuild/bin/esbuild",
+        "sha256": "84fe789aa0155d1b61aa9944cae9c2dcf4731f7b45a8da7ea52a9ca882adc0b0"
+      },
+      {
+        "path": "esbuild/lib/main.d.ts",
+        "sha256": "161c8e0690c46021506e32fda85956d785b70f309ae97011fd27374c065cac9b"
+      },
+      {
+        "path": "esbuild/lib/main.js",
+        "sha256": "3c8fa21e97915ef2fe43d7f8e257c0d17909849e6869854466ca72f72620d25c"
+      },
+      {
+        "path": "@esbuild/win32-x64/esbuild.exe",
+        "sha256": "ff79bb8beb1ecde2a6c2f54a969e3be0015223b06b75593631947b16df94a09e"
+      },
+      {
+        "path": "@esbuild/win32-x64/package.json",
+        "sha256": "782455ed998d0a25ae819be38fa2cca30fee7bcb2b3b373978c819ea8c0aff28"
+      },
+      {
+        "path": "@esbuild/win32-x64/README.md",
+        "sha256": "29cf512fa580b72392176bf694933ae0decaf18116fdeee917511b445411ce16"
+      }
+    ]
+  },
+  "newDependencyInstalled": false,
+  "frontendSourceChanged": false,
+  "publicCanDisableChanged": true,
+  "browserExecuted": false,
+  "firstAttempt": {
+    "passed": 20,
+    "loadFailures": 1,
+    "cause": "isolated fixture omitted esbuild"
+  },
+  "warnings": [
+    "MODULE_TYPELESS_PACKAGE_JSON"
+  ]
+}

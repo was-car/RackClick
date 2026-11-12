@@ -1,0 +1,70 @@
+{
+  "baselineCommit": "98ad43582dcf08b3227f16873175625048dc09bd",
+  "baselineHistoricalAssertion": {
+    "development/server/tests/RackClick.Quality.Tests/PhysicalMediaRulesTests.cs": {
+      "sha256": "0046e8e7f31b8404c21250fd8595620b1efe02c5a3ed60753c670ef826981a9c",
+      "witness": [
+        "Assert.Equal(45, SchemaMigrations.LatestVersion);"
+      ]
+    },
+    "development/server/src/RackClick.Server/SchemaMigrations.cs": {
+      "sha256": "0edfc6137243d4983cae6ace490700537d3d49d7caaed1ebfef9520752b4b634",
+      "witness": [
+        "public const int LatestVersion = 48;"
+      ]
+    }
+  },
+  "files": {
+    "development/server/src/RackClick.Server/InventoryDataAdministration.cs": {
+      "sha256": "b2f20dc879756a645bb26fd9cb24a44c637063a5f9819820cd2ffd94b238b192",
+      "bytes": 18802,
+      "baselineSha256": null
+    },
+    "development/server/src/RackClick.Server/InventoryDataAdministrationArchive.cs": {
+      "sha256": "dac1651afdf9f19391c2607e9545aa15d0ba0921a74d91950e427da1e5c16ff5",
+      "bytes": 22215,
+      "baselineSha256": null
+    },
+    "development/server/src/RackClick.Server/InventoryDataAdministrationCancellation.cs": {
+      "sha256": "642e545569dea9b801d3147cbc58cf7f58c5161e99552c545d69f333916a619e",
+      "bytes": 5124,
+      "baselineSha256": null
+    },
+    "development/server/src/RackClick.Server/InventoryDataAdministrationEndpoints.cs": {
+      "sha256": "d81f18e6bcc52752dd65d326b3829f42a86ebcb9d3b01ecd5e9caa93113a638d",
+      "bytes": 2909,
+      "baselineSha256": null
+    },
+    "development/server/src/RackClick.Server/Program.cs": {
+      "sha256": "4942bf5457ceedefff82b25adceb2bdf628a6f0bbb4d2cd637724a4273c35aeb",
+      "bytes": 58498,
+      "baselineSha256": "c5386ca7d6729227f5792254b2a139232ff7e49f1eaaf4377a121187214de6b8"
+    },
+    "development/server/src/RackClick.Server/PostgresStore.cs": {
+      "sha256": "238d09e683f3aec99213a3cd4639a48b84f05513670f651d07a7c3abac970d7a",
+      "bytes": 22689,
+      "baselineSha256": "091977ae34c8a56943a087a4e628ce974486b230ea2532787dd0fcbaca54fe58"
+    },
+    "development/server/src/RackClick.Server/RackClick.Server.csproj": {
+      "sha256": "1b0a9d412c9da4a166183820f735aa3695d1022ea6f1132673a44bfd141b735d",
+      "bytes": 2146,
+      "baselineSha256": "84af67352a4ac8facecfbb33da440c0a2b462d208d3126d42d3e2abad5a5909c"
+    },
+    "development/server/tests/RackClick.Quality.Tests/InventoryDataAdministrationTests.cs": {
+      "sha256": "f0453b4c6de8477d6679335a89df445188e708de3d49e95c92c9faf58df13efc",
+      "bytes": 40480,
+      "baselineSha256": null
+    },
+    "development/server/tests/RackClick.Quality.Tests/PhysicalMediaRulesTests.cs": {
+      "sha256": "046008a979b0fb75d1410dedce6ad0752dacddca71d29ffd4263d369c85514c8",
+      "bytes": 3882,
+      "baselineSha256": "0046e8e7f31b8404c21250fd8595620b1efe02c5a3ed60753c670ef826981a9c"
+    }
+  },
+  "privateDiff": {
+    "name": "backend-implementation.diff",
+    "sha256": "bab15d2ea9b389cf5b34c23da6b3a4ae8a37aaa49f1624b614c3d4e226f58c05"
+  },
+  "releaseServerDllSha256": "768df75ea0db5afa349d4d8a4191856cd83b29a19b35ab4d1541b3b5f3f177bf",
+  "reportSha256": "dc35e0309b9a60cf7ddac4e667a84683f08e9f2bcf16b87bc620d82db6af651e"
+}

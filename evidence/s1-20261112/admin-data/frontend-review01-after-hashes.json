@@ -1,0 +1,38 @@
+[
+  {
+    "path": "development/frontend/src/AdminSectionNavigation.jsx",
+    "sha256": "6ff60c1ce46ada19b53bea69ae63550d52186a87ed4318bb5115de07d6a018f2"
+  },
+  {
+    "path": "development/frontend/src/AdminUsers.jsx",
+    "sha256": "55ec9aa383d81c300d63c11cfcc34fcf0e3d3635c579ee5fc69b79512b0fa468"
+  },
+  {
+    "path": "development/frontend/src/AdminInventoryData.jsx",
+    "sha256": "e483661b4aba860a7ec451f02e1da688c3bcc9f244c13825c643fd5a91fadab8"
+  },
+  {
+    "path": "development/frontend/src/admin-inventory-data.ts",
+    "sha256": "dbf476f8a3af82c550bae51d526053c25636aac3a17945a7dda156e5bb9dfd11"
+  },
+  {
+    "path": "development/frontend/src/admin-inventory-data-words.ts",
+    "sha256": "3c03cffb1650231f65438ee0ef4b28702a11111ceaa40c3134c7fe294ec85e47"
+  },
+  {
+    "path": "development/frontend/tests/admin-inventory-data.test.mjs",
+    "sha256": "b52fb0698e73ce8003725f6cdc72e4a82b5e2157083f79c6e5867174f97fa3ce"
+  },
+  {
+    "path": "development/frontend/tests/browser-admin-inventory-data-journal.mjs",
+    "sha256": "59bd9d7b442efb33f2ff89e6207a4c4438f64871e3b0992e8c608dae5eb933ae"
+  },
+  {
+    "path": "development/frontend/tests/browser-admin-inventory-data.mjs",
+    "sha256": "1b1a38967814eb8820e451d342b4204a6f9539a35b6aca1a79a6571c5420cb4c"
+  },
+  {
+    "path": "development/frontend/tests/browser-admin-inventory-data-recovery.mjs",
+    "sha256": "7f790022be11f0df65369d905f7518a84e8e44a727a07583c7c13fe097cfd523"
+  }
+]

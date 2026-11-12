@@ -1,0 +1,81 @@
+{
+  "success": true,
+  "childExitCode": 0,
+  "expected": 12,
+  "postgresql": "17.11",
+  "schema": 46,
+  "mode": "combined-twelve",
+  "counts": {
+    "total": "12",
+    "executed": "12",
+    "passed": "12",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "cases": [
+    {
+      "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.ValidCodesDoNotReactivateAnInactiveAccountOrBypassAFactorLock(factorLocked: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.DisableCannotCancelRecoveryPendingEvenWithAnAuthorizedMfaSession(selfGlobal: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryCodeGenerationConcurrencyTests.TheSameConcurrentGenerationDisclosesTenCodesInOnlyOneResponse",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.RecoveryAuditFailureRollsBackEverythingIncludingTheUsedCode",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.TheOnlyGlobalAdministratorRecoversWithoutAnotherAdministratorAndKeepsAuthority",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRestrictedRecoveryHttpTests.RecoveryNeverAuthorizesTheApiUntilTheNewFactorIsConfirmed(globalAdministrator: True)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRestrictedRecoveryHttpTests.RecoveryNeverAuthorizesTheApiUntilTheNewFactorIsConfirmed(globalAdministrator: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryRedemptionTransactionTests.OverlappingRedemptionsCommitOneAccountRecoveryAndLeaveAnotherAccountUntouched(differentCodes: True)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.ReplayWrongPurposeAndWrongCsrfCannotConsumeAValidEnrollmentOrCode",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaRecoveryRedemptionTransactionTests.OverlappingRedemptionsCommitOneAccountRecoveryAndLeaveAnotherAccountUntouched(differentCodes: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.DisableCannotCancelRecoveryPendingEvenWithAnAuthorizedMfaSession(selfGlobal: True)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.ValidCodesDoNotReactivateAnInactiveAccountOrBypassAFactorLock(factorLocked: True)",
+      "outcome": "Passed"
+    }
+  ],
+  "serverSha256": "dd285c4f7561d8f7e678178a12d399782f0c2142712d16bff10ec87762f85d0e",
+  "testsSha256": "1d0332b69238239aa6b8f4214f7a8fd186c26945dc99f6e7c905998a028605c4",
+  "vmOperations": 0,
+  "installedServiceOperations": 0,
+  "ownClusterStopped": true
+}

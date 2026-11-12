@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "checks": [
+    "Real IndexedDB durable write/read, bound to origin/Systemhaus/actor.",
+    "Different request, wrong removal and archive material are rejected without replacing the original intention.",
+    "Stored record contains only the exact small intention and scope key; no archive or credentials.",
+    "Intention survives a real page reload.",
+    "Concurrent readwrite transactions admit one intention and reject the other."
+  ],
+  "limits": [
+    "Standalone adapter/real Edge IndexedDB, no PostgreSQL, app GUI or Wascar QA."
+  ]
+}

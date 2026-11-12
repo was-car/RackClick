@@ -1,0 +1,334 @@
+--- a/development/server/src/RackClick.Server/Program.cs
++++ b/development/server/src/RackClick.Server/Program.cs
+@@ -12,10 +12,23 @@
+ bool mfaRequireAll = args.Contains("--mfa-require-all", StringComparer.Ordinal);
+ bool mfaBackupInventory = args.Contains("--mfa-backup-inventory", StringComparer.Ordinal);
+ bool mfaKeyMaintenance = args.Contains("--mfa-key-maintenance", StringComparer.Ordinal);
+-if ((bootstrap ? 1 : 0) + (migrate ? 1 : 0) + (recoverAdmin ? 1 : 0) + (mfaKeysInit ? 1 : 0) + (mfaRequireAll ? 1 : 0) + (mfaBackupInventory ? 1 : 0) + (mfaKeyMaintenance ? 1 : 0) > 1)
++bool mfaEmergencyRecovery = args.Contains("--mfa-emergency-recovery", StringComparer.Ordinal);
++if ((bootstrap ? 1 : 0) + (migrate ? 1 : 0) + (recoverAdmin ? 1 : 0) + (mfaKeysInit ? 1 : 0) + (mfaRequireAll ? 1 : 0) + (mfaBackupInventory ? 1 : 0) + (mfaKeyMaintenance ? 1 : 0) + (mfaEmergencyRecovery ? 1 : 0) > 1)
+ {
+     Console.WriteLine(JsonSerializer.Serialize(new { status = "rejected", error = "cli_mode_conflict" }));
+     Environment.ExitCode = 1;
++    return;
++}
++// Explicit local authority is evaluated before host configuration, protected SQL material or a listener.
++if (mfaEmergencyRecovery)
++{
++    if (args.Length != 1 || !Console.IsInputRedirected)
++    {
++        Console.WriteLine(JsonSerializer.Serialize(new { status = "rejected", code = "mfa_emergency_arguments_invalid" }));
++        Environment.ExitCode = 1;
++        return;
++    }
++    Environment.ExitCode = MfaEmergencyRecoveryCommand.Run(Console.Out);
+     return;
+ }
+ if (mfaKeyMaintenance)
+--- /dev/null
++++ b/development/server/src/RackClick.Server/MfaEmergencyRecoveryCommand.cs
+@@ -0,0 +1,69 @@
++using System.ComponentModel;
++using System.Runtime.InteropServices;
++using System.Runtime.Versioning;
++using System.Security;
++using System.Security.Principal;
++using System.Text.Json;
++using Microsoft.Win32.SafeHandles;
++
++namespace RackClick.Server;
++
++// F-09.01: local entry and authority only. No configuration, stdin, SQL, keys or web host.
++// The loss-reset transition remains unavailable until F-09.02/.03 implement its maintenance protocol.
++internal static class MfaEmergencyRecoveryCommand
++{
++    internal static int Run(TextWriter output)
++    {
++        string? denied = AuthorizationFailure();
++        output.WriteLine(JsonSerializer.Serialize(new
++        {
++            status = "rejected",
++            code = denied ?? "mfa_emergency_transition_unavailable",
++            stage = denied is null ? "transition" : "authorization",
++            operationsApplied = 0,
++            sessionGranted = false
++        }));
++        // Authorization is not a recovery receipt, an application session or a completed operation.
++        return 1;
++    }
++
++    private static string? AuthorizationFailure()
++    {
++        if (!OperatingSystem.IsWindows()) return "mfa_emergency_not_windows";
++        try { return WindowsAuthorityFailure(); }
++        catch (Exception error) when (error is SecurityException or UnauthorizedAccessException or Win32Exception)
++        { return "mfa_emergency_identity_unavailable"; }
++    }
++
++    [SupportedOSPlatform("windows")]
++    private static string? WindowsAuthorityFailure()
++    {
++        using var impersonated = WindowsIdentity.GetCurrent(ifImpersonating: true);
++        if (impersonated is not null) return "mfa_emergency_impersonation_rejected";
++        using var processIdentity = WindowsIdentity.GetCurrent();
++        bool system = processIdentity.User?.IsWellKnown(WellKnownSidType.LocalSystemSid) == true;
++        if (system) return DenialForToken(true, false, true, false, false, false);
++        bool administrator = new WindowsPrincipal(processIdentity).IsInRole(WindowsBuiltInRole.Administrator);
++        if (!administrator) return DenialForToken(true, false, false, false, false, false);
++        bool readable = GetTokenInformation(processIdentity.AccessToken, 20, out uint elevation, sizeof(uint), out uint returned)
++            && returned == sizeof(uint);
++        return DenialForToken(true, false, false, true, readable, elevation != 0);
++    }
++
++    // Pure policy seam for tests; never read from DI, JSON, claims or environment in the CLI.
++    private static string? DenialForToken(bool windows, bool impersonated, bool system,
++        bool administrator, bool elevationReadable, bool elevated)
++    {
++        if (!windows) return "mfa_emergency_not_windows";
++        if (impersonated) return "mfa_emergency_impersonation_rejected";
++        if (system) return null;
++        if (!administrator) return "mfa_emergency_not_authorized";
++        if (!elevationReadable) return "mfa_emergency_token_unreadable";
++        return elevated ? null : "mfa_emergency_not_authorized";
++    }
++
++    [DllImport("advapi32.dll", SetLastError = true)]
++    [return: MarshalAs(UnmanagedType.Bool)]
++    private static extern bool GetTokenInformation(SafeAccessTokenHandle token, int informationClass,
++        out uint elevation, uint length, out uint returned);
++}
+--- /dev/null
++++ b/development/server/tests/RackClick.Quality.Tests/MfaEmergencyAuthorizationTests.cs
+@@ -0,0 +1,67 @@
++using System.Reflection;
++using System.Runtime.Versioning;
++using System.Security.Claims;
++using System.Security.Principal;
++using RackClick.Server;
++using Xunit;
++
++namespace RackClick.Quality.Tests;
++
++public sealed class MfaEmergencyAuthorizationTests
++{
++    public static IEnumerable<object?[]> TokenCases()
++    {
++        for (int mask = 0; mask < 64; mask++)
++        {
++            bool windows = (mask & 1) != 0, impersonated = (mask & 2) != 0, system = (mask & 4) != 0;
++            bool admin = (mask & 8) != 0, readable = (mask & 16) != 0, elevated = (mask & 32) != 0;
++            string? expected = !windows ? "mfa_emergency_not_windows"
++                : impersonated ? "mfa_emergency_impersonation_rejected"
++                : system ? null : !admin ? "mfa_emergency_not_authorized"
++                : !readable ? "mfa_emergency_token_unreadable"
++                : !elevated ? "mfa_emergency_not_authorized" : null;
++            yield return [windows, impersonated, system, admin, readable, elevated, expected];
++        }
++    }
++
++    [Theory]
++    [MemberData(nameof(TokenCases))]
++    public void OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(
++        bool windows, bool impersonated, bool system, bool admin, bool readable, bool elevated, string? expected)
++    {
++        Assert.Equal(expected, (string?)CommandType.GetMethod("DenialForToken", BindingFlags.NonPublic | BindingFlags.Static)!
++            .Invoke(null, [windows, impersonated, system, admin, readable, elevated]));
++    }
++
++    [Fact]
++    [SupportedOSPlatform("windows")]
++    public void ClaimsCannotReplaceTheCurrentWindowsToken()
++    {
++        var before = Failure(); var principal = Thread.CurrentPrincipal;
++        try
++        {
++            Thread.CurrentPrincipal = new ClaimsPrincipal(new ClaimsIdentity(
++                [new(ClaimTypes.Role, "Administrators"), new(ClaimTypes.Role, "SYSTEM"),
++                 new("security.manage", "global"), new("systemhaus.manage", "global")], "forged-application-principal"));
++            Assert.Equal(before, Failure());
++        }
++        finally { Thread.CurrentPrincipal = principal; }
++    }
++
++    [Fact]
++    [SupportedOSPlatform("windows")]
++    public void RealSelfImpersonationIsDeniedAndTheOriginalIdentityIsRestored()
++    {
++        using var identity = WindowsIdentity.GetCurrent();
++        var before = Failure(); var sid = identity.User!.Value;
++        WindowsIdentity.RunImpersonated(identity.AccessToken, () => Assert.Equal("mfa_emergency_impersonation_rejected", Failure()));
++        using var after = WindowsIdentity.GetCurrent();
++        Assert.Equal(sid, after.User!.Value);
++        Assert.Equal(before, Failure());
++        using var impersonated = WindowsIdentity.GetCurrent(ifImpersonating: true);
++        Assert.Null(impersonated);
++    }
++
++    private static Type CommandType => typeof(MfaKeyRing).Assembly.GetType("RackClick.Server.MfaEmergencyRecoveryCommand", throwOnError: true)!;
++    private static string? Failure() => (string?)CommandType.GetMethod("AuthorizationFailure", BindingFlags.NonPublic | BindingFlags.Static)!.Invoke(null, null);
++}
+--- /dev/null
++++ b/development/server/tests/RackClick.Quality.Tests/MfaEmergencyProcessTests.cs
+@@ -0,0 +1,100 @@
++using System.Diagnostics;
++using System.Reflection;
++using System.Runtime.Versioning;
++using System.Security.Principal;
++using System.Text.Json;
++using RackClick.Server;
++using Xunit;
++
++namespace RackClick.Quality.Tests;
++
++[SupportedOSPlatform("windows")]
++public sealed class MfaEmergencyProcessTests
++{
++    [Theory]
++    [InlineData("--bootstrap")]
++    [InlineData("--migrate")]
++    [InlineData("--recover-admin")]
++    [InlineData("--mfa-keys-init")]
++    [InlineData("--mfa-require-all")]
++    [InlineData("--mfa-backup-inventory")]
++    [InlineData("--mfa-key-maintenance")]
++    public async Task EmergencyModeCannotBeCombinedWithAnotherCliAuthority(string otherMode)
++    {
++        var run = await Run("--mfa-emergency-recovery", otherMode);
++        Assert.Equal(1, run.ExitCode);
++        using var body = JsonDocument.Parse(run.Output);
++        Assert.Equal("cli_mode_conflict", body.RootElement.GetProperty("error").GetString());
++        Assert.Equal("", run.Error);
++    }
++
++    [Theory]
++    [InlineData("--urls", "http://127.0.0.1:1")]
++    [InlineData("--mfa-emergency-recovery", "")]
++    public async Task ExtraArgumentsCannotTurnEmergencyIntoAHost(string first, string second)
++    {
++        var arguments = second.Length == 0
++            ? new[] { "--mfa-emergency-recovery", first }
++            : new[] { "--mfa-emergency-recovery", first, second };
++        var run = await Run(arguments);
++        Assert.Equal(1, run.ExitCode);
++        using var body = JsonDocument.Parse(run.Output);
++        Assert.Equal("mfa_emergency_arguments_invalid", body.RootElement.GetProperty("code").GetString());
++        Assert.Equal("", run.Error);
++    }
++
++    [Fact]
++    public async Task EmergencyEntryRejectsWithoutReadingPoisonedHostConfigurationOrGrantingASession()
++    {
++        var run = await Run("--mfa-emergency-recovery");
++        Assert.Equal(1, run.ExitCode);
++        Assert.Equal("", run.Error);
++        var line = Assert.Single(run.Output.Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries));
++        using var body = JsonDocument.Parse(line);
++        var json = body.RootElement;
++        Assert.Equal("rejected", json.GetProperty("status").GetString());
++        using var identity = WindowsIdentity.GetCurrent();
++        string? nativeDenial = !identity.IsSystem && !new WindowsPrincipal(identity).IsInRole(WindowsBuiltInRole.Administrator)
++            ? "mfa_emergency_not_authorized"
++            : (string?)typeof(MfaKeyRing).Assembly.GetType("RackClick.Server.MfaEmergencyRecoveryCommand", true)!
++                .GetMethod("AuthorizationFailure", BindingFlags.NonPublic | BindingFlags.Static)!.Invoke(null, null);
++        Assert.Equal(nativeDenial ?? "mfa_emergency_transition_unavailable", json.GetProperty("code").GetString());
++        Assert.Equal(0, json.GetProperty("operationsApplied").GetInt32());
++        Assert.False(json.GetProperty("sessionGranted").GetBoolean());
++        Assert.DoesNotContain("untrusted-marker", run.Output, StringComparison.Ordinal);
++        Assert.DoesNotContain("listening", run.Output, StringComparison.OrdinalIgnoreCase);
++    }
++
++    private static async Task<ServerRun> Run(params string[] arguments)
++    {
++        var start = new ProcessStartInfo(Path.Combine(AppContext.BaseDirectory, "RackClick.Server.exe"))
++        {
++            UseShellExecute = false, CreateNoWindow = true,
++            RedirectStandardInput = true, RedirectStandardOutput = true, RedirectStandardError = true,
++            WorkingDirectory = AppContext.BaseDirectory,
++        };
++        foreach (var name in start.Environment.Keys.Where(name => name.StartsWith("CORECLR_", StringComparison.OrdinalIgnoreCase)
++            || name.StartsWith("COR_", StringComparison.OrdinalIgnoreCase)
++            || name.StartsWith("DOTNET_", StringComparison.OrdinalIgnoreCase) && !name.Equals("DOTNET_ROOT", StringComparison.OrdinalIgnoreCase)).ToArray())
++            start.Environment.Remove(name);
++        start.Environment["DOTNET_EnableDiagnostics"] = "0";
++        start.Environment["ASPNETCORE_ENVIRONMENT"] = "Production";
++        start.Environment["ConnectionStrings__RackClick"] = "untrusted-marker-not-a-connection";
++        start.Environment["PublicOrigin"] = "untrusted-marker-not-an-origin";
++        start.Environment["MfaKeyStore__Enabled"] = "untrusted-marker-not-a-boolean";
++        start.Environment["MfaEmergency__Elevated"] = "true";
++        start.Environment["MfaEmergency__System"] = "true";
++        start.Environment["MfaEmergency__Authorized"] = "true";
++        foreach (var argument in arguments) start.ArgumentList.Add(argument);
++        using var process = Process.Start(start) ?? throw new InvalidOperationException("Synthetic child unavailable.");
++        var output = process.StandardOutput.ReadToEndAsync(); var error = process.StandardError.ReadToEndAsync();
++        await process.StandardInput.WriteAsync("untrusted-marker-never-used-as-password");
++        process.StandardInput.Close();
++        using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(30));
++        try { await process.WaitForExitAsync(timeout.Token); }
++        catch (OperationCanceledException) { if (!process.HasExited) process.Kill(entireProcessTree: true); throw; }
++        return new(process.ExitCode, await output, await error);
++    }
++
++    private sealed record ServerRun(int ExitCode, string Output, string Error);
++}
+--- /dev/null
++++ b/development/server/tests/RackClick.Quality.Tests/MfaEmergencyHttpTests.cs
+@@ -0,0 +1,59 @@
++using System.Net;
++using System.Text.Json;
++using Microsoft.AspNetCore.Hosting;
++using Microsoft.AspNetCore.Mvc.Testing;
++using Microsoft.Extensions.Logging;
++using Xunit;
++using Lab = RackClick.Quality.Tests.MfaAccountManagementTests.Laboratory;
++
++namespace RackClick.Quality.Tests;
++
++[Collection("MfaHttp")]
++public sealed class MfaEmergencyHttpTests
++{
++    [Fact]
++    public async Task NeitherAnonymousRequestsNorAGlobalApplicationAdministratorCanInvokeLocalEmergencyOverHttp()
++    {
++        await using var lab = await Lab.Create();
++        var previous = new Dictionary<string, string?>();
++        void Set(string name, string value) { previous[name] = Environment.GetEnvironmentVariable(name); Environment.SetEnvironmentVariable(name, value); }
++        try
++        {
++            Set("ConnectionStrings__RackClick", lab.RuntimeConnection);
++            Set("MfaKeyStore__Enabled", "false");
++            Set("PublicOrigin", "https://rackclick.test");
++            await using var factory = new WebApplicationFactory<Program>().WithWebHostBuilder(b =>
++            { b.UseEnvironment("Production"); b.ConfigureLogging(l => l.ClearProviders()); });
++            using var client = factory.CreateClient(new WebApplicationFactoryClientOptions
++            { BaseAddress = new Uri("https://rackclick.test"), HandleCookies = false, AllowAutoRedirect = false });
++            using var loginRequest = Post("/api/v1/auth/login", JsonSerializer.Serialize(new { username = lab.Admin.UserName, password = Lab.Password }));
++            using var login = await client.SendAsync(loginRequest, TestContext.Current.CancellationToken);
++            Assert.Equal(HttpStatusCode.OK, login.StatusCode);
++            using var loginBody = JsonDocument.Parse(await login.Content.ReadAsStringAsync(TestContext.Current.CancellationToken));
++            string cookie = login.Headers.GetValues("Set-Cookie").Single(c => c.StartsWith("RackClick.Session=", StringComparison.Ordinal)).Split(';')[0];
++            string csrf = loginBody.RootElement.GetProperty("csrf").GetString()!;
++            var before = await lab.SnapshotAll();
++            foreach (string route in new[] { "/api/v1/auth/mfa/emergency", "/api/v1/auth/mfa/loss-reset", "/api/v1/admin/mfa/emergency", "/api/v1/mfa/emergency-recovery" })
++            {
++                using var anonymousRequest = Post(route, "{\"action\":\"loss-reset\",\"authorized\":true,\"system\":true}");
++                using var anonymous = await client.SendAsync(anonymousRequest, TestContext.Current.CancellationToken);
++                Assert.Equal(HttpStatusCode.Unauthorized, anonymous.StatusCode);
++                using var adminRequest = Post(route, "{\"action\":\"loss-reset\",\"authorized\":true,\"system\":true}");
++                adminRequest.Headers.Add("Cookie", cookie); adminRequest.Headers.Add("X-RackClick-CSRF", csrf);
++                adminRequest.Headers.Add("X-RackClick-Actor", lab.Admin.Id.ToString("D"));
++                using var admin = await client.SendAsync(adminRequest, TestContext.Current.CancellationToken);
++                Assert.Equal(HttpStatusCode.NotFound, admin.StatusCode);
++            }
++            Assert.Equal(before, await lab.SnapshotAll());
++        }
++        finally { foreach (var item in previous) Environment.SetEnvironmentVariable(item.Key, item.Value); }
++    }
++
++    private static HttpRequestMessage Post(string route, string body)
++    {
++        var request = new HttpRequestMessage(HttpMethod.Post, route)
++        { Content = new StringContent(body, System.Text.Encoding.UTF8, "application/json") };
++        request.Headers.Add("Origin", "https://rackclick.test");
++        return request;
++    }
++}

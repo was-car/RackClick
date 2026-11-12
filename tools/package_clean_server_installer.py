@@ -25,7 +25,7 @@ def clean_build(archive, service_publish, output, payload_output, *, bundle_sha2
     entries = {
         'Servidor.zip': payload,
         'INICIAR.ps1': launcher.replace('\r\n', '\n').replace('\n', '\r\n').encode('utf-8-sig'),
-        '00-LEEME.html': checked_path(ROOT / ('docs/INSTALADOR' + edition + '-SQL-PROTEGIDO.html' if edition in {'12', '13', '14', '15', '16', '17', '18', '19'} else 'docs/INSTALADOR11-WINDOWS43.html' if edition == '11' else 'docs/REINICIO-LIMPIO-SERVIDOR.html')).read_bytes(),
+        '00-LEEME.html': checked_path(ROOT / ('docs/INSTALADOR' + edition + '-SQL-PROTEGIDO.html' if edition in {'12', '13', '14', '15', '16', '17', '18', '19', '20'} else 'docs/INSTALADOR11-WINDOWS43.html' if edition == '11' else 'docs/REINICIO-LIMPIO-SERVIDOR.html')).read_bytes(),
         '00-LIMPIAR-Y-REINSTALAR.cmd': (
             '@echo off\r\nsetlocal\r\n'
             'set "RC_PS=%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"\r\n'

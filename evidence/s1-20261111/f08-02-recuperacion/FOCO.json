@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "coordinator": true,
+  "postgresql": "17.11",
+  "schema": 46,
+  "runtimeSqlRole": "restricted_non_owner_no_ddl",
+  "host": "TestServer",
+  "mfaKeyProvider": "synthetic_DI_only",
+  "testsPassed": 6,
+  "testsFailed": 0,
+  "testsSkipped": 0,
+  "newTheoryCases": 2,
+  "existingTests": 4,
+  "firstAttempt": {
+    "passed": 4,
+    "failed": 2,
+    "cause": "fixture_preparation_exceeded_existing_ten_per_minute_rate_limit",
+    "productDefect": false
+  },
+  "ownClusterStopped": true,
+  "serverSha256": "504f961eaf7196c7ef81b350d9197c78c3086ba644cf762ad97410a3bd0137d9",
+  "testsSha256": "c57e04c28f4265b2e0129be4e0d9d15fb5468aa957814f8803a23c63fe8b482a",
+  "trxSha256": "0dcc2114bede9500f8aa8240ebdf94c6155f69054658a3ae45be1910223a415c",
+  "vmOperations": 0,
+  "installedServiceOperations": 0
+}

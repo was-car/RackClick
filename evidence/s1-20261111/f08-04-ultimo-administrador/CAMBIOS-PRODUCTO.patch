@@ -1,0 +1,20 @@
+--- before/development/server/src/RackClick.Server/MfaAccountManagement.cs
++++ development/server/src/RackClick.Server/MfaAccountManagement.cs
+@@ -109,6 +109,8 @@
+         var before = await MfaAccountState(db, tx, actor, userId, admin, available, revision, ct);
+         if (!admin && before.FactorState == "active" && !before.SessionMfaVerified)
+             throw new DomainError(403, "mfa_verification_required");
++        if (action == "disable" && before.EnrollmentPending)
++            throw new DomainError(409, "mfa_enrollment_required");
+         // The global administrator exception is own-account only. Nobody may extend a user's grace deadline.
+         if (action == "disable" && before.DeadlineReached && !(userId == actor.Id && before.GlobalAdministratorExempt))
+             throw new DomainError(409, "mfa_required_by_policy");
+@@ -230,7 +232,7 @@
+         int? days = deadline.HasValue ? (int)Math.Max(0, Math.Ceiling((deadline.Value - now).TotalDays)) : null;
+         bool configured = required || pending || factor is "active" or "pending";
+         return new(target, name, available, effectiveRequired, pending, factor, global, grace, deadline,
+-            days, reached, exempt, verified, usable && !required, usable && configured && (!reached || (!admin && exempt)),
++            days, reached, exempt, verified, usable && !required, usable && configured && !pending && (!reached || (!admin && exempt)),
+             usable && (factor is "active" or "pending"), revision, now);
+     }
+ }

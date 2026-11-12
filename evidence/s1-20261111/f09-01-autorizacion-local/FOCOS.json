@@ -1,0 +1,1180 @@
+{
+  "runs": [
+    {
+      "mode": "red",
+      "childExitCode": 1,
+      "counts": {
+        "total": "10",
+        "executed": "10",
+        "passed": "0",
+        "failed": "10",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyEntryRejectsWithoutReadingPoisonedHostConfigurationOrGrantingASession",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.ExtraArgumentsCannotTurnEmergencyIntoAHost(first: \"--urls\", second: \"http://127.0.0.1:1\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-backup-inventory\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-keys-init\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--bootstrap\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.ExtraArgumentsCannotTurnEmergencyIntoAHost(first: \"--mfa-emergency-recovery\", second: \"\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--migrate\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-require-all\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-key-maintenance\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--recover-admin\")",
+          "outcome": "Failed"
+        }
+      ],
+      "serverSha256": "4e3bd65ac4100b76a7352fe7da4be9d0c783ee11d20f128ab0cfd8f36e30bf00",
+      "testsSha256": "9d2e39f20e51c0940a3a386885a7aab980251a337800867b89dce9cb6fff8162",
+      "dotnetRebuilt": true,
+      "vmOperations": 0,
+      "trxSha256": "b91d4c08e8a9a141d358268e94c4762ceaa1d861f4b26d368f9bb0456d47eb57"
+    },
+    {
+      "mode": "green",
+      "childExitCode": 0,
+      "counts": {
+        "total": "76",
+        "executed": "76",
+        "passed": "76",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: True, readable: False, elevated: True, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-backup-inventory\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyEntryRejectsWithoutReadingPoisonedHostConfigurationOrGrantingASession",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.RealSelfImpersonationIsDeniedAndTheOriginalIdentityIsRestored",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.ClaimsCannotReplaceTheCurrentWindowsToken",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--recover-admin\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_token_unreadable\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: False, readable: True, elevated: False, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: True, readable: True, elevated: False, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: False, readable: False, elevated: False, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.ExtraArgumentsCannotTurnEmergencyIntoAHost(first: \"--mfa-emergency-recovery\", second: \"\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: False, readable: False, elevated: True, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_not_authorized\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.ExtraArgumentsCannotTurnEmergencyIntoAHost(first: \"--urls\", second: \"http://127.0.0.1:1\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_token_unreadable\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-keys-init\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_not_authorized\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: True, readable: True, elevated: True, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_not_authorized\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--bootstrap\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-require-all\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_not_authorized\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-key-maintenance\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: True, readable: True, elevated: True, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: True, readable: False, elevated: False, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--migrate\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: False, readable: True, elevated: True, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_not_authorized\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        }
+      ],
+      "serverSha256": "4283f7b871173aaf965091a25ab32a51066b21e947e571e413705eccafd4f10c",
+      "testsSha256": "7b7b10a0bd509554ad6bba0292a48740bb0fa55311d81fc4bb94a13e6ba8bbd2",
+      "dotnetRebuilt": true,
+      "vmOperations": 0,
+      "trxSha256": "cc86625e06a0a05c9339f3588d1a75e290f4c12c520beae52c876e637d834612"
+    },
+    {
+      "mode": "final",
+      "childExitCode": 0,
+      "counts": {
+        "total": "76",
+        "executed": "76",
+        "passed": "76",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-backup-inventory\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: True, readable: True, elevated: True, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-require-all\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--recover-admin\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: False, readable: True, elevated: True, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: False, readable: True, elevated: False, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.RealSelfImpersonationIsDeniedAndTheOriginalIdentityIsRestored",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_not_authorized\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: True, readable: False, elevated: False, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: True, readable: False, elevated: True, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: True, readable: True, elevated: True, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-key-maintenance\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.ExtraArgumentsCannotTurnEmergencyIntoAHost(first: \"--mfa-emergency-recovery\", second: \"\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_not_authorized\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: False, readable: False, elevated: False, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.ExtraArgumentsCannotTurnEmergencyIntoAHost(first: \"--urls\", second: \"http://127.0.0.1:1\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: True, readable: True, elevated: False, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_not_authorized\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_not_authorized\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--bootstrap\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyEntryRejectsWithoutReadingPoisonedHostConfigurationOrGrantingASession",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.ClaimsCannotReplaceTheCurrentWindowsToken",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: True, readable: False, elevated: True, expected: \"mfa_emergency_token_unreadable\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--migrate\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: False, admin: False, readable: True, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: True, admin: False, readable: False, elevated: True, expected: null)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyProcessTests.EmergencyModeCannotBeCombinedWithAnotherCliAuthority(otherMode: \"--mfa-keys-init\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: True, readable: True, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: True, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: True, system: True, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_impersonation_rejected\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: True, admin: False, readable: False, elevated: True, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: False, system: False, admin: True, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: False, readable: False, elevated: False, expected: \"mfa_emergency_not_authorized\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: False, impersonated: True, system: False, admin: False, readable: True, elevated: False, expected: \"mfa_emergency_not_windows\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyAuthorizationTests.OnlyNativeSystemOrAnElevatedEnabledAdministratorCanPassThePolicy(windows: True, impersonated: False, system: False, admin: True, readable: False, elevated: False, expected: \"mfa_emergency_token_unreadable\")",
+          "outcome": "Passed"
+        }
+      ],
+      "serverSha256": "4283f7b871173aaf965091a25ab32a51066b21e947e571e413705eccafd4f10c",
+      "testsSha256": "7b7b10a0bd509554ad6bba0292a48740bb0fa55311d81fc4bb94a13e6ba8bbd2",
+      "dotnetRebuilt": false,
+      "vmOperations": 0,
+      "trxSha256": "d059d673da467b14fbfbb2c507ac8c11ff55274305fade489eb5c9b44c000359"
+    },
+    {
+      "mode": "http",
+      "childExitCode": 0,
+      "counts": {
+        "total": "3",
+        "executed": "3",
+        "passed": "3",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaRestrictedRecoveryHttpTests.RecoveryNeverAuthorizesTheApiUntilTheNewFactorIsConfirmed(globalAdministrator: True)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaRestrictedRecoveryHttpTests.RecoveryNeverAuthorizesTheApiUntilTheNewFactorIsConfirmed(globalAdministrator: False)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyHttpTests.NeitherAnonymousRequestsNorAGlobalApplicationAdministratorCanInvokeLocalEmergencyOverHttp",
+          "outcome": "Passed"
+        }
+      ],
+      "serverSha256": "4283f7b871173aaf965091a25ab32a51066b21e947e571e413705eccafd4f10c",
+      "testsSha256": "7b7b10a0bd509554ad6bba0292a48740bb0fa55311d81fc4bb94a13e6ba8bbd2",
+      "dotnetRebuilt": false,
+      "vmOperations": 0,
+      "postgres": "17.11",
+      "schema": 46,
+      "ownClusterStopped": true,
+      "trxSha256": "b0866307f4c537fed470a90126e22ef4b6e2439d83867f1448fba03e038c138a"
+    },
+    {
+      "mode": "regression",
+      "childExitCode": 0,
+      "counts": {
+        "total": "74",
+        "executed": "74",
+        "passed": "74",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.InitialLimitIsEnforcedBeforeAnUnboundedLineIsRead",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.IncompleteOrInvalidConfigurationFailsClosedWithoutCreatingAnything(shape: \"instalacion-con-llaves\", expectedCode: \"mfa_keystore_installation_invalid\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.MissingVersionMaterialIsRefusedWithoutRegeneration(version: 7)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.VerifyRejectsExtraFieldsNoncanonicalIdsAndMismatchedPins(field: \"inventorySha256\", value: \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\"···)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.DuplicateEvenEscapedPropertyNameIsRejected",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.ValidWindowsStoreWithPersistentMaintenanceFenceCannotComposeAHost",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.EnabledSettingIsParsedStrictly(raw: \"1\", expected: \"Invalid\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.NonNumericCandidateIsASanitizedRejection(candidate: \"true\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.VerifyRejectsExtraFieldsNoncanonicalIdsAndMismatchedPins(field: \"inventoryBase64\", value: \"not-base64-private-marker\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.ReaderThatIsAlsoTrustedIsRefused",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.KeyFileHeldExclusivelyIsRefusedAsUnreadableWithoutChangingTheStore",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.IncompleteOrInvalidConfigurationFailsClosedWithoutCreatingAnything(shape: \"instalacion-ausente\", expectedCode: \"mfa_keystore_installation_missing\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.EmptyTrustIsRefused",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.IncompleteOrInvalidConfigurationFailsClosedWithoutCreatingAnything(shape: \"raiz-relativa\", expectedCode: \"mfa_keystore_root_relative\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.InvalidLocalProtocolDoesNotEchoInputOrTouchTheHost(input: \"{\\\"action\\\":\\\"invented-untrusted-text\\\"}\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.IncompleteOrInvalidConfigurationFailsClosedWithoutCreatingAnything(shape: \"root-ausente\", expectedCode: \"mfa_keystore_root_missing\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.MalformedInitialInputIsRejectedWithoutReflectingIt(input: \"\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.InvalidSwitchValueFailsClosedBeforeAnyStoreIsRead",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.MalformedInitialInputIsRejectedWithoutReflectingIt(input: \"{\\\"operation\\\":true}\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.UnsafeKeysFolderAclIsRefusedWithoutRepair",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.AbsentStoreIsRefusedWithoutCreatingAnything",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.InvalidLocalProtocolDoesNotEchoInputOrTouchTheHost(input: \"{\\\"action\\\":\\\"retire\\\",\\\"action\\\":\\\"check\\\"}\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.NonNumericCandidateIsASanitizedRejection(candidate: \"null\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.VerifyRejectsExtraFieldsNoncanonicalIdsAndMismatchedPins(field: \"installationId\", value: \"00000000-0000-0000-0000-000000000000\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.EnabledSettingIsParsedStrictly(raw: \"True\", expected: \"Enabled\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.NonNumericCandidateIsASanitizedRejection(candidate: \"{}\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.SnapshotRejectsNonNativeConnectionsBeforeInspectingEnvelope(connection: \"Host=127.0.0.1;Options=-c role=postgres\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.NonWindowsHostRefusesTheStoreWithoutTouchingDisk",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaKeyStoreInitProcessTests.NotElevatedRunRejectsWithoutPostgresOriginOrProviderAndCreatesNothing",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.CorruptRingIsRefusedWithoutRegeneration",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.IncompleteOrInvalidConfigurationFailsClosedWithoutCreatingAnything(shape: \"instalacion-no-uuid\", expectedCode: \"mfa_keystore_installation_invalid\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.NonNumericCandidateIsASanitizedRejection(candidate: \"[]\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.CompositionFailureReachesTheContainerAsItsOwnException",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.MalformedInitialInputIsRejectedWithoutReflectingIt(input: \"[]\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.InvalidLocalProtocolDoesNotEchoInputOrTouchTheHost(input: \"{\\\"action\\\":\\\"\\\\ud800\\\"}\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.VerifyRejectsExtraFieldsNoncanonicalIdsAndMismatchedPins(field: \"dumpSha256\", value: \"ffffffffffffffffffffffffffffffffffffffffffffffffff\"···)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.IncompleteOrInvalidConfigurationFailsClosedWithoutCreatingAnything(shape: \"instalacion-vacio-uuid\", expectedCode: \"mfa_keystore_installation_invalid\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.ProductionBranchRefusesTheLabOwnedStoreBecauseTheOwnerIsNotFixedTrust",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.RootCharactersAreClassifiedWithoutLeakingAnException(suffix: \"\\0cola\", expectedCode: \"mfa_keystore_root_invalid\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.SnapshotRejectsNonNativeConnectionsBeforeInspectingEnvelope(connection: \"Host=127.0.0.2\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.CompositionIsResolvedOnceThroughDependencyInjection",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.VerifyRejectsExtraFieldsNoncanonicalIdsAndMismatchedPins(field: \"extra\", value: \"private-marker\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaKeyStoreInitProcessTests.ModeConflictIsRejectedBeforeAnyWork",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.IncompleteOrInvalidConfigurationFailsClosedWithoutCreatingAnything(shape: \"instalacion-sin-guiones\", expectedCode: \"mfa_keystore_installation_invalid\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.CancellationEndsAReaderThatIgnoresTheReadCancellationToken",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.VerifyRejectsExtraFieldsNoncanonicalIdsAndMismatchedPins(field: \"installationId\", value: \"c76d6f6b1caa46dd932c1a04c442ab22\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.InputIOExceptionIsSanitized",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.ValidStoreComposesWithTheTestBranchAndReportsItsVersionsWithoutKeyMaterial",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.SnapshotRejectsNonNativeConnectionsBeforeInspectingEnvelope(connection: \"Host=localhost\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.IncompleteOrInvalidConfigurationFailsClosedWithoutCreatingAnything(shape: \"instalacion-vacia\", expectedCode: \"mfa_keystore_installation_missing\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.UnicodeEscapedAndLiteralUnpairedSurrogatesAreRejected",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.MalformedInitialInputIsRejectedWithoutReflectingIt(input: \"{}\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.InvalidLocalProtocolDoesNotEchoInputOrTouchTheHost(input: \"\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.MalformedInitialInputIsRejectedWithoutReflectingIt(input: \"{\\\"\\\\ud800\\\":\\\"snapshot\\\"}\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.RootCharactersAreClassifiedWithoutLeakingAnException(suffix: \"<mala>\", expectedCode: \"mfa_keystore_store_missing\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.EnabledSettingIsParsedStrictly(raw: \"\", expected: \"Disabled\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.EnabledSettingIsParsedStrictly(raw: \"false\", expected: \"Disabled\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.VerifyNeedsOnlyInventoryAndExternalPinsWithoutDatabaseOrKeys",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.ValidJsonWithoutTerminatingNewlineIsATruncatedProtocol",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.EnabledSettingIsParsedStrictly(raw: null, expected: \"Disabled\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.AlreadyCancelledCommandHasNoPositiveResponse",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.MalformedInitialInputIsRejectedWithoutReflectingIt(input: \"{\\\"operation\\\":\\\"snapshot\\\",\\\"operation\\\":\\\"verify\"···)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.InvalidLocalProtocolDoesNotEchoInputOrTouchTheHost(input: \"[]\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.RingHeldExclusivelyIsRefusedAsUnreadableWithoutChangingTheStore",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.InvalidLocalProtocolDoesNotEchoInputOrTouchTheHost(input: \"{\\\"\\\\udfff\\\":\\\"retire\\\"}\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.EnabledSettingIsParsedStrictly(raw: \"yes\", expected: \"Invalid\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.InvalidLocalProtocolDoesNotEchoInputOrTouchTheHost(input: \"{}\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.MaintenanceRequestDoesNotExposeSqlMaterialInItsStringRepresentation",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.UnelevatedInvocationIsRejectedBeforeReadingInput",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.MissingVersionMaterialIsRefusedWithoutRegeneration(version: 1)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaMaintenanceCommandTests.NonNumericCandidateIsASanitizedRejection(candidate: \"\\\"1\\\"\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.EnabledSettingIsParsedStrictly(raw: \"true\", expected: \"Enabled\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostCompositionTests.EnabledSettingIsParsedStrictly(raw: \"FALSE\", expected: \"Disabled\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaBackupInventoryCommandTests.MalformedInitialInputIsRejectedWithoutReflectingIt(input: \"{\\\"operation\\\":\\\"\\\\ud800\\\"}\")",
+          "outcome": "Passed"
+        }
+      ],
+      "serverSha256": "4283f7b871173aaf965091a25ab32a51066b21e947e571e413705eccafd4f10c",
+      "testsSha256": "7b7b10a0bd509554ad6bba0292a48740bb0fa55311d81fc4bb94a13e6ba8bbd2",
+      "dotnetRebuilt": false,
+      "vmOperations": 0,
+      "trxSha256": "f4d5ff5c80080989622377e1883d6f2d03aab85f7bf0d1e8ea6b586b2f3a74b5"
+    },
+    {
+      "mode": "host",
+      "childExitCode": 0,
+      "counts": {
+        "total": "7",
+        "executed": "7",
+        "passed": "7",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostHttpTests.StartupWithANulRootFromJsonTerminatesWithOneCodeLineAndNoStackOrPath",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostHttpTests.LosingTheActiveKeyDuringExecutionAnswers503WithoutAuthorityOrPartialWrites",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostHttpTests.StartupWithAnAbsentStoreTerminatesWithoutRegeneratingOrListening",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostHttpTests.MigrateKeepsItsContractWithBrokenMfaConfigurationAndNoHttpsOrigin",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostHttpTests.RunningHostRetainsTheRingUntilItsOwnLifetimeEnds",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostHttpTests.StartupWithARelativeStoreRootTerminatesBeforeTheListenerWithItsCodeOnly",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaWindowsHostHttpTests.EnrollmentThroughTheHostWithTheWindowsProviderOpensSessionWithTheActiveVersion",
+          "outcome": "Passed"
+        }
+      ],
+      "serverSha256": "4283f7b871173aaf965091a25ab32a51066b21e947e571e413705eccafd4f10c",
+      "testsSha256": "7b7b10a0bd509554ad6bba0292a48740bb0fa55311d81fc4bb94a13e6ba8bbd2",
+      "dotnetRebuilt": false,
+      "vmOperations": 0,
+      "postgres": "17.11",
+      "schema": 46,
+      "ownClusterStopped": true,
+      "trxSha256": "3a339e88bc12542d1c49e7805038f3bf6967f6d738b671a5d8a322507416a4c8"
+    }
+  ],
+  "finalBinaryPins": {
+    "serverSha256": "4283f7b871173aaf965091a25ab32a51066b21e947e571e413705eccafd4f10c",
+    "testsSha256": "7b7b10a0bd509554ad6bba0292a48740bb0fa55311d81fc4bb94a13e6ba8bbd2"
+  },
+  "allFinalRunsWithoutSkips": true,
+  "redUsesInitialProcessTestRevision": true,
+  "simulatedPolicyRows": 64,
+  "nativeIdentityCases": 2,
+  "nativeProcessCases": 10,
+  "positiveElevatedOrSystemProcessExecuted": false,
+  "privateBinlogsPresent": 15,
+  "repetitionNotNewCoverage": true
+}

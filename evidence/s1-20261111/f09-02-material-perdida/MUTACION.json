@@ -1,0 +1,13 @@
+{
+  "change": "Private freeze only: lost factors no longer forced required/pending on conflict",
+  "cases": 1,
+  "passed": 0,
+  "failed": 1,
+  "expectedPendingAccounts": 3,
+  "observedPendingAccounts": 0,
+  "sourceSha256Restored": "e7958ca3300a55f005cec287a37661b4f68e0f2aa18df277181ab0db5ee1b6ac",
+  "serverSha256Restored": "69ed57d2ae0d84d633f0fd962c6d140fa4ac53da3eaabff4d3f0ac3f94ff3de8",
+  "rootProductWasNotMutated": true,
+  "staleIncrementalAttemptDeclared": true,
+  "forcedRebuildAndBinaryPinRequiredBeforeFinalRun": true
+}

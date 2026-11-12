@@ -8,12 +8,11 @@ The server brings the established offline interface to shared, permission-contro
 
 ## Install on Windows Server
 
-Download the **[Windows Online19 installer](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48)** and its SHA256 checksum, then follow the **[complete EN/DE/ES manual](docs/INSTALACION19-PASO-A-PASO.md)**. Use a fresh Windows Server 2025 x64 machine with Desktop Experience and Internet access; domain controllers are excluded. No compilation or manual installation of the SDK, Node or Python is required. Dependencies download directly from official providers and are verified.
+Download the **[Windows Online20 installer](https://github.com/was-car/RackClick/releases/tag/windows-online20-schema48-admin-data)** and its externalSHA256, then follow the **[complete EN/DE/ES guide](docs/INSTALACION20-PASO-A-PASO.md)**. Public download requires noGitHub account. Use a fresh Windows Server2025 x64 with Desktop Experience and Internet, not a domain controller. Dependencies download directly from official providers and are verified; compilation is not required.
 
-Run the included **CARGAR-50-CLIENTES** loader to reproduce W02-A's complete synthetic inventory. The empty installation alone does not contain the 50 customers. Every server receives new credentials, keys and certificates. Restore and automatic network changes for schema48 remain disabled. This is a test candidate; final production acceptance is pending.
+Open **Administration → Data and inventory copies** to load50sample customers into empty inventory, download an all-customer inventory copy, or preview/restore thatJSON into another empty installation. Destination accounts, permissions andMFA remain unchanged. These files contain inventory only, excluding authentication, private/shared templates andWindows. CompleteRestore48 and automatic network48 changes remain disabled.
 
-
-Tested on a fresh Windows Server2025 VM: New19,50customers,backup and persistence after reboot. The early automatic postboot checker reported an error; the official manual verifier passed. Keep both outcomes; see [trial details and limits](docs/PUBLICACION-ONLINE19-12-11-2026.md).
+Edition20 adds the new administration panel; its clean native installation trial is pending. The [preserved edition19 trial](docs/PUBLICACION-ONLINE19-12-11-2026.md) verified service,HTTPS,50customers and reboot persistence inB; the early automatic checker failed and the manual verifier passed. That trial is not an edition20 installation claim. Test candidate, no final production acceptance.
 
 ## What is included
 

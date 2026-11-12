@@ -77,6 +77,6 @@ public sealed class PhysicalMediaRulesTests
         Assert.Equal(878, InventoryHardwareProfiles.All.Count(profile => profile.Manufacturer is not null));
         Assert.Equal(6, InventoryHardwareProfiles.All.Count(profile => profile.Revision == "german-cpe-20261103-v1"));
         Assert.Equal(10, InventoryHardwareProfiles.All.Count(profile => profile.Revision == "german-repeaters-20261103-v1"));
-        Assert.Equal(45, SchemaMigrations.LatestVersion);
+        Assert.Equal(48, SchemaMigrations.LatestVersion);
     }
 }

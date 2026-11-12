@@ -1,0 +1,1051 @@
+{
+  "productUnchanged": [
+    {
+      "path": "development/server/src/RackClick.Domain/FamilyLRules.cs",
+      "sha256": "9a612906077dfbcc51d2d235693ad1cb879cd00dff5747b344381b30b24aa534"
+    },
+    {
+      "path": "development/server/src/RackClick.Domain/Infrastructure.cs",
+      "sha256": "6d0ac0aa6b4191a0fd198078a3acd33b692ddcf10ab641aa6500db55b51e36bc"
+    },
+    {
+      "path": "development/server/src/RackClick.Domain/InventoryRules.cs",
+      "sha256": "14e34ce9bca5b414ebeb096855413a12e3d07df11e522aef2573860418bc0c71"
+    },
+    {
+      "path": "development/server/src/RackClick.Domain/packages.lock.json",
+      "sha256": "a29c6aa8cfb81874ff8bb78dc369d7416f28c9b8cc47e99592bfc019b20c41eb"
+    },
+    {
+      "path": "development/server/src/RackClick.Domain/PhysicalConnectors.cs",
+      "sha256": "0c84f63fb797b03406e24f066b6a8bac078e43b947955f3d4420b5ded0c9e513"
+    },
+    {
+      "path": "development/server/src/RackClick.Domain/RackClick.Domain.csproj",
+      "sha256": "8d654c44b7bebb6b31a9f2f606927f45b5072193adc4eef8cce3f3cf3b278df3"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminAudit.cs",
+      "sha256": "515fa93d2b0711517cf893d907ea2202c6f7bdbeff8da9d362e99700e6ce0f05"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminAuditAdministrativeDetail.cs",
+      "sha256": "b1d657407dcf6c7ea3542c33765734e408d4c8364c5e3065039aedfa532fa2ab"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminAuditContext.cs",
+      "sha256": "9323bb087776533597024960dbb88faaf66951f6b674a1bc00bbbe93ea2d0002"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminAuditDetail.cs",
+      "sha256": "1874004073443e97823c89422eb40ec55a50654c67e53983825b108c0cab3af2"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminCustomerGroupMembers.cs",
+      "sha256": "e8d2d19b346eddc58a02c3e2c2a3262652c89486398f153217e032e2c3e914b4"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminEffectivePermissions.cs",
+      "sha256": "6bcef407e6c863d96121d4551a14ecc9b00795d117a5934bcb38a78985df2cf9"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminGrantWrites.cs",
+      "sha256": "2d83ecb92e676c9545094a8d45001243dc230c1c9ab8c6157390d894c5e2a97b"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminGroupMembers.cs",
+      "sha256": "f8ea9b29b411cb24ca55f35c5e0670510a5a04680ed0e8286bb79bf067cb52c9"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminGroups.cs",
+      "sha256": "bdf7055a3253694fd164e7da407a14b70771705f9c338e535bfdd3a9d0ee51a1"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminGroupWrites.cs",
+      "sha256": "b273e1a9c8b6d5ddb0a0624f939e7f1b306a90e62debe5c0426f5581ee7c8429"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminUserPassword.cs",
+      "sha256": "641e4fc868776025d975e7d79fc7546f43308e2183dcd88a7acf17608ecd35d1"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminUsers.cs",
+      "sha256": "68cb22d572ed8747bf9c49c04298d3c307c91c702387614f9f7d712f957bc513"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminUserSessionRevocation.cs",
+      "sha256": "aca8e971e3369d94c8d0b2313afc3c1d74d83c2583bbb03f04fffe949720693e"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminUserSessions.cs",
+      "sha256": "a11d4097a3cf94ca81e0030b2a4822800d7bf8b27b56a9ad9e0b461093b636ea"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/AdminUserState.cs",
+      "sha256": "38f04034a36e3c400bb9f066d7702ad01bf05f11083d6f95af4e001d0e4b06c6"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/ArubaHardware.Generated.targets",
+      "sha256": "3c946edee67add46b62b8b2d05346a5f2b3ddf606ecd16cbabb0975422955238"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/ArubaHardwareProfiles.Generated.cs",
+      "sha256": "87b18fce70bb0ee04fb1b92cfdb017e88153055a09f8c8ea5b80bd7d6dc1f9fd"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Batch100BHardware.Generated.targets",
+      "sha256": "e66c9885ea1e3a92fbd22638efb4546426df069333bc55be3f58343ce186dcd7"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Batch100BHardwareProfiles.Generated.cs",
+      "sha256": "3241073da41434f3eb08e99746d8c0d59f3cd97edc50698d290d48cbd08190ea"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Batch100CHardware.Generated.targets",
+      "sha256": "4f6c282f90f0798e6299c535d52e9d4342faec282b104acd054805140c27dc16"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Batch100CHardwareProfiles.Generated.cs",
+      "sha256": "1f741eeaf8a9bc37e14e99499f7c218266b6c3c53ee89c07252e30b3a54da008"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Batch100Hardware.Generated.targets",
+      "sha256": "d44568178a02aac241d3facebda1765ad8cf4ee48d3510744d547dcc8402821c"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Batch100HardwareProfiles.Generated.cs",
+      "sha256": "47251e27381406086ef8a8293b7a387a545e3e83f2be284136ec04a534e98b9e"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Batch50BHardware.Generated.targets",
+      "sha256": "9ec8acd747c6701b025ad57c65cd4c5442cc452b9227ed1150313d86c7e680a4"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Batch50BHardwareProfiles.Generated.cs",
+      "sha256": "2105d3e94445d4e0530ddbab0714ece68c3b4ec2354c4e4c432da1bb144b49a0"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Batch50Hardware.Generated.targets",
+      "sha256": "330d399c8720ffd74fe1bdfc38bc8735bd43b6825dbbdcdf5ff1ebb1cc3a34d4"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Batch50HardwareProfiles.Generated.cs",
+      "sha256": "7572925773b7c893e3a559d00e5c232ce06265fb95deb2b5f589b0bbadfaf669"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/CommercialHardware.Generated.targets",
+      "sha256": "5f83fd7d8adee2db045635c249891ba6c6b55b45afc44369ca0b54f4e470ce49"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/CommercialHardwareProfiles.Generated.cs",
+      "sha256": "26c3a1ebc1ecf188f77ea3246e81e4a872d151277223e2c89b7edd7c10f95a9e"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/DiskStationHardware.Generated.targets",
+      "sha256": "b9bdd76ecd1500be2ab64a052a577ae0336b7202eecdcc0dcae4b1cc45c9c510"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/DiskStationHardwareProfiles.Generated.cs",
+      "sha256": "35a7510d06af647e94f8d564e7f9eba9ec0534c245b0a4b3371b9063367199b2"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/FortinetHardware.Generated.targets",
+      "sha256": "4ef074a4cbf4225180ce7c5841b9d22dc8f2b000a97a8d17f02d5254ee18cbaf"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/FortinetHardwareProfiles.Generated.cs",
+      "sha256": "c283968c87dbb2e0f9e47b4f86c0e942c1baf1af2a79684db9875867206542dd"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/GermanCpeHardware.Generated.targets",
+      "sha256": "3d3f4d7574350b355c96f8f83408b7f5a7ad907ac7f19cdac1ca6cd81dd4ee68"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/GermanCpeHardwareProfiles.Generated.cs",
+      "sha256": "9ddeea293a4a9413551a82e5f96a22654e5ec2caf4701a04a00ff8089a8e1518"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/GermanRepeatersHardware.Generated.targets",
+      "sha256": "119fdd48915705900308476c6d4f933253c89cdc6e25312c68137f7353c080f8"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/GermanRepeatersHardwareProfiles.Generated.cs",
+      "sha256": "70af30a5329f1f5481fc23a137f367e0555a00308bcd145ca98fa6b8ea179794"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/HardwareCatalog.Generated.targets",
+      "sha256": "16027f7986ac52518ceca4e3e2af637e4699399c3d584599ae9b6df25512e691"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/HttpSecurityHeaders.cs",
+      "sha256": "056398613dc178d88c24a9985bf2164c7d3a85b08a9dde5edd276814cdb2adaf"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryCatalogDevices.cs",
+      "sha256": "178be2cb825f5baa99862b0fa70fcc34506bcb150b123106073e14901d4ef02d"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryCategoryColors.cs",
+      "sha256": "a668ec831878129de76cf651a730a5c2e368ed40fa4b3cc619d48d631e2f91dd"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryChangeDetails.cs",
+      "sha256": "47481e367b163921b46d405561bb54651a8cc960e37212f4036d5f3f1ea9d614"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryChanges.cs",
+      "sha256": "d1b92e928e440737d37b3373846144e6ac0ba8a3af15f189a28e567783cb37a3"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryCompensation.cs",
+      "sha256": "4f8ad51b31e9bc6ac104b3866576df4fe9e9ba5862f09598af3d0b84059335ed"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryConnections.cs",
+      "sha256": "84f041a0db9791d3050b8bd2aa8fe5cc0ecad94e6d19319e31bbcf3596415786"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryDevices.cs",
+      "sha256": "c1ffee953f32087ebbcb62e9851b2f9344cc0017de08093a62457413dfd4977c"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryDuplicate.cs",
+      "sha256": "44c025d3c7dac3a331e7f97a18d217a90f5955c08c698e5a118f51770e00db78"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryFamilyLMounting.cs",
+      "sha256": "8c570806834fb750ae68f1cf7f52295fca36145c1260a69bcf507b04f40dfe90"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryGroupEditEvidence.cs",
+      "sha256": "cbc26cca29182eb9e5dbe37a4a38dbb4539306a8f92c374397f196c200c4d059"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryGroupGrowthCompensation.cs",
+      "sha256": "e59e2315ca09a7cc5498e073157b45a2a873ca1bf15729ad30636876e14c770c"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryGroupReductionCompensation.cs",
+      "sha256": "c2ec88f5f0b55a77e05f613b3735a61726ec52921e350722d10d35ba79fe6cec"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryHardwareCatalog.cs",
+      "sha256": "cd20fab65892d063ef6ab92b04759fb3f16c56bb5d6088dd7deb79fb2e5fd0ea"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryHardwareMounting.cs",
+      "sha256": "ded34d0bba676e53d4e70601de6e2a8bf809235a7031e9f0ab2ff4cc0726639d"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryHardwareProfiles.cs",
+      "sha256": "54d11bd34593245d0b36b064e9af918cdf69a8e1ee24e93bd1e7ff6e2d32de7f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryHardwareProfiles.Generated.cs",
+      "sha256": "d55e82c94d070cc1e053a0497beb82ddb2eee1372a762f6040ae0301ce33ac9f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryImpact.cs",
+      "sha256": "e0f95b90e0251cf086016dd969ff38b37b8212d31a1b554a62b532d51d6fa82a"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryJson.cs",
+      "sha256": "bb01981c2a47ebc29605d09ff5c72e719df97e4f7364f8677284f2b4fe294c84"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryJsonExport.cs",
+      "sha256": "79315e08365e33682a6c032ee6e21ff250fd89e8705ec24b2fdb576979a84728"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryJsonExportEndpoints.cs",
+      "sha256": "f8022c70b038d9269d6050ad6ab9a10e742ee62c09d89b0000a66334d0ab9d76"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryPrintableReports.cs",
+      "sha256": "4f8cebc0340c661af3b06c756f1cb38164c48bf7c3b164c480312b0338a26346"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryPrivateTemplateDevices.cs",
+      "sha256": "c2a029150ca1541d9dad380e9f4bf39dc30be491f53014627c6822fb68bbc60b"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryRackSvgReports.cs",
+      "sha256": "6c7b2d25a0ada37cc8f5d5b6491ea25f145c94da79424a04907038bca38a8e73"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryRc9Catalog.cs",
+      "sha256": "7cbe99610210746f69068569e34a2bd0cef925570976b9577755ad8c5bf12f33"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryRc9CatalogData.g.cs",
+      "sha256": "727ce9894a616860409bee6f7ed0e8a6a9b4674cb67f5a9a35c0fe6028116b1a"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryRc9ExcelReports.cs",
+      "sha256": "6ec34257ef9e77582ea43c01bba2fa9d51a408b80a36d7f1bbc43b45c8a8498d"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryReadViews.cs",
+      "sha256": "e7e62a0cedbe44b96e79bb6f110538ec102e3f593a8777940a5c37605166e7f6"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryReports.cs",
+      "sha256": "478ee8d7a4d01395b4a028985826e57078ed90786bcb22dee5354c6852ccd439"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventorySharedTemplateDevices.cs",
+      "sha256": "94ea21d2752081871f377deed0162bee8790707dc0b3e9d044afadcb2502bf5d"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventorySpreadsheetReports.cs",
+      "sha256": "9fe12235bdb4e994d807b7698432a0632410e0a7f67645ce5f7e816746689caa"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/InventoryStore.cs",
+      "sha256": "302f407acc7857dd97abb7ad7ea15272d88296ba50bee7c6b5fad67502c80d87"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaAccountEndpoints.cs",
+      "sha256": "12ced121733cdb613e684477a442bbdcebf3f894eb76caf434b82ee6d0df225f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaAccountManagement.cs",
+      "sha256": "f7899de77c576c076b49e0c3a4a072b834da8adea1aafbb4a70a24dde2ce04e6"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaAccountRecoveryCodes.cs",
+      "sha256": "f22c8b04370d61036d1760f0ce5d49db9e14d15014cd4c9242403e49880d8e15"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaBackupCatalog.cs",
+      "sha256": "e2757ceaa3c28155db06a53632a604aed98e02b5bcd6eb9683823aa0c7519ed3"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaBackupInventoryCommand.cs",
+      "sha256": "e061c2063017d6188af3c1dc5203ea7afa7d3bffeb38e1f4fa1c3658f281e88b"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaFactorKeyInventoryReader.cs",
+      "sha256": "866382787d1920d7b337becac33b2423179ecc70d9b1e4c8f58f797a13e81f5b"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaGraceEnforcement.cs",
+      "sha256": "acac645d660f0c5c2e051fbc206b5a123f9d37dc0fe57a070ba4867ed66a852c"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRecoveryEnvelope.cs",
+      "sha256": "8a7b06ee0441086c40aba3cc8735c21fc562eee08383a58e6ed169b01b7d7fe1"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRecoveryPayload.cs",
+      "sha256": "3c0779a15f9ca670d0b30d7a5965c17ddc918d6be2ec6512aa2a4c24de757aae"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRetention.cs",
+      "sha256": "86a53993072728f09225a5f874c97889b32a7a8b7d019ae6769287c383c6696d"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyRing.cs",
+      "sha256": "749930d3813c71286d7d02d9a0b24a318aba9abe536d82ada7b2ed3a41188ad9"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaKeyStoreInitCommand.cs",
+      "sha256": "613944ddc2ed35f43fa53508e742df99797f9ce7dfc417092885449afa8505f3"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaMaintenanceAdmission.cs",
+      "sha256": "a235daa0b2f3f3ded790c1db1879c53fd2fd675a753378a4a55e560369ee7519"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaMaintenanceCommand.cs",
+      "sha256": "e6fa6ce77497ea2b48146eb237c37d0a40add2b390e2f4a09b626d695dabb006"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaMaintenanceCoordinator.cs",
+      "sha256": "5848df7aeba5eb2de4ebc25619db0a09542bbaf01e98c02f9ba7557f4459a5f7"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaPolicyAdministration.cs",
+      "sha256": "4db9d334ed5815b998dc111ec46f4c239e716ce5b19fea7cc7670fa447a833da"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaPolicyRequireAllCommand.cs",
+      "sha256": "677f7fe15cf7cd47adb3d50c25251b2407899c92732df50e72a89a9ac80a102a"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaRecoveryCodeCodec.cs",
+      "sha256": "88d3474d161df076c551d20d6b200e7fd97a02b7d5cf7015d115f774d12530f3"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaRecoveryCodesEndpoints.cs",
+      "sha256": "b870ffd204ed65271c4cd8c9f61da68d3a99e17de20dd788c9efdeb4cec4fddd"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaRotationCoordinator.cs",
+      "sha256": "2578d6dafe877972cb443491a63c8a6bede780309eae294355997da19543737e"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaRotationDatabase.cs",
+      "sha256": "c5678ed6cf6ffd556862c23bbff8b56b20b1c21955c56268ebe3c84cf99785e5"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaRotationStartupGuard.cs",
+      "sha256": "e01b9bbb2c0607d381fdb836c430d6dc908a5fdefb95607257f1c0e625d469c5"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaSecretCipher.cs",
+      "sha256": "9c1cdc76b3d189c9cd09532766190e6175e5d6d8c1ce5365a787d407de5cb100"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaStore.cs",
+      "sha256": "7fdc78964f9d95d29ebeca09d98b100a2aae28680a72ee493f1ee5bc124b736a"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaStore.Enrollment.cs",
+      "sha256": "0333e5c96daf53b9fc5dae5f9765f7d33b9fe1a45c8a484be2ac36ea128d9727"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaStore.Recovery.cs",
+      "sha256": "4838087285a07629396ee42f767a091e6068055bf9cdf1a3b23db00d33a688f2"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaTotp.cs",
+      "sha256": "0bf5d3e3198bb1974c7f49d5cc124174aff8f0c72d5863b4d9b5dbe58d131b16"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaWindowsHostComposition.cs",
+      "sha256": "48d6066eecfff80849c6012ea8d70af84cd463b155783abddbaa61d746e79f41"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/NativeShutdown.cs",
+      "sha256": "b7f8608da21fb318a5df685c86cf14aa35edc1d3d228ed3e6746d034b5d4b2db"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiAdmin.cs",
+      "sha256": "e64aa8cd17e26019cba9ba4533cbae2593b8edca58e15fbb80375332769237a9"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiAudit.cs",
+      "sha256": "66bd55a217381b3981b5ce89d7b614daf5c46b3956b60c70771d29f640a8b496"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiChanges.cs",
+      "sha256": "d5b4421c40033db33745612929c44a82f1710e964c1cf18032e5813f2e9217ba"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiDocument.cs",
+      "sha256": "b48f11c6f1546457755a7cd6f0749cf544f1bc35e6e8754e4dab979a1bf4de9f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiInventory.cs",
+      "sha256": "caae502c9dd91ae62671270df12df6084976e849b253b2ac48da51f31c5711d7"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiInventoryCatalog.cs",
+      "sha256": "6c1b46957add00c28cb6e113d9053b2e16a9b5ae2243cdd1486e89863d991b66"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiInventoryJsonExport.cs",
+      "sha256": "e653716148ef4302cd7d4f746f5a35dfbc73075e9edcb8667fb2c56e8229c1a1"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiInventoryPrintableReports.cs",
+      "sha256": "657df6e6904d2141bf2e6934873afe87fd731e2ac229443a3b436b7aa4368b22"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiInventoryRackSvgReports.cs",
+      "sha256": "b1b599f0cd990d714e15d40dc924d5f090947e8a4bfb68cc32c5a69754f6da45"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiInventoryReadViews.cs",
+      "sha256": "7e455f082f6cef790c5818ed74df0cfe07fe6037225e42ac3cb7682dbc2e5a88"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiInventoryReports.cs",
+      "sha256": "ca8e3e9fcf169ca48e050438a7d0439eed6912ff17bb49d03118474681a1e5ee"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiInventorySpreadsheetReports.cs",
+      "sha256": "ceb6839a2afac43e6199f37969dce7b3c540d6d5bb002f506c3a4dfbe382819e"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiMfaAccounts.cs",
+      "sha256": "77f19e0453473ae28d08968edf0e628b81d68c38311172546c0f6ed5bf02cb22"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiMfaRecoveryCodes.cs",
+      "sha256": "81f96d543e2aa7fec0f235fa3f060dcbae97d647c329f72cee7cb37283849de3"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiPrivateDeviceTemplates.cs",
+      "sha256": "a3f2e6582b25daf5e77b7279e86022182a4165996e8c83abb22c5b74823c592c"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiRc9ExcelReports.cs",
+      "sha256": "263840ef34c7be33e5ebcd6bc84c6d600db4bd91d4e83687b0a1215cfe4b9ef8"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiSharedDeviceTemplates.cs",
+      "sha256": "bec315691c9c8b9f6741fb064fee8f994c085e51efa390b678a06ea0b7652e78"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiUserCatalogFavorites.cs",
+      "sha256": "9ac6d74856abcb6515e175af18654e5f94fba7581f42dafdc3dd15310cec076d"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiUserCategoryColors.cs",
+      "sha256": "39be81a703b01f5da9bee5e7350ddf333e31ce542fd589719d99f1729d705972"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiUserPortColors.cs",
+      "sha256": "42fe32e372e604b67129dbb83ebcf7b265e45cf4d28cbc77565941d78c875f17"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiUserPreferences.cs",
+      "sha256": "a12a78e88aafe01982ed8c9e170d45cd49afb47edca5cfef4aff70a6e24ca8f0"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OperationCancellation.cs",
+      "sha256": "a0e5c88bd5c1ba7838908b0591d3d29c28e77831c331574fddad081be1a7733b"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/packages.lock.json",
+      "sha256": "2bc8d93cf1533039db76046cb0d31be4c1c59a26542c2313d33354758fe0a0cc"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/PostgresStore.Authentication.cs",
+      "sha256": "ab148d80144c3b0ba672e2a8ae80764de9a8a65cf84d4774d8305b8eafc683ab"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/PostgresStore.cs",
+      "sha256": "091977ae34c8a56943a087a4e628ce974486b230ea2532787dd0fcbaca54fe58"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/PrivateDeviceTemplates.cs",
+      "sha256": "4b35c571ba1bdb58e20dc673b552cfed7a40143dfca117ee04d0d5bfed5a45ff"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/PrivateTemplateConfigurations.cs",
+      "sha256": "5f73acb14c11a2b7f6b6612e53f5f611576bd39e12380fa37a0918785506aada"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Program.cs",
+      "sha256": "6d73a7d530d1b761495ccf842a93331cb8af3bc8082df0b561886adb5174cd72"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/QnapHardware.Generated.targets",
+      "sha256": "99019b301b929d3e56c4904b2c2f997898302b42e13783aba8b877fd0dfacf66"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/QnapHardwareProfiles.Generated.cs",
+      "sha256": "72d52b9628c0e3f5def5ae2dfe3f656f37d379a65d0e8bc6c43982e96db31086"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/RackClick.Server.csproj",
+      "sha256": "84af67352a4ac8facecfbb33da440c0a2b462d208d3126d42d3e2abad5a5909c"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/RecoveryAdministrator.cs",
+      "sha256": "c7a04ad41b35dac4af788986d081835db8d8660f53d812b117672728b51a3cf1"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/SchemaMigrations.cs",
+      "sha256": "899362adcecb95f7980f512bf67f43b283dda75c864317a07beadc016caabdf7"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Secrets.cs",
+      "sha256": "1523e54aa2041d8224747cdb4f0435e063c9d9b610db9b4b1898fe2b5f49d68f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506AHardware.Generated.targets",
+      "sha256": "dfb0b08cefc63ee5adb4d7dd5f28f800711820b9d11fc1cc44132926a2fc80dc"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506AHardwareProfiles.Generated.cs",
+      "sha256": "c7c215db143bbcabc9167560f0dd2e519290baf4e56bcbef004858fa22c82dbe"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506BHardware.Generated.targets",
+      "sha256": "b8d09688cf754dcc288b419c13024a9f88357e5ffad48d954313759d2dfb7471"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506BHardwareProfiles.Generated.cs",
+      "sha256": "5cc6743bc88226347a178a232028695d1cd1aaec48f0fd5ff53fcd5d4454da40"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506CHardware.Generated.targets",
+      "sha256": "f489962f8e9d7a61c3ee298e9ce5c0a8e972b74424bf849fe2d7e2bd47b3cbbd"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506CHardwareProfiles.Generated.cs",
+      "sha256": "00bc5239caaa42b9cbe5323a9d5b11af72416665e4d137baea702fb756e1f1d0"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506DHardware.Generated.targets",
+      "sha256": "5cd80bf2d57acd0b0f92b381d83aa57e0030969537b2bd1cd4cb2f56f8ecd0a6"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506DHardwareProfiles.Generated.cs",
+      "sha256": "5e6f3e5ce9be24b20ce202dfe16a8573ae4c2601c4c785382a9e0025ba9a37c0"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506EHardware.Generated.targets",
+      "sha256": "a0cf823d5c7974eb9fdc780a3dea8a1071260f9afa3c4edfe978ae729b9dce1e"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506EHardwareProfiles.Generated.cs",
+      "sha256": "fbcc359854cf02def917a07297645d7958986953c1f526e74a74dcb93352110f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506FHardware.Generated.targets",
+      "sha256": "b882dfe4fcd88f6a69f8e75d83011c1a46c3c54c273c617cd5442c562a1c9001"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506FHardwareProfiles.Generated.cs",
+      "sha256": "f611943671bd58714fe84fd9059d3e06a96ef73ebf017d6320bd2981d1f1a3e5"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506GHardware.Generated.targets",
+      "sha256": "fa9ad182321e87a68fc26f18eb0320451d6023cd380df1650540873980e0debb"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506GHardwareProfiles.Generated.cs",
+      "sha256": "46034972124b896b287eb0e61639e882b0d7d87d874bf78907ff71799d3562ec"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506HHardware.Generated.targets",
+      "sha256": "27a6f3ba1f5dbec862f9e45f63be86004df0a99e0c7e75c74f58d1704716f2bb"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506HHardwareProfiles.Generated.cs",
+      "sha256": "5c92de9caf17e34184d3528e60644803ba338c0fadf8431c0557770ff530ba60"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506IHardware.Generated.targets",
+      "sha256": "c037530337aae4216ae5ee89ce4121ad4440e0e174f07baccbc22232103ff45a"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506IHardwareProfiles.Generated.cs",
+      "sha256": "7c01658b12778c81509755bb589170b0b41c92ba4c57ef40d8bb59e79f5e6d31"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506JHardware.Generated.targets",
+      "sha256": "23cef91d279cd879cbae18616c786604740d9c6e3e62096cc4edf8243e8bb86b"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506JHardwareProfiles.Generated.cs",
+      "sha256": "246a849a19e31ca9e93cf55c69ace196eb7d51e90cb0d65b9027f139dba6344b"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506KHardware.Generated.targets",
+      "sha256": "7a9a69ee58da3adafa5dc9a780bbdd5a46e0c691d59d584022ba0b2ecf41de57"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506KHardwareProfiles.Generated.cs",
+      "sha256": "490a837f00fb6b94733b39865c1ff08472fb4fd1375c6ee451e020b764627f97"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506LHardware.Generated.targets",
+      "sha256": "6625194be038a8a55a87b736d39d35aa0fde4498a495614a56b42f03fc6e970b"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/Selected506LHardwareProfiles.Generated.cs",
+      "sha256": "6f40fc9d9553faeb4398ca0ab64118ff447ac193beca18d7840d31189dc5bc7e"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/SharedDeviceTemplates.cs",
+      "sha256": "afb3bdd8fca4963f15a77349784a534008d77477ebdc7f09ea17a827628b8add"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/SqlSecretConnection.cs",
+      "sha256": "571e251756ca9cfe0a38040c55e1dfefbde2baeecf3ccab09e69469e2c3e6fcd"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/SynologyHardware.Generated.targets",
+      "sha256": "fd74a154f140621158f57c9b7379e5e4c4c59c42061023d105b9d53ba1d71b7f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/SynologyHardwareProfiles.Generated.cs",
+      "sha256": "db90cbda54104292965d733407ab5c4eb5f4b43c7873a7f18f6fdf4924ed3f3e"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/UserCatalogFavorites.cs",
+      "sha256": "3bcabeced65fb275b649123e783d707335b22cc9f6868832f1f5abb7120135ef"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/UserCategoryColors.cs",
+      "sha256": "34ad600d30b17cedb5d7ad0f4252f4f43fd1fa87c22160823cff2b3ef635fd23"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/UserPortColors.cs",
+      "sha256": "4fd76fa529493db8b9fde3c1600acb054f0a6747d082f165ca7b2a8a9a11237e"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/UserPreferences.cs",
+      "sha256": "3ce7de385d5983b1b415830aaadc5df74b86a5f3dc8406f5a2dd8ff215556c77"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyFileReader.cs",
+      "sha256": "4cc4203cf338f484eb9ddca253a77b491e7f37f75de97efe1cfbdad328f0f884"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyProvider.cs",
+      "sha256": "c634dd5e8e0272e8abe68842a60ae723bc87c532538fae9a775a10df7a83b3c9"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyRecovery.cs",
+      "sha256": "fa21ec1b0430f254b6594cee6c3f2094becab26c13cb71a5be1ffdecea9a8c7f"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyRecoveryFiles.cs",
+      "sha256": "37f2c762b708ed5abbf3df97bc40b263b7691167854da505f1769709253e12bc"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaKeyStoreWriter.cs",
+      "sha256": "e08909fd66e2d994475926848b82298340c95e5ec9e4776f6de017d064587385"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaMaintenanceService.cs",
+      "sha256": "814c2432f9aa8dd92fa16f6f36c0bde262df808ecdced5487eb204e8404435bf"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaMaintenanceStore.cs",
+      "sha256": "d510254f31f658833988e1bba4f5e76d8612ea0b5a6f724b388ca99cd4731e67"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaMaintenanceStore.Rotation.cs",
+      "sha256": "27c66534ea43dcc08afa4db6f2853fb36babb944d35d69a81df2e790233093f4"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsMfaMaintenanceStore.RotationGuard.cs",
+      "sha256": "e7290fdec13cc3c1b2dfbcffe673d648a30d2cf051aee48b09212c9cc1c218e5"
+    },
+    {
+      "path": "development/server/src/RackClick.Server/WindowsSqlSecret.cs",
+      "sha256": "fdc6624e1c3719082b7ac8f8470f9896615a9f85a8e850903b8dd8486ceda9df"
+    },
+    {
+      "path": "development/server/database/001-foundation.sql",
+      "sha256": "7dde6df0ff55b44e86bf98195bd603073767a5b9e816f182c5378bea03eba77d"
+    },
+    {
+      "path": "development/server/database/002-inventory.sql",
+      "sha256": "d8fdd2541c5ee1eb837e41590a5f368ff22c672daac06cf53f7498ec5f1eb36b"
+    },
+    {
+      "path": "development/server/database/003-operation-cancellation.sql",
+      "sha256": "c6c27f6943915baffe85efc19bce338a4999637cb4da1063c3e5deb5f9d724ea"
+    },
+    {
+      "path": "development/server/database/004-session-identity.sql",
+      "sha256": "6946d04d10d735f9d992500f604468ad8b78888e82b07534af9d6d680a803767"
+    },
+    {
+      "path": "development/server/database/005-audit-context.sql",
+      "sha256": "614e7dbe6cc69331d782175122f5241d2ec5fbf4567f675d73b471329f001d25"
+    },
+    {
+      "path": "development/server/database/006-audit-state-intent.sql",
+      "sha256": "7494e4e44073e198756ec4ae73b138ce6972aa885eb2d5281c915e52ecc37961"
+    },
+    {
+      "path": "development/server/database/007-audit-context-families.sql",
+      "sha256": "f125aa941552d23360644a6ea10327d2c477ff2847ab4f9c02716f06ed3b3d8b"
+    },
+    {
+      "path": "development/server/database/008-user-catalog-favorites.sql",
+      "sha256": "e23e0cc7b57375e06acf401ca2e8e5e7fe0a38f84d6b681f40210200d8c0401f"
+    },
+    {
+      "path": "development/server/database/009-private-device-templates.sql",
+      "sha256": "a5240911a702980dbba9ed0d978f822418e32b2fc14e68fb8fcf9ca6e219d96c"
+    },
+    {
+      "path": "development/server/database/010-customer-shared-device-templates.sql",
+      "sha256": "4fd9ba9d005cc7bba49a2d1bcfc089e6d613f25a043895a252daf99b09b3ea07"
+    },
+    {
+      "path": "development/server/database/011-user-preferences.sql",
+      "sha256": "1bce7225069f3511e240ebea28ef66a1317ef04048b24bf88f7b886fde136d74"
+    },
+    {
+      "path": "development/server/database/012-user-port-colors.sql",
+      "sha256": "3f740b4e7eb57dc630fcb737f5bb330970bc2d27bfdd33cec3dcfabf720b2820"
+    },
+    {
+      "path": "development/server/database/013-user-category-colors.sql",
+      "sha256": "908021ef7d6d2d1a4d33168ae151fa9343e993e1948b82b19838b30c85eb765c"
+    },
+    {
+      "path": "development/server/database/014-mfa.sql",
+      "sha256": "4a2e93311093d2372f33ff00c8318f63d7d773552540c83371754aa83ba1eba8"
+    },
+    {
+      "path": "development/server/database/015-mfa-account-policy.sql",
+      "sha256": "36534bccce71bd0e8792d91ad916003642412d927156109e24e44682dc1b6ade"
+    },
+    {
+      "path": "development/server/database/016-hardware-mounting.sql",
+      "sha256": "c2402ce8741bbb3ab24ecd11e2203263704297dd08330b0111e5e5a3cb89b6e0"
+    },
+    {
+      "path": "development/server/database/017-hardware-catalog.sql",
+      "sha256": "d037ef96c84ee8b7211b933bf2775da6a6e28b19451818c19ca3056516d21615"
+    },
+    {
+      "path": "development/server/database/018-commercial-hardware.sql",
+      "sha256": "71b9151c7ddd8b2c8b28f2de49f4ef312b3ca6d406f1054685424392c85535ad"
+    },
+    {
+      "path": "development/server/database/019-aruba-hardware.sql",
+      "sha256": "9db0bace668df025e81684fe60439229d9124da053d62c741af9ba0cba2c79f7"
+    },
+    {
+      "path": "development/server/database/020-fortinet-hardware.sql",
+      "sha256": "9cbb64c1c4d53f495dfd04ea2eb00453b2abc9d22ebd7d622583243feb2d24b9"
+    },
+    {
+      "path": "development/server/database/021-synology-hardware.sql",
+      "sha256": "fbfcc6a922c1d07e8633fee50f20a954d0c38e657de6a8d0e75da990cbff31b4"
+    },
+    {
+      "path": "development/server/database/022-diskstation-hardware.sql",
+      "sha256": "d67794d0a82461d2056cbc384f3913762261629ff878a33b8c835ad80629d877"
+    },
+    {
+      "path": "development/server/database/023-qnap-hardware.sql",
+      "sha256": "d7d2a1466813da72cff26051ae29c84f9f980b9f6479743d7ed420ce3d897694"
+    },
+    {
+      "path": "development/server/database/024-batch50-hardware.sql",
+      "sha256": "b7fecc598251da6b5c28e52db21d9b0fe4c44f3813de24b368e1799963915abc"
+    },
+    {
+      "path": "development/server/database/025-batch50b-hardware.sql",
+      "sha256": "be311295d6cd1dd50318a91bc6b9cad2e4689e06842d12e405119946821562dc"
+    },
+    {
+      "path": "development/server/database/026-batch100-hardware.sql",
+      "sha256": "b3f9047f237c1f0597aab565bb1751e9ce3c58209b8385bd85609b42a40c42e5"
+    },
+    {
+      "path": "development/server/database/027-batch100b-hardware.sql",
+      "sha256": "fd6bb3534915d8a717c0203cbe71f0273413ef6748652b1770ef23a40764e8b4"
+    },
+    {
+      "path": "development/server/database/028-batch100c-hardware.sql",
+      "sha256": "049a472b6c5e4334f17d096a10bc524de967d3ead46e1c89725bf0b396a663cd"
+    },
+    {
+      "path": "development/server/database/029-selected506a-hardware.sql",
+      "sha256": "7046bc379ff8a74a3c73136e10f5c957c17bee5568e168ad8f612d3067d54034"
+    },
+    {
+      "path": "development/server/database/030-selected506b-hardware.sql",
+      "sha256": "7b8b868b61e3409c6ac53d5cc6ccbf299a2c9cdd978b92d10274d9f9ce5610df"
+    },
+    {
+      "path": "development/server/database/031-selected506c-hardware.sql",
+      "sha256": "477480d0d28c40d5294f0c16d2f5d0db947d98c5bed64bfb0d869f86cb510446"
+    },
+    {
+      "path": "development/server/database/032-selected506d-hardware.sql",
+      "sha256": "66ff8cedfc5de135f214482b6ec0689664eabca7b67839b1a85d868a7bc54604"
+    },
+    {
+      "path": "development/server/database/033-selected506e-hardware.sql",
+      "sha256": "041fb68477a9af37d155e54a5e3d7d1c5b8fcfafe1ca2f40dc067d93e90f0eed"
+    },
+    {
+      "path": "development/server/database/034-selected506f-hardware.sql",
+      "sha256": "7114b3189380f15fa99c57daaaa0023ab5c38c06321dceb50c79243da85bfa3c"
+    },
+    {
+      "path": "development/server/database/035-selected506g-hardware.sql",
+      "sha256": "6a2aa1917cf526f79b975e6ca4f36abc641aefbffaf602433d63a7560140563b"
+    },
+    {
+      "path": "development/server/database/036-physical-media.sql",
+      "sha256": "7ebd4d8b52313c0fa4707b6c90fe1a179fc465ab5208d0d07df974d7992706c5"
+    },
+    {
+      "path": "development/server/database/037-selected506h-hardware.sql",
+      "sha256": "932f8987402aad179b4e7cb50d7da2002e194ef50a8c1e84197e66ef221ad3ed"
+    },
+    {
+      "path": "development/server/database/038-selected506i-hardware.sql",
+      "sha256": "3c56b15d2c8c46262a79b702689faedabea979a5c65d4453bc965b529969aab7"
+    },
+    {
+      "path": "development/server/database/039-selected506j-hardware.sql",
+      "sha256": "217d2c16bdd38bc6cf88fa74abe93dd90ca651e129ad98570e3709202697b0e9"
+    },
+    {
+      "path": "development/server/database/040-hardware-families.sql",
+      "sha256": "7ac5d01fc5cd283828f63972d70b58ddfa5bcb0399c4debe98bf4e3a5ee5eee5"
+    },
+    {
+      "path": "development/server/database/041-selected506k-hardware.sql",
+      "sha256": "126f19c37209fec296d5229b5d457587b28a85b24f0b6d8b1f2b4f5510127620"
+    },
+    {
+      "path": "development/server/database/042-hardware-family-l.sql",
+      "sha256": "b2af3b7b5e1f232f1ff0565001a0dea81448b16353132f0207e565be69656f53"
+    },
+    {
+      "path": "development/server/database/043-selected506l-hardware.sql",
+      "sha256": "be28876d62a2067a1ccc95220af14e1a7f11b8b78735ab51127df2e2bd13fef6"
+    },
+    {
+      "path": "development/server/database/044-german-cpe-hardware.sql",
+      "sha256": "503a69c8878b526d1c1341bf98427c4ad8c958c439e7504d66a9c17d5eb2c277"
+    },
+    {
+      "path": "development/server/database/045-german-repeaters-hardware.sql",
+      "sha256": "ebba463b7e3118c2b851b404ae7e895e46d671d5ca712b6dd9792cce6991f590"
+    },
+    {
+      "path": "development/server/database/046-mfa-key-rotation.sql",
+      "sha256": "70339aac225c7540d6f04c93245ab738fdc60ac9a56aa6462158ab369963bbc2"
+    }
+  ],
+  "new": [
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaRecoveryCodeGenerationConcurrencyTests.cs",
+      "sha256": "4b290e0c5fc5695e93847add74ecb92880ad0e16bea674ffe2aeaecdde4cd513"
+    }
+  ],
+  "sameAsReviewedPunto3": [
+    {
+      "path": "development/server/src/RackClick.Server/MfaRecoveryCodesEndpoints.cs",
+      "sha256": "b870ffd204ed65271c4cd8c9f61da68d3a99e17de20dd788c9efdeb4cec4fddd",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/server/src/RackClick.Server/OpenApiMfaRecoveryCodes.cs",
+      "sha256": "81f96d543e2aa7fec0f235fa3f060dcbae97d647c329f72cee7cb37283849de3",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaRecoveryCodeCodec.cs",
+      "sha256": "88d3474d161df076c551d20d6b200e7fd97a02b7d5cf7015d115f774d12530f3",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaAccountRecoveryCodes.cs",
+      "sha256": "f22c8b04370d61036d1760f0ce5d49db9e14d15014cd4c9242403e49880d8e15",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaStore.Recovery.cs",
+      "sha256": "4838087285a07629396ee42f767a091e6068055bf9cdf1a3b23db00d33a688f2",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/frontend/src/MfaRecoveryCodesPanel.jsx",
+      "sha256": "7aad718ba0397b35fe0b36196262366e2315aaf166ceae7ce3b2d5c2ee710da8",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/frontend/src/mfa-recovery.ts",
+      "sha256": "f20fd54f550263ed44f62f42ad40b2f3a8eb97de5afb1ec7d09cff7a3135aa58",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/frontend/src/mfa-recovery-words.ts",
+      "sha256": "09c7bf5ceebd3070548166719250f4da7cbf17e07308a31af98c6a9539012525",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaRecoveryCodesTests.cs",
+      "sha256": "36c6d8e66eddb8c49076885ce3878f02bc884cdbeacf49cf8b3ca2b23e8613d6",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaRecoveryHttpTests.cs",
+      "sha256": "5b25ae8413f85e9548b7e7713a6b480934ba0dd6b38fec0480362ad46c74fdfa",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/frontend/tests/mfa-recovery.test.mjs",
+      "sha256": "7b14d2fa32a25e20f5a2083a7fde716eee37df2695afe6c4357e7ffd6b859152",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/frontend/tests/browser-mfa-recovery.mjs",
+      "sha256": "eb0be44b61e0c7144fe3c11167579c9c332435301a9a31422d24b7e002178702",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaAccountManagement.cs",
+      "sha256": "f7899de77c576c076b49e0c3a4a072b834da8adea1aafbb4a70a24dde2ce04e6",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaStore.Enrollment.cs",
+      "sha256": "0333e5c96daf53b9fc5dae5f9765f7d33b9fe1a45c8a484be2ac36ea128d9727",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/server/src/RackClick.Server/MfaStore.cs",
+      "sha256": "7fdc78964f9d95d29ebeca09d98b100a2aae28680a72ee493f1ee5bc124b736a",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/server/database/014-mfa.sql",
+      "sha256": "4a2e93311093d2372f33ff00c8318f63d7d773552540c83371754aa83ba1eba8",
+      "sameAsReviewedPunto3": true
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaAccountManagementTests.cs",
+      "sha256": "f00a7b1f6d25cb5c621824a7139730a1de0e56fd34f9b3a48b08dbeb10396a65",
+      "sameAsReviewedPunto3": true
+    }
+  ],
+  "references": [
+    {
+      "path": "docs/DECISION-D2-CUSTODIA-CLAVE-TOTP.md",
+      "sha256": "c34cfece96d07eb6f31b64fae1809f37890e3b20a896506e3901cdfff93e08a6",
+      "executedInThisLot": false
+    },
+    {
+      "path": "docs/PUNTO3-FUNCIONES-PENDIENTES.md",
+      "sha256": "5b2497394924925ba790f42f96d8176ea150323f0297b53157861c52dd294ab7",
+      "executedInThisLot": false
+    },
+    {
+      "path": "evidence/s1-20261102/punto3/RESULTADOS.md",
+      "sha256": "3148b0ed7e775892041efd0459fbb27c553a09fbb62f3f90abad6deecb77159b",
+      "executedInThisLot": false
+    },
+    {
+      "path": "evidence/s1-20261102/punto3/review/REVISION.md",
+      "sha256": "9860fd269af71112df3da632aa0e309e13f8c4e444dbf4cfb0d7bfb4afa33540",
+      "executedInThisLot": false
+    },
+    {
+      "path": "evidence/s1-20261102/punto3/review/COMPARACION-FUENTES-FINAL.json",
+      "sha256": "843ef40b41cf71f77a46212437618328a35a9847e06f420f988ca8760286336d",
+      "executedInThisLot": false
+    },
+    {
+      "path": "evidence/s1-20261102/punto3/MFA-104-RESULTADOS.json",
+      "sha256": "f00bc7636c295cc0b408dbb7b10d955ff737297f7d9f4ae5c2235c2990a48138",
+      "executedInThisLot": false
+    },
+    {
+      "path": "evidence/s1-20261102/punto3/MFA-EDGE.json",
+      "sha256": "9e257dc52cba29c604e1ef099b63563fe68d78970fa5cd596b966df1f240db25",
+      "executedInThisLot": false
+    },
+    {
+      "path": "evidence/s1-20261102/punto3/NODE-26.txt",
+      "sha256": "c4c96b1dcd6a0d3b920b26d2d5d34dfdfb2ae75beeaa8db5e3014470955c7203",
+      "executedInThisLot": false
+    }
+  ],
+  "binaries": {
+    "server": "e2d3757943151bb5897871d07a95e07949f7a123a59ecb77ae82b93400f09b00",
+    "tests": "bd042f26048300263102e0b5fa15e94fa2f522765cf66cc2d40abd82bdf0dc0e"
+  }
+}

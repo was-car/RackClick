@@ -1,0 +1,76 @@
+{
+  "result": "PASS",
+  "platform": "Windows, native PostgreSQL17.11 and real Edge/Kestrel",
+  "serverDllSha256": "768df75ea0db5afa349d4d8a4191856cd83b29a19b35ab4d1541b3b5f3f177bf",
+  "frontendSha256": "03537b7f59e0d71ef83f45401a95377578f716ce26030ab9ff6086570c017ef4",
+  "applicationManifestSha256": "f7b971f31dd5f424dbce35c9c18a4c6c75c8968f31d10c5df8bbfe215e5b8a53",
+  "assertedCounts": {
+    "customers": 50,
+    "sites": 66,
+    "buildings": 88,
+    "rooms": 226,
+    "racks": 180,
+    "devices": 1563,
+    "portGroups": 2869,
+    "ports": 20665,
+    "connections": 2207
+  },
+  "backup": {
+    "bytes": 9773793,
+    "sha256": "c5c496119cd923cb00a702426884e5f80312d8dcdfcd78e885ac47cb55cdd05c",
+    "inventoryOnly": true
+  },
+  "runs": [
+    {
+      "run": "run-04",
+      "result": "PASS",
+      "browser": "Edg/157.0.4341.46",
+      "checks": [
+        "Three RC9 administration cards and navigation translated EN/DE/ES; explicit Demo50 confirmation required.",
+        "Unsent intercepted backup remains pending after notRecorded, blocks other controls and clears only after explicit real server cancellation.",
+        "Real Demo50 commit with lost response is recovered from durable journal after reload under the same request ID; exact nine counts and account/permissions preserved.",
+        "Second real login reads the 50 customers; language switching preserves all stored customer names.",
+        "Downloaded inventory file matches the server byte length and SHA-256; archive stays in a private isolated test directory.",
+        "Real JSON file selection and server preview work; restoration and its confirmation stay disabled on populated inventory. Empty-target restoration is covered separately by backend/target-lab tests.",
+        "Data navigation focuses its panel at 390px without horizontal page overflow."
+      ],
+      "inputsUnchanged": true,
+      "labStopped": true,
+      "scenario": "node tests/browser-admin-inventory-data.mjs (credentials only in process environment)",
+      "applicationSchema": 48
+    },
+    {
+      "run": "restore-01",
+      "result": "PASS",
+      "browser": "Edg/157.0.4341.46",
+      "checks": [
+        "A real downloaded inventory copy is selected and previewed without writes; explicit confirmation commits all50customers in a second empty database, preserving destination identity and permissions.",
+        "Reload and a separate authenticated browser session read the restored counts; additional demo loads/restores are unavailable on the populated target."
+      ],
+      "inputsUnchanged": true,
+      "labStopped": true,
+      "scenario": "node tests/browser-admin-inventory-restore.mjs (credentials only in process environment)",
+      "applicationSchema": 48
+    }
+  ],
+  "mfaProvider": "explicitly disabled only in these isolated source labs",
+  "existingInstallationsChanged": false,
+  "native20InstallationTested": false,
+  "earlierAttempts": [
+    {
+      "run": "run-01",
+      "result": "FAIL_FIXTURE",
+      "cause": "language selector was searched inside Administration; it is in the customer view"
+    },
+    {
+      "run": "run-02",
+      "result": "FAIL_FIXTURE",
+      "cause": "effective per-customer permission projections grow with new customers; compare original identity/global grants instead"
+    },
+    {
+      "run": "run-03",
+      "result": "FAIL_FIXTURE",
+      "cause": "CDP download behavior configured the default context instead of the isolated page context"
+    }
+  ]
+}

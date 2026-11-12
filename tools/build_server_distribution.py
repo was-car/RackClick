@@ -23,7 +23,8 @@ PROFILE43_SQL_PATH = ROOT / 'docs' / 'DISTRIBUCION43-SQL-PERFIL.json'
 PROFILE45_SQL_PATH = ROOT / 'docs' / 'DISTRIBUCION45-SQL-PERFIL.json'
 PROFILE45_MFA_PATH = ROOT / 'docs' / 'DISTRIBUCION45-MFA-PERFIL.json'
 PROFILE48_PATH = ROOT / 'docs' / 'DISTRIBUCION48-PERFIL.json'
-PROFILE_SCHEMAS = {PROFILE_PATH: 14, PROFILE15_PATH: 15, PROFILE43_PATH: 43, PROFILE43P3_PATH: 43, PROFILE43_SQL_PATH: 43, PROFILE45_SQL_PATH: 45, PROFILE45_MFA_PATH: 45, PROFILE48_PATH:48}
+PROFILE48_ADMIN_DATA_PATH = ROOT / 'docs' / 'DISTRIBUCION48-ADMIN-DATA-PERFIL.json'
+PROFILE_SCHEMAS = {PROFILE_PATH: 14, PROFILE15_PATH: 15, PROFILE43_PATH: 43, PROFILE43P3_PATH: 43, PROFILE43_SQL_PATH: 43, PROFILE45_SQL_PATH: 45, PROFILE45_MFA_PATH: 45, PROFILE48_PATH:48, PROFILE48_ADMIN_DATA_PATH:48}
 FILE_ATTRIBUTE_REPARSE_POINT = 0x400
 SHA_LINE = re.compile(r'^[a-f0-9]{64}$')
 
@@ -87,6 +88,8 @@ def load_profile(profile_path: Path = PROFILE_PATH) -> dict:
     if profile_path == PROFILE45_MFA_PATH and profile.get('profileId') != 'schema45-mfa-store-01':
         raise DistributionError('profile_invalid')
     if profile_path == PROFILE48_PATH and profile.get('profileId') != 'schema48-maintenance-01':
+        raise DistributionError('profile_invalid')
+    if profile_path == PROFILE48_ADMIN_DATA_PATH and profile.get('profileId') != 'schema48-admin-data-01':
         raise DistributionError('profile_invalid')
     app = profile['serverApplicationFiles']
     sql = profile['serverSqlFiles']

@@ -1,0 +1,102 @@
+{
+  "exitCode": 0,
+  "inputs": [
+    {
+      "path": "development/frontend/build.mjs",
+      "sha256": "ad671231d67453ed14efa4203272bbf66716fb13d021ec9e221caa92406085e0",
+      "matchesShared": true
+    },
+    {
+      "path": "development/frontend/tests/browser-mfa-dashboard.mjs",
+      "sha256": "2d164fff3d3e54b7b73f0ebb8d1fadcdc081a0e77c66f80339733be9d4a373db",
+      "matchesShared": true
+    },
+    {
+      "path": "development/frontend/tests/browser-mfa-recovery.mjs",
+      "sha256": "eb0be44b61e0c7144fe3c11167579c9c332435301a9a31422d24b7e002178702",
+      "matchesShared": true
+    }
+  ],
+  "nodeSha256": "ba4e6d110e8c1592a1ecd390f6b05f3da124b13871a5be62b341a07a853c6c32",
+  "privateCopy": true,
+  "dependencyInstall": false,
+  "outputs": [
+    {
+      "path": "development\\frontend\\dist\\app.css",
+      "sha256": "259db36410d51571cc567331bad6852dbbe67871ab64273a992b8affc06c14f7"
+    },
+    {
+      "path": "development\\frontend\\dist\\app.js",
+      "sha256": "21d85d7543595d77befce549b98c7f0ebb07d8619648fc9830132f2a04523d04"
+    },
+    {
+      "path": "development\\frontend\\dist\\assets\\fonts\\ibm-plex-mono-latin-400-normal.woff2",
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "path": "development\\frontend\\dist\\assets\\fonts\\ibm-plex-mono-latin-ext-400-normal.woff2",
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+    },
+    {
+      "path": "development\\frontend\\dist\\assets\\fonts\\ibm-plex-sans-latin-400-normal.woff2",
+      "sha256": "3b646991d30055a93a4ecc499713d4347953a74a947ecab435ab72070cbdab0e"
+    },
+    {
+      "path": "development\\frontend\\dist\\assets\\fonts\\ibm-plex-sans-latin-600-normal.woff2",
+      "sha256": "8960851d691c054ed38e259bdcf1a6190d157b4203ed5bb32c632a863fb8ec2f"
+    },
+    {
+      "path": "development\\frontend\\dist\\assets\\fonts\\ibm-plex-sans-latin-ext-400-normal.woff2",
+      "sha256": "c93d2a12aaa280f68b9ab7b726ff8dfedda67c99ef9abed047c1847a1cc6d583"
+    },
+    {
+      "path": "development\\frontend\\dist\\assets\\fonts\\ibm-plex-sans-latin-ext-600-normal.woff2",
+      "sha256": "b25dfd4f979e442ae1e25cd0894463434cf01ba21ac1a35d39f4a82bd4cc060e"
+    },
+    {
+      "path": "development\\frontend\\dist\\assets\\fonts\\space-grotesk-latin-600-normal.woff2",
+      "sha256": "685bbbf69fa616df1ef81847c85fc76be097ddfb3468ff2257be54511ab3130f"
+    },
+    {
+      "path": "development\\frontend\\dist\\assets\\fonts\\space-grotesk-latin-ext-600-normal.woff2",
+      "sha256": "0bdc872e2806e0eb2ecca08221ea0b49d36efd9b9239a5744b81afbc0376e9cf"
+    },
+    {
+      "path": "development\\frontend\\dist\\index.html",
+      "sha256": "1184e66ae3ae3c780b3eb43a6b5839d010511317cb8337292c2fa8aa4e2988e6"
+    },
+    {
+      "path": "development\\frontend\\dist\\licenses\\ibm-plex-mono-LICENSE.txt",
+      "sha256": "23b0a9d0c6d3f140a0b77e483c5cfa6bba574325ef5cb189ed9f2fec4884533f"
+    },
+    {
+      "path": "development\\frontend\\dist\\licenses\\ibm-plex-sans-LICENSE.txt",
+      "sha256": "d0283623ef57e722fd0eb688a8041589670c608ab780cd3612d06ba6f153d3fd"
+    },
+    {
+      "path": "development\\frontend\\dist\\licenses\\react-dom-LICENSE.txt",
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "path": "development\\frontend\\dist\\licenses\\react-LICENSE.txt",
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "path": "development\\frontend\\dist\\licenses\\space-grotesk-LICENSE.txt",
+      "sha256": "18a4de52385f6b988782639d5d0cc1326e5a8c2de9a7f01d7b20d9aedcc60943"
+    },
+    {
+      "path": "development\\frontend\\dist\\vendor\\react-dom.production.min.js",
+      "sha256": "21758ed084cd0e37e735722ee4f3957ea960628a29dfa6c3ce1a1d47a2d6e4f7"
+    },
+    {
+      "path": "development\\frontend\\dist\\vendor\\react.production.min.js",
+      "sha256": "4b4969fa4ef3594324da2c6d78ce8766fbbc2fd121fff395aedf997db0a99a06"
+    }
+  ],
+  "browserAttemptCount": 7,
+  "productionOrQaEnabled": false,
+  "serviceTokenTested": false,
+  "transport": "Kestrel loopback HTTP",
+  "provider": "synthetic-test-DI"
+}

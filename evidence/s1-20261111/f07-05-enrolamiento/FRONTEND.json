@@ -1,0 +1,18 @@
+{
+  "node": "24.21.0",
+  "esbuild": "0.25.10",
+  "testFiles": [
+    "mfa-api.test.mjs",
+    "mfa-words.test.mjs",
+    "mfa-qr.test.mjs",
+    "mfa-account.test.mjs"
+  ],
+  "tests": 70,
+  "passed": 70,
+  "failed": 0,
+  "skipped": 0,
+  "browserExecuted": false,
+  "warnings": [
+    "MODULE_TYPELESS_PACKAGE_JSON from existing package metadata"
+  ]
+}

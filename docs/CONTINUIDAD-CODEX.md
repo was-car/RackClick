@@ -1,5 +1,14 @@
 # RackClick — continuidad ChatGPT → Codex local
 
+## 12.11.2026 · Administración: Demo50 y copias/restauración de inventario
+
+Aplicación48 ytransporteWindows20 nuevos desde worktreeaislado98ad. PanelEN/DE/ES: carga50atómica, JSONglobaldescargable yrestore en vacío; IDs/montajes/puertos/cables preservados, cuenta/permisos/MFAconservados. Recibospropios ycancelaciónconfirmada, sinretryautomático. CuentaWindows/Appnuevas eninstalación, defaultRackClickAdmineditable. No backupPostgreSQL/Windows niRestore48habilitado.
+
+Backend18/18finales;868PASS/107SKIP anterioresalcambiofocal +8F0505históricosexcluidosdeclarados. Node411/411; revisiónindependienteyGUIEdgePG real cargó50,descargóSHA yrestauróel mismoarchivoenotrolaboratorio; ambosdetenidos. F01/F02/F03/B01/B02reproducidos/corregidos/revisados; fallosdeguionconservados. Paquete20doble/assemblerPythonoficialreproducidos; transportepúblicosinruntimesrestringidos,56/56autor+11/11revisor. [Entrega/manual](PUBLICACION-ONLINE20-12-11-2026.md), [evidencia](../evidence/s1-20261112/admin-data/RESULTADOS-GUI.md).
+
+Outer2644dc115ed03086a5a1d60b5e6418989350ebaf08942e8c07d81a5bdda813fb;APPf7b971f3,SQL48/locksintactos. Releasepública20 trasescaneo/gate;19conservada. New20nativo/reinicio/QAinstalada pendientesdeWascar,noatribuirB19. A/B/D/Eintactas; no VM/power/reset poragente. QA178–180planned,177casospreviosintactos. Índice26,63/100delcierre restante sin cambio; paso33/F0905 siguependiente.
+
+
 ## 12.11.2026 · Online19 y Demo50 verificados en B nueva
 
 Transporte propio revisión3 SHA256 `4d9dccbe75cc6a1900204699459fa0653cfaa4722626f9b48484e9259aacd6bf`,68miembros/12655070bytes. Adquisición directa dePython temporal, SDKfuente delruntime, PGyCRT conTLSWindows/pins; ningún runtime restringido alojado. Core04 yproducto48 exactos; servicio37 sinapphost, MIT/TPN correctos.20WinPS5.1/9Python y5focosindependientes finalesPASS; fuentes426 idénticas a651.

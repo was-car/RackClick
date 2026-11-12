@@ -161,6 +161,9 @@ builder.Services.AddRateLimiter(options =>
     options.AddPolicy("login", context => RateLimitPartition.GetFixedWindowLimiter(
         context.Connection.RemoteIpAddress?.ToString() ?? "unknown", _ => new FixedWindowRateLimiterOptions
         { PermitLimit = 10, Window = TimeSpan.FromMinutes(1), QueueLimit = 0 }));
+    options.AddPolicy("inventoryData", context => RateLimitPartition.GetConcurrencyLimiter(
+        (context.Items["session"] as SessionIdentity)?.Actor.Id.ToString("D") ?? "unauthenticated",
+        _ => new ConcurrencyLimiterOptions { PermitLimit = 2, QueueLimit = 0 }));
 });
 var app = builder.Build();
 // Proveedor de la clave TOTP desde la composición de DI del host (MFA-L2i). Sin MfaKeyStore:Enabled no hay proveedor: sin desafíos
@@ -250,7 +253,8 @@ app.Use(async (context, next) =>
         if (context.Request.Method is not ("GET" or "HEAD" or "OPTIONS") &&
             !string.Equals(context.Request.Headers.Origin.ToString(), publicOrigin, StringComparison.Ordinal))
             throw new DomainError(403, "origin_invalid");
-        long bodyLimit = PrivateDeviceTemplates.IsConfigurationCreate(context.Request)
+        long bodyLimit = InventoryDataAdministrationEndpoints.IsLargeInventoryDataRequest(context.Request)
+            ? InventoryDataAdministrationEndpoints.MaximumBodyBytes : PrivateDeviceTemplates.IsConfigurationCreate(context.Request)
             ? PrivateDeviceTemplates.MaximumConfigurationBodyBytes : 16_384;
         var bodyFeature = context.Features.Get<Microsoft.AspNetCore.Http.Features.IHttpMaxRequestBodySizeFeature>();
         if (bodyFeature is { IsReadOnly: false }) bodyFeature.MaxRequestBodySize = bodyLimit;
@@ -384,6 +388,7 @@ app.MapGet("/api/v1/openapi.json", () => Results.Json(OpenApiDocument.Create()))
 app.MapMfaAccounts(store, mfa is not null);
 app.MapMfaRecoveryCodes(store, mfa is not null);
 app.MapInventoryJsonExports(inventory);
+app.MapInventoryDataAdministration(inventory);
 app.MapGet("/api/v1/me/preferences", async Task<IResult> (HttpContext c) =>
 {
     UserPreferences.RequireEmptyRead(c.Request);

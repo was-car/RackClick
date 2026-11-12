@@ -1,4 +1,4 @@
-# Build and try RackClick from the private repository
+# Build and try RackClick from GitHub
 
 **[English](GETTING-STARTED.en.md) · [Deutsch](GETTING-STARTED.de.md) · [Español](INSTALACION-DESDE-GITHUB.md)**
 
@@ -6,12 +6,12 @@ Updated 12 November 2026 · source schema **48**.
 
 This walkthrough creates a **new local development lab**, with the original 10-customer synthetic inventory. It does not modify an installed RackClick server. Every start creates another database and random credentials; previous labs remain on disk. It does not reopen or export changes from a previous lab.
 
-The demo uses **HTTP on loopback only** and explicitly disables the MFA provider. Do not expose it to the network. Native Windows service installation, HTTPS, scheduled backups and real MFA are a separate deployment path. For a native server use the separate [Windows Online19 release](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48) and [complete installation guide](INSTALADOR19-ONLINE.html). It acquires exact dependencies directly from official providers and includes the optional Demo50 loader. This source walkthrough remains a loopback development lab, not that native installation; Restore48 stays disabled.
+The demo uses **HTTP on loopback only** and explicitly disables the MFA provider. Do not expose it to the network. Native Windows service installation, HTTPS, scheduled backups and real MFA are a separate deployment path. For a native server use the separate [Windows Online20 release](https://github.com/was-car/RackClick/releases/tag/windows-online20-schema48-admin-data) and [complete installation guide](INSTALACION20-PASO-A-PASO.md). It acquires exact dependencies directly from official providers and includes the optional Demo50 loader. This source walkthrough remains a loopback development lab, not that native installation; Restore48 stays disabled.
 
 ## 1. Requirements
 
 - Windows x64 and a normal user session, **not an elevated administrator PowerShell**.
-- [Git for Windows](https://git-scm.com/downloads/win), authorized access to `was-car/RackClick`, and [Python 3.12 or later](https://www.python.org/downloads/windows/) with the `py` launcher. No Python packages are required.
+- [Git for Windows](https://git-scm.com/downloads/win), HTTPS access to `was-car/RackClick`, and [Python 3.12 or later](https://www.python.org/downloads/windows/) with the `py` launcher. No Python packages are required.
 - HTTPS access to official tool providers, NuGet and npm, plus disk space for the toolchain, packages and a new PostgreSQL cluster per run.
 - The official [Microsoft Visual C++ x64 redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170), required by the Windows PostgreSQL binaries. Install it from Microsoft under its licence and restart if requested. The native test environment used 14.51.36247.0; the executable is not included here.
 - No existing PostgreSQL database or Windows service account is needed.
@@ -91,7 +91,7 @@ For a persistent Windows deployment, use its separately reviewed native package 
 
 | Result | Action |
 |---|---|
-| GitHub 404 or authentication prompt | Check the authorized account; this repository is private. |
+| GitHub 404 or authentication prompt | Check the public URL, connectivity and proxy; downloading requires no account. |
 | `py` missing | Install official Python with the launcher, then reopen PowerShell. |
 | SDK missing | Prepare this clone's pinned tools; keep `global.json` unchanged. |
 | PostgreSQL does not start | Check Visual C++, any required restart and the private lab log. Do not use another database as a workaround. |

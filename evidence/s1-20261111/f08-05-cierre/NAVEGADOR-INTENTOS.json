@@ -1,0 +1,1465 @@
+{
+  "attempts": [
+    {
+      "success": false,
+      "childExitCode": 1,
+      "expected": 2,
+      "postgresql": "17.11",
+      "schema": 46,
+      "mode": "edge-two",
+      "counts": {
+        "total": "2",
+        "executed": "2",
+        "passed": "1",
+        "failed": "1",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaDashboardHttpTests.BrowserDashboardShowsGraceAndManagesPersonalAndSelectedUserMfa",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaRecoveryHttpTests.BrowserCanGenerateCodesAndRecoverOnlyThroughNewAuthenticatorEnrollment",
+          "outcome": "Failed"
+        }
+      ],
+      "serverSha256": "dd285c4f7561d8f7e678178a12d399782f0c2142712d16bff10ec87762f85d0e",
+      "testsSha256": "1d0332b69238239aa6b8f4214f7a8fd186c26945dc99f6e7c905998a028605c4",
+      "vmOperations": 0,
+      "installedServiceOperations": 0,
+      "ownClusterStopped": true,
+      "attempt": 1,
+      "trxSha256": "44333faaaec97f51e7e6e79620a3a2e2c99a156c4a66fc386b8f95c4defc831b",
+      "browserResults": [
+        {
+          "file": "browser-mfa-dashboard-result.json",
+          "sha256": "7c6b7e3dea9f782b7c20fa05adcb8bb9497edcac19ebec5808a94eb18a810541",
+          "result": {
+            "result": "PASS",
+            "checks": [
+              "ordinary_password_session_has_server_derived_35_day_notice",
+              "global_admin_exemption_and_security_instructions_in_en_de_es",
+              "self_activation_requires_password_and_server_commit_then_private_enrollment",
+              "historical_self_receipt_does_not_log_out_new_mfa_session",
+              "mfa_verified_admin_enables_selected_user_without_receiving_user_secrets_and_revokes_old_session",
+              "ordinary_next_login_requires_and_completes_private_enrollment_before_access",
+              "administrator_reset_revokes_other_session_and_requires_new_private_setup",
+              "subsequent_admin_login_requires_totp_and_has_no_browser_runtime_exception"
+            ],
+            "responses": [
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "mfa_change",
+                "status": 200
+              },
+              {
+                "route": "password_login",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "mfa_operation_status",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "admin_status",
+                "status": 200
+              },
+              {
+                "route": "mfa_change",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "admin_status",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "admin_status",
+                "status": 200
+              },
+              {
+                "route": "mfa_change",
+                "status": 200
+              },
+              {
+                "route": "admin_status",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "status": 202
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              }
+            ],
+            "browser": "Edg/157.0.4341.46",
+            "provider": "synthetic-test-DI",
+            "transport": "real-Kestrel-loopback-HTTP",
+            "serviceTokenTested": false,
+            "productionOrQaEnabled": false
+          }
+        },
+        {
+          "file": "browser-mfa-recovery-result.json",
+          "sha256": "8f45e79c99f24ea51d90db89503f7789f875ed836ee5165b089415909ee5a68f",
+          "result": {
+            "result": "FAIL",
+            "checks": [
+              "first_enrollment_required_before_session"
+            ],
+            "responses": [
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              }
+            ],
+            "failedStage": "generate_codes",
+            "runtimeExceptions": 0,
+            "productionOrQaEnabled": false
+          }
+        }
+      ]
+    },
+    {
+      "success": true,
+      "childExitCode": 0,
+      "expected": 1,
+      "postgresql": "17.11",
+      "schema": 46,
+      "mode": "edge-two",
+      "counts": {
+        "total": "1",
+        "executed": "1",
+        "passed": "1",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaRecoveryHttpTests.BrowserCanGenerateCodesAndRecoverOnlyThroughNewAuthenticatorEnrollment",
+          "outcome": "Passed"
+        }
+      ],
+      "serverSha256": "dd285c4f7561d8f7e678178a12d399782f0c2142712d16bff10ec87762f85d0e",
+      "testsSha256": "1d0332b69238239aa6b8f4214f7a8fd186c26945dc99f6e7c905998a028605c4",
+      "vmOperations": 0,
+      "installedServiceOperations": 0,
+      "ownClusterStopped": true,
+      "attempt": 2,
+      "trxSha256": "b56c6d70d6b04b9a7d04f4fdf5827806c460b993908c42ac560f017c3aa6bc98",
+      "browserResults": [
+        {
+          "file": "browser-mfa-recovery-result.json",
+          "sha256": "dc933ec3d19830f5789c935ab2308968832d1bf3276bac4acf74ee5cc0b8de57",
+          "result": {
+            "result": "PASS",
+            "checks": [
+              "first_enrollment_required_before_session",
+              "ten_private_one_time_values_never_in_browser_storage",
+              "recovery_revokes_old_session_and_grants_no_api_authority",
+              "only_confirmed_new_authenticator_restores_full_access"
+            ],
+            "responses": [
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "status": 202
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              }
+            ],
+            "browser": "Edg/157.0.4341.46",
+            "provider": "synthetic-test-DI",
+            "transport": "Kestrel-loopback-HTTP",
+            "serviceTokenTested": false,
+            "productionOrQaEnabled": false,
+            "runtimeExceptions": 0
+          }
+        }
+      ]
+    },
+    {
+      "success": false,
+      "childExitCode": 1,
+      "expected": 1,
+      "postgresql": "17.11",
+      "schema": 46,
+      "mode": "edge-two",
+      "counts": {
+        "total": "1",
+        "executed": "1",
+        "passed": "0",
+        "failed": "1",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaRecoveryHttpTests.BrowserCanGenerateCodesAndRecoverOnlyThroughNewAuthenticatorEnrollment",
+          "outcome": "Failed"
+        }
+      ],
+      "serverSha256": "dd285c4f7561d8f7e678178a12d399782f0c2142712d16bff10ec87762f85d0e",
+      "testsSha256": "1d0332b69238239aa6b8f4214f7a8fd186c26945dc99f6e7c905998a028605c4",
+      "vmOperations": 0,
+      "installedServiceOperations": 0,
+      "ownClusterStopped": true,
+      "attempt": 3,
+      "trxSha256": "ad43da7e0a49d944df871ff3a260bb9dc1eb8a3627283404b3857c89b5d1e932",
+      "browserResults": [
+        {
+          "file": "browser-mfa-recovery-result.json",
+          "sha256": "a91ed764fe2fba8ad998d77eb3bd4231476bc505a10a0e7be3337d0f62c29adc",
+          "result": {
+            "result": "FAIL",
+            "checks": [
+              "first_enrollment_required_before_session"
+            ],
+            "responses": [
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "status": 200
+              }
+            ],
+            "failedStage": "generate_codes",
+            "observations": [
+              {
+                "passwordPresent": true,
+                "ack": true,
+                "disabledImmediatelyAfterAck": false
+              }
+            ],
+            "runtimeExceptions": 0,
+            "productionOrQaEnabled": false
+          }
+        }
+      ]
+    },
+    {
+      "success": true,
+      "childExitCode": 0,
+      "expected": 1,
+      "postgresql": "17.11",
+      "schema": 46,
+      "mode": "edge-two",
+      "counts": {
+        "total": "1",
+        "executed": "1",
+        "passed": "1",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaRecoveryHttpTests.BrowserCanGenerateCodesAndRecoverOnlyThroughNewAuthenticatorEnrollment",
+          "outcome": "Passed"
+        }
+      ],
+      "serverSha256": "dd285c4f7561d8f7e678178a12d399782f0c2142712d16bff10ec87762f85d0e",
+      "testsSha256": "1d0332b69238239aa6b8f4214f7a8fd186c26945dc99f6e7c905998a028605c4",
+      "vmOperations": 0,
+      "installedServiceOperations": 0,
+      "ownClusterStopped": true,
+      "attempt": 4,
+      "trxSha256": "bf12aeeaa5ade49f5b740d1173ea22015b4e454b91e3f45620709eb1939aee7c",
+      "browserResults": [
+        {
+          "file": "browser-mfa-recovery-result.json",
+          "sha256": "574c82f5c031adbcdb9792ea6d1f32744948a6599cb669eb1646f0354c8359d1",
+          "result": {
+            "result": "PASS",
+            "checks": [
+              "first_enrollment_required_before_session",
+              "ten_private_one_time_values_never_in_browser_storage",
+              "recovery_revokes_old_session_and_grants_no_api_authority",
+              "only_confirmed_new_authenticator_restores_full_access"
+            ],
+            "responses": [
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "method": "POST",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "method": "POST",
+                "status": 202
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              }
+            ],
+            "observations": [
+              {
+                "passwordPresent": true,
+                "ack": true,
+                "disabledImmediatelyAfterAck": false
+              }
+            ],
+            "browser": "Edg/157.0.4341.46",
+            "provider": "synthetic-test-DI",
+            "transport": "Kestrel-loopback-HTTP",
+            "serviceTokenTested": false,
+            "productionOrQaEnabled": false,
+            "runtimeExceptions": 0
+          }
+        }
+      ]
+    },
+    {
+      "success": false,
+      "childExitCode": 1,
+      "expected": 1,
+      "postgresql": "17.11",
+      "schema": 46,
+      "mode": "edge-two",
+      "counts": {
+        "total": "1",
+        "executed": "1",
+        "passed": "0",
+        "failed": "1",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaRecoveryHttpTests.BrowserCanGenerateCodesAndRecoverOnlyThroughNewAuthenticatorEnrollment",
+          "outcome": "Failed"
+        }
+      ],
+      "serverSha256": "dd285c4f7561d8f7e678178a12d399782f0c2142712d16bff10ec87762f85d0e",
+      "testsSha256": "1d0332b69238239aa6b8f4214f7a8fd186c26945dc99f6e7c905998a028605c4",
+      "vmOperations": 0,
+      "installedServiceOperations": 0,
+      "ownClusterStopped": true,
+      "attempt": 5,
+      "trxSha256": "0736862f28001db51526857a0b52ef0efa724b66ad468731d62cf1b0292f4932",
+      "browserResults": [
+        {
+          "file": "browser-mfa-recovery-result.json",
+          "sha256": "26a434995b79617a950d1f01bb97ba0fcac3fd8d2ad77d3bedb9c45fb8f08cea",
+          "result": {
+            "result": "FAIL",
+            "checks": [
+              "first_enrollment_required_before_session"
+            ],
+            "responses": [
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "method": "POST",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "POST",
+                "status": 200
+              }
+            ],
+            "failedStage": "generate_codes",
+            "observations": [
+              {
+                "passwordPresent": true,
+                "ack": true,
+                "disabledImmediatelyAfterAck": false
+              }
+            ],
+            "runtimeExceptions": 0,
+            "productionOrQaEnabled": false
+          }
+        }
+      ]
+    },
+    {
+      "success": true,
+      "childExitCode": 0,
+      "expected": 1,
+      "postgresql": "17.11",
+      "schema": 46,
+      "mode": "edge-two",
+      "counts": {
+        "total": "1",
+        "executed": "1",
+        "passed": "1",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaRecoveryHttpTests.BrowserCanGenerateCodesAndRecoverOnlyThroughNewAuthenticatorEnrollment",
+          "outcome": "Passed"
+        }
+      ],
+      "serverSha256": "dd285c4f7561d8f7e678178a12d399782f0c2142712d16bff10ec87762f85d0e",
+      "testsSha256": "1d0332b69238239aa6b8f4214f7a8fd186c26945dc99f6e7c905998a028605c4",
+      "vmOperations": 0,
+      "installedServiceOperations": 0,
+      "ownClusterStopped": true,
+      "attempt": 6,
+      "trxSha256": "d29c345f0fd31c279f9821f5ecc60108808f7638cbca1f8c4561589e394ced58",
+      "browserResults": [
+        {
+          "file": "browser-mfa-recovery-result.json",
+          "sha256": "503e85ec3223feb560d8a2138aa13efeb0ef57bbd617a78990ccc784d672d0f9",
+          "result": {
+            "result": "PASS",
+            "checks": [
+              "first_enrollment_required_before_session",
+              "ten_private_one_time_values_never_in_browser_storage",
+              "recovery_revokes_old_session_and_grants_no_api_authority",
+              "only_confirmed_new_authenticator_restores_full_access"
+            ],
+            "responses": [
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "method": "POST",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "method": "POST",
+                "status": 202
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              }
+            ],
+            "observations": [
+              {
+                "passwordPresent": true,
+                "ack": true,
+                "disabledImmediatelyAfterAck": false
+              }
+            ],
+            "browser": "Edg/157.0.4341.46",
+            "provider": "synthetic-test-DI",
+            "transport": "Kestrel-loopback-HTTP",
+            "serviceTokenTested": false,
+            "productionOrQaEnabled": false,
+            "runtimeExceptions": 0
+          }
+        }
+      ]
+    },
+    {
+      "success": true,
+      "childExitCode": 0,
+      "expected": 1,
+      "postgresql": "17.11",
+      "schema": 46,
+      "mode": "edge-two",
+      "counts": {
+        "total": "1",
+        "executed": "1",
+        "passed": "1",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaRecoveryHttpTests.BrowserCanGenerateCodesAndRecoverOnlyThroughNewAuthenticatorEnrollment",
+          "outcome": "Passed"
+        }
+      ],
+      "serverSha256": "dd285c4f7561d8f7e678178a12d399782f0c2142712d16bff10ec87762f85d0e",
+      "testsSha256": "1d0332b69238239aa6b8f4214f7a8fd186c26945dc99f6e7c905998a028605c4",
+      "vmOperations": 0,
+      "installedServiceOperations": 0,
+      "ownClusterStopped": true,
+      "attempt": 7,
+      "trxSha256": "2815e1a53023974592054c92fb5ad313a06ac810698959d7868d3d9e28f19813",
+      "browserResults": [
+        {
+          "file": "browser-mfa-recovery-result.json",
+          "sha256": "574c82f5c031adbcdb9792ea6d1f32744948a6599cb669eb1646f0354c8359d1",
+          "result": {
+            "result": "PASS",
+            "checks": [
+              "first_enrollment_required_before_session",
+              "ten_private_one_time_values_never_in_browser_storage",
+              "recovery_revokes_old_session_and_grants_no_api_authority",
+              "only_confirmed_new_authenticator_restores_full_access"
+            ],
+            "responses": [
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "method": "POST",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "password_login",
+                "method": "POST",
+                "status": 202
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 202
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 401
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "mfa_authentication",
+                "method": "POST",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "preferences",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "self_status",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "recovery_codes",
+                "method": "GET",
+                "status": 200
+              },
+              {
+                "route": "current_session",
+                "method": "GET",
+                "status": 200
+              }
+            ],
+            "observations": [
+              {
+                "passwordPresent": true,
+                "ack": true,
+                "disabledImmediatelyAfterAck": false
+              }
+            ],
+            "browser": "Edg/157.0.4341.46",
+            "provider": "synthetic-test-DI",
+            "transport": "Kestrel-loopback-HTTP",
+            "serviceTokenTested": false,
+            "productionOrQaEnabled": false,
+            "runtimeExceptions": 0
+          }
+        }
+      ]
+    }
+  ],
+  "allAttemptsPreserved": true,
+  "correctionClaimedFromRetryAlone": false,
+  "firstAttemptNotOverwritten": true
+}

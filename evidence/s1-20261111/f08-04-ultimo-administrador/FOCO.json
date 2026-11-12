@@ -1,0 +1,240 @@
+{
+  "checkpoint": "F-08.04",
+  "runtime": "Windows .NET10/PG17.11",
+  "schema": 46,
+  "newTests": 5,
+  "regression": {
+    "selected": 49,
+    "passed": 48,
+    "failed": 0,
+    "optionalBrowserSkipped": 1,
+    "driverExitCode": 1,
+    "childExitCodeObserved": null,
+    "results": [
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.NewFactorMustBeConfirmedBeforeRecoveryCreatesAnyNewSession",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.ExpiryWhileWaitingForTheCodeRowIsMeasuredAfterThatLastLock",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.InvalidGuessesAreBoundedAcrossRecoveryAndNormalFactorUse",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.NewAccountsHaveTheirOwnCreationDeadlineAndCannotExtendItByDisabling",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.DisableCannotCancelRecoveryPendingEvenWithAnAuthorizedMfaSession(selfGlobal: True)",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.AdministratorCannotDisableAnotherUsersFactorAfterTheirDeadline",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryHttpTests.RecoveryOriginAndChallengeCsrfFailuresDoNotConsumeTheValidCode",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaDashboardHttpTests.SelfActivationOverHttpRevokesTheOldSessionAndRequiresEnrollmentBeforeApiAccess",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.AdministratorMutationRequiresCurrentCompletedMfaAndCannotBypassOwnPasswordRoute",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.ConflictsInvalidPasswordsUnavailableProviderAndForeignTargetsDoNotMutate",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.RecoveryReturnsOnlyFreshEnrollmentAndCannotReadTheTotpKey",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.ExpiredOrChangedPolicyChallengeDoesNotConsumeRecoveryCodes",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.DisableCannotCancelRecoveryPendingEvenWithAnAuthorizedMfaSession(selfGlobal: False)",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaGraceEnforcementTests.GraceAllowsPasswordSessionAndNewAccountsDoNotInheritAnOldDeadline",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.AuditFailureRollsBackPolicyFactorSessionChallengeRecoveryAndRevision",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.OwnGenerationStoresOnlySaltedHashesAndSafeReceiptAndOnlyShowsCodesOnce",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.SelfChangingAnActiveFactorRequiresCompletedMfaAndCurrentGlobalPrivilegesAreRechecked",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.AnotherActorCannotReadAReceiptAndConsumedRequestCannotChangeItsIntent",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.ValidCodesDoNotReactivateAnInactiveAccountOrBypassAFactorLock(factorLocked: True)",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.OnlyOneConcurrentUseCanSucceedEvenFromDifferentVerifyChallenges",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.RecoveryAuditFailureRollsBackEverythingIncludingTheUsedCode",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaGraceEnforcementTests.GlobalAdministratorIsExemptButClientScopedGrantsDoNotExemptAUser",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.TheOnlyGlobalAdministratorRecoversWithoutAnotherAdministratorAndKeepsAuthority",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaGraceEnforcementTests.RealProviderRolloutInitializationIsPersistedAndNeverRestarted",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryHttpTests.OwnGenerationKeepsOriginCsrfActorPasswordAndCodeFreeReplayGuards",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryHttpTests.RecoveryReturnsOnlyAnEnrollmentChallengeAndRevokesTheOldSession",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaDashboardHttpTests.BrowserDashboardShowsGraceAndManagesPersonalAndSelectedUserMfa",
+        "outcome": "NotExecuted"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.EnableReplayReturnsTheExactReceiptWithoutDuplicatingAuditOrRevision",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.OnlyTheGlobalAdministratorMayDisableTheirOwnFactorAfterDeadline",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.SelfEnableRevokesEverySessionAndChallengeAndRequiresEnrollmentWithoutAnApiSession",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaGraceEnforcementTests.CompletedMfaSessionsContinueAfterGraceButUnavailableProviderCannotIssuePasswordSession",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaGraceEnforcementTests.ExistingAccountsUseRolloutAndPasswordOnlySessionsLoseAccessAtExpiry",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.ClientScopedAdministrativeGrantsDoNotCreateTheGlobalAdministratorException",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.AdministrativeResetInvalidatesGeneratedCodesWithoutChangingGraceActivation",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaGraceEnforcementTests.ExpiredLoginCreatesEnrollmentChallengeWithoutAnApiSessionAndAuditsOnlyOnce",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaGraceEnforcementTests.SessionRevalidationUsesDatabaseTimeAfterAnAccountLockWait",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.ExistingUsersHaveFortyFiveDaysFromRolloutAndNoInventedCreationDate",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.ResetRevokesFactorSessionsChallengesAndRecoveryCodesAndPreservesMandatoryEnrollment",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.OrdinaryUsersCannotDisableAfterDeadlineEvenWithACompletedMfaSession",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.GenerationNeedsMfaCurrentPasswordActiveFactorAndMatchingRevision",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaDashboardHttpTests.PersonalAndAdminHttpReadsArePrivateAndMutationsKeepOriginCsrfActorAndRevisionGuards",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.ReplayWrongPurposeAndWrongCsrfCannotConsumeAValidEnrollmentOrCode",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.GenerationAuditFailureRollsBackCodesRevisionAndReceipt",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRestrictedRecoveryHttpTests.RecoveryNeverAuthorizesTheApiUntilTheNewFactorIsConfirmed(globalAdministrator: False)",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRestrictedRecoveryHttpTests.RecoveryNeverAuthorizesTheApiUntilTheNewFactorIsConfirmed(globalAdministrator: True)",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaDashboardHttpTests.AdministrativeChangesRequireCompletedMfaAndTheAdminNeverReceivesAnotherUsersSeed",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaAccountManagementTests.SelfDisableWithinGraceRequiresPasswordAndCompletedMfaAndRevokesRecoveryMaterial",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.ValidCodesDoNotReactivateAnInactiveAccountOrBypassAFactorLock(factorLocked: False)",
+        "outcome": "Passed"
+      },
+      {
+        "name": "RackClick.Quality.Tests.MfaRecoveryCodesTests.RotationRetiresOldCodesAndKeepsAnUnknownReceiptAbsent",
+        "outcome": "Passed"
+      }
+    ],
+    "trxSha256": "b9683125626bbe566608aaf80f11ecec8ff761928b3d104f32b2ee073c2b3680",
+    "ownClusterStopped": true
+  },
+  "redD2": {
+    "passed": 0,
+    "failed": 2,
+    "productUnchangedAtExecution": true,
+    "trxSha256": "b83e15804cd2e12873d6035af724e15f5affc6a7e41a20120dfcf45430e613ca"
+  },
+  "greenD2": {
+    "passed": 2,
+    "failed": 0,
+    "trxSha256": "caa22973468b7b0241a7eb9f9150e00b59cf37e18afc6ba410e55ca88a386844"
+  },
+  "priorFixtureMappingFailure": {
+    "passed": 6,
+    "failed": 1,
+    "cause": "verify is default null at store boundary"
+  },
+  "afterMappingFix": {
+    "passed": 3,
+    "failed": 0,
+    "productBeforeD2Correction": true
+  },
+  "serverSha256": "dd285c4f7561d8f7e678178a12d399782f0c2142712d16bff10ec87762f85d0e",
+  "testsSha256": "1d0332b69238239aa6b8f4214f7a8fd186c26945dc99f6e7c905998a028605c4",
+  "dAndEPreserved": true,
+  "vmOperations": 0,
+  "installedServiceOperations": 0
+}

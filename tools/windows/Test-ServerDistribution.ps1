@@ -115,7 +115,13 @@ try {
         }
         if (-not $profiles45.ContainsKey($digest) -or $manifest.profileId -cne $profiles45[$digest]) {Stop-DistributionCheck 'manifest_distribution_unsupported'}
     }
-    if ($manifest.schema -eq 48 -and ($digest -cne 'a7b622f917404bbe3ea2560e1fcc2dad008910395c6ab5fa8bc6875be2c88112' -or $manifest.profileId -cne 'schema48-maintenance-01')) {Stop-DistributionCheck 'manifest_distribution_unsupported'}
+    if ($manifest.schema -eq 48) {
+        $profiles48=@{
+            'a7b622f917404bbe3ea2560e1fcc2dad008910395c6ab5fa8bc6875be2c88112'='schema48-maintenance-01'
+            'f7b971f31dd5f424dbce35c9c18a4c6c75c8968f31d10c5df8bbfe215e5b8a53'='schema48-admin-data-01'
+        }
+        if (-not $profiles48.ContainsKey($digest) -or $manifest.profileId -cne $profiles48[$digest]) {Stop-DistributionCheck 'manifest_distribution_unsupported'}
+    }
     $serverCount=if ($manifest.schema -eq 48) {$profile48Server.Count} elseif ($manifest.schema -eq 45) {$profile45Server.Count} elseif ($manifest.schema -eq 43) {$profile43Server.Count} elseif ($manifest.schema -eq 15) {$profile15Server.Count} elseif ($manifest.schema -eq 14) {$profile14Server.Count} else {9+$manifest.schema}
     $declared=@{server=(Get-DeclaredDistribution $manifest.distributions.server $serverCount);frontend=(Get-DeclaredDistribution $manifest.distributions.frontend)}
     foreach ($name in @('RackClick.Server.dll','RackClick.Server.runtimeconfig.json','RackClick.Server.deps.json','Npgsql.dll')) {

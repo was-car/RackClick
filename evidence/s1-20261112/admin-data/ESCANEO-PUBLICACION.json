@@ -1,0 +1,33 @@
+{
+  "tool": "gitleaks8.30.1",
+  "sourceFiles": 162,
+  "sourceBytes": 5613992,
+  "source": {
+    "complete": true,
+    "rawFindings": 1,
+    "classified": 1,
+    "unresolved": 0,
+    "categories": {
+      "prose_description_of_retired_v1_and_active_v7_not_key_material": 1
+    }
+  },
+  "assets": {
+    "archiveDepth": 3,
+    "rawFindings": 1468,
+    "classified": 1468,
+    "unresolved": 0,
+    "categories": {
+      "exact_published_demo_bytes_and_previously_reviewed_location_validated_catalogue_profile_identifier": 1048,
+      "exact_published_demo_bytes_and_previously_reviewed_location_validated_catalogue_group_identifier": 4,
+      "exact_published_demo_bytes_validated_catalogue_group_identifier": 14,
+      "validated_catalogue_profile_identifier_in_pinned_frontend": 139,
+      "validated_catalogue_group_identifier_in_pinned_frontend": 4,
+      "pinned_application_manifest_actual_sql_file_sha256": 1,
+      "exact_published_demo_bytes_validated_catalogue_profile_identifier": 257,
+      "exact_published_demo_profile_identifier_truncated_by_scanner_capture": 1
+    }
+  },
+  "rulesUnmodified": true,
+  "rawReportsPrivate": true,
+  "selectionSha256": "5bcc5662f66ed8751498096218a170d10c29a4224da24aea3ea181b3530be362"
+}

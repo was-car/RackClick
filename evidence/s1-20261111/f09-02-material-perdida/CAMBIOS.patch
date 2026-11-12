@@ -1,0 +1,982 @@
+--- a/development/server/src/RackClick.Server/MfaMaintenanceCoordinator.cs
++++ b/development/server/src/RackClick.Server/MfaMaintenanceCoordinator.cs
+@@ -238,8 +238,10 @@
+         await using var history=new NpgsqlCommand("SELECT version FROM public.schema_migration ORDER BY version",db);
+         await using var rows=await history.ExecuteReaderAsync(ct);
+         for(var version=1;version<=45;version++)if(!await rows.ReadAsync(ct) || rows.GetInt32(0)!=version)throw Fail("mfa_maintenance_schema_rejected");
+-        // Schema45 remains valid for retirement; rotation requires the additive witness migration46.
+-        if(await rows.ReadAsync(ct) && (rows.GetInt32(0)!=46 || await rows.ReadAsync(ct)))throw Fail("mfa_maintenance_schema_rejected");
++        // Schema45 remains valid for retirement; only the explicitly known contiguous additions are admitted.
++        int next=46;
++        while(await rows.ReadAsync(ct))
++            if(rows.GetInt32(0)!=next++ || next>48)throw Fail("mfa_maintenance_schema_rejected");
+     }
+     private static string Hash(byte[] bytes)=>Convert.ToHexStringLower(SHA256.HashData(bytes));
+     private static MfaMaintenanceException Fail(string code)=>new(code);
+--- a/development/server/src/RackClick.Server/MfaRotationCoordinator.cs
++++ b/development/server/src/RackClick.Server/MfaRotationCoordinator.cs
+@@ -231,7 +231,7 @@
+         await using var db=new NpgsqlConnection(MfaMaintenanceCoordinator.OwnerConnection(r.OwnerConnection,r.InstallationId));
+         await db.OpenAsync(ct);await MfaMaintenanceCoordinator.ValidateDatabase(db,r.InstallationId,ct);
+         await using(var schema=new NpgsqlCommand("SELECT COALESCE(max(version),0) FROM public.schema_migration",db))
+-            if(Convert.ToInt32(await schema.ExecuteScalarAsync(ct),CultureInfo.InvariantCulture)!=46)throw Fail("mfa_rotation_schema46_required");
++            if(Convert.ToInt32(await schema.ExecuteScalarAsync(ct),CultureInfo.InvariantCulture) is not (46 or 47))throw Fail("mfa_rotation_schema46_required");
+         using var storage=new WindowsMfaMaintenanceStore(r.InstancesRoot,r.InstallationId,r.ReaderSid,trusted);
+         using var local=storage.AcquireLock();
+         await using var admission=await MfaMaintenanceAdmission.ExclusiveAsync(db,ct);
+--- a/development/server/src/RackClick.Server/SchemaMigrations.cs
++++ b/development/server/src/RackClick.Server/SchemaMigrations.cs
+@@ -5,8 +5,8 @@
+ 
+ public static class SchemaMigrations
+ {
+-    public const int LatestVersion = 46;
+-    private static readonly string[] Files = ["001-foundation.sql", "002-inventory.sql", "003-operation-cancellation.sql", "004-session-identity.sql", "005-audit-context.sql", "006-audit-state-intent.sql", "007-audit-context-families.sql", "008-user-catalog-favorites.sql", "009-private-device-templates.sql", "010-customer-shared-device-templates.sql", "011-user-preferences.sql", "012-user-port-colors.sql", "013-user-category-colors.sql", "014-mfa.sql", "015-mfa-account-policy.sql", "016-hardware-mounting.sql", "017-hardware-catalog.sql", "018-commercial-hardware.sql", "019-aruba-hardware.sql", "020-fortinet-hardware.sql", "021-synology-hardware.sql", "022-diskstation-hardware.sql", "023-qnap-hardware.sql", "024-batch50-hardware.sql", "025-batch50b-hardware.sql", "026-batch100-hardware.sql", "027-batch100b-hardware.sql", "028-batch100c-hardware.sql", "029-selected506a-hardware.sql", "030-selected506b-hardware.sql", "031-selected506c-hardware.sql", "032-selected506d-hardware.sql", "033-selected506e-hardware.sql", "034-selected506f-hardware.sql", "035-selected506g-hardware.sql", "036-physical-media.sql", "037-selected506h-hardware.sql", "038-selected506i-hardware.sql", "039-selected506j-hardware.sql", "040-hardware-families.sql", "041-selected506k-hardware.sql", "042-hardware-family-l.sql", "043-selected506l-hardware.sql", "044-german-cpe-hardware.sql", "045-german-repeaters-hardware.sql", "046-mfa-key-rotation.sql"];
++    public const int LatestVersion = 47;
++    private static readonly string[] Files = ["001-foundation.sql", "002-inventory.sql", "003-operation-cancellation.sql", "004-session-identity.sql", "005-audit-context.sql", "006-audit-state-intent.sql", "007-audit-context-families.sql", "008-user-catalog-favorites.sql", "009-private-device-templates.sql", "010-customer-shared-device-templates.sql", "011-user-preferences.sql", "012-user-port-colors.sql", "013-user-category-colors.sql", "014-mfa.sql", "015-mfa-account-policy.sql", "016-hardware-mounting.sql", "017-hardware-catalog.sql", "018-commercial-hardware.sql", "019-aruba-hardware.sql", "020-fortinet-hardware.sql", "021-synology-hardware.sql", "022-diskstation-hardware.sql", "023-qnap-hardware.sql", "024-batch50-hardware.sql", "025-batch50b-hardware.sql", "026-batch100-hardware.sql", "027-batch100b-hardware.sql", "028-batch100c-hardware.sql", "029-selected506a-hardware.sql", "030-selected506b-hardware.sql", "031-selected506c-hardware.sql", "032-selected506d-hardware.sql", "033-selected506e-hardware.sql", "034-selected506f-hardware.sql", "035-selected506g-hardware.sql", "036-physical-media.sql", "037-selected506h-hardware.sql", "038-selected506i-hardware.sql", "039-selected506j-hardware.sql", "040-hardware-families.sql", "041-selected506k-hardware.sql", "042-hardware-family-l.sql", "043-selected506l-hardware.sql", "044-german-cpe-hardware.sql", "045-german-repeaters-hardware.sql", "046-mfa-key-rotation.sql", "047-mfa-loss-reset.sql"];
+ 
+     public static async Task Apply(NpgsqlConnection db, NpgsqlTransaction tx, CancellationToken ct)
+     {
+--- a/development/server/src/RackClick.Server/MfaEmergencyRecoveryCommand.cs
++++ b/development/server/src/RackClick.Server/MfaEmergencyRecoveryCommand.cs
+@@ -27,7 +27,7 @@
+         return 1;
+     }
+ 
+-    private static string? AuthorizationFailure()
++    internal static string? AuthorizationFailure()
+     {
+         if (!OperatingSystem.IsWindows()) return "mfa_emergency_not_windows";
+         try { return WindowsAuthorityFailure(); }
+--- /dev/null
++++ b/development/server/database/047-mfa-loss-reset.sql
+@@ -0,0 +1,39 @@
++-- F-09.02. Owner-only archive and local-authority witness, never an application actor or public audit payload.
++-- PUBLIC-table runtime grants do not grant USAGE/SELECT/DML here. No default role or existing data is changed.
++CREATE SCHEMA rackclick_private;
++REVOKE ALL ON SCHEMA rackclick_private FROM PUBLIC;
++CREATE TABLE rackclick_private.mfa_loss_operation (
++    operation_id uuid PRIMARY KEY CHECK(operation_id<>'00000000-0000-0000-0000-000000000000'::uuid),
++    mode text NOT NULL CHECK(mode='loss-reset'),
++    authority text NOT NULL CHECK(authority='windows-local'),
++    installation_id uuid NOT NULL CHECK(installation_id<>'00000000-0000-0000-0000-000000000000'::uuid),
++    database_name text NOT NULL CHECK(database_name='rc_db_'||replace(installation_id::text,'-','')),
++    systemhaus_id uuid NOT NULL REFERENCES public.systemhaus(id),
++    operator_sid text NOT NULL CHECK(length(operator_sid) BETWEEN 7 AND 184 AND operator_sid ~ '^S-1-[0-9]+(-[0-9]+){1,15}$'),
++    lost_versions integer[] NOT NULL CHECK(cardinality(lost_versions) BETWEEN 1 AND 64
++        AND array_position(lost_versions,NULL) IS NULL AND 0<ALL(lost_versions) AND 1000000>=ALL(lost_versions)),
++    new_version integer NOT NULL CHECK(new_version BETWEEN 1 AND 1000000 AND new_version>ALL(lost_versions)),
++    plan_sha256 text NOT NULL CHECK(plan_sha256 ~ '^[0-9a-f]{64}$'),
++    envelope_sha256 text NOT NULL CHECK(envelope_sha256 ~ '^[0-9a-f]{64}$'),
++    material_sha256 text NOT NULL CHECK(material_sha256 ~ '^[0-9a-f]{64}$'),
++    post_security_sha256 text NOT NULL CHECK(post_security_sha256 ~ '^[0-9a-f]{64}$'),
++    archive_sha256 text NOT NULL CHECK(archive_sha256 ~ '^[0-9a-f]{64}$'),
++    affected_factors bigint NOT NULL CHECK(affected_factors>=0),
++    revoked_sessions bigint NOT NULL CHECK(revoked_sessions>=0),
++    consumed_challenges bigint NOT NULL CHECK(consumed_challenges>=0),
++    consumed_codes bigint NOT NULL CHECK(consumed_codes>=0),
++    committed_at timestamptz NOT NULL DEFAULT clock_timestamp() CHECK(isfinite(committed_at)),
++    UNIQUE(installation_id,new_version)
++);
++CREATE TABLE rackclick_private.mfa_loss_factor_archive (
++    operation_id uuid NOT NULL REFERENCES rackclick_private.mfa_loss_operation(operation_id),
++    systemhaus_id uuid NOT NULL,
++    user_id uuid NOT NULL,
++    key_version integer NOT NULL CHECK(key_version BETWEEN 1 AND 1000000),
++    factor_row jsonb NOT NULL CHECK(jsonb_typeof(factor_row)='object' AND octet_length(factor_row::text)<=65536
++        AND (factor_row->>'systemhaus_id')::uuid=systemhaus_id AND (factor_row->>'user_id')::uuid=user_id
++        AND (factor_row->>'key_version')::integer=key_version),
++    PRIMARY KEY(operation_id,systemhaus_id,user_id)
++);
++-- No FK to a live user/factor: future account cleanup must not erase the preserved encrypted row.
++REVOKE ALL ON ALL TABLES IN SCHEMA rackclick_private FROM PUBLIC;
+--- /dev/null
++++ b/development/server/src/RackClick.Server/MfaLossResetDatabase.cs
+@@ -0,0 +1,184 @@
++using System.Data;
++using System.Globalization;
++using System.Runtime.Versioning;
++using System.Security.Cryptography;
++using System.Text;
++using System.Text.Json;
++using System.Text.RegularExpressions;
++using Npgsql;
++
++namespace RackClick.Server;
++
++internal sealed record MfaLossResetPlan(Guid InstallationId,Guid OperationId,Guid SystemhausId,string OperatorSid,
++    int[] LostVersions,int NewVersion,string SourceRingHash,string SourceFilesHash,string CatalogHash,
++    string SnapshotHash,Guid[] AffectedBackups,long Factors,long Sessions,long Challenges,long Codes,DateTime PlannedAtUtc)
++{
++    public override string ToString()=>"MfaLossResetPlan(metadata-redacted)";
++}
++internal sealed record MfaLossResetWitness(Guid OperationId,string PlanHash,string EnvelopeHash,string MaterialHash,
++    string PostSecurityHash,string ArchiveHash,long Factors,long Sessions,long Challenges,long Codes,
++    string Mode,string Authority,Guid InstallationId,string DatabaseName,Guid SystemhausId,string OperatorSid,int[] LostVersions,int NewVersion,DateTime CommittedAtUtc);
++
++// SQL adapter under explicit maintenance/table exclusion. No COMMIT here; caller retains the durable fence.
++[SupportedOSPlatform("windows")]
++internal static class MfaLossResetDatabase
++{
++    private static readonly string[] ExtraTables=["public.app_mfa_policy","rackclick_private.mfa_loss_operation","rackclick_private.mfa_loss_factor_archive"];
++    internal static int NextVersion(int[] versions,bool complete,int retained)
++    {
++        if(!complete || versions.Length==0 || versions.Any(v=>v is <1 or >1000000) || retained is <0 or >=64)
++            throw Fail("mfa_loss_history_unknown_or_capacity");
++        int maximum=versions.Max();if(maximum>=1000000)throw Fail("mfa_loss_version_capacity");return maximum+1;
++    }
++    internal static async Task LockAsync(NpgsqlConnection db,NpgsqlTransaction tx,CancellationToken ct)
++    {
++        await MfaRotationDatabase.LockAsync(db,tx,ct);
++        foreach(var table in ExtraTables)
++        {await using var command=new NpgsqlCommand("LOCK TABLE "+table+" IN ACCESS EXCLUSIVE MODE",db,tx);await command.ExecuteNonQueryAsync(ct);}
++    }
++    private static async Task RequireAsync(NpgsqlConnection db,NpgsqlTransaction tx,Guid installation,CancellationToken ct)
++    {
++        if(tx.Connection!=db || tx.IsolationLevel!=IsolationLevel.ReadCommitted)throw Fail("mfa_loss_transaction_required");
++        await MfaMaintenanceCoordinator.ValidateDatabase(db,installation,ct);
++        await using var check=new NpgsqlCommand("""
++            SELECT (SELECT max(version)=47 FROM public.schema_migration) AND current_setting('synchronous_commit')='on'
++            AND NOT EXISTS(SELECT 1 FROM unnest(@tables::text[]) t(name) WHERE NOT EXISTS(
++                SELECT 1 FROM pg_catalog.pg_locks WHERE pid=pg_backend_pid() AND granted AND mode='AccessExclusiveLock'
++                AND relation=pg_catalog.to_regclass(t.name)))
++            """,db,tx);
++        check.Parameters.AddWithValue("tables",ExtraTables.Concat(new[]{"public.app_mfa_factor","public.app_session","public.app_mfa_user","public.app_user","public.app_mfa_challenge","public.app_mfa_recovery_code","public.systemhaus","public.app_mfa_rotation_witness"}).ToArray());
++        if(await check.ExecuteScalarAsync(ct) is not true)throw Fail("mfa_loss_locks_required");
++    }
++    internal static async Task<MfaLossResetPlan> PlanAsync(NpgsqlConnection db,NpgsqlTransaction tx,Guid installation,Guid operation,
++        string sid,byte[] ringBytes,int[] fileVersions,int journalMaximum,int[] lost,MfaBackupCatalogSnapshot backups,string filesHash,CancellationToken ct)
++    {
++        await RequireAsync(db,tx,installation,ct);
++        var ring=MfaKeyRing.Parse(ringBytes,installation);
++        if(operation==Guid.Empty || sid.Length>184 || !Regex.IsMatch(sid,@"\AS-1-[0-9]+(-[0-9]+){1,15}\z",RegexOptions.CultureInvariant|RegexOptions.NonBacktracking)
++            || lost.Length is <1 or >64 || lost.Distinct().Count()!=lost.Length || lost.Any(v=>v is <1 or >1000000)
++            || backups.InstallationId!=installation)throw Fail("mfa_loss_plan_invalid");
++        if(await ReadWitnessAsync(db,tx,operation,ct) is not null)throw Fail("mfa_loss_operation_exists");
++        await using var houses=new NpgsqlCommand("SELECT id FROM public.systemhaus ORDER BY id",db,tx);
++        Guid house;
++        await using(var rows=await houses.ExecuteReaderAsync(ct))
++        {if(!await rows.ReadAsync(ct))throw Fail("mfa_loss_systemhaus_invalid");house=rows.GetGuid(0);if(house==Guid.Empty||await rows.ReadAsync(ct))throw Fail("mfa_loss_systemhaus_invalid");}
++        var inventory=await MfaFactorKeyInventoryReader.ReadForMaintenanceAsync(db,tx,installation,ct);
++        var known=ring.Entries.Select(e=>e.Version).Concat(fileVersions).Concat(inventory.Entries.Select(e=>e.Version))
++            .Concat(backups.Backups.SelectMany(b=>b.RequiredVersions.Concat(b.EnvelopeVersions))).ToList();
++        if(journalMaximum>0)known.Add(journalMaximum);
++        await using(var history=new NpgsqlCommand("SELECT GREATEST(COALESCE((SELECT max(new_version) FROM public.app_mfa_rotation_witness),0),COALESCE((SELECT max(new_version) FROM rackclick_private.mfa_loss_operation),0),COALESCE((SELECT max(key_version) FROM rackclick_private.mfa_loss_factor_archive),0))",db,tx))
++        {var maximum=Convert.ToInt32(await history.ExecuteScalarAsync(ct),CultureInfo.InvariantCulture);if(maximum>0)known.Add(maximum);}
++        if(lost.Any(v=>!known.Contains(v)) || inventory.Entries.Any(e=>!lost.Contains(e.Version)&&!ring.Entries.Any(r=>r.Version==e.Version))
++            || backups.Backups.SelectMany(b=>b.RequiredVersions).Any(v=>!lost.Contains(v)&&!ring.Entries.Any(r=>r.Version==v)))throw Fail("mfa_loss_versions_not_declared");
++        var next=NextVersion(known.ToArray(),true,ring.Entries.Count(e=>!lost.Contains(e.Version)));
++        await using(var bad=new NpgsqlCommand("""
++            SELECT EXISTS(SELECT 1 FROM public.app_mfa_factor f LEFT JOIN public.app_user u ON u.systemhaus_id=f.systemhaus_id AND u.id=f.user_id
++                WHERE f.systemhaus_id<>@house OR u.id IS NULL OR octet_length(to_jsonb(f)::text)>65536)
++            OR EXISTS(SELECT 1 FROM public.app_mfa_user m JOIN public.app_mfa_factor f USING(systemhaus_id,user_id)
++                WHERE f.key_version=ANY(@lost) AND m.revision>=9007199254740991)
++            """,db,tx))
++        {bad.Parameters.AddWithValue("house",house);bad.Parameters.AddWithValue("lost",lost);if(await bad.ExecuteScalarAsync(ct) is true)throw Fail("mfa_loss_factor_or_policy_invalid");}
++        var counts=new long[4];
++        string affected="EXISTS(SELECT 1 FROM public.app_mfa_factor f WHERE f.key_version=ANY(@lost) AND f.user_id=t.user_id)";
++        string[] countQueries=["SELECT count(*) FROM public.app_mfa_factor t WHERE key_version=ANY(@lost)",
++            "SELECT count(*) FROM public.app_session t WHERE "+affected,"SELECT count(*) FROM public.app_mfa_challenge t WHERE consumed_at IS NULL AND "+affected,
++            "SELECT count(*) FROM public.app_mfa_recovery_code t WHERE consumed_at IS NULL AND "+affected];
++        for(int i=0;i<countQueries.Length;i++){await using var count=new NpgsqlCommand(countQueries[i],db,tx);count.Parameters.AddWithValue("lost",lost);counts[i]=(long)(await count.ExecuteScalarAsync(ct))!;}
++        return new(installation,operation,house,sid,lost.Order().ToArray(),next,Hash(ringBytes),filesHash,backups.Digest,
++            await SnapshotAsync(db,tx,ct),backups.Backups.Where(b=>b.RequiredVersions.Any(lost.Contains)).Select(b=>b.BackupId).Order().ToArray(),counts[0],counts[1],counts[2],counts[3],DateTime.UtcNow);
++    }
++    internal static Task<string> SnapshotAsync(NpgsqlConnection db,NpgsqlTransaction tx,CancellationToken ct)=>HashRows(db,tx,
++        ["SELECT to_jsonb(t)::text FROM public.app_mfa_factor t ORDER BY systemhaus_id,user_id",
++         "SELECT to_jsonb(t)::text FROM public.app_mfa_user t ORDER BY systemhaus_id,user_id",
++         "SELECT to_jsonb(t)::text FROM public.app_user t ORDER BY id",
++         "SELECT to_jsonb(t)::text FROM public.app_session t ORDER BY token_hash",
++         "SELECT to_jsonb(t)::text FROM public.app_mfa_challenge t ORDER BY token_hash",
++         "SELECT to_jsonb(t)::text FROM public.app_mfa_recovery_code t ORDER BY systemhaus_id,user_id,code_hash",
++         "SELECT to_jsonb(t)::text FROM public.app_mfa_policy t ORDER BY systemhaus_id",
++         "SELECT to_jsonb(t)::text FROM public.systemhaus t ORDER BY id"],ct);
++    private static async Task<string> HashRows(NpgsqlConnection db,NpgsqlTransaction tx,string[] queries,CancellationToken ct,Guid? operation=null)
++    {
++        using var hash=IncrementalHash.CreateHash(HashAlgorithmName.SHA256);
++        await using(var format=new NpgsqlCommand("SET LOCAL TimeZone='UTC'; SET LOCAL DateStyle='ISO, YMD'; SET LOCAL bytea_output='hex'",db,tx))await format.ExecuteNonQueryAsync(ct);
++        foreach(var sql in queries)
++        {
++            hash.AppendData([0]);await using var command=new NpgsqlCommand(sql.Replace("SELECT to_jsonb(t)::text", "SELECT CASE WHEN octet_length(to_jsonb(t)::text)<=65536 THEN to_jsonb(t)::text ELSE NULL END",StringComparison.Ordinal),db,tx);
++            if(operation.HasValue)command.Parameters.AddWithValue("operation",operation.Value);
++            await using var rows=await command.ExecuteReaderAsync(ct);
++            while(await rows.ReadAsync(ct))
++            {
++                if(rows.IsDBNull(0))throw Fail("mfa_loss_snapshot_row_too_large");var text=rows.GetString(0);
++                var bytes=Encoding.UTF8.GetBytes(text);
++                try{hash.AppendData(BitConverter.GetBytes(bytes.Length));hash.AppendData(bytes);}finally{CryptographicOperations.ZeroMemory(bytes);}
++            }
++        }
++        return Convert.ToHexStringLower(hash.GetHashAndReset());
++    }
++    internal static async Task<MfaLossResetWitness?> ReadWitnessAsync(NpgsqlConnection db,NpgsqlTransaction tx,Guid operation,CancellationToken ct)
++    {
++        await using var command=new NpgsqlCommand("SELECT plan_sha256,envelope_sha256,material_sha256,post_security_sha256,archive_sha256,affected_factors,revoked_sessions,consumed_challenges,consumed_codes,mode,authority,installation_id,database_name,systemhaus_id,operator_sid,lost_versions,new_version,committed_at FROM rackclick_private.mfa_loss_operation WHERE operation_id=@operation",db,tx);
++        command.Parameters.AddWithValue("operation",operation);await using var row=await command.ExecuteReaderAsync(ct);
++        return await row.ReadAsync(ct)?new(operation,row.GetString(0),row.GetString(1),row.GetString(2),row.GetString(3),row.GetString(4),row.GetInt64(5),row.GetInt64(6),row.GetInt64(7),row.GetInt64(8),
++            row.GetString(9),row.GetString(10),row.GetGuid(11),row.GetString(12),row.GetGuid(13),row.GetString(14),row.GetFieldValue<int[]>(15),row.GetInt32(16),row.GetDateTime(17)):null;
++    }
++    internal static void RequireWitness(MfaLossResetPlan p,string materialHash,MfaLossResetWitness w,string? envelopeHash=null)
++    {
++        if(w.OperationId!=p.OperationId||w.Mode!="loss-reset"||w.Authority!="windows-local"||w.InstallationId!=p.InstallationId
++            ||w.DatabaseName!="rc_db_"+p.InstallationId.ToString("N")||w.SystemhausId!=p.SystemhausId||w.OperatorSid!=p.OperatorSid
++            ||!w.LostVersions.SequenceEqual(p.LostVersions)||w.NewVersion!=p.NewVersion||w.PlanHash!=Hash(JsonSerializer.SerializeToUtf8Bytes(p))
++            ||w.MaterialHash!=materialHash||envelopeHash is not null&&w.EnvelopeHash!=envelopeHash
++            ||w.Factors!=p.Factors||w.Sessions!=p.Sessions||w.Challenges!=p.Challenges||w.Codes!=p.Codes
++            ||w.CommittedAtUtc.Kind!=DateTimeKind.Utc||w.CommittedAtUtc<p.PlannedAtUtc||w.CommittedAtUtc>DateTime.UtcNow.AddMinutes(1))
++            throw Fail("mfa_loss_witness_mismatch");
++    }
++    internal static async Task<MfaLossResetWitness> ApplyAsync(NpgsqlConnection db,NpgsqlTransaction tx,MfaLossResetPlan plan,
++        string envelopeHash,string materialHash,CancellationToken ct)
++    {
++        await RequireAsync(db,tx,plan.InstallationId,ct);
++        string planHash=Hash(JsonSerializer.SerializeToUtf8Bytes(plan));
++        var previous=await ReadWitnessAsync(db,tx,plan.OperationId,ct);
++        if(previous is not null)
++        {RequireWitness(plan,materialHash,previous,envelopeHash);return previous;}
++        if(await SnapshotAsync(db,tx,ct)!=plan.SnapshotHash)throw Fail("mfa_loss_database_changed");
++        try
++        {
++            await using(var insert=new NpgsqlCommand("""
++                INSERT INTO rackclick_private.mfa_loss_operation(operation_id,mode,authority,installation_id,database_name,systemhaus_id,operator_sid,lost_versions,new_version,
++                    plan_sha256,envelope_sha256,material_sha256,post_security_sha256,archive_sha256,affected_factors,revoked_sessions,consumed_challenges,consumed_codes)
++                VALUES(@operation,'loss-reset','windows-local',@installation,current_database(),@house,@sid,@lost,@version,@plan,@envelope,@material,@zero,@zero,0,0,0,0)
++                """,db,tx))
++            {
++                insert.Parameters.AddWithValue("operation",plan.OperationId);insert.Parameters.AddWithValue("installation",plan.InstallationId);insert.Parameters.AddWithValue("house",plan.SystemhausId);
++                insert.Parameters.AddWithValue("sid",plan.OperatorSid);insert.Parameters.AddWithValue("lost",plan.LostVersions);insert.Parameters.AddWithValue("version",plan.NewVersion);
++                insert.Parameters.AddWithValue("plan",planHash);insert.Parameters.AddWithValue("envelope",envelopeHash);insert.Parameters.AddWithValue("material",materialHash);insert.Parameters.AddWithValue("zero",new string('0',64));await insert.ExecuteNonQueryAsync(ct);
++            }
++            await using(var archive=new NpgsqlCommand("INSERT INTO rackclick_private.mfa_loss_factor_archive SELECT @operation,f.systemhaus_id,f.user_id,f.key_version,to_jsonb(f) FROM public.app_mfa_factor f WHERE f.key_version=ANY(@lost)",db,tx))
++            {archive.Parameters.AddWithValue("operation",plan.OperationId);archive.Parameters.AddWithValue("lost",plan.LostVersions);await archive.ExecuteNonQueryAsync(ct);}
++            await using(var pending=new NpgsqlCommand("""
++                INSERT INTO public.app_mfa_user(systemhaus_id,user_id,mfa_required,enrollment_pending,revision,changed_by,changed_at)
++                SELECT systemhaus_id,user_id,true,true,1,NULL,clock_timestamp() FROM rackclick_private.mfa_loss_factor_archive WHERE operation_id=@operation
++                ON CONFLICT(systemhaus_id,user_id) DO UPDATE SET mfa_required=true,enrollment_pending=true,revision=app_mfa_user.revision+1,changed_at=clock_timestamp()
++                """,db,tx))
++            {pending.Parameters.AddWithValue("operation",plan.OperationId);await pending.ExecuteNonQueryAsync(ct);}
++            var counts=new long[4];
++            string affected="EXISTS(SELECT 1 FROM rackclick_private.mfa_loss_factor_archive a WHERE a.operation_id=@operation AND a.user_id=t.user_id)";
++            string[] changes=["DELETE FROM public.app_mfa_factor t WHERE "+affected,
++                "DELETE FROM public.app_session t WHERE "+affected,
++                "UPDATE public.app_mfa_challenge t SET consumed_at=clock_timestamp() WHERE consumed_at IS NULL AND "+affected,
++                "UPDATE public.app_mfa_recovery_code t SET consumed_at=clock_timestamp() WHERE consumed_at IS NULL AND "+affected];
++            for(int i=0;i<changes.Length;i++)
++            {await using var change=new NpgsqlCommand(changes[i],db,tx);change.Parameters.AddWithValue("operation",plan.OperationId);counts[i]=await change.ExecuteNonQueryAsync(ct);}
++            string post=await SnapshotAsync(db,tx,ct), archived=await ArchiveHashAsync(db,tx,plan.OperationId,ct);
++            await using(var finish=new NpgsqlCommand("UPDATE rackclick_private.mfa_loss_operation SET post_security_sha256=@post,archive_sha256=@archive,affected_factors=@f,revoked_sessions=@s,consumed_challenges=@c,consumed_codes=@r WHERE operation_id=@operation",db,tx))
++            {finish.Parameters.AddWithValue("post",post);finish.Parameters.AddWithValue("archive",archived);finish.Parameters.AddWithValue("f",counts[0]);finish.Parameters.AddWithValue("s",counts[1]);finish.Parameters.AddWithValue("c",counts[2]);finish.Parameters.AddWithValue("r",counts[3]);finish.Parameters.AddWithValue("operation",plan.OperationId);await finish.ExecuteNonQueryAsync(ct);}
++            return await ReadWitnessAsync(db,tx,plan.OperationId,ct)??throw Fail("mfa_loss_witness_missing");
++        }
++        catch{if(tx.Connection is not null)try{await tx.RollbackAsync(CancellationToken.None);}catch(NpgsqlException){}throw;}
++    }
++    internal static Task<string> ArchiveHashAsync(NpgsqlConnection db,NpgsqlTransaction tx,Guid operation,CancellationToken ct)
++    {
++        return HashRows(db,tx,["SELECT to_jsonb(t)::text FROM rackclick_private.mfa_loss_factor_archive t WHERE operation_id=@operation ORDER BY systemhaus_id,user_id"],ct,operation);
++    }
++    internal static string Hash(byte[] bytes)=>Convert.ToHexStringLower(SHA256.HashData(bytes));
++    private static MfaMaintenanceException Fail(string code)=>new(code);
++}
+--- /dev/null
++++ b/development/server/src/RackClick.Server/MfaLossResetCoordinator.cs
+@@ -0,0 +1,189 @@
++using System.Data;
++using System.Globalization;
++using System.Runtime.Versioning;
++using System.Security;
++using System.Security.Cryptography;
++using System.Security.Principal;
++using System.Text.Json;
++using Npgsql;
++
++namespace RackClick.Server;
++
++internal sealed record MfaLossResetResult(Guid OperationId,int NewVersion,string Phase,long Factors=0);
++
++// Internal maintenance protocol, not an enabled CLI/HTTP operation. Every production entry recaptures native authority.
++[SupportedOSPlatform("windows")]
++internal static class MfaLossResetCoordinator
++{
++    internal static Task<MfaLossResetResult> PrepareAsync(MfaMaintenanceRequest request,string serviceName,int[] lost,CancellationToken ct)=>
++        RunNative("prepare",request,serviceName,lost,null,null,null,null,ct);
++    internal static Task<MfaLossResetResult> ApplyAsync(MfaMaintenanceRequest request,string serviceName,byte[] envelope,string password,string expectedEnvelopeHash,CancellationToken ct)=>
++        RunNative("apply",request,serviceName,[],envelope,password,expectedEnvelopeHash,null,ct);
++    internal static Task<MfaLossResetResult> PublishAsync(MfaMaintenanceRequest request,string serviceName,CancellationToken ct)=>
++        RunNative("publish",request,serviceName,[],null,null,null,null,ct);
++    internal static Task<byte[]> ExportAsync(MfaMaintenanceRequest request,string serviceName,string password,CancellationToken ct)
++    {
++        var authority=Native();WindowsMfaMaintenanceService.RequireStopped(serviceName,request.ReaderSid,request.InstallationId,request.InstancesRoot);
++        return ExportCore(request,authority.Trusted,authority.Sid,password,ct);
++    }
++    private static Task<MfaLossResetResult> RunNative(string stage,MfaMaintenanceRequest r,string serviceName,int[] lost,byte[]? envelope,
++        string? password,string? hash,Action<string>? checkpoint,CancellationToken ct)
++    {var a=Native();WindowsMfaMaintenanceService.RequireStopped(serviceName,r.ReaderSid,r.InstallationId,r.InstancesRoot);return RunCore(stage,r,lost,a.Trusted,a.Sid,envelope,password,hash,checkpoint,ct);}
++    private static (SecurityIdentifier[] Trusted,string Sid) Native()
++    {
++        var denied=MfaEmergencyRecoveryCommand.AuthorizationFailure();if(denied is not null)throw new MfaMaintenanceException(denied);
++        using var identity=WindowsIdentity.GetCurrent();
++        return ([new(WellKnownSidType.LocalSystemSid,null),new(WellKnownSidType.BuiltinAdministratorsSid,null)],identity.User?.Value??throw new SecurityException());
++    }
++    // Explicit component fixture seam; never registered in DI or selected by configuration/CLI.
++    internal static Task<MfaLossResetResult> RunFixtureAsync(string stage,MfaMaintenanceRequest request,int[] lost,
++        IReadOnlyCollection<SecurityIdentifier> trusted,string operatorSid,byte[]? envelope,string? password,string? hash,
++        Action<string>? checkpoint,CancellationToken ct)=>RunCore(stage,request,lost,trusted,operatorSid,envelope,password,hash,checkpoint,ct);
++    internal static Task<byte[]> ExportFixtureAsync(MfaMaintenanceRequest request,IReadOnlyCollection<SecurityIdentifier> trusted,
++        string sid,string password,CancellationToken ct)=>ExportCore(request,trusted,sid,password,ct);
++
++    private static Task<MfaLossResetResult> RunCore(string stage,MfaMaintenanceRequest r,int[] lost,IReadOnlyCollection<SecurityIdentifier> trusted,
++        string sid,byte[]? envelope,string? password,string? envelopeHash,Action<string>? checkpoint,CancellationToken ct)
++    {
++        if(stage!="apply")return RunExclusiveCore(stage,r,lost,trusted,sid,null,password,envelopeHash,checkpoint,ct);
++        if(envelope is null||envelope.Length is <59 or >1024*1024)throw Fail("mfa_loss_external_envelope_required");
++        var owned=envelope.ToArray(); // Hash and authentication use this same bounded, caller-independent snapshot.
++        return ApplyOwned();
++        async Task<MfaLossResetResult> ApplyOwned()
++        {try{return await RunExclusiveCore(stage,r,lost,trusted,sid,owned,password,envelopeHash,checkpoint,ct);}finally{CryptographicOperations.ZeroMemory(owned);}}
++    }
++    private static Task<MfaLossResetResult> RunExclusiveCore(string stage,MfaMaintenanceRequest r,int[] lost,IReadOnlyCollection<SecurityIdentifier> trusted,
++        string sid,byte[]? envelope,string? password,string? envelopeHash,Action<string>? checkpoint,CancellationToken ct)=>
++        Exclusive<MfaLossResetResult>(r,trusted,async(db,storage)=>
++        {
++            storage.Checkpoint=checkpoint;
++            await using var tx=await db.BeginTransactionAsync(IsolationLevel.ReadCommitted,ct);await MfaLossResetDatabase.LockAsync(db,tx,ct);
++            using var backups=Catalog(r,storage,trusted);
++            if(stage=="prepare")
++            {
++                if(storage.ReadPending() is not null)throw Fail("mfa_maintenance_pending");
++                var source=storage.InspectLossSource();
++                var plan=await MfaLossResetDatabase.PlanAsync(db,tx,r.InstallationId,r.OperationId,sid,source.Ring,source.FileVersions,
++                    storage.HighestRotationVersion(),lost,backups,source.FilesHash,ct);
++                var provider=Provider(r.InstancesRoot,r,trusted);var ring=MfaKeyRing.Parse(source.Ring,r.InstallationId);
++                RequireLostAndRetained(provider,plan,ring);await AuthenticateRetained(db,tx,provider,plan.LostVersions,ct);
++                storage.PrepareLoss(plan);
++                var material=new List<(int Version,byte[] Key)>();
++                try
++                {
++                    foreach(var entry in ring.Entries.Where(e=>!plan.LostVersions.Contains(e.Version)))material.Add((entry.Version,provider.GetKey(entry.Version)));
++                    material.Add((plan.NewVersion,RandomNumberGenerator.GetBytes(32)));
++                    var entries=ring.Entries.Where(e=>!plan.LostVersions.Contains(e.Version)).Select(e=>e with{State=MfaKeyState.Retired})
++                        .Append(new MfaKeyRingEntry(plan.NewVersion,MfaKeyState.Active,DateTimeOffset.UtcNow));
++                    WindowsMfaKeyStoreWriter.CreateStoreFromMaterial(storage.LossCandidateRoot(r.OperationId),r.InstallationId,r.ReaderSid,trusted,
++                        Ring(r.InstallationId,entries),material);
++                    var candidate=Provider(storage.LossCandidateRoot(r.OperationId),r,trusted);
++                    foreach(var item in material)
++                    {var key=candidate.GetKey(item.Version);try{if(!CryptographicOperations.FixedTimeEquals(item.Key,key))throw Fail("mfa_loss_material_mismatch");}finally{CryptographicOperations.ZeroMemory(key);}}
++                    storage.RecordLossMaterial(r.OperationId);storage.VerifyLossOriginal(r.OperationId);
++                }
++                finally{foreach(var item in material)CryptographicOperations.ZeroMemory(item.Key);}
++                await tx.CommitAsync(ct);return new(r.OperationId,plan.NewVersion,"awaiting_external_envelope_fenced");
++            }
++            var saved=RequirePlan(r,storage,sid);var ready=storage.RequireLossMaterial(r.OperationId);
++            if(stage=="apply")
++            {
++                if(envelope is null||password is null||envelopeHash is null||MfaLossResetDatabase.Hash(envelope)!=envelopeHash)
++                    throw Fail("mfa_loss_external_envelope_required");
++                VerifyEnvelope(r,storage,trusted,envelope,password);
++                storage.PinLossEnvelope(r.OperationId,envelopeHash);
++                var previous=await MfaLossResetDatabase.ReadWitnessAsync(db,tx,r.OperationId,ct);
++                if(previous is null)storage.VerifyLossOriginal(r.OperationId);
++                else
++                {
++                    RequireWitness(saved,ready,previous,storage.RequireLossEnvelope(r.OperationId));
++                    if(await MfaLossResetDatabase.SnapshotAsync(db,tx,ct)!=previous.PostSecurityHash
++                        ||await MfaLossResetDatabase.ArchiveHashAsync(db,tx,r.OperationId,ct)!=previous.ArchiveHash)throw Fail("mfa_loss_committed_state_changed");
++                }
++                var witness=await MfaLossResetDatabase.ApplyAsync(db,tx,saved,envelopeHash,ready.FilesHash,ct);
++                checkpoint?.Invoke("before_loss_db_commit");storage.RequireLossMaterial(r.OperationId);
++                if(previous is null)storage.VerifyLossOriginal(r.OperationId);
++                await tx.CommitAsync(ct);checkpoint?.Invoke("after_loss_db_commit");
++                return new(r.OperationId,saved.NewVersion,"db_committed_fenced",witness.Factors);
++            }
++            if(stage!="publish")throw Fail("mfa_loss_stage_invalid");
++            var committed=await MfaLossResetDatabase.ReadWitnessAsync(db,tx,r.OperationId,ct)??throw Fail("mfa_loss_witness_missing");
++            RequireWitness(saved,ready,committed,storage.RequireLossEnvelope(r.OperationId));
++            if(await MfaLossResetDatabase.SnapshotAsync(db,tx,ct)!=committed.PostSecurityHash
++                ||await MfaLossResetDatabase.ArchiveHashAsync(db,tx,r.OperationId,ct)!=committed.ArchiveHash)throw Fail("mfa_loss_committed_state_changed");
++            storage.PublishLoss(r.OperationId);
++            var live=Provider(r.InstancesRoot,r,trusted);var active=live.GetActiveKey();
++            try{if(active.Version!=saved.NewVersion||active.Key.Length!=32)throw Fail("mfa_loss_publication_invalid");}finally{CryptographicOperations.ZeroMemory(active.Key);}
++            await AuthenticateRetained(db,tx,live,[],ct);
++            await tx.CommitAsync(ct);
++            return new(r.OperationId,saved.NewVersion,"material_published_verified_fenced",committed.Factors);
++        },ct);
++    private static Task<byte[]> ExportCore(MfaMaintenanceRequest r,IReadOnlyCollection<SecurityIdentifier> trusted,string sid,string password,CancellationToken ct)=>
++        Exclusive<byte[]>(r,trusted,async(db,storage)=>
++        {
++            await using var tx=await db.BeginTransactionAsync(IsolationLevel.ReadCommitted,ct);await MfaLossResetDatabase.LockAsync(db,tx,ct);
++            using var backups=Catalog(r,storage,trusted);RequirePlan(r,storage,sid);storage.RequireLossMaterial(r.OperationId);
++            var result=WindowsMfaKeyRecovery.Export(storage.LossCandidateRoot(r.OperationId),r.InstallationId,r.ReaderSid,trusted,password);
++            storage.RequireLossMaterial(r.OperationId);await tx.CommitAsync(ct);return result;
++        },ct);
++    private static async Task<T> Exclusive<T>(MfaMaintenanceRequest r,IReadOnlyCollection<SecurityIdentifier> trusted,
++        Func<NpgsqlConnection,WindowsMfaMaintenanceStore,Task<T>> body,CancellationToken ct)
++    {
++        if(r.Action!="loss-reset"||r.OperationId==Guid.Empty)throw Fail("mfa_loss_request_invalid");
++        await using var db=new NpgsqlConnection(MfaMaintenanceCoordinator.OwnerConnection(r.OwnerConnection,r.InstallationId));await db.OpenAsync(ct);
++        await MfaMaintenanceCoordinator.ValidateDatabase(db,r.InstallationId,ct);
++        using var storage=new WindowsMfaMaintenanceStore(r.InstancesRoot,r.InstallationId,r.ReaderSid,trusted);using var local=storage.AcquireLock();
++        await using var admission=await MfaMaintenanceAdmission.ExclusiveAsync(db,ct);MfaMaintenanceAdmission.RequireNoHostRingLease(r.InstancesRoot,r.InstallationId);
++        await using(var others=new NpgsqlCommand("SELECT EXISTS(SELECT 1 FROM pg_stat_activity WHERE datname=current_database() AND backend_type='client backend' AND pid<>pg_backend_pid())",db))
++            if(await others.ExecuteScalarAsync(ct) is true)throw Fail("mfa_maintenance_other_clients");
++        return await body(db,storage);
++    }
++    private static MfaBackupCatalogSnapshot Catalog(MfaMaintenanceRequest r,WindowsMfaMaintenanceStore s,IReadOnlyCollection<SecurityIdentifier> trusted)
++    {var document=MfaBackupCatalog.Parse(s.ReadCatalog(),r.InstallationId,r.ExpectedCatalogHash);MfaMaintenanceCoordinator.RequireRootAuthority(document,r.ReaderSid,trusted);return MfaBackupCatalog.Open(document);}
++    private static MfaLossResetPlan RequirePlan(MfaMaintenanceRequest r,WindowsMfaMaintenanceStore s,string sid)
++    {var p=s.ReadLossPlan(r.OperationId);if(p.InstallationId!=r.InstallationId||p.CatalogHash!=r.ExpectedCatalogHash||p.OperatorSid!=sid)throw Fail("mfa_loss_plan_mismatch");return p;}
++    private static void RequireWitness(MfaLossResetPlan p,MfaLossMaterial material,MfaLossResetWitness witness,string envelopeHash)
++    {MfaLossResetDatabase.RequireWitness(p,material.FilesHash,witness,envelopeHash);}
++    private static WindowsMfaKeyProvider Provider(string root,MfaMaintenanceRequest r,IReadOnlyCollection<SecurityIdentifier> trusted)=>new(root,r.InstallationId,r.ReaderSid,trusted);
++    private static void RequireLostAndRetained(IMfaKeyProvider provider,MfaLossResetPlan plan,MfaKeyRing ring)
++    {
++        foreach(var version in plan.LostVersions)
++        {
++            byte[]? key=null;bool unavailable=false;
++            try{key=provider.GetKey(version);}
++            catch(MfaKeyRingException e)when(e.Kind is MfaKeyRingErrorKind.MissingFile or MfaKeyRingErrorKind.Corrupt or MfaKeyRingErrorKind.InvalidFormat or MfaKeyRingErrorKind.UnknownVersion){unavailable=true;}
++            catch(FileNotFoundException){unavailable=true;}
++            finally{if(key is not null)CryptographicOperations.ZeroMemory(key);}
++            if(!unavailable)throw Fail("mfa_loss_material_still_available");
++        }
++        foreach(var entry in ring.Entries.Where(e=>!plan.LostVersions.Contains(e.Version)))
++        {var key=provider.GetKey(entry.Version);try{if(key.Length!=32)throw Fail("mfa_loss_material_invalid");}finally{CryptographicOperations.ZeroMemory(key);}}
++    }
++    private static async Task AuthenticateRetained(NpgsqlConnection db,NpgsqlTransaction tx,IMfaKeyProvider provider,int[] lost,CancellationToken ct)
++    {
++        await using var query=new NpgsqlCommand("SELECT systemhaus_id,user_id,key_version,CASE WHEN octet_length(secret_ciphertext) BETWEEN 29 AND 16384 THEN secret_ciphertext ELSE NULL END FROM public.app_mfa_factor WHERE NOT(key_version=ANY(@lost)) ORDER BY systemhaus_id,user_id",db,tx);
++        query.Parameters.AddWithValue("lost",lost);await using var rows=await query.ExecuteReaderAsync(ct);
++        while(await rows.ReadAsync(ct))
++        {
++            if(rows.IsDBNull(3))throw Fail("mfa_loss_retained_factor_invalid");byte[]? key=null,plain=null;
++            try{key=provider.GetKey(rows.GetInt32(2));plain=MfaSecretCipher.Open(key,rows.GetInt32(2),rows.GetFieldValue<byte[]>(3),rows.GetGuid(0),rows.GetGuid(1));if(plain.Length==0)throw Fail("mfa_loss_retained_factor_invalid");}
++            finally{if(key is not null)CryptographicOperations.ZeroMemory(key);if(plain is not null)CryptographicOperations.ZeroMemory(plain);}
++        }
++    }
++    private static void VerifyEnvelope(MfaMaintenanceRequest r,WindowsMfaMaintenanceStore storage,IReadOnlyCollection<SecurityIdentifier> trusted,byte[] envelope,string password)
++    {
++        var plain=MfaKeyRecoveryEnvelope.Open(password,envelope);
++        try
++        {
++            using var content=MfaKeyRecoveryPayload.Deserialize(plain,r.InstallationId);var provider=Provider(storage.LossCandidateRoot(r.OperationId),r,trusted);
++            var active=provider.GetActiveKey();try{if(content.Ring.Entries.Single(e=>e.State==MfaKeyState.Active).Version!=active.Version)throw Fail("mfa_loss_envelope_mismatch");}finally{CryptographicOperations.ZeroMemory(active.Key);}
++            if(!content.Ring.Entries.SequenceEqual(MfaKeyRing.Parse(storage.ReadLossCandidateRing(r.OperationId),r.InstallationId).Entries))throw Fail("mfa_loss_envelope_mismatch");
++            foreach(var entry in content.Ring.Entries)
++            {var key=provider.GetKey(entry.Version);try{if(!CryptographicOperations.FixedTimeEquals(key,content.KeyFor(entry.Version)))throw Fail("mfa_loss_envelope_mismatch");}finally{CryptographicOperations.ZeroMemory(key);}}
++        }
++        finally{CryptographicOperations.ZeroMemory(plain);}
++    }
++    private static byte[] Ring(Guid id,IEnumerable<MfaKeyRingEntry> entries)=>JsonSerializer.SerializeToUtf8Bytes(new{format=MfaKeyRing.RingFormat,formatVersion=1,installationId=id,
++        versions=entries.OrderBy(e=>e.Version).Select(e=>new{version=e.Version,state=e.State==MfaKeyState.Active?"active":"retired",createdAtUtc=e.CreatedAtUtc.ToUniversalTime().ToString("yyyy-MM-dd'T'HH:mm:ss'Z'",CultureInfo.InvariantCulture)})});
++    private static MfaMaintenanceException Fail(string code)=>new(code);
++}
+--- /dev/null
++++ b/development/server/src/RackClick.Server/WindowsMfaMaintenanceStore.Loss.cs
+@@ -0,0 +1,168 @@
++using System.Security.Cryptography;
++using System.Text.Json;
++using System.Text.RegularExpressions;
++
++namespace RackClick.Server;
++
++internal sealed record MfaLossSource(byte[] Ring,int[] FileVersions,string FilesHash);
++internal sealed record MfaLossMaterial(string RingHash,string FilesHash);
++
++internal sealed partial class WindowsMfaMaintenanceStore
++{
++    private sealed record LossFile(string Name,int Version,string Hash,Identity Object);
++    private sealed record LossJournal(MfaLossResetPlan Plan,LossFile[] Files,Identity FenceObject);
++    private sealed record LossFence(int FormatVersion,Guid InstallationId,Guid OperationId,string JournalHash,string Mode);
++    private sealed record LossPublication(Identity Key,Identity Ring);
++    private sealed record LossEnvelope(string PlanHash,string MaterialHash,string EnvelopeHash);
++    private string LossPath(Guid operation,string kind)=>OperationPath(operation,"loss-"+kind);
++    internal string LossCandidateRoot(Guid operation)=>Metadata(operation.ToString("N")+".lc");
++    private byte[] ReadLossOpaque(string path,int maximum)
++    {
++        using var handle=Open(path,Read,1);RequireServiceFile(Security(handle));var identity=Information(handle);
++        var length=RandomAccess.GetLength(handle);if(length<0||length>maximum)throw Corrupt("loss source size");
++        var bytes=length==0?Array.Empty<byte>():ReadHandle(handle,maximum);
++        RequireIdentity(Information(handle),identity);RequireServiceFile(Security(handle));return bytes;
++    }
++
++    private LossFile[] LossSourceFiles()
++    {
++        RequireLocked();var folder=Path.GetDirectoryName(_ring)!;var result=new List<LossFile>();
++        foreach(var path in Directory.EnumerateFileSystemEntries(folder).Order(StringComparer.Ordinal))
++        {
++            if(result.Count>=129)throw Corrupt("loss source census too large");
++            var name=Path.GetFileName(path);int version=0;
++            if(name!=MfaKeyRing.RingFileName)
++            {
++                var match=Regex.Match(name,@"\Akey-v([1-9][0-9]{0,6})\.dpapi\.json\z",RegexOptions.CultureInvariant|RegexOptions.NonBacktracking);
++                if(!match.Success||!int.TryParse(match.Groups[1].Value,out version)||version>1000000)throw Corrupt("unknown loss source object");
++            }
++            var identity=IdentityAt(path);var bytes=ReadLossOpaque(path,version==0?MfaKeyRing.MaxRingFileBytes:MfaKeyRing.MaxKeyFileBytes);
++            RequireIdentity(IdentityAt(path),identity);result.Add(new(name,version,Hash(bytes),identity));
++        }
++        if(!result.Any(f=>f.Version==0))throw Corrupt("loss ring history unknown");
++        return result.ToArray();
++    }
++    internal MfaLossSource InspectLossSource()
++    {
++        var files=LossSourceFiles();var ring=ReadRing();
++        if(files.Single(f=>f.Version==0).Hash!=Hash(ring))throw Corrupt("loss source changed");
++        return new(ring,files.Where(f=>f.Version>0).Select(f=>f.Version).ToArray(),Hash(JsonSerializer.SerializeToUtf8Bytes(files)));
++    }
++    internal void PrepareLoss(MfaLossResetPlan plan)
++    {
++        RequireLocked();RequireNoPending();
++        // The approved Win32 writer has no extended-path contract. Reject before any archive/fence is written.
++        if(Path.Combine(LossCandidateRoot(plan.OperationId),_installation.ToString("D"),"mfa-keys.preparando-"+new string('0',32),"key-v1000000.dpapi.json").Length>259)
++            throw new MfaMaintenanceException("mfa_loss_path_too_long");
++        if(Directory.EnumerateFileSystemEntries(_management,"*.loss-*").Any())throw Corrupt("previous loss operation requires reconciliation");
++        var files=LossSourceFiles();if(plan.InstallationId!=_installation||plan.OperationId==Guid.Empty
++            ||Hash(JsonSerializer.SerializeToUtf8Bytes(files))!=plan.SourceFilesHash||Hash(ReadRing())!=plan.SourceRingHash)throw Corrupt("loss source binding");
++        foreach(var file in files)
++        {
++            var bytes=ReadLossOpaque(Path.Combine(Path.GetDirectoryName(_ring)!,file.Name),file.Version==0?MfaKeyRing.MaxRingFileBytes:MfaKeyRing.MaxKeyFileBytes);
++            RequireHash(bytes,file.Hash);RequireIdentity(IdentityAt(Path.Combine(Path.GetDirectoryName(_ring)!,file.Name)),file.Object);
++            CreateContent(LossPath(plan.OperationId,"archive-"+file.Name),JsonSerializer.SerializeToUtf8Bytes(bytes));
++        }
++        using var fence=Create(_fence,true,Read|Write,1);
++        var journal=new LossJournal(plan,files,Information(fence));var bytesJournal=JsonSerializer.SerializeToUtf8Bytes(journal);
++        CreateContent(LossPath(plan.OperationId,"plan"),bytesJournal);
++        WriteFlush(fence,JsonSerializer.SerializeToUtf8Bytes(new LossFence(1,_installation,plan.OperationId,Hash(bytesJournal),"loss-reset")));
++        Checkpoint?.Invoke("loss_planned_fenced");
++    }
++    private LossJournal ReadLossJournal(Guid operation)
++    {
++        RequireLocked();var bytes=ReadPrivate(LossPath(operation,"plan"),MaxRotationJournalBytes);var journal=Decode<LossJournal>(bytes);
++        using var handle=Open(_fence,Read,1);RequireServiceFile(Security(handle));RequireIdentity(Information(handle),journal.FenceObject);
++        var fence=Decode<LossFence>(ReadHandle(handle,4096));
++        if(fence.Mode!="loss-reset"||fence.FormatVersion!=1||fence.InstallationId!=_installation||fence.OperationId!=operation
++            ||journal.Plan.InstallationId!=_installation||journal.Plan.OperationId!=operation||fence.JournalHash!=Hash(bytes))throw Corrupt("loss journal binding");
++        foreach(var file in journal.Files)RequireHash(Decode<byte[]>(ReadPrivate(LossPath(operation,"archive-"+file.Name),2*Math.Max(MfaKeyRing.MaxRingFileBytes,MfaKeyRing.MaxKeyFileBytes))),file.Hash);
++        return journal;
++    }
++    internal MfaLossResetPlan ReadLossPlan(Guid operation)=>ReadLossJournal(operation).Plan;
++    internal void VerifyLossOriginal(Guid operation)
++    {
++        var journal=ReadLossJournal(operation);var current=LossSourceFiles();
++        if(!current.SequenceEqual(journal.Files))throw Corrupt("loss source changed after planning");
++    }
++    internal MfaLossMaterial RecordLossMaterial(Guid operation)
++    {
++        var material=InspectLossCandidate(operation);CreateContent(LossPath(operation,"ready"),JsonSerializer.SerializeToUtf8Bytes(material));return material;
++    }
++    internal MfaLossMaterial InspectLossCandidate(Guid operation)
++    {
++        ReadLossJournal(operation);var root=LossCandidateRoot(operation);
++        var folder=Path.Combine(root,_installation.ToString("D"),"mfa-keys");
++        _reader.RequireSafeFolder(root);_reader.RequireSafeFolder(Path.GetDirectoryName(folder)!);_reader.RequireSafeFolder(folder);
++        var ringBytes=_reader.ReadValidated(Path.Combine(folder,MfaKeyRing.RingFileName),MfaKeyRing.MaxRingFileBytes);
++        var ring=MfaKeyRing.Parse(ringBytes,_installation);var files=new SortedDictionary<string,object>(StringComparer.Ordinal);
++        foreach(var path in Directory.EnumerateFileSystemEntries(folder))
++        {
++            var name=Path.GetFileName(path);
++            if(name!=MfaKeyRing.RingFileName&&!ring.Entries.Any(e=>MfaKeyRing.KeyFileName(e.Version)==name))throw Corrupt("unknown candidate file");
++            var identity=IdentityAt(path);var bytes=_reader.ReadValidated(path,name==MfaKeyRing.RingFileName?MfaKeyRing.MaxRingFileBytes:MfaKeyRing.MaxKeyFileBytes);
++            RequireIdentity(IdentityAt(path),identity);files.Add(name,new{Hash=Hash(bytes),Object=identity});
++        }
++        if(files.Count!=ring.Entries.Count+1)throw Corrupt("incomplete loss candidate");
++        return new(Hash(ringBytes),Hash(JsonSerializer.SerializeToUtf8Bytes(files)));
++    }
++    internal byte[] ReadLossCandidateRing(Guid operation)=>_reader.ReadValidated(Path.Combine(LossCandidateRoot(operation),_installation.ToString("D"),"mfa-keys",MfaKeyRing.RingFileName),MfaKeyRing.MaxRingFileBytes);
++    internal MfaLossMaterial RequireLossMaterial(Guid operation)
++    {
++        var expected=Decode<MfaLossMaterial>(ReadPrivate(LossPath(operation,"ready"),4096));
++        if(InspectLossCandidate(operation)!=expected)throw Corrupt("loss candidate changed");return expected;
++    }
++    internal string PinLossEnvelope(Guid operation,string hash)
++    {
++        var plan=ReadLossPlan(operation);var material=RequireLossMaterial(operation);
++        if(hash.Length!=64||hash.Any(c=>!char.IsAsciiHexDigitLower(c)))throw Corrupt("invalid envelope digest");
++        var bytes=JsonSerializer.SerializeToUtf8Bytes(new LossEnvelope(Hash(JsonSerializer.SerializeToUtf8Bytes(plan)),material.FilesHash,hash));
++        var path=LossPath(operation,"envelope-pin");
++        if(!Exists(path))CreateContent(path,bytes);
++        RequireHash(ReadPrivate(path,4096),Hash(bytes));return hash;
++    }
++    internal string RequireLossEnvelope(Guid operation)
++    {
++        var pin=Decode<LossEnvelope>(ReadPrivate(LossPath(operation,"envelope-pin"),4096));
++        // Existing immutable pin, never infer it from a DB witness during reconciliation.
++        return PinLossEnvelope(operation,pin.EnvelopeHash);
++    }
++    internal void PublishLoss(Guid operation)
++    {
++        var journal=ReadLossJournal(operation);var plan=journal.Plan;var material=RequireLossMaterial(operation);
++        var sourceFolder=Path.GetDirectoryName(_ring)!;var keyName=MfaKeyRing.KeyFileName(plan.NewVersion);
++        var keyPath=Path.Combine(sourceFolder,keyName);var keyStage=LossPath(operation,"stage-key");var ringStage=LossPath(operation,"stage-ring");
++        var publicationPath=LossPath(operation,"publication");
++        var candidate=Path.Combine(LossCandidateRoot(operation),_installation.ToString("D"),"mfa-keys");
++        var keyBytes=_reader.ReadValidated(Path.Combine(candidate,keyName),MfaKeyRing.MaxKeyFileBytes);
++        var ringBytes=_reader.ReadValidated(Path.Combine(candidate,MfaKeyRing.RingFileName),MfaKeyRing.MaxRingFileBytes);
++        LossPublication publication;
++        if(!Exists(publicationPath))
++        {
++            VerifyLossOriginal(operation);
++            using var key=Create(keyStage,true,Read|Write,1);WriteFlush(key,keyBytes);var keyIdentity=Information(key);
++            using var ring=Create(ringStage,true,Read|Write,1);WriteFlush(ring,ringBytes);
++            publication=new(keyIdentity,Information(ring));CreateContent(publicationPath,JsonSerializer.SerializeToUtf8Bytes(publication));
++        }
++        else publication=Decode<LossPublication>(ReadPrivate(publicationPath,4096));
++        // Preserve every original blob, including corrupt/opaque material. Only the ring and the planned new key are published.
++        foreach(var file in journal.Files.Where(f=>f.Version!=0))
++        {var path=Path.Combine(sourceFolder,file.Name);RequireIdentity(IdentityAt(path),file.Object);RequireHash(ReadLossOpaque(path,MfaKeyRing.MaxKeyFileBytes),file.Hash);}
++        var allowed=journal.Files.Select(f=>f.Name).Append(keyName).ToHashSet(StringComparer.Ordinal);
++        if(Directory.EnumerateFileSystemEntries(sourceFolder).Any(p=>!allowed.Contains(Path.GetFileName(p))))throw Corrupt("unknown live loss object");
++        Checkpoint?.Invoke("before_loss_key_publish");
++        if(!Exists(keyPath))
++        {RequireIdentity(IdentityAt(keyStage),publication.Key);RequireHash(_reader.ReadValidated(keyStage,MfaKeyRing.MaxKeyFileBytes),Hash(keyBytes));File.Move(keyStage,keyPath,false);}
++        RequireIdentity(IdentityAt(keyPath),publication.Key);RequireHash(_reader.ReadValidated(keyPath,MfaKeyRing.MaxKeyFileBytes),Hash(keyBytes));
++        Checkpoint?.Invoke("after_loss_key_publish");
++        var live=_reader.ReadValidated(_ring,MfaKeyRing.MaxRingFileBytes);
++        if(Hash(live)==plan.SourceRingHash)
++        {
++            RequireIdentity(IdentityAt(_ring),journal.Files.Single(f=>f.Version==0).Object);RequireIdentity(IdentityAt(ringStage),publication.Ring);
++            RequireHash(_reader.ReadValidated(ringStage,MfaKeyRing.MaxRingFileBytes),material.RingHash);File.Replace(ringStage,_ring,null,false);
++        }
++        RequireIdentity(IdentityAt(_ring),publication.Ring);RequireHash(_reader.ReadValidated(_ring,MfaKeyRing.MaxRingFileBytes),material.RingHash);
++        Checkpoint?.Invoke("after_loss_ring_publish");
++        // No fence removal or rotate receipt: startup/service verification is a later, explicit loss-reset step.
++    }
++}
+--- /dev/null
++++ b/development/server/tests/RackClick.Quality.Tests/MfaLossResetVersionTests.cs
+@@ -0,0 +1,35 @@
++using System.Reflection;
++using RackClick.Server;
++using Xunit;
++
++namespace RackClick.Quality.Tests;
++
++public sealed class MfaLossResetVersionTests
++{
++    [Theory]
++    [InlineData(new[] { 1, 7, 40 }, 3, 41)]
++    [InlineData(new[] { 999999 }, 0, 1000000)]
++    [InlineData(new[] { 4, 4, 2 }, 63, 5)]
++    public void NewVersionExceedsEveryKnownSourceWithoutReusingOne(int[] versions, int retained, int expected)
++        => Assert.Equal(expected, Invoke(versions, true, retained));
++
++    [Theory]
++    [InlineData(new int[0], true, 0)]
++    [InlineData(new[] { 7 }, false, 0)]
++    [InlineData(new[] { 0, 7 }, true, 0)]
++    [InlineData(new[] { 1000000 }, true, 0)]
++    [InlineData(new[] { 7 }, true, 64)]
++    [InlineData(new[] { 7 }, true, -1)]
++    public void UnknownHistoryOrExhaustedProfileCannotCreateVersionOne(int[] versions, bool complete, int retained)
++    {
++        var error = Assert.Throws<TargetInvocationException>(() => Invoke(versions, complete, retained));
++        Assert.IsType<MfaMaintenanceException>(error.InnerException);
++    }
++
++    private static int Invoke(int[] versions, bool complete, int retained)
++    {
++        var type = typeof(MfaKeyRing).Assembly.GetType("RackClick.Server.MfaLossResetDatabase", throwOnError: true)!;
++        return (int)type.GetMethod("NextVersion", BindingFlags.NonPublic | BindingFlags.Static)!
++            .Invoke(null, [versions, complete, retained])!;
++    }
++}
+--- /dev/null
++++ b/development/server/tests/RackClick.Quality.Tests/MfaLossResetTests.cs
+@@ -0,0 +1,299 @@
++using System.Data;
++using System.Diagnostics;
++using System.Runtime.Versioning;
++using System.Security.Cryptography;
++using System.Security.Principal;
++using System.Text.Json;
++using Npgsql;
++using RackClick.Server;
++using Xunit;
++
++namespace RackClick.Quality.Tests;
++
++// Explicit new native-name PG17 cluster, fixture Windows identity only; no installed service/VM is selected.
++[SupportedOSPlatform("windows")]
++public sealed class MfaLossResetTests
++{
++    private static CancellationToken Ct=>TestContext.Current.CancellationToken;
++    [Fact]
++    public async Task MixedStatesAndAuthoritiesAreArchivedAndOnlyLostFactorsRequireReenrollment()
++    {
++        using var f=await Fixture.Create();
++        var global=await f.Factor(7,"active",true);var pending=await f.Factor(7,"pending");var disabled=await f.Factor(7,"disabled");
++        await f.Exec("UPDATE app_user SET active=false WHERE id=@id",("id",disabled));
++        var retained=await f.Factor(1,"active");
++        var originalRows=await f.Text("SELECT jsonb_agg(to_jsonb(t) ORDER BY user_id)::text FROM public.app_mfa_factor t WHERE key_version=7");
++        var accounts=await f.UnchangedAccounts();var retainedBefore=await f.Text("SELECT to_jsonb(t)::text FROM public.app_mfa_factor t WHERE user_id=@id",("id",retained));
++        f.Lose(7);var opaque=f.KeyHash(7);await f.Initialize();
++        Assert.Equal("awaiting_external_envelope_fenced",(await f.Run("prepare",[7])).Phase);
++        Assert.Equal(4,await f.Count("SELECT count(*) FROM public.app_mfa_factor"));Assert.True(File.Exists(f.Fence));
++        var envelope=await f.Export();
++        try
++        {
++            Assert.Equal("db_committed_fenced",(await f.Run("apply",envelope:envelope)).Phase);
++            Assert.Equal("material_published_verified_fenced",(await f.Run("publish")).Phase);
++        }
++        finally{CryptographicOperations.ZeroMemory(envelope);}
++        Assert.Equal(8,f.Provider.GetActiveKey().Version);
++        Assert.Equal(originalRows,await f.Text("SELECT jsonb_agg(factor_row ORDER BY user_id)::text FROM rackclick_private.mfa_loss_factor_archive"));
++        Assert.Equal(3,await f.Count("SELECT count(*) FROM app_mfa_user WHERE mfa_required AND enrollment_pending AND revision=5"));
++        Assert.Equal(1,await f.Count("SELECT count(*) FROM app_mfa_factor"));
++        Assert.Equal(retainedBefore,await f.Text("SELECT to_jsonb(t)::text FROM public.app_mfa_factor t WHERE user_id=@id",("id",retained)));
++        Assert.Equal(accounts,await f.UnchangedAccounts());Assert.Equal(opaque,f.KeyHash(7));
++        Assert.Equal(1,await f.Count("SELECT count(*) FROM app_session"));
++        Assert.Equal(3,await f.Count("SELECT count(*) FROM app_mfa_challenge WHERE consumed_at IS NOT NULL"));
++        Assert.Equal(3,await f.Count("SELECT count(*) FROM app_mfa_recovery_code WHERE consumed_at IS NOT NULL"));
++        Assert.Equal(1,await f.Count("SELECT count(*) FROM rackclick_private.mfa_loss_operation WHERE mode='loss-reset' AND authority='windows-local'"));
++        Assert.True(File.Exists(f.Fence));Assert.Throws<MfaMaintenanceException>(()=>MfaMaintenanceAdmission.ThrowIfFenced(f.Instances,f.Id));
++        await f.Authenticate(retained);await f.AssertEnrollmentOnly(global);await f.AssertEnrollmentOnly(pending);
++        Assert.Equal("False",await f.Text("SELECT active FROM app_user WHERE id=@id",("id",disabled)));
++        Assert.NotEqual(global,pending);Assert.NotEqual(disabled,retained);
++        await using var runtime=new NpgsqlConnection(f.RuntimeConnection);await runtime.OpenAsync(Ct);
++        foreach(var sql in new[]{"SELECT * FROM rackclick_private.mfa_loss_factor_archive","DELETE FROM rackclick_private.mfa_loss_operation"})
++        {await using var denied=new NpgsqlCommand(sql,runtime);Assert.Equal("42501",(await Assert.ThrowsAsync<PostgresException>(()=>denied.ExecuteNonQueryAsync(Ct))).SqlState);}
++    }
++    [Fact]
++    public async Task AllKeyMaterialCanBeLostButKnownRingAndOpaqueZeroByteBlobArePreserved()
++    {
++        using var f=await Fixture.Create();await f.Factor(1,"active");await f.Factor(7,"disabled");
++        f.Lose(1);f.Lose(7,true);var one=f.KeyHash(1);var seven=f.KeyHash(7);await f.Initialize();
++        await f.Run("prepare",[1,7]);var envelope=await f.Export();
++        try{await f.Run("apply",envelope:envelope);await f.Run("publish");}finally{CryptographicOperations.ZeroMemory(envelope);}
++        Assert.Equal(one,f.KeyHash(1));Assert.Equal(seven,f.KeyHash(7));
++        Assert.Equal(0,await f.Count("SELECT count(*) FROM app_mfa_factor"));Assert.Equal(2,await f.Count("SELECT count(*) FROM rackclick_private.mfa_loss_factor_archive"));
++        var ring=MfaKeyRing.Parse(File.ReadAllBytes(f.RingPath),f.Id);Assert.Single(ring.Entries);Assert.Equal(8,ring.Entries[0].Version);Assert.True(File.Exists(f.Fence));
++    }
++    [Fact]
++    public async Task CommitFailureRollsBackEveryDatabaseEffectAndKeepsCandidateAndFence()
++    {
++        using var f=await Fixture.Create();await f.Factor(7,"active");f.Lose(7);await f.Initialize();await f.Run("prepare",[7]);
++        var before=await f.SecuritySnapshot();
++        await f.Exec("CREATE FUNCTION rackclick_private.reject_loss() RETURNS trigger LANGUAGE plpgsql AS $$BEGIN RAISE EXCEPTION 'synthetic'; END$$; CREATE TRIGGER reject_loss BEFORE UPDATE ON rackclick_private.mfa_loss_operation FOR EACH ROW EXECUTE FUNCTION rackclick_private.reject_loss()");
++        var envelope=await f.Export();try{await Assert.ThrowsAsync<PostgresException>(()=>f.Run("apply",envelope:envelope));}finally{CryptographicOperations.ZeroMemory(envelope);}
++        Assert.Equal(before,await f.SecuritySnapshot());Assert.Equal(0,await f.Count("SELECT count(*) FROM rackclick_private.mfa_loss_operation"));
++        Assert.Equal(0,await f.Count("SELECT count(*) FROM rackclick_private.mfa_loss_factor_archive"));Assert.True(File.Exists(f.Fence));
++    }
++    [Theory][InlineData("after_loss_db_commit")][InlineData("after_loss_key_publish")]
++    public async Task InterruptedCommitOrPublicationResumesForwardWithoutRepeatingPolicyRevision(string cut)
++    {
++        using var f=await Fixture.Create();await f.Factor(7,"active");f.Lose(7);await f.Initialize();await f.Run("prepare",[7]);var envelope=await f.Export();
++        try
++        {
++            if(cut=="after_loss_db_commit")await Assert.ThrowsAsync<SyntheticCut>(()=>f.Run("apply",envelope:envelope,checkpoint:s=>{if(s==cut)throw new SyntheticCut();}));
++            else{await f.Run("apply",envelope:envelope);await Assert.ThrowsAsync<SyntheticCut>(()=>f.Run("publish",checkpoint:s=>{if(s==cut)throw new SyntheticCut();}));}
++            Assert.True(File.Exists(f.Fence));
++            if(cut=="after_loss_db_commit")await f.Run("apply",envelope:envelope);
++            await f.Run("publish");await f.Run("publish");
++            Assert.Equal(5,await f.Count("SELECT revision FROM app_mfa_user"));Assert.Equal(1,await f.Count("SELECT count(*) FROM rackclick_private.mfa_loss_operation"));
++        }
++        finally{CryptographicOperations.ZeroMemory(envelope);}
++    }
++    [Theory][InlineData("policy")][InlineData("user")][InlineData("code")]
++    public async Task AnySecurityChangeAfterPlanningStopsBeforeDatabaseCommit(string change)
++    {
++        using var f=await Fixture.Create();var user=await f.Factor(7,"active");f.Lose(7);await f.Initialize();await f.Run("prepare",[7]);
++        await f.Exec(change switch{"policy"=>"UPDATE app_mfa_policy SET enabled=NOT enabled","user"=>"UPDATE app_user SET username=username||'changed' WHERE id=@id",_=>"UPDATE app_mfa_recovery_code SET consumed_at=clock_timestamp()"},("id",user));
++        var before=await f.SecuritySnapshot();var envelope=await f.Export();
++        try{Assert.Equal("mfa_loss_database_changed",(await Assert.ThrowsAsync<MfaMaintenanceException>(()=>f.Run("apply",envelope:envelope))).Code);}finally{CryptographicOperations.ZeroMemory(envelope);}
++        Assert.Equal(before,await f.SecuritySnapshot());Assert.Equal(0,await f.Count("SELECT count(*) FROM rackclick_private.mfa_loss_factor_archive"));
++    }
++    [Theory][InlineData("readable_lost")][InlineData("retained_corrupt")][InlineData("ring_unknown")]
++    public async Task UncertainOrStillRecoverableMaterialNeverExpandsTheDeclaredLoss(string variant)
++    {
++        using var f=await Fixture.Create();await f.Factor(1,"active");await f.Factor(7,"active");await f.Initialize();
++        if(variant!="readable_lost")f.Lose(7);
++        if(variant=="retained_corrupt")f.Lose(1);
++        if(variant=="ring_unknown")File.WriteAllText(f.RingPath,"{}");
++        var before=await f.SecuritySnapshot();await Assert.ThrowsAnyAsync<Exception>(()=>f.Run("prepare",[7]));
++        Assert.Equal(before,await f.SecuritySnapshot());Assert.False(File.Exists(f.Fence));
++    }
++    [Fact]
++    public async Task BackupOnlyVersionWithoutMaterialMustBeExplicitlyDeclaredLost()
++    {
++        using var f=await Fixture.Create();
++        var entry=await f.BackupWithVersion(90);await f.Factor(7,"active");f.Lose(7);await f.Initialize([entry]);
++        var before=await f.SecuritySnapshot();
++        Assert.Equal("mfa_loss_versions_not_declared",(await Assert.ThrowsAsync<MfaMaintenanceException>(()=>f.Run("prepare",[7]))).Code);
++        Assert.False(File.Exists(f.Fence));Assert.Equal(before,await f.SecuritySnapshot());
++    }
++    [Fact]
++    public async Task ExplicitlyLostBackupVersionIsRecordedAndNeverReusedOrReportedAsRecoverable()
++    {
++        using var f=await Fixture.Create();var entry=await f.BackupWithVersion(90);await f.Factor(7,"active");f.Lose(7);await f.Initialize([entry]);
++        var backupBefore=Directory.EnumerateFiles(f.Retained,"*",SearchOption.AllDirectories).Order().Select(p=>Convert.ToHexStringLower(SHA256.HashData(File.ReadAllBytes(p)))).ToArray();
++        Assert.Equal(91,(await f.Run("prepare",[7,90])).NewVersion);
++        using(var store=new WindowsMfaMaintenanceStore(f.Instances,f.Id,f.Reader,f.Trusted))
++        using(store.AcquireLock()){var plan=store.ReadLossPlan(f.Operation);Assert.Single(plan.AffectedBackups);Assert.Equal(new[]{7,90},plan.LostVersions);}
++        var envelope=await f.Export();try{await f.Run("apply",envelope:envelope);await f.Run("publish");}finally{CryptographicOperations.ZeroMemory(envelope);}
++        var active=f.Provider.GetActiveKey();try{Assert.Equal(91,active.Version);}finally{CryptographicOperations.ZeroMemory(active.Key);}
++        Assert.Equal(backupBefore,Directory.EnumerateFiles(f.Retained,"*",SearchOption.AllDirectories).Order().Select(p=>Convert.ToHexStringLower(SHA256.HashData(File.ReadAllBytes(p)))).ToArray());
++        Assert.True(File.Exists(f.Fence));
++    }
++    [Fact]
++    public async Task EveryNativeEntryRejectsTheObservedStandardTokenBeforeScmOrDatabase()
++    {
++        var denied=MfaEmergencyRecoveryCommand.AuthorizationFailure();Assert.SkipWhen(denied is null,"Requires an observed non-elevated Windows token; never invoke native mutation from an elevated fixture");
++        var request=new MfaMaintenanceRequest("loss-reset","not a connection","invalid-root",Guid.NewGuid(),new(WellKnownSidType.BuiltinUsersSid,null),"",0,Guid.NewGuid(),null);
++        foreach(var run in new Func<Task>[]
++        {
++            ()=>MfaLossResetCoordinator.PrepareAsync(request,"invalid service",[7],Ct),
++            ()=>MfaLossResetCoordinator.ExportAsync(request,"invalid service","irrelevant",Ct),
++            ()=>MfaLossResetCoordinator.ApplyAsync(request,"invalid service",[],"irrelevant","",Ct),
++            ()=>MfaLossResetCoordinator.PublishAsync(request,"invalid service",Ct)
++        })Assert.Equal(denied,(await Assert.ThrowsAsync<MfaMaintenanceException>(run)).Code);
++    }
++    [Fact]
++    public async Task ExistingRetirementAndRotationAcceptKnownSchema47WithoutBecomingLossReset()
++    {
++        using var f=await Fixture.Create();await f.Factor(1,"active");await f.Initialize();var before=await f.SecuritySnapshot();
++        var result=await f.RetireAndPrepareRotation();Assert.Equal("awaiting_external_envelope",result.Phase);Assert.Equal(8,result.NewVersion);
++        Assert.Equal(before,await f.SecuritySnapshot());Assert.Equal(0,await f.Count("SELECT count(*) FROM rackclick_private.mfa_loss_operation"));
++        Assert.Equal(47,await f.Count("SELECT max(version) FROM schema_migration"));Assert.True(File.Exists(f.Fence));
++    }
++    [Theory][InlineData("sid")][InlineData("new_version")][InlineData("lost_versions")][InlineData("envelope")]
++    public async Task AlteredWitnessMetadataCannotAuthorizePublishing(string field)
++    {
++        using var f=await Fixture.Create();await f.Factor(7,"active");f.Lose(7);await f.Initialize();await f.Run("prepare",[7]);
++        var envelope=await f.Export();try{await f.Run("apply",envelope:envelope);}finally{CryptographicOperations.ZeroMemory(envelope);}
++        await f.Exec(field switch{"sid"=>"UPDATE rackclick_private.mfa_loss_operation SET operator_sid='S-1-5-18'","new_version"=>"UPDATE rackclick_private.mfa_loss_operation SET new_version=9","envelope"=>"UPDATE rackclick_private.mfa_loss_operation SET envelope_sha256=repeat('a',64)",_=>"UPDATE rackclick_private.mfa_loss_operation SET lost_versions=ARRAY[2]"});
++        await Assert.ThrowsAsync<MfaMaintenanceException>(()=>f.Run("publish"));Assert.Equal(1,f.Provider.GetActiveKey().Version);Assert.True(File.Exists(f.Fence));
++    }
++    [Fact]
++    public async Task WrongEnvelopeRejectsWithoutAffectingDatabase()
++    {
++        using var f=await Fixture.Create();await f.Factor(7,"active");f.Lose(7);await f.Initialize();await f.Run("prepare",[7]);var before=await f.SecuritySnapshot();
++        var envelope=await f.Export();try{envelope[^1]^=1;await Assert.ThrowsAnyAsync<Exception>(()=>f.Run("apply",envelope:envelope));}finally{CryptographicOperations.ZeroMemory(envelope);}
++        Assert.Equal(before,await f.SecuritySnapshot());Assert.True(File.Exists(f.Fence));
++    }
++    [Fact]
++    public async Task PhysicallyMissingLostFileIsNotRecreatedAndNewCandidateCannotBeSubstituted()
++    {
++        using var f=await Fixture.Create();await f.Factor(7,"active");f.RemoveKey(7);await f.Initialize();await f.Run("prepare",[7]);
++        var before=await f.SecuritySnapshot();var envelope=await f.Export();
++        var candidate=Path.Combine(f.Instances,f.Id.ToString("D"),WindowsMfaMaintenanceStore.ManagementFolderName,f.Operation.ToString("N")+".lc",f.Id.ToString("D"),"mfa-keys",MfaKeyRing.KeyFileName(8));
++        File.WriteAllText(candidate,"substituted fixture");
++        try{await Assert.ThrowsAnyAsync<Exception>(()=>f.Run("apply",envelope:envelope));}finally{CryptographicOperations.ZeroMemory(envelope);}
++        Assert.False(f.KeyExists(7));Assert.Equal(before,await f.SecuritySnapshot());Assert.True(File.Exists(f.Fence));
++    }
++    private sealed class SyntheticCut:Exception;
++
++    internal sealed class Fixture:IDisposable
++    {
++        internal Guid Id{get;}=Guid.NewGuid();internal Guid Operation{get;}=Guid.NewGuid();internal Guid House{get;private set;}
++        internal string Instances{get;}internal string Retained{get;}internal string CaseRoot{get;}
++        internal string RingPath=>Path.Combine(Instances,Id.ToString("D"),"mfa-keys","ring.json");
++        internal string Fence=>Path.Combine(Instances,Id.ToString("D"),WindowsMfaMaintenanceStore.FenceFileName);
++        internal string OwnerConnection{get;private set;}="";internal string RuntimeConnection{get;private set;}="";
++        internal SecurityIdentifier Reader{get;}=new(WellKnownSidType.BuiltinUsersSid,null);
++        internal SecurityIdentifier[] Trusted{get;}=[WindowsIdentity.GetCurrent().User!,new(WellKnownSidType.LocalSystemSid,null),new(WellKnownSidType.BuiltinAdministratorsSid,null)];
++        internal Dictionary<int,byte[]> Keys{get;}=new(){[1]=RandomNumberGenerator.GetBytes(32),[7]=RandomNumberGenerator.GetBytes(32)};
++        private string CatalogHash="";private readonly string EnvelopePassword=Convert.ToHexString(RandomNumberGenerator.GetBytes(24));
++        internal WindowsMfaKeyProvider Provider=>new(Instances,Id,Reader,Trusted);
++        private Fixture()
++        {
++            var root=Environment.GetEnvironmentVariable("RACKCLICK_F0902_ROOT");Assert.SkipWhen(string.IsNullOrEmpty(root),"New isolated native-name PG17 fixture required");
++            CaseRoot=Path.Combine(root!,Id.ToString("N")[..8]);Directory.CreateDirectory(CaseRoot);Instances=Path.Combine(CaseRoot,"i");Retained=Path.Combine(CaseRoot,"retained");Directory.CreateDirectory(Retained);
++            WindowsMfaKeyStoreWriter.CreateStoreFromMaterial(Instances,Id,Reader,Trusted,Ring(Keys.Keys),Keys.Select(k=>(k.Key,k.Value)).ToArray());
++        }
++        internal static async Task<Fixture> Create()
++        {
++            var f=new Fixture();var admin=Environment.GetEnvironmentVariable("RACKCLICK_TEST_PG_ADMIN")!;
++            string owner="rc_owner_"+f.Id.ToString("N"),runtime="rc_runtime_"+f.Id.ToString("N"),database="rc_db_"+f.Id.ToString("N");
++            var password=Convert.ToHexString(RandomNumberGenerator.GetBytes(32));
++            await using(var db=new NpgsqlConnection(admin))
++            {
++                await db.OpenAsync(Ct);
++                // Identifiers and hex-only fixture password are generated locally, never external inputs.
++                foreach(var sql in new[]{$"CREATE ROLE {owner} LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE PASSWORD '{password}'",$"CREATE ROLE {runtime} LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE PASSWORD '{password}'",$"CREATE DATABASE {database} OWNER {owner} ENCODING 'UTF8' TEMPLATE template0"})
++                {await using var c=new NpgsqlCommand(sql,db);await c.ExecuteNonQueryAsync(Ct);}
++            }
++            f.OwnerConnection=new NpgsqlConnectionStringBuilder(admin){Database=database,Username=owner,Password=password,Pooling=false,IncludeErrorDetail=false}.ConnectionString;
++            f.RuntimeConnection=new NpgsqlConnectionStringBuilder(f.OwnerConnection){Username=runtime}.ConnectionString;
++            await using(var source=NpgsqlDataSource.Create(f.OwnerConnection))await new PostgresStore(source).Bootstrap("Synthetic loss-reset laboratory","loss.admin",Convert.ToHexString(RandomNumberGenerator.GetBytes(32)),Ct);
++            await f.Exec($"GRANT USAGE ON SCHEMA public TO {runtime}; GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA public TO {runtime}; REVOKE CREATE ON SCHEMA public FROM PUBLIC");
++            await using(var db=await f.Connect())f.House=(Guid)(await new NpgsqlCommand("SELECT id FROM public.systemhaus",db).ExecuteScalarAsync(Ct))!;
++            await f.Exec("INSERT INTO public.app_mfa_policy(systemhaus_id,enabled,grace_days,activated_at) VALUES(@house,true,45,clock_timestamp()-interval '70 days')",("house",f.House));
++            await f.Exec("""
++                INSERT INTO public.customer(id,systemhaus_id,name) VALUES(@customer,@house,'Synthetic loss sentinel');
++                INSERT INTO public.inventory_rack(id,systemhaus_id,customer_id,name,size_u) VALUES(@rack,@house,@customer,'Synthetic retained rack',42);
++                INSERT INTO public.inventory_device(id,systemhaus_id,customer_id,kind,rack_id,name,size_u,sort_order) VALUES(@device,@house,@customer,'rackEquipment',@rack,'Synthetic switch',1,0);
++                """,("customer",Guid.NewGuid()),("house",f.House),("rack",Guid.NewGuid()),("device",Guid.NewGuid()));
++            return f;
++        }
++        internal async Task<NpgsqlConnection> Connect(){var db=new NpgsqlConnection(OwnerConnection);await db.OpenAsync(Ct);await using var utc=new NpgsqlCommand("SET TimeZone='UTC'",db);await utc.ExecuteNonQueryAsync(Ct);return db;}
++        internal async Task<int> Exec(string sql,params (string Name,object Value)[] args){await using var db=await Connect();await using var c=new NpgsqlCommand(sql,db);foreach(var a in args)c.Parameters.AddWithValue(a.Name,a.Value);return await c.ExecuteNonQueryAsync(Ct);}
++        internal async Task<string> Text(string sql,params (string Name,object Value)[] args){await using var db=await Connect();await using var c=new NpgsqlCommand(sql,db);foreach(var a in args)c.Parameters.AddWithValue(a.Name,a.Value);return Convert.ToString(await c.ExecuteScalarAsync(Ct))!;}
++        internal async Task<long> Count(string sql)=>long.Parse(await Text(sql),System.Globalization.CultureInfo.InvariantCulture);
++        internal async Task<Guid> Factor(int version,string state,bool global=false)
++        {
++            var id=Guid.NewGuid();var secret=RandomNumberGenerator.GetBytes(20);byte[] cipher;
++            try{cipher=MfaSecretCipher.Seal(Keys[version],version,secret,House,id);}finally{CryptographicOperations.ZeroMemory(secret);}
++            var name="synthetic-"+id.ToString("N");await Exec("""
++                INSERT INTO public.app_user(id,systemhaus_id,username,password_hash,created_at) VALUES(@id,@house,@name,@password,clock_timestamp()-interval '70 days');
++                INSERT INTO public.app_mfa_factor(systemhaus_id,user_id,state,secret_ciphertext,key_version,last_time_step,failed_attempts) VALUES(@house,@id,@state,@cipher,@version,1234,2);
++                INSERT INTO public.app_mfa_user(systemhaus_id,user_id,mfa_required,enrollment_pending,revision,changed_by) VALUES(@house,@id,false,false,4,NULL);
++                INSERT INTO public.app_session(token_hash,user_id,csrf_hash,expires_at) VALUES(@token,@id,@csrf,clock_timestamp()+interval '1 hour');
++                INSERT INTO public.app_mfa_challenge(token_hash,systemhaus_id,user_id,purpose,csrf_hash,expires_at,policy_revision) VALUES(@token,@house,@id,'verify',@csrf,clock_timestamp()+interval '4 minutes',4);
++                INSERT INTO public.app_mfa_recovery_code(systemhaus_id,user_id,code_hash) VALUES(@house,@id,@token);
++                """,("id",id),("house",House),("name",name),("password",Secrets.PasswordHash(name,EnvelopePassword)),("state",state),("cipher",cipher),("version",version),("token",Secrets.Digest(Secrets.Token())),("csrf",Secrets.Digest(Secrets.Token())));
++            if(global)await Exec("INSERT INTO user_group_member(systemhaus_id,group_id,user_id) SELECT @house,group_id,@id FROM user_group_member WHERE user_id=(SELECT id FROM app_user WHERE username='loss.admin')",("house",House),("id",id));
++            return id;
++        }
++        internal void Lose(int v,bool empty=false)=>File.WriteAllBytes(KeyPath(v),empty?[]:"opaque-corrupt-fixture"u8.ToArray());
++        internal void RemoveKey(int v)=>File.Move(KeyPath(v),Path.Combine(CaseRoot,"original-"+v+".private.json"),false);
++        internal bool KeyExists(int v)=>File.Exists(KeyPath(v));
++        private string KeyPath(int v)=>Path.Combine(Path.GetDirectoryName(RingPath)!,MfaKeyRing.KeyFileName(v));
++        internal string KeyHash(int v)=>Hash(File.ReadAllBytes(KeyPath(v)));
++        internal byte[] Ring(IEnumerable<int> versions)=>JsonSerializer.SerializeToUtf8Bytes(new{format=MfaKeyRing.RingFormat,formatVersion=1,installationId=Id,versions=versions.Order().Select(v=>new{version=v,state=v==versions.Min()?"active":"retired",createdAtUtc="2026-11-11T00:00:00Z"})});
++        internal async Task Initialize(object[]? entries=null)
++        {
++            var bytes=JsonSerializer.SerializeToUtf8Bytes(new{format="RackClick.MfaBackupCatalog",formatVersion=1,installationId=Id,catalogId=Guid.NewGuid(),operatorSid=WindowsIdentity.GetCurrent().User!.Value,confirmedUtc=DateTime.UtcNow.ToString("O"),coverage="all-retained-roots-declared",roots=new[]{Retained},entries=entries??[]});
++            var r=new MfaMaintenanceRequest("catalog-initialize",OwnerConnection,Instances,Id,Reader,"",0,Guid.Empty,bytes);
++            CatalogHash=(await MfaMaintenanceCoordinator.RunAsync(r,Trusted,null,Ct)).CatalogSha256;
++        }
++        private MfaMaintenanceRequest Request=>new("loss-reset",OwnerConnection,Instances,Id,Reader,CatalogHash,0,Operation,null);
++        internal Task<MfaLossResetResult> Run(string stage,int[]? lost=null,byte[]? envelope=null,Action<string>? checkpoint=null)=>MfaLossResetCoordinator.RunFixtureAsync(stage,Request,lost??[],Trusted,WindowsIdentity.GetCurrent().User!.Value,envelope,EnvelopePassword,envelope is null?null:Hash(envelope),checkpoint,Ct);
++        internal Task<byte[]> Export()=>MfaLossResetCoordinator.ExportFixtureAsync(Request,Trusted,WindowsIdentity.GetCurrent().User!.Value,EnvelopePassword,Ct);
++        internal async Task<MfaRotationResult> RetireAndPrepareRotation()
++        {
++            var r=Request with{Action="retire",Candidate=7,OperationId=Guid.NewGuid()};
++            Assert.Equal("mfa_version_retired",(await MfaMaintenanceCoordinator.RunAsync(r,Trusted,null,Ct)).Code);
++            return await MfaRotationCoordinator.PrepareAsync(r with{Action="rotate",Candidate=0,OperationId=Guid.NewGuid()},Trusted,null,Ct);
++        }
++        internal Task<string> SecuritySnapshot()=>Text("SELECT md5(jsonb_build_array((SELECT jsonb_agg(to_jsonb(t) ORDER BY user_id) FROM app_mfa_factor t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY user_id) FROM app_mfa_user t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY id) FROM app_user t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY token_hash) FROM app_session t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY token_hash) FROM app_mfa_challenge t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY user_id) FROM app_mfa_recovery_code t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY systemhaus_id) FROM app_mfa_policy t))::text)");
++        internal Task<string> UnchangedAccounts()=>Text("SELECT md5(jsonb_build_array((SELECT jsonb_agg(to_jsonb(t) ORDER BY id) FROM app_user t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY user_id,group_id) FROM user_group_member t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY systemhaus_id) FROM app_mfa_policy t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY id) FROM systemhaus t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY id) FROM customer t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY id) FROM inventory_rack t),(SELECT jsonb_agg(to_jsonb(t) ORDER BY id) FROM inventory_device t))::text)");
++        internal async Task AssertEnrollmentOnly(Guid user)
++        {
++            var name=await Text("SELECT username FROM app_user WHERE id=@id",("id",user));
++            await using var source=NpgsqlDataSource.Create(RuntimeConnection);
++            var result=await new PostgresStore(source){MfaAvailable=true}.AuthenticateForLogin(name,EnvelopePassword,Ct);
++            Assert.Null(result.Session);Assert.NotNull(result.Challenge);Assert.Equal("enroll",result.ChallengePurpose);
++        }
++        internal async Task Authenticate(Guid user)
++        {
++            await using var db=await Connect();await using var c=new NpgsqlCommand("SELECT key_version,secret_ciphertext FROM app_mfa_factor WHERE user_id=@id",db);c.Parameters.AddWithValue("id",user);
++            await using var row=await c.ExecuteReaderAsync(Ct);Assert.True(await row.ReadAsync(Ct));var version=row.GetInt32(0);var key=Provider.GetKey(version);byte[]? plain=null;
++            try{plain=MfaSecretCipher.Open(key,version,row.GetFieldValue<byte[]>(1),House,user);Assert.Equal(20,plain.Length);}finally{CryptographicOperations.ZeroMemory(key);if(plain is not null)CryptographicOperations.ZeroMemory(plain);}
++        }
++        internal async Task<object> BackupWithVersion(int version)
++        {
++            Keys.Add(version,RandomNumberGenerator.GetBytes(32));var user=await Factor(version,"active");var backup=Guid.NewGuid();
++            var dir=Path.Combine(Retained,backup.ToString("D"));var database=Path.Combine(dir,"database");Directory.CreateDirectory(database);
++            var settings=new NpgsqlConnectionStringBuilder(OwnerConnection);var pgpass=Path.Combine(CaseRoot,"backup.pgpass");
++            File.WriteAllText(pgpass,$"127.0.0.1:{settings.Port}:{settings.Database}:{settings.Username}:{settings.Password}\n");
++            var start=new ProcessStartInfo(Path.Combine(Environment.GetEnvironmentVariable("RACKCLICK_TEST_PG_BIN")!,"pg_dump.exe")){UseShellExecute=false,CreateNoWindow=true,RedirectStandardOutput=true,RedirectStandardError=true};
++            foreach(var arg in new[]{"-w","-h","127.0.0.1","-p",settings.Port.ToString(),"-U",settings.Username!,"-d",settings.Database!,"-F","c","--no-owner","--no-acl","-f",Path.Combine(database,"data.dump")})start.ArgumentList.Add(arg);
++            foreach(var name in start.Environment.Keys.Where(k=>k.StartsWith("PG",StringComparison.OrdinalIgnoreCase)).ToArray())start.Environment.Remove(name);start.Environment["PGPASSFILE"]=pgpass;
++            using(var process=Process.Start(start)!){var output=process.StandardOutput.ReadToEndAsync();var error=process.StandardError.ReadToEndAsync();await process.WaitForExitAsync(Ct);await output;await error;Assert.Equal(0,process.ExitCode);}
++            var dump=File.ReadAllBytes(Path.Combine(database,"data.dump"));var manifest=JsonSerializer.SerializeToUtf8Bytes(new{schemaVersion=1,kind="RackClickDatabaseBackup",postgresVersion="17.11",format="custom",dumpFile="data.dump",dumpBytes=dump.Length,dumpSha256=Hash(dump),createdUtc=DateTime.UtcNow.ToString("O")});File.WriteAllBytes(Path.Combine(database,"manifest.json"),manifest);
++            using var payload=MfaKeyRecoveryPayload.Serialize(Ring([version]),Id,[(version,Keys[version])]);var envelope=MfaKeyRecoveryEnvelope.Seal(EnvelopePassword,payload.Bytes);
++            var inventory=MfaKeyRetention.CreateBackupInventory(backup,MfaKeyRetention.FactorInventory(Id,[new(version,0,1,0)]),MfaKeyRetention.InspectEnvelope(envelope,EnvelopePassword,Id),Hash(manifest),Hash(dump));
++            var inventoryBytes=MfaKeyRetention.SerializeBackupInventory(inventory);File.WriteAllBytes(Path.Combine(dir,"mfa-inventory.json"),inventoryBytes);
++            var receipt=JsonSerializer.SerializeToUtf8Bytes(new{format="RackClick.MfaBackupInventoryReceipt",formatVersion=1,installationId=Id,backupId=backup,inventorySha256=Hash(inventoryBytes),manifestSha256=Hash(manifest),dumpSha256=Hash(dump),envelopeSha256=Hash(envelope)});CryptographicOperations.ZeroMemory(envelope);
++            await Exec("DELETE FROM app_mfa_factor WHERE user_id=@id; DELETE FROM app_mfa_user WHERE user_id=@id; DELETE FROM app_session WHERE user_id=@id; DELETE FROM app_mfa_challenge WHERE user_id=@id; DELETE FROM app_mfa_recovery_code WHERE user_id=@id; DELETE FROM app_user WHERE id=@id",("id",user));
++            return new{backupDirectory=dir,receiptBase64=Convert.ToBase64String(receipt),receiptSha256=Hash(receipt)};
++        }
++        public void Dispose(){foreach(var key in Keys.Values)CryptographicOperations.ZeroMemory(key);/* Private new-lab artifacts retained for independent review; no deletion by supplied paths. */}
++        private static string Hash(byte[] bytes)=>Convert.ToHexStringLower(SHA256.HashData(bytes));
++    }
++}

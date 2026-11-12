@@ -63,7 +63,13 @@ APPLICATION_SCHEMA48_SHA256 = "a7b622f917404bbe3ea2560e1fcc2dad008910395c6ab5fa8
 APPLICATION_SCHEMA48_INVENTORY_SHA256 = "f08abc37d9d129db72bedd8d2f4bdfee7c7f76946ff717b36e216de38b789c77"
 APPLICATION_SCHEMA48_SUMS_SHA256 = "a62e81a358c1393eb49652b6800883c4766c736dadb9a80733dbb0b027f58573"
 
+# Inventory administration48: separate closed artifact; no migration or historical pin changed.
+APPLICATION_SCHEMA48_ADMIN_DATA_SHA256 = "f7b971f31dd5f424dbce35c9c18a4c6c75c8968f31d10c5df8bbfe215e5b8a53"
+APPLICATION_SCHEMA48_ADMIN_DATA_INVENTORY_SHA256 = "f20f311fcba7ffe6d37cdc4980efa26aeebaa50d6a0e42443ab365bafcd7efff"
+APPLICATION_SCHEMA48_ADMIN_DATA_SUMS_SHA256 = "d3d7b25a4543b976884a7294d11daaa21b7640c7db2b5a87e2d4dd873a6bac9b"
+
 APPLICATION_PROFILES = {
+    APPLICATION_SCHEMA48_ADMIN_DATA_SHA256: {"name":"48-admin-data-sql","files":{"server":58,"frontend":18},"bytes":35919405,"metadata":{"inventory.json":APPLICATION_SCHEMA48_ADMIN_DATA_INVENTORY_SHA256,"SHA256SUMS.txt":APPLICATION_SCHEMA48_ADMIN_DATA_SUMS_SHA256}},
     APPLICATION_SCHEMA48_SHA256: {"name":"48-sql","files":{"server":58,"frontend":18},"bytes":26432703,"metadata":{"inventory.json":APPLICATION_SCHEMA48_INVENTORY_SHA256,"SHA256SUMS.txt":APPLICATION_SCHEMA48_SUMS_SHA256}},
 
     APPLICATION_SCHEMA45_MFA_SHA256: {"name": "45-sql", "files": {"server": 55, "frontend": 18}, "bytes": 25870874,
@@ -163,7 +169,7 @@ def require(ok: bool, code: str) -> None:
 
 def application_schema(manifest_sha256: str) -> int:
     require(manifest_sha256 in APPLICATION_PROFILES, "application_pin_mismatch")
-    if manifest_sha256 == APPLICATION_SCHEMA48_SHA256:
+    if manifest_sha256 in (APPLICATION_SCHEMA48_SHA256, APPLICATION_SCHEMA48_ADMIN_DATA_SHA256):
         return 48
     if manifest_sha256 in (APPLICATION_SCHEMA45_SQL_SHA256, APPLICATION_SCHEMA45_MFA_SHA256):
         return 45
@@ -184,7 +190,7 @@ def application_schema(manifest_sha256: str) -> int:
 
 def operator_names(manifest_sha256: str) -> tuple[str, ...]:
     require(manifest_sha256 in APPLICATION_PROFILES, "application_pin_mismatch")
-    return SQL_OPERATORS if APPLICATION_PROFILES[manifest_sha256]["name"] in {"43-sql", "45-sql", "48-sql"} else OPERATORS
+    return SQL_OPERATORS if APPLICATION_PROFILES[manifest_sha256]["name"] in {"43-sql", "45-sql", "48-sql", "48-admin-data-sql"} else OPERATORS
 
 
 def json_bytes(value: object) -> bytes:
@@ -367,7 +373,11 @@ def collect_application(manifest_path: Path, expected_sha: str) -> tuple[list[Pa
     require(manifest.get("schema") == schema and type(manifest.get("schema")) is int, "application_schema_mismatch")
     distributions = manifest.get("distributions")
     require(isinstance(distributions, dict) and set(distributions) == {"server", "frontend"}, "application_inventory_invalid")
-    if profile['name'] == '48-sql':
+    if profile['name'] == '48-admin-data-sql':
+        require(manifest_path == ROOT / '.local/distribution48/admin-data-01/manifest.json', 'application_root_invalid')
+        require(manifest.get('profileId') == 'schema48-admin-data-01', 'application_profile_mismatch')
+        candidate = clean_path(manifest_path.parent, directory=True)
+    elif profile['name'] == '48-sql':
         require(manifest_path == ROOT / '.local/distribution48/maintenance-01/manifest.json', 'application_root_invalid')
         require(manifest.get('profileId') == 'schema48-maintenance-01', 'application_profile_mismatch')
         candidate = clean_path(manifest_path.parent, directory=True)

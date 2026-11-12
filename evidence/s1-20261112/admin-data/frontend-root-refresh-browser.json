@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "checks": [
+    "Normal Demo50 commit updates root navigation, cards and effective edit controls of a newly opened customer without reload; receipt survives the refreshed permission projection.",
+    "Reopening Administration does not repeat the import or session refresh.",
+    "The real root honors systemhaus.read while refreshing permitted customers.",
+    "Post-commit house/customer replies arriving after logout cannot republish a previous session."
+  ],
+  "limits": [
+    "Actual root and panel code with synthetic HTTP responses; no PostgreSQL, installed QA or VM."
+  ]
+}

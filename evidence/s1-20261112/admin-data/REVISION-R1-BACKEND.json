@@ -1,0 +1,56 @@
+{
+  "beforeDllSha256": "a80ac3819f626a1ddd4b1c23b357a18da5454510cc38524887b4eda9ce452bb0",
+  "currentDllSha256": "768df75ea0db5afa349d4d8a4191856cd83b29a19b35ab4d1541b3b5f3f177bf",
+  "beforeFullDiffSha256": "591c36e85563114d9c8cdd71f143ce02fd8700fd10873534b1bf8effd072c989",
+  "currentFullDiffSha256": "bab15d2ea9b389cf5b34c23da6b3a4ae8a37aaa49f1624b614c3d4e226f58c05",
+  "privateDelta": {
+    "name": "backend-review-r1.diff",
+    "sha256": "4412e66a12ee3259f4cda9311c8c23f02e5355502491323cb96e831037da99ad"
+  },
+  "changedFiles": {
+    "development/server/src/RackClick.Server/InventoryDataAdministration.cs": {
+      "before": "548c5a62274b40bb884165659b69d45783ca452547f3fc96d59be10ed4c49af7",
+      "after": "b2f20dc879756a645bb26fd9cb24a44c637063a5f9819820cd2ffd94b238b192"
+    },
+    "development/server/src/RackClick.Server/InventoryDataAdministrationArchive.cs": {
+      "before": "3490a0db214a1c05950e5f47546a5f9dfce179b662f25c01cd6cbc72f892d482",
+      "after": "dac1651afdf9f19391c2607e9545aa15d0ba0921a74d91950e427da1e5c16ff5"
+    },
+    "development/server/tests/RackClick.Quality.Tests/InventoryDataAdministrationTests.cs": {
+      "before": "ddbcf64dfaf489abf5806b7d45e8a361db27bfa0c92dcf7c342d7ea1c5f68c62",
+      "after": "f0453b4c6de8477d6679335a89df445188e708de3d49e95c92c9faf58df13efc"
+    }
+  },
+  "unchangedFiles": {
+    "development/server/src/RackClick.Server/InventoryDataAdministrationCancellation.cs": "642e545569dea9b801d3147cbc58cf7f58c5161e99552c545d69f333916a619e",
+    "development/server/src/RackClick.Server/InventoryDataAdministrationEndpoints.cs": "d81f18e6bcc52752dd65d326b3829f42a86ebcb9d3b01ecd5e9caa93113a638d",
+    "development/server/src/RackClick.Server/Program.cs": "4942bf5457ceedefff82b25adceb2bdf628a6f0bbb4d2cd637724a4273c35aeb",
+    "development/server/src/RackClick.Server/PostgresStore.cs": "238d09e683f3aec99213a3cd4639a48b84f05513670f651d07a7c3abac970d7a",
+    "development/server/src/RackClick.Server/RackClick.Server.csproj": "1b0a9d412c9da4a166183820f735aa3695d1022ea6f1132673a44bfd141b735d",
+    "development/server/tests/RackClick.Quality.Tests/PhysicalMediaRulesTests.cs": "046008a979b0fb75d1410dedce6ad0752dacddca71d29ffd4263d369c85514c8"
+  },
+  "currentVerification": {
+    "run": "review_green01",
+    "summary": {
+      "failed": 0,
+      "passed": 18,
+      "skipped": 0,
+      "total": 18
+    },
+    "againstCurrentDll": true
+  },
+  "reusedRegression": {
+    "run": "regression02",
+    "dllSha256": "a80ac3819f626a1ddd4b1c23b357a18da5454510cc38524887b4eda9ce452bb0",
+    "summary": {
+      "failed": 0,
+      "passed": 868,
+      "skipped": 107,
+      "total": 975
+    },
+    "againstCurrentDll": false,
+    "excludedFamily": "MfaPortableDatabaseRestoreTests",
+    "excludedCases": 8
+  },
+  "unmodifiedServerBaseline": "98ad43582dcf08b3227f16873175625048dc09bd"
+}

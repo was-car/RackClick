@@ -1,0 +1,26 @@
+[
+  {
+    "path": "development/frontend/src/ServerApp.jsx",
+    "sha256": "a1bc9bb6f1aa460491be0c68abdb1d0fddac79d1cd90d610dbd889d45c70fad2"
+  },
+  {
+    "path": "development/frontend/src/AdminUsers.jsx",
+    "sha256": "260f522e88e4b6f02a8585a738ad8fd27234427caef2e065e405cf97496855e5"
+  },
+  {
+    "path": "development/frontend/src/AdminInventoryData.jsx",
+    "sha256": "52a7dd73f07adf8a30e2b7108189aa8ddbecad97a04c4f048cb76088ae5fa31b"
+  },
+  {
+    "path": "development/frontend/tests/browser-admin-inventory-data-root.mjs",
+    "sha256": "f5267fb9a3e414bd614bfd571236033788db32e7e35bd9da7de159d7224fc280"
+  },
+  {
+    "path": "development/frontend/tests/browser-admin-inventory-data-recovery.mjs",
+    "sha256": "4ff0f3851d58c184e856f615dfa805867701068bb9af668eb5e1c47842b62b64"
+  },
+  {
+    "path": "development/frontend/tests/browser-admin-inventory-data.mjs",
+    "sha256": "a072cb07a008e3956ac3022fb06702d1f0bd7a92269ffff3729f7acf778492d5"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "discoveryOnly": true,
+  "newTestExecution": false,
+  "newDatabaseCreated": false,
+  "discoveryExitCode": 0,
+  "requiredSelection": 48,
+  "matchingPriorPassedResults": 48,
+  "exactNameSetEqual": true,
+  "originalSelected": 49,
+  "originalPassed": 48,
+  "originalFailed": 0,
+  "originalBrowserSkipped": [
+    "RackClick.Quality.Tests.MfaDashboardHttpTests.BrowserDashboardShowsGraceAndManagesPersonalAndSelectedUserMfa"
+  ],
+  "originalDriverExitCode": 1,
+  "originalChildExitCodeObserved": null,
+  "trxSha256": "b9683125626bbe566608aaf80f11ecec8ff761928b3d104f32b2ee073c2b3680",
+  "serverSha256": "dd285c4f7561d8f7e678178a12d399782f0c2142712d16bff10ec87762f85d0e"
+}

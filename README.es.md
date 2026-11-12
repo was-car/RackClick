@@ -8,12 +8,11 @@ El servidor lleva la interfaz offline consolidada a datos compartidos con permis
 
 ## Instalar en Windows Server
 
-Descarga el **[instalador Windows Online19](https://github.com/was-car/RackClick/releases/tag/windows-online19-schema48)** y su SHA256 externo; sigue el **[manual completo EN/DE/ES](docs/INSTALACION19-PASO-A-PASO.md)**. Usa un Windows Server 2025 x64 nuevo con Escritorio e Internet, sin controlador de dominio. No hay que compilar ni instalar manualmente el SDK, Node o Python. Las dependencias se descargan directamente de sus proveedores oficiales y se verifican.
+Descarga el **[instalador Windows Online20](https://github.com/was-car/RackClick/releases/tag/windows-online20-schema48-admin-data)** y su SHA256 externo; sigue el **[manual completo EN/DE/ES](docs/INSTALACION20-PASO-A-PASO.md)**. La descarga es pública y no requiere cuentaGitHub. Usa Windows Server2025 x64 nuevo con Escritorio e Internet, sin controlador de dominio. Las dependencias se adquieren y verifican desde sus proveedores oficiales; no necesitas compilar.
 
-Ejecuta el cargador incluido **CARGAR-50-CLIENTES** para reproducir todo el inventario sintético de W02-A. La instalación vacía por sí sola no incluye los 50 clientes. Cada servidor recibe cuentas, contraseñas, claves y certificados nuevos. Restore y cambio automático de red para el esquema48 siguen deshabilitados. Es una candidata de pruebas, sin aceptación productiva final.
+Desde **Administración → Datos y copias de inventario** puedes cargar los50clientes sintéticos sobre inventario vacío, descargar una copia de todos los clientes y previsualizar/restaurar eseJSON en otro destino vacío. Las cuentas, permisos yMFA del destino se conservan. La copia es sólo inventario; no incluye seguridad, plantillas privadas/compartidas niWindows. Restore48 completo y cambio automático de red48 permanecen bloqueados.
 
-
-Ensayado en una VM Windows Server2025 nueva: New19,50clientes,backup y persistencia tras reinicio. El comprobador automático temprano marcó error; el verificador oficial manual pasó. Se conservan ambos resultados; ver [ensayo y límites](docs/PUBLICACION-ONLINE19-12-11-2026.md).
+La edición20 incorpora el panel nuevo; el ensayo nativo de su instalación desde cero está pendiente. La [edición19 conservada](docs/PUBLICACION-ONLINE19-12-11-2026.md) sí fue ensayada enB con servicio,HTTPS,50clientes ydatos trasreinicio; su primer verificadorautomático falló yelmanual pasó. No atribuir eseensayo a20. Candidata de pruebas, sin adopción productiva final.
 
 ## Qué incluye
 

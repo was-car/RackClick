@@ -1,0 +1,27 @@
+{
+  "newFrontendExecution": false,
+  "newBrowserExecution": false,
+  "frontend": {
+    "source": "evidence/s1-20261111/f08-02-recuperacion/FRONTEND.json",
+    "passed": 20,
+    "executedInThisLot": false
+  },
+  "http": {
+    "source": "evidence/s1-20261111/f08-02-recuperacion/FOCO.json",
+    "executedInThisLot": false
+  },
+  "browser": {
+    "source": "evidence/s1-20261102/punto3/MFA-EDGE.json",
+    "executedInThisLot": false
+  },
+  "previousTestsPreserved": [
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaRecoveryCodeGenerationConcurrencyTests.cs",
+      "sha256": "4b290e0c5fc5695e93847add74ecb92880ad0e16bea674ffe2aeaecdde4cd513"
+    },
+    {
+      "path": "development/server/tests/RackClick.Quality.Tests/MfaRestrictedRecoveryHttpTests.cs",
+      "sha256": "51e1bcaf6a03b06560b245c1344f0aea4ab079150896f40288c4767d848b6594"
+    }
+  ]
+}

@@ -1,0 +1,516 @@
+{
+  "runs": [
+    {
+      "mode": "red",
+      "childExitCode": 1,
+      "counts": {
+        "total": "14",
+        "executed": "14",
+        "passed": "4",
+        "failed": "10",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"session\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"challenge\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"INSERT\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"code\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"factor\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-corrupt\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.OldSessionsVerifyEnrollAndRecoveryCodeCannotGrantAccessAfterLoss",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SoleGlobalAdministratorKeepsIdentityAndCanAdministerOnlyAfterNewTotp",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"UPDATE\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.CommitAuditIsClosedMetadataAndRevokesOnlyAffectedSecurityObjectsExactlyOnce",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"archive\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"pending\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-empty\")",
+          "outcome": "Failed"
+        }
+      ],
+      "binaries": {
+        "server": "70681a8dc27dfd9de9dc86a766540571379b0494e1eadde82396a353c05ab625",
+        "tests": "62aa935a2b46516ba64713f43fa71823a947dc644d6a4baf41b79da5d39e29d5"
+      },
+      "ownClusterStopped": true,
+      "trxSha256": "8fd2796d963f5acea1daa04e940334a1a330246004759fc5d31d4a5776dc2904"
+    },
+    {
+      "mode": "red-clean",
+      "childExitCode": 1,
+      "counts": {
+        "total": "14",
+        "executed": "14",
+        "passed": "5",
+        "failed": "9",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.OldSessionsVerifyEnrollAndRecoveryCodeCannotGrantAccessAfterLoss",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"archive\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"session\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"factor\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.CommitAuditIsClosedMetadataAndRevokesOnlyAffectedSecurityObjectsExactlyOnce",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-corrupt\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"code\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"INSERT\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-empty\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"pending\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"challenge\")",
+          "outcome": "Failed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"UPDATE\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SoleGlobalAdministratorKeepsIdentityAndCanAdministerOnlyAfterNewTotp",
+          "outcome": "Passed"
+        }
+      ],
+      "binaries": {
+        "server": "70681a8dc27dfd9de9dc86a766540571379b0494e1eadde82396a353c05ab625",
+        "tests": "9e0d1783793b755afedd524ba847486e49c00c85ec6716f31c468ad94a496de2"
+      },
+      "ownClusterStopped": true,
+      "trxSha256": "4735f2c4bae36de8393cdb9e2c98efb09216b0b80bfbbdba19a8ce033c4a5bc5"
+    },
+    {
+      "mode": "green",
+      "childExitCode": 0,
+      "counts": {
+        "total": "14",
+        "executed": "14",
+        "passed": "14",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.CommitAuditIsClosedMetadataAndRevokesOnlyAffectedSecurityObjectsExactlyOnce",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"archive\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SoleGlobalAdministratorKeepsIdentityAndCanAdministerOnlyAfterNewTotp",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"pending\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"challenge\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"UPDATE\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"INSERT\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-empty\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"code\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"session\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-corrupt\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"factor\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.OldSessionsVerifyEnrollAndRecoveryCodeCannotGrantAccessAfterLoss",
+          "outcome": "Passed"
+        }
+      ],
+      "binaries": {
+        "server": "2cbce09aa94b7bd646d0ea8a34fee5c2fc00081c889c7b19bb406c46e9bed9fc",
+        "tests": "a3cb231a046e6429d99ec57856250a3da597ec99743d022fbe5b965c8355da86"
+      },
+      "ownClusterStopped": true,
+      "trxSha256": "7e894991a39c5429706939e9b664a5d6314a85d63f59a392be531862f6fa767b"
+    },
+    {
+      "mode": "final",
+      "childExitCode": 0,
+      "counts": {
+        "total": "52",
+        "executed": "52",
+        "passed": "52",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "cases": [
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetVersionTests.UnknownHistoryOrExhaustedProfileCannotCreateVersionOne(versions: [7], complete: True, retained: 64)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.ExistingRetirementAndRotationAcceptKnownSchema47WithoutBecomingLossReset",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"INSERT\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"pending\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.WrongEnvelopeRejectsWithoutAffectingDatabase",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaEmergencyHttpTests.NeitherAnonymousRequestsNorAGlobalApplicationAdministratorCanInvokeLocalEmergencyOverHttp",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetVersionTests.UnknownHistoryOrExhaustedProfileCannotCreateVersionOne(versions: [1000000], complete: True, retained: 0)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.InterruptedCommitOrPublicationResumesForwardWithoutRepeatingPolicyRevision(cut: \"after_loss_db_commit\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.ValidCodesDoNotReactivateAnInactiveAccountOrBypassAFactorLock(factorLocked: True)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetVersionTests.UnknownHistoryOrExhaustedProfileCannotCreateVersionOne(versions: [7], complete: False, retained: 0)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.TheOnlyGlobalAdministratorRecoversWithoutAnotherAdministratorAndKeepsAuthority",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.ExplicitlyLostBackupVersionIsRecordedAndNeverReusedOrReportedAsRecoverable",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.PhysicallyMissingLostFileIsNotRecreatedAndNewCandidateCannotBeSubstituted",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.AuditFailureRollsBackRevocationAndNeverSubstitutesTheAffectedUserAsActor(operation: \"UPDATE\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetVersionTests.NewVersionExceedsEveryKnownSourceWithoutReusingOne(versions: [999999], retained: 0, expected: 1000000)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.UncertainOrStillRecoverableMaterialNeverExpandsTheDeclaredLoss(variant: \"readable_lost\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"envelope\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SoleGlobalAdministratorKeepsIdentityAndCanAdministerOnlyAfterNewTotp",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetVersionTests.NewVersionExceedsEveryKnownSourceWithoutReusingOne(versions: [1, 7, 40], retained: 3, expected: 41)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.CommitAuditIsClosedMetadataAndRevokesOnlyAffectedSecurityObjectsExactlyOnce",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"archive\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.AllKeyMaterialCanBeLostButKnownRingAndOpaqueZeroByteBlobArePreserved",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.OldSessionsVerifyEnrollAndRecoveryCodeCannotGrantAccessAfterLoss",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.CommitFailureRollsBackEveryDatabaseEffectAndKeepsCandidateAndFence",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"lost_versions\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetVersionTests.NewVersionExceedsEveryKnownSourceWithoutReusingOne(versions: [4, 4, 2], retained: 63, expected: 5)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.MixedStatesAndAuthoritiesAreArchivedAndOnlyLostFactorsRequireReenrollment",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.UncertainOrStillRecoverableMaterialNeverExpandsTheDeclaredLoss(variant: \"retained_corrupt\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.AnySecurityChangeAfterPlanningStopsBeforeDatabaseCommit(change: \"policy\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-corrupt\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.AnySecurityChangeAfterPlanningStopsBeforeDatabaseCommit(change: \"code\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.DisableCannotCancelRecoveryPendingEvenWithAnAuthorizedMfaSession(selfGlobal: True)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetVersionTests.UnknownHistoryOrExhaustedProfileCannotCreateVersionOne(versions: [], complete: True, retained: 0)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"session\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetVersionTests.UnknownHistoryOrExhaustedProfileCannotCreateVersionOne(versions: [7], complete: True, retained: -1)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.InterruptedCommitOrPublicationResumesForwardWithoutRepeatingPolicyRevision(cut: \"after_loss_key_publish\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness-empty\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"new_version\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.BackupOnlyVersionWithoutMaterialMustBeExplicitlyDeclaredLost",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.AlteredWitnessMetadataCannotAuthorizePublishing(field: \"sid\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"challenge\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.UncertainOrStillRecoverableMaterialNeverExpandsTheDeclaredLoss(variant: \"ring_unknown\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"witness\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaRestrictedRecoveryHttpTests.RecoveryNeverAuthorizesTheApiUntilTheNewFactorIsConfirmed(globalAdministrator: False)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaRestrictedRecoveryHttpTests.RecoveryNeverAuthorizesTheApiUntilTheNewFactorIsConfirmed(globalAdministrator: True)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetVersionTests.UnknownHistoryOrExhaustedProfileCannotCreateVersionOne(versions: [0, 7], complete: True, retained: 0)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.AnySecurityChangeAfterPlanningStopsBeforeDatabaseCommit(change: \"user\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"code\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossRevocationTests.SilentlySuppressedOrCorruptedWriteCannotCommitPartialRecovery(target: \"factor\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.ValidCodesDoNotReactivateAnInactiveAccountOrBypassAFactorLock(factorLocked: False)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLastAdministratorRecoveryTests.DisableCannotCancelRecoveryPendingEvenWithAnAuthorizedMfaSession(selfGlobal: False)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "RackClick.Quality.Tests.MfaLossResetTests.EveryNativeEntryRejectsTheObservedStandardTokenBeforeScmOrDatabase",
+          "outcome": "Passed"
+        }
+      ],
+      "binaries": {
+        "server": "2cbce09aa94b7bd646d0ea8a34fee5c2fc00081c889c7b19bb406c46e9bed9fc",
+        "tests": "a3cb231a046e6429d99ec57856250a3da597ec99743d022fbe5b965c8355da86"
+      },
+      "ownClusterStopped": true,
+      "trxSha256": "94ea03b80b6da9656c1767c551e9a927143f2041682427551de11577042d1d76"
+    }
+  ],
+  "finalBinaryPins": {
+    "server": "2cbce09aa94b7bd646d0ea8a34fee5c2fc00081c889c7b19bb406c46e9bed9fc",
+    "tests": "a3cb231a046e6429d99ec57856250a3da597ec99743d022fbe5b965c8355da86"
+  },
+  "finalAffectedPassed": 52,
+  "newCases": 14,
+  "newRedFailures": 9,
+  "firstRedHadOneFixtureError": true,
+  "sensitivity": "Same final test source fails 9 cases on unmodified F0902 product; no additional redundant mutation run",
+  "allFinalRunsWithoutSkips": true,
+  "sourceBaselineIdentityNotCrossPathBinaryIdentity": true,
+  "positiveElevatedOrSystemExecuted": false,
+  "serviceReaderSidFixture": true,
+  "hostServiceResumed": false,
+  "fencePreserved": true,
+  "privateBinlogs": 8
+}
